@@ -12,7 +12,7 @@ install:
   - bundle install
 script:
   - bundle exec jekyll build
-  - make test
+  - GEM=gem make test
 notifications:
   irc:
     channels:
