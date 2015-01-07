@@ -114,6 +114,7 @@ module Jekyll
                 items.each do |item|
                     img = Magick::Image.read(item['file']).first
                     thumb = img.resize_to_fill!(@config['thumb_width'], @config['thumb_height'])
+                    FileUtils.mkdir_p(File.dirname(item['thumbname']))
                     thumb.write(item['thumbname'])
                     thumb.destroy!
                 end
