@@ -1,0 +1,147 @@
+---
+title: Conf
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#set_object_model">set_object_model</a></li>
+		<li><a href="#read_objects">read_objects</a></li>
+		<li><a href="#update_conf">update_conf</a></li>
+		<li><a href="#read_conf">read_conf</a></li>
+		<li><a href="#merge_conf">merge_conf</a></li>
+		<li><a href="#get_component_as_string">get_component_as_string</a></li>
+		<li><a href="#replace_block">replace_block</a></li>
+		<li><a href="#get_data_from_param">get_data_from_param</a></li>
+		<li><a href="#get_cgi_user_list">get_cgi_user_list</a></li>
+		<li><a href="#get_cgi_group_list">get_cgi_group_list</a></li>
+		<li><a href="#read_htpasswd">read_htpasswd</a></li>
+		<li><a href="#store_model_retention">store_model_retention</a></li>
+		<li><a href="#get_model_retention">get_model_retention</a></li>
+		<li><a href="#get_root_folder">get_root_folder</a></li>
+		<li><a href="#init_cached_config">init_cached_config</a></li>
+		<li><a href="#get_default_peer_config">get_default_peer_config</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Conf.pm - Helper Functios for the Config Tool</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Helper Functios for the Config Tool</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="set_object_model">set_object_model</a></h2>
+<p>put objects model into stash</p>
+<p>
+</p>
+<h2><a name="read_objects">read_objects</a></h2>
+<p>read objects and store them as storable</p>
+<p>
+</p>
+<h2><a name="update_conf">update_conf</a></h2>
+<pre>
+    update_conf($file, $data [, $md5] [, $defaults] [, $update_c]);</pre>
+<p>update inline config</p>
+<pre>
+    $file       file to change
+    $data       new data
+    $md5        md5 sum from the file when we read it. (use -1 to disable check)
+    $defaults   defaults for this file
+    $update_c   update c so thruk does not need to be restarted</pre>
+<p>
+</p>
+<h2><a name="read_conf">read_conf</a></h2>
+<p>read config file</p>
+<p>
+</p>
+<h2><a name="merge_conf">merge_conf</a></h2>
+<p>merge config file with data</p>
+<p>
+</p>
+<h2><a name="get_component_as_string">get_component_as_string</a></h2>
+<p>return component config as string</p>
+<p>
+</p>
+<h2><a name="replace_block">replace_block</a></h2>
+<p>replace block in config file</p>
+<p>
+</p>
+<h2><a name="get_data_from_param">get_data_from_param</a></h2>
+<p>get data hash from post parameter</p>
+<p>
+</p>
+<h2><a name="get_cgi_user_list">get_cgi_user_list</a></h2>
+<p>get list of cgi users from cgi.cfg, htpasswd and contacts table</p>
+<p>
+</p>
+<h2><a name="get_cgi_group_list">get_cgi_group_list</a></h2>
+<p>get list of cgi groups from cgi.cfg and contactgroups table</p>
+<p>
+</p>
+<h2><a name="read_htpasswd">read_htpasswd</a></h2>
+<p>read htpasswd file</p>
+<p>
+</p>
+<h2><a name="store_model_retention">store_model_retention</a></h2>
+<p>store object model in storable</p>
+<p>
+</p>
+<h2><a name="get_model_retention">get_model_retention</a></h2>
+<p>restore object model from storable</p>
+<p>
+</p>
+<h2><a name="get_root_folder">get_root_folder</a></h2>
+<p>return root folder for given files</p>
+<p>ex.: get_root_folder(['/etc/nagios/conf.d/test.cfg',
+                      '/etc/nagios/conf.d/test/blah.cfg'
+                     ])</p>
+<p>returns '/etc/nagios/conf.d'</p>
+<p>
+</p>
+<h2><a name="init_cached_config">init_cached_config</a></h2>
+<p>set current obj_db from cached config</p>
+<p>
+</p>
+<h2><a name="get_default_peer_config">get_default_peer_config</a></h2>
+<p>return empty / default peer objects config</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

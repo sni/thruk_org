@@ -1,0 +1,91 @@
+---
+title: Object
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Config/', 'Config']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#format_comments">format_comments</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Monitoring::Conf::Object - Object Prototype</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Single object creator</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<pre>
+    new({
+        coretype =&gt; coretype,  # can be nagios, icinga, shinken or any
+        type     =&gt; type,
+        line     =&gt; nr,
+        file     =&gt; file object,
+        name     =&gt; name
+    })</pre>
+<p>return a new <a href="/api/Monitoring/Config/Object/Parent.html">object</a> of given type. Type can be any of the following:
+    <a href="/api/Monitoring/Config/Object/Host.html">host</a>
+    <a href="/api/Monitoring/Config/Object/Hostgroup.html">hostgroup</a>
+    <a href="/api/Monitoring/Config/Object/Hostextinfo.html">hostextinfo</a>
+    <a href="/api/Monitoring/Config/Object/Hostdependency.html">hostdependency</a>
+    <a href="/api/Monitoring/Config/Object/Hostescalation.html">hostescalation</a>
+    <a href="/api/Monitoring/Config/Object/Service.html">service</a>
+    <a href="/api/Monitoring/Config/Object/Servicegroup.html">servicegroup</a>
+    <a href="/api/Monitoring/Config/Object/Serviceextinfo.html">serviceextinfo</a>
+    <a href="/api/Monitoring/Config/Object/Servicedependency.html">servicedependency</a>
+    <a href="/api/Monitoring/Config/Object/Serviceescalation.html">serviceescalation</a>
+    <a href="/api/Monitoring/Config/Object/Command.html">command</a>
+    <a href="/api/Monitoring/Config/Object/Timeperiod.html">timeperiod</a>
+    <a href="/api/Monitoring/Config/Object/Contact.html">contact</a>
+    <a href="/api/Monitoring/Config/Object/Contactgroup.html">contactgroup</a>
+    <a href="/api/Monitoring/Config/Object/Module.html">module</a>
+    <a href="/api/Monitoring/Config/Object/Escalation.html">escalation</a></p>
+<p>
+</p>
+<h2><a name="format_comments">format_comments</a></h2>
+<pre>
+    format_comments($comments)</pre>
+<p>returns formated comments from config files</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

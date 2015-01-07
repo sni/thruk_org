@@ -1,0 +1,195 @@
+---
+title: Render
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/Reports/', 'Reports']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#sort_by_key">sort_by_key</a></li>
+		<li><a href="#current_page">current_page</a></li>
+		<li><a href="#calculate_availability">calculate_availability</a></li>
+		<li><a href="#outages">outages</a></li>
+		<li><a href="#set_unavailable_states">set_unavailable_states</a></li>
+		<li><a href="#get_report_timeperiod">get_report_timeperiod</a></li>
+		<li><a href="#get_events">get_events</a></li>
+		<li><a href="#get_url">get_url</a></li>
+		<li><a href="#count_event_totals">count_event_totals</a></li>
+		<li><a href="#get_availability_percents">get_availability_percents</a></li>
+		<li><a href="#get_month_name">get_month_name</a></li>
+		<li><a href="#get_week_name">get_week_name</a></li>
+		<li><a href="#get_day_name">get_day_name</a></li>
+		<li><a href="#get_pnp_image">get_pnp_image</a></li>
+		<li><a href="#dump">dump</a></li>
+		<li><a href="#html_all_inclusive">html_all_inclusive</a></li>
+		<li><a href="#page_splice">page_splice</a></li>
+		<li><a href="#_absolutize_url">_absolutize_url</a></li>
+	</ul>
+
+	<li><a href="#examples">EXAMPLES</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Render - Report Rendering Utilities Collection</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Report Rendering Utilities Collection. All subs will be available in report
+templates. Templates are Template::Toolkit templates and are responsible for
+the report layout, the mail content and the required parameters for a report.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="sort_by_key">sort_by_key</a></h2>
+<pre>
+  sort_by_key()</pre>
+<p>return sorted list of hashes</p>
+<p>
+</p>
+<h2><a name="current_page">current_page</a></h2>
+<pre>
+  current_page()</pre>
+<p>return and increase page number</p>
+<p>
+</p>
+<h2><a name="calculate_availability">calculate_availability</a></h2>
+<pre>
+  calculate_availability()</pre>
+<p>calculate availability from stash data</p>
+<p>
+</p>
+<h2><a name="outages">outages</a></h2>
+<pre>
+  outages($logs, $start, $end, $x, $y, $step1, $step2, $max)</pre>
+<p>print outages from log entries</p>
+<p>
+</p>
+<h2><a name="set_unavailable_states">set_unavailable_states</a></h2>
+<pre>
+  set_unavailable_states($states)</pre>
+<p>set list of states which count as unavailable</p>
+<p>
+</p>
+<h2><a name="get_report_timeperiod">get_report_timeperiod</a></h2>
+<pre>
+  get_report_timeperiod()</pre>
+<p>return report timeperiod in human readable form</p>
+<p>
+</p>
+<h2><a name="get_events">get_events</a></h2>
+<pre>
+  get_events()</pre>
+<p>set events by pattern from eventlog</p>
+<p>
+</p>
+<h2><a name="get_url">get_url</a></h2>
+<pre>
+  get_url()</pre>
+<p>save content from url</p>
+<p>
+</p>
+<h2><a name="count_event_totals">count_event_totals</a></h2>
+<pre>
+  count_event_totals()</pre>
+<p>count host / service totals from events</p>
+<p>
+</p>
+<h2><a name="get_availability_percents">get_availability_percents</a></h2>
+<pre>
+  get_availability_percents()</pre>
+<p>return list of availability percent as json list</p>
+<p>
+</p>
+<h2><a name="get_month_name">get_month_name</a></h2>
+<pre>
+  get_month_name(date, monthNamesList)</pre>
+<p>return human readable month name</p>
+<p>
+</p>
+<h2><a name="get_week_name">get_week_name</a></h2>
+<pre>
+  get_week_name(date)</pre>
+<p>return human readable week name</p>
+<p>
+</p>
+<h2><a name="get_day_name">get_day_name</a></h2>
+<pre>
+  get_day_name(date)</pre>
+<p>return human readable day name</p>
+<p>
+</p>
+<h2><a name="get_pnp_image">get_pnp_image</a></h2>
+<pre>
+  get_pnp_image(hst, svc, start, end, width, height, source)</pre>
+<p>return base64 encoded pnp image if possible.
+A string will be returned if no PNP graph can be exported.</p>
+<p>
+</p>
+<h2><a name="dump">dump</a></h2>
+<pre>
+  dump(...)</pre>
+<p>dump variables to stderr</p>
+<p>
+</p>
+<h2><a name="html_all_inclusive">html_all_inclusive</a></h2>
+<pre>
+  html_all_inclusive($c, $url, $page, [$include_js])</pre>
+<p>make html page include all remove css, js and images</p>
+<p>
+</p>
+<h2><a name="page_splice">page_splice</a></h2>
+<pre>
+  page_splice($data, $size_per_page, $max_pages)</pre>
+<p>cut data in chunks of $size_per_page size. $max_pages is the maximum number of
+pages or -1 for all.</p>
+<p>
+</p>
+<h2><a name="_absolutize_url">_absolutize_url</a></h2>
+<pre>
+  returns a absolute url</pre>
+<pre>
+  expects
+  $VAR1 = origin url
+  $VAR2 = target link</pre>
+<p>
+</p>
+<hr />
+<h1><a name="examples">EXAMPLES</a></h1>
+<p>See the shipped reports for some examples. Shipped reports are in the
+'plugins/plugins-available/reports2/templates/reports' folder.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

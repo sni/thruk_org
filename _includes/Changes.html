@@ -1,0 +1,1242 @@
+This file documents the revision history for the Monitoring Webinterface Thruk.
+
+
+next:
+          - add custom action menu
+          - livestatus performance improvements
+          - updated jquery to 1.11.1
+          - added new configuration setting: max_process_memory
+          - add excel export permanent link (awiddersheim)
+          - increased logcache int size
+          - Mobile:
+            - updated jquery mobile
+            - old themes have been replaced with 2 new ones
+          - Reporting:
+            - support url reports from external urls
+          - Panorama View:
+            - added show details/refresh links to icons
+            - add 'center' position option for labels
+            - changeable icon filter types
+            - fixed memory leak in generic url panel
+            - fixed problem with stopped timers after import
+            - reload every x hours to prevent noncatchable memory leaks
+            - fixed linking public dashboards
+          - Bug Fixes
+            - fixed problem with timeperiods in logcache database
+            - fixed show_custom_vars with wildcards
+            - fixed adding dummy function in business processes
+            - fixed startup page in safari browser
+            - fixed css problem in mobile client
+
+1.84-6   Wed Aug  6 11:24:12 CEST 2014
+          - Panorama View:
+            - support availability results in labels and speedometer
+
+1.84-5   Wed Jul 16 13:30:05 CEST 2014
+          - Reports
+            - added cancel button for running reports
+            - added progres bar for running reports
+          - Panorama View:
+            - added -or filter to all filter panels
+            - added optional min/max values for speedometer
+            - added invert switch for speedometer
+            - background images can now be scaled
+            - background images can have an offset
+            - images and icons can be scaled
+          - Bug Fixes
+            - fixed pnp source not selectable anymore after revisiting panel settings
+            - fixed applying panel source
+            - fixed using multiple panorama custom filter
+
+1.84-4   Mon Jun 23 17:44:32 CEST 2014
+          - added show_error_reports mode 'both' which shows the error indicator but logs to server side
+          - set default show_error_reports mode to 'both' to make error handling easier
+          - support pnp urls with suffix
+          - Panorama View:
+            - added z-index option for icons
+          - Bug Fixes
+            - fixed rendering icons above dashboard settings window
+            - fixed recurring downtimes not beeing saved under some conditions with multiple backends
+            - fixed problem in servicegroup recurring downtimes
+            - fixed half-visible panorama buttons in IE11
+            - fixed panorama shape rotation in IE11
+            - fixed panorama column error in minemap
+            - fixed problem with utf8 characters in passwords
+            - fixed problem with quotes in passwords
+
+1.84-3   Sat May 31 16:10:07 CEST 2014
+          - added csrf_allowed_hosts configuration option
+          - allow unicode characters in performance data units
+          - Panorama View:
+            - iconsets may now contain png, jpg or gif images
+            - added dashboard_ignore_changes configuration option (Franky Van Liedekerke)
+            - reschedule next check when refreshing single icon with host/service
+          - Business Process
+            - added easier host:* status aggregation
+          - Bug Fixes
+            - fixed calculation of computed configuration in config tool
+            - fixed panorama icon size in IE8
+            - fixed problem with group/user specific settings
+            - fixed exclude pattern when using logcache
+            - fixed unicode problem in panorama labels
+            - fixed rotation shapes when switching from icon style
+
+1.84-2   Sat May 17 16:49:45 CEST 2014
+          - Panorama View:
+            - icons snap to raster on drag/drop when shift key is hold
+          - Bug Fixes
+            - fixed removing old sessions with cookie auth
+            - fixed panorama filter containing pipes
+            - fixed panorama not showing usercontent
+            - fixed panorama servicegroup popup details
+            - fixed cookie auth problem when accessing site without trailing slash
+
+1.84     Sat May 10 20:58:24 CEST 2014
+          - support time definitions like 1st monday, last friday for recurring downtimes and reports
+          - support host/hostgroup/servicegroup lists for recurring downtimes
+          - added quick filter to config pages
+          - general design fixes (awiddersheim)
+          - Exfoliation theme fixes (awiddersheim)
+          - fixed number format in performance data (awiddersheim)
+          - config tool improvements for shinken (Mathieu Parent)
+          - added new command "thruk -a selfcheck" to perform some self checks
+          - optionally disable session revalidation in cookie auth
+          - added csrf protection
+          - added sorting of comments/downtimes on host/service pages
+          - added more css classes to status page, hard, sort, attempt, duration...
+          - Business Process
+            - added support for custom functions
+          - Reports
+            - add button to directly send report by email
+            - add maximum sla threshold to hide detail pages
+            - allow multiple pnp graphs in sla reports (lkco)
+          - Panorama View:
+            - cookie state_provider has been removed
+            - background can be change in dashboard settings
+            - panels are not pinnable anymore
+            - tabs are now independant and can be exported and imported seperatly
+            - added icon widgets
+            - added dynamic labels to icon widgets
+            - changed internal storage format
+            - default_view can no longer be a string, its always a file now
+            - fixed panlet cluttering when opening dashboard with smaller screens
+            - fixed state not being saved in some conditions
+          - Bug Fixes
+            - fixed displaying partially active attributes
+            - fixed wait trigger not working all the time
+            - fixed tab rotation in panorama view
+            - fixed loosing filter on reports page
+            - fixed save&reload button from within filesystem browser
+            - fixed demanding system command permissions for enabling accept passive results (awiddersheim)
+            - fixed exclusion when using 'Plugin Output' filter
+            - fixed 'Plugin Output' not showing up as option when adding an and/or filter
+
+1.82-2   Fri Feb 21 17:20:55 CET 2014
+          - redirect to host details page if no services found and no service filter was set
+          - Bug Fixes
+            - fixed missing graphs in reports
+            - fixed js error in panorama url panel
+
+1.82     Thu Feb 13 00:01:36 CET 2014
+          - naemon adjustments
+          - performance improvments on pages not using any backends (reports, bp, conf,...)
+          - removed old reporting plugin
+          - install ssi examples
+          - add plugin_output and long_plugin_output filter (awiddersheim)
+          - CLI
+            - added -a ALL option to send commands to all backends
+          - Logcache
+            - added 'logcacheremoveunused' command to remove old no longer used tables
+          - Panorama
+            - make tabs reorderable
+            - autohiding headers don't change panel size
+            - fixed problem on initializing pie charts
+            - fixed import problem not showing initial panels
+          - Business Process
+            - change service plugin output for first node
+            - add livestatus result transport
+            - added cli command "bpcommit" to save manually create BPs
+            - fixed displaying/using wrong host template
+            - fixed display issue in latest firefox (updated dagre library)
+          - Reports
+            - show out of scope totals
+            - added report description on cover page
+            - support outages pages for multiple host/service reports
+            - fill in defaults for host/service unavailable states when switching report templates
+            - use timeperiods when calculation outage logs
+            - allow service reports over the same service on all hosts
+            - fixed livestatus timestamp for timeperiod transitions
+            - fixed pnp graphs in reports when using remote instances and services containing spaces
+            - fixed problem with daylight saving times
+            - fixed selecting wrong tab on rescheduling report
+            - fixed removing reports from non-existing templates
+          - Config Tool
+            - allow reloading by external commands
+            - fixed parsing lists in host/serviceescalations
+          - Bug Fixes
+            - fixed init script which did not stop/restart are fcgi processes
+            - fixed displaying performance data with negative ranges
+            - fixed duplicate bookmark handling
+            - fixed problem with sound alerts
+
+1.80-3   Sat Dec  7 18:26:15 CET 2013
+          - optional guest account when using cookie authentication
+          - made report_max_objects configurable
+          - Bug Fixes
+            - fixed sorting on keys with space in performance data table
+            - fixed using negative numbers in performance data table
+            - fixed cookie auth on https url when using https backend over proxy
+            - fixed js error on reports page
+            - fixed js error on panorama dashboad: Cannot call method 'getSize' of undefined
+
+1.80-2   Thu Nov 28 12:21:18 CET 2013
+          - Reports
+            - made number of latest/worst outages pages configurable
+          - Business Process
+            - fixed context menu issues with IE
+            - fixed zooming in IE
+          - Bug Fixes
+            - fixed show raw data link in IE
+
+1.80     Mon Nov 25 15:03:55 CET 2013
+          - support csv output in availability reports for every reporttype and not only all hosts/services
+          - support US date format in url querys
+          - added performance data overview (kudos to adagios for the inspiration)
+          - support ranges in performance data bar (awiddersheim)
+          - added xls export for availability reports
+          - show human readable performance data on extinfo page
+          - support standard macros in 'show_custom_vars' (awiddersheim)
+          - Panorama
+            - added experimental IE support
+          - Reports
+            - added filter button to only show my/public/all reports
+            - admins can edit all reports now
+            - fixed permission problem when using groups in cgi.cfg
+          - Config Tool
+            - fixed saving command lines with escaped semicolons
+          - Bug Fixes
+            - corrected default sorting of hosts page
+            - fixed display issue with left aligned calendar popup (awiddersheim)
+
+1.78-3   Sat Nov  2 00:45:00 CET 2013
+          - Business Process
+            - fixed saving graph direction
+            - fixed edge layout for left-right graphs
+            - fixed submiting results in test mode
+          - Panorama
+            - fixed not saving when starting with an empty set
+          - Shinken
+            - fixed livestatus error when using wrong business impact filter
+
+1.78-2   Sun Oct 27 16:41:56 CET 2013
+          - Business Process
+            - openend result spool files permissons
+          - Config Tool
+            - fixed plugin help accordion size
+          - Panorama
+            - fixed nagvis panel displaying load error
+            - fixed using default view with readonly mode
+            - fixed draggable panels in readonly mode
+          - Bug Fixes
+            - fixed cascaded configs for sub components
+            - fixed perfbars with zero values (awiddersheim)
+            - fixed listing recurring downtimes with limited permissions
+
+1.78     Thu Oct 21 22:41:31 CEST 2013
+          - added business process addon
+          - new --all-inclusive/-i mode for cli html page export which includes all css, js and
+            images in one single page
+          - show apache status in performance page
+          - minemap performance improvements and reduced memory usage
+          - configuration git browser got next and previous links
+          - added some more shinken specific config attributes
+          - memory usage / performance improvements with large data
+          - replace caching module with internal module
+          - panorama
+            - added business process panel
+            - added nagvis panel
+          - Bug Fixes
+            - summary: fixed reports using host/servicegroups in combination with the mysql logcache
+            - mysql logcache: fixed service cannot be NULL error on import
+            - fixed encoding problem when using config tool over http
+          - Warning:
+            - reports plugin is deprecated and will be removed soon, please update to reports2 plugin
+
+1.76-3   Tue Sep  3 23:00:09 CEST 2013
+          - new site 'collapsed' panel for large setups
+          - Bug Fixes
+            - dashboard: removed unnecessary dependency
+
+1.76-2   Sun Aug 25 19:08:23 CEST 2013
+          - Bug Fixes
+            - fixed update on debian/ubuntu
+
+1.76     Fri Aug 23 12:17:25 CEST 2013
+          - new options to set page titles: 'use_bookmark_titles' and 'use_dynamic_titles' (awiddersheim)
+          - make sure huge site panels do not overlap screen
+          - support $PLUGINDIR$ and other user macros from resource file
+          - added support for apache 2.4 on debian based systems
+          - removed curl support, LWP::Protocol::Net::Curl wasn't thread safe
+          - panorama
+            - performance improvements
+            - delayed inactive panel rendering
+          - Bug Fixes
+            - fixed quoting downtime tasks
+            - show error instead of empty result for a single failed instance
+            - fixed rootid in statusmap when using filter
+            - fixed audio alarms on problems page (random-xz)
+
+1.74-2   Sat Jul 27 18:15:20 CEST 2013
+          - show response from date/time check in quick commands
+          - make sure IO::Socket::SSL is used for multiple parallel https connections
+          - Bug Fixes
+            - fixed display of hoverable downtimes comments
+            - fixed pnp graph waiting icon
+            - fixed rootid in statusmap when using filter
+            - fixed clicking search result header
+            - fixed reduced result set on json exports
+            - fixed reading wrong encoded global user data file
+            - fixed case-sensitive sorting on host/servicenames
+            - fixed missing links in Nuvola theme side navigation
+
+1.74     Sun Jul  7 17:39:32 CEST 2013
+          - added filter to statusmap
+          - performance improvements, only load jquery-ui if necessary
+          - added several new force cmd options (awiddersheim)
+          - added new cli command 'command' to print command line for hosts/service
+          - panorama:
+            - added readonly config parameter
+          - config tool:
+            - added pre/post save hooks
+            - added history support (if config folder uses git)
+            - fixed displaying wrong site in OMD environment
+          - Bug Fixes
+            - fixed sending duplicate commands (feraudet)
+            - fixed closing preferences by document click
+
+1.72-2   Fri Jun  7 15:51:47 CEST 2013
+          - added sanity check when saving recurring downtimes
+          - log host/service name when deleting downtimes/comments
+          - Bug Fixes
+            - missing filter in list of recurring downtime
+            - fixed state_hosts for http backend
+
+1.72     Tue Jun  4 18:42:50 CEST 2013
+          - enable connection pool by default (only with 3 backends or more)
+          - connection pool uses 90% less memory now
+          - allow setting 'state_host' explicitly
+          - speed improvments (use json::xs for faster serialization)
+          - close (most) popups by clicking outside popup
+          - Bug Fixes
+            - disable curl when using threads
+            - fixed playing sounds on problems
+            - conf: plugin list/preview over http
+
+1.70-4   Tue May 21 11:40:34 CEST 2013
+          - Bug Fixes
+            - fixed occasional sigpipes on config reload
+            - fixed memory leak in livestatus accessor
+            - fixed connection leak in logcache
+            - don't strip nasty chars from passwords
+
+1.70-3   Tue May 14 17:07:57 CEST 2013
+          - reload page after connection errors (only in frames mode)
+          - Bug Fixes
+            - increased range of utf-8 characters removed due to
+              missing high surrogate character in surrogate pair
+
+1.70-2   Wed May  8 22:13:47 CEST 2013
+          - Bug Fixes
+            - fixed sending commands to multiple backends
+
+1.70     Mon May  6 20:47:31 CEST 2013
+          - added public bookmarks
+          - added recurring downtimes for host- and servicegroups
+          - added regular expression contact filter (Scott Dworkis)
+          - config tool:
+            - resolve hostgroup_members when looking for a hosts services
+          - Bug Fixes
+            - fixed negated regex group search
+            - fixed encoding in reports / bookmarks
+
+1.68     Tue Apr  9 21:04:03 CEST 2013
+          - allow custom cron entries for reports / recurring downtimes
+          - Logfilecache
+            - speed up incremental file import
+            - speed up mysql updates
+          - Shinken
+            - added escalation object to config tool
+          - Bug Fixes
+            - fixed adding multiple recurring downtimes for a single host
+            - no sound alerts if notifications are disabled
+
+1.66-2   Mon Apr  1 22:59:55 CEST 2013
+          - better utf-8 support in report mails
+          - ensure image data is a pnp file
+          - Bug Fixes
+            - fixed translation issue in italian reports
+            - fixed utf-8 problem in report month names
+            - fixed daylight saving issue in reports
+
+1.66     Tue Mar 26 18:43:48 CET 2013
+          - added mysql logfile cache
+          - added logcache statistics to performance info page
+          - added naglintrc config file
+            - made indention and sort order configurable
+          - added optional server side js error logging
+          - added 'compile' cli command to precompile templates
+          - added 'perf_bar_pnp_popup' option to control pnp popups in perfbar
+          - added logs link for hosts/services to directly filter logfiles
+          - removed background color from status page (can be reenabled by 'status_color_background')
+          - panorama view:
+            - auto adjust minemap column height
+            - use escape_html setting from cgi.cfg
+            - support show_long_plugin_output inline
+          - reports
+            - use temp files for large reports
+            - added 'report_from_email' option
+          - Bug Fixes
+            - make text selections in status page easier
+            - fix utf-8 decoding error: missing high surrogate character in surrogate pair
+
+1.64-2   Sat Feb 23 17:14:11 CET 2013
+          - config tool
+            - save & reload page display already saved changes
+          - Bug Fixes
+            - added missing newline in services availability
+
+1.64     Fri Feb 15 22:50:55 CET 2013
+          - added user & group specific config overrides
+          - added json export for availability data
+          - added noexternalforks parameter to skip forks
+          - added show_host_attempts config option
+          - added ssl_verify_hostnames config option
+          - added show_full_commandline_source config option
+          - added check all switch to site panel
+          - make colums selectable for json requests
+          - use user sort for show_custom_vars
+          - reports
+            - added locales support (en, de, it, es, fr)
+            - fixed url reports containing icon images
+          - config tool
+            - added one click save & reload button
+          - logcache
+            - added new command logcacheclean to remove old log entries
+          - Bug Fixes
+            - fixed js error in conf tool
+            - fixed removal of deprecated plugins on rpm update
+            - fixed memory leak in livestatus accessor
+
+1.62     Sun Jan  6 21:20:16 CET 2013
+          - added filter to comments / downtimes page
+          - added json / excel export to comments / downtimes page
+          - moved plugins config items in component sections of config
+          - changed first day of week to monday, can be reverted by setting first_day_of_week=0
+          - reworked configuration documentation
+          - new reporting module
+            - put both reports edit steps into one page
+            - select multiple hosts/services/groups seperated by comma
+            - changed report templates to html
+            - changed to flot graphing library
+            - changed to wkhtml2pdf as pdf generator
+            - changed default initial state to unspecified
+            - added timeperiod support in sla reports
+            - added html preview of pdf reports
+            - added new report option for sla decimal points and graph min sla
+            - added pnp graph to reports
+          - Bug Fixes
+            - fixed problem when using logfilecache in combination with connection pool
+
+1.60.2   Wed Dec 19 11:23:28 CET 2012
+          - Bug Fixes
+            - hide site panel with only one backend
+
+1.60     Tue Dec 18 18:26:47 CET 2012
+          - added http backend type which connects to another thruk instance
+          - made sitepanel configurable
+          - config tool:
+            - changed source editor to linedtextarea because of IE compatibility
+          - logcache:
+            - renamed logcache cli commands
+            - changed mongodb logcache to seperate collection per backend
+            - added cli command logcachestats to display logcache statistics
+            - added cli command logcacheauthupdate to update authorization information
+            - fixed mongodb logcache authorization
+          - Bug Fixes
+            - fixed connection test for new backends
+            - retain order of backends when not using sections
+            - fixed deselecting unavailable backends
+            - fixed jumping cursor in search input in IE
+
+1.58     Wed Nov 21 12:51:29 CET 2012
+          - use regex matching in search preview too
+          - added new config option first_day_of_week
+          - added column filter in configuration page (Thibault Cohen)
+          - faster and more useably mouseover in host/service lists
+          - added configuration only backends
+          - show link to hostdetails when no services match
+          - added filter by number of services
+          - added config option to select default quick command
+          - added excel export for problems page
+          - added json export for problems page
+          - config tool:
+            - preserve inline comments if possible
+            - added enable/disable actions
+            - show forward references on ref page too
+            - fix computed config display of additive inheritance
+            - fix ignoring changes to readonly pattern in config
+            - fix auto submit when pressing some wizards
+          - Bug Fixes
+            - fixed sending commands to all backends
+            - usability improvements for Internet Explorer
+            - fixed renewing contactgroups cache after backend reload
+
+1.56     Wed Nov  7 22:14:06 CET 2012
+          - added naglint tool to beautify nagios config files
+          - added sites panel when grouping backends by section
+          - show perf bar for percentages too
+          - reports:
+            - replace links in html reports
+            - fixed creating e-mail reports for availability pages
+            - fixed sending first e-mail attachment always as report.pdf
+          - config tool:
+            - added object browser
+            - show warning when saving objects without a name
+            - recognize disabled (commented) objects
+          - Bug Fixes
+            - fixed limit to groups in alert summary
+
+1.54     Mon Oct 22 15:08:26 CEST 2012
+          - added support for setting custum variables without _ now
+          - added link to all services with same name on extinfo 2 page
+          - panorama view:
+            - added performance bar to host/service list
+          - Bug Fixes
+            - undefined ARG macros will be replaced with empty string
+            - fixed perf bars in IE
+            - fixed perf bars growing over maximum
+
+1.52     Tue Oct  9 16:44:04 CEST 2012
+          - added cookie based authentication and logout button
+          - added performance bar to host/service list
+          - updated calendar popup
+            - use mousewheel to change date / time
+          - Bug Fixes
+            - fixed scrolling to top on clicking calendar icon
+
+1.50     Thu Sep 27 09:21:20 CEST 2012
+          - make menu sections foldable
+          - Bug Fixes
+            - fixed reload in IE
+            - fixed minemap header in IE
+
+1.48     Fri Sep 21 11:24:48 CEST 2012
+          - save scroll state on sending commands and reloads
+          - reports
+            - added basic report option validation
+          - Bug Fixes
+            - fixed state hosts (Oliver Falk)
+            - fixed search with ipad
+            - fixed action icons by custom vars servicegroup overview
+
+1.46     Tue Sep  4 15:42:15 CEST 2012
+          - optional favicon problem counter
+          - display action/notes url on host/servicegroup pages
+          - minemap:
+            - dynamic column header height
+          - panorama view:
+            - optional auto hiding panel header
+          - Bug Fixes
+            - fixed using multiple groups in cgi.cfg
+            - fixed search with iphone
+
+1.44     Mon Aug 27 15:17:31 CEST 2012
+          - play sounds only for unhandled problems
+          - Bug Fixes
+            - fixed adding report with empty crontab
+            - fixed looping startup.html
+            - fixed taint mode error on debian
+
+1.42     Thu Aug 23 17:55:54 CEST 2012
+          - panorama view:
+            - added host details panlet
+            - link service details to service list
+            - show messages from send commands
+            - add possibility to remove downtimes
+            - show server time and login
+            - update to extjs 4.1.1
+          - Bug Fixes
+            - fixed authentication in recurring downtimes
+
+1.40     Fri Aug  3 16:54:16 CEST 2012
+          - change backends in config tool
+          - use wait feature for acks/downtimes
+          - change backends in config tool
+          - panorama view:
+            - added mine map panlet
+            - added service details panlet
+            - fixed problem with initial view
+          - Bug Fixes
+            - fixed reports when no state selected
+            - fixed problem with cronjobs on pkg updates
+
+1.38     Fri Jul 27 18:14:00 CEST 2012
+          - added button to check/uncheck all columns for status excel export
+          - panorama view:
+            - added auto rotating tabs
+            - added hosts / services panlet
+            - added host / service totals panlet
+            - added server metrics panlet
+            - added filter for all host/services based panlets
+            - generic url panlet can now show external urls
+            - fixed generic url panlet when using css selector
+          - Bug Fixes
+            - fixed date verification in quick commands
+
+1.36     Thu Jul 19 13:49:01 CEST 2012
+          - added panorama view plugin
+          - support flexible downtimes from the status page quick command
+          - support recurring flexible downtimes
+          - allow human readable values for duration filter like 5h or 10m
+          - check version when using the check for updates link
+          - clean up menu (don't show grid links in extra row)
+          - allow wildcards in 'show_custom_vars'
+          - added cgi sounds to tac page (if enabled)
+          - added link for bug reports on internal errors (idea by the icinga team)
+          - reporting:
+            - reports can now be created for every page (html, xls, ...)
+          - config tool:
+            - added plugin & addon manager
+            - show hostgroup name on hosts service list
+            - fixed unregistered hostgroups showing up as warning
+            - fixed commands in orphaned objects list
+          - Bug Fixes
+            - downtimes: fixed display of flexible downtimes
+            - recurring downtimes: fixed adding downtimes on sunday
+            - config tool: allowed hostgroups with register 0
+            - fixed reloading pages when multiple filters used (Rupert Roesler-Schmidt)
+            - fixed sounds in IE and Windows Firefox
+
+1.34     Tue Jun 19 17:38:46 CEST 2012
+          - added config item to specify mobile agents
+          - added refresh url parameter to set custom refresh rate
+          - Bug Fixes
+            - fixed editing command lines containing quotes
+            - fixed not viewing all objects when paging is disabled
+            - fixed 'All types' link not working all the time
+            - fixed sticky acknowledgements
+
+1.32     Sat Jun  2 18:46:38 CEST 2012
+          - added recurring downtimes
+          - added in_check|notification_period to extinfo
+          - added sort by status information
+          - added reschedule 'now' link to extinfo page
+          - added mongodb support (experimental)
+            - added logcache based on mongodb (mixed mode)
+          - added long plugin output to excel export
+          - added child options to downtimes (Jason Lempka)
+          - reporting:
+            - added report editor
+            - added cron editor for scheduling reports
+            - report fileextension is now .rpt
+          - Bug Fixes
+            - fixed mobile interface (jquery version was too old)
+            - fixed javascript error on comments/downtimes page
+            - fixed deleting all downtimes from extinfo page
+            - fixed removing comments/downtimes from extinfo page
+
+1.30     Sun May  6 19:37:59 CEST 2012
+          - added sla reporting
+            - implemented 'last12months'
+            - implemented months breakdown
+          - updated jquery to 1.7.2
+          - do not reenable ssi files on pkg updates
+          - Bug Fixes
+            - fixed adding bookmarks
+            - fixed selecting multiple filter
+            - fixed statusmap js errors
+
+1.28     Sat Apr 28 18:53:49 CEST 2012
+          - added support for display_name
+          - added filter for custom variables
+          - show host/servicegroups only if contact has permission for at least on host/service
+          - add new url parameter 'minimal' for hiding everything except the data (Pierre Mavro)
+          - added documentation about common CGI parameters
+          - added init script
+          - added event details to logs excel export
+          - added site name to excel export (Mark Wilkinson)
+          - added sound alerts
+          - added config item for custom host/service action icons
+          - added config item to convert usernames to upper/lowercase
+          - set custom host/service action icons by custom variable
+          - added config item for cookie_path
+          - added 'last12months' to possible report timeperiods
+          - internal changes ( removed prototype library )
+          - mobile:
+              - added performance graph to mobile interface
+          - conf tool:
+              - support relative paths in nagios.cfg
+          - fixed sorting by status (critical > unknown)
+
+1.26     Mon Mar 26 13:40:33 CEST 2012
+          - show remaining minutes when using first_notification_delay
+          - hide host/service selection for read-only users
+          - added new config option show_backends_in_table to display site name in status table
+          - added wml plugin to support ntray (and maybe other tools based on the statuswml page) (Franky Van Liedekerke)
+          - cli tool:
+              - implemented verbose mode with -v
+          - fixed redirect in old browsers
+
+1.24     Mon Mar 19 12:17:40 CET 2012
+          - conf tool:
+              - rename dependencies on object updates
+              - reset reload flag on external reloads too
+              - remove cached data when core config changes
+              - add more shinken specific attributes
+          - use current time when rescheduling checks with
+            timestamp in the past to prevent breaking the latency calculation
+          - fixed shinken livestatus version warning
+
+1.22     Tue Mar  6 17:20:18 CET 2012
+          - cli tool:
+              - implemented setting backends with '-b'
+          - use 127.0.0.1 and locahost tcp connections for local states too
+          - preserve enabled themes/plugins on update via package
+          - fixed packages apache config
+          - fixed missing bracket on problems page
+          - fixed problem with missing templates in packages
+          - fixed customizing menu with insert_item()
+
+1.20     Tue Feb 28 22:38:23 CET 2012
+          - added cli tool
+          - write pid file when running as fastcgi
+          - show startpage when fcgid process is starting
+          - added path to cookies, makes multiple instances possible on one host
+          - added current attempt filter (Jordi van Scheijen)
+          - fixed adding page reloads to browser history, now reloads don't show up in history
+          - fixed statusmap table layout
+          - fixed escaping newlines when escape_html is off
+          - fixed sending commands to hosts/services with backslashes
+          - fixed tests
+          - config tool:
+              - fixed adding custom variables
+
+1.18     Tue Feb 14 17:17:38 CET 2012
+          - changed version numbers to real numbers
+              - from now on, even numbers will be stable releases
+              - odd numbered releases will be test releases
+              - this also fixes the Argument "1.1.7" isn't numeric in subroutine entry at... error
+          - finished mobile plugin
+          - support timeperiods in trends/availability reports
+          - made duration of downtimes and acknowledgement configurable
+          - replaced double downtime delete with checkbox
+          - config tool:
+              - fixed selecting templates when no hosts exist
+              - fixed selecting services without hosts/groups
+          - fixed issue with pressing history twice when using frames
+          - fixed display issues when not using pager
+
+1.1.7    Tue Dec 20 18:02:13 CET 2011
+          - added duration filter
+          - config tool:
+              - removed link from icons
+              - fixed services without description
+          - fixed setting multiple acks with expire
+
+1.1.6    Tue Dec 13 19:09:17 CET 2011
+          - added acknowledgments with expire date (shinken/icinga only)
+          - added json export on status page (thanks Justin Burnham)
+          - config tool:
+            - added command preview
+            - added module support (icinga only)
+            - added wizard for servicegroup members
+            - added links to create/edit cgi permissions
+          - fixed display of acknowledgements with expire date
+          - fixed js error when adding more than 10 filter
+          - themes: fixed minor design flaws in Nuvola theme
+
+1.1.5    Thu Dec  5 21:04:17 CET 2011
+          - reloading pages by pressing f5 works now even with frames
+          - config tool: added wizard to create/change commands
+                         set ip automatically
+                         added criticy for shinken backends
+                         added address6 for icinga backends
+                         fixed reloading config
+                         fixed command line wizard
+
+1.1.4    Sun Nov 29 16:21:21 CET 2011
+          - added more button for search suggestions
+          - remove downtimes quick command now only removes active downtimes
+          - added quick command to remove future downtimes
+          - removed string::strip dependency
+          - minor enhancements for config tool
+
+1.1.3    Sat Nov 12 23:03:12 CET 2011
+          - added support for objects in config editor
+          - added support for contactgroups in the cgi.cfg
+          - added support for groups in the cgi.cfg config tool
+          - added refresh button on top of each page
+          - command_disabled supports ranges
+          - hide links to cmd.cgi which are disabled by the command_disabled option
+          - backends can only be hidden by config if there are more than one
+          - show backend related errors as backend chooser tooltip and in process info page
+          - fixed hiding filter select popup
+          - fixed sorting by duration on status page
+
+1.1.2    Tue Oct 18 17:57:53 CEST 2011
+          - added /pnp/ to possible pnp4nagios urls
+          - search in notes_url for pnp4nagios urls too
+          - replaced deprecated Catalyst::Log::Log4perl
+          - fixed commands using the hours parameter (fixes #50)
+          - fixed redirect when adding ?nav=1 while using frames
+
+1.1.1    Thu Sep 15 14:30:01 CEST 2011
+          - added dashboard plugin (Thanks Sigma)
+          - disabled not implemented config view (fixes #46)
+          - fixed shift in table of config host page (fixes #49)
+
+1.1.0    Sun Aug 21 19:12:18 CEST 2011
+          - availability / trends are now calculated in a background process
+            - less ressources and independent from browser ttl
+          - excel export run as bg job
+          - added config option 'show_custom_vars'
+          - added host command 'Schedule downtime for all services on this host'
+          - added excel export for notifications
+          - added new host properties filter 'in_check_priod' and 'in_notification_period'
+          - added new service properties filter 'in_check_priod' and 'in_notification_period'
+          - added new filter options 'Check Period' and 'Notification Period'
+          - added new filter option 'Has Modified Attributes'
+          - added new command to reset 'Modified Attributes'
+          - added option 'show_modified_attributes'
+          - fixed disappearing menu item name (fixes #45)
+          - fixed changing views on the minemap (fixes #44)
+          - fixed statusmap in IE
+          - fixed too long url in status.cgi
+
+1.0.9    Sun Aug 14 12:47:30 CEST 2011
+          - delete multiple comments from the comments page
+          - delete multiple downtimes from the downtimes page
+          - new option command_reschedule_alias to redirect reschedule requests to agent services
+          - themes: themes can be enabled/disabled by themes/themes-enabled directory (just like plugins)
+          - pnp preview: save graph state between reloads
+          - shinken features: save status of businessview on reload
+          - Thruk theme: layout/design cleanup
+          - moved mobile plugin to extra branch (not finished yet)
+          - fixed undefined value in shinken-features plugin
+          - fixed "select all with downtime" button for hosts (fixes #39)
+          - fixed calendar not showing up in status filter (fixes #42)
+          - fixed authorization for service downtimes (fixes #43)
+
+1.0.8    Mon Aug  2 15:22:16 CEST 2011
+          - added excel export for all logfile pages
+          - added "view configuration" link in host/service extinfo page
+          - added contacts to host/service config page
+          - added icons to command seletion
+          - added mine map plugin
+          - improved input validation for date fields in quick commands
+          - added IE9 compatibility mode (Joerg Linge)
+          - added description to init script (fixes #32)
+          - fixed scheduling downtimes on mutliple backends (fixes #33)
+          - fixed custom icons in Nuvola theme
+          - fixed problem with writing cgi.cfg
+          - fixed header toggle icon
+
+1.0.7   Wed Jun 29 21:57:04 CEST 2011
+          - fixed url in link popup
+
+1.0.6   Thu Jun 26 12:41:09 CEST 2011
+          - added wait_timeout option
+          - added nicer/clearer command boxes
+          - disabled wait feature when rescheduling checks on hosts with spaces
+            - livestatus does not support that
+          - Nuvola Theme: small design fixes (Juergen Vigna)
+          - fixed zoom of trends graph
+          - fixed problem with multiple filters
+          - fixed availability when selected all hosts
+          - fixed problem with quotes in plugin output in the statusmap
+
+1.0.5   Thu Jun  2 22:03:30 CEST 2011
+          - removed display of duplicate services where services are added twice to a servicegroup
+          - hide check activity icon after 5 seconds
+          - conf tool: added remove password button
+          - shinken:
+            - added priority filter (criticity)
+            - added config option to rename priorities
+          - fixed sendig commands to multiple backends
+
+1.0.4   Fri May 20 14:05:18 CEST 2011
+          - added missing license file
+          - added business view for shinken backend
+          - added better error message when log4perl config cannot be found
+          - fixed availability calculation with hard states
+
+1.0.3   Thu May 12 20:05:16 CEST 2011
+          - fixed problem with some chars in excel export
+          - added show_long_plugin_output option
+
+1.0.2   Tue May 10 11:50:44 CEST 2011
+          - use host address for searches
+          - fixed executable SSIs with multiple lines of output
+
+1.0.1   Mon May  9 10:22:57 CEST 2011
+          - fixed link target when using frames
+
+1.0.0   Sun May  8 23:25:18 CEST 2011
+          - added bookmarks
+
+0.94.4  Sun Mai 01 12:57:43 CEST 2011
+          - view feedback icon when changing pnp images
+
+0.94.3  Sat Apr 30 14:40:28 CEST 2011
+          - view feedback icon when changing pnp images
+
+0.94.2  Thu Apr 28 00:05:17 CEST 2011
+          - added regular expression filter for host/servicegroups
+
+0.94.1  Tue Apr 26 13:02:37 CEST 2011
+          - fixed small design issues
+          - fixed page scrolling when using cursor keys in search
+
+0.94    Mon Apr 25 13:09:57 CEST 2011
+          - added more menu control functions
+          - fixed small design issues
+          - fixed shinken impacts
+
+0.92    Sun Apr 17 20:15:13 CEST 2011
+          - added Thruk theme
+          - added config tool for cgi.cfg and thruk.conf
+          - added logo_path_prefix option
+          - added state change filter
+          - sidebar search autosubmits on select
+          - fixed problem with "delete all downtimes" link
+
+0.90    Sun Mar 27 22:52:23 CET 2011
+          - made style selectable within filter
+          - added inline pnp graphs
+          - added wait feature when rescheduling checks
+          - Nuvola theme saves collapsed state of menu
+          - fixed themes
+            - removed useless scrollbar in Nuvola theme
+            - fixed jumping rows in Nuvola theme
+
+0.86    Sun Mar 20 19:24:34 CET 2011
+          - added new problems view
+          - added new option 'check_local_states'
+          - added optional check for remote backend status by local backends
+          - fixed themes
+            - removed useless scrollbar in Nuvola theme
+            - removed margin from Wakizashi
+            - fixed jumping rows in Nuvola theme
+            - fixed jumping status in Vautour theme
+          - fixed ajax autocomplete
+          - fixed paging on config page
+          - fixed ajax search in menu when using theme Vautour (Vincent Besancon)
+
+0.84    Mon Mar 14 16:49:56 CET 2011
+          - configurable plugins path
+          - added missing image for the Nuvola theme
+          - fixed tmp_path option
+          - fixed accessing logfiles from changing backends
+          - fixed host totals when using servicegroup filter
+
+0.82.1  Wed Feb  9 15:27:54 CET 2011
+          - fixed encoding problem with french date format
+
+0.82    Mon Feb  7 23:40:50 CET 2011
+          - fixed excel export with special characters in plugin output
+          - fixed Undefined subroutine &FCGI::ProcManager::MaxRequestsThruk::self_or_default error
+
+0.80    Sun Jan 30 14:07:49 CET 2011
+          - fixed backends using groups authentication
+          - fixed parsing of resource.cfg when macros are used twice
+          - fixed macro expansion when using commands like check_test!
+
+0.78.2  Tue Jan 18 10:29:08 CET 2011
+          - minor fixes for OMD integration
+          - fixed url for pager when using thruk with url prefix
+
+0.78.1  Tue Jan 18 10:29:08 CET 2011
+          - fixed macro expansion
+
+0.78    Sun Jan 16 14:44:55 CET 2011
+          - added new Theme (Wakizashi, thanks Jean)
+          - added root problems plugin (thanks Jean) *shinken backend only
+          - added new config option for default statusmap settings
+          - added new config option title_prefix
+          - fixed problem with custom timerange for availability reports
+          - fixed minor problems when using the shinken backend
+
+0.76.1  Wed Dec 29 11:28:03 CET 2010
+          - fixed error when host/service has no command defined
+
+0.76    Sun Dec 26 21:28:35 CET 2010
+          - added full command line to host / service extinfo page (show_full_commandline option)
+          - added user_template_path config option to specify additional template paths
+          - added "link to this page" button on host/status details page
+          - made configuration page more readable
+          - added paging to config page
+
+0.74    Sat Dec 18 13:45:08 CET 2010
+          - added strict disabled mode ( make passive hosts/services more intuitive )
+          - enabled circle layout for statusmap
+          - added paging for group pages
+          - added current number of notifications to status details page
+          - added column selector for excel export
+          - fixed some issues with shinken livestatus
+          - fixed navigation when appending nav=1 to url in framed mode
+
+0.72.2  Tue Nov  2 19:15:07 CET 2010
+          - fixed livestatus stats query for shinken
+          - fixed js for IE (search suggest && host/service selection)
+
+0.72.1  Thu Oct 28 00:07:40 CEST 2010
+          - fixed Vautour theme css
+          - fixed host status totals for groups summary pages
+
+0.72    Mon Oct 25 21:35:30 CEST 2010
+          - added ssi_path config option
+          - added flexible url prefix
+          - added filter for latency and execution time
+          - added utf8 support for navigation
+          - added prefixes for search terms ho: hg: se: and sg:
+          - added link to childs on host details page
+          - added warning when trying to start a precompiled version on wrong arch
+          - added commit page when deleting all downtimes
+          - added select all hosts link to service details
+          - added use_timezone configuration option
+          - fixed removing comments with unprivileged user
+          - fixed sending multiple persistent acknowledgements
+          - fixed action urls in host details
+          - fixed stats querys
+          - fixed statusmap for hosts with nasty chars
+          - fixed date_format when using timezones
+          - fixed ordering logfiles
+          - fixed "livestatus: Sorry, Operator 4 for lists not implemented" error with blank searches
+
+0.70.1  Wed Sep  8 14:07:18 CEST 2010
+          - fixed problem when deselected all backends
+          - fixed problem with filter on Trends page
+
+0.70    Wed Aug 25 08:49:45 CEST 2010
+          - search does include comments and downtimes now
+          - added new backend abstraction layer to support new backends
+          - added noheader parameter for status pages
+
+0.68    Fri Jul 23 21:29:02 CEST 2010
+          - added mobile version for iPhones, iPad and Android mobile phones
+          - side menu is completly adjustable by config file
+          - used date_format_today more often
+          - added more columns to excel export
+          - added backend param to all pages
+          - added check for livestatus minimum version
+          - fixed problem with quotes in host definitions on statusmap
+          - fixed problem with plugin symlinks
+          - fixed problem with ssi path
+          - fixed utf8 support
+          - fixed memory leak
+
+0.66    Mon Jun 21 08:45:39 CEST 2010
+          - added Excel export to status/host details page
+          - added contactgroups config page
+          - added config option groups for backends (view permissions for peers based on contactgroups)
+          - navigation frame will be reloaded when changing themes
+          - fixed problem with special chars in links
+          - fixed problem with command authorization
+          - fixed problem with logfile access authorization
+          - fixed problem with template compile directory and different users on one host
+          - fixed all commands which send more than one external command
+          - fixed problem with "Schedule Downtime For Hosts Too"
+
+0.64    Sun May 30 10:17:24 CEST 2010
+          - fixed problem with removing downtimes
+
+0.62    Sat May 29 17:03:41 CEST 2010
+          - added status map
+          - fixed problem with selecting themes
+          - fixed command default checkbox settings
+
+0.60    Sun May 23 13:12:00 CEST 2010
+          - added parent search filter
+          - added config options for downtime,comment,longplugin output popups
+          - display more useful error message when accessing nonexistand hosts/services as admin
+          - page delivery is delayed for a few seconds after backend restarts (services would be displayed pending otherwise)
+          - added more quick commands (enable/disable notifications/active checks, sub. passive result)
+          - quick commands can be disabled separately
+          - moved logging configuration into separate file
+          - added spread checks option when rescheduling many services/hosts
+          - keep filled in start/end time when submitting commands, even after missing values verfication
+          - patched Makefile to disable make install
+          - fixed problem with display of quotes in popups when escape_html_tags disabled
+          - fixed problem with display of very long performance data
+          - fixed problem with start_page and absolute uris
+          - fixed problem with sending command in IE
+          - fixed problem with reseting pager on filter change
+          - fixed problem with multiple filters and paging
+          - fixed problem with paging nothing but selected all
+
+0.58    Mon Apr 12 16:30:40 CEST 2010
+          - changed to FCGI::ProcManager::MaxRequests
+            as temporary workaround for memory leaking problems
+          - fixed javascript issues with safari and opera
+          - fixed adding persistent comments from status.cgi
+
+0.56    Fri Apr  9 08:58:43 CEST 2010
+          - fixed host acknowledgements
+          - fixed problem with date filter in status.cgi
+          - fixed host soft/hard state display
+          - fixed problem with onmouseover for long plugin output
+          - fixed problem with pnp4nagios ssi includes and prototype
+
+0.54    Mon Apr  5 16:37:42 CEST 2010
+          - added ajax search to side navigation and status page
+          - made eventype for status.cgi popups configurable
+          - renamed cgi_cfg option to cgi.cfg
+          - fixed removing downtimes
+          - fixed removing comments
+          - fixed parsing cgi.cfg
+
+0.52    Fri Mar 26 09:03:28 CET 2010
+          - added text dates like 'tomorrow' or '-3 weeks' for all date input fields
+          - select multiple hosts/services with shift + mouseclick
+          - changed to Unicode::Encode for UTF-8 support
+          - fixed menu scrollbar
+          - fixed nav hider on main.html
+          - fixed parsing dates
+          - fixed filter combination "livestatus: Cannot combine 2 filters with 'OR': only 0 are on stack"
+
+0.50    Fri Mar 19 20:11:48 CET 2010
+          - added next/last check filter
+          - backends can be enabled in extinfo 1/2
+          - added start_page config option
+          - reload counter resets when host/service is selected
+          - different date format for today (only HH:MM:SS for example)
+          - added sample pnp ssi
+          - fixed navbar
+
+0.48    Thu Mar 18 20:32:39 CET 2010
+          - changed navbar show/hide
+          - added !~ filter
+          - fixed themes
+
+0.46    Wed Mar 17 21:47:57 CET 2010
+          - default state of command checkboxes can be configured
+          - cgi.cfg will be reloaded if changed ( without restarting )
+          - backends can be setup with initial hidden state
+          - fixed problem with paths
+          - fixed 'check all' link for hostdetails
+          - fixed problem with umlauts in comments
+
+0.44    Fri Mar 12 17:31:10 CET 2010
+          - added server side includes
+
+0.42    Fri Mar 12 17:31:10 CET 2010
+          - changed datepicker
+          - fixed problem with sorting empty results
+          - fixed host/service totals when using complex filters
+
+0.40    Sun Mar  7 21:12:37 CET 2010
+          - change status.cgi filter inline
+          - combine several filter
+          - strict authorization option
+
+0.34    Wed Mar  3 09:40:49 CET 2010
+          - send multiple commands from status detail
+          - date picker for logfile pages (history, showlog and notifications)
+          - overlib for long plugin out in status details
+          - added new theme Nuvola
+
+0.32    Fri Feb 26 09:16:20 CET 2010
+          - added summary report
+          - bugfixes
+
+0.31    Thu Feb 25 20:24:15 CET 2010
+          - fixed zoom for trends
+          - made histogram links optional
+          - made automatic page refresh is stopable
+          - specific backends can be disabled
+
+0.30    Tue Feb 16 23:40:09 CET 2010
+          - updated meta data, documentation
+          - added binary package scripts
+
+0.27_3  Tue Feb 16 16:11:00 CET 2010
+          - fixed sorting with filters
+
+0.27_2  Sun Feb 14 19:20:58 CET 2010
+          - updated Exfoliation to 0.5
+          - added init.d script
+
+0.27_1  Fri Feb 12 03:59:09 CET 2010
+          - per user themes
+
+0.25_1  Sat Feb  6 17:29:12 CET 2010
+          - added trends
+          - implemented escape_html_tags
+          - added show_context_help
+
+0.23_3  Sat Feb  6 00:06:39 CET 2010
+          - added paging for hosts / services
+
+0.23_2  Wed Feb  3 13:31:33 CET 2010
+          - added paging to extinfo type 7
+          - added config switch to disable paging
+          - added date picker to commands
+
+0.21_2  Thu Jan 28 19:13:31 CET 2010
+          - fixed fonts in menu
+          - made date/time format configurable
+
+0.21_1  Sun Jan 24 09:18:54 CET 2010
+          - added availability page
+          - trends, statusmap, statuswrl are optional and can be hidden
+
+0.20_3  Thu Jan 14 21:29:54 CET 2010
+          - increased showlog performance
+
+0.20_3  Sun Jan 10 14:13:14 CET 2010
+          - using frames is no configurable
+          - documentation is now replaceable
+          - corrected valid html
+          - fixed order of logfiles
+
+0.20_1  Thu Jan  7 19:55:36 CET 2010
+          - changed logging to log4perl
+
+0.20_0  Tue Jan  5 01:25:14 CET 2010
+          - renamed project to Thruk
+          - added changelog to start page
+
+0.11_0  Fri Jan  1 20:01:12 CET 2010
+          - added history page
+          - commands can be disabled by configuration
+          - fixed problem with group auth
+          - fixed version in infobox
+
+0.10_6  Wed Dec 30 14:52:49 CET 2009
+          - completed showlog page
+
+0.10_5  Sun Dec 20 00:09:43 CET 2009
+          - added multi monitoring backend
+
+0.10_4  Fri Dec  4 09:50:46 CET 2009
+          - completed status overview page
+          - completed extinfo pages 5 and 8
+          - completed outages page
+          - added extinfo type 4 page
+          - completed status grid page
+          - completed search
+
+0.10_3  Sat Nov 28 12:12:11 CET 2009
+          - completed status hostdetail page
+          - completed status servicedetail page
+          - completed process info page
+
+0.10_2  Thu Nov 19 09:10:38 CET 2009
+          - completed authentication with roles from cgi.cfg
+          - completed scheduling page
+
+0.10_1  2009-11-08 16:10:34
+          - added basic functions, authentication, views and models
+
+0.01    2009-11-08 16:10:34
+          - initial revision, generated by Catalyst

@@ -1,0 +1,127 @@
+---
+title: UserAgent
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#get">get</a></li>
+		<li><a href="#post">post</a></li>
+		<li><a href="#agent">agent</a></li>
+		<li><a href="#timeout">timeout</a></li>
+		<li><a href="#ssl_opts">ssl_opts</a></li>
+		<li><a href="#credentials">credentials</a></li>
+		<li><a href="#default_header">default_header</a></li>
+		<li><a href="#max_redirect">max_redirect</a></li>
+		<li><a href="#protocols_allowed">protocols_allowed</a></li>
+		<li><a href="#requests_redirectable">requests_redirectable</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::UserAgent - LWP::UserAgent wrapper for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>LWP::UserAgent wrapper for Thruk</p>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<pre>
+  my $lwp = Thruk::UserAgent-&gt;new($config)</pre>
+<p>returns new UserAgent object</p>
+<p>
+</p>
+<h2><a name="get">get</a></h2>
+<pre>
+  get($options)</pre>
+<p>do a get request</p>
+<p>
+</p>
+<h2><a name="post">post</a></h2>
+<pre>
+  post($options)</pre>
+<p>do a post request</p>
+<p>
+</p>
+<h2><a name="agent">agent</a></h2>
+<pre>
+  agent([$agent])</pre>
+<p>get/set agent</p>
+<p>
+</p>
+<h2><a name="timeout">timeout</a></h2>
+<pre>
+  timeout([$timeout])</pre>
+<p>get/set timeout</p>
+<p>
+</p>
+<h2><a name="ssl_opts">ssl_opts</a></h2>
+<pre>
+  ssl_opts([$ssl_opts])</pre>
+<p>get/set ssl_opts</p>
+<p>
+</p>
+<h2><a name="credentials">credentials</a></h2>
+<pre>
+  credentials()</pre>
+<p>get/set basic auth credentials</p>
+<p>
+</p>
+<h2><a name="default_header">default_header</a></h2>
+<pre>
+  default_header()</pre>
+<p>get/set default_header</p>
+<p>
+</p>
+<h2><a name="max_redirect">max_redirect</a></h2>
+<pre>
+  max_redirect()</pre>
+<p>get/set max_redirect</p>
+<p>
+</p>
+<h2><a name="protocols_allowed">protocols_allowed</a></h2>
+<pre>
+  protocols_allowed()</pre>
+<p>get/set protocols_allowed</p>
+<p>
+</p>
+<h2><a name="requests_redirectable">requests_redirectable</a></h2>
+<pre>
+  requests_redirectable()</pre>
+<p>get/set requests_redirectable</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

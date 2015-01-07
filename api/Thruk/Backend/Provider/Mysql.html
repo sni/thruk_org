@@ -1,0 +1,260 @@
+---
+title: Mysql
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/Backend/Provider/', 'Provider']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#reconnect">reconnect</a></li>
+		<li><a href="#_disconnect">_disconnect</a></li>
+		<li><a href="#_dbh">_dbh</a></li>
+		<li><a href="#peer_key">peer_key</a></li>
+		<li><a href="#peer_addr">peer_addr</a></li>
+		<li><a href="#peer_name">peer_name</a></li>
+		<li><a href="#send_command">send_command</a></li>
+		<li><a href="#get_processinfo">get_processinfo</a></li>
+		<li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
+		<li><a href="#get_contactgroups_by_contact">get_contactgroups_by_contact</a></li>
+		<li><a href="#get_hosts">get_hosts</a></li>
+		<li><a href="#get_hosts_by_servicequery">get_hosts_by_servicequery</a></li>
+		<li><a href="#get_host_names">get_host_names</a></li>
+		<li><a href="#get_hostgroups">get_hostgroups</a></li>
+		<li><a href="#get_hostgroup_names">get_hostgroup_names</a></li>
+		<li><a href="#get_services">get_services</a></li>
+		<li><a href="#get_service_names">get_service_names</a></li>
+		<li><a href="#get_servicegroups">get_servicegroups</a></li>
+		<li><a href="#get_servicegroup_names">get_servicegroup_names</a></li>
+		<li><a href="#get_comments">get_comments</a></li>
+		<li><a href="#get_downtimes">get_downtimes</a></li>
+		<li><a href="#get_contactgroups">get_contactgroups</a></li>
+		<li><a href="#get_logs">get_logs</a></li>
+		<li><a href="#get_timeperiods">get_timeperiods</a></li>
+		<li><a href="#get_timeperiod_names">get_timeperiod_names</a></li>
+		<li><a href="#get_commands">get_commands</a></li>
+		<li><a href="#get_contacts">get_contacts</a></li>
+		<li><a href="#get_contact_names">get_contact_names</a></li>
+		<li><a href="#get_host_stats">get_host_stats</a></li>
+		<li><a href="#get_service_stats">get_service_stats</a></li>
+		<li><a href="#get_performance_stats">get_performance_stats</a></li>
+		<li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
+		<li><a href="#set_verbose">set_verbose</a></li>
+		<li><a href="#renew_logcache">renew_logcache</a></li>
+		<li><a href="#_add_peer_data">_add_peer_data</a></li>
+		<li><a href="#_get_filter">_get_filter</a></li>
+		<li><a href="#_get_subfilter">_get_subfilter</a></li>
+		<li><a href="#_get_logs_start_end">_get_logs_start_end</a></li>
+		<li><a href="#_log_stats">_log_stats</a></li>
+		<li><a href="#_log_removeunused">_log_removeunused</a></li>
+		<li><a href="#_import_logs">_import_logs</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Backend::Provider::Mysql - connection provider for Mysql connections</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>connection provider for Mysql connections</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<p>create new manager</p>
+<p>
+</p>
+<h2><a name="reconnect">reconnect</a></h2>
+<p>recreate database connection</p>
+<p>
+</p>
+<h2><a name="_disconnect">_disconnect</a></h2>
+<p>close database connection</p>
+<p>
+</p>
+<h2><a name="_dbh">_dbh</a></h2>
+<p>try to connect to database and return database handle</p>
+<p>
+</p>
+<h2><a name="peer_key">peer_key</a></h2>
+<p>return the peers key</p>
+<p>
+</p>
+<h2><a name="peer_addr">peer_addr</a></h2>
+<p>return the peers address</p>
+<p>
+</p>
+<h2><a name="peer_name">peer_name</a></h2>
+<p>return the peers name</p>
+<p>
+</p>
+<h2><a name="send_command">send_command</a></h2>
+<p>
+</p>
+<h2><a name="get_processinfo">get_processinfo</a></h2>
+<p>
+</p>
+<h2><a name="get_can_submit_commands">get_can_submit_commands</a></h2>
+<p>
+</p>
+<h2><a name="get_contactgroups_by_contact">get_contactgroups_by_contact</a></h2>
+<p>
+</p>
+<h2><a name="get_hosts">get_hosts</a></h2>
+<p>
+</p>
+<h2><a name="get_hosts_by_servicequery">get_hosts_by_servicequery</a></h2>
+<p>
+</p>
+<h2><a name="get_host_names">get_host_names</a></h2>
+<p>
+</p>
+<h2><a name="get_hostgroups">get_hostgroups</a></h2>
+<p>
+</p>
+<h2><a name="get_hostgroup_names">get_hostgroup_names</a></h2>
+<p>
+</p>
+<h2><a name="get_services">get_services</a></h2>
+<p>
+</p>
+<h2><a name="get_service_names">get_service_names</a></h2>
+<p>
+</p>
+<h2><a name="get_servicegroups">get_servicegroups</a></h2>
+<p>
+</p>
+<h2><a name="get_servicegroup_names">get_servicegroup_names</a></h2>
+<p>
+</p>
+<h2><a name="get_comments">get_comments</a></h2>
+<p>
+</p>
+<h2><a name="get_downtimes">get_downtimes</a></h2>
+<p>
+</p>
+<h2><a name="get_contactgroups">get_contactgroups</a></h2>
+<p>
+</p>
+<h2><a name="get_logs">get_logs</a></h2>
+<pre>
+  get_logs</pre>
+<p>returns logfile entries</p>
+<p>
+</p>
+<h2><a name="get_timeperiods">get_timeperiods</a></h2>
+<p>
+</p>
+<h2><a name="get_timeperiod_names">get_timeperiod_names</a></h2>
+<p>
+</p>
+<h2><a name="get_commands">get_commands</a></h2>
+<p>
+</p>
+<h2><a name="get_contacts">get_contacts</a></h2>
+<p>
+</p>
+<h2><a name="get_contact_names">get_contact_names</a></h2>
+<p>
+</p>
+<h2><a name="get_host_stats">get_host_stats</a></h2>
+<p>
+</p>
+<h2><a name="get_service_stats">get_service_stats</a></h2>
+<p>
+</p>
+<h2><a name="get_performance_stats">get_performance_stats</a></h2>
+<p>
+</p>
+<h2><a name="get_extra_perf_stats">get_extra_perf_stats</a></h2>
+<p>
+</p>
+<h2><a name="set_verbose">set_verbose</a></h2>
+<pre>
+  set_verbose</pre>
+<p>sets verbose mode for this backend and returns old value</p>
+<p>
+</p>
+<h2><a name="renew_logcache">renew_logcache</a></h2>
+<pre>
+  renew_logcache</pre>
+<p>renew logcache</p>
+<p>
+</p>
+<h2><a name="_add_peer_data">_add_peer_data</a></h2>
+<pre>
+  _add_peer_data</pre>
+<p>add peer name, addr and key to result array</p>
+<p>
+</p>
+<h2><a name="_get_filter">_get_filter</a></h2>
+<pre>
+  _get_filter</pre>
+<p>return Mysql filter</p>
+<p>
+</p>
+<h2><a name="_get_subfilter">_get_subfilter</a></h2>
+<pre>
+  _get_subfilter</pre>
+<p>return Mysql filter</p>
+<p>
+</p>
+<h2><a name="_get_logs_start_end">_get_logs_start_end</a></h2>
+<pre>
+  _get_logs_start_end</pre>
+<p>returns the min/max timestamp for given logs</p>
+<p>
+</p>
+<h2><a name="_log_stats">_log_stats</a></h2>
+<pre>
+  _log_stats</pre>
+<p>gather log statistics</p>
+<p>
+</p>
+<h2><a name="_log_removeunused">_log_removeunused</a></h2>
+<pre>
+  _log_removeunused</pre>
+<p>remove logcache tables from backends which do no longer exist</p>
+<p>
+</p>
+<h2><a name="_import_logs">_import_logs</a></h2>
+<pre>
+  _import_logs</pre>
+<p>imports logs into Mysql</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

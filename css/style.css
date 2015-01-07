@@ -1,0 +1,216 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+header.carousel {
+    height: 300px;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
+
+A.navbar-brand IMG {
+  position: relative;
+  top: -10px;
+}
+
+.bluenote {
+  background-color: #ecf4ff;
+  border: 1px solid #d2e0f6;
+  width: 800px;
+}
+
+
+small.gallery-caption {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: relative;
+    top: -25px;
+}
+
+
+/* Affix Navigation */
+
+/* First level of nav */
+.sidenav {
+  margin-top:       40px;
+  margin-bottom:    30px;
+  padding:          2px;
+  background-color: #f8f8f8;
+  border-radius:    5px;
+  border:           1px solid #ddd;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border-width: 0;
+}
+
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: #716b7a;
+  padding: 1px 20px;
+  line-height: 16px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #ba3925;
+  background-color: transparent;
+}
+
+/* Nav: second level */
+.sidebar .nav .nav {
+display: none;
+}
+.sidebar .nav > li.active .nav {
+display:block;
+}
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    2px;
+  padding-bottom: 0;
+  padding-left: 30px;
+  font-size: 90%;
+  line-height: 16px;
+}
+A.nav_label {
+    visibility: hidden;
+    position: absolute;
+    left: -20px;
+}
+A.nav_anchor {
+    position: absolute;
+    top: -50px;
+    display: block;
+}
+
+DIV.carousel-inner H1, DIV.carousel-inner H2 {
+  color: #FFF;
+}
+
+/* make jumbatron a bit smaller */
+.jumbotron {
+    padding: 15px 0;
+    margin-bottom: 0px;
+}
+.jumbotron H1 {
+    margin-top: 25px;
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ddd;
+  -webkit-box-shadow: 3px 3px 5px 6px #ddd;
+  box-shadow:         3px 3px 5px 6px #ddd;
+}
+
+BODY.docs-index h2 {
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+BODY.main-index P {
+    margin-bottom: 0.25rem;
+}
+
+
+DIV.panel-heading h2 {
+    margin-top: 5px;
+    margin-bottom:  5px;
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}

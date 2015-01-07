@@ -1,0 +1,163 @@
+---
+title: External
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#cmd">cmd</a></li>
+		<li><a href="#perl">perl</a></li>
+		<li><a href="#is_running">is_running</a></li>
+		<li><a href="#cancel">cancel</a></li>
+		<li><a href="#get_status">get_status</a></li>
+		<li><a href="#get_json_status">get_json_status</a></li>
+		<li><a href="#get_result">get_result</a></li>
+		<li><a href="#job_page">job_page</a></li>
+		<li><a href="#update_status">update_status</a></li>
+		<li><a href="#save_profile">save_profile</a></li>
+		<li><a href="#log_profile">log_profile</a></li>
+		<li><a href="#_is_running">_is_running</a></li>
+		<li><a href="#_finished_job_page">_finished_job_page</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::External - Utilities to run background processes</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities to run background processes</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="cmd">cmd</a></h2>
+<pre>
+  cmd($c, {
+            cmd          =&gt; &quot;command line to execute&quot;,
+            allow        =&gt; all|user,
+            wait_message =&gt; &quot;display message while running the job&quot;
+            forward      =&gt; &quot;forward on success&quot;
+            background   =&gt; &quot;return $jobid if set, or redirect otherwise&quot;
+            nofork       =&gt; &quot;don't fork&quot;
+            no_shell     =&gt; &quot;wrap command in a shell unless no_shell is set&quot;
+        }
+    );</pre>
+<p>run command in an external process</p>
+<p>
+</p>
+<h2><a name="perl">perl</a></h2>
+<pre>
+  perl($c, {
+            expr         =&gt; &quot;perl expression to execute&quot;,
+            allow        =&gt; all|user,
+            wait_message =&gt; &quot;display message while running the job&quot;
+            forward      =&gt; &quot;forward on success&quot;
+            backends     =&gt; &quot;list of selected backends (keys)&quot;
+            nofork       =&gt; &quot;don't fork&quot;
+        }
+    )</pre>
+<p>run perl expression in an external process</p>
+<p>
+</p>
+<h2><a name="is_running">is_running</a></h2>
+<pre>
+  is_running($c, $id, [$nouser])</pre>
+<p>return true if process is still running</p>
+<p>
+</p>
+<h2><a name="cancel">cancel</a></h2>
+<pre>
+  cancel($c, $id, [$nouser])</pre>
+<p>returns true if successfully canceled</p>
+<p>
+</p>
+<h2><a name="get_status">get_status</a></h2>
+<pre>
+  get_status($c, $id)</pre>
+<p>return status of a job</p>
+<p>
+</p>
+<h2><a name="get_json_status">get_json_status</a></h2>
+<pre>
+  get_json_status($c, $id)</pre>
+<p>return json status of a job</p>
+<p>
+</p>
+<h2><a name="get_result">get_result</a></h2>
+<pre>
+  get_result($c, $id, [$nouser])</pre>
+<p>return result of a job</p>
+<p>
+</p>
+<h2><a name="job_page">job_page</a></h2>
+<pre>
+  job_page($c)</pre>
+<p>process job result page</p>
+<p>
+</p>
+<h2><a name="update_status">update_status</a></h2>
+<pre>
+  update_status($dir, $percent, $status, $remaining_seconds)</pre>
+<p>update status for this job</p>
+<p>
+</p>
+<h2><a name="save_profile">save_profile</a></h2>
+<pre>
+  save_profile($c, $dir)</pre>
+<p>save profile to profile.log of this job</p>
+<p>
+</p>
+<h2><a name="log_profile">log_profile</a></h2>
+<pre>
+  log_profile($c)</pre>
+<p>log profile to info channel</p>
+<p>
+</p>
+<h2><a name="_is_running">_is_running</a></h2>
+<pre>
+  _is_running($dir)</pre>
+<p>return true if process is still running</p>
+<p>
+</p>
+<h2><a name="_finished_job_page">_finished_job_page</a></h2>
+<pre>
+  _finished_job_page($c, $stash, $forward, $out)</pre>
+<p>show page for finished jobs</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

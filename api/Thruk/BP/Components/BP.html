@@ -1,0 +1,147 @@
+---
+title: BP
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Components/', 'Components']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#load_runtime_data">load_runtime_data</a></li>
+		<li><a href="#update_status">update_status</a></li>
+		<li><a href="#set_label">set_label</a></li>
+		<li><a href="#set_status">set_status</a></li>
+		<li><a href="#set_file">set_file</a></li>
+		<li><a href="#get_node">get_node</a></li>
+		<li><a href="#add_node">add_node</a></li>
+		<li><a href="#remove_node">remove_node</a></li>
+		<li><a href="#remove">remove</a></li>
+		<li><a href="#commit">commit</a></li>
+		<li><a href="#save">save</a></li>
+		<li><a href="#get_objects_conf">get_objects_conf</a></li>
+		<li><a href="#save_runtime">save_runtime</a></li>
+		<li><a href="#make_new_node_id">make_new_node_id</a></li>
+		<li><a href="#bulk_fetch_live_data">bulk_fetch_live_data</a></li>
+		<li><a href="#to_json">TO_JSON</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::BP::Components::Node - BP Class</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Business Process</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<p>return new business process</p>
+<p>
+</p>
+<h2><a name="load_runtime_data">load_runtime_data</a></h2>
+<p>update runtime data</p>
+<p>
+</p>
+<h2><a name="update_status">update_status</a></h2>
+<pre>
+    update_status($c, [$type])</pre>
+<p>type:
+    0 / undef:      update everything
+    1:              only recalculate</p>
+<p>update status of business process</p>
+<p>
+</p>
+<h2><a name="set_label">set_label</a></h2>
+<p>set label for this business process</p>
+<p>
+</p>
+<h2><a name="set_status">set_status</a></h2>
+<p>set status for this business process</p>
+<p>
+</p>
+<h2><a name="set_file">set_file</a></h2>
+<p>set file for this business process</p>
+<p>
+</p>
+<h2><a name="get_node">get_node</a></h2>
+<p>return node by id</p>
+<p>
+</p>
+<h2><a name="add_node">add_node</a></h2>
+<p>add new node to business process</p>
+<p>
+</p>
+<h2><a name="remove_node">remove_node</a></h2>
+<p>remove node from business process</p>
+<p>
+</p>
+<h2><a name="remove">remove</a></h2>
+<p>remove business process data to file</p>
+<p>
+</p>
+<h2><a name="commit">commit</a></h2>
+<p>commit business process data to file</p>
+<p>
+</p>
+<h2><a name="save">save</a></h2>
+<p>save business process data to temporary edit file</p>
+<p>
+</p>
+<h2><a name="get_objects_conf">get_objects_conf</a></h2>
+<p>return object config</p>
+<p>
+</p>
+<h2><a name="save_runtime">save_runtime</a></h2>
+<p>save run time data</p>
+<p>
+</p>
+<h2><a name="make_new_node_id">make_new_node_id</a></h2>
+<p>generate new uniq id</p>
+<p>
+</p>
+<h2><a name="bulk_fetch_live_data">bulk_fetch_live_data</a></h2>
+<p>return all live data needed for this business process</p>
+<p>
+</p>
+<h2><a name="to_json">TO_JSON</a></h2>
+<pre>
+    TO_JSON()</pre>
+<p>returns data needed to represent this module in json</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

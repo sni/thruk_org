@@ -1,0 +1,12 @@
+---
+title: Changelog
+layout: default
+---
+
+{% capture title %}{{ page.title }}{% endcapture %}
+{% capture subtitle %}v{{ site.release_version }}{% endcapture %}
+{% include page_heading.html %}
+
+<div class="panel panel-default">
+    <pre>{% include Changes.html %}</pre>
+</div>

@@ -1,0 +1,84 @@
+---
+title: Avail
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#calculate_availability">calculate_availability</a></li>
+		<li><a href="#fix_and_sort_logs">fix_and_sort_logs</a></li>
+		<li><a href="#reset_req_parameters">reset_req_parameters</a></li>
+		<li><a href="#get_availability_percents">get_availability_percents</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Avail - Utilities Collection for Availability Calculation</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities Collection for Availability Calculation</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="calculate_availability">calculate_availability</a></h2>
+<pre>
+  calculate_availability($c)</pre>
+<p>calculates the availability</p>
+<p>
+</p>
+<h2><a name="fix_and_sort_logs">fix_and_sort_logs</a></h2>
+<pre>
+  fix_and_sort_logs($c, $logs, $file, $rpttimeperiod, $sort)</pre>
+<p>fixes livestatus timeperiod change timestamps which can differ up to a minute
+from the real date</p>
+<p>
+</p>
+<h2><a name="reset_req_parameters">reset_req_parameters</a></h2>
+<pre>
+  reset_req_parameters($c)</pre>
+<p>removes all parameters used for availability calculation from c-&gt;request-&gt;parameters</p>
+<p>
+</p>
+<h2><a name="get_availability_percents">get_availability_percents</a></h2>
+<pre>
+  get_availability_percents($avail_data, $unavailable_states, $host, $service)</pre>
+<p>return list of availability percent as json list</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

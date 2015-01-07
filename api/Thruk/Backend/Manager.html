@@ -1,0 +1,444 @@
+---
+title: Manager
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#init">init</a></li>
+		<li><a href="#disable_hidden_backends">disable_hidden_backends</a></li>
+		<li><a href="#get_peers">get_peers</a></li>
+		<li><a href="#get_peer_by_key">get_peer_by_key</a></li>
+		<li><a href="#get_peer_by_name">get_peer_by_name</a></li>
+		<li><a href="#peer_key">peer_key</a></li>
+		<li><a href="#sections">sections</a></li>
+		<li><a href="#disable_backend">disable_backend</a></li>
+		<li><a href="#enable_backend">enable_backend</a></li>
+		<li><a href="#disable_backends">disable_backends</a></li>
+		<li><a href="#enable_backends">enable_backends</a></li>
+		<li><a href="#get_default_backends">get_default_backends</a></li>
+		<li><a href="#get_scheduling_queue">get_scheduling_queue</a></li>
+		<li><a href="#get_performance_stats">get_performance_stats</a></li>
+		<li><a href="#get_hosts">get_hosts</a></li>
+		<li><a href="#get_services">get_services</a></li>
+		<li><a href="#get_contactgroups_by_contact">get_contactgroups_by_contact</a></li>
+		<li><a href="#get_hostgroup_names_from_hosts">get_hostgroup_names_from_hosts</a></li>
+		<li><a href="#get_servicegroup_names_from_services">get_servicegroup_names_from_services</a></li>
+		<li><a href="#reconnect">reconnect</a></li>
+		<li><a href="#expand_command">expand_command</a></li>
+		<li><a href="#set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></li>
+		<li><a href="#logcache_stats">logcache_stats</a></li>
+		<li><a href="#renew_logcache">renew_logcache</a></li>
+		<li><a href="#_renew_logcache">_renew_logcache</a></li>
+		<li><a href="#close_logcache_connections">close_logcache_connections</a></li>
+		<li><a href="#_get_macros">_get_macros</a></li>
+		<li><a href="#replace_macros">replace_macros</a></li>
+		<li><a href="#get_macros">get_macros</a></li>
+		<li><a href="#_get_replaced_string">_get_replaced_string</a></li>
+		<li><a href="#_set_host_macros">_set_host_macros</a></li>
+		<li><a href="#_set_service_macros">_set_service_macros</a></li>
+		<li><a href="#_do_on_peers">_do_on_peers</a></li>
+		<li><a href="#select_backends">select_backends</a></li>
+		<li><a href="#_get_result">_get_result</a></li>
+		<li><a href="#_get_result_serial">_get_result_serial</a></li>
+		<li><a href="#_get_result_parallel">_get_result_parallel</a></li>
+		<li><a href="#_get_results_xs_pool">_get_results_xs_pool</a></li>
+		<li><a href="#_remove_duplicates">_remove_duplicates</a></li>
+		<li><a href="#_page_data">_page_data</a></li>
+		<li><a href="#reset_failed_backends">reset_failed_backends</a></li>
+		<li><a href="#autoload">AUTOLOAD</a></li>
+		<li><a href="#destroy">DESTROY</a></li>
+		<li><a href="#_sort">_sort</a></li>
+		<li><a href="#_sort_nr">_sort_nr</a></li>
+		<li><a href="#_limit">_limit</a></li>
+		<li><a href="#_set_user_macros">_set_user_macros</a></li>
+		<li><a href="#_set_result_defaults">_set_result_defaults</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Backend::Manager - Manager of backend connections</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Manager of backend connections</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<p>create new manager</p>
+<p>
+</p>
+<h2><a name="init">init</a></h2>
+<p>initialize this model</p>
+<p>
+</p>
+<h2><a name="disable_hidden_backends">disable_hidden_backends</a></h2>
+<pre>
+  disable_hidden_backends()</pre>
+<p>returns list of hidden backends</p>
+<p>
+</p>
+<h2><a name="get_peers">get_peers</a></h2>
+<pre>
+  get_peers([$all])</pre>
+<p>returns all configured peers (except config-only)</p>
+<p>
+</p>
+<h2><a name="get_peer_by_key">get_peer_by_key</a></h2>
+<pre>
+  get_peer_by_key()</pre>
+<p>returns peer by key</p>
+<p>
+</p>
+<h2><a name="get_peer_by_name">get_peer_by_name</a></h2>
+<pre>
+  get_peer_by_name()</pre>
+<p>returns peer by name</p>
+<p>
+</p>
+<h2><a name="peer_key">peer_key</a></h2>
+<pre>
+  peer_key()</pre>
+<p>returns all peer keys</p>
+<p>
+</p>
+<h2><a name="sections">sections</a></h2>
+<pre>
+  sections()</pre>
+<p>returns all sections</p>
+<p>
+</p>
+<h2><a name="disable_backend">disable_backend</a></h2>
+<pre>
+  disable_backend(&lt;key&gt;)</pre>
+<p>disable backend by key</p>
+<p>
+</p>
+<h2><a name="enable_backend">enable_backend</a></h2>
+<pre>
+  enable_backend(&lt;key&gt;)</pre>
+<p>ensable backend by key</p>
+<p>
+</p>
+<h2><a name="disable_backends">disable_backends</a></h2>
+<pre>
+  disable_backends(&lt;keys_hash&gt;)</pre>
+<p>disabled backend by key hash</p>
+<p>
+</p>
+<h2><a name="enable_backends">enable_backends</a></h2>
+<pre>
+  enable_backends(&lt;keys&gt;)</pre>
+<p>enables all backends</p>
+<p>
+</p>
+<h2><a name="get_default_backends">get_default_backends</a></h2>
+<pre>
+  get_default_backends()</pre>
+<p>returns all default backends</p>
+<p>
+</p>
+<h2><a name="get_scheduling_queue">get_scheduling_queue</a></h2>
+<pre>
+  get_scheduling_queue</pre>
+<p>returns the scheduling queue</p>
+<p>
+</p>
+<h2><a name="get_performance_stats">get_performance_stats</a></h2>
+<pre>
+  get_performance_stats</pre>
+<p>wrapper around get_performance_stats</p>
+<p>
+</p>
+<h2><a name="get_hosts">get_hosts</a></h2>
+<pre>
+  get_hosts</pre>
+<p>wrapper around get_hosts</p>
+<p>
+</p>
+<h2><a name="get_services">get_services</a></h2>
+<pre>
+  get_services</pre>
+<p>wrapper around get_services</p>
+<p>
+</p>
+<h2><a name="get_contactgroups_by_contact">get_contactgroups_by_contact</a></h2>
+<pre>
+  get_contactgroups_by_contact</pre>
+<p>returns a list of contactgroups by contact</p>
+<p>
+</p>
+<h2><a name="get_hostgroup_names_from_hosts">get_hostgroup_names_from_hosts</a></h2>
+<pre>
+  get_hostgroup_names_from_hosts</pre>
+<p>returns a list of hostgroups but get list from hosts in order to
+respect permissions</p>
+<p>
+</p>
+<h2><a name="get_servicegroup_names_from_services">get_servicegroup_names_from_services</a></h2>
+<pre>
+  get_servicegroup_names_from_services</pre>
+<p>returns a list of servicegroups but get list from services in order to
+respect permissions</p>
+<p>
+</p>
+<h2><a name="reconnect">reconnect</a></h2>
+<pre>
+  reconnect</pre>
+<p>runs reconnect on all peers</p>
+<p>
+</p>
+<h2><a name="expand_command">expand_command</a></h2>
+<pre>
+  expand_command</pre>
+<p>expand a command line with host/service data</p>
+<p>
+</p>
+<h2><a name="set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></h2>
+<pre>
+  set_backend_state_from_local_connections</pre>
+<p>enables/disables remote backends based on a state from local instances</p>
+<p>
+</p>
+<h2><a name="logcache_stats">logcache_stats</a></h2>
+<pre>
+  logcache_stats($c)</pre>
+<p>return logcache statistics</p>
+<p>
+</p>
+<h2><a name="renew_logcache">renew_logcache</a></h2>
+<pre>
+  renew_logcache($c, [$noforks])</pre>
+<p>update the logcache</p>
+<p>
+</p>
+<h2><a name="_renew_logcache">_renew_logcache</a></h2>
+<pre>
+  _renew_logcache($c)</pre>
+<p>update the logcache (internal sub)</p>
+<p>
+</p>
+<h2><a name="close_logcache_connections">close_logcache_connections</a></h2>
+<pre>
+  close_logcache_connections($c)</pre>
+<p>close all logcache connections</p>
+<p>
+</p>
+<h2><a name="_get_macros">_get_macros</a></h2>
+<pre>
+  _get_macros</pre>
+<p>returns a hash of macros</p>
+<p>
+</p>
+<h2><a name="replace_macros">replace_macros</a></h2>
+<pre>
+  replace_macros($string, $args, [$macros])</pre>
+<p>replace macros in given string.</p>
+<p>returns ($result, $rc)</p>
+<p>$args should be:
+{
+    host      =&gt; host object (or service object)
+    service   =&gt; service object
+    skip_user =&gt; 0/1   # skips user macros
+    args      =&gt; list of arguments
+}</p>
+<p>
+</p>
+<h2><a name="get_macros">get_macros</a></h2>
+<pre>
+  get_macros($args)</pre>
+<p>returns a hash of macros</p>
+<p>$args should be:
+{
+    host      =&gt; host object (or service object)
+    service   =&gt; service object
+    skip_user =&gt; 0/1   # skips user macros
+    args      =&gt; list of arguments
+}</p>
+<p>
+</p>
+<h2><a name="_get_replaced_string">_get_replaced_string</a></h2>
+<pre>
+  _get_replaced_string</pre>
+<p>returns replaced string</p>
+<p>
+</p>
+<h2><a name="_set_host_macros">_set_host_macros</a></h2>
+<pre>
+  _set_host_macros</pre>
+<p>set host macros</p>
+<p>
+</p>
+<h2><a name="_set_service_macros">_set_service_macros</a></h2>
+<pre>
+  _set_service_macros</pre>
+<p>sets service macros</p>
+<p>
+</p>
+<h2><a name="_do_on_peers">_do_on_peers</a></h2>
+<pre>
+  _do_on_peers($function, $options)</pre>
+<p>returns a result for a sub called for all peers</p>
+<pre>
+  $function is the name of the sub called on our peers
+  $options is a hash:
+  {
+    backend =&gt; []     # array of backends where this sub should be called
+  }</pre>
+<p>
+</p>
+<h2><a name="select_backends">select_backends</a></h2>
+<pre>
+  select_backends($function, [$args])</pre>
+<p>select backends we want to run functions on</p>
+<p>
+</p>
+<h2><a name="_get_result">_get_result</a></h2>
+<pre>
+  _get_result($peers, $function, $args)</pre>
+<p>run function on several peers and collect result.</p>
+<p>
+</p>
+<h2><a name="_get_result_serial">_get_result_serial</a></h2>
+<pre>
+  _get_result_serial($peers, $function, $arguments)</pre>
+<p>returns result for given function</p>
+<p>
+</p>
+<h2><a name="_get_result_parallel">_get_result_parallel</a></h2>
+<pre>
+  _get_result_parallel($peers, $function, $arguments)</pre>
+<p>returns result for given function and args using the worker pool</p>
+<p>
+</p>
+<h2><a name="_get_results_xs_pool">_get_results_xs_pool</a></h2>
+<pre>
+  _get_results_xs_pool($peers, $function, $arg)</pre>
+<p>get result from xs thread pool</p>
+<p>
+</p>
+<h2><a name="_remove_duplicates">_remove_duplicates</a></h2>
+<pre>
+  _remove_duplicates($data)</pre>
+<p>removes duplicate entries from a array of hashes</p>
+<p>
+</p>
+<h2><a name="_page_data">_page_data</a></h2>
+<pre>
+  _page_data($c, $data, [$result_size], [$total_size])</pre>
+<p>adds paged data set to the template stash.
+Data will be available as 'data'
+The pager itself as 'pager'</p>
+<p>
+</p>
+<h2><a name="reset_failed_backends">reset_failed_backends</a></h2>
+<pre>
+  reset_failed_backends([ $c ])</pre>
+<p>Reset failed backends cache. Retries
+are useless unless reseting this cache
+because failed backends won't be asked
+twice per request.</p>
+<p>
+</p>
+<h2><a name="autoload">AUTOLOAD</a></h2>
+<pre>
+  AUTOLOAD()</pre>
+<p>redirects sub calls to out backends</p>
+<p>
+</p>
+<h2><a name="destroy">DESTROY</a></h2>
+<pre>
+  DESTROY()</pre>
+<p>destroy this</p>
+<p>
+</p>
+<h2><a name="_sort">_sort</a></h2>
+<pre>
+  _sort($data, $sortby)</pre>
+<p>sort a array of hashes by hash keys</p>
+<pre>
+  sortby can be a scalar</pre>
+<pre>
+  $sortby = 'name'</pre>
+<pre>
+  sortby can be an array</pre>
+<pre>
+  $sortby = [ 'name', 'description' ]</pre>
+<pre>
+  sortby can be an hash</pre>
+<pre>
+  $sortby = { 'DESC' =&gt; [ 'name', 'description' ] }</pre>
+<p>
+</p>
+<h2><a name="_sort_nr">_sort_nr</a></h2>
+<pre>
+  _sort_nr($data, $sortby)</pre>
+<p>sort a array of array by array nr</p>
+<pre>
+  sortby must be an array</pre>
+<pre>
+  [&lt;nr&gt;, &lt;direction&gt;]</pre>
+<pre>
+  ex.:</pre>
+<pre>
+  [5, 'asc']
+  [5, 'asc', 13, 'desc']</pre>
+<p>
+</p>
+<h2><a name="_limit">_limit</a></h2>
+<pre>
+  _limit($data, $limit)</pre>
+<p>returns data limited by limit</p>
+<p>
+</p>
+<h2><a name="_set_user_macros">_set_user_macros</a></h2>
+<pre>
+  _set_user_macros($peer_key)</pre>
+<p>sets the USER1-256 macros from a resource file. Shinken supports all kind of
+macros in resource file, so just replace everything from the resource file.</p>
+<p>
+</p>
+<h2><a name="_set_result_defaults">_set_result_defaults</a></h2>
+<pre>
+  _set_result_defaults()</pre>
+<p>set defaults for some results</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

@@ -1,0 +1,32 @@
+name: Thruk
+baseurl: /
+markdown: redcarpet
+highlighter: pygments
+redcarpet:
+  extensions: ["tables", "no_intra_emphasis"]
+asciidoc_ext: asciidoc,adoc,ad
+asciidoctor:
+  attributes:
+    - hardbreaks!
+    - source-highlighter=pygments
+    - pygments-css=style
+    - icons=font
+
+# site specific variables
+release_version: 1.84-6
+release_version_deb: 1.84-6
+release_version_rpm: 1.84-6
+release_date: August 07, 2014
+
+mailinglist_url: https://groups.google.com/group/thruk
+forum_url: http://www.monitoring-portal.org/wbb/index.php?page=Board&amp;boardID=106
+ideas_url: http://www.google.com/moderator/#15/e=1fd8d4&amp;t=1fd8d4.40
+
+gallerytag:
+  dir: images/galleries
+  url: /images/galleries
+  thumb_width: 450
+  thumb_height: 250
+  columns: 6
+
+exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl"]

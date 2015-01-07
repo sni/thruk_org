@@ -1,0 +1,72 @@
+---
+title: INET
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Livestatus']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#constructor">CONSTRUCTOR</a></li>
+	<ul>
+
+		<li><a href="#new____args___">new ( [ARGS] )</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright_and_license">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Monitoring::Livestatus::INET - connector with tcp sockets</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+    use Monitoring::Livestatus;
+    my $nl = Monitoring::Livestatus::INET-&gt;new( 'localhost:9999' );
+    my $hosts = $nl-&gt;selectall_arrayref(&quot;GET hosts&quot;);</pre>
+<p>
+</p>
+<hr />
+<h1><a name="constructor">CONSTRUCTOR</a></h1>
+<p>
+</p>
+<h2><a name="new____args___">new ( [ARGS] )</a></h2>
+<p>Creates an <code>Monitoring::Livestatus::INET</code> object. <code>new</code> takes at least the server.
+Arguments are the same as in <code>Monitoring::Livestatus</code>.
+If the constructor is only passed a single argument, it is assumed to
+be a the <code>server</code> specification. Use either socker OR server.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
+<p>Copyright (C) 2009 by Sven Nierlein</p>
+<p>This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

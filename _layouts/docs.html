@@ -1,0 +1,18 @@
+---
+layout: affix
+---
+
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="{{ site.baseurl }}index.html">Home</a></li>
+            <li><a href="{{ site.baseurl }}documentation">Documentation</a></li>
+            {% if page.breadcrumb %}
+            <li><a href="{{ site.baseurl }}documentation/{{ page.breadcrumb[0] }}">{{ page.breadcrumb[1] }}</a></li>
+            {% endif %}
+            <li class="active">{{ page.title }}</li>
+        </ol>
+    </div>
+</div>
+
+{{ content }}

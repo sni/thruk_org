@@ -1,0 +1,135 @@
+---
+title: CLI
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#get_c">get_c</a></li>
+	</ul>
+
+	<li><a href="#backend_connection_pool">BACKEND CONNECTION POOL</a></li>
+	<ul>
+
+		<li><a href="#get_db">get_db</a></li>
+	</ul>
+
+	<li><a href="#config_tool___object_configuration">CONFIG TOOL - OBJECT CONFIGURATION</a></li>
+	<ul>
+
+		<li><a href="#get_object_db">get_object_db</a></li>
+		<li><a href="#store_objects">store_objects</a></li>
+		<li><a href="#request_url">request_url</a></li>
+	</ul>
+
+	<li><a href="#examples">EXAMPLES</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::CLI - Utilities Collection for CLI Tool</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities Collection for CLI scripting with Thruk. Allows you to access internal
+structures and change config information.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<pre>
+    new([ $options ])</pre>
+<pre>
+ $options = {
+    verbose         =&gt; 0-2,         # be more verbose
+    credential      =&gt; 'secret',    # secret key when accessing remote instances
+    remoteurl       =&gt; 'url',       # url where to access remote instances
+    local           =&gt; 0|1,         # local requests only
+ }</pre>
+<p>create CLI tool object</p>
+<p>
+</p>
+<h2><a name="get_c">get_c</a></h2>
+<pre>
+    get_c()</pre>
+<p>return <a href="http://search.cpan.org/perldoc?Catalyst">Catalyst</a> context object</p>
+<p>
+</p>
+<hr />
+<h1><a name="backend_connection_pool">BACKEND CONNECTION POOL</a></h1>
+<p>The Backend Connection Pool can be uses for own querys against
+all connected backends in Thruk.</p>
+<p>
+</p>
+<h2><a name="get_db">get_db</a></h2>
+<pre>
+    get_db()</pre>
+<p>Return connection pool as a <a href="/api/Thruk/Backend/Manager.html">Thruk::Backend::Manager</a> object.</p>
+<p>
+</p>
+<hr />
+<h1><a name="config_tool___object_configuration">CONFIG TOOL - OBJECT CONFIGURATION</a></h1>
+<p>These methods will only be available if you have the config tool plugin enabled
+and if you set core config items to access the core objects config.</p>
+<p>
+</p>
+<h2><a name="get_object_db">get_object_db</a></h2>
+<pre>
+    get_object_db()</pre>
+<p>Return config database as a <a href="/api/Monitoring/Config.html">Monitoring::Config</a> object.</p>
+<p>
+</p>
+<h2><a name="store_objects">store_objects</a></h2>
+<pre>
+    store_objects()</pre>
+<p>Store changed objects. Changes will be stashed into Thruks internal object cache
+and can then be saved, reviewed or discarded.</p>
+<p>
+</p>
+<h2><a name="request_url">request_url</a></h2>
+<pre>
+    request_url($c, $url, $cookies)</pre>
+<p>returns requested url as string. In list context returns ($code, $result)</p>
+<p>
+</p>
+<hr />
+<h1><a name="examples">EXAMPLES</a></h1>
+<p>there are some cli scripting examples in the examples subfolder of the source
+package.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

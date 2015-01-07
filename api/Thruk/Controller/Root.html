@@ -1,0 +1,194 @@
+---
+title: Root
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#begin">begin</a></li>
+		<li><a href="#default">default</a></li>
+		<li><a href="#index">index</a></li>
+		<li><a href="#index_html">index_html</a></li>
+		<li><a href="#thruk_index">thruk_index</a></li>
+		<li><a href="#thruk_index_html">thruk_index_html</a></li>
+		<li><a href="#thruk_side_html">thruk_side_html</a></li>
+		<li><a href="#thruk_frame_html">thruk_frame_html</a></li>
+		<li><a href="#thruk_main_html">thruk_main_html</a></li>
+		<li><a href="#thruk_changes_html">thruk_changes_html</a></li>
+		<li><a href="#thruk_docs">thruk_docs</a></li>
+		<li><a href="#tac_cgi">tac_cgi</a></li>
+		<li><a href="#status_cgi">status_cgi</a></li>
+		<li><a href="#cmd_cgi">cmd_cgi</a></li>
+		<li><a href="#outages_cgi">outages_cgi</a></li>
+		<li><a href="#avail_cgi">avail_cgi</a></li>
+		<li><a href="#trends_cgi">trends_cgi</a></li>
+		<li><a href="#history_cgi">history_cgi</a></li>
+		<li><a href="#summary_cgi">summary_cgi</a></li>
+		<li><a href="#histogram_cgi">histogram_cgi</a></li>
+		<li><a href="#notifications_cgi">notifications_cgi</a></li>
+		<li><a href="#showlog_cgi">showlog_cgi</a></li>
+		<li><a href="#extinfo_cgi">extinfo_cgi</a></li>
+		<li><a href="#config_cgi">config_cgi</a></li>
+		<li><a href="#job_cgi">job_cgi</a></li>
+		<li><a href="#test_cgi">test_cgi</a></li>
+		<li><a href="#end">end</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Controller::Root - Root Controller for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Root Controller of the Thruk Monitoring Webinterface</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="begin">begin</a></h2>
+<p>sets the doc link and decides if frames are used
+begin, running at the begin of every req</p>
+<p>
+</p>
+<h2><a name="default">default</a></h2>
+<p>show our 404 error page</p>
+<p>
+</p>
+<h2><a name="index">index</a></h2>
+<p>redirect from /</p>
+<p>
+</p>
+<h2><a name="index_html">index_html</a></h2>
+<p>redirect from /index.html</p>
+<p>because we dont want index.html in the url</p>
+<p>
+</p>
+<h2><a name="thruk_index">thruk_index</a></h2>
+<p>redirect from /thruk/
+but if used not via fastcgi/apache, there is no way around</p>
+<p>
+</p>
+<h2><a name="thruk_index_html">thruk_index_html</a></h2>
+<p>page: /thruk/index.html</p>
+<p>
+</p>
+<h2><a name="thruk_side_html">thruk_side_html</a></h2>
+<p>page: /thruk/side.html</p>
+<p>
+</p>
+<h2><a name="thruk_frame_html">thruk_frame_html</a></h2>
+<p>page: /thruk/frame.html
+# creates frame for external pages</p>
+<p>
+</p>
+<h2><a name="thruk_main_html">thruk_main_html</a></h2>
+<p>page: /thruk/main.html</p>
+<p>
+</p>
+<h2><a name="thruk_changes_html">thruk_changes_html</a></h2>
+<p>page: /thruk/changes.html</p>
+<p>
+</p>
+<h2><a name="thruk_docs">thruk_docs</a></h2>
+<p>page: /thruk/docs/</p>
+<p>
+</p>
+<h2><a name="tac_cgi">tac_cgi</a></h2>
+<p>page: /thruk/cgi-bin/tac.cgi</p>
+<p>
+</p>
+<h2><a name="status_cgi">status_cgi</a></h2>
+<p>page: /thruk/cgi-bin/status.cgi</p>
+<p>
+</p>
+<h2><a name="cmd_cgi">cmd_cgi</a></h2>
+<p>page: /thruk/cgi-bin/cmd.cgi</p>
+<p>
+</p>
+<h2><a name="outages_cgi">outages_cgi</a></h2>
+<p>page: /thruk/cgi-bin/outages.cgi</p>
+<p>
+</p>
+<h2><a name="avail_cgi">avail_cgi</a></h2>
+<p>page: /thruk/cgi-bin/avail.cgi</p>
+<p>
+</p>
+<h2><a name="trends_cgi">trends_cgi</a></h2>
+<p>page: /thruk/cgi-bin/trends.cgi</p>
+<p>
+</p>
+<h2><a name="history_cgi">history_cgi</a></h2>
+<p>page: /thruk/cgi-bin/history.cgi</p>
+<p>
+</p>
+<h2><a name="summary_cgi">summary_cgi</a></h2>
+<p>page: /thruk/cgi-bin/summary.cgi</p>
+<p>
+</p>
+<h2><a name="histogram_cgi">histogram_cgi</a></h2>
+<p>page: /thruk/cgi-bin/histogram.cgi</p>
+<p>
+</p>
+<h2><a name="notifications_cgi">notifications_cgi</a></h2>
+<p>page: /thruk/cgi-bin/notifications.cgi</p>
+<p>
+</p>
+<h2><a name="showlog_cgi">showlog_cgi</a></h2>
+<p>page: /thruk/cgi-bin/showlog.cgi</p>
+<p>
+</p>
+<h2><a name="extinfo_cgi">extinfo_cgi</a></h2>
+<p>page: /thruk/cgi-bin/extinfo.cgi</p>
+<p>
+</p>
+<h2><a name="config_cgi">config_cgi</a></h2>
+<p>page: /thruk/cgi-bin/config.cgi</p>
+<p>
+</p>
+<h2><a name="job_cgi">job_cgi</a></h2>
+<p>page: /thruk/cgi-bin/job.cgi</p>
+<p>
+</p>
+<h2><a name="test_cgi">test_cgi</a></h2>
+<p>page: /thruk/cgi-bin/test.cgi</p>
+<p>
+</p>
+<h2><a name="end">end</a></h2>
+<p>check and display errors (if any)</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

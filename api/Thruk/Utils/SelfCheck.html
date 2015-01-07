@@ -1,0 +1,109 @@
+---
+title: SelfCheck
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#self_check">self_check</a></li>
+		<li><a href="#_filesystem_checks">_filesystem_checks</a></li>
+		<li><a href="#_logfile_checks">_logfile_checks</a></li>
+		<li><a href="#_report_checks">_report_checks</a></li>
+		<li><a href="#_reccuring_downtime_checks">_reccuring_downtime_checks</a></li>
+		<li><a href="#_check_recurring_downtime">_check_recurring_downtime</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::SelfCheck - Utilities Collection for Checking Thruks Integrity</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities Collection for Checking Thruks Integrity</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="self_check">self_check</a></h2>
+<pre>
+    self_check($c)</pre>
+<p>perform all self checks</p>
+<p>return:</p>
+<pre>
+    (rc, msg, details)</pre>
+<pre>
+    rc:  0 - OK
+         1 - WARNING
+         2 - CRITICAL
+         3 - UNKNOWN</pre>
+<pre>
+    msg: short message with textual result</pre>
+<pre>
+    details: detailed message</pre>
+<p>
+</p>
+<h2><a name="_filesystem_checks">_filesystem_checks</a></h2>
+<pre>
+    _filesystem_checks($c)</pre>
+<p>verify basic filesystem related things</p>
+<p>
+</p>
+<h2><a name="_logfile_checks">_logfile_checks</a></h2>
+<pre>
+    _logfile_checks($c)</pre>
+<p>verify logfile errors</p>
+<p>
+</p>
+<h2><a name="_report_checks">_report_checks</a></h2>
+<pre>
+    _report_checks($c)</pre>
+<p>verify errors in reports</p>
+<p>
+</p>
+<h2><a name="_reccuring_downtime_checks">_reccuring_downtime_checks</a></h2>
+<pre>
+    _reccuring_downtime_checks($c)</pre>
+<p>verify errors in recurring downtimes</p>
+<p>
+</p>
+<h2><a name="_check_recurring_downtime">_check_recurring_downtime</a></h2>
+<pre>
+    _check_recurring_downtime($c, $d)</pre>
+<p>verify errors in specific recurring downtime</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

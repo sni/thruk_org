@@ -1,0 +1,119 @@
+---
+title: RecurringDowntimes
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#index">index</a></li>
+		<li><a href="#update_cron_file">update_cron_file</a></li>
+		<li><a href="#get_downtimes_list">get_downtimes_list</a></li>
+		<li><a href="#read_downtime">read_downtime</a></li>
+		<li><a href="#check_downtime_permissions">check_downtime_permissions</a></li>
+		<li><a href="#get_default_recurring_downtime">get_default_recurring_downtime</a></li>
+		<li><a href="#get_downtime_backends">get_downtime_backends</a></li>
+		<li><a href="#get_data_file_name">get_data_file_name</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::RecurringDowntimes - Utils for Recurring Downtimes</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utils for Recurring Downtimes</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="index">index</a></h2>
+<p>
+</p>
+<h2><a name="update_cron_file">update_cron_file</a></h2>
+<pre>
+    update_cron_file($c)</pre>
+<p>update downtimes cron</p>
+<p>
+</p>
+<h2><a name="get_downtimes_list">get_downtimes_list</a></h2>
+<pre>
+    get_downtimes_list($c, $auth, $backendfilter, $host, $service)</pre>
+<p>return list of downtimes</p>
+<pre>
+  auth)
+    0)  no authentication used, list all downtimes
+    1)  use authentication (default)
+  backendfilter)
+    0)  list downtimes for selected backends only (default)
+    1)  list downtimes for all backends</pre>
+<p>
+</p>
+<h2><a name="read_downtime">read_downtime</a></h2>
+<pre>
+    read_downtime($c, $dfile, $default_rd, $authhosts, $authservices, $authhostgroups, $authservicegroups, $host, $service, $auth, $backendfilter, $hosts, $services, $hostgroups, $servicegroups)</pre>
+<p>return single downtime</p>
+<p>
+</p>
+<h2><a name="check_downtime_permissions">check_downtime_permissions</a></h2>
+<pre>
+    check_downtime_permissions($c, $downtime)</pre>
+<pre>
+ returns:
+   0 - no permission
+   1 - read-only
+   2 - write</pre>
+<p>
+</p>
+<h2><a name="get_default_recurring_downtime">get_default_recurring_downtime</a></h2>
+<pre>
+    get_default_recurring_downtime($c, $host, $service, $hostgroup, $servicegroup)</pre>
+<p>return default recurring downtime</p>
+<p>
+</p>
+<h2><a name="get_downtime_backends">get_downtime_backends</a></h2>
+<pre>
+    get_downtime_backends($c, $downtime)</pre>
+<p>return default recurring downtime</p>
+<p>
+</p>
+<h2><a name="get_data_file_name">get_data_file_name</a></h2>
+<pre>
+    get_data_file_name($c,  [$nr])</pre>
+<p>return filename for data file</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

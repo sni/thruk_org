@@ -1,0 +1,96 @@
+---
+title: CookieAuth
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#external_authentication">external_authentication</a></li>
+		<li><a href="#verify_basic_auth">verify_basic_auth</a></li>
+		<li><a href="#get_user_agent">get_user_agent</a></li>
+		<li><a href="#clean_session_files">clean_session_files</a></li>
+		<li><a href="#get_netloc">get_netloc</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::CookieAuth - Utilities Collection for Cookie Authentication</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Cookie Authentication offers a nice login mask and makes it possible
+to logout again.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="external_authentication">external_authentication</a></h2>
+<pre>
+    external_authentication($config, $login, $pass, $address)</pre>
+<p>verify authentication by external login into external url</p>
+<p>return:</p>
+<pre>
+    sid  if login was ok
+    0    if login failed
+   -1    on technical problems</pre>
+<p>
+</p>
+<h2><a name="verify_basic_auth">verify_basic_auth</a></h2>
+<pre>
+    verify_basic_auth($config, $basic_auth)</pre>
+<p>verify authentication by sending request with basic auth header</p>
+<p>
+</p>
+<h2><a name="get_user_agent">get_user_agent</a></h2>
+<pre>
+    get_user_agent($config)</pre>
+<p>returns user agent used for external requests</p>
+<p>
+</p>
+<h2><a name="clean_session_files">clean_session_files</a></h2>
+<pre>
+    clean_session_files($url)</pre>
+<p>clean up session files</p>
+<p>
+</p>
+<h2><a name="get_netloc">get_netloc</a></h2>
+<pre>
+    get_netloc($url)</pre>
+<p>return netloc used by LWP::UserAgent credentials</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

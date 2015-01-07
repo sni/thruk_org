@@ -1,0 +1,169 @@
+---
+title: Menu
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#read_navigation">read_navigation</a></li>
+		<li><a href="#add_section">add_section</a></li>
+		<li><a href="#add_link">add_link</a></li>
+		<li><a href="#add_sub_link">add_sub_link</a></li>
+		<li><a href="#add_sub_sub_link">add_sub_sub_link</a></li>
+		<li><a href="#add_search">add_search</a></li>
+		<li><a href="#insert_item">insert_item</a></li>
+		<li><a href="#insert_sub_item">insert_sub_item</a></li>
+		<li><a href="#remove_item">remove_item</a></li>
+		<li><a href="#has_group">has_group</a></li>
+		<li><a href="#has_role">has_role</a></li>
+		<li><a href="#_renew_navigation">_renew_navigation</a></li>
+		<li><a href="#_get_menu_target">_get_menu_target</a></li>
+		<li><a href="#_get_menu_link">_get_menu_link</a></li>
+		<li><a href="#_get_section_by_name">_get_section_by_name</a></li>
+		<li><a href="#_get_sublink_by_name">_get_sublink_by_name</a></li>
+		<li><a href="#_uri_with">_uri_with</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Menu - Menu Utilities Collection for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Menu Utilities Collection for Thruk</p>
+<p>
+</p>
+<h2><a name="read_navigation">read_navigation</a></h2>
+<pre>
+  read_navigation()</pre>
+<p>reads the navigation</p>
+<p>
+</p>
+<h2><a name="add_section">add_section</a></h2>
+<pre>
+  add_section()</pre>
+<p>add a new section</p>
+<p>
+</p>
+<h2><a name="add_link">add_link</a></h2>
+<pre>
+  add_link()</pre>
+<p>add a new link to last section</p>
+<p>
+</p>
+<h2><a name="add_sub_link">add_sub_link</a></h2>
+<pre>
+  add_sub_link()</pre>
+<p>add a new sub link to last link</p>
+<p>
+</p>
+<h2><a name="add_sub_sub_link">add_sub_sub_link</a></h2>
+<pre>
+  add_sub_sub_link()</pre>
+<p>add a new additional link to last sub link</p>
+<p>
+</p>
+<h2><a name="add_search">add_search</a></h2>
+<pre>
+  add_search()</pre>
+<p>add a new search to the last section</p>
+<p>
+</p>
+<h2><a name="insert_item">insert_item</a></h2>
+<pre>
+  insert_item()</pre>
+<p>add a new item in existing category</p>
+<p>
+</p>
+<h2><a name="insert_sub_item">insert_sub_item</a></h2>
+<pre>
+  insert_sub_item()</pre>
+<p>add a new sub item in existing category</p>
+<p>
+</p>
+<h2><a name="remove_item">remove_item</a></h2>
+<pre>
+  remove_item()</pre>
+<p>removes an existing item from an existing category</p>
+<p>
+</p>
+<h2><a name="has_group">has_group</a></h2>
+<pre>
+  has_group($c, $group)</pre>
+<p>returns 1 if the current user has this group</p>
+<p>
+</p>
+<h2><a name="has_role">has_role</a></h2>
+<pre>
+  has_role($c, $role)</pre>
+<p>returns 1 if the current user has this role</p>
+<p>
+</p>
+<h2><a name="_renew_navigation">_renew_navigation</a></h2>
+<pre>
+  _renew_navigation()</pre>
+<p>returns the current prefered target</p>
+<p>
+</p>
+<h2><a name="_get_menu_target">_get_menu_target</a></h2>
+<pre>
+  _get_menu_target()</pre>
+<p>returns the current prefered target</p>
+<p>
+</p>
+<h2><a name="_get_menu_link">_get_menu_link</a></h2>
+<pre>
+  _get_menu_link()</pre>
+<p>returns the link with prefix</p>
+<p>
+</p>
+<h2><a name="_get_section_by_name">_get_section_by_name</a></h2>
+<pre>
+  _get_section_by_name()</pre>
+<p>returns a section by name</p>
+<p>
+</p>
+<h2><a name="_get_sublink_by_name">_get_sublink_by_name</a></h2>
+<pre>
+  _get_sublink_by_name()</pre>
+<p>returns a link by name</p>
+<p>
+</p>
+<h2><a name="_uri_with">_uri_with</a></h2>
+<pre>
+  _uri_with($baseurl, $additions)</pre>
+<p>returns link expanded with additional parameters</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

@@ -1,0 +1,49 @@
+---
+title: Naglint
+layout: default
+---
+
+<div class="alert alert-danger" role="alert" style="margin-top: 10px;">
+  <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Not Implemented!</strong> This page is not yet completly functional. Use the CLI naglint for so long.
+</div>
+
+{% capture title %}{{ page.title }}{% endcapture %}
+{% include page_heading.html %}
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Beautify your Nagios / Icinga / Shinken / Naemon configuration</h2></div>
+  <div class="panel-body">
+    <p>
+        Thruk includes a small nagios lint tool to beautify your Nagios / Icinga / Shinken configuration files:
+    </p>
+    <ul>
+        <li>clean whitespace</li>
+        <li>clean indention</li>
+        <li>remove deprecated attributes</li>
+        <li>validate duplicate or invalid attributes</li>
+        <li>break long command lines into shorter pieces</li>
+        <li>sort attributes naturally</li>
+    </ul>
+    <p>You can either use the script from your Thruk installation (usually in /usr/bin/naglint since version 1.56)<br>
+       or try it here. Use either the file upload or the text field. Only one file at a time. (The naglint tool<br>
+       can be used recursivly on directories from the command line)
+    </p>
+
+    <form method="POST" action="naglint.html" enctype="multipart/form-data">
+    <input name="configfile" type="file" style="width: 800px;">
+    <textarea name="config" style="width: 800px; height: 250px; overflow: scroll;" wrap="off"></textarea><br>
+    <button type="submit" class="btn btn-success">Validate</button>
+    <!--
+    <div align="left"><h3>Result:</h3></div>
+    <textarea name="result" style="width: 800px; height: 250px; overflow: scroll;" wrap="off"></textarea>
+    -->
+    <!--
+    <br><input type="submit" name="send" value="download as file">
+    -->
+    </form>
+    <p>Your config file will be saved temporarly for processing and will be <b>deleted immediately</b> after processing.<br>
+       We will <b>not store</b> or keep your configuration. You are still responsible for not sending any passwords or<br>
+       sensible information.
+    </p>
+  </div>
+</div>

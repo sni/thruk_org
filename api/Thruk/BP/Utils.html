@@ -1,0 +1,163 @@
+---
+title: Utils
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#load_bp_data">load_bp_data</a></li>
+		<li><a href="#next_free_bp_file">next_free_bp_file</a></li>
+		<li><a href="#make_uniq_label">make_uniq_label</a></li>
+		<li><a href="#update_bp_status">update_bp_status</a></li>
+		<li><a href="#save_bp_objects">save_bp_objects</a></li>
+		<li><a href="#clean_function_args">clean_function_args</a></li>
+		<li><a href="#clean_orphaned_edit_files">clean_orphaned_edit_files</a></li>
+		<li><a href="#update_cron_file">update_cron_file</a></li>
+		<li><a href="#get_custom_functions">get_custom_functions</a></li>
+		<li><a href="#join_labels">join_labels</a></li>
+		<li><a href="#join_args">join_args</a></li>
+		<li><a href="#state2text">state2text</a></li>
+		<li><a href="#merge_obj_hash">merge_obj_hash</a></li>
+		<li><a href="#clean_nasty">clean_nasty</a></li>
+		<li><a href="#base_folder">base_folder</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::BP::Utils - Helper for the business process addon</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Helper for the business process addon</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="load_bp_data">load_bp_data</a></h2>
+<pre>
+    load_bp_data($c, [$num], [$editmode])</pre>
+<p>editmode:
+    - 0/undef:    no edit mode
+    - 1:          only edit mode</p>
+<p>load all or specific business process</p>
+<p>
+</p>
+<h2><a name="next_free_bp_file">next_free_bp_file</a></h2>
+<pre>
+    next_free_bp_file($c)</pre>
+<p>return next free bp file</p>
+<p>
+</p>
+<h2><a name="make_uniq_label">make_uniq_label</a></h2>
+<pre>
+    make_uniq_label($c, $label, $bp_id)</pre>
+<p>returns new uniq label</p>
+<p>
+</p>
+<h2><a name="update_bp_status">update_bp_status</a></h2>
+<pre>
+    update_bp_status($c, $bps)</pre>
+<p>update status of all given business processes</p>
+<p>
+</p>
+<h2><a name="save_bp_objects">save_bp_objects</a></h2>
+<pre>
+    save_bp_objects($c, $bps)</pre>
+<p>save business processes objects to object file</p>
+<p>
+</p>
+<h2><a name="clean_function_args">clean_function_args</a></h2>
+<pre>
+    clean_function_args($args)</pre>
+<p>return clean args from a string</p>
+<p>
+</p>
+<h2><a name="clean_orphaned_edit_files">clean_orphaned_edit_files</a></h2>
+<pre>
+  clean_orphaned_edit_files($c, [$threshold])</pre>
+<p>remove old edit files</p>
+<p>
+</p>
+<h2><a name="update_cron_file">update_cron_file</a></h2>
+<pre>
+  update_cron_file($c)</pre>
+<p>update reporting cronjobs</p>
+<p>
+</p>
+<h2><a name="get_custom_functions">get_custom_functions</a></h2>
+<pre>
+  get_custom_functions($c)</pre>
+<p>returns list of custom functions</p>
+<p>
+</p>
+<h2><a name="join_labels">join_labels</a></h2>
+<pre>
+    join_labels($nodes)</pre>
+<p>return string with joined labels</p>
+<p>
+</p>
+<h2><a name="join_args">join_args</a></h2>
+<pre>
+    join_args($args)</pre>
+<p>return string with joined args</p>
+<p>
+</p>
+<h2><a name="state2text">state2text</a></h2>
+<pre>
+    status2text($state)</pre>
+<p>return string of given state</p>
+<p>
+</p>
+<h2><a name="merge_obj_hash">merge_obj_hash</a></h2>
+<pre>
+    merge_obj_hash($hash, $data)</pre>
+<p>merge objects hash with more objects</p>
+<p>
+</p>
+<h2><a name="clean_nasty">clean_nasty</a></h2>
+<pre>
+    clean_nasty($string)</pre>
+<p>clean nasty chars from string</p>
+<p>
+</p>
+<h2><a name="base_folder">base_folder</a></h2>
+<pre>
+    base_folder($c)</pre>
+<p>return base folder of business process files</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

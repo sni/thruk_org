@@ -1,0 +1,133 @@
+---
+title: Reports
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#get_report_list">get_report_list</a></li>
+		<li><a href="#report_show">report_show</a></li>
+		<li><a href="#report_send">report_send</a></li>
+		<li><a href="#report_save">report_save</a></li>
+		<li><a href="#report_remove">report_remove</a></li>
+		<li><a href="#generate_report">generate_report</a></li>
+		<li><a href="#get_report_data_from_param">get_report_data_from_param</a></li>
+		<li><a href="#update_cron_file">update_cron_file</a></li>
+		<li><a href="#set_running">set_running</a></li>
+		<li><a href="#clean_report_tmp_files">clean_report_tmp_files</a></li>
+		<li><a href="#get_report_templates">get_report_templates</a></li>
+		<li><a href="#get_report_languages">get_report_languages</a></li>
+		<li><a href="#add_report_defaults">add_report_defaults</a></li>
+	</ul>
+
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Reports - Utilities Collection for Reporting</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities Collection for Reporting</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="get_report_list">get_report_list</a></h2>
+<pre>
+  get_report_list($c)</pre>
+<p>return list of all reports for this user</p>
+<p>
+</p>
+<h2><a name="report_show">report_show</a></h2>
+<pre>
+  report_show($c, $nr)</pre>
+<p>generate and show the report</p>
+<p>
+</p>
+<h2><a name="report_send">report_send</a></h2>
+<pre>
+  report_send($c, $nr, [$skip_generate, $to, $cc, $subject, $desc])</pre>
+<p>generate and send the report</p>
+<p>
+</p>
+<h2><a name="report_save">report_save</a></h2>
+<pre>
+  report_save($c, $nr, $data)</pre>
+<p>save a report</p>
+<p>
+</p>
+<h2><a name="report_remove">report_remove</a></h2>
+<pre>
+  report_remove($c, $nr)</pre>
+<p>remove report</p>
+<p>
+</p>
+<h2><a name="generate_report">generate_report</a></h2>
+<pre>
+  generate_report($c, $nr, $options)</pre>
+<p>generate a new report</p>
+<p>
+</p>
+<h2><a name="get_report_data_from_param">get_report_data_from_param</a></h2>
+<pre>
+  get_report_data_from_param($params)</pre>
+<p>return report data for given params</p>
+<p>
+</p>
+<h2><a name="update_cron_file">update_cron_file</a></h2>
+<pre>
+  update_cron_file($c)</pre>
+<p>update reporting cronjobs</p>
+<p>
+</p>
+<h2><a name="set_running">set_running</a></h2>
+<pre>
+  set_running($c)</pre>
+<p>update running state of report</p>
+<p>
+</p>
+<h2><a name="clean_report_tmp_files">clean_report_tmp_files</a></h2>
+<pre>
+  clean_report_tmp_files($c, $nr)</pre>
+<p>remove any tmp files from this report</p>
+<p>
+</p>
+<h2><a name="get_report_templates">get_report_templates</a></h2>
+<pre>
+  get_report_templates($c)</pre>
+<p>return available report templates</p>
+<p>
+</p>
+<h2><a name="get_report_languages">get_report_languages</a></h2>
+<pre>
+  get_report_languages($c)</pre>
+<p>return available report languages</p>
+<p>
+</p>
+<h2><a name="add_report_defaults">add_report_defaults</a></h2>
+<pre>
+  add_report_defaults($c, [$fields], $report)</pre>
+<p>add report defaults</p>
+

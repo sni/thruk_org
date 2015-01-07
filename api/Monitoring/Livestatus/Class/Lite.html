@@ -1,0 +1,226 @@
+---
+title: Lite
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Livestatus', 'api/Monitoring/Livestatus/Class/', 'Class']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#attributes">ATTRIBUTES</a></li>
+	<ul>
+
+		<li><a href="#peer">peer</a></li>
+		<ul>
+
+			<li><a href="#socket">Socket</a></li>
+			<li><a href="#tcp_connection">TCP Connection</a></li>
+		</ul>
+
+	</ul>
+
+	<li><a href="#environment_variables">ENVIRONMENT VARIABLES</a></li>
+	<ul>
+
+		<li><a href="#monitoring_livestatus_class_trace">MONITORING_LIVESTATUS_CLASS_TRACE</a></li>
+		<li><a href="#monitoring_livestatus_class_test_peer">MONITORING_LIVESTATUS_CLASS_TEST_PEER</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#table">table</a></li>
+		<li><a href="#columns">columns</a></li>
+		<li><a href="#options">options</a></li>
+		<li><a href="#filter">filter</a></li>
+		<li><a href="#stats">stats</a></li>
+		<li><a href="#hashref_pk">hashref_pk</a></li>
+		<li><a href="#hashref_array">hashref_array</a></li>
+		<li><a href="#reset_filter">reset_filter</a></li>
+		<li><a href="#save_filter">save_filter</a></li>
+		<li><a href="#apply_filter">apply_filter</a></li>
+		<li><a href="#statement">statement</a></li>
+	</ul>
+
+	<li><a href="#repository">REPOSITORY</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright___license">COPYRIGHT &amp; LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Monitoring::Livestatus::Class::Lite - Object-Oriented interface for
+Monitoring::Livestatus</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This module is an object-oriented interface for Monitoring::Livestatus.
+Just like Monitoring::Livestatus::Class but without Moose.</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+    use Monitoring::Livestatus::Class::Lite;</pre>
+<pre>
+    my $class = Monitoring::Livestatus::Class::Lite-&gt;new({
+        peer =&gt; '/var/lib/nagios3/rw/livestatus.sock'
+    });</pre>
+<pre>
+    my $hosts = $class-&gt;table('hosts');
+    my @data = $hosts-&gt;columns('display_name')-&gt;filter(
+        { display_name =&gt; { '-or' =&gt; [qw/test_host_47 test_router_3/] } }
+    )-&gt;hashref_array();</pre>
+<pre>
+    use Data::Dumper;
+    print Dumper \@data;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="attributes">ATTRIBUTES</a></h1>
+<p>
+</p>
+<h2><a name="peer">peer</a></h2>
+<p>Connection point to the livestatus addon. This can be a unix
+domain or tcp socket.</p>
+<p>
+</p>
+<h3><a name="socket">Socket</a></h3>
+<pre>
+    my $class = Monitoring::Livestatus::Class-&gt;new(
+        peer =&gt; '/var/lib/nagios3/rw/livestatus.sock'
+    );</pre>
+<p>
+</p>
+<h3><a name="tcp_connection">TCP Connection</a></h3>
+<pre>
+    my $class = Monitoring::Livestatus::Class-&gt;new(
+        peer =&gt; '192.168.1.1:2134'
+    );</pre>
+<p>
+</p>
+<hr />
+<h1><a name="environment_variables">ENVIRONMENT VARIABLES</a></h1>
+<p>
+</p>
+<h2><a name="monitoring_livestatus_class_trace">MONITORING_LIVESTATUS_CLASS_TRACE</a></h2>
+<p>Print tracer output from this object.</p>
+<p>
+</p>
+<h2><a name="monitoring_livestatus_class_test_peer">MONITORING_LIVESTATUS_CLASS_TEST_PEER</a></h2>
+<p>Set peer for live tests.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<pre>
+    new($options)</pre>
+<p>create new Class module</p>
+<p>
+</p>
+<h2><a name="table">table</a></h2>
+<pre>
+    table($tablename)</pre>
+<p>return instance for this table</p>
+<p>
+</p>
+<h2><a name="columns">columns</a></h2>
+<pre>
+    columns($columns)</pre>
+<p>list of columns to fetch</p>
+<p>
+</p>
+<h2><a name="options">options</a></h2>
+<pre>
+    options($options)</pre>
+<p>set query options</p>
+<p>
+</p>
+<h2><a name="filter">filter</a></h2>
+<pre>
+    filter($filter)</pre>
+<p>filter result set</p>
+<p>
+</p>
+<h2><a name="stats">stats</a></h2>
+<pre>
+    stats($statsfilter)</pre>
+<p>set stats filter</p>
+<p>
+</p>
+<h2><a name="hashref_pk">hashref_pk</a></h2>
+<pre>
+    hashref_pk($key)</pre>
+<p>return result as hash ref by key</p>
+<p>
+</p>
+<h2><a name="hashref_array">hashref_array</a></h2>
+<pre>
+    hashref_array()</pre>
+<p>return result as array</p>
+<p>
+</p>
+<h2><a name="reset_filter">reset_filter</a></h2>
+<pre>
+    reset_filter()</pre>
+<p>removes all current filter</p>
+<p>
+</p>
+<h2><a name="save_filter">save_filter</a></h2>
+<pre>
+    save_filter($name)</pre>
+<p>save this filter with given name which can be reused later.</p>
+<p>
+</p>
+<h2><a name="apply_filter">apply_filter</a></h2>
+<pre>
+    apply_filter($name)</pre>
+<p>returns true if a filter with this name has been applied. returns false if filter
+does not exist.</p>
+<p>
+</p>
+<h2><a name="statement">statement</a></h2>
+<pre>
+    statement($filter_only)</pre>
+<p>return query as text.</p>
+<p>
+</p>
+<hr />
+<h1><a name="repository">REPOSITORY</a></h1>
+<pre>
+    Git: <a href="http://github.com/sni/Monitoring-Livestatus-Class-Lite">http://github.com/sni/Monitoring-Livestatus-Class-Lite</a></pre>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>Robert Bohne, <code>&lt;rbo at cpan.org&gt;</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright___license">COPYRIGHT &amp; LICENSE</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.</p>
+<p>See <a href="http://dev.perl.org/licenses/">http://dev.perl.org/licenses/</a> for more information.</p>
+

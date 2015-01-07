@@ -1,0 +1,127 @@
+---
+title: Functions
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#status">status</a></li>
+		<li><a href="#groupstatus">groupstatus</a></li>
+		<li><a href="#fixed">fixed</a></li>
+		<li><a href="#worst">worst</a></li>
+		<li><a href="#best">best</a></li>
+		<li><a href="#at_least">at_least</a></li>
+		<li><a href="#not_more">not_more</a></li>
+		<li><a href="#equals">equals</a></li>
+		<li><a href="#random">random</a></li>
+		<li><a href="#custom">custom</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::BP::Functions - functions used to calculate business processes</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>functions used to calculate business processes</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="status">status</a></h2>
+<pre>
+    status($c, $bp, $n, \@($hostname, $description), \%livedata)</pre>
+<p>returns status based on real service or host</p>
+<p>
+</p>
+<h2><a name="groupstatus">groupstatus</a></h2>
+<pre>
+    groupstatus($c, $bp, $n, [$args: $hostgroup, $servicegroup], [$hostgroupdata], [$servicegroupdata])</pre>
+<p>returns status based on real service or host</p>
+<p>
+</p>
+<h2><a name="fixed">fixed</a></h2>
+<pre>
+    fixed($c, $bp, $n, [$args: $status, [$text]])</pre>
+<p>returns fixed status based input</p>
+<p>
+</p>
+<h2><a name="worst">worst</a></h2>
+<pre>
+    worst($c, $bp, $n)</pre>
+<p>returns worst state of all dependent nodes</p>
+<p>
+</p>
+<h2><a name="best">best</a></h2>
+<pre>
+    best($c, $bp, $n)</pre>
+<p>returns best state of all dependent nodes</p>
+<p>
+</p>
+<h2><a name="at_least">at_least</a></h2>
+<pre>
+    at_least($c, $bp, $n, [$args: $critical])
+    at_least($c, $bp, $n, [$args: $warning, $critical])</pre>
+<p>returns state if thresholds are reached</p>
+<p>
+</p>
+<h2><a name="not_more">not_more</a></h2>
+<pre>
+    not_more($c, $bp, $n, [$args: $critical])
+    not_more($c, $bp, $n, [$args: $warning, $critical])</pre>
+<p>returns state if thresholds are reached</p>
+<p>
+</p>
+<h2><a name="equals">equals</a></h2>
+<pre>
+    equals($c, $bp, $n, [$args: $number])</pre>
+<p>returns number of good nodes matches the number</p>
+<p>
+</p>
+<h2><a name="random">random</a></h2>
+<pre>
+    random($c, $bp, $n)</pre>
+<p>returns random state</p>
+<p>
+</p>
+<h2><a name="custom">custom</a></h2>
+<pre>
+    custom($c, $bp, $n, $args, \%livedata)</pre>
+<p>returns data from custom functions</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

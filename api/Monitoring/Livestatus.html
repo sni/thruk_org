@@ -1,0 +1,530 @@
+---
+title: Livestatus
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#constructor">CONSTRUCTOR</a></li>
+	<ul>
+
+		<li><a href="#new____args___">new ( [ARGS] )</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#do">do</a></li>
+		<li><a href="#selectall_arrayref">selectall_arrayref</a></li>
+		<li><a href="#selectall_hashref">selectall_hashref</a></li>
+		<li><a href="#selectcol_arrayref">selectcol_arrayref</a></li>
+		<li><a href="#selectrow_array">selectrow_array</a></li>
+		<li><a href="#selectrow_arrayref">selectrow_arrayref</a></li>
+		<li><a href="#selectrow_hashref">selectrow_hashref</a></li>
+		<li><a href="#selectscalar_value">selectscalar_value</a></li>
+		<li><a href="#errors_are_fatal">errors_are_fatal</a></li>
+		<li><a href="#warnings">warnings</a></li>
+		<li><a href="#verbose">verbose</a></li>
+		<li><a href="#peer_addr">peer_addr</a></li>
+		<li><a href="#peer_name">peer_name</a></li>
+		<li><a href="#peer_key">peer_key</a></li>
+		<li><a href="#post_processing">post_processing</a></li>
+	</ul>
+
+	<li><a href="#query_options">QUERY OPTIONS</a></li>
+	<ul>
+
+		<li><a href="#addpeer">AddPeer</a></li>
+		<li><a href="#backend">Backend</a></li>
+		<li><a href="#columns">Columns</a></li>
+		<li><a href="#deepcopy">Deepcopy</a></li>
+		<li><a href="#limit">Limit</a></li>
+		<li><a href="#rename">Rename</a></li>
+		<li><a href="#slice">Slice</a></li>
+		<li><a href="#sum">Sum</a></li>
+	</ul>
+
+	<li><a href="#column_alias">COLUMN ALIAS</a></li>
+	<ul>
+
+		<li><a href="#extract_keys_from_stats_statement">extract_keys_from_stats_statement</a></li>
+	</ul>
+
+	<li><a href="#error_handling">ERROR HANDLING</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright_and_license">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Monitoring::Livestatus - Perl API for check_mk livestatus to access runtime
+data from Nagios and Icinga</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+    use Monitoring::Livestatus;
+    my $ml = Monitoring::Livestatus-&gt;new(
+      socket =&gt; '/var/lib/livestatus/livestatus.sock'
+    );
+    my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This module connects via socket/tcp to the livestatus addon for Naemon, Nagios,
+Icinga and Shinken. You first have to install and activate the livestatus addon
+in your monitoring installation.</p>
+<p>
+</p>
+<hr />
+<h1><a name="constructor">CONSTRUCTOR</a></h1>
+<p>
+</p>
+<h2><a name="new____args___">new ( [ARGS] )</a></h2>
+<p>Creates an <code>Monitoring::Livestatus</code> object. <code>new</code> takes at least the
+socketpath. Arguments are in key-value pairs.</p>
+<dl>
+<dt><strong><a name="socket" class="item">socket</a></strong></dt>
+
+<dd>
+<p>path to the UNIX socket of check_mk livestatus</p>
+</dd>
+<dt><strong><a name="server" class="item">server</a></strong></dt>
+
+<dd>
+<p>uses this server for a TCP connection</p>
+</dd>
+<dt><strong><a name="peer" class="item">peer</a></strong></dt>
+
+<dd>
+<p>alternative way to set socket or server, if value contains ':' server is used,
+else socket</p>
+</dd>
+<dt><strong><a name="name" class="item">name</a></strong></dt>
+
+<dd>
+<p>human readable name for this connection, defaults to the the socket/server
+address</p>
+</dd>
+<dt><strong><a name="verbose" class="item">verbose</a></strong></dt>
+
+<dd>
+<p>verbose mode</p>
+</dd>
+<dt><strong><a name="line_seperator" class="item">line_seperator</a></strong></dt>
+
+<dd>
+<p>ascii code of the line seperator, defaults to 10, (newline)</p>
+</dd>
+<dt><strong><a name="column_seperator" class="item">column_seperator</a></strong></dt>
+
+<dd>
+<p>ascii code of the column seperator, defaults to 0 (null byte)</p>
+</dd>
+<dt><strong><a name="list_seperator" class="item">list_seperator</a></strong></dt>
+
+<dd>
+<p>ascii code of the list seperator, defaults to 44 (comma)</p>
+</dd>
+<dt><strong><a name="host_service_seperator" class="item">host_service_seperator</a></strong></dt>
+
+<dd>
+<p>ascii code of the host/service seperator, defaults to 124 (pipe)</p>
+</dd>
+<dt><strong><a name="keepalive" class="item">keepalive</a></strong></dt>
+
+<dd>
+<p>enable keepalive. Default is off</p>
+</dd>
+<dt><strong><a name="errors_are_fatal" class="item">errors_are_fatal</a></strong></dt>
+
+<dd>
+<p>errors will die with an error message. Default: on</p>
+</dd>
+<dt><strong><a name="warnings" class="item">warnings</a></strong></dt>
+
+<dd>
+<p>show warnings
+currently only querys without Columns: Header will result in a warning</p>
+</dd>
+<dt><strong><a name="timeout" class="item">timeout</a></strong></dt>
+
+<dd>
+<p>set a general timeout. Used for connect and querys, no default</p>
+</dd>
+<dt><strong><a name="query_timeout" class="item">query_timeout</a></strong></dt>
+
+<dd>
+<p>set a query timeout. Used for retrieving querys, Default 60sec</p>
+</dd>
+<dt><strong><a name="connect_timeout" class="item">connect_timeout</a></strong></dt>
+
+<dd>
+<p>set a connect timeout. Used for initial connections, default 5sec</p>
+</dd>
+</dl>
+<p>If the constructor is only passed a single argument, it is assumed to
+be a the <a href="#peer"><code>peer</code></a> specification. Use either socker OR server.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="do">do</a></h2>
+<pre>
+ do($statement)
+ do($statement, %opts)</pre>
+<p>Send a single statement without fetching the result.
+Always returns true.</p>
+<p>
+</p>
+<h2><a name="selectall_arrayref">selectall_arrayref</a></h2>
+<pre>
+ selectall_arrayref($statement)
+ selectall_arrayref($statement, %opts)
+ selectall_arrayref($statement, %opts, $limit )</pre>
+<p>Sends a query and returns an array reference of arrays</p>
+<pre>
+    my $arr_refs = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</pre>
+<p>to get an array of hash references do something like</p>
+<pre>
+    my $hash_refs = $ml-&gt;selectall_arrayref(
+      &quot;GET hosts&quot;, { Slice =&gt; {} }
+    );</pre>
+<p>to get an array of hash references from the first 2 returned rows only</p>
+<pre>
+    my $hash_refs = $ml-&gt;selectall_arrayref(
+      &quot;GET hosts&quot;, { Slice =&gt; {} }, 2
+    );</pre>
+<p>you may use limit to limit the result to this number of rows</p>
+<p>column aliases can be defined with a rename hash</p>
+<pre>
+    my $hash_refs = $ml-&gt;selectall_arrayref(
+      &quot;GET hosts&quot;, {
+        Slice =&gt; {},
+        rename =&gt; {
+          'name' =&gt; 'host_name'
+        }
+      }
+    );</pre>
+<p>
+</p>
+<h2><a name="selectall_hashref">selectall_hashref</a></h2>
+<pre>
+ selectall_hashref($statement, $key_field)
+ selectall_hashref($statement, $key_field, %opts)</pre>
+<p>Sends a query and returns a hashref with the given key</p>
+<pre>
+    my $hashrefs = $ml-&gt;selectall_hashref(&quot;GET hosts&quot;, &quot;name&quot;);</pre>
+<p>
+</p>
+<h2><a name="selectcol_arrayref">selectcol_arrayref</a></h2>
+<pre>
+ selectcol_arrayref($statement)
+ selectcol_arrayref($statement, %opt )</pre>
+<p>Sends a query an returns an arrayref for the first columns</p>
+<pre>
+    my $array_ref = $ml-&gt;selectcol_arrayref(&quot;GET hosts\nColumns: name&quot;);</pre>
+<pre>
+    $VAR1 = [
+              'localhost',
+              'gateway',
+            ];</pre>
+<p>returns an empty array if nothing was found</p>
+<p>to get a different column use this</p>
+<pre>
+    my $array_ref = $ml-&gt;selectcol_arrayref(
+       &quot;GET hosts\nColumns: name contacts&quot;,
+       { Columns =&gt; [2] }
+    );</pre>
+<pre>
+ you can link 2 columns in a hash result set</pre>
+<pre>
+    my %hash = @{
+      $ml-&gt;selectcol_arrayref(
+        &quot;GET hosts\nColumns: name contacts&quot;,
+        { Columns =&gt; [1,2] }
+      )
+    };</pre>
+<p>produces a hash with host the contact assosiation</p>
+<pre>
+    $VAR1 = {
+              'localhost' =&gt; 'user1',
+              'gateway'   =&gt; 'user2'
+            };</pre>
+<p>
+</p>
+<h2><a name="selectrow_array">selectrow_array</a></h2>
+<pre>
+ selectrow_array($statement)
+ selectrow_array($statement, %opts)</pre>
+<p>Sends a query and returns an array for the first row</p>
+<pre>
+    my @array = $ml-&gt;selectrow_array(&quot;GET hosts&quot;);</pre>
+<p>returns undef if nothing was found</p>
+<p>
+</p>
+<h2><a name="selectrow_arrayref">selectrow_arrayref</a></h2>
+<pre>
+ selectrow_arrayref($statement)
+ selectrow_arrayref($statement, %opts)</pre>
+<p>Sends a query and returns an array reference for the first row</p>
+<pre>
+    my $arrayref = $ml-&gt;selectrow_arrayref(&quot;GET hosts&quot;);</pre>
+<p>returns undef if nothing was found</p>
+<p>
+</p>
+<h2><a name="selectrow_hashref">selectrow_hashref</a></h2>
+<pre>
+ selectrow_hashref($statement)
+ selectrow_hashref($statement, %opt)</pre>
+<p>Sends a query and returns a hash reference for the first row</p>
+<pre>
+    my $hashref = $ml-&gt;selectrow_hashref(&quot;GET hosts&quot;);</pre>
+<p>returns undef if nothing was found</p>
+<p>
+</p>
+<h2><a name="selectscalar_value">selectscalar_value</a></h2>
+<pre>
+ selectscalar_value($statement)
+ selectscalar_value($statement, %opt)</pre>
+<p>Sends a query and returns a single scalar</p>
+<pre>
+    my $count = $ml-&gt;selectscalar_value(&quot;GET hosts\nStats: state = 0&quot;);</pre>
+<p>returns undef if nothing was found</p>
+<p>
+</p>
+<h2><a name="errors_are_fatal">errors_are_fatal</a></h2>
+<pre>
+ errors_are_fatal()
+ errors_are_fatal($value)</pre>
+<p>Enable or disable fatal errors. When enabled the module will croak on any error.</p>
+<p>returns the current setting if called without new value</p>
+<p>
+</p>
+<h2><a name="warnings">warnings</a></h2>
+<pre>
+ warnings()
+ warnings($value)</pre>
+<p>Enable or disable warnings. When enabled the module will carp on warnings.</p>
+<p>returns the current setting if called without new value</p>
+<p>
+</p>
+<h2><a name="verbose">verbose</a></h2>
+<pre>
+ verbose()
+ verbose($values)</pre>
+<p>Enable or disable verbose output. When enabled the module will dump out debug output</p>
+<p>returns the current setting if called without new value</p>
+<p>
+</p>
+<h2><a name="peer_addr">peer_addr</a></h2>
+<pre>
+ $ml-&gt;peer_addr()</pre>
+<p>returns the current peer address</p>
+<p>when using multiple backends, a list of all addresses is returned in list context</p>
+<p>
+</p>
+<h2><a name="peer_name">peer_name</a></h2>
+<pre>
+ $ml-&gt;peer_name()
+ $ml-&gt;peer_name($string)</pre>
+<p>if new value is set, name is set to this value</p>
+<p>always returns the current peer name</p>
+<p>when using multiple backends, a list of all names is returned in list context</p>
+<p>
+</p>
+<h2><a name="peer_key">peer_key</a></h2>
+<pre>
+ $ml-&gt;peer_key()</pre>
+<p>returns a uniq key for this peer</p>
+<p>when using multiple backends, a list of all keys is returned in list context</p>
+<p>
+</p>
+<h2><a name="post_processing">post_processing</a></h2>
+<pre>
+ $ml-&gt;post_processing($result, $options, $keys)</pre>
+<p>returns postprocessed result.</p>
+<p>Useful when using select based io.</p>
+<p>
+</p>
+<hr />
+<h1><a name="query_options">QUERY OPTIONS</a></h1>
+<p>In addition to the normal query syntax from the livestatus addon, it is
+possible to set column aliases in various ways.</p>
+<p>
+</p>
+<h2><a name="addpeer">AddPeer</a></h2>
+<p>adds the peers name, addr and key to the result set:</p>
+<pre>
+ my $hosts = $ml-&gt;selectall_hashref(
+   &quot;GET hosts\nColumns: name alias state&quot;,
+   &quot;name&quot;,
+   { AddPeer =&gt; 1 }
+ );</pre>
+<p>
+</p>
+<h2><a name="backend">Backend</a></h2>
+<p>send the query only to some specific backends. Only
+useful when using multiple backends.</p>
+<pre>
+ my $hosts = $ml-&gt;selectall_arrayref(
+   &quot;GET hosts\nColumns: name alias state&quot;,
+   { Backends =&gt; [ 'key1', 'key4' ] }
+ );</pre>
+<p>
+</p>
+<h2><a name="columns">Columns</a></h2>
+<pre>
+    only return the given column indexes</pre>
+<pre>
+    my $array_ref = $ml-&gt;selectcol_arrayref(
+       &quot;GET hosts\nColumns: name contacts&quot;,
+       { Columns =&gt; [2] }
+    );</pre>
+<pre>
+  see L&lt;selectcol_arrayref&gt; for more examples</pre>
+<p>
+</p>
+<h2><a name="deepcopy">Deepcopy</a></h2>
+<pre>
+    deep copy/clone the result set.</pre>
+<pre>
+    Only effective when using multiple backends and threads.
+    This can be safely turned off if you dont change the
+    result set.
+    If you get an error like &quot;Invalid value for shared scalar&quot; error&quot; this
+    should be turned on.</pre>
+<pre>
+    my $array_ref = $ml-&gt;selectcol_arrayref(
+       &quot;GET hosts\nColumns: name contacts&quot;,
+       { Deepcopy =&gt; 1 }
+    );</pre>
+<p>
+</p>
+<h2><a name="limit">Limit</a></h2>
+<pre>
+    Just like the Limit: &lt;nr&gt; option from livestatus itself.
+    In addition you can add a start,length limit.</pre>
+<pre>
+    my $array_ref = $ml-&gt;selectcol_arrayref(
+       &quot;GET hosts\nColumns: name contacts&quot;,
+       { Limit =&gt; &quot;10,20&quot; }
+    );</pre>
+<pre>
+    This example will return 20 rows starting at row 10. You will
+    get row 10-30.</pre>
+<pre>
+    Cannot be combined with a Limit inside the query
+    because a Limit will be added automatically.</pre>
+<pre>
+    Adding a limit this way will greatly increase performance and
+    reduce memory usage.</pre>
+<pre>
+    This option is multibackend safe contrary to the &quot;Limit: &quot; part of a statement.
+    Sending a statement like &quot;GET...Limit: 10&quot; with 3 backends will result in 30 rows.
+    Using this options, you will receive only the first 10 rows.</pre>
+<p>
+</p>
+<h2><a name="rename">Rename</a></h2>
+<pre>
+  see L&lt;COLUMN ALIAS&gt; for detailed explainaton</pre>
+<p>
+</p>
+<h2><a name="slice">Slice</a></h2>
+<pre>
+  see L&lt;selectall_arrayref&gt; for detailed explainaton</pre>
+<p>
+</p>
+<h2><a name="sum">Sum</a></h2>
+<p>The Sum option only applies when using multiple backends.
+The values from all backends with be summed up to a total.</p>
+<pre>
+ my $stats = $ml-&gt;selectrow_hashref(
+   &quot;GET hosts\nStats: state = 0\nStats: state = 1&quot;,
+   { Sum =&gt; 1 }
+ );</pre>
+<p>
+</p>
+<hr />
+<h1><a name="column_alias">COLUMN ALIAS</a></h1>
+<p>In addition to the normal query syntax from the livestatus addon, it is
+possible to set column aliases in various ways.</p>
+<p>A valid Columns: Header could look like this:</p>
+<pre>
+ my $hosts = $ml-&gt;selectall_arrayref(
+   &quot;GET hosts\nColumns: state as status&quot;
+ );</pre>
+<p>Stats queries could be aliased too:</p>
+<pre>
+ my $stats = $ml-&gt;selectall_arrayref(
+   &quot;GET hosts\nStats: state = 0 as up&quot;
+ );</pre>
+<p>This syntax is available for: Stats, StatsAnd, StatsOr and StatsGroupBy</p>
+<p>An alternative way to set column aliases is to define rename option key/value
+pairs:</p>
+<pre>
+ my $hosts = $ml-&gt;selectall_arrayref(
+   &quot;GET hosts\nColumns: name&quot;, {
+     rename =&gt; { 'name' =&gt; 'hostname' }
+   }
+ );</pre>
+<p>
+</p>
+<h2><a name="extract_keys_from_stats_statement">extract_keys_from_stats_statement</a></h2>
+<pre>
+ extract_keys_from_stats_statement($statement)</pre>
+<p>Extract column keys from statement.</p>
+<p>
+</p>
+<hr />
+<h1><a name="error_handling">ERROR HANDLING</a></h1>
+<p>Errorhandling can be done like this:</p>
+<pre>
+    use Monitoring::Livestatus;
+    my $ml = Monitoring::Livestatus-&gt;new(
+      socket =&gt; '/var/lib/livestatus/livestatus.sock'
+    );
+    $ml-&gt;errors_are_fatal(0);
+    my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);
+    if($Monitoring::Livestatus::ErrorCode) {
+        croak($Monitoring::Livestatus::ErrorMessage);
+    }</pre>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p>For more information about the query syntax and the livestatus plugin installation
+see the Livestatus page: <a href="http://mathias-kettner.de/checkmk_livestatus.html">http://mathias-kettner.de/checkmk_livestatus.html</a></p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
+<p>This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

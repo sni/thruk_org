@@ -1,0 +1,115 @@
+---
+title: IO
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#close">close</a></li>
+		<li><a href="#mkdir">mkdir</a></li>
+		<li><a href="#mkdir_r">mkdir_r</a></li>
+		<li><a href="#write">write</a></li>
+		<li><a href="#ensure_permissions">ensure_permissions</a></li>
+		<li><a href="#json_lock_store">json_lock_store</a></li>
+		<li><a href="#json_lock_retrieve">json_lock_retrieve</a></li>
+		<li><a href="#save_logs_to_tempfile">save_logs_to_tempfile</a></li>
+		<li><a href="#cmd">cmd</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils - IO Utilities Collection for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>IO Utilities Collection for Thruk</p>
+<p>
+</p>
+<h2><a name="close">close</a></h2>
+<pre>
+  close($fh, $filename, $just_close)</pre>
+<p>close filehandle and ensure permissions and ownership</p>
+<p>
+</p>
+<h2><a name="mkdir">mkdir</a></h2>
+<pre>
+  mkdir($dirname)</pre>
+<p>create folder and ensure permissions and ownership</p>
+<p>
+</p>
+<h2><a name="mkdir_r">mkdir_r</a></h2>
+<pre>
+  mkdir_r($dirname)</pre>
+<p>create folder recursive</p>
+<p>
+</p>
+<h2><a name="write">write</a></h2>
+<pre>
+  write($path, $content, [ $mtime ])</pre>
+<p>creates file and ensure permissions</p>
+<p>
+</p>
+<h2><a name="ensure_permissions">ensure_permissions</a></h2>
+<pre>
+  ensure_permissions($mode, $path)</pre>
+<p>ensure permissions and ownership</p>
+<p>
+</p>
+<h2><a name="json_lock_store">json_lock_store</a></h2>
+<pre>
+  json_lock_store($file, $data, [$pretty])</pre>
+<p>stores data json encoded</p>
+<p>
+</p>
+<h2><a name="json_lock_retrieve">json_lock_retrieve</a></h2>
+<pre>
+  json_lock_retrieve($file)</pre>
+<p>retrieve json data</p>
+<p>
+</p>
+<h2><a name="save_logs_to_tempfile">save_logs_to_tempfile</a></h2>
+<pre>
+  save_logs_to_tempfile($logs)</pre>
+<p>save logfiles to tempfile</p>
+<p>
+</p>
+<h2><a name="cmd">cmd</a></h2>
+<pre>
+  cmd($command)</pre>
+<p>run command and return exit code and output</p>
+<p>$command can be either a string like '/bin/prog arg1 arg2' or an
+array like ['/bin/prog', 'arg1', 'arg2']</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

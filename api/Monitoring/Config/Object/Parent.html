@@ -1,0 +1,181 @@
+---
+title: Parent
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Config/', 'Config', 'api/Monitoring/Config/Object/', 'Object']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#parse">parse</a></li>
+		<li><a href="#disable">disable</a></li>
+		<li><a href="#as_text">as_text</a></li>
+		<li><a href="#is_template">is_template</a></li>
+		<li><a href="#get_template_name">get_template_name</a></li>
+		<li><a href="#get_name">get_name</a></li>
+		<li><a href="#get_id">get_id</a></li>
+		<li><a href="#get_type">get_type</a></li>
+		<li><a href="#must_have_name">must_have_name</a></li>
+		<li><a href="#get_primary_name">get_primary_name</a></li>
+		<li><a href="#get_primary_name_as_text">get_primary_name_as_text</a></li>
+		<li><a href="#get_long_name">get_long_name</a></li>
+		<li><a href="#get_sorted_keys">get_sorted_keys</a></li>
+		<li><a href="#get_computed_config">get_computed_config</a></li>
+		<li><a href="#get_default_keys">get_default_keys</a></li>
+		<li><a href="#get_help">get_help</a></li>
+		<li><a href="#get_data_from_param">get_data_from_param</a></li>
+		<li><a href="#has_object_changed">has_object_changed</a></li>
+		<li><a href="#get_used_templates">get_used_templates</a></li>
+		<li><a href="#get_resolved_config">get_resolved_config</a></li>
+		<li><a href="#set_uniq_id">set_uniq_id</a></li>
+		<li><a href="#set_name">set_name</a></li>
+		<li><a href="#set_file">set_file</a></li>
+		<li><a href="#_sort_by_category_keys">_sort_by_category_keys</a></li>
+		<li><a href="#_make_id">_make_id</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Monitoring::Config::Object::Parent - Object Configuration Template</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Object Configuration Template</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="parse">parse</a></h2>
+<p>parse the object config</p>
+<p>
+</p>
+<h2><a name="disable">disable</a></h2>
+<p>disable this object</p>
+<p>
+</p>
+<h2><a name="as_text">as_text</a></h2>
+<p>in scalar context returns this object as text.</p>
+<p>in list context, returns [$text, $nr_comment_lines, $nr_object_lines]</p>
+<p>
+</p>
+<h2><a name="is_template">is_template</a></h2>
+<p>returns 1 if this is a template</p>
+<p>
+</p>
+<h2><a name="get_template_name">get_template_name</a></h2>
+<p>return the objects template name or undef</p>
+<p>
+</p>
+<h2><a name="get_name">get_name</a></h2>
+<p>return the objects name</p>
+<p>
+</p>
+<h2><a name="get_id">get_id</a></h2>
+<p>return the objects id</p>
+<p>
+</p>
+<h2><a name="get_type">get_type</a></h2>
+<p>return the objects type</p>
+<p>
+</p>
+<h2><a name="must_have_name">must_have_name</a></h2>
+<p>returns true if object must have a name</p>
+<p>
+</p>
+<h2><a name="get_primary_name">get_primary_name</a></h2>
+<p>return the primary objects name</p>
+<p>
+</p>
+<h2><a name="get_primary_name_as_text">get_primary_name_as_text</a></h2>
+<p>return the primary name as text</p>
+<p>
+</p>
+<h2><a name="get_long_name">get_long_name</a></h2>
+<p>return the objects name plus alias</p>
+<p>
+</p>
+<h2><a name="get_sorted_keys">get_sorted_keys</a></h2>
+<p>return the sorted config keys for this object</p>
+<p>
+</p>
+<h2><a name="get_computed_config">get_computed_config</a></h2>
+<p>return computed config for this object</p>
+<p>
+</p>
+<h2><a name="get_default_keys">get_default_keys</a></h2>
+<p>return the sorted default keys for this object</p>
+<p>
+</p>
+<h2><a name="get_help">get_help</a></h2>
+<p>return the help for given attribute</p>
+<p>
+</p>
+<h2><a name="get_data_from_param">get_data_from_param</a></h2>
+<p>get data hash from post parameter</p>
+<p>
+</p>
+<h2><a name="has_object_changed">has_object_changed</a></h2>
+<p>check if there are any differences between this object and a reference object</p>
+<p>
+</p>
+<h2><a name="get_used_templates">get_used_templates</a></h2>
+<p>return all recursive used templates</p>
+<p>
+</p>
+<h2><a name="get_resolved_config">get_resolved_config</a></h2>
+<p>returns config hash with templates resolved</p>
+<p>
+</p>
+<h2><a name="set_uniq_id">set_uniq_id</a></h2>
+<p>sets a uniq id</p>
+<p>
+</p>
+<h2><a name="set_name">set_name</a></h2>
+<p>sets new name for this object</p>
+<p>
+</p>
+<h2><a name="set_file">set_file</a></h2>
+<p>sets a new file</p>
+<p>
+</p>
+<h2><a name="_sort_by_category_keys">_sort_by_category_keys</a></h2>
+<p>sort function for category keys</p>
+<p>
+</p>
+<h2><a name="_make_id">_make_id</a></h2>
+<p>return a uniq id for this object</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

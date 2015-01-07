@@ -1,0 +1,113 @@
+---
+title: AddDefaults
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#add_defaults">add_defaults</a></li>
+		<li><a href="#after_execute">after_execute</a></li>
+		<li><a href="#set_configs_stash">set_configs_stash</a></li>
+		<li><a href="#_set_possible_backends">_set_possible_backends</a></li>
+		<li><a href="#set_processinfo">set_processinfo</a></li>
+		<li><a href="#die_when_no_backends">die_when_no_backends</a></li>
+		<li><a href="#delayed_proc_info_update">delayed_proc_info_update</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Action::AddDefaults - Add Defaults to the context</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>loads cgi.cfg</p>
+<p>creates backend manager</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="add_defaults">add_defaults</a></h2>
+<pre>
+    add default values and create backend connections</pre>
+<p>
+</p>
+<h2><a name="after_execute">after_execute</a></h2>
+<pre>
+    last chance to change stash</pre>
+<p>
+</p>
+<h2><a name="set_configs_stash">set_configs_stash</a></h2>
+<pre>
+  set_configs_stash($c)</pre>
+<pre>
+  set some config variables directly into the stash for faster access</pre>
+<p>
+</p>
+<h2><a name="_set_possible_backends">_set_possible_backends</a></h2>
+<pre>
+  _set_possible_backends($c, $disabled_backends)</pre>
+<pre>
+  possible values are:
+    0 = reachable
+    1 = unreachable
+    2 = hidden by user
+    3 = hidden by backend param
+    4 = disabled by missing group auth</pre>
+<pre>
+   override by the config tool
+    5 = disabled (overide by config tool)
+    6 = hidden   (overide by config tool)
+    7 = up       (overide by config tool)</pre>
+<p>
+</p>
+<h2><a name="set_processinfo">set_processinfo</a></h2>
+<pre>
+  set_processinfo($c, [$cached_user_data, $safe, $cached_data])</pre>
+<p>set process info into stash</p>
+<p>
+</p>
+<h2><a name="die_when_no_backends">die_when_no_backends</a></h2>
+<pre>
+    die unless there are any backeds defined and enabled</pre>
+<p>
+</p>
+<h2><a name="delayed_proc_info_update">delayed_proc_info_update</a></h2>
+<pre>
+    run process info update after the main page has been served</pre>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

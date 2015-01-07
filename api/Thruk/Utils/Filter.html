@@ -1,0 +1,325 @@
+---
+title: Filter
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#throw">throw</a></li>
+		<li><a href="#duration">duration</a></li>
+		<li><a href="#nl2br">nl2br</a></li>
+		<li><a href="#sprintf">sprintf</a></li>
+		<li><a href="#date_format">date_format</a></li>
+		<li><a href="#uri">uri</a></li>
+		<li><a href="#full_uri">full_uri</a></li>
+		<li><a href="#as_url_arg">as_url_arg</a></li>
+		<li><a href="#short_uri">short_uri</a></li>
+		<li><a href="#clean_referer">clean_referer</a></li>
+		<li><a href="#uri_with">uri_with</a></li>
+		<li><a href="#html_escape">html_escape</a></li>
+		<li><a href="#escape_html">escape_html</a></li>
+		<li><a href="#escape_quotes">escape_quotes</a></li>
+		<li><a href="#escape_ampersand">escape_ampersand</a></li>
+		<li><a href="#remove_html_comments">remove_html_comments</a></li>
+		<li><a href="#validate_json">validate_json</a></li>
+		<li><a href="#get_action_menu">get_action_menu</a></li>
+		<li><a href="#json_encode">json_encode</a></li>
+		<li><a href="#encode_json_obj">encode_json_obj</a></li>
+		<li><a href="#escape_js">escape_js</a></li>
+		<li><a href="#escape_bslash">escape_bslash</a></li>
+		<li><a href="#escape_xml">escape_xml</a></li>
+		<li><a href="#escape_regex">escape_regex</a></li>
+		<li><a href="#name2id">name2id</a></li>
+		<li><a href="#uniqnumber">uniqnumber</a></li>
+		<li><a href="#get_message">get_message</a></li>
+		<li><a href="#strip_command_args">strip_command_args</a></li>
+		<li><a href="#calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</a></li>
+		<li><a href="#action_icon">action_icon</a></li>
+		<li><a href="#logline_icon">logline_icon</a></li>
+		<li><a href="#has_business_process">has_business_process</a></li>
+		<li><a href="#button">button</a></li>
+		<li><a href="#fullversion">fullversion</a></li>
+		<li><a href="#split_perfdata">split_perfdata</a></li>
+		<li><a href="#get_cookie_remove_paths">get_cookie_remove_paths</a></li>
+		<li><a href="#get_user_token">get_user_token</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils::Filter - Filter Utilities Collection for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Filter Utilities Collection for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="throw">throw</a></h2>
+<pre>
+  throw($string)</pre>
+<p>can be used to die in templates</p>
+<p>
+</p>
+<h2><a name="duration">duration</a></h2>
+<pre>
+  my $string = duration($seconds, [$options]);</pre>
+<p>formats a duration into the
+format: 0d 0h 29m 43s</p>
+<pre>
+  $options:
+        0    =&gt;    0h 0m 15s
+        1    =&gt; 0d 0h 0m 15s  (default)
+        2    =&gt;   0min 14sec
+        3    =&gt;       0m 04s</pre>
+<p>
+</p>
+<h2><a name="nl2br">nl2br</a></h2>
+<pre>
+  my $string = nl2br($string);</pre>
+<p>replace newlines with linebreaks</p>
+<p>
+</p>
+<h2><a name="sprintf">sprintf</a></h2>
+<pre>
+  my $string = sprintf($format, $list)</pre>
+<p>wrapper around the internal sprintf</p>
+<p>
+</p>
+<h2><a name="date_format">date_format</a></h2>
+<pre>
+  my $string = date_format($c, $seconds);</pre>
+<p>formats a time definition into date format</p>
+<p>
+</p>
+<h2><a name="uri">uri</a></h2>
+<pre>
+  uri($c)</pre>
+<p>returns a correct uri</p>
+<p>
+</p>
+<h2><a name="full_uri">full_uri</a></h2>
+<pre>
+  full_uri($c)</pre>
+<p>returns a correct uri</p>
+<p>
+</p>
+<h2><a name="as_url_arg">as_url_arg</a></h2>
+<pre>
+  as_url_arg($str)</pre>
+<p>returns encoded string for use in url args</p>
+<p>
+</p>
+<h2><a name="short_uri">short_uri</a></h2>
+<pre>
+  short_uri($c, $filter)</pre>
+<p>returns a correct uri but only the url part</p>
+<p>
+</p>
+<h2><a name="clean_referer">clean_referer</a></h2>
+<pre>
+  clean_referer($url)</pre>
+<p>returns a url with referer removed</p>
+<p>
+</p>
+<h2><a name="uri_with">uri_with</a></h2>
+<pre>
+  uri_with($c, $data)</pre>
+<p>returns a correct uri</p>
+<p>
+</p>
+<h2><a name="html_escape">html_escape</a></h2>
+<pre>
+  html_escape($text)</pre>
+<p>wrapper for escape_html for compatibility reasons</p>
+<p>
+</p>
+<h2><a name="escape_html">escape_html</a></h2>
+<pre>
+  escape_html($text)</pre>
+<p>returns an escaped string</p>
+<p>
+</p>
+<h2><a name="escape_quotes">escape_quotes</a></h2>
+<pre>
+  escape_quotes($text)</pre>
+<p>returns a string with only the single- or double-quotes escaped</p>
+<p>
+</p>
+<h2><a name="escape_ampersand">escape_ampersand</a></h2>
+<pre>
+  escape_ampersand($text)</pre>
+<p>returns a string with &amp; escaped to &amp;amp;</p>
+<p>
+</p>
+<h2><a name="remove_html_comments">remove_html_comments</a></h2>
+<pre>
+  remove_html_comments($text)</pre>
+<p>returns string with html comments removed</p>
+<p>
+</p>
+<h2><a name="validate_json">validate_json</a></h2>
+<pre>
+  validate_json(...)</pre>
+<p>returns error if json is invalid</p>
+<p>
+</p>
+<h2><a name="get_action_menu">get_action_menu</a></h2>
+<pre>
+  get_action_menu(c, [name|menu])</pre>
+<p>returns menu and error</p>
+<p>
+</p>
+<h2><a name="json_encode">json_encode</a></h2>
+<pre>
+  json_encode(...)</pre>
+<p>returns json encoded string</p>
+<p>
+</p>
+<h2><a name="encode_json_obj">encode_json_obj</a></h2>
+<pre>
+  encode_json_obj(array, [decode])</pre>
+<p>returns json encoded object</p>
+<p>
+</p>
+<h2><a name="escape_js">escape_js</a></h2>
+<pre>
+  escape_js($text)</pre>
+<p>used to escape html tags so it can be used as javascript string</p>
+<p>
+</p>
+<h2><a name="escape_bslash">escape_bslash</a></h2>
+<pre>
+  escape_bslash($text)</pre>
+<p>used to escape backslashes</p>
+<p>
+</p>
+<h2><a name="escape_xml">escape_xml</a></h2>
+<pre>
+  escape_xml($text)</pre>
+<p>returns an escaped string for xml output</p>
+<p>
+</p>
+<h2><a name="escape_regex">escape_regex</a></h2>
+<pre>
+  escape_regex($text)</pre>
+<p>returns an escaped string for regular expression</p>
+<p>
+</p>
+<h2><a name="name2id">name2id</a></h2>
+<pre>
+  my $striped_string = name2id($name)</pre>
+<p>returns a string which can be used as id in html elements</p>
+<p>An id must begin with a letter ([A-Za-z]) and may be followed
+by any number of letters, digits ([0-9]), hyphens (&quot;-&quot;),
+underscores (&quot;_&quot;), colons (&quot;:&quot;), and periods (&quot;.&quot;).</p>
+<p>
+</p>
+<h2><a name="uniqnumber">uniqnumber</a></h2>
+<pre>
+  uniqnumber()</pre>
+<p>return uniq number which can be used in html ids</p>
+<p>
+</p>
+<h2><a name="get_message">get_message</a></h2>
+<pre>
+  get_message($c)</pre>
+<p>get a message from an cookie, display and delete it</p>
+<p>
+</p>
+<h2><a name="strip_command_args">strip_command_args</a></h2>
+<pre>
+  my $striped_string = strip_command_args($command_name)</pre>
+<p>returns a string without the arguments for a command</p>
+<p>check_nrpe!$HOSTNAME$!check_disk -&gt; check_nrpe</p>
+<p>
+</p>
+<h2><a name="calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</a></h2>
+<pre>
+  my $remaining = calculate_first_notification_delay_remaining($obj)</pre>
+<p>returns remaining minutes for first_notification_delay</p>
+<p>
+</p>
+<h2><a name="action_icon">action_icon</a></h2>
+<pre>
+  my $icon = action_icon($obj, $fallback)</pre>
+<p>returns action icon path</p>
+<p>
+</p>
+<h2><a name="logline_icon">logline_icon</a></h2>
+<pre>
+  my $icon = logline_icon($logentry)</pre>
+<p>returns icon path</p>
+<p>
+</p>
+<h2><a name="has_business_process">has_business_process</a></h2>
+<pre>
+  has_business_process($host)</pre>
+<p>returns true if host is part of an business process</p>
+<p>
+</p>
+<h2><a name="button">button</a></h2>
+<pre>
+  my $html = button($link, $value, $class, [$onclick])</pre>
+<p>returns button html source</p>
+<p>
+</p>
+<h2><a name="fullversion">fullversion</a></h2>
+<pre>
+  my $str = fullversion($c)</pre>
+<p>returns full version string</p>
+<p>
+</p>
+<h2><a name="split_perfdata">split_perfdata</a></h2>
+<pre>
+  split_perfdata($string)</pre>
+<p>return splitted performance data which can be used for tabular display</p>
+<p>
+</p>
+<h2><a name="get_cookie_remove_paths">get_cookie_remove_paths</a></h2>
+<pre>
+  get_cookie_remove_paths($c)</pre>
+<p>return paths used to remove old/abandoned cookie paths</p>
+<p>
+</p>
+<h2><a name="get_user_token">get_user_token</a></h2>
+<pre>
+  get_user_token($c)</pre>
+<p>returns user token which can be used to validate requests</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

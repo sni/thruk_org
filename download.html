@@ -1,0 +1,223 @@
+---
+title: Download
+layout: affix
+---
+
+<div id="update_available" class="alert alert-danger alert-dismissible" role="alert" style="margin-top: 10px; display: none;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Update Available!</strong> You are using version ###version### but v{{ site.release_version }} has been released meanwhile.
+</div>
+
+<div id="update_ok" class="alert alert-success alert-dismissible" role="alert" style="margin-top: 10px; display: none;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> No Update Available.</strong> You are using the latest release: v{{ site.release_version }}.
+</div>
+
+<div id="update_unknown" class="alert alert-warning alert-dismissible" role="alert" style="margin-top: 10px; display: none;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> No Idea.</strong> You are using an unknown or development version.
+</div>
+
+<script type="text/javascript">
+<!--
+jQuery(document).ready(function() {
+  if(window.location.search) {
+    var matches = window.location.search.match(/version=(.*)(;|&|$)/);
+    var version = matches[1];
+    if(version) {
+      if(version == '{{ site.release_version }}') {
+        jQuery('#update_ok').css({display: ''});
+      } else if(version < '{{ site.release_version }}') {
+        var text = jQuery('#update_available').html();
+        text = text.replace('###version###', 'v'+version);
+        jQuery('#update_available').html(text);
+        jQuery('#update_available').css({display: ''});
+      } else {
+        jQuery('#update_unknown').css({display: ''});
+      }
+    }
+  }
+});
+-->
+</script>
+
+
+{% capture title %}{{ page.title }}{% endcapture %}
+{% capture subtitle %}v{{ site.release_version }} | released on {{ site.release_date }}{% endcapture %}
+{% include page_heading.html %}
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donateForm">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="WBELB56NMWVUN">
+<div class="bluenote center" onclick="document.getElementById('donateForm').submit(); return false;" style="height: 60px;">
+<a href="donate.html">
+<img src="images/shut-up-and-take-my-money.jpg" alt="donate" height="60" width="96" style="float: left;">
+<div class="text-left" style="padding-left: 120px;">
+<b>NOTE:</b> Thruk is available free of charge. However we do accept donations<br>
+             for improving, hosting and maintaining Thruk, so If Thruk is<br>
+             important to you, please consider supporting the long-term viability of the this project.
+</div>
+</a>
+</div>
+</form>
+<br>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Repository</h2></div>
+  <div class="panel-body">
+    <p>Using the <a href="https://labs.consol.de/repo/">Consol Labs Repository</a> is probably the easiest way to install or update Thruk.</p>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Packages</h2></div>
+  <div class="panel-body">
+    <p>There are mk-livestatus packages available in the <a href="https://labs.consol.de/repo/">Consol Labs Repository.</a><br>
+       You may need them for Nagios and Icinga. Shinken has livestatus included in<br>
+       the core so you don't need extra packages besides Thruk. Naemon also comes with its own Livestatus module.</p>
+  </div>
+<table class="table table-hover table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th class='status'></th>
+      <th class='status'>System</th>
+      <th class='status text-center' colspan=2>Version</th>
+      <th class='status text-center'>32bit</th>
+      <th class='status text-center'>64bit</th>
+    </tr>
+  </thead>
+<tbody>
+<tr>
+  <td class='text-center'><img src="images/debian.png" alt="debian" height=48 width=48></td><td class='text-center'>Debian</td><td class='text-center'>6</td><td class='text-center'>squeeze</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian6/i386/thruk_{{ site.release_version_deb }}_debian6_i386.deb">thruk_{{ site.release_version_deb }}_debian6_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian6/amd64/thruk_{{ site.release_version_deb }}_debian6_amd64.deb">thruk_{{ site.release_version_deb }}_debian6_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/debian.png" alt="debian" height=48 width=48></td><td class="text-center">Debian</td><td class="text-center">7</td><td class="text-center">wheezy</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian7/i386/thruk_{{ site.release_version_deb }}_debian7_i386.deb">thruk_{{ site.release_version_deb }}_debian7_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian7/amd64/thruk_{{ site.release_version_deb }}_debian7_amd64.deb">thruk_{{ site.release_version_deb }}_debian7_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/debian.png" alt="debian" height=48 width=48></td><td class="text-center">Debian</td><td class="text-center">8</td><td class="text-center">jessie</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian8/i386/thruk_{{ site.release_version_deb }}_debian8_i386.deb">thruk_{{ site.release_version_deb }}_debian8_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian8/amd64/thruk_{{ site.release_version_deb }}_debian8_amd64.deb">thruk_{{ site.release_version_deb }}_debian8_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">5</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel5/i386/thruk-{{ site.release_version_rpm }}.rhel5.i386.rpm">thruk-{{ site.release_version_rpm }}.rhel5.i386.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel5/x86_64/thruk-{{ site.release_version_rpm }}.rhel5.x86_64.rpm">thruk-{{ site.release_version_rpm }}.rhel5.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">6</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/i386/thruk-{{ site.release_version_rpm }}.rhel6.i386.rpm">thruk-{{ site.release_version_rpm }}.rhel6.i386.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/x86_64/thruk-{{ site.release_version_rpm }}.rhel6.x86_64.rpm">thruk-{{ site.release_version_rpm }}.rhel6.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">7</td><td>&nbsp;</td>
+  <td></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel7/x86_64/thruk-{{ site.release_version_rpm }}.rhel7.x86_64.rpm">thruk-{{ site.release_version_rpm }}.rhel7.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/sles.jpg" alt="sles" height=48 width=48></td><td class="text-center">SLES</td><td class="text-center">11SP1</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp1/i586/thruk-{{ site.release_version_rpm }}.sles11sp1.i586.rpm">thruk-{{ site.release_version_rpm }}.sles11sp1.i386.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp1/x86_64/thruk-{{ site.release_version_rpm }}.sles11sp1.x86_64.rpm">thruk-{{ site.release_version_rpm }}.sles11sp1.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/sles.jpg" alt="sles" height=48 width=48></td><td class="text-center">SLES</td><td class="text-center">11SP2</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp2/i586/thruk-{{ site.release_version_rpm }}.sles11sp2.i586.rpm">thruk-{{ site.release_version_rpm }}.sles11sp2.i386.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp2/x86_64/thruk-{{ site.release_version_rpm }}.sles11sp2.x86_64.rpm">thruk-{{ site.release_version_rpm }}.sles11sp2.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/sles.jpg" alt="sles" height=48 width=48></td><td class="text-center">SLES</td><td class="text-center">11SP3</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp3/i586/thruk-{{ site.release_version_rpm }}.sles11sp3.i586.rpm">thruk-{{ site.release_version_rpm }}.sles11sp3.i386.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp3/x86_64/thruk-{{ site.release_version_rpm }}.sles11sp3.x86_64.rpm">thruk-{{ site.release_version_rpm }}.sles11sp3.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">10.04</td><td class="text-center">lucid</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu10.04/i386/thruk_{{ site.release_version_deb }}_ubuntu10.04_i386.deb">thruk_{{ site.release_version_deb }}_ubuntu10.04_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu10.04/amd64/thruk_{{ site.release_version_deb }}_ubuntu10.04_amd64.deb">thruk_{{ site.release_version_deb }}_ubuntu10.04_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">12.04</td><td class="text-center">precise</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu12.04/i386/thruk_{{ site.release_version_deb }}_ubuntu12.04_i386.deb">thruk_{{ site.release_version_deb }}_ubuntu12.04_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu12.04/amd64/thruk_{{ site.release_version_deb }}_ubuntu12.04_amd64.deb">thruk_{{ site.release_version_deb }}_ubuntu12.04_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">13.10</td><td class="text-center">saucy</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu13.10/i386/thruk_{{ site.release_version_deb }}_ubuntu13.10_i386.deb">thruk_{{ site.release_version_deb }}_ubuntu13.10_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu13.10/amd64/thruk_{{ site.release_version_deb }}_ubuntu13.10_amd64.deb">thruk_{{ site.release_version_deb }}_ubuntu13.10_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">14.04</td><td class="text-center">trusty</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu14.04/i386/thruk_{{ site.release_version_deb }}_ubuntu14.04_i386.deb">thruk_{{ site.release_version_deb }}_ubuntu14.04_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu14.04/amd64/thruk_{{ site.release_version_deb }}_ubuntu14.04_amd64.deb">thruk_{{ site.release_version_deb }}_ubuntu14.04_amd64.deb</a></td>
+</tr>
+<tr>
+  <td colspan=6>&nbsp;</td>
+</tr>
+<tr>
+  <td>&nbsp;</td><td class="text-center">Source</td><td colspan=2>&nbsp;</td>
+  <td colspan=2 class="text-center"><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/src/Thruk-{{ site.release_version }}.tar.gz">Thruk-{{ site.release_version }}.tar.gz</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Naemon</h2></div>
+  <div class="panel-body">
+    <p>
+      <a href="http://naemon.org" target="_blank">Naemon</a>, as the successor of Nagios, comes with Thruk as default gui. It has ready to go packages including Thruk and Livestatus. Take Naemon if you consider upgrading to Nagios 4.
+    </p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>OMD</h2></div>
+  <div class="panel-body">
+    <p>
+      Thruk is included in the OMD (<a href="http://omdistro.org" target="_blank">Open Monitoring Distribution</a>). Installing<br>
+      Thruk with OMD is an easy and fast way of getting Thruk in a complete setup running.<br>
+      OMD includes a preconfigured Nagios/Icinga/Shinken + Thruk + PNP4Nagios and other useful addons.
+    </p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Nightly Development Builds</h2></div>
+  <div class="panel-body">
+    <p>
+      <a href="http://download.thruk.org/nightly_builds/">Download nightly snapshots</a><br>
+      Have at least a look at the test results before using test releases. They should be used for tests only, not in production!<br>
+      Travis-CI: <img src="https://travis-ci.org/sni/Thruk.png?branch=master" width=77 height=19 alt="travis ci build status">
+    </p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Latest Development Version</h2></div>
+  <div class="panel-body">
+    <p>
+      <a href="http://github.com/sni/Thruk/archives/master">Download latest git version archive from github.com</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Archive</h2></div>
+  <div class="panel-body">
+    <p>
+      Download previous versions from the <a href="http://download.thruk.org/pkg/">archive</a>.<br>
+      And even older versions from the <a href="http://download.thruk.org/archive/">old archive</a>.
+    </p>
+  </div>
+</div>

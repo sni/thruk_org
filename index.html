@@ -1,0 +1,119 @@
+---
+title: Monitoring Webinterface for Naemon, Nagios, Icinga and Shinken
+layout: no_container
+lightbox: true
+class: main-index
+---
+
+<header id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('images/1024px-Earthlights_dmsp.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Thruk Monitoring</h1>
+                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/1024px-Land_shallow_topo_2048.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Thruk Monitoring</h1>
+                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/1024px-Sydney_Harbour_Bridge_from_Circular_Quay.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Thruk Monitoring</h1>
+                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+
+<div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> Download v{{ site.release_version }}</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Download the latest and greates release available on several platforms and package formats, from Debian and Ubuntu to Centos and SLES.</p>
+                    <p>Released on {{ site.release_date }}.</p>
+                    <a href="download.html" class="btn btn-success">Download now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Thruk is free of charge and completely open source software. There is no open core or community version. Although support is available.</p>
+                    <p>Thruk is just plain free open source.</p>
+                    <a href="open.html" class="btn btn-success">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                </div>
+                <div class="panel-body">
+                    <p>While beeing fully flexible and extendable, either by plugins or themes, Thruk is still easy too use.</p>
+                    <p>Especcially if you are used to the Nagios Webinterface.</p>
+                    <a href="easy.html" class="btn btn-success">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Introduction</h2>
+        </div>
+        <div class="panel-body" style="position: relative; top: -30px; margin-bottom: -60px;">
+            <br style="clear: both;">
+            Thruk is a multibackend monitoring webinterface which currently
+            supports Naemon, Nagios, Icinga and Shinken as backend using the Livestatus
+            API. It is designed to be a 'dropin' replacement and covers almost
+            100% of the original features plus adds additional enhancements for
+            large installations and increased usability.
+            <a href="documentation/introduction.html" class="btn btn-success">Learn More...</a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Screenshots</h2>
+        </div>
+{% gallery Screenshots%}
+01_main.png:: Main Page
+11_theme_3.png:: Tactical Overview
+18_business_process.png:: Business Process Plugin
+dashboard.png:: Panorama Dashboard
+mine-map1.png:: Mine Map
+reports3.png:: SLA Report PDF
+{% endgallery %}
+        <br style="clear: both;">
+        <div class="panel-body text-center" style="position: relative; top: -30px; margin-bottom: -60px;">
+            <a href="screenshots/" class="btn btn-success">more screenshots...</a>
+        </div>
+    </div>

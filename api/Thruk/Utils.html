@@ -1,0 +1,476 @@
+---
+title: Utils
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#parse_date">parse_date</a></li>
+		<li><a href="#format_date">format_date</a></li>
+		<li><a href="#format_number">format_number</a></li>
+		<li><a href="#format_cronentry">format_cronentry</a></li>
+		<li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
+		<li><a href="#is_valid_regular_expression">is_valid_regular_expression</a></li>
+		<li><a href="#calculate_overall_processinfo">calculate_overall_processinfo</a></li>
+		<li><a href="#get_start_end_for_timeperiod">get_start_end_for_timeperiod</a></li>
+		<li><a href="#get_start_end_for_timeperiod_from_param">get_start_end_for_timeperiod_from_param</a></li>
+		<li><a href="#get_dynamic_roles">get_dynamic_roles</a></li>
+		<li><a href="#set_dynamic_roles">set_dynamic_roles</a></li>
+		<li><a href="#set_message">set_message</a></li>
+		<li><a href="#append_message">append_message</a></li>
+		<li><a href="#ssi_include">ssi_include</a></li>
+		<li><a href="#read_ssi">read_ssi</a></li>
+		<li><a href="#read_resource_file">read_resource_file</a></li>
+		<li><a href="#version_compare">version_compare</a></li>
+		<li><a href="#combine_filter">combine_filter</a></li>
+		<li><a href="#array2hash">array2hash</a></li>
+		<li><a href="#set_paging_steps">set_paging_steps</a></li>
+		<li><a href="#get_custom_vars">get_custom_vars</a></li>
+		<li><a href="#set_custom_vars">set_custom_vars</a></li>
+		<li><a href="#normal_mktime">normal_mktime</a></li>
+		<li><a href="#get_user_data">get_user_data</a></li>
+		<li><a href="#store_user_data">store_user_data</a></li>
+		<li><a href="#get_global_user_data">get_global_user_data</a></li>
+		<li><a href="#store_global_user_data">store_global_user_data</a></li>
+		<li><a href="#array_uniq">array_uniq</a></li>
+		<li><a href="#logs2xls">logs2xls</a></li>
+		<li><a href="#savexls">savexls</a></li>
+		<li><a href="#get_pnp_url">get_pnp_url</a></li>
+		<li><a href="#get_graph_url">get_graph_url</a></li>
+		<li><a href="#get_action_url">get_action_url</a></li>
+		<li><a href="#list">list</a></li>
+		<li><a href="#translate_host_status">translate_host_status</a></li>
+		<li><a href="#choose_mobile">choose_mobile</a></li>
+		<li><a href="#update_cron_file">update_cron_file</a></li>
+		<li><a href="#get_cron_time_entry">get_cron_time_entry</a></li>
+		<li><a href="#set_user">set_user</a></li>
+		<li><a href="#switch_realuser">switch_realuser</a></li>
+		<li><a href="#check_pid_file">check_pid_file</a></li>
+		<li><a href="#restart_later">restart_later</a></li>
+		<li><a href="#wait_after_reload">wait_after_reload</a></li>
+		<li><a href="#get_cron_entries_from_param">get_cron_entries_from_param</a></li>
+		<li><a href="#read_data_file">read_data_file</a></li>
+		<li><a href="#write_data_file">write_data_file</a></li>
+		<li><a href="#decode_any">decode_any</a></li>
+		<li><a href="#ensure_utf8">ensure_utf8</a></li>
+		<li><a href="#which">which</a></li>
+		<li><a href="#reduce_number">reduce_number</a></li>
+		<li><a href="#get_template_variable">get_template_variable</a></li>
+		<li><a href="#precompile_templates">precompile_templates</a></li>
+		<li><a href="#find_files">find_files</a></li>
+		<li><a href="#beautify_diff">beautify_diff</a></li>
+		<li><a href="#check_memory_usage">check_memory_usage</a></li>
+		<li><a href="#base_folder">base_folder</a></li>
+		<li><a href="#is_post">is_post</a></li>
+		<li><a href="#check_csrf">check_csrf</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Utils - Utilities Collection for Thruk</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Utilities Collection for Thruk</p>
+<p>
+</p>
+<h2><a name="parse_date">parse_date</a></h2>
+<pre>
+  my $timestamp = parse_date($c, $string)</pre>
+<p>Format: 2010-03-02 00:00:00
+parse given date and return timestamp</p>
+<p>
+</p>
+<h2><a name="format_date">format_date</a></h2>
+<pre>
+  my $date_string = format_date($string, $format)</pre>
+<p>return date from timestamp in given format</p>
+<p>
+</p>
+<h2><a name="format_number">format_number</a></h2>
+<pre>
+  my $string = format_number($number)</pre>
+<p>return number with thousands seperator</p>
+<p>
+</p>
+<h2><a name="format_cronentry">format_cronentry</a></h2>
+<pre>
+  my $cron_string = format_cronentry($cron_entry)</pre>
+<p>return cron entry as string</p>
+<p>
+</p>
+<h2><a name="read_cgi_cfg">read_cgi_cfg</a></h2>
+<pre>
+  read_cgi_cfg($c);</pre>
+<p>parse the cgi.cfg and put it into $c-&gt;config</p>
+<p>
+</p>
+<h2><a name="is_valid_regular_expression">is_valid_regular_expression</a></h2>
+<pre>
+  my $result = is_valid_regular_expression($expression)</pre>
+<p>return true if this is a valid regular expression</p>
+<p>
+</p>
+<h2><a name="calculate_overall_processinfo">calculate_overall_processinfo</a></h2>
+<pre>
+  my $process_info = calculate_overall_processinfo($process_info)</pre>
+<p>computes a combined status for process infos</p>
+<p>
+</p>
+<h2><a name="get_start_end_for_timeperiod">get_start_end_for_timeperiod</a></h2>
+<pre>
+  my($start, $end) = get_start_end_for_timeperiod($c,
+                                                  $timeperiod,
+                                                  $smon,
+                                                  $sday,
+                                                  $syear,
+                                                  $shour,
+                                                  $smin,
+                                                  $ssec,
+                                                  $emon,
+                                                  $eday,
+                                                  $eyear,
+                                                  $ehour,
+                                                  $emin,
+                                                  $esec,
+                                                  $t1,
+                                                  $t2);</pre>
+<p>returns a start and end timestamp for a report date definition</p>
+<p>
+</p>
+<h2><a name="get_start_end_for_timeperiod_from_param">get_start_end_for_timeperiod_from_param</a></h2>
+<pre>
+  my($start, $end) = get_start_end_for_timeperiod_from_param($c)</pre>
+<p>returns a start and end timestamp for a report date definition
+will use cgi params for input</p>
+<p>
+</p>
+<h2><a name="get_dynamic_roles">get_dynamic_roles</a></h2>
+<pre>
+  get_dynamic_roles($c, $user)</pre>
+<p>gets the authorized_for_read_only role and group based roles</p>
+<p>
+</p>
+<h2><a name="set_dynamic_roles">set_dynamic_roles</a></h2>
+<pre>
+  set_dynamic_roles($c)</pre>
+<p>sets the authorized_for_read_only role and group based roles</p>
+<p>
+</p>
+<h2><a name="set_message">set_message</a></h2>
+<pre>
+  set_message($c, $style, $text, [ $details ])</pre>
+<p>set a message in an cookie for later display</p>
+<p>
+</p>
+<h2><a name="append_message">append_message</a></h2>
+<pre>
+  append_message($text)</pre>
+<p>append text to current message</p>
+<p>
+</p>
+<h2><a name="ssi_include">ssi_include</a></h2>
+<pre>
+  ssi_include($c)</pre>
+<p>puts the ssi templates into the stash</p>
+<p>
+</p>
+<h2><a name="read_ssi">read_ssi</a></h2>
+<pre>
+  read_ssi($c, $file)</pre>
+<p>reads a ssi file or executes it if its executable</p>
+<p>
+</p>
+<h2><a name="read_resource_file">read_resource_file</a></h2>
+<pre>
+  read_resource_file($file, [ $macros ], [$with_comments])</pre>
+<p>returns a hash with all USER1-32 macros. macros can
+be a predefined hash.</p>
+<p>
+</p>
+<h2><a name="version_compare">version_compare</a></h2>
+<pre>
+  version_compare($version1, $version2)</pre>
+<p>compare too version strings and return 1 if v1 &gt;= v2</p>
+<p>
+</p>
+<h2><a name="combine_filter">combine_filter</a></h2>
+<pre>
+  combine_filter($operator, $filter)</pre>
+<p>combine filter by operator</p>
+<p>
+</p>
+<h2><a name="array2hash">array2hash</a></h2>
+<pre>
+  array2hash($data, [ $key, [ $key2 ]])</pre>
+<p>create a hash by key</p>
+<p>
+</p>
+<h2><a name="set_paging_steps">set_paging_steps</a></h2>
+<pre>
+  set_paging_steps($c, $data)</pre>
+<p>sets the pagins stepts, needs string like:</p>
+<pre>
+  *100, 500, 1000, all</pre>
+<p>
+</p>
+<h2><a name="get_custom_vars">get_custom_vars</a></h2>
+<pre>
+  get_custom_vars($obj)</pre>
+<p>return custom variables in a hash</p>
+<p>
+</p>
+<h2><a name="set_custom_vars">set_custom_vars</a></h2>
+<pre>
+  set_custom_vars($c)</pre>
+<p>set stash value for all allowed custom variables</p>
+<p>
+</p>
+<h2><a name="normal_mktime">normal_mktime</a></h2>
+<pre>
+  normal_mktime($year,$mon,$day,$hour,$min,$sec)</pre>
+<p>returns normalized timestamp for given date</p>
+<p>
+</p>
+<h2><a name="get_user_data">get_user_data</a></h2>
+<pre>
+  get_user_data($c)</pre>
+<p>returns user data</p>
+<p>
+</p>
+<h2><a name="store_user_data">store_user_data</a></h2>
+<pre>
+  store_user_data($c, $data)</pre>
+<p>store user data for section</p>
+<p>
+</p>
+<h2><a name="get_global_user_data">get_global_user_data</a></h2>
+<pre>
+  get_global_user_data($c)</pre>
+<p>returns global user data</p>
+<p>
+</p>
+<h2><a name="store_global_user_data">store_global_user_data</a></h2>
+<pre>
+  store_global_user_data($c, $data)</pre>
+<p>store global user data for section</p>
+<p>
+</p>
+<h2><a name="array_uniq">array_uniq</a></h2>
+<pre>
+  array_uniq($array)</pre>
+<p>return uniq elements of array</p>
+<p>
+</p>
+<h2><a name="logs2xls">logs2xls</a></h2>
+<pre>
+  logs2xls($c)</pre>
+<p>save excel file by background job</p>
+<p>
+</p>
+<h2><a name="savexls">savexls</a></h2>
+<pre>
+  savexls($c)</pre>
+<p>save excel file by background job</p>
+<p>
+</p>
+<h2><a name="get_pnp_url">get_pnp_url</a></h2>
+<pre>
+  get_pnp_url($c, $object)</pre>
+<p>return pnp url for object (host/service)</p>
+<p>
+</p>
+<h2><a name="get_graph_url">get_graph_url</a></h2>
+<pre>
+  get_graph_url($c, $object)</pre>
+<p>return graph url for object (host/service)</p>
+<p>
+</p>
+<h2><a name="get_action_url">get_action_url</a></h2>
+<pre>
+  get_action_url($c, $escape_fun, $remove_render, $action_url, $host, $svc)</pre>
+<p>return action_url modified for object (host/service) if we use graphite
+escape_fun is use to escape special char (html or quotes)
+remove_render remove /render in action url</p>
+<p>
+</p>
+<h2><a name="list">list</a></h2>
+<pre>
+  list($ref)</pre>
+<p>return list of ref unless it is already a list</p>
+<p>
+</p>
+<h2><a name="translate_host_status">translate_host_status</a></h2>
+<pre>
+  translate_host_status($status)</pre>
+<p>return name for status</p>
+<p>
+</p>
+<h2><a name="choose_mobile">choose_mobile</a></h2>
+<pre>
+  choose_mobile($c, $url)</pre>
+<p>let the user choose a mobile page or not</p>
+<p>
+</p>
+<h2><a name="update_cron_file">update_cron_file</a></h2>
+<pre>
+  update_cron_file($c, $section, $entries)</pre>
+<p>write crontab section</p>
+<p>
+</p>
+<h2><a name="get_cron_time_entry">get_cron_time_entry</a></h2>
+<pre>
+  get_cron_time_entry($cronentry)</pre>
+<p>return time part of crontab entry</p>
+<p>
+</p>
+<h2><a name="set_user">set_user</a></h2>
+<pre>
+  set_user($c, $username)</pre>
+<p>set and authenticate a user</p>
+<p>
+</p>
+<h2><a name="switch_realuser">switch_realuser</a></h2>
+<pre>
+  switch_realuser($uid, $groups)</pre>
+<p>switch real user and groups</p>
+<p>
+</p>
+<h2><a name="check_pid_file">check_pid_file</a></h2>
+<pre>
+  check_pid_file($c)</pre>
+<p>check and write pid file if none exists</p>
+<p>
+</p>
+<h2><a name="restart_later">restart_later</a></h2>
+<pre>
+  restart_later($c, $redirect_url)</pre>
+<p>restart fcgi process and redirects to given page</p>
+<p>
+</p>
+<h2><a name="wait_after_reload">wait_after_reload</a></h2>
+<pre>
+  wait_after_reload($c, [$backend], [$timestamp])</pre>
+<p>wait up to 60 seconds till the core responds</p>
+<p>
+</p>
+<h2><a name="get_cron_entries_from_param">get_cron_entries_from_param</a></h2>
+<pre>
+  get_cron_entries_from_param($cronentry)</pre>
+<p>return array of cron entries from param</p>
+<p>
+</p>
+<h2><a name="read_data_file">read_data_file</a></h2>
+<pre>
+  read_data_file($filename)</pre>
+<p>return data for datafile</p>
+<p>
+</p>
+<h2><a name="write_data_file">write_data_file</a></h2>
+<pre>
+  write_data_file($filename, $data)</pre>
+<p>write data to datafile</p>
+<p>
+</p>
+<h2><a name="decode_any">decode_any</a></h2>
+<p>read and decode string from either utf-8 or iso-8859-1</p>
+<p>
+</p>
+<h2><a name="ensure_utf8">ensure_utf8</a></h2>
+<pre>
+    ensure_utf8($str)</pre>
+<p>makes sure the given string is utf8</p>
+<p>
+</p>
+<h2><a name="which">which</a></h2>
+<pre>
+    which($prog)</pre>
+<p>returns path to program or undef</p>
+<p>
+</p>
+<h2><a name="reduce_number">reduce_number</a></h2>
+<pre>
+  reduce_number($number, $unit, [$divisor])</pre>
+<p>return reduced number, ex 1024B -&gt; 1KB</p>
+<p>
+</p>
+<h2><a name="get_template_variable">get_template_variable</a></h2>
+<pre>
+  get_template_variable($c, $template, $variable)</pre>
+<p>return variable defined from template</p>
+<p>
+</p>
+<h2><a name="precompile_templates">precompile_templates</a></h2>
+<pre>
+  precompile_templates($c)</pre>
+<p>precompile and load templates into memory</p>
+<p>
+</p>
+<h2><a name="find_files">find_files</a></h2>
+<pre>
+  find_files($folder, $pattern)</pre>
+<p>return list of files for folder and pattern</p>
+<p>
+</p>
+<h2><a name="beautify_diff">beautify_diff</a></h2>
+<pre>
+  beautify_diff($text)</pre>
+<p>make diff output beauty</p>
+<p>
+</p>
+<h2><a name="check_memory_usage">check_memory_usage</a></h2>
+<pre>
+  check_memory_usage($c)</pre>
+<p>check if memory limit is above the threshold</p>
+<p>
+</p>
+<h2><a name="base_folder">base_folder</a></h2>
+<pre>
+    base_folder($c)</pre>
+<p>return base etc folder</p>
+<p>
+</p>
+<h2><a name="is_post">is_post</a></h2>
+<pre>
+    is_post($c)</pre>
+<p>make sure this is a post request</p>
+<p>
+</p>
+<h2><a name="check_csrf">check_csrf</a></h2>
+<pre>
+    check_csrf($c)</pre>
+<p>ensure valid cross site request forgery token</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

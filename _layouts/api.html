@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="{{ site.baseurl }}index.html">Home</a></li>
+            <li><a href="{{ site.baseurl }}api/">API</a></li>
+            {% if page.breadcrumb and page.breadcrumb[0] %}
+            <li><a href="{{ site.baseurl }}{{ page.breadcrumb[0] }}">{{ page.breadcrumb[1] }}</a></li>
+                {% if page.breadcrumb[2] %}
+                <li><a href="{{ site.baseurl }}{{ page.breadcrumb[2] }}">{{ page.breadcrumb[3] }}</a></li>
+                {% endif %}
+                {% if page.breadcrumb[4] %}
+                <li><a href="{{ site.baseurl }}{{ page.breadcrumb[4] }}">{{ page.breadcrumb[5] }}</a></li>
+                {% endif %}
+                {% if page.breadcrumb[6] %}
+                <li><a href="{{ site.baseurl }}{{ page.breadcrumb[6] }}">{{ page.breadcrumb[7] }}</a></li>
+                {% endif %}
+                {% if page.breadcrumb[8] %}
+                <li><a href="{{ site.baseurl }}{{ page.breadcrumb[8] }}">{{ page.breadcrumb[9] }}</a></li>
+                {% endif %}
+            {% endif %}
+            <li class="active">{{ page.title }}</li>
+        </ol>
+    </div>
+</div>
+
+{{ content }}
