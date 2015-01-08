@@ -214,3 +214,10 @@ DIV.panel-heading h2 {
      margin-left: auto;
      margin-right: auto;
 }
+
+SMALL.new {
+    line-height: 10px;
+    position: relative;
+    top: -6px;
+    color: red;
+}

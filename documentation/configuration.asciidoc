@@ -1371,7 +1371,7 @@ ex.:
 
 
 == Action Menu Settings
-
+{% include new_since.ad version="1.86" %}
 The Action Menu is a way to create custom icons and menus for every host or service. There
 are two ways to set the menu. First one is to directly assign the menu json data
 into the _THRUK_ACTION_MENU custom variable of your host or service. Or you can
@@ -1382,7 +1382,7 @@ multiple menus for each host or service.
 image:source/action_menu.png[Custom Action Menu]
 
 === action_menu_items
-
+{% include new_since.ad version="1.86" %}
 Defines the menu used by placeholders from the '_THRUK_ACTION_MENU' custom variable.
 The menu is a key/value pair with the name and the menu description in json format.
 The menu can either be a single icon/menu or a list of menus and icons.
@@ -1486,7 +1486,7 @@ Variant 2 - define the menu in object config only:
 
 
 === action_menu_actions
-
+{% include new_since.ad version="1.86" %}
 Defines the available server commands from action_menu_items. Key/Value pair of the name
 of the script and the corresponding command. The command has to be a full path program
 and *not* just a shell command. Therefor you do not have to use quotes because the arguments
@@ -1783,16 +1783,23 @@ probably have to download the wkhtmltopdf binary in a recent version.
 ex.:
 
   <Component Thruk::Plugin::Reports2>
-    report_nice_level = 5
-    report_base_url   = http://host.local/thruk/cgi-bin/
-    wkhtmltopdf       = /usr/bin/wkhtmltopdf
-    pnp_export        = plugins/plugins-enabled/reports2/script/pnp_export.sh
-    report_from_email = User Name <example@mail.com>
-    default_template  = host_sla.tt
+    report_nice_level      = 5
+    max_concurrent_reports = 3
+    report_base_url        = http://host.local/thruk/cgi-bin/
+    wkhtmltopdf            = /usr/bin/wkhtmltopdf
+    pnp_export             = plugins/plugins-enabled/reports2/script/pnp_export.sh
+    report_from_email      = User Name <example@mail.com>
+    default_template       = host_sla.tt
   </Component>
 
 === report_nice_level
 Execute regular scheduled reports with this nice level.
+
+=== max_concurrent_reports
+{% include new_since.ad version="1.88" %}
+Maximum number of reports running at a time. If more reports are started, then
+they will be queued up.
+
 
 === report_base_url
 Url used to replace relative links in html reports.

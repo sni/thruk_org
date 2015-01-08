@@ -1,0 +1,3 @@
+++++++
+<small class='new'><span class="glyphicon glyphicon-star" aria-hidden="true"></span> new in release v{{ include.version }}</small>
+++++++
