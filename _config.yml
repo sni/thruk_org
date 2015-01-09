@@ -14,8 +14,8 @@ asciidoctor:
 
 # site specific variables
 release_version: 1.86
-release_version_deb: 1.86-1
-release_version_rpm: 1.86
+release_version_deb: 1.86
+release_version_rpm: 1.86-1
 release_date: January 08, 2015
 
 mailinglist_url: https://groups.google.com/group/thruk
