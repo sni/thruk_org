@@ -1784,7 +1784,7 @@ ex.:
 
   <Component Thruk::Plugin::Reports2>
     report_nice_level      = 5
-    max_concurrent_reports = 3
+    max_concurrent_reports = 2
     report_base_url        = http://host.local/thruk/cgi-bin/
     wkhtmltopdf            = /usr/bin/wkhtmltopdf
     pnp_export             = plugins/plugins-enabled/reports2/script/pnp_export.sh
@@ -1798,7 +1798,7 @@ Execute regular scheduled reports with this nice level.
 === max_concurrent_reports
 {% include new_since.ad version="1.88" %}
 Maximum number of reports running at a time. If more reports are started, then
-they will be queued up.
+they will be queued up. Default is 2.
 
 
 === report_base_url
