@@ -1381,6 +1381,9 @@ multiple menus for each host or service.
 
 image:source/action_menu.png[Custom Action Menu]
 
+See the link:action-menu.html[Action Menu] section from the advanced topics for
+more examples and details.
+
 === action_menu_items
 {% include new_since.ad version="1.86" %}
 Defines the menu used by placeholders from the '_THRUK_ACTION_MENU' custom variable.

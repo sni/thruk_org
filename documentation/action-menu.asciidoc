@@ -1,0 +1,63 @@
+---
+layout: docs
+title: Action Items
+---
+
+= Action Menu
+
+{% include new_since.ad version="1.86" %}
+The Action Menu is a way to create custom icons and menus for every host or
+service. You may add multiple action icons or even multiple menus for each host
+or service. You can then open links or trigger server actions from that menu
+or icons.
+
+image:source/action_menu.png[Action Menu]
+
+
+== Server Actions
+
+Server Action can be triggered from icons or menu items by using a pseudo url
+like
+
+-----
+    server://*scriptname*/argument1/argument2/...
+-----
+
+To make this work, you need to define that `scriptname` in your thruk_local.conf:
+
+-----
+  <action_menu_actions>
+      scriptname   = /usr/local/bin/sample.sh $HOSTNAME$ $SERVICEDESC$
+  </action_menu_actions>
+-----
+
+When somebody clicks on that link, Thruk will start the `sample.sh` script like:
+
+-----
+    /usr/local/bin/sample.sh <hostname> <servicename> argument1 argument2
+-----
+
+First it uses the complete commandline from the `thruk_local.conf` and replaces
+all available macros. Then it adds the arguments from the link configuration.
+
+See link:macros.html[Macros] for a list of all available macros.
+
+=== Scripts
+The scripts can do whatever they want. However you should consider a few things:
+
+  * Make the script exit quickly. Thruk waits for the script to return. Long running
+    tasks should be started in the background.
+  * Give the user useful feedback on STDOUT
+  * Exit codes should be zero if OK and greater than zero on errors.
+
+[TIP]
+.script output
+=======
+Script output will be displayed as user response which allows the script
+to give feedback to the user. HTML is allowed and will be used in the output.
+=======
+
+=== Authorization
+The Script will be run when ever the user has access to the given host and service.
+If your script wants to do some further checking, it can use the `$REMOTE_USER`
+environment variable.
