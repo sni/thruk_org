@@ -6,7 +6,7 @@ layout: raw
 
 <div class="container">
 <div class="row">
-    <div class="col-xs-9 affix-content">
+    <div class="col-xs-9 affix-content" data-target="#affix-nav">
         {{ content }}
     </div>
     <div class="col-xs-3">
@@ -75,6 +75,23 @@ jQuery(document).ready(function() {
           });
       });
     });
+
+    /* fix anchor offset */
+    $('#affix-nav li a').click(function(event) {
+        event.preventDefault();
+        $($(this).attr('href'))[0].scrollIntoView();
+        scrollBy(0, -50);
+    });
+    /*
+    window.onhashchange = function(e) {
+        if(e == null || e.newURL == null) {
+            return;
+        }
+        window.setTimeout(function() {
+            window.scrollBy(0,-50);
+        }, 50);
+    };
+    */
 });
 -->
 </script>
