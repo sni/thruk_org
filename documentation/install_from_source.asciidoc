@@ -52,7 +52,7 @@ All required Perl modules are available via the thruk_libs repository:
   %> make
 -------
 
-You now have all required modules in `/var/tmp/p5_thruk/dest`.
+You now have all required modules in `/tmp/thruk_libs/local-lib/dest`.
 
 
 === Git Clone Thruk
@@ -71,7 +71,7 @@ You now have all required modules in `/var/tmp/p5_thruk/dest`.
 We now move the librarys into our thruk folder:
 
 -------
-    %> mv /var/tmp/p5_thruk/dest/lib/perl5 perl5 ~/Thruk/
+    %> mv /tmp/thruk_libs/local-lib/dest/lib/perl5 perl5 ~/Thruk/
 -------
 
 Edit your `.profile` and add the following
