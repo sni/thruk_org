@@ -24,13 +24,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 		<li><a href="#report_save">report_save</a></li>
 		<li><a href="#report_remove">report_remove</a></li>
 		<li><a href="#generate_report">generate_report</a></li>
+		<li><a href="#queue_report">queue_report</a></li>
+		<li><a href="#queue_report_if_busy">queue_report_if_busy</a></li>
+		<li><a href="#process_queue_file">process_queue_file</a></li>
+		<li><a href="#generate_report_background">generate_report_background</a></li>
 		<li><a href="#get_report_data_from_param">get_report_data_from_param</a></li>
 		<li><a href="#update_cron_file">update_cron_file</a></li>
 		<li><a href="#set_running">set_running</a></li>
+		<li><a href="#set_waiting">set_waiting</a></li>
 		<li><a href="#clean_report_tmp_files">clean_report_tmp_files</a></li>
 		<li><a href="#get_report_templates">get_report_templates</a></li>
 		<li><a href="#get_report_languages">get_report_languages</a></li>
 		<li><a href="#add_report_defaults">add_report_defaults</a></li>
+		<li><a href="#get_running_reports_number">get_running_reports_number</a></li>
 	</ul>
 
 </ul>
@@ -90,6 +96,33 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>generate a new report</p>
 <p>
 </p>
+<h2><a name="queue_report">queue_report</a></h2>
+<pre>
+  queue_report($c, $nr, [$mail])</pre>
+<p>queue a report for update.</p>
+<p>
+</p>
+<h2><a name="queue_report_if_busy">queue_report_if_busy</a></h2>
+<pre>
+  queue_report_if_busy($c, $nr, [$mail])</pre>
+<p>queue a report for update with optional callback which will be run
+after the report is ready.
+Queue will only be used if all slots are busy.
+returns 1 if queue is used or undef if there are free slots.</p>
+<p>
+</p>
+<h2><a name="process_queue_file">process_queue_file</a></h2>
+<pre>
+  process_queue_file($c)</pre>
+<p>read queue file and set waiting flag for all reports found.</p>
+<p>
+</p>
+<h2><a name="generate_report_background">generate_report_background</a></h2>
+<pre>
+  generate_report_background($c, $report_nr, $with_mails, $report, $force)</pre>
+<p>start a report in the background and queue it if all slots are busy</p>
+<p>
+</p>
 <h2><a name="get_report_data_from_param">get_report_data_from_param</a></h2>
 <pre>
   get_report_data_from_param($params)</pre>
@@ -106,6 +139,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre>
   set_running($c)</pre>
 <p>update running state of report</p>
+<p>
+</p>
+<h2><a name="set_waiting">set_waiting</a></h2>
+<pre>
+  set_waiting($c, $nr, $with_mails)</pre>
+<p>set waiting status of job</p>
 <p>
 </p>
 <h2><a name="clean_report_tmp_files">clean_report_tmp_files</a></h2>
@@ -130,4 +169,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre>
   add_report_defaults($c, [$fields], $report)</pre>
 <p>add report defaults</p>
+<p>
+</p>
+<h2><a name="get_running_reports_number">get_running_reports_number</a></h2>
+<pre>
+  get_running_reports_number($c)</pre>
+<p>returns list ($running, $waiting)</p>
 
