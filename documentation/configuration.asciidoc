@@ -470,6 +470,19 @@ ex.:
 
   use_new_search = 1
 
+
+=== default_service_filter
+{% include new_since.ad version="1.86-2" %}
+The `default_service_filter` set a default service filter which is used when no
+other filter is applied (except from links to hosts or groups). The filter is
+negated by a leading exclamation mark. The example filters out all services starting
+with "test_". You can use regular expressions. The Default is not set.
+
+ex.:
+
+  default_service_filter = !^test_
+
+
 === use_ajax_search
 
 Enables the ajax search field. There will be suggestions while typing
