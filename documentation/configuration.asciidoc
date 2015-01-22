@@ -1794,7 +1794,7 @@ leaks. Disabled when set to 0.
 == Component Thruk::Plugin::Reports2
 
 The 'Reports2' plugin creates sla reports in html or pdf format. You
-probably have to download the wkhtmltopdf binary in a recent version.
+probably have to download the link:/documentation/faq.html#wkhtmltopdf[wkhtmltopdf binary] in a recent version.
 
 ex.:
 
@@ -1821,8 +1821,9 @@ they will be queued up. Default is 2.
 Url used to replace relative links in html reports.
 
 === wkhtmltopdf
-wkhtmltopdf is used to convert html pages into pdf. You will need
-at least version 0.11. Get wkhtmltopdf from http://code.google.com/p/wkhtmltopdf/
+`wkhtmltopdf` is used to convert html pages into pdf.
+See the link:/documentation/faq.html#wkhtmltopdf[FAQ] for download
+links and further information.
 
 === pnp_export
 pnp_export defines a script which exports a PNP4nagios graph into a
