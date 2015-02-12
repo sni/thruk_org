@@ -1519,6 +1519,26 @@ ex.:
   </action_menu_actions>
 
 
+=== action_menu_apply
+{% include new_since.ad version="1.86" %}
+With apply rules adding action menus is made easy and independant from the actual
+object configuration. You can setup a few regular expression rules which then add
+the corresponding action menu to matching hosts and services. The syntax is
+`menu_name = Hostpattern;Servicepattern`
+
+ex.:
+
+  <action_menu_apply>
+    standardmenu = .*;                # matches all services on all hosts
+    specialmenu  = ^Host;Service$     # matches an exact service on one host only
+    cpu_menu     = ^.*;CPU            # matches all services starting with 'CPU' on all hosts
+    hostmenu     = ^Host              # matches all hosts starting with 'Host'
+    demomenu     = ^Demo;             # matches all services on the 'Demo' host
+    demomenu     = ^Test;             # a menu name can be used multiple times
+  </action_menu_apply>
+
+
+
 
 
 

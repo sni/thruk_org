@@ -14,6 +14,15 @@ or icons.
 image:source/action_menu.png[Action Menu]
 
 
+== Adding an Action Menu
+There are 3 ways to add an action menu to a host or service.
+
+  * set the menu directly by the `_THRUK_ACTION_MENU` custom variable
+  * reference an existing menu from the `action_menu_items` by a  `_THRUK_ACTION_MENU` custom variable
+  * use apply rules from `action_menu_apply`
+
+The are some examples in the link:configuration.html#action-menu-settings[configuration] documentation.
+
 == Server Actions
 
 Server Action can be triggered from icons or menu items by using a pseudo url
@@ -42,6 +51,7 @@ First it uses the complete commandline from the `thruk_local.conf` and replaces
 all available macros. Then it adds the arguments from the link configuration.
 
 See link:macros.html[Macros] for a list of all available macros.
+
 
 === Scripts
 The scripts can do whatever they want. However you should consider a few things:
