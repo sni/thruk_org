@@ -66,6 +66,27 @@ Builtin Plugins
 ---------------
 
 
+Business Process
+~~~~~~~~~~~~~~~~
+
+----
+ Author:      Sven Nierlein
+ Description: Calculates Business Processes
+ Download:    This plugin is builtin and shipped with Thruk
+----
+
+The Business Process plugin creates, edits and calculates business processes
+which then can be used as hosts and services for further notifications and
+displaying purposes.
+
+++++
+<a title="business process" rel="lightbox[plugins]" href="plugins/bp1.png"><img src="plugins/bp1.png" alt="business process " width="30%" height="30%" /></a>
+<br style="clear: both;">
+++++
+
+
+
+
 Config Tool
 ~~~~~~~~~~~
 
@@ -150,7 +171,7 @@ Panorama
 
 The 'Panorama' plugin is a full customizable dashboard allowing
 you to build your own panorama views. It supports multiple panels
-and sticky windows.
+and sticky windows. link:dashboard.html[Read more]
 
 ++++
 <a title="panorama" rel="lightbox[plugins]" href="plugins/panorama1.png"><img src="plugins/panorama1.png" alt="mobile " width="30%" height="30%" /></a>
@@ -171,7 +192,7 @@ Reports
 
 SLA reports are a good way to send monthly reports about service level
 contracts. Reports can be either downloaded or send by mail using the
-thruk command line tool.
+thruk command line tool. link:reporting.html[Read more]
 
 ++++
 <a title="reports" rel="lightbox[plugins]" href="plugins/reports1.png"><img src="plugins/reports1.png" alt="mobile " width="30%" height="30%" /></a>
