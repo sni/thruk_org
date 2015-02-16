@@ -67,6 +67,7 @@ use Data::Dumper;
 use Test::More;
 use URI::Escape;
 use Encode qw/decode_utf8/;
+use lib 't/lib';
 use HTML::Lint;
 use LWP::UserAgent;
 
@@ -422,7 +423,7 @@ sub _check_anchor {
             diag('linked from: '.join("\n", sort keys %{$link_referer->{$origurl}})."\n \n")
         }
     } else {
-        ok("anchor $anchor does exist on ".$url);
+        ok(1, "anchor $anchor does exist on ".$url);
     }
 }
 
