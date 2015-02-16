@@ -20,7 +20,7 @@ how to add just add a few links without having to copy the complete
 file.
 
 The menu_local.conf contains the user configuration for the side menu. See the
-http://www.thruk.org/faq.html#_how_to_change_the_side_menu[FAQ] for
+link:faq.html#how-to-change-the-side-menu[FAQ] for
 some examples.
 
 The file itself is perl syntax, so you can do whatever perl can do.

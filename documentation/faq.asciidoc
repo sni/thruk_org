@@ -26,7 +26,7 @@ Thruk is just a random word and has no meaning. Pronounce it like 'Truck'.
 
 The statusmap got replaced by a own variant which is more scalable in
 large environments. Its shipped as Thruk addon, but enabled by
-default. See the http://thruk.org/plugins.html[plugins page] for details and screenshots.
+default. See the link:plugins.html[plugins page] for details and screenshots.
 
 
 === Authorization/Authentication is not working
@@ -210,22 +210,22 @@ There is a dedicated nagvis panel since Thruk release 1.78.
 === How can I add more themes?
 
 Themes are located under 'themes'. Just copy and modify the one you
-like. See the http://thruk.org/themes.html[themes page] for details.
+like. See the link:themes.html[themes page] for details.
 
 
 === How can I disable themes?
 
 Themes can be disabled by removing the symlink from your
 'themes/themes-enabled' directory.
-See the http://thruk.org/themes.html[themes page] for details.
+See the link:themes.html[themes page] for details.
 
 
 === How can I customize reports?
-Customizing reports is coverd in the http://thruk.org/documentation.html#_customized_reports[official documenation].
+Customizing reports is coverd in the link:reporting.html#customized-reports[official documenation].
 
 === Why are the PNP graphs missing in my reports?
 First you need a working PNP installation. Then check
-the http://thruk.org/documentation.html#_pnp_export[official documenation].
+the link:configuration.html#pnp_export[official documenation].
 
 If nothing helps, add some debug output to the script which is responsible for
 the pnp export (experienced users only).
@@ -307,7 +307,7 @@ Versions which have been successfully tested:
 === How can I enable the business process addon.
 It works out of the box with OMD. If not using OMD, some manual steps
 are required which are described in the
-http://thruk.org/documentation.html#_business_process[official documenation].
+link:business-process.html[official documenation].
 
 
 == Hacking Thruk
@@ -333,7 +333,7 @@ a perl file or template.
 
   /tmp/Thruk %> export PERL5LIB=/usr/lib/thruk/perl5
 +
-Refer to the official documentation on how to install Thruk: http://www.thruk.org/documentation.html#_installation
+Refer to the official documentation on how to install Thruk: link:install.html
 
 4. start development server
 
@@ -385,10 +385,9 @@ installation.
 
 PDF reports won't work with libcairo < 1.8.8. Therefor you may use the
 prepared packages for cairo 1.8.8 on rhel/centos 5 on the
-http://thruk.org/download.html[download
-page].
+link:../download.html[download page].
 
-The new 'reports2' module should work fine, even on older Redhat
+TIP: The new 'reports2' module should work fine, even on older Redhat
 boxes.
 
 

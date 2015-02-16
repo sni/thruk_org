@@ -169,5 +169,5 @@ Each Argument requires 3 attributes which are seperated by a semicolon ;
 =======
 All custom aggregation functions have 'use warnings' and 'use strict' enabled by
 default and run in 'Thruk::BP::Functions' context, means they have access to all
-normal aggregation functions and helpers from http://thruk.org/api/Thruk/BP/Functions.html
+normal aggregation functions and helpers from link:../api/Thruk/BP/Functions.html
 =======

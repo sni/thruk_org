@@ -28,7 +28,7 @@ Nagios / Thruk setups when you want to install several addons at once.
 Standalone installation from a binary package is another easy way
 to get Thruk running.
 
-Download packages from http://www.thruk.org/files/pkg/
+Download packages from the link:../download.html[download page].
 
 All packages have the following filesystem structure:
 

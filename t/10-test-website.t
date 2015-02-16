@@ -203,8 +203,8 @@ sub test_page {
         $content =~ s/<script[^>]*src=('|")([^'"]*)('|")>\s*<\/script>/**SCRIPT:$2**/gsmxio;
         $content =~ s/<script[^>]*>.+?<\/script>//gsmxio;
         $content =~ s/\*\*SCRIPT:(.*?)\*\*/<script src="$1"><\/script>/gsmxio;
-        my @matches1 = $content =~ m/\s+(src|href)='(.+?)'/gi;
-        my @matches2 = $content =~ m/\s+(src|href)="(.+?)"/gi;
+        my @matches1 = $content =~ m/<\w+[^>]*\s+(src|href)='(.+?)'/gi;
+        my @matches2 = $content =~ m/<\w+[^>]*\s+(src|href)="(.+?)"/gi;
         my @matches3 = $content =~ m/<meta\s+http\-equiv=.*?refresh(.*)URL=([^'"]+)/gi;
         my $x=0;
         for my $match (@matches1, @matches2, @matches3) {
