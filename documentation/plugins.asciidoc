@@ -275,6 +275,32 @@ default.
 
 
 
+Additional Plugins
+------------------
+
+
+OMD
+~~~
+
+----
+ Author:      Sven Nierlein
+ Description: OMD Specific Addons
+ Download:    https://github.com/sni/thruk-plugin-omd
+----
+
+The omd plugin saves `top` and `gearman_top` data every minute
+for the last week for debuging purposes. It then draws nice
+usage graphs with a drill down functionality. For every
+point in the last week the complete top data can be fetched,
+sorted and filtered.
+
+++++
+<a title="omd" rel="lightbox[plugins]" href="plugins/omd1.png"><img src="plugins/omd1.png" alt="mobile " width="30%" height="30%" /></a>
+<br style="clear: both;">
+++++
+
+
+
 
 
 
