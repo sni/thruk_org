@@ -1529,12 +1529,13 @@ the corresponding action menu to matching hosts and services. The syntax is
 ex.:
 
   <action_menu_apply>
-    standardmenu = .*;                # matches all services on all hosts
-    specialmenu  = ^Host;Service$     # matches an exact service on one host only
-    cpu_menu     = ^.*;CPU            # matches all services starting with 'CPU' on all hosts
-    hostmenu     = ^Host              # matches all hosts starting with 'Host'
-    demomenu     = ^Demo;             # matches all services on the 'Demo' host
-    demomenu     = ^Test;             # a menu name can be used multiple times
+    hostmenu    = .*;$             # matches all hosts only
+    servicemenu = .*;.+$           # matches all services on all hosts
+    specialmenu = ^Host;Service$   # matches an exact service on one host only
+    cpu_menu    = .*;^CPU          # matches all services starting with 'CPU'
+    hostmenu    = ^Host            # matches all hosts starting with 'Host'
+    demomenu    = ^Demo;           # matches all services on the 'Demo' host
+    demomenu    = ^Test;           # a menu name can be used multiple times
   </action_menu_apply>
 
 
