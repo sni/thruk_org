@@ -1410,6 +1410,8 @@ backslash to write the menus on multiple lines.
 
 Sample menu with two items and a seperator:
 
+.....
+{% raw %}
   {
     "icon":"/thruk/themes/{{theme}}/images/dropdown.png",
     "title": "sample menu",
@@ -1427,11 +1429,13 @@ Sample menu with two items and a seperator:
       }
     ]
   }
+{% endraw %}
+.....
 
 A menu has the following attributes:
 
-     ** `icon`          icon for the menu itself. You can use `{{theme}}` as placeholder in the url
-                        and `{{remote_user}}` for the user name.
+     ** `icon`          icon for the menu itself. You can use `{% raw %}{{theme}}{% endraw %}` as placeholder in the url
+                        and `{% raw %}{{remote_user}}{% endraw %}` for the user name.
      ** `title`         title of the menu, will be display on mouse over.
      ** `menu`          the actual menu definition as a list '[...]' of sub items.
 
@@ -1440,7 +1444,7 @@ A single `"-"` item can be used as a menu item seperator.
 
 The menu item can have the following attributes:
 
-     ** `icon`          icon for the menu item. You can use `{{theme}}` as placeholder in the url.
+     ** `icon`          icon for the menu item. You can use `{% raw %}{{theme}}{% endraw %}` as placeholder in the url.
      ** `label`         label name of the menu item.
      ** `action`        url or action which will be run or openend. This can either be a
                         http(s) link or a serveraction in the form server://actionname/argument1/argument2/...
@@ -1449,6 +1453,8 @@ The menu item can have the following attributes:
 
 Sample icons with two action icons:
 
+.....
+{% raw %}
   [
     {
       "icon":"/thruk/themes/{{theme}}/images/criticity_1.png",
@@ -1460,11 +1466,14 @@ Sample icons with two action icons:
       "action":"server://refresh/$HOSTNAME$",
     }
   ]
+{% endraw %}
+.....
 
 
 Variant 1 - reference to a pre defined menu:
 
 .....
+{% raw %}
   *thruk_local.conf:*
 
     <action_menu_items>
@@ -1485,12 +1494,14 @@ Variant 1 - reference to a pre defined menu:
       ...
       _THRUK_ACTION_MENU   standardmenu
     }
+{% endraw %}
 .....
 
 
 Variant 2 - define the menu in object config only:
 
 .....
+{% raw %}
   *host.cfg:*
 
     define host {
@@ -1498,6 +1509,7 @@ Variant 2 - define the menu in object config only:
       ...
       _THRUK_ACTION_MENU   {"icon":"/thruk/themes/{{theme}}/images/dropdown.png", "title": "test title", "menu":[ {"icon":"/thruk/themes/{{theme}}/images/arrow_refresh.png","label":"refresh","action":"server://refresh/$HOSTNAME$"}]}
     }
+{% endraw %}
 .....
 
 
