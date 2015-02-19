@@ -15,9 +15,9 @@ Host related Macros:
 [options="header"]
 |===========================================================================================================
 | Macro                 | Example                  | Description
-| $HOSTADDRESS$         | 94.185.90.75             | Adress from the host configuration.
-| $HOSTNAME$            | www.thruk.org            | Name from the host configuration.
-| $HOSTALIAS$           | thruk.org                | Alias from the host configuration.
+| $HOSTADDRESS$         | 94.185.90.75             | Adress from the host configuration
+| $HOSTNAME$            | www.thruk.org            | Name from the host configuration
+| $HOSTALIAS$           | thruk.org                | Alias from the host configuration
 | $HOSTSTATEID$         | 0                        | Number of the current state. 0 UP, 1 Down, 2 Unreachable
 | $HOSTLATENCY$         | 0.12                     | Latency of last check in seconds
 | $HOSTOUTPUT$          | HTTP - 200 OK...         | Output of last check
@@ -28,6 +28,7 @@ Host related Macros:
 | $HOSTBACKENDID$       | abcd                     | Internal id for the backend of this host
 | $HOSTBACKENDNAME$     | Cental-Monitor           | Given name for the backend of this host
 | $HOSTBACKENDADDRESS$  | localhost:6557           | Connection string used by the backend of this host
+| $HOSTNOTESURL$        | http://example.org       | Notes URL
 |===========================================================================================================
 
 
@@ -45,9 +46,10 @@ Service related Macros:
 | $SERVICEPERFDATA$        | size=100B;200;300;;;     | Performance data from the last check
 | $SERVICEATTEMPT$         | 1                        | Number of current check attempt
 | $SERVICECHECKCOMMAND$    | check_http!www.thruk.org | Checkcommand used for this host
-| $SERVICEBACKENDID$       | abcd                     | Internal id for the backend of this service
+| $SERVICEBACKENDID$       | abcd                     | Internal ID for the backend of this service
 | $SERVICEBACKENDNAME$     | Cental-Monitor           | Given name for the backend of this service
 | $SERVICEBACKENDADDRESS$  | localhost:6557           | Connection string used by the backend of this service
+| $SERVICENOTESURL$        | http://example.org       | Notes URL
 |===========================================================================================================
 
 
@@ -86,7 +88,7 @@ link:action-menu.html[action items] the link:dashboard.html[panorama dashboard].
 [options="header"]
 |===========================================================================================================
 | Macro              | Example                  | Description
-| $REMOTE_USER$      | thrukadmin               | User name of current user. Also available in $REMOTE_USER environment variable
+| $REMOTE_USER$      | thrukadmin               | User name of current user which is also available in $REMOTE_USER environment variable
 | $DASHBOARD_ID$     | 10                       | Number of the current dashboard
-| $DASHBOARD_ICON$   | tabpan-tab_1_panlet_2    | Id of the current icon which triggered the server action
+| $DASHBOARD_ICON$   | tabpan-tab_1_panlet_2    | ID of the current icon which triggered the server action
 |===========================================================================================================
