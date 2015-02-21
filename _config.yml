@@ -1,5 +1,7 @@
 name: Thruk
 baseurl: /
+source: src/
+destination: _site/
 markdown: redcarpet
 highlighter: pygments
 redcarpet:
@@ -29,4 +31,4 @@ gallerytag:
   thumb_height: 250
   columns: 6
 
-exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl"]
+exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl", "_submodules"]
