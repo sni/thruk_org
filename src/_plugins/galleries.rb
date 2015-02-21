@@ -87,7 +87,7 @@ module Jekyll
         def generate(site)
 
             @config = site.config['gallerytag']
-            @gallery_dir  = File.expand_path(@config['dir'])
+            @gallery_dir  = File.expand_path("src/"+@config['dir'])
             @gallery_dest = File.expand_path(File.join(site.dest, @config['dir']))
 
             thumbify(files_to_resize(site))

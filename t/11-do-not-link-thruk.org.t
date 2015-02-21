@@ -4,7 +4,7 @@ use Test::More;
 use Data::Dumper;
 
 my $cmds = [
-  'grep -nr "thruk.org" . | grep -v download.thruk | grep -v .git | grep -v .gem | grep -v _submodule | grep -v demo.thruk | grep -v _site/ | grep http: | grep -v home_link'
+  'grep -nr "thruk.org" src/ _submodules/thruk/docs/documentation/ | grep -v download.thruk | grep -v demo.thruk | grep http: | grep -v home_link'
 ];
 
 # find all close / mkdirs not ensuring permissions
