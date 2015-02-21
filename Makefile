@@ -35,7 +35,7 @@ update:
 	git pull --rebase --recurse-submodules=yes
 	cp _submodules/thruk/Changes src/_includes/Changes.html
 	make api_update
-	git commit -am 'automatic api / changelog update'
+	-git commit -am 'automatic api / changelog update'
 
 api_update:
 	./api_update.pl _submodules/thruk/ perl5/
