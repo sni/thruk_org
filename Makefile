@@ -29,7 +29,7 @@ test: .gem
 localtest: _site
 	TESTEXPECT=Thruk TESTTARGET=file://$(shell pwd)/_site/ PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t
 
-update:
+update: clean_env
 	git submodule init
 	git submodule update
 	git pull --rebase --recurse-submodules=yes
@@ -37,5 +37,12 @@ update:
 	make api_update
 	-git commit -am 'automatic api / changelog update'
 
-api_update:
+api_update: clean_env
 	./api_update.pl _submodules/thruk/ perl5/
+
+clean_env:
+	@if [ $$(git status 2>&1 | grep -c "working directory clean") -ne 1 ]; then \
+	    git status >&2; \
+	    echo "cannot run update" >&2; \
+	    exit 1; \
+	fi
