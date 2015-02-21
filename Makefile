@@ -29,5 +29,13 @@ test: .gem
 localtest: _site
 	TESTEXPECT=Thruk TESTTARGET=file://$(shell pwd)/_site/ PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t
 
+update:
+	git submodule init
+	git submodule update
+	git pull --rebase --recurse-submodules=yes
+	cp _submodules/thruk/Changes src/_includes/Changes.html
+	make api_update
+	git commit -am 'automatic api / changelog update'
+
 api_update:
-	./api_update.pl /home/thruk/Thruk/ /home/thruk/thruk_libs/local-lib/dest/lib/perl5/
+	./api_update.pl _submodules/thruk/ perl5/

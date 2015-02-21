@@ -7,13 +7,13 @@ use File::Copy qw/copy/;
 use Cwd qw/abs_path/;
 
 my $dir = abs_path($0);
-$dir =~ s/api_update\.pl$/api/gmx;
-chdir($dir) or die("chdir $dir failed: $!");
+$dir =~ s/api_update\.pl$/src\/api/gmx;
 
-my $input_dir = $ARGV[0];
-my $lib_dir   = $ARGV[1];
+my $input_dir = abs_path($ARGV[0]);
+my $lib_dir   = abs_path($ARGV[1]);
+chdir($dir) or die("chdir $dir failed: $!");
 die("usage: $0 <thruk dir> <lib dir>") unless($input_dir and $lib_dir);
-die("usage: $0 <thruk dir>  <lib dir>") unless(-d $input_dir.'/lib' && -d $lib_dir);
+die("usage: $0 <thruk dir> <lib dir>") unless(-d $input_dir.'/lib' && -d $lib_dir);
 
 clean_api();
 create_api();
