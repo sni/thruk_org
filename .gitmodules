@@ -1,0 +1,3 @@
+[submodule "_submodules/thruk"]
+	path = _submodules/thruk
+	url = https://github.com/sni/Thruk.git
