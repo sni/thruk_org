@@ -34,11 +34,12 @@ update: clean_env
 	git submodule update
 	git pull --rebase --recurse-submodules=yes
 	cp _submodules/thruk/Changes src/_includes/Changes.html
+	-git commit -am 'changelog update'
 	make api_update
-	-git commit -am 'automatic api / changelog update'
 
 api_update: clean_env
 	./api_update.pl _submodules/thruk/ perl5/
+	-git commit -am 'automatic api update'
 
 clean_env:
 	@if [ $$(git status 2>&1 | grep -c "working directory clean") -ne 1 ]; then \
