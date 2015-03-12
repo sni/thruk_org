@@ -221,3 +221,10 @@ SMALL.new {
     top: -6px;
     color: red;
 }
+
+
+/* no linewraping in code blocks */
+.listingblock pre {
+    overflow: scroll;
+    white-space: pre;
+}
