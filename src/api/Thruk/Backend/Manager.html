@@ -278,10 +278,11 @@ respect permissions</p>
 <p>returns a hash of macros</p>
 <p>$args should be:
 {
-    host      =&gt; host object (or service object)
-    service   =&gt; service object
-    skip_user =&gt; 0/1   # skips user macros
-    args      =&gt; list of arguments
+    host        =&gt; host object (or service object)
+    service     =&gt; service object
+    skip_user   =&gt; 0/1   # skips user macros
+    filter_user =&gt; 0/1   # filters user macros
+    args        =&gt; list of arguments
 }</p>
 <p>
 </p>
@@ -421,9 +422,16 @@ twice per request.</p>
 </p>
 <h2><a name="_set_user_macros">_set_user_macros</a></h2>
 <pre>
-  _set_user_macros($peer_key)</pre>
-<p>sets the USER1-256 macros from a resource file. Shinken supports all kind of
+  _set_user_macros($args, $macros)</pre>
+<p>Sets the USER1-256 macros from a resource file. Shinken supports all kind of
 macros in resource file, so just replace everything from the resource file.</p>
+<p>$args should be:
+{
+    peer_key      =&gt; peer key for the host
+    filter        =&gt; 0/1   # only add allowed macros
+    file          =&gt; location of resource file
+    args          =&gt; list of arguments
+}</p>
 <p>
 </p>
 <h2><a name="_set_result_defaults">_set_result_defaults</a></h2>
