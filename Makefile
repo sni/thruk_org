@@ -32,6 +32,7 @@ localtest: _site
 update: clean_env
 	git submodule init
 	git submodule update
+	cd _submodules/thruk && git pull
 	git pull --rebase --recurse-submodules=yes
 	cp _submodules/thruk/Changes src/_includes/Changes.html
 	-git commit -am 'changelog update'
