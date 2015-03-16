@@ -28,12 +28,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 		<li><a href="#remove_item">remove_item</a></li>
 		<li><a href="#has_group">has_group</a></li>
 		<li><a href="#has_role">has_role</a></li>
+		<li><a href="#is_user">is_user</a></li>
 		<li><a href="#_renew_navigation">_renew_navigation</a></li>
 		<li><a href="#_get_menu_target">_get_menu_target</a></li>
 		<li><a href="#_get_menu_link">_get_menu_link</a></li>
 		<li><a href="#_get_section_by_name">_get_section_by_name</a></li>
 		<li><a href="#_get_sublink_by_name">_get_sublink_by_name</a></li>
 		<li><a href="#_uri_with">_uri_with</a></li>
+		<li><a href="#_remove_item_from_links">_remove_item_from_links</a></li>
 	</ul>
 
 	<li><a href="#author">AUTHOR</a></li>
@@ -105,20 +107,28 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 </p>
 <h2><a name="remove_item">remove_item</a></h2>
 <pre>
-  remove_item()</pre>
+  remove_item($category, $item_name)
+  remove_item($category, $subcategory, $item_name)
+  remove_item($category, $subcategory, $item_name, $hintname)</pre>
 <p>removes an existing item from an existing category</p>
 <p>
 </p>
 <h2><a name="has_group">has_group</a></h2>
 <pre>
-  has_group($c, $group)</pre>
+  has_group($group)</pre>
 <p>returns 1 if the current user has this group</p>
 <p>
 </p>
 <h2><a name="has_role">has_role</a></h2>
 <pre>
-  has_role($c, $role)</pre>
+  has_role($role)</pre>
 <p>returns 1 if the current user has this role</p>
+<p>
+</p>
+<h2><a name="is_user">is_user</a></h2>
+<pre>
+  is_user($username)</pre>
+<p>returns 1 if the current user has the given name</p>
 <p>
 </p>
 <h2><a name="_renew_navigation">_renew_navigation</a></h2>
@@ -155,6 +165,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre>
   _uri_with($baseurl, $additions)</pre>
 <p>returns link expanded with additional parameters</p>
+<p>
+</p>
+<h2><a name="_remove_item_from_links">_remove_item_from_links</a></h2>
+<pre>
+  _remove_item_from_links($links, $name)</pre>
+<p>returns links list with items by name removed</p>
 <p>
 </p>
 <hr />
