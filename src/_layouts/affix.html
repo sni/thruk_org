@@ -78,20 +78,26 @@ jQuery(document).ready(function() {
 
     /* fix anchor offset */
     $('#affix-nav li a').click(function(event) {
+        /* this one fixes clicks from the navigation bar */
         event.preventDefault();
         $($(this).attr('href'))[0].scrollIntoView();
-        scrollBy(0, -50);
+        scrollBy(0, -60);
     });
-    /*
     window.onhashchange = function(e) {
+        /* this one fixes when user clicks on the paper clip */
         if(e == null || e.newURL == null) {
             return;
         }
         window.setTimeout(function() {
-            window.scrollBy(0,-50);
+            window.scrollBy(0,-60);
         }, 50);
+    }
+    window.onload = function(e) {
+        /* this one fixes initial page loads with hash already set */
+        if(window.location.hash != "") {
+            window.scrollBy(0,-60);
+        }
     };
-    */
 });
 -->
 </script>
