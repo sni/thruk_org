@@ -35,6 +35,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 		<li><a href="#dump">dump</a></li>
 		<li><a href="#html_all_inclusive">html_all_inclusive</a></li>
 		<li><a href="#page_splice">page_splice</a></li>
+		<li><a href="#round_decimals">round_decimals</a></li>
 		<li><a href="#_absolutize_url">_absolutize_url</a></li>
 	</ul>
 
@@ -166,6 +167,14 @@ A string will be returned if no PNP graph can be exported.</p>
   page_splice($data, $size_per_page, $max_pages)</pre>
 <p>cut data in chunks of $size_per_page size. $max_pages is the maximum number of
 pages or -1 for all.</p>
+<p>
+</p>
+<h2><a name="round_decimals">round_decimals</a></h2>
+<pre>
+  round_decimals($float, $decimals, [$round_method])</pre>
+<p>Round number to given decimals. method can be 'floor' or 'round'.</p>
+<pre>
+  - round will do a standard mathematical round</pre>
 <p>
 </p>
 <h2><a name="_absolutize_url">_absolutize_url</a></h2>
