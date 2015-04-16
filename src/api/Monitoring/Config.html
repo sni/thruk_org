@@ -28,6 +28,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 		<li><a href="#get_objects">get_objects</a></li>
 		<li><a href="#get_objects_by_type">get_objects_by_type</a></li>
 		<li><a href="#get_objects_by_name">get_objects_by_name</a></li>
+		<li><a href="#get_objects_by_path">get_objects_by_path</a></li>
 		<li><a href="#get_templates_by_type">get_templates_by_type</a></li>
 		<li><a href="#get_template_by_name">get_template_by_name</a></li>
 		<li><a href="#get_object_by_location">get_object_by_location</a></li>
@@ -165,6 +166,12 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <p>Get objects by name. Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects.</p>
 <p>
 </p>
+<h2><a name="get_objects_by_path">get_objects_by_path</a></h2>
+<pre>
+    get_objects_by_path($path)</pre>
+<p>Get all objects by path. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects or undef.</p>
+<p>
+</p>
 <h2><a name="get_templates_by_type">get_templates_by_type</a></h2>
 <pre>
     get_templates_by_type($type)</pre>
@@ -180,7 +187,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <h2><a name="get_object_by_location">get_object_by_location</a></h2>
 <pre>
     get_object_by_location($path, $linenr)</pre>
-<p>Get object by location. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects or undef.</p>
+<p>Get single object by path and line number. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects or undef.</p>
 <p>
 </p>
 <h2><a name="get_object_by_id">get_object_by_id</a></h2>
