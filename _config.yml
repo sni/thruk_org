@@ -15,10 +15,10 @@ asciidoctor:
     - icons=font
 
 # site specific variables
-release_version: 1.88-3
-release_version_deb: 1.88-3
-release_version_rpm: 1.88-3
-release_date: April 18, 2015
+release_version: 1.88-4
+release_version_deb: 1.88-4
+release_version_rpm: 1.88-4
+release_date: April 22, 2015
 
 mailinglist_url: https://groups.google.com/group/thruk
 forum_url: http://www.monitoring-portal.org/wbb/index.php?page=Board&amp;boardID=106
