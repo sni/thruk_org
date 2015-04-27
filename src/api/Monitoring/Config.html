@@ -34,6 +34,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 		<li><a href="#get_object_by_location">get_object_by_location</a></li>
 		<li><a href="#get_object_by_id">get_object_by_id</a></li>
 		<li><a href="#get_services_for_host">get_services_for_host</a></li>
+		<li><a href="#get_hosts_for_service">get_hosts_for_service</a></li>
 		<li><a href="#update">update</a></li>
 		<li><a href="#check_files_changed">check_files_changed</a></li>
 		<li><a href="#update_object">update_object</a></li>
@@ -202,6 +203,12 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <p>Get services by host. Returns a hashref with ids of references:</p>
 <pre>
  { host =&gt; {}, group =&gt; {} }</pre>
+<p>
+</p>
+<h2><a name="get_hosts_for_service">get_hosts_for_service</a></h2>
+<pre>
+    get_hosts_for_service($svcobj)</pre>
+<p>Get hosts for service. Returns a list of hosts using this service.</p>
 <p>
 </p>
 <h2><a name="update">update</a></h2>
