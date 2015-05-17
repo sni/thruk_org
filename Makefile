@@ -40,6 +40,7 @@ changelog_update:
 
 api_update:
 	./api_update.pl _submodules/thruk/ perl5/
+	-git add src/api
 	-git commit -am 'automatic api update'
 
 clean_env:
