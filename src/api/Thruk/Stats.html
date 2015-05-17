@@ -1,0 +1,100 @@
+---
+title: Stats
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new">new</a></li>
+		<li><a href="#profile">profile</a></li>
+		<li><a href="#enable">enable</a></li>
+		<li><a href="#clear">clear</a></li>
+		<li><a href="#report">report</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Stats - Application profiling</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+  $c-&gt;stats-&gt;profile(begin =&gt; &lt;name&gt;);
+  ...
+  $c-&gt;stats-&gt;profile(end =&gt; &lt;name&gt;);</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><code>Thruk::Stats</code> provides simple profiling</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new">new</a></h2>
+<pre>
+    new()</pre>
+<p>return new stats object</p>
+<p>
+</p>
+<h2><a name="profile">profile</a></h2>
+<pre>
+    profile(begin|end =&gt; $name)
+    profile(comment =&gt; $text)</pre>
+<p>sets breakpoint with message</p>
+<p>
+</p>
+<h2><a name="enable">enable</a></h2>
+<pre>
+    enable()</pre>
+<p>enable profiling</p>
+<p>
+</p>
+<h2><a name="clear">clear</a></h2>
+<pre>
+    clear()</pre>
+<p>reset current profile</p>
+<p>
+</p>
+<h2><a name="report">report</a></h2>
+<pre>
+    report()</pre>
+<p>return report from profiled data</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, 2009-2014, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+

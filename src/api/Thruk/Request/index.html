@@ -1,0 +1,95 @@
+---
+title: Request
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#wmethods">WMETHODS</a></li>
+	<ul>
+
+		<li><a href="#encoding">encoding</a></li>
+		<li><a href="#query_parameters">query_parameters</a></li>
+		<li><a href="#body_parameters">body_parameters</a></li>
+		<li><a href="#parameters">parameters</a></li>
+		<li><a href="#param">param</a></li>
+		<li><a href="#url">url</a></li>
+	</ul>
+
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#license">LICENSE</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Thruk::Request - Subclass of <a href="http://search.cpan.org/perldoc?Plack%3A%3ARequest">the Plack::Request manpage</a> which supports encoding.</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>based on Plack::Request::WithEncoding.</p>
+<p>
+</p>
+<hr />
+<h1><a name="wmethods">WMETHODS</a></h1>
+<p>
+</p>
+<h2><a name="encoding">encoding</a></h2>
+<p>Returns a encoding method to use to decode parameters.</p>
+<p>
+</p>
+<h2><a name="query_parameters">query_parameters</a></h2>
+<p>Returns a reference to a hash containing <strong>decoded</strong> query string (GET)
+parameters.</p>
+<p>
+</p>
+<h2><a name="body_parameters">body_parameters</a></h2>
+<p>Returns a reference to a hash containing <strong>decoded</strong> posted parameters in the
+request body (POST). As with <code>query_parameters</code>.</p>
+<p>
+</p>
+<h2><a name="parameters">parameters</a></h2>
+<p>Returns a hash reference containing <strong>decoded</strong> (and merged) GET
+and POST parameters.</p>
+<p>
+</p>
+<h2><a name="param">param</a></h2>
+<p>Returns <strong>decoded</strong> GET and POST parameters.</p>
+<p>
+</p>
+<h2><a name="url">url</a></h2>
+<p>Returns urldecoded utf8 uri as string.</p>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p><a href="http://search.cpan.org/perldoc?Plack%3A%3ARequest">the Plack::Request manpage</a>, <a href="/Plack/Request/WithEncoding.html">the Plack::Request::WithEncoding manpage</a></p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Sven Nierlein, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;
+moznion &lt;<a href="mailto:moznion@gmail.com">moznion@gmail.com</a>&gt;</p>
+
