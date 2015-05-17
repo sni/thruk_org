@@ -18,11 +18,12 @@ breadcrumb: []
 	<li><a href="#methods">METHODS</a></li>
 	<ul>
 
-		<li><a href="#check_user_roles_wrapper">check_user_roles_wrapper</a></li>
-		<li><a href="#found_leaks">found_leaks</a></li>
-		<li><a href="#prepare_path">prepare_path</a></li>
-		<li><a href="#run_after_request">run_after_request</a></li>
-		<li><a href="#use_stats">use_stats</a></li>
+		<li><a href="#startup">startup</a></li>
+		<li><a href="#config">config</a></li>
+		<li><a href="#obj_db_model">obj_db_model</a></li>
+		<li><a href="#log">log</a></li>
+		<li><a href="#verbose">verbose</a></li>
+		<li><a href="#debug">debug</a></li>
 	</ul>
 
 	<li><a href="#see_also">SEE ALSO</a></li>
@@ -37,43 +38,49 @@ breadcrumb: []
 <p>
 </p>
 <h1><a name="name">NAME</a></h1>
-<p>Thruk - Catalyst based monitoring web interface</p>
+<p>Thruk - Monitoring Web Interface</p>
 <p>
 </p>
 <hr />
 <h1><a name="description">DESCRIPTION</a></h1>
-<p>Catalyst based monitoring web interface for Nagios, Icinga and Shinken</p>
+<p>Monitoring web interface for Naemon, Nagios, Icinga and Shinken.</p>
 <p>
 </p>
 <hr />
 <h1><a name="methods">METHODS</a></h1>
 <p>
 </p>
-<h2><a name="check_user_roles_wrapper">check_user_roles_wrapper</a></h2>
+<h2><a name="startup">startup</a></h2>
+<p>returns the psgi code ref</p>
+<p>
+</p>
+<h2><a name="config">config</a></h2>
 <pre>
-  check_user_roles_wrapper()</pre>
-<p>wrapper to avoid undef values in TT</p>
+    make config accessible via Thruk-&gt;config</pre>
 <p>
 </p>
-<h2><a name="found_leaks">found_leaks</a></h2>
-<p>called by CatalystX::LeakChecker and used for testing purposes only</p>
+<h2><a name="obj_db_model">obj_db_model</a></h2>
+<p>return obj_db object model</p>
 <p>
 </p>
-<h2><a name="prepare_path">prepare_path</a></h2>
-<p>called by catalyst to strip path prefixes</p>
+<h2><a name="log">log</a></h2>
+<pre>
+    make log accessible via Thruk-&gt;log</pre>
 <p>
 </p>
-<h2><a name="run_after_request">run_after_request</a></h2>
-<p>run callbacks after the request had been send to the client</p>
+<h2><a name="verbose">verbose</a></h2>
+<pre>
+    make verbose accessible via Thruk-&gt;verbose</pre>
 <p>
 </p>
-<h2><a name="use_stats">use_stats</a></h2>
-<p>switch for various internal catalyst sub wether to gather statistics or not</p>
+<h2><a name="debug">debug</a></h2>
+<pre>
+    make debug accessible via Thruk-&gt;debug</pre>
 <p>
 </p>
 <hr />
 <h1><a name="see_also">SEE ALSO</a></h1>
-<p><a href="/api/Thruk/Controller/Root.html">the Thruk::Controller::Root manpage</a>, <a href="http://search.cpan.org/perldoc?Catalyst">the Catalyst manpage</a></p>
+<p><a href="/api/Thruk/Controller/Root.html">the Thruk::Controller::Root manpage</a>, <a href="http://search.cpan.org/perldoc?Plack">the Plack manpage</a></p>
 <p>
 </p>
 <hr />

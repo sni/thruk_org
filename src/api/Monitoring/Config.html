@@ -45,6 +45,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 		<li><a href="#file_undelete">file_undelete</a></li>
 		<li><a href="#rebuild_index">rebuild_index</a></li>
 		<li><a href="#rename_dependencies">rename_dependencies</a></li>
+		<li><a href="#clone_refs">clone_refs</a></li>
+		<li><a href="#gather_references">gather_references</a></li>
 		<li><a href="#get_references">get_references</a></li>
 		<li><a href="#get_default_keys">get_default_keys</a></li>
 		<li><a href="#get_files_for_folder">get_files_for_folder</a></li>
@@ -269,6 +271,18 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <pre>
     rename_dependencies($obj, $oldname, $newname)</pre>
 <p>rename dependencies</p>
+<p>
+</p>
+<h2><a name="clone_refs">clone_refs</a></h2>
+<pre>
+    clone_refs($obj, $cloned_name, $newname)</pre>
+<p>clone all incoming references of object</p>
+<p>
+</p>
+<h2><a name="gather_references">gather_references</a></h2>
+<pre>
+    gather_references($obj)</pre>
+<p>return incoming and outgoing references</p>
 <p>
 </p>
 <h2><a name="get_references">get_references</a></h2>

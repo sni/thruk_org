@@ -18,8 +18,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 	<li><a href="#methods">METHODS</a></li>
 	<ul>
 
+		<li><a href="#begin">begin</a></li>
+		<li><a href="#end">end</a></li>
 		<li><a href="#add_defaults">add_defaults</a></li>
-		<li><a href="#after_execute">after_execute</a></li>
+		<li><a href="#add_safe_defaults">add_safe_defaults</a></li>
+		<li><a href="#add_cached_defaults">add_cached_defaults</a></li>
 		<li><a href="#set_configs_stash">set_configs_stash</a></li>
 		<li><a href="#_set_possible_backends">_set_possible_backends</a></li>
 		<li><a href="#set_processinfo">set_processinfo</a></li>
@@ -51,14 +54,32 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 <h1><a name="methods">METHODS</a></h1>
 <p>
 </p>
+<h2><a name="begin">begin</a></h2>
+<pre>
+    begin, running at the begin of every req (except static ones)</pre>
+<pre>
+    runs before add_defaults().</pre>
+<p>
+</p>
+<h2><a name="end">end</a></h2>
+<p>check and display errors (if any)</p>
+<p>
+</p>
 <h2><a name="add_defaults">add_defaults</a></h2>
 <pre>
     add default values and create backend connections</pre>
+<pre>
+    runs after before()</pre>
 <p>
 </p>
-<h2><a name="after_execute">after_execute</a></h2>
+<h2><a name="add_safe_defaults">add_safe_defaults</a></h2>
 <pre>
-    last chance to change stash</pre>
+    same like add_defaults() but does not redirect to error page on backend errors</pre>
+<p>
+</p>
+<h2><a name="add_cached_defaults">add_cached_defaults</a></h2>
+<pre>
+    same like AddDefaults but trys to use cached things</pre>
 <p>
 </p>
 <h2><a name="set_configs_stash">set_configs_stash</a></h2>
@@ -87,7 +108,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 </p>
 <h2><a name="set_processinfo">set_processinfo</a></h2>
 <pre>
-  set_processinfo($c, [$cached_user_data, $safe, $cached_data])</pre>
+  set_processinfo($c, [$cached_user_data, $safe, $cached_data,$skip_cache_update])</pre>
 <p>set process info into stash</p>
 <p>
 </p>

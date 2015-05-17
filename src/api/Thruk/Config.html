@@ -19,9 +19,18 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 	<ul>
 
 		<li><a href="#get_config">get_config</a></li>
+		<li><a href="#set_default_config">set_default_config</a></li>
 		<li><a href="#get_git_name">get_git_name</a></li>
 		<li><a href="#get_debug_details">get_debug_details</a></li>
 		<li><a href="#home">home</a></li>
+		<li><a href="#expand_numeric_list">expand_numeric_list</a></li>
+		<li><a href="#array2hash">array2hash</a></li>
+		<li><a href="#finalize">finalize</a></li>
+		<li><a href="#get_user">get_user</a></li>
+		<li><a href="#list">list</a></li>
+		<li><a href="#read_config_file">read_config_file</a></li>
+		<li><a href="#switch_user">switch_user</a></li>
+		<li><a href="#load_any___options__">load_any( $options )</a></li>
 	</ul>
 
 	<li><a href="#author">AUTHOR</a></li>
@@ -48,7 +57,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <p>
 </p>
 <h2><a name="get_config">get_config</a></h2>
-<p>make config available without loading complete catalyst</p>
+<p>make config available without loading complete dependencies</p>
+<p>
+</p>
+<h2><a name="set_default_config">set_default_config</a></h2>
+<p>return config with defaults added</p>
 <p>
 </p>
 <h2><a name="get_git_name">get_git_name</a></h2>
@@ -66,7 +79,53 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <h2><a name="home">home</a></h2>
 <pre>
   home()</pre>
-<p>faster variant of Catalyst::Utils::home</p>
+<p>return home folder</p>
+<p>
+</p>
+<h2><a name="expand_numeric_list">expand_numeric_list</a></h2>
+<pre>
+  expand_numeric_list($txt, $c)</pre>
+<p>return expanded list.
+ex.: converts '3,7-9,15' -&gt; [3,7,8,9,15]</p>
+<p>
+</p>
+<h2><a name="array2hash">array2hash</a></h2>
+<pre>
+  array2hash($data, [ $key, [ $key2 ]])</pre>
+<p>create a hash by key</p>
+<p>
+</p>
+<h2><a name="finalize">finalize</a></h2>
+<pre>
+    restore used specific settings from global hash</pre>
+<p>
+</p>
+<h2><a name="get_user">get_user</a></h2>
+<pre>
+  get_user($from_folder)</pre>
+<p>return user and groups thruk runs with</p>
+<p>
+</p>
+<h2><a name="list">list</a></h2>
+<pre>
+  list($ref)</pre>
+<p>return list of ref unless it is already a list</p>
+<p>
+</p>
+<h2><a name="read_config_file">read_config_file</a></h2>
+<pre>
+  read_config_file($file)</pre>
+<p>return parsed config file</p>
+<p>
+</p>
+<h2><a name="switch_user">switch_user</a></h2>
+<pre>
+  switch_user($uid, $groups)</pre>
+<p>switch user and groups</p>
+<p>
+</p>
+<h2><a name="load_any___options__">load_any( $options )</a></h2>
+<p>replacement function for Config::Any-&gt;load_files</p>
 <p>
 </p>
 <hr />

@@ -18,16 +18,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 	<li><a href="#methods">METHODS</a></li>
 	<ul>
 
-		<li><a href="#set_default_config">set_default_config</a></li>
 		<li><a href="#init_backend_thread_pool">init_backend_thread_pool</a></li>
 		<li><a href="#shutdown_backend_thread_pool">shutdown_backend_thread_pool</a></li>
 		<li><a href="#_do_thread">_do_thread</a></li>
 		<li><a href="#do_on_peer">do_on_peer</a></li>
-		<li><a href="#get_config">get_config</a></li>
-		<li><a href="#expand_numeric_list">expand_numeric_list</a></li>
-		<li><a href="#array2hash">array2hash</a></li>
-		<li><a href="#list">list</a></li>
-		<li><a href="#read_config_file">read_config_file</a></li>
 		<li><a href="#get_memory_usage">get_memory_usage</a></li>
 	</ul>
 
@@ -54,10 +48,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <h1><a name="methods">METHODS</a></h1>
 <p>
 </p>
-<h2><a name="set_default_config">set_default_config</a></h2>
-<p>return config with defaults added</p>
-<p>
-</p>
 <h2><a name="init_backend_thread_pool">init_backend_thread_pool</a></h2>
 <pre>
   init_backend_thread_pool()</pre>
@@ -80,37 +70,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre>
   do_on_peer($key, $function, $args)</pre>
 <p>run a function on a backend peer</p>
-<p>
-</p>
-<h2><a name="get_config">get_config</a></h2>
-<pre>
-  get_config()</pre>
-<p>return small thruks config. Needed for the backends only.</p>
-<p>
-</p>
-<h2><a name="expand_numeric_list">expand_numeric_list</a></h2>
-<pre>
-  expand_numeric_list($txt, $c)</pre>
-<p>return expanded list.
-ex.: converts '3,7-9,15' -&gt; [3,7,8,9,15]</p>
-<p>
-</p>
-<h2><a name="array2hash">array2hash</a></h2>
-<pre>
-  array2hash($data, [ $key, [ $key2 ]])</pre>
-<p>create a hash by key</p>
-<p>
-</p>
-<h2><a name="list">list</a></h2>
-<pre>
-  list($ref)</pre>
-<p>return list of ref unless it is already a list</p>
-<p>
-</p>
-<h2><a name="read_config_file">read_config_file</a></h2>
-<pre>
-  read_config_file($file)</pre>
-<p>return parsed config file</p>
 <p>
 </p>
 <h2><a name="get_memory_usage">get_memory_usage</a></h2>
