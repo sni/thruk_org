@@ -13,12 +13,17 @@
     </footer>
     </div>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    jQuery('.carousel').carousel({
-        interval: 60000 //changes the speed (ms)
-    })
-    </script>
+<script src="{{ site.baseurl }}js/jquery.js"></script>
+<script src="{{ site.baseurl }}js/bootstrap.min.js"></script>
+{% if page.lightbox %}
+<script src="{{ site.baseurl }}js/lightbox.min.js"></script>
+{% endif %}
 
+<!-- Script to Activate the Carousel -->
+<script>
+jQuery('.carousel').carousel({
+    interval: 60000 //changes the speed (ms)
+})
+</script>
 </body>
 </html>

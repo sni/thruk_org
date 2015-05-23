@@ -31,4 +31,4 @@ gallerytag:
   thumb_height: 250
   columns: 6
 
-exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl", "_submodules"]
+exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl", "_submodules", "optimize_images.sh"]
