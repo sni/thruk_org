@@ -25,6 +25,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 		<li><a href="#add_cached_defaults">add_cached_defaults</a></li>
 		<li><a href="#set_configs_stash">set_configs_stash</a></li>
 		<li><a href="#_set_possible_backends">_set_possible_backends</a></li>
+		<li><a href="#update_site_panel_hashes">update_site_panel_hashes</a></li>
 		<li><a href="#set_processinfo">set_processinfo</a></li>
 		<li><a href="#die_when_no_backends">die_when_no_backends</a></li>
 		<li><a href="#delayed_proc_info_update">delayed_proc_info_update</a></li>
@@ -94,16 +95,21 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
   _set_possible_backends($c, $disabled_backends)</pre>
 <pre>
   possible values are:
-    0 = reachable
-    1 = unreachable
-    2 = hidden by user
-    3 = hidden by backend param
-    4 = disabled by missing group auth</pre>
+    0 = reachable                           REACHABLE
+    1 = unreachable                         UNREACHABLE
+    2 = hidden by user                      HIDDEN_USER
+    3 = hidden by backend param             HIDDEN_PARAM
+    4 = disabled by missing group auth      DISABLED_AUTH</pre>
 <pre>
    override by the config tool
-    5 = disabled (overide by config tool)
-    6 = hidden   (overide by config tool)
-    7 = up       (overide by config tool)</pre>
+    5 = disabled (overide by config tool)   DISABLED_CONF
+    6 = hidden   (overide by config tool)   HIDDEN_CONF
+    7 = up       (overide by config tool)   UP_CONF</pre>
+<p>
+</p>
+<h2><a name="update_site_panel_hashes">update_site_panel_hashes</a></h2>
+<pre>
+  update_site_panel_hashes($c)</pre>
 <p>
 </p>
 <h2><a name="set_processinfo">set_processinfo</a></h2>
