@@ -17,6 +17,7 @@ for my $cmd (@{$cmds}) {
     chomp($line);
     $line =~ s|//|/|gmx;
 
+    next if $line =~ m|src/_includes/Changes.html|mx;
     push @fails, $line;
   }
   close($ph);
