@@ -36,7 +36,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 		<li><a href="#get_groups_filter">get_groups_filter</a></li>
 		<li><a href="#set_selected_columns">set_selected_columns</a></li>
 		<li><a href="#set_custom_title">set_custom_title</a></li>
-		<li><a href="#set_comments_and_downtimes">set_comments_and_downtimes</a></li>
 		<li><a href="#add_view">add_view</a></li>
 		<li><a href="#redirect_view">redirect_view</a></li>
 		<li><a href="#get_downtimes_filter">get_downtimes_filter</a></li>
@@ -179,12 +178,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>sets page title based on http parameters</p>
 <p>
 </p>
-<h2><a name="set_comments_and_downtimes">set_comments_and_downtimes</a></h2>
-<pre>
-  set_comments_and_downtimes($c)</pre>
-<p>set comments / downtimes by host</p>
-<p>
-</p>
 <h2><a name="add_view">add_view</a></h2>
 <pre>
   add_view($options)</pre>
@@ -228,7 +221,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 </p>
 <h2><a name="get_service_matrix">get_service_matrix</a></h2>
 <pre>
-  get_service_matrix($c)</pre>
+  get_service_matrix($c, [$hostfilter], [$servicefilter])</pre>
 <p>get matrix of services usable by a minemap</p>
 <p>
 </p>
