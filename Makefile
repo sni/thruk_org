@@ -3,11 +3,11 @@ GEM_HOME=.gem
 JEKYLL=.gem/bin/jekyll
 TESTPORT=4001
 
-quick: .gem
-	GEM_HOME=$(GEM_HOME) NOCLEAN=1 $(JEKYLL) build --trace --limit_posts=5 --no-watch
-
 build: .gem
 	GEM_HOME=$(GEM_HOME) $(JEKYLL) build --trace
+
+quick: .gem
+	GEM_HOME=$(GEM_HOME) NOCLEAN=1 $(JEKYLL) build --trace --limit_posts=5 --no-watch
 
 server: .gem
 	GEM_HOME=$(GEM_HOME) $(JEKYLL) serve --host=\* --trace --watch
