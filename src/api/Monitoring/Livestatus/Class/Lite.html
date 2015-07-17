@@ -81,7 +81,11 @@ Just like Monitoring::Livestatus::Class but without Moose.</p>
 <pre>
     my $class = Monitoring::Livestatus::Class::Lite-&gt;new({
         peer =&gt; '/var/lib/nagios3/rw/livestatus.sock'
-    });</pre>
+    });
+    # or shorter
+    my $class = Monitoring::Livestatus::Class::Lite-&gt;new(
+        '/var/lib/nagios3/rw/livestatus.sock'
+    );</pre>
 <pre>
     my $hosts = $class-&gt;table('hosts');
     my @data = $hosts-&gt;columns('display_name')-&gt;filter(
