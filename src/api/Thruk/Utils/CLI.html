@@ -34,6 +34,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 		<li><a href="#get_object_db">get_object_db</a></li>
 		<li><a href="#store_objects">store_objects</a></li>
 		<li><a href="#request_url">request_url</a></li>
+		<li><a href="#set_downtime">set_downtime</a></li>
 	</ul>
 
 	<li><a href="#examples">EXAMPLES</a></li>
@@ -115,6 +116,27 @@ and can then be saved, reviewed or discarded.</p>
 <pre>
     request_url($c, $url, $cookies)</pre>
 <p>returns requested url as string. In list context returns ($code, $result)</p>
+<p>
+</p>
+<h2><a name="set_downtime">set_downtime</a></h2>
+<pre>
+    set_downtime($c, $downtime, $cmd_typ, $backends, $start, $end, $hours, $minutes)</pre>
+<p>set downtime.</p>
+<pre>
+    downtime is a hash like this:
+    {
+        author  =&gt; 'downtime author'
+        host    =&gt; 'host name'
+        service =&gt; 'optional service name'
+        comment =&gt; 'downtime comment'
+        fixed   =&gt; 1
+    }</pre>
+<pre>
+    cmd_typ is:
+         55 -&gt; hosts
+         56 -&gt; services
+         84 -&gt; hostgroups
+        122 -&gt; servicegroups</pre>
 <p>
 </p>
 <hr />
