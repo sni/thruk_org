@@ -132,8 +132,10 @@ format: 0d 0h 29m 43s</p>
 </p>
 <h2><a name="full_uri">full_uri</a></h2>
 <pre>
-  full_uri($c)</pre>
-<p>returns a correct uri</p>
+  full_uri($c, $return_full_url)</pre>
+<p>returns uri to current page.</p>
+<pre>
+    $return_full_url   -&gt; return <a href="http://host/thruk/">http://host/thruk/</a>... instead of /thruk/...</pre>
 <p>
 </p>
 <h2><a name="as_url_arg">as_url_arg</a></h2>
@@ -156,8 +158,8 @@ format: 0d 0h 29m 43s</p>
 </p>
 <h2><a name="uri_with">uri_with</a></h2>
 <pre>
-  uri_with($c, $data)</pre>
-<p>returns a correct uri</p>
+  uri_with($c, $data, $keep_absolute)</pre>
+<p>returns a relative uri to current page</p>
 <p>
 </p>
 <h2><a name="html_escape">html_escape</a></h2>
