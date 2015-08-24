@@ -48,7 +48,7 @@ sub create_api {
                 $mkdir =~ s|/$||gmx;
                 my $cmd = sprintf("/usr/bin/pod2html --htmlroot=%s --podpath=%s --infile=%s --outfile=%s",
                                   '/',
-                                  $input_dir.'/lib:'.$lib_dir,
+                                  $input_dir.'/lib:'.$lib_dir.':'.$input_dir.'/plugins/plugins-available/conf/lib',
                                   "$p$f",
                                   "$mkdir/$out",
                                  );
