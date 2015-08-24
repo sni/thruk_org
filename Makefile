@@ -1,6 +1,6 @@
-GEM=gem1.9.1
+GEM=gem2.1
 GEM_HOME=.gem
-JEKYLL=.gem/bin/jekyll
+JEKYLL=jekyll
 TESTPORT=4001
 
 build: .gem
