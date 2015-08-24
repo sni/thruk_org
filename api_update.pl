@@ -46,7 +46,7 @@ sub create_api {
                     mkdir($mkdir);
                 }
                 $mkdir =~ s|/$||gmx;
-                my $cmd = sprintf("/usr/bin/pod2html --htmlroot=%s --podpath=%s --infile=%s --outfile=%s",
+                my $cmd = sprintf("/usr/bin/pod2html --htmlroot=%s --podpath=%s --infile=%s --outfile=%s --nopoderrors",
                                   '/',
                                   $input_dir.'/lib:'.$lib_dir.':'.$input_dir.'/plugins/plugins-available/conf/lib',
                                   "$p$f",
@@ -70,9 +70,9 @@ sub create_api {
                 $content =~ s|\Q$p\E/|api/|gmx;
                 $content =~ s#href="/(Monitoring)/#href="/api/$1/#gmx;
                 # replace other links to cpan
-                $content =~ s|(href=")//\w+/.*?/x86_64-linux-gnu-thread-multi/(.*?)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
-                $content =~ s|(href=")//\w+/.*?/perl5/(.*?)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
-                $content =~ s|(href=")//\w+/.*?/lib/(.*?)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
+                $content =~ s%(href=")[^"]+/(i586-linux-gnu-thread-multi-64int|x86_64-linux-gnu-thread-multi)/([^"]+)\.html(")%&_replace_cpan_link($1, $3, $4)%gemxis;
+                $content =~ s|(href=")[^"]+/perl5/([^"]+)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
+                $content =~ s|(href=")[^"]+/lib/([^"]+)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
                 print $fh $content;
                 close($fh);
                 #print STDERR 'api/'.$mkdir,"/",$name,".html\n";
