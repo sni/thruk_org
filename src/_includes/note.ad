@@ -1,0 +1,3 @@
+++++++
+<small class='new'><span class="glyphicon glyphicon-star" aria-hidden="true"></span>{{ include.text }}</small>
+++++++
