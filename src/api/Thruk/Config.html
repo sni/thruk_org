@@ -7,134 +7,117 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#get_config">get_config</a></li>
-		<li><a href="#set_default_config">set_default_config</a></li>
-		<li><a href="#get_git_name">get_git_name</a></li>
-		<li><a href="#get_debug_details">get_debug_details</a></li>
-		<li><a href="#home">home</a></li>
-		<li><a href="#expand_numeric_list">expand_numeric_list</a></li>
-		<li><a href="#array2hash">array2hash</a></li>
-		<li><a href="#finalize">finalize</a></li>
-		<li><a href="#get_user">get_user</a></li>
-		<li><a href="#list">list</a></li>
-		<li><a href="#read_config_file">read_config_file</a></li>
-		<li><a href="#switch_user">switch_user</a></li>
-		<li><a href="#load_any___options__">load_any( $options )</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_config">get_config</a></li>
+      <li><a href="#set_default_config">set_default_config</a></li>
+      <li><a href="#get_git_name">get_git_name</a></li>
+      <li><a href="#get_debug_details">get_debug_details</a></li>
+      <li><a href="#home">home</a></li>
+      <li><a href="#expand_numeric_list">expand_numeric_list</a></li>
+      <li><a href="#array2hash">array2hash</a></li>
+      <li><a href="#finalize">finalize</a></li>
+      <li><a href="#get_user">get_user</a></li>
+      <li><a href="#list">list</a></li>
+      <li><a href="#read_config_file">read_config_file</a></li>
+      <li><a href="#switch_user">switch_user</a></li>
+      <li><a href="#load_any-options">load_any( $options )</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Config - Generic Access to Thruks Config</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Generic Access to Thruks Config</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="get_config">get_config</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_config">get_config</h2>
+
 <p>make config available without loading complete dependencies</p>
-<p>
-</p>
-<h2><a name="set_default_config">set_default_config</a></h2>
+
+<h2 id="set_default_config">set_default_config</h2>
+
 <p>return config with defaults added</p>
-<p>
-</p>
-<h2><a name="get_git_name">get_git_name</a></h2>
-<pre>
-  get_git_name()</pre>
+
+<h2 id="get_git_name">get_git_name</h2>
+
+<pre><code>  get_git_name()</code></pre>
+
 <p>return git branch name</p>
-<p>
-</p>
-<h2><a name="get_debug_details">get_debug_details</a></h2>
-<pre>
-  get_debug_details()</pre>
+
+<h2 id="get_debug_details">get_debug_details</h2>
+
+<pre><code>  get_debug_details()</code></pre>
+
 <p>return details useful for debuging</p>
-<p>
-</p>
-<h2><a name="home">home</a></h2>
-<pre>
-  home()</pre>
+
+<h2 id="home">home</h2>
+
+<pre><code>  home()</code></pre>
+
 <p>return home folder</p>
-<p>
-</p>
-<h2><a name="expand_numeric_list">expand_numeric_list</a></h2>
-<pre>
-  expand_numeric_list($txt, $c)</pre>
-<p>return expanded list.
-ex.: converts '3,7-9,15' -&gt; [3,7,8,9,15]</p>
-<p>
-</p>
-<h2><a name="array2hash">array2hash</a></h2>
-<pre>
-  array2hash($data, [ $key, [ $key2 ]])</pre>
+
+<h2 id="expand_numeric_list">expand_numeric_list</h2>
+
+<pre><code>  expand_numeric_list($txt, $c)</code></pre>
+
+<p>return expanded list. ex.: converts &#39;3,7-9,15&#39; -&gt; [3,7,8,9,15]</p>
+
+<h2 id="array2hash">array2hash</h2>
+
+<pre><code>  array2hash($data, [ $key, [ $key2 ]])</code></pre>
+
 <p>create a hash by key</p>
-<p>
-</p>
-<h2><a name="finalize">finalize</a></h2>
-<pre>
-    restore used specific settings from global hash</pre>
-<p>
-</p>
-<h2><a name="get_user">get_user</a></h2>
-<pre>
-  get_user($from_folder)</pre>
+
+<h2 id="finalize">finalize</h2>
+
+<pre><code>    restore used specific settings from global hash</code></pre>
+
+<h2 id="get_user">get_user</h2>
+
+<pre><code>  get_user($from_folder)</code></pre>
+
 <p>return user and groups thruk runs with</p>
-<p>
-</p>
-<h2><a name="list">list</a></h2>
-<pre>
-  list($ref)</pre>
+
+<h2 id="list">list</h2>
+
+<pre><code>  list($ref)</code></pre>
+
 <p>return list of ref unless it is already a list</p>
-<p>
-</p>
-<h2><a name="read_config_file">read_config_file</a></h2>
-<pre>
-  read_config_file($file)</pre>
+
+<h2 id="read_config_file">read_config_file</h2>
+
+<pre><code>  read_config_file($file)</code></pre>
+
 <p>return parsed config file</p>
-<p>
-</p>
-<h2><a name="switch_user">switch_user</a></h2>
-<pre>
-  switch_user($uid, $groups)</pre>
+
+<h2 id="switch_user">switch_user</h2>
+
+<pre><code>  switch_user($uid, $groups)</code></pre>
+
 <p>switch user and groups</p>
-<p>
-</p>
-<h2><a name="load_any___options__">load_any( $options )</a></h2>
+
+<h2 id="load_any-options">load_any( $options )</h2>
+
 <p>replacement function for Config::Any-&gt;load_files</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

@@ -7,116 +7,101 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Config/', 'Config'
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#update_objects">update_objects</a></li>
-		<li><a href="#update_objects_from_text">update_objects_from_text</a></li>
-		<li><a href="#readonly">readonly</a></li>
-		<li><a href="#update_readonly_status">update_readonly_status</a></li>
-		<li><a href="#_parse_line">_parse_line</a></li>
-		<li><a href="#get_meta_data">get_meta_data</a></li>
-		<li><a href="#save">save</a></li>
-		<li><a href="#diff">diff</a></li>
-		<li><a href="#get_new_file_content">get_new_file_content</a></li>
-		<li><a href="#striptspace">StripTSpace</a></li>
-		<li><a href="#striplspace">StripLSpace</a></li>
-		<li><a href="#stripltspace">StripLTSpace</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#update_objects">update_objects</a></li>
+      <li><a href="#update_objects_from_text">update_objects_from_text</a></li>
+      <li><a href="#readonly">readonly</a></li>
+      <li><a href="#update_readonly_status">update_readonly_status</a></li>
+      <li><a href="#parse_line">_parse_line</a></li>
+      <li><a href="#get_meta_data">get_meta_data</a></li>
+      <li><a href="#save">save</a></li>
+      <li><a href="#diff">diff</a></li>
+      <li><a href="#get_new_file_content">get_new_file_content</a></li>
+      <li><a href="#StripTSpace">StripTSpace</a></li>
+      <li><a href="#StripLSpace">StripLSpace</a></li>
+      <li><a href="#StripLTSpace">StripLTSpace</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Monitoring::Conf::File - Object Configuration File</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Defaults for host objects</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
 <p>return new host</p>
-<p>
-</p>
-<h2><a name="update_objects">update_objects</a></h2>
+
+<h2 id="update_objects">update_objects</h2>
+
 <p>update all objects from this file</p>
-<p>
-</p>
-<h2><a name="update_objects_from_text">update_objects_from_text</a></h2>
+
+<h2 id="update_objects_from_text">update_objects_from_text</h2>
+
 <p>update all objects from this file by text</p>
-<p>
-</p>
-<h2><a name="readonly">readonly</a></h2>
+
+<h2 id="readonly">readonly</h2>
+
 <p>return true if file is readonly</p>
-<p>
-</p>
-<h2><a name="update_readonly_status">update_readonly_status</a></h2>
+
+<h2 id="update_readonly_status">update_readonly_status</h2>
+
 <p>updates the readonly status for this file</p>
-<p>
-</p>
-<h2><a name="_parse_line">_parse_line</a></h2>
+
+<h2 id="parse_line">_parse_line</h2>
+
 <p>parse a single config line</p>
-<p>
-</p>
-<h2><a name="get_meta_data">get_meta_data</a></h2>
+
+<h2 id="get_meta_data">get_meta_data</h2>
+
 <p>return meta data for this file</p>
-<p>
-</p>
-<h2><a name="save">save</a></h2>
+
+<h2 id="save">save</h2>
+
 <p>save changes to disk</p>
-<p>
-</p>
-<h2><a name="diff">diff</a></h2>
+
+<h2 id="diff">diff</h2>
+
 <p>get diff of changes</p>
-<p>
-</p>
-<h2><a name="get_new_file_content">get_new_file_content</a></h2>
+
+<h2 id="get_new_file_content">get_new_file_content</h2>
+
 <p>returns the current raw file content</p>
-<p>
-</p>
-<h2><a name="striptspace">StripTSpace</a></h2>
+
+<h2 id="StripTSpace">StripTSpace</h2>
+
 <p>strip trailing whitespace</p>
-<p>replacement for string::strip, which is broken on 64 bit
-<a href="https://rt.cpan.org/Ticket/Display.html?id=70028">https://rt.cpan.org/Ticket/Display.html?id=70028</a></p>
-<p>
-</p>
-<h2><a name="striplspace">StripLSpace</a></h2>
+
+<p>replacement for string::strip, which is broken on 64 bit https://rt.cpan.org/Ticket/Display.html?id=70028</p>
+
+<h2 id="StripLSpace">StripLSpace</h2>
+
 <p>strip leading whitespace</p>
-<p>
-</p>
-<h2><a name="stripltspace">StripLTSpace</a></h2>
+
+<h2 id="StripLTSpace">StripLTSpace</h2>
+
 <p>strip leading and trailing whitespace</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

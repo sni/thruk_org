@@ -7,135 +7,118 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#load_runtime_data">load_runtime_data</a></li>
-		<li><a href="#set_id">set_id</a></li>
-		<li><a href="#append_child">append_child</a></li>
-		<li><a href="#resolve_depends">resolve_depends</a></li>
-		<li><a href="#depends_list">depends_list</a></li>
-		<li><a href="#get_stateful_data">get_stateful_data</a></li>
-		<li><a href="#get_save_obj">get_save_obj</a></li>
-		<li><a href="#get_objects_conf">get_objects_conf</a></li>
-		<li><a href="#update_status">update_status</a></li>
-		<li><a href="#set_status">set_status</a></li>
-		<li><a href="#result_to_cmd">result_to_cmd</a></li>
-		<li><a href="#result_to_string">result_to_string</a></li>
-		<li><a href="#to_json">TO_JSON</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#load_runtime_data">load_runtime_data</a></li>
+      <li><a href="#set_id">set_id</a></li>
+      <li><a href="#append_child">append_child</a></li>
+      <li><a href="#resolve_depends">resolve_depends</a></li>
+      <li><a href="#depends_list">depends_list</a></li>
+      <li><a href="#get_stateful_data">get_stateful_data</a></li>
+      <li><a href="#get_save_obj">get_save_obj</a></li>
+      <li><a href="#get_objects_conf">get_objects_conf</a></li>
+      <li><a href="#update_status">update_status</a></li>
+      <li><a href="#set_status">set_status</a></li>
+      <li><a href="#result_to_cmd">result_to_cmd</a></li>
+      <li><a href="#result_to_string">result_to_string</a></li>
+      <li><a href="#TO_JSON">TO_JSON</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::BP::Components::Node - Node Class</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Business Process Node</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
 <p>return new node</p>
-<p>
-</p>
-<h2><a name="load_runtime_data">load_runtime_data</a></h2>
+
+<h2 id="load_runtime_data">load_runtime_data</h2>
+
 <p>update runtime data</p>
-<p>
-</p>
-<h2><a name="set_id">set_id</a></h2>
+
+<h2 id="set_id">set_id</h2>
+
 <p>set new id for this node</p>
-<p>
-</p>
-<h2><a name="append_child">append_child</a></h2>
+
+<h2 id="append_child">append_child</h2>
+
 <p>append new child noew</p>
-<p>
-</p>
-<h2><a name="resolve_depends">resolve_depends</a></h2>
+
+<h2 id="resolve_depends">resolve_depends</h2>
+
 <p>resolve dependend nodes into objects</p>
-<p>
-</p>
-<h2><a name="depends_list">depends_list</a></h2>
+
+<h2 id="depends_list">depends_list</h2>
+
 <p>return data which needs to be statefully stored</p>
-<p>
-</p>
-<h2><a name="get_stateful_data">get_stateful_data</a></h2>
+
+<h2 id="get_stateful_data">get_stateful_data</h2>
+
 <p>return data which needs to be statefully stored</p>
-<p>
-</p>
-<h2><a name="get_save_obj">get_save_obj</a></h2>
+
+<h2 id="get_save_obj">get_save_obj</h2>
+
 <p>get object data which needs to be saved</p>
-<p>
-</p>
-<h2><a name="get_objects_conf">get_objects_conf</a></h2>
+
+<h2 id="get_objects_conf">get_objects_conf</h2>
+
 <p>return objects config</p>
-<p>
-</p>
-<h2><a name="update_status">update_status</a></h2>
-<pre>
-    update_status($c, $bp, [$livedata], [$type])</pre>
-<p>type:
-    0 / undef:      update always
-    1:              only recalculate</p>
+
+<h2 id="update_status">update_status</h2>
+
+<pre><code>    update_status($c, $bp, [$livedata], [$type])</code></pre>
+
+<p>type: 0 / undef: update always 1: only recalculate</p>
+
 <p>update status of node</p>
-<p>
-</p>
-<h2><a name="set_status">set_status</a></h2>
-<pre>
-    set_status($state, $text, $bp, $extra)</pre>
+
+<h2 id="set_status">set_status</h2>
+
+<pre><code>    set_status($state, $text, $bp, $extra)</code></pre>
+
 <p>extra: contains extra attributes</p>
+
 <p>set status of node</p>
-<p>
-</p>
-<h2><a name="result_to_cmd">result_to_cmd</a></h2>
-<pre>
-    result_to_cmd($bp, [$force_service])</pre>
-<p>returns command represention of result. Useful for transmitting result by
-livestatus command.</p>
-<p>
-</p>
-<h2><a name="result_to_string">result_to_string</a></h2>
-<pre>
-    result_to_string($bp, [$force_service])</pre>
-<p>returns string represention of result. Useful for transmitting into a checkresults
-spool folder.</p>
-<p>
-</p>
-<h2><a name="to_json">TO_JSON</a></h2>
-<pre>
-    TO_JSON()</pre>
+
+<h2 id="result_to_cmd">result_to_cmd</h2>
+
+<pre><code>    result_to_cmd($bp, [$force_service])</code></pre>
+
+<p>returns command represention of result. Useful for transmitting result by livestatus command.</p>
+
+<h2 id="result_to_string">result_to_string</h2>
+
+<pre><code>    result_to_string($bp, [$force_service])</code></pre>
+
+<p>returns string represention of result. Useful for transmitting into a checkresults spool folder.</p>
+
+<h2 id="TO_JSON">TO_JSON</h2>
+
+<pre><code>    TO_JSON()</code></pre>
+
 <p>returns data needed to represent this module in json</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

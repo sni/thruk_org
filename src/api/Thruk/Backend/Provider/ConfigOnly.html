@@ -7,264 +7,249 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#peer_key">peer_key</a></li>
-		<li><a href="#peer_addr">peer_addr</a></li>
-		<li><a href="#peer_name">peer_name</a></li>
-		<li><a href="#reconnect">reconnect</a></li>
-		<li><a href="#send_command">send_command</a></li>
-		<li><a href="#get_processinfo">get_processinfo</a></li>
-		<li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
-		<li><a href="#get_contactgroups_by_contact">get_contactgroups_by_contact</a></li>
-		<li><a href="#get_commands">get_commands</a></li>
-		<li><a href="#get_comments">get_comments</a></li>
-		<li><a href="#get_contactgroups">get_contactgroups</a></li>
-		<li><a href="#get_contacts">get_contacts</a></li>
-		<li><a href="#get_contact_names">get_contact_names</a></li>
-		<li><a href="#get_downtimes">get_downtimes</a></li>
-		<li><a href="#get_hostgroups">get_hostgroups</a></li>
-		<li><a href="#get_hostgroup_names">get_hostgroup_names</a></li>
-		<li><a href="#get_hosts">get_hosts</a></li>
-		<li><a href="#get_hosts_by_servicequery">get_hosts_by_servicequery</a></li>
-		<li><a href="#get_host_names">get_host_names</a></li>
-		<li><a href="#get_servicegroups">get_servicegroups</a></li>
-		<li><a href="#get_servicegroup_names">get_servicegroup_names</a></li>
-		<li><a href="#get_services">get_services</a></li>
-		<li><a href="#get_service_names">get_service_names</a></li>
-		<li><a href="#get_timeperiods">get_timeperiods</a></li>
-		<li><a href="#get_timeperiod_names">get_timeperiod_names</a></li>
-		<li><a href="#get_logs">get_logs</a></li>
-		<li><a href="#get_performance_stats">get_performance_stats</a></li>
-		<li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
-		<li><a href="#get_host_stats">get_host_stats</a></li>
-		<li><a href="#get_service_stats">get_service_stats</a></li>
-		<li><a href="#set_verbose">set_verbose</a></li>
-		<li><a href="#renew_logcache">renew_logcache</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#peer_key">peer_key</a></li>
+      <li><a href="#peer_addr">peer_addr</a></li>
+      <li><a href="#peer_name">peer_name</a></li>
+      <li><a href="#reconnect">reconnect</a></li>
+      <li><a href="#send_command">send_command</a></li>
+      <li><a href="#get_processinfo">get_processinfo</a></li>
+      <li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
+      <li><a href="#get_contactgroups_by_contact">get_contactgroups_by_contact</a></li>
+      <li><a href="#get_commands">get_commands</a></li>
+      <li><a href="#get_comments">get_comments</a></li>
+      <li><a href="#get_contactgroups">get_contactgroups</a></li>
+      <li><a href="#get_contacts">get_contacts</a></li>
+      <li><a href="#get_contact_names">get_contact_names</a></li>
+      <li><a href="#get_downtimes">get_downtimes</a></li>
+      <li><a href="#get_hostgroups">get_hostgroups</a></li>
+      <li><a href="#get_hostgroup_names">get_hostgroup_names</a></li>
+      <li><a href="#get_hosts">get_hosts</a></li>
+      <li><a href="#get_hosts_by_servicequery">get_hosts_by_servicequery</a></li>
+      <li><a href="#get_host_names">get_host_names</a></li>
+      <li><a href="#get_servicegroups">get_servicegroups</a></li>
+      <li><a href="#get_servicegroup_names">get_servicegroup_names</a></li>
+      <li><a href="#get_services">get_services</a></li>
+      <li><a href="#get_service_names">get_service_names</a></li>
+      <li><a href="#get_timeperiods">get_timeperiods</a></li>
+      <li><a href="#get_timeperiod_names">get_timeperiod_names</a></li>
+      <li><a href="#get_logs">get_logs</a></li>
+      <li><a href="#get_performance_stats">get_performance_stats</a></li>
+      <li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
+      <li><a href="#get_host_stats">get_host_stats</a></li>
+      <li><a href="#get_service_stats">get_service_stats</a></li>
+      <li><a href="#set_verbose">set_verbose</a></li>
+      <li><a href="#renew_logcache">renew_logcache</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Backend::Provider::ConfigOnly - ConfigOnly backend class</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>ConfigOnly backend class</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
 <p>create new manager</p>
-<p>
-</p>
-<h2><a name="peer_key">peer_key</a></h2>
+
+<h2 id="peer_key">peer_key</h2>
+
 <p>return the peers key</p>
-<p>
-</p>
-<h2><a name="peer_addr">peer_addr</a></h2>
+
+<h2 id="peer_addr">peer_addr</h2>
+
 <p>return the peers address</p>
-<p>
-</p>
-<h2><a name="peer_name">peer_name</a></h2>
+
+<h2 id="peer_name">peer_name</h2>
+
 <p>return the peers name</p>
-<p>
-</p>
-<h2><a name="reconnect">reconnect</a></h2>
+
+<h2 id="reconnect">reconnect</h2>
+
 <p>recreate database connection</p>
-<p>
-</p>
-<h2><a name="send_command">send_command</a></h2>
+
+<h2 id="send_command">send_command</h2>
+
 <p>sends a command</p>
-<p>
-</p>
-<h2><a name="get_processinfo">get_processinfo</a></h2>
+
+<h2 id="get_processinfo">get_processinfo</h2>
+
 <p>return the process info</p>
-<p>
-</p>
-<h2><a name="get_can_submit_commands">get_can_submit_commands</a></h2>
+
+<h2 id="get_can_submit_commands">get_can_submit_commands</h2>
+
 <p>returns if this user is allowed to submit commands</p>
-<p>
-</p>
-<h2><a name="get_contactgroups_by_contact">get_contactgroups_by_contact</a></h2>
-<pre>
-  get_contactgroups_by_contact</pre>
+
+<h2 id="get_contactgroups_by_contact">get_contactgroups_by_contact</h2>
+
+<pre><code>  get_contactgroups_by_contact</code></pre>
+
 <p>returns a list of contactgroups by contact</p>
-<p>
-</p>
-<h2><a name="get_commands">get_commands</a></h2>
-<pre>
-  get_commands</pre>
+
+<h2 id="get_commands">get_commands</h2>
+
+<pre><code>  get_commands</code></pre>
+
 <p>returns a list of commands</p>
-<p>
-</p>
-<h2><a name="get_comments">get_comments</a></h2>
-<pre>
-  get_comments</pre>
+
+<h2 id="get_comments">get_comments</h2>
+
+<pre><code>  get_comments</code></pre>
+
 <p>returns a list of comments</p>
-<p>
-</p>
-<h2><a name="get_contactgroups">get_contactgroups</a></h2>
-<pre>
-  get_contactgroups</pre>
+
+<h2 id="get_contactgroups">get_contactgroups</h2>
+
+<pre><code>  get_contactgroups</code></pre>
+
 <p>returns a list of contactgroups</p>
-<p>
-</p>
-<h2><a name="get_contacts">get_contacts</a></h2>
-<pre>
-  get_contacts</pre>
+
+<h2 id="get_contacts">get_contacts</h2>
+
+<pre><code>  get_contacts</code></pre>
+
 <p>returns a list of contacts</p>
-<p>
-</p>
-<h2><a name="get_contact_names">get_contact_names</a></h2>
-<pre>
-  get_contact_names</pre>
+
+<h2 id="get_contact_names">get_contact_names</h2>
+
+<pre><code>  get_contact_names</code></pre>
+
 <p>returns a list of contact names</p>
-<p>
-</p>
-<h2><a name="get_downtimes">get_downtimes</a></h2>
-<pre>
-  get_downtimes</pre>
+
+<h2 id="get_downtimes">get_downtimes</h2>
+
+<pre><code>  get_downtimes</code></pre>
+
 <p>returns a list of downtimes</p>
-<p>
-</p>
-<h2><a name="get_hostgroups">get_hostgroups</a></h2>
-<pre>
-  get_hostgroups</pre>
+
+<h2 id="get_hostgroups">get_hostgroups</h2>
+
+<pre><code>  get_hostgroups</code></pre>
+
 <p>returns a list of hostgroups</p>
-<p>
-</p>
-<h2><a name="get_hostgroup_names">get_hostgroup_names</a></h2>
-<pre>
-  get_hostgroup_names</pre>
+
+<h2 id="get_hostgroup_names">get_hostgroup_names</h2>
+
+<pre><code>  get_hostgroup_names</code></pre>
+
 <p>returns a list of hostgroup names</p>
-<p>
-</p>
-<h2><a name="get_hosts">get_hosts</a></h2>
-<pre>
-  get_hosts</pre>
+
+<h2 id="get_hosts">get_hosts</h2>
+
+<pre><code>  get_hosts</code></pre>
+
 <p>returns a list of hosts</p>
-<p>
-</p>
-<h2><a name="get_hosts_by_servicequery">get_hosts_by_servicequery</a></h2>
-<pre>
-  get_hosts_by_servicequery</pre>
+
+<h2 id="get_hosts_by_servicequery">get_hosts_by_servicequery</h2>
+
+<pre><code>  get_hosts_by_servicequery</code></pre>
+
 <p>returns a list of host by a services query</p>
-<p>
-</p>
-<h2><a name="get_host_names">get_host_names</a></h2>
-<pre>
-  get_host_names</pre>
+
+<h2 id="get_host_names">get_host_names</h2>
+
+<pre><code>  get_host_names</code></pre>
+
 <p>returns a list of host names</p>
-<p>
-</p>
-<h2><a name="get_servicegroups">get_servicegroups</a></h2>
-<pre>
-  get_servicegroups</pre>
+
+<h2 id="get_servicegroups">get_servicegroups</h2>
+
+<pre><code>  get_servicegroups</code></pre>
+
 <p>returns a list of servicegroups</p>
-<p>
-</p>
-<h2><a name="get_servicegroup_names">get_servicegroup_names</a></h2>
-<pre>
-  get_servicegroup_names</pre>
+
+<h2 id="get_servicegroup_names">get_servicegroup_names</h2>
+
+<pre><code>  get_servicegroup_names</code></pre>
+
 <p>returns a list of servicegroup names</p>
-<p>
-</p>
-<h2><a name="get_services">get_services</a></h2>
-<pre>
-  get_services</pre>
+
+<h2 id="get_services">get_services</h2>
+
+<pre><code>  get_services</code></pre>
+
 <p>returns a list of services</p>
-<p>
-</p>
-<h2><a name="get_service_names">get_service_names</a></h2>
-<pre>
-  get_service_names</pre>
+
+<h2 id="get_service_names">get_service_names</h2>
+
+<pre><code>  get_service_names</code></pre>
+
 <p>returns a list of service names</p>
-<p>
-</p>
-<h2><a name="get_timeperiods">get_timeperiods</a></h2>
-<pre>
-  get_timeperiods</pre>
+
+<h2 id="get_timeperiods">get_timeperiods</h2>
+
+<pre><code>  get_timeperiods</code></pre>
+
 <p>returns a list of timeperiods</p>
-<p>
-</p>
-<h2><a name="get_timeperiod_names">get_timeperiod_names</a></h2>
-<pre>
-  get_timeperiod_names</pre>
+
+<h2 id="get_timeperiod_names">get_timeperiod_names</h2>
+
+<pre><code>  get_timeperiod_names</code></pre>
+
 <p>returns a list of timeperiod names</p>
-<p>
-</p>
-<h2><a name="get_logs">get_logs</a></h2>
-<pre>
-  get_logs</pre>
+
+<h2 id="get_logs">get_logs</h2>
+
+<pre><code>  get_logs</code></pre>
+
 <p>returns logfile entries</p>
-<p>
-</p>
-<h2><a name="get_performance_stats">get_performance_stats</a></h2>
-<pre>
-  get_performance_stats</pre>
+
+<h2 id="get_performance_stats">get_performance_stats</h2>
+
+<pre><code>  get_performance_stats</code></pre>
+
 <p>returns a performance statistics</p>
-<p>
-</p>
-<h2><a name="get_extra_perf_stats">get_extra_perf_stats</a></h2>
-<pre>
-  get_extra_perf_stats</pre>
+
+<h2 id="get_extra_perf_stats">get_extra_perf_stats</h2>
+
+<pre><code>  get_extra_perf_stats</code></pre>
+
 <p>returns extra performance statistics</p>
-<p>
-</p>
-<h2><a name="get_host_stats">get_host_stats</a></h2>
-<pre>
-  get_host_stats</pre>
+
+<h2 id="get_host_stats">get_host_stats</h2>
+
+<pre><code>  get_host_stats</code></pre>
+
 <p>returns hosts statistics used in the tac page</p>
-<p>
-</p>
-<h2><a name="get_service_stats">get_service_stats</a></h2>
-<pre>
-  get_service_stats</pre>
+
+<h2 id="get_service_stats">get_service_stats</h2>
+
+<pre><code>  get_service_stats</code></pre>
+
 <p>returns service statistics used in the tac page</p>
-<p>
-</p>
-<h2><a name="set_verbose">set_verbose</a></h2>
-<pre>
-  set_verbose</pre>
+
+<h2 id="set_verbose">set_verbose</h2>
+
+<pre><code>  set_verbose</code></pre>
+
 <p>sets verbose mode for this backend and returns old value</p>
-<p>
-</p>
-<h2><a name="renew_logcache">renew_logcache</a></h2>
-<pre>
-  renew_logcache</pre>
+
+<h2 id="renew_logcache">renew_logcache</h2>
+
+<pre><code>  renew_logcache</code></pre>
+
 <p>renew logcache</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software. You can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

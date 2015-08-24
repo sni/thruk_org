@@ -7,244 +7,225 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#set_default_stash">set_default_stash</a></li>
-		<li><a href="#summary_add_host_stats">summary_add_host_stats</a></li>
-		<li><a href="#get_search_from_param">get_search_from_param</a></li>
-		<li><a href="#do_filter">do_filter</a></li>
-		<li><a href="#reset_filter">reset_filter</a></li>
-		<li><a href="#classic_filter">classic_filter</a></li>
-		<li><a href="#do_search">do_search</a></li>
-		<li><a href="#fill_totals_box">fill_totals_box</a></li>
-		<li><a href="#extend_filter">extend_filter</a></li>
-		<li><a href="#single_search">single_search</a></li>
-		<li><a href="#get_host_statustype_filter">get_host_statustype_filter</a></li>
-		<li><a href="#get_host_prop_filter">get_host_prop_filter</a></li>
-		<li><a href="#get_service_statustype_filter">get_service_statustype_filter</a></li>
-		<li><a href="#get_service_prop_filter">get_service_prop_filter</a></li>
-		<li><a href="#get_comments_filter">get_comments_filter</a></li>
-		<li><a href="#get_groups_filter">get_groups_filter</a></li>
-		<li><a href="#set_selected_columns">set_selected_columns</a></li>
-		<li><a href="#set_custom_title">set_custom_title</a></li>
-		<li><a href="#add_view">add_view</a></li>
-		<li><a href="#redirect_view">redirect_view</a></li>
-		<li><a href="#get_downtimes_filter">get_downtimes_filter</a></li>
-		<li><a href="#convert_time_amount">convert_time_amount</a></li>
-		<li><a href="#set_audio_file">set_audio_file</a></li>
-		<li><a href="#set_favicon_counter">set_favicon_counter</a></li>
-		<li><a href="#get_service_matrix">get_service_matrix</a></li>
-		<li><a href="#serveraction">serveraction</a></li>
-		<li><a href="#set_default_filter">set_default_filter</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#set_default_stash">set_default_stash</a></li>
+      <li><a href="#summary_add_host_stats">summary_add_host_stats</a></li>
+      <li><a href="#get_search_from_param">get_search_from_param</a></li>
+      <li><a href="#do_filter">do_filter</a></li>
+      <li><a href="#reset_filter">reset_filter</a></li>
+      <li><a href="#classic_filter">classic_filter</a></li>
+      <li><a href="#do_search">do_search</a></li>
+      <li><a href="#fill_totals_box">fill_totals_box</a></li>
+      <li><a href="#extend_filter">extend_filter</a></li>
+      <li><a href="#single_search">single_search</a></li>
+      <li><a href="#get_host_statustype_filter">get_host_statustype_filter</a></li>
+      <li><a href="#get_host_prop_filter">get_host_prop_filter</a></li>
+      <li><a href="#get_service_statustype_filter">get_service_statustype_filter</a></li>
+      <li><a href="#get_service_prop_filter">get_service_prop_filter</a></li>
+      <li><a href="#get_comments_filter">get_comments_filter</a></li>
+      <li><a href="#get_groups_filter">get_groups_filter</a></li>
+      <li><a href="#set_selected_columns">set_selected_columns</a></li>
+      <li><a href="#set_custom_title">set_custom_title</a></li>
+      <li><a href="#add_view">add_view</a></li>
+      <li><a href="#redirect_view">redirect_view</a></li>
+      <li><a href="#get_downtimes_filter">get_downtimes_filter</a></li>
+      <li><a href="#convert_time_amount">convert_time_amount</a></li>
+      <li><a href="#set_audio_file">set_audio_file</a></li>
+      <li><a href="#set_favicon_counter">set_favicon_counter</a></li>
+      <li><a href="#get_service_matrix">get_service_matrix</a></li>
+      <li><a href="#serveraction">serveraction</a></li>
+      <li><a href="#set_default_filter">set_default_filter</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Utils::Status - Status Utilities Collection for Thruk</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Status Utilities Collection for Thruk</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="set_default_stash">set_default_stash</a></h2>
-<pre>
-  set_default_stash($c)</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="set_default_stash">set_default_stash</h2>
+
+<pre><code>  set_default_stash($c)</code></pre>
+
 <p>sets some default stash variables</p>
-<p>
-</p>
-<h2><a name="summary_add_host_stats">summary_add_host_stats</a></h2>
-<pre>
-  summary_add_host_stats($prefix, $group, $host)</pre>
+
+<h2 id="summary_add_host_stats">summary_add_host_stats</h2>
+
+<pre><code>  summary_add_host_stats($prefix, $group, $host)</code></pre>
+
 <p>count host status for this host</p>
-<p>
-</p>
-<h2><a name="get_search_from_param">get_search_from_param</a></h2>
-<pre>
-  get_search_from_param($c, $prefix, $force)</pre>
+
+<h2 id="get_search_from_param">get_search_from_param</h2>
+
+<pre><code>  get_search_from_param($c, $prefix, $force)</code></pre>
+
 <p>returns search parameter based on request parameters</p>
-<p>
-</p>
-<h2><a name="do_filter">do_filter</a></h2>
-<pre>
-  do_filter($c, $prefix)</pre>
+
+<h2 id="do_filter">do_filter</h2>
+
+<pre><code>  do_filter($c, $prefix)</code></pre>
+
 <p>returns filter from request parameter</p>
-<p>
-</p>
-<h2><a name="reset_filter">reset_filter</a></h2>
-<pre>
-  reset_filter($c)</pre>
+
+<h2 id="reset_filter">reset_filter</h2>
+
+<pre><code>  reset_filter($c)</code></pre>
+
 <p>reset filter from c-&gt;request-&gt;parameters</p>
-<p>
-</p>
-<h2><a name="classic_filter">classic_filter</a></h2>
-<pre>
-  classic_filter($c)</pre>
+
+<h2 id="classic_filter">classic_filter</h2>
+
+<pre><code>  classic_filter($c)</code></pre>
+
 <p>returns filter for old style parameter</p>
-<p>
-</p>
-<h2><a name="do_search">do_search</a></h2>
-<pre>
-  do_search($c, $searches, $prefix)</pre>
+
+<h2 id="do_search">do_search</h2>
+
+<pre><code>  do_search($c, $searches, $prefix)</code></pre>
+
 <p>returns combined filter</p>
-<p>
-</p>
-<h2><a name="fill_totals_box">fill_totals_box</a></h2>
-<pre>
-  fill_totals_box($c, $hostfilter, $servicefilter)</pre>
+
+<h2 id="fill_totals_box">fill_totals_box</h2>
+
+<pre><code>  fill_totals_box($c, $hostfilter, $servicefilter)</code></pre>
+
 <p>fill host and service totals box</p>
-<p>
-</p>
-<h2><a name="extend_filter">extend_filter</a></h2>
-<pre>
-  extend_filter($c, $hostfilter, $servicefilter, $hoststatustypes, $hostprops, $servicestatustypes, $serviceprops)</pre>
+
+<h2 id="extend_filter">extend_filter</h2>
+
+<pre><code>  extend_filter($c, $hostfilter, $servicefilter, $hoststatustypes, $hostprops, $servicestatustypes, $serviceprops)</code></pre>
+
 <p>returns extended filter</p>
-<p>
-</p>
-<h2><a name="single_search">single_search</a></h2>
-<pre>
-  single_search($c, $search)</pre>
+
+<h2 id="single_search">single_search</h2>
+
+<pre><code>  single_search($c, $search)</code></pre>
+
 <p>processes a single search box filter</p>
-<p>
-</p>
-<h2><a name="get_host_statustype_filter">get_host_statustype_filter</a></h2>
-<pre>
-  get_host_statustype_filter($number)</pre>
+
+<h2 id="get_host_statustype_filter">get_host_statustype_filter</h2>
+
+<pre><code>  get_host_statustype_filter($number)</code></pre>
+
 <p>returns filter for number</p>
-<p>
-</p>
-<h2><a name="get_host_prop_filter">get_host_prop_filter</a></h2>
-<pre>
-  get_host_prop_filter($number)</pre>
+
+<h2 id="get_host_prop_filter">get_host_prop_filter</h2>
+
+<pre><code>  get_host_prop_filter($number)</code></pre>
+
 <p>returns filter for number</p>
-<p>
-</p>
-<h2><a name="get_service_statustype_filter">get_service_statustype_filter</a></h2>
-<pre>
-  get_service_statustype_filter($number)</pre>
+
+<h2 id="get_service_statustype_filter">get_service_statustype_filter</h2>
+
+<pre><code>  get_service_statustype_filter($number)</code></pre>
+
 <p>returns filter for number</p>
-<p>
-</p>
-<h2><a name="get_service_prop_filter">get_service_prop_filter</a></h2>
-<pre>
-  get_service_prop_filter($number)</pre>
+
+<h2 id="get_service_prop_filter">get_service_prop_filter</h2>
+
+<pre><code>  get_service_prop_filter($number)</code></pre>
+
 <p>returns filter for number</p>
-<p>
-</p>
-<h2><a name="get_comments_filter">get_comments_filter</a></h2>
-<pre>
-  get_comments_filter($c, $op, $value)</pre>
+
+<h2 id="get_comments_filter">get_comments_filter</h2>
+
+<pre><code>  get_comments_filter($c, $op, $value)</code></pre>
+
 <p>returns filter for comments</p>
-<p>
-</p>
-<h2><a name="get_groups_filter">get_groups_filter</a></h2>
-<pre>
-  get_groups_filter($c, $op, $value, $type)</pre>
+
+<h2 id="get_groups_filter">get_groups_filter</h2>
+
+<pre><code>  get_groups_filter($c, $op, $value, $type)</code></pre>
+
 <p>returns filter for comments</p>
-<p>
-</p>
-<h2><a name="set_selected_columns">set_selected_columns</a></h2>
-<pre>
-  set_selected_columns($c)</pre>
+
+<h2 id="set_selected_columns">set_selected_columns</h2>
+
+<pre><code>  set_selected_columns($c)</code></pre>
+
 <p>set selected columns for the excel export</p>
-<p>
-</p>
-<h2><a name="set_custom_title">set_custom_title</a></h2>
-<pre>
-  set_custom_title($c)</pre>
+
+<h2 id="set_custom_title">set_custom_title</h2>
+
+<pre><code>  set_custom_title($c)</code></pre>
+
 <p>sets page title based on http parameters</p>
-<p>
-</p>
-<h2><a name="add_view">add_view</a></h2>
-<pre>
-  add_view($options)</pre>
+
+<h2 id="add_view">add_view</h2>
+
+<pre><code>  add_view($options)</code></pre>
+
 <p>add a new view to the display filter selection</p>
-<p>
-</p>
-<h2><a name="redirect_view">redirect_view</a></h2>
-<pre>
-  redirect_view($c)</pre>
+
+<h2 id="redirect_view">redirect_view</h2>
+
+<pre><code>  redirect_view($c)</code></pre>
+
 <p>redirect to right url when switching displays</p>
-<p>
-</p>
-<h2><a name="get_downtimes_filter">get_downtimes_filter</a></h2>
-<pre>
-  get_downtimes_filter($c, $op, $value)</pre>
+
+<h2 id="get_downtimes_filter">get_downtimes_filter</h2>
+
+<pre><code>  get_downtimes_filter($c, $op, $value)</code></pre>
+
 <p>returns filter for downtime duration</p>
-<p>
-</p>
-<h2><a name="convert_time_amount">convert_time_amount</a></h2>
-<pre>
-  convert_time_amount($value)</pre>
+
+<h2 id="convert_time_amount">convert_time_amount</h2>
+
+<pre><code>  convert_time_amount($value)</code></pre>
+
 <p>returns converted amount of time</p>
-<p>possible conversions are
-1w =&gt; 604800
-1d =&gt; 86400
-1h =&gt; 3600
-1m =&gt; 60</p>
-<p>
-</p>
-<h2><a name="set_audio_file">set_audio_file</a></h2>
-<pre>
-  set_audio_file($c)</pre>
+
+<p>possible conversions are 1w =&gt; 604800 1d =&gt; 86400 1h =&gt; 3600 1m =&gt; 60</p>
+
+<h2 id="set_audio_file">set_audio_file</h2>
+
+<pre><code>  set_audio_file($c)</code></pre>
+
 <p>set if browser should play a sound file</p>
-<p>
-</p>
-<h2><a name="set_favicon_counter">set_favicon_counter</a></h2>
-<pre>
-  set_favicon_counter($c)</pre>
+
+<h2 id="set_favicon_counter">set_favicon_counter</h2>
+
+<pre><code>  set_favicon_counter($c)</code></pre>
+
 <p>set favicon counter</p>
-<p>
-</p>
-<h2><a name="get_service_matrix">get_service_matrix</a></h2>
-<pre>
-  get_service_matrix($c, [$hostfilter], [$servicefilter])</pre>
+
+<h2 id="get_service_matrix">get_service_matrix</h2>
+
+<pre><code>  get_service_matrix($c, [$hostfilter], [$servicefilter])</code></pre>
+
 <p>get matrix of services usable by a minemap</p>
-<p>
-</p>
-<h2><a name="serveraction">serveraction</a></h2>
-<pre>
-  serveraction($c)</pre>
+
+<h2 id="serveraction">serveraction</h2>
+
+<pre><code>  serveraction($c)</code></pre>
+
 <p>run server action from custom action menu</p>
-<p>
-</p>
-<h2><a name="set_default_filter">set_default_filter</a></h2>
-<pre>
-  set_default_filter($c, [$servicefilter])</pre>
-<p>checks if a global default service should be users. Returns textfilter
-and optionally adds that filter to a list of servicefilters.</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h2 id="set_default_filter">set_default_filter</h2>
+
+<pre><code>  set_default_filter($c, [$servicefilter])</code></pre>
+
+<p>checks if a global default service should be users. Returns textfilter and optionally adds that filter to a list of servicefilters.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

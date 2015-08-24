@@ -7,66 +7,46 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Liv
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#constructor">CONSTRUCTOR</a></li>
-	<ul>
-
-		<li><a href="#new____args___">new ( [ARGS] )</a></li>
-	</ul>
-
-	<li><a href="#methods">METHODS</a></li>
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#copyright_and_license">COPYRIGHT AND LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#CONSTRUCTOR">CONSTRUCTOR</a>
+    <ul>
+      <li><a href="#new-ARGS">new ( [ARGS] )</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Monitoring::Livestatus::UNIX - connector with unix sockets</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<pre>
-    use Monitoring::Livestatus;
-    my $nl = Monitoring::Livestatus::UNIX-&gt;new( '/var/lib/livestatus/livestatus.sock' );
-    my $hosts = $nl-&gt;selectall_arrayref(&quot;GET hosts&quot;);</pre>
-<p>
-</p>
-<hr />
-<h1><a name="constructor">CONSTRUCTOR</a></h1>
-<p>
-</p>
-<h2><a name="new____args___">new ( [ARGS] )</a></h2>
-<p>Creates an <code>Monitoring::Livestatus::UNIX</code> object. <code>new</code> takes at least the socketpath.
-Arguments are the same as in <code>Monitoring::Livestatus</code>.
-If the constructor is only passed a single argument, it is assumed to
-be a the <code>socket</code> specification. Use either socker OR server.</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Monitoring::Livestatus;
+    my $nl = Monitoring::Livestatus::UNIX-&gt;new( &#39;/var/lib/livestatus/livestatus.sock&#39; );
+    my $hosts = $nl-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
+
+<h1 id="CONSTRUCTOR">CONSTRUCTOR</h1>
+
+<h2 id="new-ARGS">new ( [ARGS] )</h2>
+
+<p>Creates an <code>Monitoring::Livestatus::UNIX</code> object. <code>new</code> takes at least the socketpath. Arguments are the same as in <code>Monitoring::Livestatus</code>. If the constructor is only passed a single argument, it is assumed to be a the <code>socket</code> specification. Use either socker OR server.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
 <p>Copyright (C) by Sven Nierlein</p>
-<p>This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<p>This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

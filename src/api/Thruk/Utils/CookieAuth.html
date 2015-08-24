@@ -7,90 +7,75 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#external_authentication">external_authentication</a></li>
-		<li><a href="#verify_basic_auth">verify_basic_auth</a></li>
-		<li><a href="#get_user_agent">get_user_agent</a></li>
-		<li><a href="#clean_session_files">clean_session_files</a></li>
-		<li><a href="#get_netloc">get_netloc</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#external_authentication">external_authentication</a></li>
+      <li><a href="#verify_basic_auth">verify_basic_auth</a></li>
+      <li><a href="#get_user_agent">get_user_agent</a></li>
+      <li><a href="#clean_session_files">clean_session_files</a></li>
+      <li><a href="#get_netloc">get_netloc</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Utils::CookieAuth - Utilities Collection for Cookie Authentication</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
-<p>Cookie Authentication offers a nice login mask and makes it possible
-to logout again.</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="external_authentication">external_authentication</a></h2>
-<pre>
-    external_authentication($config, $login, $pass, $address)</pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Cookie Authentication offers a nice login mask and makes it possible to logout again.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="external_authentication">external_authentication</h2>
+
+<pre><code>    external_authentication($config, $login, $pass, $address)</code></pre>
+
 <p>verify authentication by external login into external url</p>
+
 <p>return:</p>
-<pre>
-    sid  if login was ok
+
+<pre><code>    sid  if login was ok
     0    if login failed
-   -1    on technical problems</pre>
-<p>
-</p>
-<h2><a name="verify_basic_auth">verify_basic_auth</a></h2>
-<pre>
-    verify_basic_auth($config, $basic_auth)</pre>
+   -1    on technical problems</code></pre>
+
+<h2 id="verify_basic_auth">verify_basic_auth</h2>
+
+<pre><code>    verify_basic_auth($config, $basic_auth)</code></pre>
+
 <p>verify authentication by sending request with basic auth header</p>
-<p>
-</p>
-<h2><a name="get_user_agent">get_user_agent</a></h2>
-<pre>
-    get_user_agent($config)</pre>
+
+<h2 id="get_user_agent">get_user_agent</h2>
+
+<pre><code>    get_user_agent($config)</code></pre>
+
 <p>returns user agent used for external requests</p>
-<p>
-</p>
-<h2><a name="clean_session_files">clean_session_files</a></h2>
-<pre>
-    clean_session_files($url)</pre>
+
+<h2 id="clean_session_files">clean_session_files</h2>
+
+<pre><code>    clean_session_files($url)</code></pre>
+
 <p>clean up session files</p>
-<p>
-</p>
-<h2><a name="get_netloc">get_netloc</a></h2>
-<pre>
-    get_netloc($url)</pre>
+
+<h2 id="get_netloc">get_netloc</h2>
+
+<pre><code>    get_netloc($url)</code></pre>
+
 <p>return netloc used by LWP::UserAgent credentials</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

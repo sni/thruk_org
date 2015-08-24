@@ -7,146 +7,130 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#load_runtime_data">load_runtime_data</a></li>
-		<li><a href="#update_status">update_status</a></li>
-		<li><a href="#set_label">set_label</a></li>
-		<li><a href="#set_status">set_status</a></li>
-		<li><a href="#set_file">set_file</a></li>
-		<li><a href="#get_node">get_node</a></li>
-		<li><a href="#get_json_nodes">get_json_nodes</a></li>
-		<li><a href="#add_node">add_node</a></li>
-		<li><a href="#remove_node">remove_node</a></li>
-		<li><a href="#remove">remove</a></li>
-		<li><a href="#commit">commit</a></li>
-		<li><a href="#save">save</a></li>
-		<li><a href="#get_objects_conf">get_objects_conf</a></li>
-		<li><a href="#save_runtime">save_runtime</a></li>
-		<li><a href="#make_new_node_id">make_new_node_id</a></li>
-		<li><a href="#bulk_fetch_live_data">bulk_fetch_live_data</a></li>
-		<li><a href="#to_json">TO_JSON</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#load_runtime_data">load_runtime_data</a></li>
+      <li><a href="#update_status">update_status</a></li>
+      <li><a href="#set_label">set_label</a></li>
+      <li><a href="#set_status">set_status</a></li>
+      <li><a href="#set_file">set_file</a></li>
+      <li><a href="#get_node">get_node</a></li>
+      <li><a href="#get_json_nodes">get_json_nodes</a></li>
+      <li><a href="#add_node">add_node</a></li>
+      <li><a href="#remove_node">remove_node</a></li>
+      <li><a href="#remove">remove</a></li>
+      <li><a href="#commit">commit</a></li>
+      <li><a href="#save">save</a></li>
+      <li><a href="#get_objects_conf">get_objects_conf</a></li>
+      <li><a href="#save_runtime">save_runtime</a></li>
+      <li><a href="#make_new_node_id">make_new_node_id</a></li>
+      <li><a href="#bulk_fetch_live_data">bulk_fetch_live_data</a></li>
+      <li><a href="#TO_JSON">TO_JSON</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::BP::Components::Node - BP Class</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Business Process</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
 <p>return new business process</p>
-<p>
-</p>
-<h2><a name="load_runtime_data">load_runtime_data</a></h2>
+
+<h2 id="load_runtime_data">load_runtime_data</h2>
+
 <p>update runtime data</p>
-<p>
-</p>
-<h2><a name="update_status">update_status</a></h2>
-<pre>
-    update_status($c, [$type])</pre>
-<p>type:
-    0 / undef:      update everything
-    1:              only recalculate</p>
+
+<h2 id="update_status">update_status</h2>
+
+<pre><code>    update_status($c, [$type])</code></pre>
+
+<p>type: 0 / undef: update everything 1: only recalculate</p>
+
 <p>update status of business process</p>
-<p>
-</p>
-<h2><a name="set_label">set_label</a></h2>
+
+<h2 id="set_label">set_label</h2>
+
 <p>set label for this business process</p>
-<p>
-</p>
-<h2><a name="set_status">set_status</a></h2>
+
+<h2 id="set_status">set_status</h2>
+
 <p>set status for this business process</p>
-<p>
-</p>
-<h2><a name="set_file">set_file</a></h2>
+
+<h2 id="set_file">set_file</h2>
+
 <p>set file for this business process</p>
-<p>
-</p>
-<h2><a name="get_node">get_node</a></h2>
+
+<h2 id="get_node">get_node</h2>
+
 <p>return node by id</p>
-<p>
-</p>
-<h2><a name="get_json_nodes">get_json_nodes</a></h2>
+
+<h2 id="get_json_nodes">get_json_nodes</h2>
+
 <p>return nodes as json array</p>
-<p>
-</p>
-<h2><a name="add_node">add_node</a></h2>
+
+<h2 id="add_node">add_node</h2>
+
 <p>add new node to business process</p>
-<p>
-</p>
-<h2><a name="remove_node">remove_node</a></h2>
+
+<h2 id="remove_node">remove_node</h2>
+
 <p>remove node from business process</p>
-<p>
-</p>
-<h2><a name="remove">remove</a></h2>
+
+<h2 id="remove">remove</h2>
+
 <p>remove business process data to file</p>
-<p>
-</p>
-<h2><a name="commit">commit</a></h2>
+
+<h2 id="commit">commit</h2>
+
 <p>commit business process data to file</p>
-<p>
-</p>
-<h2><a name="save">save</a></h2>
+
+<h2 id="save">save</h2>
+
 <p>save business process data to temporary edit file</p>
-<p>
-</p>
-<h2><a name="get_objects_conf">get_objects_conf</a></h2>
+
+<h2 id="get_objects_conf">get_objects_conf</h2>
+
 <p>return object config</p>
-<p>
-</p>
-<h2><a name="save_runtime">save_runtime</a></h2>
+
+<h2 id="save_runtime">save_runtime</h2>
+
 <p>save run time data</p>
-<p>
-</p>
-<h2><a name="make_new_node_id">make_new_node_id</a></h2>
+
+<h2 id="make_new_node_id">make_new_node_id</h2>
+
 <p>generate new uniq id</p>
-<p>
-</p>
-<h2><a name="bulk_fetch_live_data">bulk_fetch_live_data</a></h2>
+
+<h2 id="bulk_fetch_live_data">bulk_fetch_live_data</h2>
+
 <p>return all live data needed for this business process</p>
-<p>
-</p>
-<h2><a name="to_json">TO_JSON</a></h2>
-<pre>
-    TO_JSON()</pre>
+
+<h2 id="TO_JSON">TO_JSON</h2>
+
+<pre><code>    TO_JSON()</code></pre>
+
 <p>returns data needed to represent this module in json</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

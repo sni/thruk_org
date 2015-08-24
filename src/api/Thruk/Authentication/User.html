@@ -7,90 +7,74 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#get">get</a></li>
-		<li><a href="#check_user_roles">check_user_roles</a></li>
-		<li><a href="#check_permissions">check_permissions</a></li>
-		<li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
-	</ul>
-
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#get">get</a></li>
+      <li><a href="#check_user_roles">check_user_roles</a></li>
+      <li><a href="#check_permissions">check_permissions</a></li>
+      <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
+    </ul>
+  </li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Authentication::User - Authenticate a remote user configured using a cgi.cfg</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
 <p>use Thruk::Authentication::User</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>This module allows you to authenticate the users.</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
 <p>create a new <code>Thruk::Authentication::User</code> object.</p>
-<pre>
- Thruk::Authentication::User-&gt;new();</pre>
-<p>
-</p>
-<h2><a name="get">get</a></h2>
+
+<pre><code> Thruk::Authentication::User-&gt;new();</code></pre>
+
+<h2 id="get">get</h2>
+
 <p>get user attribute</p>
-<pre>
- get($attribute)</pre>
-<p>
-</p>
-<h2><a name="check_user_roles">check_user_roles</a></h2>
-<pre>
- check_user_roles(&lt;$role&gt;)</pre>
-<pre>
+
+<pre><code> get($attribute)</code></pre>
+
+<h2 id="check_user_roles">check_user_roles</h2>
+
+<pre><code> check_user_roles(&lt;$role&gt;)
+
  for example:
- $c-&gt;user-&gt;check_user_roles('authorized_for_all_services')</pre>
-<p>
-</p>
-<h2><a name="check_permissions">check_permissions</a></h2>
-<pre>
- check_permissions('host', $hostname)
- check_permissions('service', $servicename, $hostname)
- check_permissions('hostgroup', $hostgroupname)
- check_permissions('servicegroup', $servicegroupname)</pre>
-<pre>
+ $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)</code></pre>
+
+<h2 id="check_permissions">check_permissions</h2>
+
+<pre><code> check_permissions(&#39;host&#39;, $hostname)
+ check_permissions(&#39;service&#39;, $servicename, $hostname)
+ check_permissions(&#39;hostgroup&#39;, $hostgroupname)
+ check_permissions(&#39;servicegroup&#39;, $servicegroupname)
+
  for example:
- $c-&gt;check_permissions('service', $service, $host)</pre>
-<p>
-</p>
-<h2><a name="check_cmd_permissions">check_cmd_permissions</a></h2>
-<pre>
- check_cmd_permissions('system')
- check_cmd_permissions('host', $hostname)
- check_cmd_permissions('service', $servicename, $hostname)
- check_cmd_permissions('hostgroup', $hostgroupname)
- check_cmd_permissions('servicegroup', $servicegroupname)</pre>
-<pre>
+ $c-&gt;check_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
+<h2 id="check_cmd_permissions">check_cmd_permissions</h2>
+
+<pre><code> check_cmd_permissions(&#39;system&#39;)
+ check_cmd_permissions(&#39;host&#39;, $hostname)
+ check_cmd_permissions(&#39;service&#39;, $servicename, $hostname)
+ check_cmd_permissions(&#39;hostgroup&#39;, $hostgroupname)
+ check_cmd_permissions(&#39;servicegroup&#39;, $servicegroupname)
+
  for example:
- $c-&gt;check_cmd_permissions('service', $service, $host)</pre>
+ $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
 

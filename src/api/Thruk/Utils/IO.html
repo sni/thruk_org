@@ -7,109 +7,99 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<ul>
-
-		<li><a href="#close">close</a></li>
-		<li><a href="#mkdir">mkdir</a></li>
-		<li><a href="#mkdir_r">mkdir_r</a></li>
-		<li><a href="#write">write</a></li>
-		<li><a href="#ensure_permissions">ensure_permissions</a></li>
-		<li><a href="#json_lock_store">json_lock_store</a></li>
-		<li><a href="#json_lock_retrieve">json_lock_retrieve</a></li>
-		<li><a href="#save_logs_to_tempfile">save_logs_to_tempfile</a></li>
-		<li><a href="#cmd">cmd</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#close">close</a></li>
+      <li><a href="#mkdir">mkdir</a></li>
+      <li><a href="#mkdir_r">mkdir_r</a></li>
+      <li><a href="#write">write</a></li>
+      <li><a href="#ensure_permissions">ensure_permissions</a></li>
+      <li><a href="#json_lock_store">json_lock_store</a></li>
+      <li><a href="#json_lock_retrieve">json_lock_retrieve</a></li>
+      <li><a href="#save_logs_to_tempfile">save_logs_to_tempfile</a></li>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Utils - IO Utilities Collection for Thruk</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>IO Utilities Collection for Thruk</p>
-<p>
-</p>
-<h2><a name="close">close</a></h2>
-<pre>
-  close($fh, $filename, $just_close)</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="close">close</h2>
+
+<pre><code>  close($fh, $filename, $just_close)</code></pre>
+
 <p>close filehandle and ensure permissions and ownership</p>
-<p>
-</p>
-<h2><a name="mkdir">mkdir</a></h2>
-<pre>
-  mkdir($dirname)</pre>
+
+<h2 id="mkdir">mkdir</h2>
+
+<pre><code>  mkdir($dirname)</code></pre>
+
 <p>create folder and ensure permissions and ownership</p>
-<p>
-</p>
-<h2><a name="mkdir_r">mkdir_r</a></h2>
-<pre>
-  mkdir_r($dirname)</pre>
+
+<h2 id="mkdir_r">mkdir_r</h2>
+
+<pre><code>  mkdir_r($dirname)</code></pre>
+
 <p>create folder recursive</p>
-<p>
-</p>
-<h2><a name="write">write</a></h2>
-<pre>
-  write($path, $content, [ $mtime ], [ $append ])</pre>
+
+<h2 id="write">write</h2>
+
+<pre><code>  write($path, $content, [ $mtime ], [ $append ])</code></pre>
+
 <p>creates file and ensure permissions</p>
-<p>
-</p>
-<h2><a name="ensure_permissions">ensure_permissions</a></h2>
-<pre>
-  ensure_permissions($mode, $path)</pre>
+
+<h2 id="ensure_permissions">ensure_permissions</h2>
+
+<pre><code>  ensure_permissions($mode, $path)</code></pre>
+
 <p>ensure permissions and ownership</p>
-<p>
-</p>
-<h2><a name="json_lock_store">json_lock_store</a></h2>
-<pre>
-  json_lock_store($file, $data, [$pretty], [$changed_only])</pre>
+
+<h2 id="json_lock_store">json_lock_store</h2>
+
+<pre><code>  json_lock_store($file, $data, [$pretty], [$changed_only])</code></pre>
+
 <p>stores data json encoded</p>
-<p>
-</p>
-<h2><a name="json_lock_retrieve">json_lock_retrieve</a></h2>
-<pre>
-  json_lock_retrieve($file)</pre>
+
+<h2 id="json_lock_retrieve">json_lock_retrieve</h2>
+
+<pre><code>  json_lock_retrieve($file)</code></pre>
+
 <p>retrieve json data</p>
-<p>
-</p>
-<h2><a name="save_logs_to_tempfile">save_logs_to_tempfile</a></h2>
-<pre>
-  save_logs_to_tempfile($logs)</pre>
+
+<h2 id="save_logs_to_tempfile">save_logs_to_tempfile</h2>
+
+<pre><code>  save_logs_to_tempfile($logs)</code></pre>
+
 <p>save logfiles to tempfile</p>
-<p>
-</p>
-<h2><a name="cmd">cmd</a></h2>
-<pre>
-  cmd($c, $command [, $stdin])</pre>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>  cmd($c, $command [, $stdin])</code></pre>
+
 <p>run command and return exit code and output</p>
-<p>$command can be either a string like '/bin/prog arg1 arg2' or an
-array like ['/bin/prog', 'arg1', 'arg2']</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<p>$command can be either a string like &#39;/bin/prog arg1 arg2&#39; or an array like [&#39;/bin/prog&#39;, &#39;arg1&#39;, &#39;arg2&#39;]</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

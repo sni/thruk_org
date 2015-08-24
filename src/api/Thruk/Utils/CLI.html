@@ -7,151 +7,126 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#get_c">get_c</a></li>
-	</ul>
-
-	<li><a href="#backend_connection_pool">BACKEND CONNECTION POOL</a></li>
-	<ul>
-
-		<li><a href="#get_db">get_db</a></li>
-	</ul>
-
-	<li><a href="#config_tool___object_configuration">CONFIG TOOL - OBJECT CONFIGURATION</a></li>
-	<ul>
-
-		<li><a href="#get_object_db">get_object_db</a></li>
-		<li><a href="#store_objects">store_objects</a></li>
-		<li><a href="#request_url">request_url</a></li>
-		<li><a href="#set_downtime">set_downtime</a></li>
-	</ul>
-
-	<li><a href="#examples">EXAMPLES</a></li>
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#get_c">get_c</a></li>
+    </ul>
+  </li>
+  <li><a href="#BACKEND-CONNECTION-POOL">BACKEND CONNECTION POOL</a>
+    <ul>
+      <li><a href="#get_db">get_db</a></li>
+    </ul>
+  </li>
+  <li><a href="#CONFIG-TOOL---OBJECT-CONFIGURATION">CONFIG TOOL - OBJECT CONFIGURATION</a>
+    <ul>
+      <li><a href="#get_object_db">get_object_db</a></li>
+      <li><a href="#store_objects">store_objects</a></li>
+      <li><a href="#request_url">request_url</a></li>
+      <li><a href="#set_downtime">set_downtime</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Utils::CLI - Utilities Collection for CLI Tool</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
-<p>Utilities Collection for CLI scripting with Thruk. Allows you to access internal
-structures and change config information.</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
-<pre>
-    new([ $options ])</pre>
-<pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Utilities Collection for CLI scripting with Thruk. Allows you to access internal structures and change config information.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>    new([ $options ])
+
  $options = {
     verbose         =&gt; 0-2,         # be more verbose
-    credential      =&gt; 'secret',    # secret key when accessing remote instances
-    remoteurl       =&gt; 'url',       # url where to access remote instances
+    credential      =&gt; &#39;secret&#39;,    # secret key when accessing remote instances
+    remoteurl       =&gt; &#39;url&#39;,       # url where to access remote instances
     local           =&gt; 0|1,         # local requests only
- }</pre>
+ }</code></pre>
+
 <p>create CLI tool object</p>
-<p>
-</p>
-<h2><a name="get_c">get_c</a></h2>
-<pre>
-    get_c()</pre>
-<p>return <a href="/api/Thruk/Context.html">the Thruk::Context manpage</a> context object</p>
-<p>
-</p>
-<hr />
-<h1><a name="backend_connection_pool">BACKEND CONNECTION POOL</a></h1>
-<p>The Backend Connection Pool can be uses for own querys against
-all connected backends in Thruk.</p>
-<p>
-</p>
-<h2><a name="get_db">get_db</a></h2>
-<pre>
-    get_db()</pre>
-<p>Return connection pool as a <a href="/api/Thruk/Backend/Manager.html">Thruk::Backend::Manager</a> object.</p>
-<p>
-</p>
-<hr />
-<h1><a name="config_tool___object_configuration">CONFIG TOOL - OBJECT CONFIGURATION</a></h1>
-<p>These methods will only be available if you have the config tool plugin enabled
-and if you set core config items to access the core objects config.</p>
-<p>
-</p>
-<h2><a name="get_object_db">get_object_db</a></h2>
-<pre>
-    get_object_db()</pre>
-<p>Return config database as a <a href="/api/Monitoring/Config.html">Monitoring::Config</a> object.</p>
-<p>
-</p>
-<h2><a name="store_objects">store_objects</a></h2>
-<pre>
-    store_objects()</pre>
-<p>Store changed objects. Changes will be stashed into Thruks internal object cache
-and can then be saved, reviewed or discarded.</p>
-<p>
-</p>
-<h2><a name="request_url">request_url</a></h2>
-<pre>
-    request_url($c, $url, $cookies)</pre>
+
+<h2 id="get_c">get_c</h2>
+
+<pre><code>    get_c()</code></pre>
+
+<p>return <a href="/../../_submodules/thruk/lib/Thruk/Context.html">Thruk::Context</a> context object</p>
+
+<h1 id="BACKEND-CONNECTION-POOL">BACKEND CONNECTION POOL</h1>
+
+<p>The Backend Connection Pool can be uses for own querys against all connected backends in Thruk.</p>
+
+<h2 id="get_db">get_db</h2>
+
+<pre><code>    get_db()</code></pre>
+
+<p>Return connection pool as a <a href="/../../_submodules/thruk/lib/Thruk/Backend/Manager.html">Thruk::Backend::Manager</a> object.</p>
+
+<h1 id="CONFIG-TOOL---OBJECT-CONFIGURATION">CONFIG TOOL - OBJECT CONFIGURATION</h1>
+
+<p>These methods will only be available if you have the config tool plugin enabled and if you set core config items to access the core objects config.</p>
+
+<h2 id="get_object_db">get_object_db</h2>
+
+<pre><code>    get_object_db()</code></pre>
+
+<p>Return config database as a <a>Monitoring::Config</a> object.</p>
+
+<h2 id="store_objects">store_objects</h2>
+
+<pre><code>    store_objects()</code></pre>
+
+<p>Store changed objects. Changes will be stashed into Thruks internal object cache and can then be saved, reviewed or discarded.</p>
+
+<h2 id="request_url">request_url</h2>
+
+<pre><code>    request_url($c, $url, $cookies)</code></pre>
+
 <p>returns requested url as string. In list context returns ($code, $result)</p>
-<p>
-</p>
-<h2><a name="set_downtime">set_downtime</a></h2>
-<pre>
-    set_downtime($c, $downtime, $cmd_typ, $backends, $start, $end, $hours, $minutes)</pre>
+
+<h2 id="set_downtime">set_downtime</h2>
+
+<pre><code>    set_downtime($c, $downtime, $cmd_typ, $backends, $start, $end, $hours, $minutes)</code></pre>
+
 <p>set downtime.</p>
-<pre>
-    downtime is a hash like this:
+
+<pre><code>    downtime is a hash like this:
     {
-        author  =&gt; 'downtime author'
-        host    =&gt; 'host name'
-        service =&gt; 'optional service name'
-        comment =&gt; 'downtime comment'
+        author  =&gt; &#39;downtime author&#39;
+        host    =&gt; &#39;host name&#39;
+        service =&gt; &#39;optional service name&#39;
+        comment =&gt; &#39;downtime comment&#39;
         fixed   =&gt; 1
-    }</pre>
-<pre>
+    }
+
     cmd_typ is:
          55 -&gt; hosts
          56 -&gt; services
          84 -&gt; hostgroups
-        122 -&gt; servicegroups</pre>
-<p>
-</p>
-<hr />
-<h1><a name="examples">EXAMPLES</a></h1>
-<p>there are some cli scripting examples in the examples subfolder of the source
-package.</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+        122 -&gt; servicegroups</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>there are some cli scripting examples in the examples subfolder of the source package.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

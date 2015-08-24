@@ -7,168 +7,148 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#request">request</a></li>
-		<li><a href="#response">response</a></li>
-		<li><a href="#log">log</a></li>
-		<li><a href="#detach">detach</a></li>
-		<li><a href="#render">render</a></li>
-		<li><a href="#render_excel">render_excel</a></li>
-		<li><a href="#render_gd">render_gd</a></li>
-		<li><a href="#authenticate">authenticate</a></li>
-		<li><a href="#user_exists">user_exists</a></li>
-		<li><a href="#error">error</a></li>
-		<li><a href="#clear_errors">clear_errors</a></li>
-		<li><a href="#check_user_roles">check_user_roles</a></li>
-		<li><a href="#check_permissions">check_permissions</a></li>
-		<li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
-		<li><a href="#cache">cache</a></li>
-		<li><a href="#cookie">cookie</a></li>
-		<li><a href="#cookies">cookies</a></li>
-		<li><a href="#redirect_to">redirect_to</a></li>
-		<li><a href="#url_with">url_with</a></li>
-		<li><a href="#translate_request_path">translate_request_path</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#request">request</a></li>
+      <li><a href="#response">response</a></li>
+      <li><a href="#log">log</a></li>
+      <li><a href="#detach">detach</a></li>
+      <li><a href="#render">render</a></li>
+      <li><a href="#render_excel">render_excel</a></li>
+      <li><a href="#render_gd">render_gd</a></li>
+      <li><a href="#authenticate">authenticate</a></li>
+      <li><a href="#user_exists">user_exists</a></li>
+      <li><a href="#error">error</a></li>
+      <li><a href="#clear_errors">clear_errors</a></li>
+      <li><a href="#check_user_roles">check_user_roles</a></li>
+      <li><a href="#check_permissions">check_permissions</a></li>
+      <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
+      <li><a href="#cache">cache</a></li>
+      <li><a href="#cookie">cookie</a></li>
+      <li><a href="#cookies">cookies</a></li>
+      <li><a href="#redirect_to">redirect_to</a></li>
+      <li><a href="#url_with">url_with</a></li>
+      <li><a href="#translate_request_path">translate_request_path</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Context - Main Context Object</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<pre>
-  use Thruk::Context;</pre>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Thruk::Context;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p><code>Thruk::Context</code> Main Context Object</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
-<pre>
-    new()</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>    new()</code></pre>
+
 <p>return new context object</p>
-<p>
-</p>
-<h2><a name="request">request</a></h2>
+
+<h2 id="request">request</h2>
+
 <p>return request object</p>
-<p>
-</p>
-<h2><a name="response">response</a></h2>
+
+<h2 id="response">response</h2>
+
 <p>return response object</p>
-<p>
-</p>
-<h2><a name="log">log</a></h2>
+
+<h2 id="log">log</h2>
+
 <p>return log object</p>
-<p>
-</p>
-<h2><a name="detach">detach</a></h2>
+
+<h2 id="detach">detach</h2>
+
 <p>detach to other controller</p>
-<p>
-</p>
-<h2><a name="render">render</a></h2>
+
+<h2 id="render">render</h2>
+
 <p>detach to other controller</p>
-<p>
-</p>
-<h2><a name="render_excel">render_excel</a></h2>
+
+<h2 id="render_excel">render_excel</h2>
+
 <p>detach to excel controller</p>
-<p>
-</p>
-<h2><a name="render_gd">render_gd</a></h2>
+
+<h2 id="render_gd">render_gd</h2>
+
 <p>detach to gd controller</p>
-<p>
-</p>
-<h2><a name="authenticate">authenticate</a></h2>
+
+<h2 id="authenticate">authenticate</h2>
+
 <p>authenticate a user</p>
-<p>
-</p>
-<h2><a name="user_exists">user_exists</a></h2>
+
+<h2 id="user_exists">user_exists</h2>
+
 <p>return if a user exists</p>
-<p>
-</p>
-<h2><a name="error">error</a></h2>
+
+<h2 id="error">error</h2>
+
 <p>return/set errors</p>
-<p>
-</p>
-<h2><a name="clear_errors">clear_errors</a></h2>
+
+<h2 id="clear_errors">clear_errors</h2>
+
 <p>clear all errors</p>
-<p>
-</p>
-<h2><a name="check_user_roles">check_user_roles</a></h2>
+
+<h2 id="check_user_roles">check_user_roles</h2>
+
 <p>$c-&gt;check_user_roles(&lt;role&gt;)</p>
-<p>
-</p>
-<h2><a name="check_permissions">check_permissions</a></h2>
+
+<h2 id="check_permissions">check_permissions</h2>
+
 <p>$c-&gt;check_permissions(&lt;type&gt;, ...)</p>
-<p>
-</p>
-<h2><a name="check_cmd_permissions">check_cmd_permissions</a></h2>
+
+<h2 id="check_cmd_permissions">check_cmd_permissions</h2>
+
 <p>$c-&gt;check_cmd_permissions(&lt;type&gt;, ...)</p>
-<p>
-</p>
-<h2><a name="cache">cache</a></h2>
-<p>$c-&gt;<code>cache()</code></p>
-<p>
-</p>
-<h2><a name="cookie">cookie</a></h2>
-<p>$c-&gt;<code>cookie()</code></p>
-<p>
-</p>
-<h2><a name="cookies">cookies</a></h2>
-<p>$c-&gt;<code>cookies()</code></p>
-<p>
-</p>
-<h2><a name="redirect_to">redirect_to</a></h2>
+
+<h2 id="cache">cache</h2>
+
+<p>$c-&gt;cache()</p>
+
+<h2 id="cookie">cookie</h2>
+
+<p>$c-&gt;cookie()</p>
+
+<h2 id="cookies">cookies</h2>
+
+<p>$c-&gt;cookies()</p>
+
+<h2 id="redirect_to">redirect_to</h2>
+
 <p>$c-&gt;redirect_to(&lt;url&gt;)</p>
-<p>
-</p>
-<h2><a name="url_with">url_with</a></h2>
+
+<h2 id="url_with">url_with</h2>
+
 <p>$c-&gt;url_with(&lt;data&gt;)</p>
-<p>
-</p>
-<h2><a name="translate_request_path">translate_request_path</a></h2>
-<pre>
-    translate_request_path(&lt;path_info&gt;, $config)</pre>
-<p>translate paths, /naemon/cgi-bin to /thruk/cgi-bin/
-or /&lt;omd-site/thruk/cgi-bin/... to /thruk/cgi-bin/...
-so later functions can use /thruk/... for everything,
-regardless of the deployment path.</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software. You can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h2 id="translate_request_path">translate_request_path</h2>
+
+<pre><code>    translate_request_path(&lt;path_info&gt;, $config)</code></pre>
+
+<p>translate paths, /naemon/cgi-bin to /thruk/cgi-bin/ or /&lt;omd-site/thruk/cgi-bin/... to /thruk/cgi-bin/... so later functions can use /thruk/... for everything, regardless of the deployment path.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

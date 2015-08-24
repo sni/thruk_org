@@ -7,94 +7,77 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#profile">profile</a></li>
-		<li><a href="#enable">enable</a></li>
-		<li><a href="#clear">clear</a></li>
-		<li><a href="#report">report</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#profile">profile</a></li>
+      <li><a href="#enable">enable</a></li>
+      <li><a href="#clear">clear</a></li>
+      <li><a href="#report">report</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Stats - Application profiling</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<pre>
-  $c-&gt;stats-&gt;profile(begin =&gt; &lt;name&gt;);
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  $c-&gt;stats-&gt;profile(begin =&gt; &lt;name&gt;);
   ...
-  $c-&gt;stats-&gt;profile(end =&gt; &lt;name&gt;);</pre>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+  $c-&gt;stats-&gt;profile(end =&gt; &lt;name&gt;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p><code>Thruk::Stats</code> provides simple profiling</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
-<pre>
-    new()</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>    new()</code></pre>
+
 <p>return new stats object</p>
-<p>
-</p>
-<h2><a name="profile">profile</a></h2>
-<pre>
-    profile(begin|end =&gt; $name)
-    profile(comment =&gt; $text)</pre>
+
+<h2 id="profile">profile</h2>
+
+<pre><code>    profile(begin|end =&gt; $name)
+    profile(comment =&gt; $text)</code></pre>
+
 <p>sets breakpoint with message</p>
-<p>
-</p>
-<h2><a name="enable">enable</a></h2>
-<pre>
-    enable()</pre>
+
+<h2 id="enable">enable</h2>
+
+<pre><code>    enable()</code></pre>
+
 <p>enable profiling</p>
-<p>
-</p>
-<h2><a name="clear">clear</a></h2>
-<pre>
-    clear()</pre>
+
+<h2 id="clear">clear</h2>
+
+<pre><code>    clear()</code></pre>
+
 <p>reset current profile</p>
-<p>
-</p>
-<h2><a name="report">report</a></h2>
-<pre>
-    report()</pre>
+
+<h2 id="report">report</h2>
+
+<pre><code>    report()</code></pre>
+
 <p>return report from profiled data</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software. You can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

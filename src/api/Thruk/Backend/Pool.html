@@ -7,84 +7,69 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#init_backend_thread_pool">init_backend_thread_pool</a></li>
-		<li><a href="#shutdown_backend_thread_pool">shutdown_backend_thread_pool</a></li>
-		<li><a href="#_do_thread">_do_thread</a></li>
-		<li><a href="#do_on_peer">do_on_peer</a></li>
-		<li><a href="#get_memory_usage">get_memory_usage</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#init_backend_thread_pool">init_backend_thread_pool</a></li>
+      <li><a href="#shutdown_backend_thread_pool">shutdown_backend_thread_pool</a></li>
+      <li><a href="#do_thread">_do_thread</a></li>
+      <li><a href="#do_on_peer">do_on_peer</a></li>
+      <li><a href="#get_memory_usage">get_memory_usage</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Backend::Pool - Pool of backend connections</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Pool of backend connections</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="init_backend_thread_pool">init_backend_thread_pool</a></h2>
-<pre>
-  init_backend_thread_pool()</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="init_backend_thread_pool">init_backend_thread_pool</h2>
+
+<pre><code>  init_backend_thread_pool()</code></pre>
+
 <p>init thread connection pool</p>
-<p>
-</p>
-<h2><a name="shutdown_backend_thread_pool">shutdown_backend_thread_pool</a></h2>
-<pre>
-  shutdown_backend_thread_pool()</pre>
+
+<h2 id="shutdown_backend_thread_pool">shutdown_backend_thread_pool</h2>
+
+<pre><code>  shutdown_backend_thread_pool()</code></pre>
+
 <p>shutdown thread connection pool</p>
-<p>
-</p>
-<h2><a name="_do_thread">_do_thread</a></h2>
-<pre>
-  _do_thread()</pre>
+
+<h2 id="do_thread">_do_thread</h2>
+
+<pre><code>  _do_thread()</code></pre>
+
 <p>do the work on threads</p>
-<p>
-</p>
-<h2><a name="do_on_peer">do_on_peer</a></h2>
-<pre>
-  do_on_peer($key, $function, $args)</pre>
+
+<h2 id="do_on_peer">do_on_peer</h2>
+
+<pre><code>  do_on_peer($key, $function, $args)</code></pre>
+
 <p>run a function on a backend peer</p>
-<p>
-</p>
-<h2><a name="get_memory_usage">get_memory_usage</a></h2>
-<pre>
-  get_memory_usage([$pid])</pre>
+
+<h2 id="get_memory_usage">get_memory_usage</h2>
+
+<pre><code>  get_memory_usage([$pid])</code></pre>
+
 <p>return memory usage of pid or own process if no pid specified</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software. You can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

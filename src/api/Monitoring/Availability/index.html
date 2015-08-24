@@ -7,276 +7,278 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#repository">REPOSITORY</a></li>
-	<li><a href="#constructor">CONSTRUCTOR</a></li>
-	<ul>
-
-		<li><a href="#new____args___">new ( [ARGS] )</a></li>
-	</ul>
-
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#calculate">calculate</a></li>
-		<li><a href="#get_condensed_logs">get_condensed_logs</a></li>
-		<li><a href="#get_full_logs">get_full_logs</a></li>
-	</ul>
-
-	<li><a href="#bugs">BUGS</a></li>
-	<li><a href="#debuging">DEBUGING</a></li>
-	<li><a href="#see_also">SEE ALSO</a></li>
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#copyright_and_license">COPYRIGHT AND LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#REPOSITORY">REPOSITORY</a></li>
+  <li><a href="#CONSTRUCTOR">CONSTRUCTOR</a>
+    <ul>
+      <li><a href="#new-ARGS">new ( [ARGS] )</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#calculate">calculate</a></li>
+      <li><a href="#get_condensed_logs">get_condensed_logs</a></li>
+      <li><a href="#get_full_logs">get_full_logs</a></li>
+    </ul>
+  </li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#DEBUGING">DEBUGING</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
-<p>Monitoring::Availability - Calculate Availability Data from
-Nagios / Icinga and Shinken Logfiles.</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<pre>
-    use Monitoring::Availability;
-    my $ma = Monitoring::Availability-&gt;new();</pre>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
-<p>This module calculates the availability for hosts/server from given logfiles.
-The Logfileformat is Nagios/Icinga only.</p>
-<p>
-</p>
-<hr />
-<h1><a name="repository">REPOSITORY</a></h1>
-<pre>
-    Git: <a href="http://github.com/sni/Monitoring-Availability">http://github.com/sni/Monitoring-Availability</a></pre>
-<p>
-</p>
-<hr />
-<h1><a name="constructor">CONSTRUCTOR</a></h1>
-<p>
-</p>
-<h2><a name="new____args___">new ( [ARGS] )</a></h2>
-<p>Creates an <code>Monitoring::Availability</code> object. <code>new</code> takes at least the
-logs parameter.  Arguments are in key-value pairs.</p>
+<p>Monitoring::Availability - Calculate Availability Data from Nagios / Icinga and Shinken Logfiles.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Monitoring::Availability;
+    my $ma = Monitoring::Availability-&gt;new();</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module calculates the availability for hosts/server from given logfiles. The Logfileformat is Nagios/Icinga only.</p>
+
+<h1 id="REPOSITORY">REPOSITORY</h1>
+
+<pre><code>    Git: http://github.com/sni/Monitoring-Availability</code></pre>
+
+<h1 id="CONSTRUCTOR">CONSTRUCTOR</h1>
+
+<h2 id="new-ARGS">new ( [ARGS] )</h2>
+
+<p>Creates an <code>Monitoring::Availability</code> object. <code>new</code> takes at least the logs parameter. Arguments are in key-value pairs.</p>
+
 <dl>
-<dt><strong><a name="rpttimeperiod" class="item">rpttimeperiod</a></strong></dt>
 
+<dt id="rpttimeperiod">rpttimeperiod</dt>
 <dd>
-<p>report timeperiod. defines a timeperiod for this report. Will use 24x7 if not
-specified.</p>
+
+<p>report timeperiod. defines a timeperiod for this report. Will use 24x7 if not specified.</p>
+
 </dd>
-<dt><strong><a name="assumeinitialstates" class="item">assumeinitialstates</a></strong></dt>
-
+<dt id="assumeinitialstates">assumeinitialstates</dt>
 <dd>
+
 <p>Assume the initial host/service state if none is found, default: yes</p>
-</dd>
-<dt><strong><a name="assumestateretention" class="item">assumestateretention</a></strong></dt>
 
+</dd>
+<dt id="assumestateretention">assumestateretention</dt>
 <dd>
+
 <p>Assume state retention, default: yes</p>
-</dd>
-<dt><strong><a name="assumestatesduringnotrunning" class="item">assumestatesduringnotrunning</a></strong></dt>
 
+</dd>
+<dt id="assumestatesduringnotrunning">assumestatesduringnotrunning</dt>
 <dd>
+
 <p>Assume state during times when the monitoring process is not running, default: yes</p>
-</dd>
-<dt><strong><a name="includesoftstates" class="item">includesoftstates</a></strong></dt>
 
+</dd>
+<dt id="includesoftstates">includesoftstates</dt>
 <dd>
+
 <p>Include soft states in the calculation. Only hard states are used otherwise, default: no</p>
-</dd>
-<dt><strong><a name="initialassumedhoststate" class="item">initialassumedhoststate</a></strong></dt>
 
+</dd>
+<dt id="initialassumedhoststate">initialassumedhoststate</dt>
 <dd>
+
 <p>Assumed host state if none is found, default: unspecified</p>
+
 <p>valid options are: unspecified, current, up, down and unreachable</p>
-</dd>
-<dt><strong><a name="initialassumedservicestate" class="item">initialassumedservicestate</a></strong></dt>
 
+</dd>
+<dt id="initialassumedservicestate">initialassumedservicestate</dt>
 <dd>
+
 <p>Assumed service state if none is found, default: unspecified</p>
+
 <p>valid options are: unspecified, current, ok, warning, unknown and critical</p>
-</dd>
-<dt><strong><a name="backtrack" class="item">backtrack</a></strong></dt>
 
+</dd>
+<dt id="backtrack">backtrack</dt>
 <dd>
+
 <p>Go back this amount of days to find initial states, default: 4</p>
-</dd>
-<dt><strong><a name="showscheduleddowntime" class="item">showscheduleddowntime</a></strong></dt>
 
+</dd>
+<dt id="showscheduleddowntime">showscheduleddowntime</dt>
 <dd>
+
 <p>Include downtimes in calculation, default: yes</p>
-</dd>
-<dt><strong><a name="timeformat" class="item">timeformat</a></strong></dt>
 
+</dd>
+<dt id="timeformat">timeformat</dt>
 <dd>
+
 <p>Time format for the log output, default: %s</p>
-</dd>
-<dt><strong><a name="verbose" class="item">verbose</a></strong></dt>
 
+</dd>
+<dt id="verbose">verbose</dt>
 <dd>
+
 <p>verbose mode</p>
-</dd>
-<dt><strong><a name="breakdown" class="item">breakdown</a></strong></dt>
 
+</dd>
+<dt id="breakdown">breakdown</dt>
 <dd>
-<p>Breakdown availability into 'months', 'weeks', 'days', 'none'</p>
-<p>adds additional 'breakdown' hash to each result with broken down results</p>
+
+<p>Breakdown availability into &#39;months&#39;, &#39;weeks&#39;, &#39;days&#39;, &#39;none&#39;</p>
+
+<p>adds additional &#39;breakdown&#39; hash to each result with broken down results</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="calculate">calculate</a></h2>
-<pre>
- calculate()</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="calculate">calculate</h2>
+
+<pre><code> calculate()</code></pre>
+
 <p>Calculate the availability.</p>
+
 <p>Returns hash with the availability.</p>
+
 <dl>
-<dt><strong><a name="start" class="item">start</a></strong></dt>
 
+<dt id="start">start</dt>
 <dd>
+
 <p>Timestamp of start</p>
-</dd>
-<dt><strong><a name="end" class="item">end</a></strong></dt>
 
+</dd>
+<dt id="end">end</dt>
 <dd>
+
 <p>Timestamp of end</p>
-</dd>
-<dt><strong><a name="log_string" class="item">log_string</a></strong></dt>
 
+</dd>
+<dt id="log_string">log_string</dt>
 <dd>
+
 <p>String containing the logs</p>
-</dd>
-<dt><strong><a name="log_file" class="item">log_file</a></strong></dt>
 
+</dd>
+<dt id="log_file">log_file</dt>
 <dd>
+
 <p>File containing the logs</p>
-</dd>
-<dt><strong><a name="log_dir" class="item">log_dir</a></strong></dt>
 
+</dd>
+<dt id="log_dir">log_dir</dt>
 <dd>
+
 <p>Directory containing *.log files</p>
-</dd>
-<dt><strong><a name="log_livestatus" class="item">log_livestatus</a></strong></dt>
 
+</dd>
+<dt id="log_livestatus">log_livestatus</dt>
 <dd>
+
 <p>Array with logs from a livestatus query</p>
-<pre>
- a sample query could be:
- selectall_arrayref(GET logs...\nColumns: time type options, {Slice =&gt; 1})</pre>
-</dd>
-<dt><strong><a name="log_iterator" class="item">log_iterator</a></strong></dt>
 
-<dd>
-<pre>
- Iterator object for logentry objects. For example a L&lt;MongoDB::Cursor&gt; object.</pre>
-</dd>
-<dt><strong><a name="hosts" class="item">hosts</a></strong></dt>
+<pre><code> a sample query could be:
+ selectall_arrayref(GET logs...\nColumns: time type options, {Slice =&gt; 1})</code></pre>
 
+</dd>
+<dt id="log_iterator">log_iterator</dt>
 <dd>
+
+<pre><code> Iterator object for logentry objects. For example a L&lt;MongoDB::Cursor&gt; object.</code></pre>
+
+</dd>
+<dt id="hosts">hosts</dt>
+<dd>
+
 <p>array with hostnames for which the report should be generated</p>
-</dd>
-<dt><strong><a name="services" class="item">services</a></strong></dt>
 
-<dd>
-<p>array with hashes of services for which the report should be generated.
-The array should look like this:</p>
-<pre>
- [{host =&gt; 'hostname', service =&gt; 'description'}, ...]</pre>
 </dd>
-<dt><strong><a name="initial_states" class="item">initial_states</a></strong></dt>
-
+<dt id="services">services</dt>
 <dd>
-<p>if you use the &quot;current&quot; option for initialassumedservicestate or initialassumedhoststate you
-have to provide the current states with a hash like this:</p>
-<pre>
-  {
+
+<p>array with hashes of services for which the report should be generated. The array should look like this:</p>
+
+<pre><code> [{host =&gt; &#39;hostname&#39;, service =&gt; &#39;description&#39;}, ...]</code></pre>
+
+</dd>
+<dt id="initial_states">initial_states</dt>
+<dd>
+
+<p>if you use the &quot;current&quot; option for initialassumedservicestate or initialassumedhoststate you have to provide the current states with a hash like this:</p>
+
+<pre><code>  {
     hosts =&gt; {
-     'hostname' =&gt; 'ok',
+     &#39;hostname&#39; =&gt; &#39;ok&#39;,
      ...
     },
     services =&gt; {
-     'hostname' =&gt; {
-         'description' =&gt;  'warning',
+     &#39;hostname&#39; =&gt; {
+         &#39;description&#39; =&gt;  &#39;warning&#39;,
          ...
       }
     }
-  }</pre>
+  }</code></pre>
+
 <p>valid values for hosts are: up, down and unreachable</p>
+
 <p>valid values for services are: ok, warning, unknown and critical</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<h2><a name="get_condensed_logs">get_condensed_logs</a></h2>
-<pre>
- get_condensed_logs()</pre>
+
+<h2 id="get_condensed_logs">get_condensed_logs</h2>
+
+<pre><code> get_condensed_logs()</code></pre>
+
 <p>returns an array of hashes with the condensed log used for this report</p>
-<p>
-</p>
-<h2><a name="get_full_logs">get_full_logs</a></h2>
-<pre>
- get_full_logs()</pre>
+
+<h2 id="get_full_logs">get_full_logs</h2>
+
+<pre><code> get_full_logs()</code></pre>
+
 <p>returns an array of hashes with the full log used for this report</p>
-<p>
-</p>
-<hr />
-<h1><a name="bugs">BUGS</a></h1>
+
+<h1 id="BUGS">BUGS</h1>
+
 <p>Please report any bugs or feature requests to <a href="http://github.com/sni/Monitoring-Availability/issues">http://github.com/sni/Monitoring-Availability/issues</a>.</p>
-<p>
-</p>
-<hr />
-<h1><a name="debuging">DEBUGING</a></h1>
-<p>You may enable the debug mode by setting MONITORING_AVAILABILITY_DEBUG environment variable.
-This will create a logfile: /tmp/Monitoring-Availability-Debug.log which gets overwritten with
-every calculation.
-You will need the Log4Perl module to create this logfile.</p>
-<p>
-</p>
-<hr />
-<h1><a name="see_also">SEE ALSO</a></h1>
+
+<h1 id="DEBUGING">DEBUGING</h1>
+
+<p>You may enable the debug mode by setting MONITORING_AVAILABILITY_DEBUG environment variable. This will create a logfile: /tmp/Monitoring-Availability-Debug.log which gets overwritten with every calculation. You will need the Log4Perl module to create this logfile.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
 <p>You can also look for information at:</p>
+
 <ul>
-<li><strong><a name="search_cpan" class="item">Search CPAN</a></strong>
+
+<li><p>Search CPAN</p>
 
 <p><a href="http://search.cpan.org/dist/Monitoring-Availability/">http://search.cpan.org/dist/Monitoring-Availability/</a></p>
+
 </li>
-<li><strong><a name="github" class="item">Github</a></strong>
+<li><p>Github</p>
 
 <p><a href="http://github.com/sni/Monitoring-Availability">http://github.com/sni/Monitoring-Availability</a></p>
+
 </li>
 </ul>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
 <p>Copyright (C) 2010 by Sven Nierlein</p>
-<p>This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<p>This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

@@ -7,121 +7,111 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#get">get</a></li>
-		<li><a href="#post">post</a></li>
-		<li><a href="#agent">agent</a></li>
-		<li><a href="#timeout">timeout</a></li>
-		<li><a href="#ssl_opts">ssl_opts</a></li>
-		<li><a href="#credentials">credentials</a></li>
-		<li><a href="#default_header">default_header</a></li>
-		<li><a href="#max_redirect">max_redirect</a></li>
-		<li><a href="#protocols_allowed">protocols_allowed</a></li>
-		<li><a href="#requests_redirectable">requests_redirectable</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#get">get</a></li>
+      <li><a href="#post">post</a></li>
+      <li><a href="#agent">agent</a></li>
+      <li><a href="#timeout">timeout</a></li>
+      <li><a href="#ssl_opts">ssl_opts</a></li>
+      <li><a href="#credentials">credentials</a></li>
+      <li><a href="#default_header">default_header</a></li>
+      <li><a href="#max_redirect">max_redirect</a></li>
+      <li><a href="#protocols_allowed">protocols_allowed</a></li>
+      <li><a href="#requests_redirectable">requests_redirectable</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::UserAgent - UserAgent wrapper for Thruk</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>UserAgent wrapper for Thruk</p>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
-<pre>
-  my $lwp = Thruk::UserAgent-&gt;new($config)</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>  my $lwp = Thruk::UserAgent-&gt;new($config)</code></pre>
+
 <p>returns new UserAgent object</p>
-<p>
-</p>
-<h2><a name="get">get</a></h2>
-<pre>
-  get($options)</pre>
+
+<h2 id="get">get</h2>
+
+<pre><code>  get($options)</code></pre>
+
 <p>do a get request</p>
-<p>
-</p>
-<h2><a name="post">post</a></h2>
-<pre>
-  post($options)</pre>
+
+<h2 id="post">post</h2>
+
+<pre><code>  post($options)</code></pre>
+
 <p>do a post request</p>
-<p>
-</p>
-<h2><a name="agent">agent</a></h2>
-<pre>
-  agent([$agent])</pre>
+
+<h2 id="agent">agent</h2>
+
+<pre><code>  agent([$agent])</code></pre>
+
 <p>get/set agent</p>
-<p>
-</p>
-<h2><a name="timeout">timeout</a></h2>
-<pre>
-  timeout([$timeout])</pre>
+
+<h2 id="timeout">timeout</h2>
+
+<pre><code>  timeout([$timeout])</code></pre>
+
 <p>get/set timeout</p>
-<p>
-</p>
-<h2><a name="ssl_opts">ssl_opts</a></h2>
-<pre>
-  ssl_opts([$ssl_opts])</pre>
+
+<h2 id="ssl_opts">ssl_opts</h2>
+
+<pre><code>  ssl_opts([$ssl_opts])</code></pre>
+
 <p>get/set ssl_opts</p>
-<p>
-</p>
-<h2><a name="credentials">credentials</a></h2>
-<pre>
-  credentials()</pre>
+
+<h2 id="credentials">credentials</h2>
+
+<pre><code>  credentials()</code></pre>
+
 <p>get/set basic auth credentials</p>
-<p>
-</p>
-<h2><a name="default_header">default_header</a></h2>
-<pre>
-  default_header()</pre>
+
+<h2 id="default_header">default_header</h2>
+
+<pre><code>  default_header()</code></pre>
+
 <p>get/set default_header</p>
-<p>
-</p>
-<h2><a name="max_redirect">max_redirect</a></h2>
-<pre>
-  max_redirect()</pre>
+
+<h2 id="max_redirect">max_redirect</h2>
+
+<pre><code>  max_redirect()</code></pre>
+
 <p>get/set max_redirect</p>
-<p>
-</p>
-<h2><a name="protocols_allowed">protocols_allowed</a></h2>
-<pre>
-  protocols_allowed()</pre>
+
+<h2 id="protocols_allowed">protocols_allowed</h2>
+
+<pre><code>  protocols_allowed()</code></pre>
+
 <p>get/set protocols_allowed</p>
-<p>
-</p>
-<h2><a name="requests_redirectable">requests_redirectable</a></h2>
-<pre>
-  requests_redirectable()</pre>
+
+<h2 id="requests_redirectable">requests_redirectable</h2>
+
+<pre><code>  requests_redirectable()</code></pre>
+
 <p>get/set requests_redirectable</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

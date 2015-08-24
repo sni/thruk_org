@@ -7,85 +7,54 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Config/', 'Config'
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#methods">METHODS</a></li>
-	<ul>
-
-		<li><a href="#new">new</a></li>
-		<li><a href="#format_comments">format_comments</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#format_comments">format_comments</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Monitoring::Conf::Object - Object Prototype</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Single object creator</p>
-<p>
-</p>
-<hr />
-<h1><a name="methods">METHODS</a></h1>
-<p>
-</p>
-<h2><a name="new">new</a></h2>
-<pre>
-    new({
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>    new({
         coretype =&gt; coretype,  # can be nagios, icinga, shinken or any
         type     =&gt; type,
         line     =&gt; nr,
         file     =&gt; file object,
         name     =&gt; name
-    })</pre>
-<p>return a new <a href="/api/Monitoring/Config/Object/Parent.html">object</a> of given type. Type can be any of the following:
-    <a href="/api/Monitoring/Config/Object/Host.html">host</a>
-    <a href="/api/Monitoring/Config/Object/Hostgroup.html">hostgroup</a>
-    <a href="/api/Monitoring/Config/Object/Hostextinfo.html">hostextinfo</a>
-    <a href="/api/Monitoring/Config/Object/Hostdependency.html">hostdependency</a>
-    <a href="/api/Monitoring/Config/Object/Hostescalation.html">hostescalation</a>
-    <a href="/api/Monitoring/Config/Object/Service.html">service</a>
-    <a href="/api/Monitoring/Config/Object/Servicegroup.html">servicegroup</a>
-    <a href="/api/Monitoring/Config/Object/Serviceextinfo.html">serviceextinfo</a>
-    <a href="/api/Monitoring/Config/Object/Servicedependency.html">servicedependency</a>
-    <a href="/api/Monitoring/Config/Object/Serviceescalation.html">serviceescalation</a>
-    <a href="/api/Monitoring/Config/Object/Command.html">command</a>
-    <a href="/api/Monitoring/Config/Object/Timeperiod.html">timeperiod</a>
-    <a href="/api/Monitoring/Config/Object/Contact.html">contact</a>
-    <a href="/api/Monitoring/Config/Object/Contactgroup.html">contactgroup</a>
-    <a href="/api/Monitoring/Config/Object/Module.html">module</a>
-    <a href="/api/Monitoring/Config/Object/Escalation.html">escalation</a></p>
-<p>
-</p>
-<h2><a name="format_comments">format_comments</a></h2>
-<pre>
-    format_comments($comments)</pre>
+    })</code></pre>
+
+<p>return a new <a>object</a> of given type. Type can be any of the following: <a>host</a> <a>hostgroup</a> <a>hostextinfo</a> <a>hostdependency</a> <a>hostescalation</a> <a>service</a> <a>servicegroup</a> <a>serviceextinfo</a> <a>servicedependency</a> <a>serviceescalation</a> <a>command</a> <a>timeperiod</a> <a>contact</a> <a>contactgroup</a> <a>module</a> <a>escalation</a></p>
+
+<h2 id="format_comments">format_comments</h2>
+
+<pre><code>    format_comments($comments)</code></pre>
+
 <p>returns formated comments from config files</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

@@ -7,79 +7,69 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<ul>
-
-		<li><a href="#check_shadow_naemon_procs">check_shadow_naemon_procs</a></li>
-		<li><a href="#restart_shadow_naemon_procs">restart_shadow_naemon_procs</a></li>
-		<li><a href="#status_shadow_naemon_procs">status_shadow_naemon_procs</a></li>
-		<li><a href="#shutdown_shadow_naemon_procs">shutdown_shadow_naemon_procs</a></li>
-		<li><a href="#check_initial_start">check_initial_start</a></li>
-	</ul>
-
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#check_shadow_naemon_procs">check_shadow_naemon_procs</a></li>
+      <li><a href="#restart_shadow_naemon_procs">restart_shadow_naemon_procs</a></li>
+      <li><a href="#status_shadow_naemon_procs">status_shadow_naemon_procs</a></li>
+      <li><a href="#shutdown_shadow_naemon_procs">shutdown_shadow_naemon_procs</a></li>
+      <li><a href="#check_initial_start">check_initial_start</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Utils::Livecache - Livecache Utilities Collection for Thruk</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
 <p>Livecache Utilities Collection for Thruk</p>
-<p>
-</p>
-<h2><a name="check_shadow_naemon_procs">check_shadow_naemon_procs</a></h2>
-<pre>
-  check_shadow_naemon_procs($config, [$c], [$log_missing], [$force])</pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="check_shadow_naemon_procs">check_shadow_naemon_procs</h2>
+
+<pre><code>  check_shadow_naemon_procs($config, [$c], [$log_missing], [$force])</code></pre>
+
 <p>makes sure all shadownaemon processes are running</p>
-<p>
-</p>
-<h2><a name="restart_shadow_naemon_procs">restart_shadow_naemon_procs</a></h2>
-<pre>
-  restart_shadow_naemon_procs($c, $config)</pre>
+
+<h2 id="restart_shadow_naemon_procs">restart_shadow_naemon_procs</h2>
+
+<pre><code>  restart_shadow_naemon_procs($c, $config)</code></pre>
+
 <p>restart all shadownaemon processes sequentially</p>
-<p>
-</p>
-<h2><a name="status_shadow_naemon_procs">status_shadow_naemon_procs</a></h2>
-<pre>
-  status_shadow_naemon_procs($config)</pre>
+
+<h2 id="status_shadow_naemon_procs">status_shadow_naemon_procs</h2>
+
+<pre><code>  status_shadow_naemon_procs($config)</code></pre>
+
 <p>get status of shadownaemon processes</p>
-<p>
-</p>
-<h2><a name="shutdown_shadow_naemon_procs">shutdown_shadow_naemon_procs</a></h2>
-<pre>
-  shutdown_shadow_naemon_procs($config)</pre>
+
+<h2 id="shutdown_shadow_naemon_procs">shutdown_shadow_naemon_procs</h2>
+
+<pre><code>  shutdown_shadow_naemon_procs($config)</code></pre>
+
 <p>stop all shadownaemon processes</p>
-<p>
-</p>
-<h2><a name="check_initial_start">check_initial_start</a></h2>
-<pre>
-  check_initial_start($c, $config)</pre>
-<p>do the initial start unless it has been started already or isn't used at all</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+
+<h2 id="check_initial_start">check_initial_start</h2>
+
+<pre><code>  check_initial_start($c, $config)</code></pre>
+
+<p>do the initial start unless it has been started already or isn&#39;t used at all</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 

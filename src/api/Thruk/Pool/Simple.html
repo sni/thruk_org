@@ -7,59 +7,44 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Pool/', 'Pool']
 
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#author">AUTHOR</a></li>
-	<li><a href="#license">LICENSE</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>Thruk::Pool::Simple - A simple thread-pool implementation</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<pre>
-  use Thruk::Pool::Simple;</pre>
-<pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Thruk::Pool::Simple;
+
   my $pool = Thruk::Pool::Simple-&gt;new(
                  size    =&gt; 3,              # number of workers
                  handler =&gt; \&amp;handle,       # call this sub to handle jobswork
-               );</pre>
-<pre>
-  $pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue</pre>
-<pre>
-  my @results = $pool-&gt;remove_all();        # get all results</pre>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
-<p><code>Thruk::Pool::Simple</code> provides a simple thread-pool implementaion
-without external dependencies outside core modules.</p>
-<p>Jobs can be submitted to and handled by multi-threaded `workers'
-managed by the pool.</p>
-<p>
-</p>
-<hr />
-<h1><a name="author">AUTHOR</a></h1>
-<p>Sven Nierlein, 2009-present, &lt;<a href="mailto:sven@nierlein.org">sven@nierlein.org</a>&gt;</p>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
-<p>This library is free software. You can redistribute it and/or modify
-it under the same terms as Perl itself.</p>
+               );
+
+  $pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue
+
+  my @results = $pool-&gt;remove_all();        # get all results</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><code>Thruk::Pool::Simple</code> provides a simple thread-pool implementaion without external dependencies outside core modules.</p>
+
+<p>Jobs can be submitted to and handled by multi-threaded `workers&#39; managed by the pool.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
 
