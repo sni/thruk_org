@@ -92,11 +92,6 @@ jQuery(document).ready(function() {
   </thead>
 <tbody>
 <tr>
-  <td class='text-center'><img src="images/debian.png" alt="debian" height=48 width=48></td><td class='text-center'>Debian</td><td class='text-center'>6</td><td class='text-center'>squeeze</td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian6/i386/">thruk_{{ site.release_version_deb }}_debian6_i386.deb</a></td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian6/amd64/">thruk_{{ site.release_version_deb }}_debian6_amd64.deb</a></td>
-</tr>
-<tr>
   <td class="text-center"><img src="images/debian.png" alt="debian" height=48 width=48></td><td class="text-center">Debian</td><td class="text-center">7</td><td class="text-center">wheezy</td>
   <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian7/i386/">thruk_{{ site.release_version_deb }}_debian7_i386.deb</a></td>
   <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian7/amd64/">thruk_{{ site.release_version_deb }}_debian7_amd64.deb</a></td>
@@ -107,14 +102,19 @@ jQuery(document).ready(function() {
   <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/debian8/amd64/">thruk_{{ site.release_version_deb }}_debian8_amd64.deb</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">5</td><td>&nbsp;</td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel5/i386/">thruk-{{ site.release_version_rpm }}.rhel5.i386.rpm</a></td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel5/x86_64/">thruk-{{ site.release_version_rpm }}.rhel5.x86_64.rpm</a></td>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">6</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/i686/">thruk-{{ site.release_version_rpm }}.rhel6.i686.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/x86_64/">thruk-{{ site.release_version_rpm }}.rhel6.x86_64.rpm</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">6</td><td>&nbsp;</td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/i386/">thruk-{{ site.release_version_rpm }}.rhel6.i386.rpm</a></td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/x86_64/">thruk-{{ site.release_version_rpm }}.rhel6.x86_64.rpm</a></td>
+  <td class="text-center"><img src="images/fedora.png" alt="centos" height=48 width=48></td><td class="text-center">Fedora</td><td class="text-center">21</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/fc21/i686/">thruk-{{ site.release_version_rpm }}.fc21.i686.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/fc21/x86_64/">thruk-{{ site.release_version_rpm }}.fc21.x86_64.rpm</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/fedora.png" alt="centos" height=48 width=48></td><td class="text-center">Fedora</td><td class="text-center">22</td><td>&nbsp;</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/fc22/i686/">thruk-{{ site.release_version_rpm }}.fc22.i686.rpm</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/fc22/x86_64/">thruk-{{ site.release_version_rpm }}.fc22.x86_64.rpm</a></td>
 </tr>
 <tr>
   <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">7</td><td>&nbsp;</td>
@@ -137,9 +137,9 @@ jQuery(document).ready(function() {
   <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles11sp3/x86_64/">thruk-{{ site.release_version_rpm }}.sles11sp3.x86_64.rpm</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">10.04</td><td class="text-center">lucid</td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu10.04/i386/">thruk_{{ site.release_version_deb }}_ubuntu10.04_i386.deb</a></td>
-  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu10.04/amd64/">thruk_{{ site.release_version_deb }}_ubuntu10.04_amd64.deb</a></td>
+  <td class="text-center"><img src="images/sles.jpg" alt="sles" height=48 width=48></td><td class="text-center">SLES</td><td class="text-center">12</td><td>&nbsp;</td>
+  <td></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/sles12/x86_64/">thruk-{{ site.release_version_rpm }}.sles12.x86_64.rpm</a></td>
 </tr>
 <tr>
   <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">12.04</td><td class="text-center">precise</td>
@@ -157,6 +157,11 @@ jQuery(document).ready(function() {
   <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu14.10/amd64/">thruk_{{ site.release_version_deb }}_ubuntu14.10_amd64.deb</a></td>
 </tr>
 <tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">15.04</td><td class="text-center">utopic</td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu15.04/i386/">thruk_{{ site.release_version_deb }}_ubuntu15.04_i386.deb</a></td>
+  <td><a href="http://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu15.04/amd64/">thruk_{{ site.release_version_deb }}_ubuntu15.04_amd64.deb</a></td>
+</tr>
+<tr>
   <td colspan=6>&nbsp;</td>
 </tr>
 <tr>
@@ -172,7 +177,7 @@ jQuery(document).ready(function() {
   <div class="panel-heading"><h2>Naemon</h2></div>
   <div class="panel-body">
     <p>
-      <a href="http://naemon.org" target="_blank">Naemon</a>, as the successor of Nagios, comes with Thruk as default gui. It has ready to go packages including Thruk and Livestatus. Take Naemon if you consider upgrading to Nagios 4.
+      <a href="http://naemon.org" target="_blank">Naemon</a>, a fork of Nagios 4, comes with Thruk as default gui. It has ready to go packages including Thruk and Livestatus. Consider Naemon if when upgrading to Nagios 4.
     </p>
   </div>
 </div>
