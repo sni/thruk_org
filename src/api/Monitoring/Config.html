@@ -263,9 +263,9 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="clone_refs">clone_refs</h2>
 
-<pre><code>    clone_refs($orig, $obj, $cloned_name, $newname)</code></pre>
+<pre><code>    clone_refs($orig, $obj, $cloned_name, $newname, [$clone_refs],  [$test_mode])</code></pre>
 
-<p>clone all incoming references of object</p>
+<p>clone all incoming references of object. In test mode nothing will be changed and just the list of clonables will be returned. If clone_refs is set, only those ids will be cloned.</p>
 
 <h2 id="gather_references">gather_references</h2>
 
