@@ -14,6 +14,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_static_panorama_files">get_static_panorama_files</a></li>
+      <li><a href="#clean_old_dashboards">clean_old_dashboards</a></li>
+      <li><a href="#get_dashboard_list">get_dashboard_list</a></li>
+      <li><a href="#load_dashboard">load_dashboard</a></li>
+      <li><a href="#is_authorized_for_dashboard">is_authorized_for_dashboard</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -35,6 +39,32 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    get_static_panorama_files($config)</code></pre>
 
 <p>return all static js files required for panorama</p>
+
+<h2 id="clean_old_dashboards">clean_old_dashboards</h2>
+
+<pre><code>    clean_old_dashboards($c)</code></pre>
+
+<p>remove all dashboards older than 1 day</p>
+
+<h2 id="get_dashboard_list">get_dashboard_list</h2>
+
+<pre><code>    get_dashboard_list($c, $type)</code></pre>
+
+<p>return list of dashboards. Type can be &#39;public&#39;, &#39;my&#39; or &#39;all&#39; where &#39;all&#39; is only available for admins.</p>
+
+<h2 id="load_dashboard">load_dashboard</h2>
+
+<pre><code>    load_dashboard($c, $nr)</code></pre>
+
+<p>return dashboard data.</p>
+
+<h2 id="is_authorized_for_dashboard">is_authorized_for_dashboard</h2>
+
+<pre><code>    is_authorized_for_dashboard($c, $nr, [$dashboard])</code></pre>
+
+<p>check permissions for dashboard and optionally loads the dashboard.</p>
+
+<p>returns: 0 ACCESS_NONE - no access 1 ACCESS_READONLY - public dashboard, readonly access 2 ACCESS_READWRITE - private dashboard, readwrite access 3 ACCESS_OWNER - private dashboard, owner/admin access</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
