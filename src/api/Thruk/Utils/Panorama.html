@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_dashboard_list">get_dashboard_list</a></li>
       <li><a href="#load_dashboard">load_dashboard</a></li>
       <li><a href="#is_authorized_for_dashboard">is_authorized_for_dashboard</a></li>
+      <li><a href="#delete_dashboard">delete_dashboard</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -65,6 +66,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>check permissions for dashboard and optionally loads the dashboard.</p>
 
 <p>returns: 0 ACCESS_NONE - no access 1 ACCESS_READONLY - public dashboard, readonly access 2 ACCESS_READWRITE - private dashboard, readwrite access 3 ACCESS_OWNER - private dashboard, owner/admin access</p>
+
+<h2 id="delete_dashboard">delete_dashboard</h2>
+
+<pre><code>    delete_dashboard($c, $nr, [$dashboard])</code></pre>
+
+<p>return dashboard data.</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
