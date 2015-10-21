@@ -46,6 +46,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_pnp_url">get_pnp_url</a></li>
       <li><a href="#get_histou_url">get_histou_url</a></li>
       <li><a href="#get_graph_url">get_graph_url</a></li>
+      <li><a href="#get_perf_image">get_perf_image</a></li>
+      <li><a href="#get_fake_session">get_fake_session</a></li>
       <li><a href="#get_action_url">get_action_url</a></li>
       <li><a href="#list">list</a></li>
       <li><a href="#translate_host_status">translate_host_status</a></li>
@@ -304,6 +306,18 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  get_graph_url($c, $object)</code></pre>
 
 <p>return graph url for object (host/service)</p>
+
+<h2 id="get_perf_image">get_perf_image</h2>
+
+<pre><code>  get_perf_image($c, $hst, $svc, $start, $end, $width, $height, $source, $resize_grafana_images)</code></pre>
+
+<p>return base64 encoded pnp/grafana image if possible. An empty string will be returned if no graph can be exported.</p>
+
+<h2 id="get_fake_session">get_fake_session</h2>
+
+<pre><code>  get_fake_session($c)</code></pre>
+
+<p>create and return fake session id for current user</p>
 
 <h2 id="get_action_url">get_action_url</h2>
 
