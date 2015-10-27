@@ -76,6 +76,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#is_post">is_post</a></li>
       <li><a href="#check_csrf">check_csrf</a></li>
       <li><a href="#get_plugin_name">get_plugin_name</a></li>
+      <li><a href="#backends_list_to_hash">backends_list_to_hash</a></li>
+      <li><a href="#backends_hash_to_list">backends_hash_to_list</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -484,6 +486,18 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    get_plugin_name(__FILE__, __PACKAGE__)</code></pre>
 
 <p>returns the name of the plugin</p>
+
+<h2 id="backends_list_to_hash">backends_list_to_hash</h2>
+
+<pre><code>    backends_list_to_hash($c, $list)</code></pre>
+
+<p>returns array of backend ids converted as list of hashes</p>
+
+<h2 id="backends_hash_to_list">backends_hash_to_list</h2>
+
+<pre><code>    backends_hash_to_list($c, $hashlist)</code></pre>
+
+<p>returns array of backends (inverts backends_list_to_hash function)</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
