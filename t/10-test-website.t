@@ -287,6 +287,7 @@ sub remove_some_exceptions_from_lint_errors {
         next if $err_str =~ m/\QUnknown element <footer>\E/imx;
         next if $err_str =~ m/\QUnknown element <header>\E/imx;
         next if $err_str =~ m/\QUnknown element <nav>\E/imx;
+        next if $err_str =~ m/\QUnknown element <figure>\E/imx;
         next if $err_str =~ m/\Qshould be written as\E/imx;
         next if $err_str =~ m/\QUnknown attribute "data-\E/imx;
         next if $err_str =~ m/\QUnknown attribute "charset" for tag <meta>\E/imx;

@@ -2,3 +2,4 @@ _site/
 .gem/
 TODO
 perl5
+src/.jekyll-metadata
