@@ -3,3 +3,4 @@ _site/
 TODO
 perl5
 src/.jekyll-metadata
+Gemfile.lock
