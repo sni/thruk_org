@@ -114,7 +114,7 @@ module Jekyll
             end
           end
         end
-        site.posts.each do |post|
+        site.posts.docs.each do |post|
           if asciidoc_converter.matches(post.ext)
             doc = asciidoc_converter.load(post.content)
             next if doc.nil?
