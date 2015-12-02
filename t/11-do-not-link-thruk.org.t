@@ -18,6 +18,7 @@ for my $cmd (@{$cmds}) {
     $line =~ s|//|/|gmx;
 
     next if $line =~ m|src/_includes/Changes.html|mx;
+    next if $line =~ m|insertBefore|mx;
     push @fails, $line;
   }
   close($ph);
