@@ -35,6 +35,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#redirect_to">redirect_to</a></li>
       <li><a href="#url_with">url_with</a></li>
       <li><a href="#translate_request_path">translate_request_path</a></li>
+      <li><a href="#has_route">has_route</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -142,6 +143,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    translate_request_path(&lt;path_info&gt;, $config)</code></pre>
 
 <p>translate paths, /naemon/cgi-bin to /thruk/cgi-bin/ or /&lt;omd-site/thruk/cgi-bin/... to /thruk/cgi-bin/... so later functions can use /thruk/... for everything, regardless of the deployment path.</p>
+
+<h2 id="has_route">has_route</h2>
+
+<p>$c-&gt;has_route(&lt;url&gt;)</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
