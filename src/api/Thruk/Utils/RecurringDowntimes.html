@@ -16,6 +16,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#index">index</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
       <li><a href="#get_downtimes_list">get_downtimes_list</a></li>
+      <li><a href="#check_downtime">check_downtime</a></li>
       <li><a href="#read_downtime">read_downtime</a></li>
       <li><a href="#check_downtime_permissions">check_downtime_permissions</a></li>
       <li><a href="#get_default_recurring_downtime">get_default_recurring_downtime</a></li>
@@ -57,6 +58,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   backendfilter)
     0)  list downtimes for selected backends only (default)
     1)  list downtimes for all backends</code></pre>
+
+<h2 id="check_downtime">check_downtime</h2>
+
+<pre><code>    check_downtime($c, $rd, $file)</code></pre>
+
+<p>check downtime for expired hosts or services</p>
 
 <h2 id="read_downtime">read_downtime</h2>
 
