@@ -26,6 +26,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
       <li><a href="#get_month_name">get_month_name</a></li>
       <li><a href="#get_week_name">get_week_name</a></li>
       <li><a href="#get_day_name">get_day_name</a></li>
+      <li><a href="#get_graph_source">get_graph_source</a></li>
       <li><a href="#get_pnp_image">get_pnp_image</a></li>
       <li><a href="#dump">dump</a></li>
       <li><a href="#html_all_inclusive">html_all_inclusive</a></li>
@@ -126,6 +127,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <pre><code>  get_day_name(date)</code></pre>
 
 <p>return human readable day name</p>
+
+<h2 id="get_graph_source">get_graph_source</h2>
+
+<pre><code>  get_graph_source(c, host, service)</code></pre>
+
+<p>return index of first graph for given host (or service) provided by the _GRAPH_SOURCE custom variable or 0 as default fallback.</p>
 
 <h2 id="get_pnp_image">get_pnp_image</h2>
 
