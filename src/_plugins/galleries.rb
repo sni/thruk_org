@@ -9,7 +9,7 @@
 # Version: 1.1.0
 
 
-require "rmagick"
+require "RMagick"
 require "pp"
 
 module Jekyll
