@@ -8,16 +8,16 @@ build: .gem
 	$(GEMENV) $(JEKYLL) build --trace
 
 quick: .gem
-	$(GEMENV) NOCLEAN=1 $(JEKYLL) build --trace --limit_posts=5 --no-watch
+	$(GEMENV) NOCLEAN=1 $(JEKYLL) build --trace --limit_posts=5
 
 server: .gem
 	$(GEMENV) $(JEKYLL) serve --host=\* --trace --watch
 
 .gem:
-	# apt-get install libmagickcore-dev libmagickwand-dev
+	# sudo apt-get install nodejs libmagickcore-dev libmagickwand-dev
 	$(GEMENV) $(GEM) install jekyll
 	$(GEMENV) $(GEM) install rmagick
-	$(GEMENV) $(GEM) install jekyll-asciidoc --pre
+	$(GEMENV) $(GEM) install jekyll-asciidoc
 
 test: .gem
 	$(GEMENV) NOCLEAN=1 $(JEKYLL) serve --port=$(TESTPORT) & SPID=$$!;  \
