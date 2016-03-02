@@ -17,7 +17,7 @@ module Jekyll
         end
         @asciidoctor_config[:safe] ||= 'safe'
         user_defined_attributes = @asciidoctor_config[:attributes]
-        @asciidoctor_config[:attributes] = %w(notitle hardbreaks idprefix= idseparator=- linkattrs)
+        @asciidoctor_config[:attributes] = %w(notitle! hardbreaks idprefix= idseparator=- linkattrs)
         unless user_defined_attributes.nil?
           @asciidoctor_config[:attributes].concat(user_defined_attributes)
         end
@@ -81,13 +81,7 @@ module Jekyll
     # Promotes select AsciiDoc attributes to Jekyll front matter
     class AsciiDocPreprocessor < Generator
       def generate(site)
-        asciidoc_converter = if site.respond_to?(:find_converter_instance)
-          # Jekyll 3
-          site.find_converter_instance(Jekyll::Converters::AsciiDocConverter)
-        else
-          # Jekyll 2
-          site.getConverterImpl(Jekyll::Converters::AsciiDocConverter)
-        end
+        asciidoc_converter = site.getConverterImpl(Jekyll::Converters::AsciiDocConverter)
         asciidoc_converter.setup
         key_prefix = (site.config['asciidoc_key_prefix'] || 'jekyll-')
         key_prefix_len = key_prefix.length
@@ -114,7 +108,7 @@ module Jekyll
             end
           end
         end
-        site.posts.docs.each do |post|
+        site.posts.each do |post|
           if asciidoc_converter.matches(post.ext)
             doc = asciidoc_converter.load(post.content)
             next if doc.nil?
@@ -152,13 +146,7 @@ module Jekyll
     # Returns the HTML formatted String.
     def asciidocify(input)
       site = @context.registers[:site]
-      converter = if site.respond_to?(:find_converter_instance)
-        # Jekyll 3
-        site.find_converter_instance(Jekyll::Converters::AsciiDocConverter)
-      else
-        # Jekyll 2
-        site.getConverterImpl(Jekyll::Converters::AsciiDocConverter)
-      end
+      converter = site.getConverterImpl(Jekyll::Converters::AsciiDocConverter)
       converter.convert(input)
     end
   end
