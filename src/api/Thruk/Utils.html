@@ -195,9 +195,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="read_ssi">read_ssi</h2>
 
-<pre><code>  read_ssi($c, $file)</code></pre>
+<pre><code>  read_ssi($c, $page, $type)</code></pre>
 
-<p>reads a ssi file or executes it if its executable</p>
+<p>finds all ssi files for a page of the specified type and returns the ssi content. Executable ssi files are executed and the output is appended to the ssi content. Otherwise the content of the ssi file is appende to the ssi content.</p>
 
 <h2 id="read_resource_file">read_resource_file</h2>
 
