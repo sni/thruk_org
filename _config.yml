@@ -21,7 +21,7 @@ release_version_rpm: "2.06-1"    # 2.00-2 or 2.02-1
 release_date: "March 02, 2016"
 
 mailinglist_url: https://groups.google.com/group/thruk
-forum_url: http://www.monitoring-portal.org/wbb/index.php?page=Board&amp;boardID=106
+forum_url: https://monitoring-portal.org/index.php?board/106-thruk/
 
 gallerytag:
   dir: images/galleries
