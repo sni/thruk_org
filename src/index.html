@@ -51,10 +51,15 @@ class: main-index
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-check"></i> Download v{{ site.release_version }}</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" style="height: 215px;">
                     <p>Download the latest and greatest release available on several platforms and package formats, from Debian and Ubuntu to Centos, Fedora and SLES.</p>
-                    <p>Released on {{ site.release_date }}.</p>
-                    <a href="download.html" class="btn btn-success">Download now</a>
+                    <p>
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Release plan" style="margin-top: 30px;">
+                        <a class="btn btn-success" href="download.html" role="button">Stable: {{ site.release_date }}</a>
+                        <a class="btn btn-info" href="download.html#_nightly-development-builds" role="button">Nightly</a>
+                        <a class="btn btn-warning" href="http://github.com/sni/Thruk" role="button">Next: {{ site.next_release_date }}</a>
+                      </div>
+                    </p>
                 </div>
             </div>
         </div>
@@ -63,8 +68,8 @@ class: main-index
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
                 </div>
-                <div class="panel-body">
-                    <p>Thruk is free of charge and completely open source software. There is no open core or community version. Although support is available.</p>
+                <div class="panel-body" style="height: 215px;">
+                    <p>Thruk is free of charge and completely open source software. There is no open core or community version. Although <a href="support.html">Support</a> is available.</p>
                     <p>Thruk is just plain free open source.</p>
                     <a href="open.html" class="btn btn-success">Learn More</a>
                 </div>
@@ -75,9 +80,9 @@ class: main-index
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" style="height: 215px;">
                     <p>While beeing fully flexible and extendable, either by plugins or themes, Thruk is still easy too use.</p>
-                    <p>Especcially if you are used to the Nagios Webinterface.</p>
+                    <p>Especially if you are used to the Nagios Webinterface.</p>
                     <a href="easy.html" class="btn btn-success">Learn More</a>
                 </div>
             </div>

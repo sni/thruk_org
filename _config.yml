@@ -19,6 +19,7 @@ release_version: "2.08"          # release folder, ex.: 2.00-2 or 2.02
 release_version_deb: "2.08"      # 2.00-2 or 2.02
 release_version_rpm: "2.08-1"    # 2.00-2 or 2.02-1
 release_date: "May 06, 2016"
+next_release_date: "Aug 2016"
 
 mailinglist_url: https://groups.google.com/group/thruk
 forum_url: https://monitoring-portal.org/index.php?board/106-thruk/
