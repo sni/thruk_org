@@ -26,7 +26,8 @@ window.doAffix = function() {
       var label = el.innerHTML.replace(/&amp;/g, '').replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
       label = label.replace(/&/g, '');
       label = label.replace(/[ \.\/:]+/g, '-');
-      jQuery('<a id="_'+label+'" class="nav">').insertBefore(el);
+      label = '_'+label;
+      jQuery('<a id="'+label+'" class="nav">').insertBefore(el);
       var nav_section = jQuery("<li class='"+(nr==0 ? 'active' : '')+"'><a href='#"+label+"'>"+el.innerHTML+"</a></li>");
       jQuery('#affix-nav > UL').append(nav_section);
       el.innerHTML = '<a href="#'+label+'" class="nav_label"><i class="glyphicon glyphicon-paperclip" style="opacity:0.6"></i></a> '+el.innerHTML;
