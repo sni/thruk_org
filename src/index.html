@@ -53,13 +53,11 @@ class: main-index
                 </div>
                 <div class="panel-body" style="height: 215px;">
                     <p>Download the latest and greatest release available on several platforms and package formats, from Debian and Ubuntu to Centos, Fedora and SLES.</p>
-                    <p>
-                      <div class="btn-group btn-group-sm" role="group" aria-label="Release plan" style="margin-top: 30px;">
-                        <a class="btn btn-success" href="download.html" role="button">Stable: {{ site.release_date }}</a>
-                        <a class="btn btn-info" href="download.html#_nightly-development-builds" role="button">Nightly</a>
-                        <a class="btn btn-warning" href="http://github.com/sni/Thruk" role="button">Next: {{ site.next_release_date }}</a>
-                      </div>
-                    </p>
+                    <div class="btn-group btn-group-md" role="group" aria-label="Release plan" style="margin-top: 30px; width: 100%;">
+                      <a class="btn btn-success" href="download.html" role="button" style="width: 50%; padding: 6px 1px;">Stable: {{ site.release_date }}</a>
+                      <a class="btn btn-info" href="download.html#_nightly-development-builds" role="button" style="width: 18%; padding: 6px 1px;">Nightly</a>
+                      <a class="btn btn-warning" href="https://github.com/sni/Thruk/blob/master/Changes" target="_blank" role="button" style="width: 32%; padding: 6px 1px;">Next: {{ site.next_release_date }}</a>
+                    </div>
                 </div>
             </div>
         </div>

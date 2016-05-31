@@ -19,7 +19,8 @@ layout: raw
 
 <script type="text/javascript">
 <!--
-window.doAffix = function() {
+if(!window.doOnLoadList) { window.doOnLoadList = [] };
+window.doOnLoadList.push(function() {
     // create side bar navigation automatically from h2/h3 tags
     // put every h2 in the side bar
     jQuery("DIV.container H2").each(function(nr, el) {
@@ -100,7 +101,7 @@ window.doAffix = function() {
             window.scrollBy(0,-60);
         }
     };
-}
+});
 -->
 </script>
 

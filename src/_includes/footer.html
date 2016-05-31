@@ -24,7 +24,9 @@
 jQuery('.carousel').carousel({
     interval: 60000 //changes the speed (ms)
 });
-if(window.doAffix) { window.doAffix(); }
+if(window.doOnLoadList) {
+    jQuery(window.doOnLoadList).each(function(i, f) { f() });
+}
 </script>
 </body>
 </html>
