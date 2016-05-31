@@ -122,6 +122,7 @@ small.gallery-caption {
   background-color: #f8f8f8;
   border-radius:    5px;
   border:           1px solid #ddd;
+  font-size:        12px;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   border-width: 0;
