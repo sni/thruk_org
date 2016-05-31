@@ -123,6 +123,7 @@ small.gallery-caption {
   border-radius:    5px;
   border:           1px solid #ddd;
   font-size:        12px;
+  min-width:        210px;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   border-width: 0;
