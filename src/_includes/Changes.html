@@ -1,12 +1,24 @@
 This file documents the revision history for the Monitoring Webinterface Thruk.
 
-next
+next:
+          - support reading action_menu_items from file/folder
+          - fix can_submit_commands setting not used from contact (#597)
+          - fix corrupting datafiles when trying to write to full filesystems
+          - Logcache:
+            - add logcache_import_exclude option
+            - remove orphaned plugin output references on logcacheclean
+          - Reports:
+            - include any ok event always in availability calculation
+
+2.08     Fri May  6 11:29:14 CEST 2016
           - add status column to performance map excel export
           - accept filter changes on body clicks too
           - support wildcards for ssi files
+          - use worst can_submit_commands value when having multiple backends
           - fix using negated comment/downtime filter
           - fix 'bad file descriptor' error when trying to log in subprocesses
           - fix using non-standard webserver ports with cookie authentication (#576)
+          - fix url decoding problem on login page
           - Config Tool:
             - add list wizard to drop down
             - add user defined custom variables to attribute list, extra_custom_var_host and extra_custom_var_service
@@ -20,7 +32,9 @@ next
             - fix background image offset not working properly
             - fix mixed up label offset x/y
           - Reports:
+            - add report clone button
             - create debug information more easily
+            - fix content type in url reports emails
           - CLI
             - add new graph command to export graphs from cli
             - add new listservices command
