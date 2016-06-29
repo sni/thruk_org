@@ -2,6 +2,7 @@ This file documents the revision history for the Monitoring Webinterface Thruk.
 
 next:
           - support reading action_menu_items from file/folder
+          - support thruk_local.d/file.$hostname files to separate host specific configs
           - fix can_submit_commands setting not used from contact (#597)
           - fix corrupting datafiles when trying to write to full filesystems
           - Logcache:
@@ -9,6 +10,12 @@ next:
             - remove orphaned plugin output references on logcacheclean
           - Reports:
             - include any ok event always in availability calculation
+          - Panorama View:
+            - make popup completely customizable
+            - add performance bar icon type
+            - icon label can be mouseover only now
+            - do not overlap icons which are placed close together
+            - host status beats service status for group/filter icons
 
 2.08     Fri May  6 11:29:14 CEST 2016
           - add status column to performance map excel export
