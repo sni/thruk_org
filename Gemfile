@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'ffi'
 gem 'jekyll'
 gem 'rmagick'
 gem 'redcarpet'
