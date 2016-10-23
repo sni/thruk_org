@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#peer_key">peer_key</a></li>
       <li><a href="#peer_addr">peer_addr</a></li>
       <li><a href="#peer_name">peer_name</a></li>
+      <li><a href="#raw_query">_raw_query</a></li>
       <li><a href="#send_command">send_command</a></li>
       <li><a href="#get_processinfo">get_processinfo</a></li>
       <li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
@@ -41,12 +42,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#get_contacts">get_contacts</a></li>
       <li><a href="#get_contact_names">get_contact_names</a></li>
       <li><a href="#get_host_stats">get_host_stats</a></li>
+      <li><a href="#get_host_totals_stats">get_host_totals_stats</a></li>
       <li><a href="#get_service_stats">get_service_stats</a></li>
+      <li><a href="#get_service_totals_stats">get_service_totals_stats</a></li>
       <li><a href="#get_performance_stats">get_performance_stats</a></li>
       <li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
       <li><a href="#set_verbose">set_verbose</a></li>
       <li><a href="#get_class">_get_class</a></li>
       <li><a href="#get_table">_get_table</a></li>
+      <li><a href="#optimize">_optimize</a></li>
       <li><a href="#get_hash_table">_get_hash_table</a></li>
       <li><a href="#get_query_size">_get_query_size</a></li>
       <li><a href="#get_logs_start_end">_get_logs_start_end</a></li>
@@ -86,6 +90,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <h2 id="peer_name">peer_name</h2>
 
 <p>return the peers name</p>
+
+<h2 id="raw_query">_raw_query</h2>
+
+<p>send a raw query to the backend</p>
 
 <h2 id="send_command">send_command</h2>
 
@@ -221,11 +229,23 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 
 <p>returns the host statistics for the tac page</p>
 
+<h2 id="get_host_totals_stats">get_host_totals_stats</h2>
+
+<pre><code>  get_host_totals_stats</code></pre>
+
+<p>returns the host statistics used on the service/host details page</p>
+
 <h2 id="get_service_stats">get_service_stats</h2>
 
 <pre><code>  get_service_stats</code></pre>
 
 <p>returns the services statistics for the tac page</p>
+
+<h2 id="get_service_totals_stats">get_service_totals_stats</h2>
+
+<pre><code>  get_service_totals_stats</code></pre>
+
+<p>returns the services statistics used on the service/host details page</p>
 
 <h2 id="get_performance_stats">get_performance_stats</h2>
 
@@ -256,6 +276,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <pre><code>  _get_table</code></pre>
 
 <p>generic function to return a table with options</p>
+
+<h2 id="optimize">_optimize</h2>
+
+<pre><code>  _optimize</code></pre>
+
+<p>return livestatus::lite class with enhanced options</p>
 
 <h2 id="get_hash_table">_get_hash_table</h2>
 

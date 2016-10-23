@@ -49,6 +49,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#do_on_peers">_do_on_peers</a></li>
       <li><a href="#select_backends">select_backends</a></li>
       <li><a href="#get_result">_get_result</a></li>
+      <li><a href="#get_result_lmd">_get_result_lmd</a></li>
       <li><a href="#get_result_serial">_get_result_serial</a></li>
       <li><a href="#get_result_parallel">_get_result_parallel</a></li>
       <li><a href="#get_results_xs_pool">_get_results_xs_pool</a></li>
@@ -301,6 +302,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  _get_result($peers, $function, $args)</code></pre>
 
 <p>run function on several peers and collect result.</p>
+
+<h2 id="get_result_lmd">_get_result_lmd</h2>
+
+<pre><code>  _get_result_lmd($peers, $function, $arguments)</code></pre>
+
+<p>returns result for given function using lmd</p>
 
 <h2 id="get_result_serial">_get_result_serial</h2>
 
