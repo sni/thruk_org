@@ -1,5 +1,25 @@
 This file documents the revision history for the Monitoring Webinterface Thruk.
 
+next:
+          - remove startup page, Thruk starts in less than a second now
+          - Performance improvements on the host/service list page
+          - Panorama View:
+            - fix display error in speedometer with overlaping thresholds
+          - Business Process:
+            - fix regular expression in service state nodes
+
+2.10-2   Mon Oct  3 20:43:02 CEST 2016
+          - mark disabled eventhandler red on process info page
+          - add lmd support
+          - get uid/groups with POSIX:getgroups if possible (mickenordin #634)
+          - fix xss issue on login page
+          - Panorama View:
+            - increase popups delay to 1second
+            - fix popups showing when mouse moved over a icon
+            - fix start page not found when using OMD
+          - Mobile:
+            - fix sending reschedule command
+
 2.10     Wed Aug 24 14:59:03 CEST 2016
           - add useragentcompat option for IE compatibility mode (ofosos #626)
           - support reading action_menu_items from file/folder
