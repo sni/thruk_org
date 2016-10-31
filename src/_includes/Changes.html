@@ -3,10 +3,18 @@ This file documents the revision history for the Monitoring Webinterface Thruk.
 next:
           - remove startup page, Thruk starts in less than a second now
           - Performance improvements on the host/service list page
+          - allow arbitrary html in the side navigation
+          - fix merging configuration from thruk_local.d
           - Panorama View:
+            - list already used colors in color picker
             - fix display error in speedometer with overlaping thresholds
+            - fix js error in shape dropdown
+            - fix error when using umlauts in dashboard title
           - Business Process:
             - fix regular expression in service state nodes
+          - Logcache:
+            - add logcache_import_command option
+            - add logcache_delta_updates option
 
 2.10-2   Mon Oct  3 20:43:02 CEST 2016
           - mark disabled eventhandler red on process info page
