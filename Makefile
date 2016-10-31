@@ -31,7 +31,7 @@ test: .gem
 localtest: _site
 	TESTEXPECT=Thruk TESTTARGET=file://$(shell pwd)/_site/ PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t
 
-update: clean_env changelog_update api_update
+update: clean_env changelog_update api_update build
 	git push
 
 changelog_update:
