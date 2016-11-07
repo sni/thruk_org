@@ -40,6 +40,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_service_matrix">get_service_matrix</a></li>
       <li><a href="#serveraction">serveraction</a></li>
       <li><a href="#set_default_filter">set_default_filter</a></li>
+      <li><a href="#get_host_columns">get_host_columns</a></li>
+      <li><a href="#get_service_columns">get_service_columns</a></li>
+      <li><a href="#sort_table_columns">sort_table_columns</a></li>
+      <li><a href="#set_comments_and_downtimes">set_comments_and_downtimes</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -219,6 +223,30 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  set_default_filter($c, [$servicefilter])</code></pre>
 
 <p>checks if a global default service should be users. Returns textfilter and optionally adds that filter to a list of servicefilters.</p>
+
+<h2 id="get_host_columns">get_host_columns</h2>
+
+<pre><code>  get_host_columns($c)</code></pre>
+
+<p>returns list of host columns</p>
+
+<h2 id="get_service_columns">get_service_columns</h2>
+
+<pre><code>  get_service_columns($c)</code></pre>
+
+<p>returns list of service columns</p>
+
+<h2 id="sort_table_columns">sort_table_columns</h2>
+
+<pre><code>  sort_table_columns($columns, $params)</code></pre>
+
+<p>sort columns based on request parameters</p>
+
+<h2 id="set_comments_and_downtimes">set_comments_and_downtimes</h2>
+
+<pre><code>  set_comments_and_downtimes($c)</code></pre>
+
+<p>set comments / downtimes by host</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
