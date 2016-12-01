@@ -15,10 +15,10 @@ asciidoctor:
     - icons=font
 
 # site specific variables
-release_version: "2.12"          # release folder, ex.: 2.00-2 or 2.02
-release_version_deb: "2.12"      # 2.00-2 or 2.02
-release_version_rpm: "2.12-1"    # 2.00-2 or 2.02-1
-release_date: "Nov 18, 2016"
+release_version: "2.12-2"        # release folder, ex.: 2.00-2 or 2.02
+release_version_deb: "2.12-2"    # 2.00-2 or 2.02
+release_version_rpm: "2.12-2"    # 2.00-2 or 2.02-1
+release_date: "Nov 28, 2016"
 next_release_date: "Feb 2017"
 
 mailinglist_url: https://groups.google.com/group/thruk
