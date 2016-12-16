@@ -21,7 +21,15 @@ server: .gem
 	#$(GEMENV) $(GEM) install jekyll-asciidoc
 
 test: .gem
-	$(GEMENV) NOCLEAN=1 $(JEKYLL) serve --port=$(TESTPORT) & SPID=$$!;  \
+	$(GEMENV) NOCLEAN=1 $(JEKYLL) serve --port=$(TESTPORT) & SPID=$$!; \
+		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
+		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
+		RC=$$?; \
+		kill -9 $$SPID; \
+		exit $$RC
+
+citest: .gem
+	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!;  \
 		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
 		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
 		RC=$$?; \

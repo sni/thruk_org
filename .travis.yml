@@ -4,17 +4,18 @@ rvm:
 before_install:
   - sudo apt-get update
 install:
-  - sudo apt-get install autoconf
-  - sudo apt-get install build-essential
-  - sudo apt-get install devscripts
-  - sudo apt-get install liburi-perl
-  - sudo apt-get install libencode-perl
-  - sudo apt-get install libwww-perl
-  - sudo apt-get install libhtml-lint-perl
+  - sudo apt-get -y install autoconf
+  - sudo apt-get -y install build-essential
+  - sudo apt-get -y install devscripts
+  - sudo apt-get -y install liburi-perl
+  - sudo apt-get -y install libencode-perl
+  - sudo apt-get -y install libwww-perl
+  - sudo apt-get -y install libhtml-lint-perl
+  - sudo apt-get -y install libmagickcore-dev libmagickwand-dev
   - bundle install
   - bundle exec jekyll build
 script:
-  - make GEM=gem test
+  - make citest
 notifications:
   irc:
     channels:
