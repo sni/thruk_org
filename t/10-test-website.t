@@ -295,6 +295,7 @@ sub remove_some_exceptions_from_lint_errors {
         next if $err_str =~ m/\QUnknown attribute "aria-label" for tag\E/imx;
         next if $err_str =~ m/\QUnknown attribute "name" for tag <div>\E/imx;
         next if $err_str =~ m/\QUnknown attribute "name" for tag <hr>\E/imx;
+        next if $err_str =~ m/\QUnknown attribute "allowfullscreen" for tag\E/imx;
         next if $err_str =~ m/<img[^>]+?\Q> tag has no HEIGHT and WIDTH attributes\E/imx;
         next if $err_str =~ m/<img[^>]+?\Q> does not have ALT text defined\E/imx;
         push @return, $error->as_string;
