@@ -3,10 +3,6 @@ title: Naglint
 layout: default
 ---
 
-<div class="alert alert-danger" role="alert" style="margin-top: 10px;">
-  <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Not Implemented!</strong> This page is not yet completly functional. Use the CLI naglint for so long.
-</div>
-
 {% capture title %}{{ page.title }}{% endcapture %}
 {% include page_heading.html %}
 
@@ -29,17 +25,16 @@ layout: default
        can be used recursivly on directories from the command line)
     </p>
 
-    <form method="POST" action="naglint.html" enctype="multipart/form-data">
-    <input name="configfile" type="file" style="width: 800px;">
-    <textarea name="config" style="width: 800px; height: 250px; overflow: scroll;" wrap="off"></textarea><br>
+    <form method="POST" action="naglint.html" enctype="multipart/form-data" id="naglintform" onsubmit="submitNaglint(); return false;">
+    <input id="configfile" type="file" style="width: 800px;">
+    <textarea id="config" name="config" style="width: 800px; height: 250px; overflow: scroll; font-family: monospace;" wrap="off"></textarea><br>
     <button type="submit" class="btn btn-success">Validate</button>
-    <!--
-    <div align="left"><h3>Result:</h3></div>
-    <textarea name="result" style="width: 800px; height: 250px; overflow: scroll;" wrap="off"></textarea>
-    -->
-    <!--
-    <br><input type="submit" name="send" value="download as file">
-    -->
+
+    <div align="left" id="result" style="display: none;"><h3>Result:</h3>
+      <textarea id="resulttext" style="width: 800px; height: 250px; overflow: scroll; font-family: monospace;" wrap="off"></textarea>
+      <br>
+      <button type="button" class="btn btn-success" onclick="download(); return false;">download as file</button>
+    </div>
     </form>
     <p>Your config file will be saved temporarly for processing and will be <b>deleted immediately</b> after processing.<br>
        We will <b>not store</b> or keep your configuration. You are still responsible for not sending any passwords or<br>
@@ -47,3 +42,49 @@ layout: default
     </p>
   </div>
 </div>
+
+<script type="text/javascript">
+  function submitNaglint() {
+    var sourceText = jQuery('#config').val();
+    jQuery('#resulttext').val("processing...");
+    jQuery('#result').show();
+    jQuery.ajax({
+      type: "POST",
+      url: "naglint.php",
+      data: { text: sourceText },
+      cache: false,
+      success: function(data, textStatus, jqXHR) {
+        jQuery('#resulttext').val(data.data.result);
+      }
+    }).fail(function(data, textStatus, jqXHR) {
+      console.log("fail");
+      console.log(textStatus);
+      console.log(data);
+      jQuery('#resulttext').val("Failed: "+textStatus);
+    });
+  }
+  function submitNaglintFile(evt) {
+    var files = evt.target.files;
+    var reader = new FileReader();
+    reader.onload = (function(theFile) {
+        return function(e) {
+          jQuery( '#config' ).val(e.target.result);
+          submitNaglint();
+        };
+    })(files[0]);
+    reader.readAsText(files[0]);
+  }
+  document.getElementById('configfile').addEventListener('change', submitNaglintFile, false);
+
+  function download() {
+    var filename = jQuery('#configfile').val() || "linted.cfg";
+    var text = jQuery('#resulttext').val();
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
