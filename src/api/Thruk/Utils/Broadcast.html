@@ -13,8 +13,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#METHODS">METHODS</a>
     <ul>
-      <li><a href="#get_broadcasts-c">get_broadcasts($c)</a></li>
+      <li><a href="#get_broadcasts-c-unfiltered-file">get_broadcasts($c, [$unfiltered], [$file])</a></li>
       <li><a href="#update_dismiss-c">update_dismiss($c)</a></li>
+      <li><a href="#get_default_broadcast-c">get_default_broadcast($c)</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -31,9 +32,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h1 id="METHODS">METHODS</h1>
 
-<h2 id="get_broadcasts-c">get_broadcasts($c)</h2>
+<h2 id="get_broadcasts-c-unfiltered-file">get_broadcasts($c, [$unfiltered], [$file])</h2>
 
-<pre><code>  get_broadcasts($c)</code></pre>
+<pre><code>  get_broadcasts($c, [$unfiltered], [$file])</code></pre>
 
 <p>return list of broadcasts for this contact</p>
 
@@ -42,6 +43,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  update_dismiss($c)</code></pre>
 
 <p>mark all broadcasts as read for the current user</p>
+
+<h2 id="get_default_broadcast-c">get_default_broadcast($c)</h2>
+
+<pre><code>  get_default_broadcast($c)</code></pre>
+
+<p>return empty default broadcast</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
