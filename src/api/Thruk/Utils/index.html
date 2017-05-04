@@ -35,6 +35,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#set_paging_steps">set_paging_steps</a></li>
       <li><a href="#get_custom_vars">get_custom_vars</a></li>
       <li><a href="#set_custom_vars">set_custom_vars</a></li>
+      <li><a href="#check_custom_var_list">check_custom_var_list</a></li>
       <li><a href="#normal_mktime">normal_mktime</a></li>
       <li><a href="#get_user_data">get_user_data</a></li>
       <li><a href="#store_user_data">store_user_data</a></li>
@@ -243,6 +244,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  set_custom_vars($c)</code></pre>
 
 <p>set stash value for all allowed custom variables</p>
+
+<h2 id="check_custom_var_list">check_custom_var_list</h2>
+
+<pre><code>  check_custom_var_list($varname, $allowed)</code></pre>
+
+<p>returns true if custom variable name is in the list of allowed variable names</p>
 
 <h2 id="normal_mktime">normal_mktime</h2>
 

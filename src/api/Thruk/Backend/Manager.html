@@ -55,7 +55,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_result_parallel">_get_result_parallel</a></li>
       <li><a href="#get_results_xs_pool">_get_results_xs_pool</a></li>
       <li><a href="#remove_duplicates">_remove_duplicates</a></li>
-      <li><a href="#page_data">_page_data</a></li>
+      <li><a href="#page_data">page_data</a></li>
+      <li><a href="#page_data1">_page_data</a></li>
       <li><a href="#reset_failed_backends">reset_failed_backends</a></li>
       <li><a href="#AUTOLOAD">AUTOLOAD</a></li>
       <li><a href="#DESTROY">DESTROY</a></li>
@@ -340,7 +341,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <p>removes duplicate entries from a array of hashes</p>
 
-<h2 id="page_data">_page_data</h2>
+<h2 id="page_data">page_data</h2>
+
+<pre><code>  page_data($c, $data)</code></pre>
+
+<p>adds paged data set to the template stash. Data will be available as &#39;data&#39; The pager itself as &#39;pager&#39;</p>
+
+<h2 id="page_data1">_page_data</h2>
 
 <pre><code>  _page_data($c, $data, [$result_size], [$total_size])</code></pre>
 
