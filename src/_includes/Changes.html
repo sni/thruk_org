@@ -1,12 +1,27 @@
 This file documents the revision history for the Monitoring Webinterface Thruk.
 
 next:
+          - autocomplete custom variables values if exposed by show_custom_vars
+          - make custom variables available in host/service excel export
+          - write details into apache log on timeouts
+          - make contacts email address available in enviroment for hooks and scripts
+          - action menus: support confirmation dialogs
+          - logcache:
+            - performance improvements for the logcacheclean command
+          - fix filtering for empty custom variables
+          - fix problems favicon counter
+
+2.14     Tue Mar 28 10:09:25 CEST 2017
           - add new Thruk2 theme
           - add broadcast system
           - support opening server actions in new tabs
           - support service lists for recurring downtimes
           - fix livestatus "Operator !~~ for lists not implemented." issue when having an empty search filter
           - set contactgroups as REMOTE_USER_GROUPS into the environment for hooks and scripts
+          - add basic filters to notifications page (#692)
+          - fix macro expansion with recursive args (#658)
+          - fix forcing logcache to myisam (#691)
+          - fix login hook not running in background
           - Business Process:
             - add support for simple wildcards, ex.: host:*
             - add link to all input hosts/services
@@ -16,10 +31,13 @@ next:
             - fix selecting nodes for edit (#682)
           - Panorama View:
             - honor acknowledgement and downtime status shape color calculation
+            - add option for fixed positioned popups
             - fix shape color for host problems in group/dashboard panels
             - fix saving column width for grid panels
           - Reports:
             - hide program messages from reports by default, can be changed back by report_include_class2 = 2
+            - fix email report links from the preferences popup being cut off
+            - fix html being cut off (#545)
           - Statusmap:
             - allow grouping by custom variable exposed by show_custom_vars
 
