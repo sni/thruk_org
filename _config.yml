@@ -15,11 +15,11 @@ asciidoctor:
     - icons=font
 
 # site specific variables
-release_version: "2.14-2"        # release folder, ex.: 2.00-2 or 2.02
-release_version_deb: "2.14-2"    # 2.00-2 or 2.02
-release_version_rpm: "2.14-2"    # 2.00-2 or 2.02-1
-release_date: "May 05, 2017"
-next_release_date: "Aug 2017"
+release_version: "2.16"        # release folder, ex.: 2.00-2 or 2.02
+release_version_deb: "2.16"    # 2.00-2 or 2.02
+release_version_rpm: "2.16-1"  # 2.00-2 or 2.02-1
+release_date: "Aug 08, 2017"
+next_release_date: "Nov 2017"
 
 mailinglist_url: https://groups.google.com/group/thruk
 forum_url: https://monitoring-portal.org/index.php?board/106-thruk/
