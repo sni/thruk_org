@@ -14,7 +14,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#set_default_stash">set_default_stash</a></li>
+      <li><a href="#summary_set_group_defaults">summary_set_group_defaults</a></li>
       <li><a href="#summary_add_host_stats">summary_add_host_stats</a></li>
+      <li><a href="#summary_add_service_stats">summary_add_service_stats</a></li>
       <li><a href="#get_search_from_param">get_search_from_param</a></li>
       <li><a href="#do_filter">do_filter</a></li>
       <li><a href="#reset_filter">reset_filter</a></li>
@@ -66,9 +68,21 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>sets some default stash variables</p>
 
+<h2 id="summary_set_group_defaults">summary_set_group_defaults</h2>
+
+<pre><code>  summary_set_group_defaults([$group])</code></pre>
+
+<p>set summary defaults</p>
+
 <h2 id="summary_add_host_stats">summary_add_host_stats</h2>
 
 <pre><code>  summary_add_host_stats($prefix, $group, $host)</code></pre>
+
+<p>count host status for this host</p>
+
+<h2 id="summary_add_service_stats">summary_add_service_stats</h2>
+
+<pre><code>  summary_add_service_stats($prefix, $group, $host)</code></pre>
 
 <p>count host status for this host</p>
 
@@ -158,7 +172,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="set_selected_columns">set_selected_columns</h2>
 
-<pre><code>  set_selected_columns($c)</code></pre>
+<pre><code>  set_selected_columns($c, $prefixes, [$type])</code></pre>
 
 <p>set selected columns for the excel export</p>
 

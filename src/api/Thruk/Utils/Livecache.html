@@ -13,6 +13,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#METHODS">METHODS</a>
     <ul>
+      <li><a href="#check_procs">check_procs</a></li>
+      <li><a href="#status">status</a></li>
+      <li><a href="#shutdown">shutdown</a></li>
+      <li><a href="#restart">restart</a></li>
       <li><a href="#check_shadow_naemon_procs">check_shadow_naemon_procs</a></li>
       <li><a href="#restart_shadow_naemon_procs">restart_shadow_naemon_procs</a></li>
       <li><a href="#status_shadow_naemon_procs">status_shadow_naemon_procs</a></li>
@@ -33,6 +37,30 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>Livecache Utilities Collection for Thruk</p>
 
 <h1 id="METHODS">METHODS</h1>
+
+<h2 id="check_procs">check_procs</h2>
+
+<pre><code>  check_procs($config, [$c], [$log_missing], [$force])</code></pre>
+
+<p>makes sure all livecache processes are running</p>
+
+<h2 id="status">status</h2>
+
+<pre><code>  status($config)</code></pre>
+
+<p>get status of livecache processes</p>
+
+<h2 id="shutdown">shutdown</h2>
+
+<pre><code>  shutdown($config)</code></pre>
+
+<p>stop all livecache processes</p>
+
+<h2 id="restart">restart</h2>
+
+<pre><code>  restart($config)</code></pre>
+
+<p>restart all livecache processes</p>
 
 <h2 id="check_shadow_naemon_procs">check_shadow_naemon_procs</h2>
 

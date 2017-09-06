@@ -1,0 +1,72 @@
+---
+title: Command
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Command - Command CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The command command displayes the expanded command for a given host or service</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  Usage: thruk [globaloptions] command &lt;hostname&gt; [&lt;service_description&gt;]</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>    print help and exit</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>    cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Display expanded command for test service on host localhost</p>
+
+<pre><code>  %&gt; thruk command localhost test</code></pre>
+
+<p>Submitting external commands is possible via the &#39;url&#39; command. See &#39;thruk url help&#39; for some examples.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+

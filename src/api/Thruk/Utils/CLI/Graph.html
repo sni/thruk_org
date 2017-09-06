@@ -1,0 +1,112 @@
+---
+title: Graph
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Graph - Graph CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The graph command exports pnp/grafana graphs</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  Usage: thruk [globaloptions] graph &lt;options&gt;</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>    print help and exit</code></pre>
+
+</dd>
+<dt id="format"><b>format</b></dt>
+<dd>
+
+<pre><code>    Output format, can be either &#39;png&#39; or &#39;base64&#39;. Default is png.</code></pre>
+
+</dd>
+<dt id="width"><b>width</b></dt>
+<dd>
+
+<pre><code>    Width of the exported image in px. Default to 800.</code></pre>
+
+</dd>
+<dt id="height"><b>height</b></dt>
+<dd>
+
+<pre><code>    Height of the exported image in px. Default to 300.</code></pre>
+
+</dd>
+<dt id="host"><b>host</b></dt>
+<dd>
+
+<pre><code>    Hostname to export graph for</code></pre>
+
+</dd>
+<dt id="service"><b>service</b></dt>
+<dd>
+
+<pre><code>    Service description to export graph for. If empty host graph will be exported.</code></pre>
+
+</dd>
+<dt id="start"><b>start</b></dt>
+<dd>
+
+<pre><code>    Start timestamp used when collecting performance data. Defaults to yesterday.</code></pre>
+
+</dd>
+<dt id="end"><b>end</b></dt>
+<dd>
+
+<pre><code>    End timestamp used when collecting performance data. Defaults to now.</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>    cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Export pnp host graph for localhost in base64 format.</p>
+
+<pre><code>  %&gt; thruk graph --host=&#39;localhost&#39; --service=&#39;_HOST_&#39; --width=900 --height=200 --format=base64</code></pre>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+
