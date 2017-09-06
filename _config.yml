@@ -14,7 +14,7 @@ asciidoctor:
     - pygments-css=style
     - icons=font
 
-# site specific variables
+# site specific variables, run "make update build" after changing things here
 release_version: "2.16-2"      # release folder, ex.: 2.00-2 or 2.02
 release_version_deb: "2.16-2"  # 2.00-2 or 2.02
 release_version_rpm: "2.16-2"  # 2.00-2 or 2.02-1
