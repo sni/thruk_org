@@ -17,8 +17,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
       <li><a href="#load_runtime_data">load_runtime_data</a></li>
       <li><a href="#set_id">set_id</a></li>
       <li><a href="#append_child">append_child</a></li>
-      <li><a href="#resolve_depends">resolve_depends</a></li>
-      <li><a href="#depends_list">depends_list</a></li>
+      <li><a href="#update_parents">update_parents</a></li>
       <li><a href="#get_stateful_data">get_stateful_data</a></li>
       <li><a href="#get_save_obj">get_save_obj</a></li>
       <li><a href="#get_objects_conf">get_objects_conf</a></li>
@@ -27,6 +26,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
       <li><a href="#result_to_cmd">result_to_cmd</a></li>
       <li><a href="#result_to_string">result_to_string</a></li>
       <li><a href="#TO_JSON">TO_JSON</a></li>
+      <li><a href="#depends">depends</a></li>
+      <li><a href="#parents">parents</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -59,13 +60,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 <p>append new child noew</p>
 
-<h2 id="resolve_depends">resolve_depends</h2>
+<h2 id="update_parents">update_parents</h2>
 
-<p>resolve dependend nodes into objects</p>
-
-<h2 id="depends_list">depends_list</h2>
-
-<p>return data which needs to be statefully stored</p>
+<p>update parents list for all childs</p>
 
 <h2 id="get_stateful_data">get_stateful_data</h2>
 
@@ -114,6 +111,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 <pre><code>    TO_JSON()</code></pre>
 
 <p>returns data needed to represent this module in json</p>
+
+<h2 id="depends">depends</h2>
+
+<pre><code>    depends()</code></pre>
+
+<p>returns list of depending nodes</p>
+
+<h2 id="parents">parents</h2>
+
+<pre><code>    parents()</code></pre>
+
+<p>returns list of parent nodes</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

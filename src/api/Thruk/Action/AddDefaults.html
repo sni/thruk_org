@@ -25,6 +25,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
       <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
       <li><a href="#delayed_proc_info_update">delayed_proc_info_update</a></li>
       <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
+      <li><a href="#check_federation_peers">check_federation_peers</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -87,7 +88,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
    override by the config tool
     5 = disabled (overide by config tool)   DISABLED_CONF
     6 = hidden   (overide by config tool)   HIDDEN_CONF
-    7 = up       (overide by config tool)   UP_CONF</code></pre>
+    7 = up       (overide by config tool)   UP_CONF
+
+   override by LMD clients
+    8 = disabled (overide by lmd)           HIDDEN_LMD_PARENT</code></pre>
 
 <h2 id="update_site_panel_hashes">update_site_panel_hashes</h2>
 
@@ -110,6 +114,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 <h2 id="save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</h2>
 
 <pre><code>    save debug information to a temp file</code></pre>
+
+<h2 id="check_federation_peers">check_federation_peers</h2>
+
+<pre><code>    expand peers if a single backend returns more than one site,
+    for example with lmd federation</code></pre>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

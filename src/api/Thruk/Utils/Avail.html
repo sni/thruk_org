@@ -17,6 +17,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#fix_and_sort_logs">fix_and_sort_logs</a></li>
       <li><a href="#reset_req_parameters">reset_req_parameters</a></li>
       <li><a href="#get_availability_percents">get_availability_percents</a></li>
+      <li><a href="#outages">outages</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -56,6 +57,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_availability_percents($avail_data, $unavailable_states, $host, $service)</code></pre>
 
 <p>return list of availability percent as json list</p>
+
+<h2 id="outages">outages</h2>
+
+<pre><code>  outages($c, $logs, $unavailable_states, $start, $end, $host, $service, $only_host_services)</code></pre>
+
+<p>return combined outages from log entries</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

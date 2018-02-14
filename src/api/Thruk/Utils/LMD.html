@@ -23,6 +23,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#kill_if_not_responding">kill_if_not_responding</a></li>
       <li><a href="#check_changed_lmd_config">_check_changed_lmd_config</a></li>
       <li><a href="#write_lmd_config">_write_lmd_config</a></li>
+      <li><a href="#get_lmd_version">get_lmd_version</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -49,7 +50,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <pre><code>  status($config)</code></pre>
 
-<p>makes sure lmd process is running</p>
+<p>return lmd process status</p>
 
 <h2 id="restart">restart</h2>
 
@@ -98,6 +99,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  _write_lmd_config($config)</code></pre>
 
 <p>write lmd.ini, returns true if file has changed or false otherwise</p>
+
+<h2 id="get_lmd_version">get_lmd_version</h2>
+
+<pre><code>  get_lmd_version($config)</code></pre>
+
+<p>returns lmd version</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

@@ -96,11 +96,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>  cmd($c, $command [, $stdin])</code></pre>
+<pre><code>  cmd($c, $command [, $stdin] [, $print_prefix] [, $detached])</code></pre>
 
 <p>run command and return exit code and output</p>
 
 <p>$command can be either a string like &#39;/bin/prog arg1 arg2&#39; or an array like [&#39;/bin/prog&#39;, &#39;arg1&#39;, &#39;arg2&#39;]</p>
+
+<p>optional print_prefix will print the result on the fly with given prefix.</p>
+
+<p>optional detached will run the command detached in the background</p>
 
 <h2 id="untaint">untaint</h2>
 
