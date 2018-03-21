@@ -82,6 +82,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#convert_wildcards_to_regex">convert_wildcards_to_regex</a></li>
       <li><a href="#find_modules">find_modules</a></li>
       <li><a href="#get_cli_modules">get_cli_modules</a></li>
+      <li><a href="#clean_regex">clean_regex</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -405,7 +406,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="read_data_file">read_data_file</h2>
 
-<pre><code>  read_data_file($filename)</code></pre>
+<pre><code>  read_data_file($filename, [$c])</code></pre>
 
 <p>return data for datafile</p>
 
@@ -526,6 +527,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    get_cli_modules()</code></pre>
 
 <p>returns list of cli modules</p>
+
+<h2 id="clean_regex">clean_regex</h2>
+
+<pre><code>    clean_regex()</code></pre>
+
+<p>returns cleaned regular expression, ex.: removes trailing .*</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

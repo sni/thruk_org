@@ -17,6 +17,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
       <li><a href="#init">init</a></li>
       <li><a href="#discard_changes">discard_changes</a></li>
       <li><a href="#commit">commit</a></li>
+      <li><a href="#print_errors">print_errors</a></li>
       <li><a href="#get_files">get_files</a></li>
       <li><a href="#get_file_by_path">get_file_by_path</a></li>
       <li><a href="#get_changed_files">get_changed_files</a></li>
@@ -57,7 +58,6 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
       <li><a href="#remote_get_pluginpreview">remote_get_pluginpreview</a></li>
       <li><a href="#read_rc_file">read_rc_file</a></li>
       <li><a href="#set_save_config">set_save_config</a></li>
-      <li><a href="#sort_by_object_keys">_sort_by_object_keys</a></li>
       <li><a href="#get_plugins">get_plugins</a></li>
       <li><a href="#get_plugin_help">get_plugin_help</a></li>
       <li><a href="#get_plugin_preview">get_plugin_preview</a></li>
@@ -112,6 +112,12 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <p>Commit changes to disk. Returns 1 on success.</p>
 
 <p>$c is only needed when syncing with remote sites.</p>
+
+<h2 id="print_errors">print_errors</h2>
+
+<pre><code>    print_errors([$fh])</code></pre>
+
+<p>Print all errors to stdout or supplied filehandle</p>
 
 <h2 id="get_files">get_files</h2>
 
@@ -365,10 +371,6 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <h2 id="set_save_config">set_save_config</h2>
 
 <p>updates file save config</p>
-
-<h2 id="sort_by_object_keys">_sort_by_object_keys</h2>
-
-<p>sort function for object keys</p>
 
 <h2 id="get_plugins">get_plugins</h2>
 
