@@ -240,3 +240,7 @@ SMALL.new {
   background-color: #2095c0;
   border-color: #014d82;
 }
+
+.listingblock pre {
+  overflow: auto;
+}
