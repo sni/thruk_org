@@ -1,5 +1,5 @@
 ---
-title: Service
+title: Lmd
 layout: api
 breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
 ---
@@ -25,15 +25,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="NAME">NAME</h1>
 
-<p>Thruk::Utils::CLI::Service - Service CLI module</p>
+<p>Thruk::Utils::CLI::Lmd - LMD CLI module</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>The service command lists services from livestatus queries.</p>
+<p>The lmd command controls the LMD process.</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] service [&lt;host&gt;]</code></pre>
+<pre><code>  Usage: thruk [globaloptions] lmd &lt;cmd&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -50,7 +50,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>    available commands are:
 
-    - list          lists all services</code></pre>
+    - start        starts the lmd process
+    - stop         stops the lmd process
+    - restart      restart the lmd process
+    - status       displays status of lmd process</code></pre>
 
 </dd>
 </dl>
@@ -63,9 +66,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<p>List all services for host localhost</p>
+<p>Start lmd process if it isnt running</p>
 
-<pre><code>  %&gt; thruk service localhost</code></pre>
+<pre><code>  %&gt; thruk lmd start</code></pre>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

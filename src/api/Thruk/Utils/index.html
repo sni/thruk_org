@@ -51,6 +51,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_fake_session">get_fake_session</a></li>
       <li><a href="#get_action_url">get_action_url</a></li>
       <li><a href="#list">list</a></li>
+      <li><a href="#array_chunk">array_chunk</a></li>
       <li><a href="#translate_host_status">translate_host_status</a></li>
       <li><a href="#choose_mobile">choose_mobile</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
@@ -83,6 +84,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#find_modules">find_modules</a></li>
       <li><a href="#get_cli_modules">get_cli_modules</a></li>
       <li><a href="#clean_regex">clean_regex</a></li>
+      <li><a href="#get_timezone_data">get_timezone_data</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -344,6 +346,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return list of ref unless it is already a list</p>
 
+<h2 id="array_chunk">array_chunk</h2>
+
+<pre><code>  array_chunk($list, $number)</code></pre>
+
+<p>return list of &lt;number&gt; evenly chunked parts</p>
+
 <h2 id="translate_host_status">translate_host_status</h2>
 
 <pre><code>  translate_host_status($status)</code></pre>
@@ -533,6 +541,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    clean_regex()</code></pre>
 
 <p>returns cleaned regular expression, ex.: removes trailing .*</p>
+
+<h2 id="get_timezone_data">get_timezone_data</h2>
+
+<pre><code>    get_timezone_data()</code></pre>
+
+<p>returns list of available timezones</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
