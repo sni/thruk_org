@@ -53,6 +53,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#list">list</a></li>
       <li><a href="#array_chunk">array_chunk</a></li>
       <li><a href="#translate_host_status">translate_host_status</a></li>
+      <li><a href="#expand_duration">expand_duration</a></li>
       <li><a href="#choose_mobile">choose_mobile</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
       <li><a href="#get_cron_time_entry">get_cron_time_entry</a></li>
@@ -357,6 +358,14 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  translate_host_status($status)</code></pre>
 
 <p>return name for status</p>
+
+<h2 id="expand_duration">expand_duration</h2>
+
+<pre><code>  expand_duration($value)</code></pre>
+
+<p>returns expanded seconds from given abbreviation</p>
+
+<p>possible conversions are 1w =&gt; 604800 1d =&gt; 86400 1h =&gt; 3600 1m =&gt; 60</p>
 
 <h2 id="choose_mobile">choose_mobile</h2>
 

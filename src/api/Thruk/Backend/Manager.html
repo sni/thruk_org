@@ -38,6 +38,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></li>
       <li><a href="#logcache_stats">logcache_stats</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
+      <li><a href="#get_comments_by_pattern">get_comments_by_pattern</a></li>
       <li><a href="#renew_logcache1">_renew_logcache</a></li>
       <li><a href="#close_logcache_connections">close_logcache_connections</a></li>
       <li><a href="#get_logs_start_end_no_filter">get_logs_start_end_no_filter</a></li>
@@ -227,6 +228,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  renew_logcache($c, [$noforks])</code></pre>
 
 <p>update the logcache</p>
+
+<h2 id="get_comments_by_pattern">get_comments_by_pattern</h2>
+
+<pre><code>  get_comments_by_pattern($c, $host, $svc, $pattern)</code></pre>
+
+<p>retrieve backend and ID of host or service comment(s) that match the given pattern</p>
 
 <h2 id="renew_logcache1">_renew_logcache</h2>
 
