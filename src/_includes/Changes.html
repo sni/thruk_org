@@ -15,6 +15,7 @@ next:
           - Broadcasts:
             - add template checkbox
             - add macro support
+            - add frontmatter support
           - Panorama:
             - optionally show broadcasts in panorama dashboards
             - make determing worst state for group/filter icons configurable
@@ -24,11 +25,18 @@ next:
           - Config Tool:
             - make command line a textarea
             - use separate edit sessions for each user
+            - list outside references when deleting hosts and services like dashboards or reports
             - fix adding custom variables from extra_custom_var
           - Business Process:
             - calculate results parallel if there are many bps
             - add details link to each node
             - add max_check_attempts to bp nodes
+          - Reporting:
+            - add datetime format options
+            - use time locale for reports
+            - optionally use host / servicename from alias, displayname or customvariable
+          - CLI
+            - add new 'find' command to search for object references
 
 2.20-2   Wed Mar 14 00:12:24 CET 2018
           - add optional debug switch for admin users
