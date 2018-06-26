@@ -325,7 +325,19 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="get_perf_image">get_perf_image</h2>
 
-<pre><code>  get_perf_image($c, $hst, $svc, $start, $end, $width, $height, $source, $resize_grafana_images, $format, $showtitle)</code></pre>
+<pre><code>  get_perf_image($c, {
+    host           =&gt; $hst,
+    service        =&gt; $svc,
+    start          =&gt; $start,
+    end            =&gt; $end,
+    width          =&gt; $width,
+    height         =&gt; $height,
+    source         =&gt; $source,
+    resize_grafana =&gt; $resize_grafana_images,
+    format         =&gt; $format,
+    show_title     =&gt; $showtitle,
+    show_legend    =&gt; $showlegend,
+  })</code></pre>
 
 <p>return raw pnp/grafana image if possible. An empty string will be returned if no graph can be exported.</p>
 

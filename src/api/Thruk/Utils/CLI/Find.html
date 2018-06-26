@@ -1,5 +1,5 @@
 ---
-title: Host
+title: Find
 layout: api
 breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
 ---
@@ -15,7 +15,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
   <li><a href="#OPTIONS">OPTIONS</a></li>
   <li><a href="#METHODS">METHODS</a>
     <ul>
-      <li><a href="#cmd1">cmd</a></li>
+      <li><a href="#cmd">cmd</a></li>
     </ul>
   </li>
   <li><a href="#EXAMPLES">EXAMPLES</a></li>
@@ -25,15 +25,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="NAME">NAME</h1>
 
-<p>Thruk::Utils::CLI::Host - Host CLI module</p>
+<p>Thruk::Utils::CLI::Find - Find objects and references by name</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>The host command lists hosts from livestatus queries.</p>
+<p>The find command looks for references for given objects</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] host &lt;cmd&gt;</code></pre>
+<pre><code>  Usage: thruk [globaloptions] find &lt;type&gt; &lt;name&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -45,27 +45,39 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <pre><code>    print help and exit</code></pre>
 
 </dd>
-<dt id="cmd"><b>cmd</b></dt>
+<dt id="type"><b>type</b></dt>
 <dd>
 
-<pre><code>    available commands are:
+<pre><code>    available types are:
 
-    - list          lists all hosts</code></pre>
+    - host                 find hosts
+    - hostgroup            find hostgroups
+    - service              find services
+    - servicegroup         find servicegroups
+    - contact              find contacts</code></pre>
 
 </dd>
 </dl>
 
 <h1 id="METHODS">METHODS</h1>
 
-<h2 id="cmd1">cmd</h2>
+<h2 id="cmd">cmd</h2>
 
 <pre><code>    cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<p>List all hosts</p>
+<p>Find references for host localhost</p>
 
-<pre><code>  %&gt; thruk host list</code></pre>
+<pre><code>  %&gt; thruk find host localhost</code></pre>
+
+<p>Find references for service ping on host localhost</p>
+
+<pre><code>  %&gt; thruk find service localhost ping</code></pre>
+
+<p>Find references for contact omdadmin</p>
+
+<pre><code>  %&gt; thruk find contact omdadmin</code></pre>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
