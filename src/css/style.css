@@ -113,6 +113,11 @@ small.gallery-caption {
 
 
 /* Affix Navigation */
+.affix {
+    position: fixed;
+    overflow: auto;
+    max-height: calc(100% - 120px);
+}
 
 /* First level of nav */
 .sidenav {
