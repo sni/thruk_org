@@ -23,6 +23,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#insert_item">insert_item</a></li>
       <li><a href="#insert_sub_item">insert_sub_item</a></li>
       <li><a href="#remove_item">remove_item</a></li>
+      <li><a href="#remove_section">remove_section</a></li>
       <li><a href="#has_group">has_group</a></li>
       <li><a href="#has_role">has_role</a></li>
       <li><a href="#is_user">is_user</a></li>
@@ -105,11 +106,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="remove_item">remove_item</h2>
 
-<pre><code>  remove_item($category, $item_name)
+<pre><code>  remove_item($category)
+  remove_item($category, $item_name)
   remove_item($category, $subcategory, $item_name)
   remove_item($category, $subcategory, $item_name, $hintname)</code></pre>
 
 <p>removes an existing item from an existing category</p>
+
+<h2 id="remove_section">remove_section</h2>
+
+<pre><code>  remove_section($category)</code></pre>
+
+<p>removes an existing section completely</p>
 
 <h2 id="has_group">has_group</h2>
 
@@ -119,7 +127,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="has_role">has_role</h2>
 
-<pre><code>  has_role($role)</code></pre>
+<pre><code>  has_role($role)
+  has_role([$role, ...])</code></pre>
 
 <p>returns 1 if the current user has this role</p>
 
