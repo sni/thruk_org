@@ -17,6 +17,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#perl">perl</a></li>
       <li><a href="#is_running">is_running</a></li>
       <li><a href="#cancel">cancel</a></li>
+      <li><a href="#read_job">read_job</a></li>
       <li><a href="#get_status">get_status</a></li>
       <li><a href="#get_json_status">get_json_status</a></li>
       <li><a href="#get_result">get_result</a></li>
@@ -84,6 +85,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns true if successfully canceled</p>
 
+<h2 id="read_job">read_job</h2>
+
+<pre><code>  read_job($c, $id)</code></pre>
+
+<p>return status of a job</p>
+
 <h2 id="get_status">get_status</h2>
 
 <pre><code>  get_status($c, $id)</code></pre>
@@ -122,7 +129,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="is_running1">_is_running</h2>
 
-<pre><code>  _is_running($dir)</code></pre>
+<pre><code>  _is_running($c, $dir)</code></pre>
 
 <p>return true if process is still running</p>
 

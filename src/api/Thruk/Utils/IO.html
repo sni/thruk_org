@@ -19,8 +19,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#read">read</a></li>
       <li><a href="#write">write</a></li>
       <li><a href="#ensure_permissions">ensure_permissions</a></li>
+      <li><a href="#file_lock">file_lock</a></li>
+      <li><a href="#file_unlock">file_unlock</a></li>
+      <li><a href="#json_store">json_store</a></li>
       <li><a href="#json_lock_store">json_lock_store</a></li>
+      <li><a href="#json_retrieve">json_retrieve</a></li>
       <li><a href="#json_lock_retrieve">json_lock_retrieve</a></li>
+      <li><a href="#json_lock_patch">json_lock_patch</a></li>
+      <li><a href="#json_patch">json_patch</a></li>
       <li><a href="#save_logs_to_tempfile">save_logs_to_tempfile</a></li>
       <li><a href="#cmd">cmd</a></li>
       <li><a href="#untaint">untaint</a></li>
@@ -76,17 +82,57 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>ensure permissions and ownership</p>
 
+<h2 id="file_lock">file_lock</h2>
+
+<pre><code>  file_lock($file, $mode)
+
+  $mode can be
+    - &#39;ex&#39; exclusive
+    - &#39;sh&#39; shared</code></pre>
+
+<p>locks given file. Returns locked filehandle.</p>
+
+<h2 id="file_unlock">file_unlock</h2>
+
+<pre><code>  file_unlock($file, $fh)</code></pre>
+
+<p>unlocks file lock previously with file_lock exclusivly. Returns nothing.</p>
+
+<h2 id="json_store">json_store</h2>
+
+<pre><code>  json_store($file, $data, [$pretty], [$changed_only])</code></pre>
+
+<p>stores data json encoded</p>
+
 <h2 id="json_lock_store">json_lock_store</h2>
 
 <pre><code>  json_lock_store($file, $data, [$pretty], [$changed_only])</code></pre>
 
 <p>stores data json encoded</p>
 
+<h2 id="json_retrieve">json_retrieve</h2>
+
+<pre><code>  json_retrieve($file, $fh)</code></pre>
+
+<p>retrieve json data</p>
+
 <h2 id="json_lock_retrieve">json_lock_retrieve</h2>
 
 <pre><code>  json_lock_retrieve($file)</code></pre>
 
 <p>retrieve json data</p>
+
+<h2 id="json_lock_patch">json_lock_patch</h2>
+
+<pre><code>  json_lock_patch($file, $patch_data, [$pretty], [$changed_only], [$tmpfile])</code></pre>
+
+<p>update json data</p>
+
+<h2 id="json_patch">json_patch</h2>
+
+<pre><code>  json_patch($file, $fh, $patch_data, [$pretty], [$changed_only], [$tmpfile])</code></pre>
+
+<p>update json data</p>
 
 <h2 id="save_logs_to_tempfile">save_logs_to_tempfile</h2>
 

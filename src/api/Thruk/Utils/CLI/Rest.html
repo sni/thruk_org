@@ -1,0 +1,67 @@
+---
+title: Rest
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Rest - Rest API CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The rest command is a cli interface to the rest api.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  Usage: thruk [globaloptions] rest [-m method] [-d postdata] &lt;url&gt;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>    cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Get list of hosts sorted by name</p>
+
+<pre><code>  %&gt; thruk r /hosts?sort=name</code></pre>
+
+<p>Get list of hostgroups starting with literal l</p>
+
+<pre><code>  %&gt; thruk r &#39;/hostgroups?name[~]=^l&#39;</code></pre>
+
+<p>Reschedule next host check for host localhost:</p>
+
+<pre><code>  %&gt; thruk r -d &quot;start_time=now&quot; /hosts/localhost/cmd/schedule_host_check</code></pre>
+
+<p>See more examples and additional help at https://thruk.org/documentation/rest.html</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+

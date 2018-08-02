@@ -20,6 +20,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#check_permissions">check_permissions</a></li>
       <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
       <li><a href="#transform_username">transform_username</a></li>
+      <li><a href="#grant">grant</a></li>
     </ul>
   </li>
 </ul>
@@ -55,7 +56,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 <pre><code> check_user_roles(&lt;$role&gt;)
 
  for example:
- $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)</code></pre>
+ $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)
+ $c-&gt;user-&gt;check_user_roles([&#39;authorized_for_system_commands&#39;, &#39;authorized_for_configuration_information&#39;])</code></pre>
 
 <h2 id="check_permissions">check_permissions</h2>
 
@@ -83,5 +85,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 <p>run transformation rules for username</p>
 
 <pre><code> transform_username($config, $username, [$c])</code></pre>
+
+<h2 id="grant">grant</h2>
+
+<pre><code>    grant(&#39;role&#39;)</code></pre>
+
+<p>grant role to user</p>
 
 

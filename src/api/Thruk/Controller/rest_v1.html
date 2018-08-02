@@ -1,0 +1,61 @@
+---
+title: rest_v1
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#index">index</a></li>
+      <li><a href="#register_rest_path_v1">register_rest_path_v1</a></li>
+      <li><a href="#get_rest_paths">get_rest_paths</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Controller::rest_v1 - Rest interface version 1</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Thruk Controller</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="index">index</h2>
+
+<h2 id="register_rest_path_v1">register_rest_path_v1</h2>
+
+<pre><code>    register_rest_path_v1($protocol, $path|$regex, $function, $roles)</code></pre>
+
+<p>register rest path.</p>
+
+<p>returns nothing</p>
+
+<h2 id="get_rest_paths">get_rest_paths</h2>
+
+<pre><code>    get_rest_paths([$c])</code></pre>
+
+<p>gather list of available rest paths. If $c is supplied, only enabled plugins will be returned.</p>
+
+<p>returns (path_hash, keys_hash, docs_hash)</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+

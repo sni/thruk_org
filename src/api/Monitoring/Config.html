@@ -30,6 +30,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
       <li><a href="#get_object_by_location">get_object_by_location</a></li>
       <li><a href="#get_object_by_id">get_object_by_id</a></li>
       <li><a href="#get_services_for_host">get_services_for_host</a></li>
+      <li><a href="#get_services_by_name">get_services_by_name</a></li>
       <li><a href="#get_hosts_for_service">get_hosts_for_service</a></li>
       <li><a href="#update">update</a></li>
       <li><a href="#check_files_changed">check_files_changed</a></li>
@@ -200,6 +201,12 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <p>Get services by host. Returns a hashref with ids of references:</p>
 
 <pre><code> { host =&gt; {}, group =&gt; {} }</code></pre>
+
+<h2 id="get_services_by_name">get_services_by_name</h2>
+
+<pre><code>    get_services_by_name($host_name, $service_description)</code></pre>
+
+<p>Returns list of services for given host and service names</p>
 
 <h2 id="get_hosts_for_service">get_hosts_for_service</h2>
 

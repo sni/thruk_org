@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#request">request</a></li>
       <li><a href="#response">response</a></li>
       <li><a href="#log">log</a></li>
+      <li><a href="#cluster">cluster</a></li>
       <li><a href="#detach">detach</a></li>
       <li><a href="#render">render</a></li>
       <li><a href="#render_excel">render_excel</a></li>
@@ -36,6 +37,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#url_with">url_with</a></li>
       <li><a href="#translate_request_path">translate_request_path</a></li>
       <li><a href="#has_route">has_route</a></li>
+      <li><a href="#sub_request">sub_request</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -73,6 +75,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <h2 id="log">log</h2>
 
 <p>return log object</p>
+
+<h2 id="cluster">cluster</h2>
+
+<p>return cluster object</p>
 
 <h2 id="detach">detach</h2>
 
@@ -140,13 +146,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="translate_request_path">translate_request_path</h2>
 
-<pre><code>    translate_request_path(&lt;path_info&gt;, $config)</code></pre>
+<pre><code>    translate_request_path(&lt;path_info&gt;, $config, $env)</code></pre>
 
 <p>translate paths, /naemon/cgi-bin to /thruk/cgi-bin/ or /&lt;omd-site/thruk/cgi-bin/... to /thruk/cgi-bin/... so later functions can use /thruk/... for everything, regardless of the deployment path.</p>
 
 <h2 id="has_route">has_route</h2>
 
 <p>$c-&gt;has_route(&lt;url&gt;)</p>
+
+<h2 id="sub_request">sub_request</h2>
+
+<p>$c-&gt;sub_request(&lt;url&gt;, [&lt;method&gt;], [&lt;postdata&gt;], [&lt;rendered&gt;])</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
