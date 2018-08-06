@@ -14,6 +14,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#index">index</a></li>
+      <li><a href="#get_request_columns">get_request_columns</a></li>
+      <li><a href="#column_required">column_required</a></li>
       <li><a href="#register_rest_path_v1">register_rest_path_v1</a></li>
       <li><a href="#get_rest_paths">get_rest_paths</a></li>
     </ul>
@@ -33,6 +35,20 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 <h1 id="METHODS">METHODS</h1>
 
 <h2 id="index">index</h2>
+
+<h2 id="get_request_columns">get_request_columns</h2>
+
+<pre><code>    get_request_columns($c)</code></pre>
+
+<p>returns list of requested columns or undef</p>
+
+<h2 id="column_required">column_required</h2>
+
+<pre><code>    column_required($c, $column_name)</code></pre>
+
+<p>Can be used to exclude expensive columns from beeing generated.</p>
+
+<p>returns true if column is required, ex. for sorting, filtering, etc...</p>
 
 <h2 id="register_rest_path_v1">register_rest_path_v1</h2>
 
