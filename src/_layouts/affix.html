@@ -24,8 +24,7 @@ window.doOnLoadList.push(function() {
     // create side bar navigation automatically from h2/h3 tags
     // put every h2 in the side bar
     jQuery("DIV.container H2").each(function(nr, el) {
-      var label = el.innerHTML.replace(/&amp;/g, '').replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
-      label = label.replace(/&/g, '');
+      var label = jQuery(el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
       label = label.replace(/[ \.\/:]+/g, '-');
       label = '_'+label;
       jQuery('<a id="'+label+'" class="nav">').insertBefore(el);
@@ -55,7 +54,7 @@ window.doOnLoadList.push(function() {
           jQuery(nav_section).append(sub_section);
       }
       sub_elements.each(function(sub_nr, sub_el) {
-          var sublabel = sub_el.innerHTML.replace(/&amp;/g, '').replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
+          var sublabel = jQuery(sub_el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
           sublabel = sublabel.replace(/[ \.\/:]+/g, '-');
           jQuery('<a name="_'+sublabel+'" class="nav_anchor">').insertBefore(sub_el);
           if(sub_elements.size() > 1) {
