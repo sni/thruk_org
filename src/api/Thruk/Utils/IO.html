@@ -30,6 +30,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#save_logs_to_tempfile">save_logs_to_tempfile</a></li>
       <li><a href="#cmd">cmd</a></li>
       <li><a href="#untaint">untaint</a></li>
+      <li><a href="#merge_deep">merge_deep</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -157,6 +158,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  untaint($var)</code></pre>
 
 <p>return untainted variable</p>
+
+<h2 id="merge_deep">merge_deep</h2>
+
+<pre><code>  merge_deep($var, $merge_var)</code></pre>
+
+<p>returns merged variables</p>
+
+<p>merge will be as follows:</p>
+
+<pre><code>    - hash keys will be replaced with the last level of hash keys
+    - arrays will will be replaced completly, unless $merge_var is a hash of
+      the form: { array_index =&gt; replacement }
+    - everything else will be replaced</code></pre>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
