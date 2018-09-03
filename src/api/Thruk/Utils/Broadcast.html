@@ -14,8 +14,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_broadcasts">get_broadcasts</a></li>
+      <li><a href="#is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</a></li>
       <li><a href="#update_dismiss-c">update_dismiss($c)</a></li>
       <li><a href="#get_default_broadcast-c">get_default_broadcast($c)</a></li>
+      <li><a href="#update_broadcast_from_param-c-broadcast">update_broadcast_from_param($c, $broadcast)</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -38,6 +40,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>return list of broadcasts for this contact</p>
 
+<h2 id="is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</h2>
+
+<pre><code>  is_authorized_for_broadcast($c, $broadcast)</code></pre>
+
+<p>returns true if user is allowed to view this broadcast</p>
+
 <h2 id="update_dismiss-c">update_dismiss($c)</h2>
 
 <pre><code>  update_dismiss($c)</code></pre>
@@ -49,6 +57,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_default_broadcast($c)</code></pre>
 
 <p>return empty default broadcast</p>
+
+<h2 id="update_broadcast_from_param-c-broadcast">update_broadcast_from_param($c, $broadcast)</h2>
+
+<pre><code>  update_broadcast_from_param($c, $broadcast)</code></pre>
+
+<p>return broadcast with updated fields from parameters</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
