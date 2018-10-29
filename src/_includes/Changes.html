@@ -1,14 +1,29 @@
 This file documents the revision history for the Monitoring Webinterface Thruk.
 
-next:
+2.24     Fri Oct 26 18:40:37 CEST 2018
           - add rest api
             - see https://thruk.org/documentation/rest.html for details
           - support clustered setups
             - see https://thruk.org/documentation/cluster.html for details
+          - add api keys
           - add command_enabled option
           - show and use alias for hosts, hostgroups and servicegroups search
+          - removed cookie_auth_direct_agents option
+          - action menus:
+            - add support for submenus
+            - add support for scripted js menus
           - Business Process:
             - only show business processes where the contact is allowed to see the generated service (#810)
+          - Panorama:
+            - fix playing recovery or host alert sounds
+          - Cookie Auth:
+            - lock account after 10 failed login attempts
+            - add `cookie_auth_disable_after_failed_logins` option
+            - add lock/unlock actions to admin users page
+          - Logcache:
+            - fix issue with wrong contacts in notifications after authupdate command
+          - Broadcasts:
+            - add variable editor
 
 2.22     Fri Jun 29 13:52:11 CEST 2018
           - cleanup preferences popup
