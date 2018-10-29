@@ -1,0 +1,61 @@
+---
+title: APIKeys
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_keys">get_keys</a></li>
+      <li><a href="#create_key">create_key</a></li>
+      <li><a href="#remove_key">remove_key</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::APIKeys - Handles api keys related things</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>API keys for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_keys">get_keys</h2>
+
+<pre><code>  get_keys($c, $username)</code></pre>
+
+<p>returns list of api keys</p>
+
+<h2 id="create_key">create_key</h2>
+
+<pre><code>  create_key($c, $username, [$comment])</code></pre>
+
+<p>create new api key for user</p>
+
+<h2 id="remove_key">remove_key</h2>
+
+<pre><code>  remove_key($c, $username, $key)</code></pre>
+
+<p>remove given key</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+

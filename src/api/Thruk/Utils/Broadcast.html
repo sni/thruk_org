@@ -14,6 +14,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_broadcasts">get_broadcasts</a></li>
+      <li><a href="#process_broadcast-c-broadcast">process_broadcast($c, $broadcast)</a></li>
       <li><a href="#is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</a></li>
       <li><a href="#update_dismiss-c">update_dismiss($c)</a></li>
       <li><a href="#get_default_broadcast-c">get_default_broadcast($c)</a></li>
@@ -39,6 +40,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_broadcasts($c, [$unfiltered], [$file], [$panorama_only])</code></pre>
 
 <p>return list of broadcasts for this contact</p>
+
+<h2 id="process_broadcast-c-broadcast">process_broadcast($c, $broadcast)</h2>
+
+<pre><code>  process_broadcast($c, $broadcast)</code></pre>
+
+<p>replace macros, frontmatter, etc...</p>
 
 <h2 id="is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</h2>
 
