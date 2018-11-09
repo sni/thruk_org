@@ -15,10 +15,10 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "2.24"      # release folder, ex.: 2.00-2 or 2.02
-release_version_deb: "2.24"  # 2.00-2 or 2.02
-release_version_rpm: "2.24-1"  # 2.00-2 or 2.02-1
-release_date: "Oct 26, 2018"
+release_version: "2.24-2"      # release folder, ex.: 2.00-2 or 2.02
+release_version_deb: "2.24-2"  # 2.00-2 or 2.02
+release_version_rpm: "2.24-2"  # 2.00-2 or 2.02-1
+release_date: "Nov 06, 2018"
 next_release_date: "Feb 2019"
 
 mailinglist_url: https://groups.google.com/group/thruk
