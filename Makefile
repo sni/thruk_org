@@ -56,7 +56,7 @@ api_update:
 clean_env:
 	git submodule init
 	git submodule update
-	@if [ $$(git status 2>&1 | grep -c "working directory clean") -ne 1 ]; then \
+	@if [ $$(git status 2>&1 | grep -c "working \(tree\|directory\) clean") -ne 1 ]; then \
 	    git status >&2; \
 	    echo "cannot run update" >&2; \
 	    exit 1; \
