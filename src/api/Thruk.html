@@ -14,10 +14,12 @@ breadcrumb: []
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#startup">startup</a></li>
+      <li><a href="#find_route_match">find_route_match</a></li>
       <li><a href="#config">config</a></li>
       <li><a href="#cluster">cluster</a></li>
       <li><a href="#obj_db_model">obj_db_model</a></li>
       <li><a href="#log">log</a></li>
+      <li><a href="#audit_log">audit_log</a></li>
       <li><a href="#reset_logging">reset_logging</a></li>
       <li><a href="#verbose">verbose</a></li>
       <li><a href="#debug">debug</a></li>
@@ -45,6 +47,12 @@ breadcrumb: []
 
 <p>returns the psgi code ref</p>
 
+<h2 id="find_route_match">find_route_match</h2>
+
+<pre><code>    lookup code ref for route</code></pre>
+
+<p>returns code ref and name of the route entry</p>
+
 <h2 id="config">config</h2>
 
 <pre><code>    make config accessible via Thruk-&gt;config</code></pre>
@@ -60,6 +68,11 @@ breadcrumb: []
 <h2 id="log">log</h2>
 
 <pre><code>    make log accessible via Thruk-&gt;log</code></pre>
+
+<h2 id="audit_log">audit_log</h2>
+
+<pre><code>    audit_log logs something with info log level and
+    in case screen logger is active, logs it also to the logfile.</code></pre>
 
 <h2 id="reset_logging">reset_logging</h2>
 
