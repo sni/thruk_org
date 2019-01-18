@@ -33,7 +33,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] bp [commit|all|&lt;nr&gt;]</code></pre>
+<pre><code>  Usage: thruk [globaloptions] bp [commit|all|&lt;nr&gt;] [--worker=&lt;nr&gt;]</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -62,6 +62,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dd>
 
 <pre><code>    recalculate/update specific business process</code></pre>
+
+</dd>
+<dt id="worker"><b>--worker</b></dt>
+<dd>
+
+<pre><code>    use this number of worker processes to calculate all processes.
+
+    Defaults to &#39;auto&#39; which trys to find a suitable number automatically.</code></pre>
 
 </dd>
 </dl>

@@ -42,9 +42,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_global_user_data">get_global_user_data</a></li>
       <li><a href="#store_global_user_data">store_global_user_data</a></li>
       <li><a href="#array_uniq">array_uniq</a></li>
+      <li><a href="#array_uniq_obj">array_uniq_obj</a></li>
       <li><a href="#logs2xls">logs2xls</a></li>
       <li><a href="#savexls">savexls</a></li>
       <li><a href="#proxifiy_url">proxifiy_url</a></li>
+      <li><a href="#proxifiy_me">proxifiy_me</a></li>
+      <li><a href="#get_remote_thruk_url">get_remote_thruk_url</a></li>
       <li><a href="#get_pnp_url">get_pnp_url</a></li>
       <li><a href="#get_histou_url">get_histou_url</a></li>
       <li><a href="#get_graph_url">get_graph_url</a></li>
@@ -298,6 +301,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return uniq elements of array</p>
 
+<h2 id="array_uniq_obj">array_uniq_obj</h2>
+
+<pre><code>  array_uniq_obj($array_of_hashes)</code></pre>
+
+<p>return uniq elements of array, examining all hash keys except peer_key</p>
+
 <h2 id="logs2xls">logs2xls</h2>
 
 <pre><code>  logs2xls($c)</code></pre>
@@ -315,6 +324,18 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  prepend proxy url to action url which might be proxied via thruk http</code></pre>
 
 <p>returns url with optional proxy prepended</p>
+
+<h2 id="proxifiy_me">proxifiy_me</h2>
+
+<pre><code>  returns proxy url if possible</code></pre>
+
+<p>returns url with optional proxy prepended</p>
+
+<h2 id="get_remote_thruk_url">get_remote_thruk_url</h2>
+
+<pre><code>  get_remote_thruk_url($peer_key)</code></pre>
+
+<p>return url for remote thruk installation</p>
 
 <h2 id="get_pnp_url">get_pnp_url</h2>
 
@@ -362,7 +383,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="get_fake_session">get_fake_session</h2>
 
-<pre><code>  get_fake_session($c, [$sessionid])</code></pre>
+<pre><code>  get_fake_session($c, [$sessionid], [$roles])</code></pre>
 
 <p>create and return fake session id for current user</p>
 

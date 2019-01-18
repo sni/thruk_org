@@ -19,12 +19,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_peers">get_peers</a></li>
       <li><a href="#get_peer_by_key">get_peer_by_key</a></li>
       <li><a href="#get_peer_by_name">get_peer_by_name</a></li>
+      <li><a href="#get_http_peers">get_http_peers</a></li>
       <li><a href="#peer_key">peer_key</a></li>
       <li><a href="#sections">sections</a></li>
       <li><a href="#disable_backend">disable_backend</a></li>
       <li><a href="#enable_backend">enable_backend</a></li>
       <li><a href="#disable_backends">disable_backends</a></li>
       <li><a href="#enable_backends">enable_backends</a></li>
+      <li><a href="#enable_default_backends">enable_default_backends</a></li>
       <li><a href="#get_default_backends">get_default_backends</a></li>
       <li><a href="#get_scheduling_queue">get_scheduling_queue</a></li>
       <li><a href="#get_performance_stats">get_performance_stats</a></li>
@@ -116,6 +118,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <p>returns peer by name</p>
 
+<h2 id="get_http_peers">get_http_peers</h2>
+
+<pre><code>  get_http_peers()</code></pre>
+
+<p>returns all configured peers which have a http connection type</p>
+
 <h2 id="peer_key">peer_key</h2>
 
 <pre><code>  peer_key()</code></pre>
@@ -150,7 +158,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <pre><code>  enable_backends(&lt;keys&gt;, [&lt;exclusive&gt;])</code></pre>
 
-<p>enables all backends</p>
+<p>enables all backends. list is additive unless exclusive is used.</p>
+
+<h2 id="enable_default_backends">enable_default_backends</h2>
+
+<pre><code>  enable_default_backends()</code></pre>
+
+<p>enables all default backends</p>
 
 <h2 id="get_default_backends">get_default_backends</h2>
 

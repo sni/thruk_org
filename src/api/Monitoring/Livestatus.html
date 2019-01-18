@@ -318,7 +318,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 <pre><code> errors_are_fatal()
  errors_are_fatal($value)</code></pre>
 
-<p>Enable or disable fatal errors. When enabled the module will croak on any error.</p>
+<p>Enable or disable fatal errors. When enabled the module will confess on any error.</p>
 
 <p>returns the current setting if called without new value</p>
 
@@ -507,7 +507,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
     $ml-&gt;errors_are_fatal(0);
     my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);
     if($Monitoring::Livestatus::ErrorCode) {
-        croak($Monitoring::Livestatus::ErrorMessage);
+        confess($Monitoring::Livestatus::ErrorMessage);
     }</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
