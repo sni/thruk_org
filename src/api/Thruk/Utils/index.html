@@ -22,8 +22,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#calculate_overall_processinfo">calculate_overall_processinfo</a></li>
       <li><a href="#get_start_end_for_timeperiod">get_start_end_for_timeperiod</a></li>
       <li><a href="#get_start_end_for_timeperiod_from_param">get_start_end_for_timeperiod_from_param</a></li>
-      <li><a href="#get_dynamic_roles">get_dynamic_roles</a></li>
-      <li><a href="#set_dynamic_roles">set_dynamic_roles</a></li>
       <li><a href="#set_message">set_message</a></li>
       <li><a href="#append_message">append_message</a></li>
       <li><a href="#ssi_include">ssi_include</a></li>
@@ -43,6 +41,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#store_global_user_data">store_global_user_data</a></li>
       <li><a href="#array_uniq">array_uniq</a></li>
       <li><a href="#array_uniq_obj">array_uniq_obj</a></li>
+      <li><a href="#array_uniq_list">array_uniq_list</a></li>
       <li><a href="#logs2xls">logs2xls</a></li>
       <li><a href="#savexls">savexls</a></li>
       <li><a href="#proxifiy_url">proxifiy_url</a></li>
@@ -52,6 +51,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_histou_url">get_histou_url</a></li>
       <li><a href="#get_graph_url">get_graph_url</a></li>
       <li><a href="#get_perf_image">get_perf_image</a></li>
+      <li><a href="#encode_arg_refs">encode_arg_refs</a></li>
+      <li><a href="#unencode_arg_refs">unencode_arg_refs</a></li>
       <li><a href="#absolute_url">absolute_url</a></li>
       <li><a href="#get_fake_session">get_fake_session</a></li>
       <li><a href="#get_action_url">get_action_url</a></li>
@@ -94,10 +95,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#command_disabled">command_disabled</a></li>
       <li><a href="#code2name">code2name</a></li>
       <li><a href="#check_for_nasty_filename">check_for_nasty_filename</a></li>
+      <li><a href="#merge_service_dependencies">merge_service_dependencies</a></li>
+      <li><a href="#merge_host_dependencies">merge_host_dependencies</a></li>
     </ul>
   </li>
-  <li><a href="#AUTHOR">AUTHOR</a></li>
-  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -178,18 +179,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  my($start, $end) = get_start_end_for_timeperiod_from_param($c)</code></pre>
 
 <p>returns a start and end timestamp for a report date definition will use cgi params for input</p>
-
-<h2 id="get_dynamic_roles">get_dynamic_roles</h2>
-
-<pre><code>  get_dynamic_roles($c, $user)</code></pre>
-
-<p>gets the authorized_for_read_only role and group based roles</p>
-
-<h2 id="set_dynamic_roles">set_dynamic_roles</h2>
-
-<pre><code>  set_dynamic_roles($c, [$username], [$user])</code></pre>
-
-<p>sets the authorized_for_read_only role and group based roles</p>
 
 <h2 id="set_message">set_message</h2>
 
@@ -307,6 +296,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return uniq elements of array, examining all hash keys except peer_key</p>
 
+<h2 id="array_uniq_list">array_uniq_list</h2>
+
+<pre><code>  array_uniq_list($array_of_lists)</code></pre>
+
+<p>return uniq elements of array, examining all list members</p>
+
 <h2 id="logs2xls">logs2xls</h2>
 
 <pre><code>  logs2xls($c)</code></pre>
@@ -369,9 +364,25 @@ breadcrumb: ['api/Thruk/', 'Thruk']
     format         =&gt; $format,
     show_title     =&gt; $showtitle,
     show_legend    =&gt; $showlegend,
+    follow         =&gt; 0/1,  # flag wether we simply redirect proxy requests or fetch them
+    theme          =&gt; light/dark,
+    font_color     =&gt; #12345,
+    bg_color       =&gt; #12345,
   })</code></pre>
 
 <p>return raw pnp/grafana image if possible. An empty string will be returned if no graph can be exported.</p>
+
+<h2 id="encode_arg_refs">encode_arg_refs</h2>
+
+<pre><code>  encode_arg_refs($args)</code></pre>
+
+<p>returns array with replaced args, ex. replace $c with placeholder</p>
+
+<h2 id="unencode_arg_refs">unencode_arg_refs</h2>
+
+<pre><code>  unencode_arg_refs($c, $args)</code></pre>
+
+<p>returns array with replaced args, ex. replace placeholder with $c</p>
 
 <h2 id="absolute_url">absolute_url</h2>
 
@@ -627,12 +638,16 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>returns true if nasty characters have been found and the filename is NOT safe for use</p>
 
-<h1 id="AUTHOR">AUTHOR</h1>
+<h2 id="merge_service_dependencies">merge_service_dependencies</h2>
 
-<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+<pre><code>    merge_service_dependencies($service, [$list, $list, ...])</code></pre>
 
-<h1 id="LICENSE">LICENSE</h1>
+<p>merge parents, depends_exec and depends_notifiy lists into a single list</p>
 
-<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+<h2 id="merge_host_dependencies">merge_host_dependencies</h2>
+
+<pre><code>    merge_host_dependencies([$list, $list, ...])</code></pre>
+
+<p>merge depends_exec and depends_notifiy into a single list</p>
 
 

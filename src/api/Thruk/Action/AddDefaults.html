@@ -23,13 +23,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
       <li><a href="#update_site_panel_hashes">update_site_panel_hashes</a></li>
       <li><a href="#set_processinfo">set_processinfo</a></li>
       <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
-      <li><a href="#delayed_proc_info_update">delayed_proc_info_update</a></li>
       <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
       <li><a href="#check_federation_peers">check_federation_peers</a></li>
     </ul>
   </li>
-  <li><a href="#AUTHOR">AUTHOR</a></li>
-  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -99,17 +96,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 
 <h2 id="set_processinfo">set_processinfo</h2>
 
-<pre><code>  set_processinfo($c, [$cached_user_data, $safe, $cached_data,$skip_cache_update])</code></pre>
+<pre><code>  set_processinfo($c, [$safe, $cached_data])</code></pre>
 
 <p>set process info into stash</p>
 
 <h2 id="die_when_no_backends">die_when_no_backends</h2>
 
 <pre><code>    die unless there are any backeds defined and enabled</code></pre>
-
-<h2 id="delayed_proc_info_update">delayed_proc_info_update</h2>
-
-<pre><code>    run process info update after the main page has been served</code></pre>
 
 <h2 id="save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</h2>
 
@@ -119,13 +112,5 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 
 <pre><code>    expand peers if a single backend returns more than one site,
     for example with lmd federation</code></pre>
-
-<h1 id="AUTHOR">AUTHOR</h1>
-
-<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
-
-<h1 id="LICENSE">LICENSE</h1>
-
-<p>This library is free software, you can redistribute it and/or modify it under the same terms as Perl itself.</p>
 
 

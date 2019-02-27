@@ -53,14 +53,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#get_logs_start_end">get_logs_start_end</a></li>
       <li><a href="#get_logs_start_end1">_get_logs_start_end</a></li>
       <li><a href="#propagate_session_file">propagate_session_file</a></li>
+      <li><a href="#rpc">rpc</a></li>
       <li><a href="#req">_req</a></li>
       <li><a href="#ua_post_with_timeout">_ua_post_with_timeout</a></li>
       <li><a href="#wait_for_remote_job">_wait_for_remote_job</a></li>
       <li><a href="#replace_peer_key">_replace_peer_key</a></li>
     </ul>
   </li>
-  <li><a href="#AUTHOR">AUTHOR</a></li>
-  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -295,6 +294,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 
 <p>propagate local session to remote site</p>
 
+<h2 id="rpc">rpc</h2>
+
+<pre><code>  rpc($c, &quot;function name&quot;, $args);</code></pre>
+
+<p>run remote call</p>
+
 <h2 id="req">_req</h2>
 
 <pre><code>  _req($sub, $options)</code></pre>
@@ -318,13 +323,5 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <pre><code>  _replace_peer_key($data)</code></pre>
 
 <p>replace remote peer key with our own</p>
-
-<h1 id="AUTHOR">AUTHOR</h1>
-
-<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
-
-<h1 id="LICENSE">LICENSE</h1>
-
-<p>This library is free software. You can redistribute it and/or modify it under the same terms as Perl itself.</p>
 
 

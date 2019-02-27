@@ -15,7 +15,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#new">new</a></li>
+      <li><a href="#set_dynamic_attributes">set_dynamic_attributes</a></li>
+      <li><a href="#get_dynamic_roles">get_dynamic_roles</a></li>
       <li><a href="#get">get</a></li>
+      <li><a href="#is_locked">is_locked</a></li>
       <li><a href="#check_user_roles">check_user_roles</a></li>
       <li><a href="#check_permissions">check_permissions</a></li>
       <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
@@ -45,11 +48,29 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 <pre><code> Thruk::Authentication::User-&gt;new();</code></pre>
 
+<h2 id="set_dynamic_attributes">set_dynamic_attributes</h2>
+
+<pre><code>  set_dynamic_attributes($c)</code></pre>
+
+<p>sets attributes based on livestatus data</p>
+
+<h2 id="get_dynamic_roles">get_dynamic_roles</h2>
+
+<pre><code>  get_dynamic_roles($c)</code></pre>
+
+<p>gets the authorized_for_read_only role and group based roles</p>
+
 <h2 id="get">get</h2>
 
 <p>get user attribute</p>
 
 <pre><code> get($attribute)</code></pre>
+
+<h2 id="is_locked">is_locked</h2>
+
+<pre><code>  is_locked()</code></pre>
+
+<p>returns true if user is locked</p>
 
 <h2 id="check_user_roles">check_user_roles</h2>
 
