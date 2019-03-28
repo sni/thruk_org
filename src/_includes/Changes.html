@@ -6,10 +6,15 @@ next:
           - add parents to selectable columns
           - add option to store selected backends along with a bookmark
           - add support for dependencies (naemon only)
+          - add host alias to exportable columns
+          - add eventhandler quick commands
           - fix offset calculation in rest api
           - fix page not found issue when using browser history back
+          - fix cross site scripting issues
           - REST:
             - add aggregation function support
+            - add cmd to remove all active downtimes for host or service
+            - add more external commands
           - Config Tool:
             - add authorization tab to contacts and contactgroups
             - add support for dependencies and escalations
@@ -21,11 +26,13 @@ next:
             - disable automatic calculation by setting refresh_interval to zero
             - add read_only mode
             - add `post_refresh_cmd` hook
+            - use paging when having many business processes
           - Panorama:
             - add direct link with tabs
             - add theme selector to grafana images
             - add color selector to grafana images
             - add axis color option to speedometer
+            - fix saving permissions when list is empty
           - internals:
             - move libraries to vendor folder
             - update jquery to 3.3.1
