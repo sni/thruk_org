@@ -97,6 +97,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#check_for_nasty_filename">check_for_nasty_filename</a></li>
       <li><a href="#merge_service_dependencies">merge_service_dependencies</a></li>
       <li><a href="#merge_host_dependencies">merge_host_dependencies</a></li>
+      <li><a href="#dump_params">dump_params</a></li>
     </ul>
   </li>
 </ul>
@@ -264,13 +265,13 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <pre><code>  get_user_data($c, [$username])</code></pre>
 
-<p>returns user data</p>
+<p>returns user profile data</p>
 
 <h2 id="store_user_data">store_user_data</h2>
 
 <pre><code>  store_user_data($c, $data, [$username])</code></pre>
 
-<p>store user data for section</p>
+<p>store user profile data</p>
 
 <h2 id="get_global_user_data">get_global_user_data</h2>
 
@@ -649,5 +650,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    merge_host_dependencies([$list, $list, ...])</code></pre>
 
 <p>merge depends_exec and depends_notifiy into a single list</p>
+
+<h2 id="dump_params">dump_params</h2>
+
+<pre><code>    dump_params($c-&gt;req-&gt;parameters)</code></pre>
+
+<p>returns stringified parameters</p>
 
 

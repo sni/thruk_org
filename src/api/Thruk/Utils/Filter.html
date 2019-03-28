@@ -22,10 +22,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#last_check">last_check</a></li>
       <li><a href="#uri">uri</a></li>
       <li><a href="#full_uri">full_uri</a></li>
-      <li><a href="#as_url_arg">as_url_arg</a></li>
       <li><a href="#short_uri">short_uri</a></li>
-      <li><a href="#clean_referer">clean_referer</a></li>
       <li><a href="#uri_with">uri_with</a></li>
+      <li><a href="#as_url_arg">as_url_arg</a></li>
       <li><a href="#html_escape">html_escape</a></li>
       <li><a href="#escape_html">escape_html</a></li>
       <li><a href="#escape_quotes">escape_quotes</a></li>
@@ -123,39 +122,45 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <pre><code>  uri($c)</code></pre>
 
-<p>returns a correct uri</p>
+<p>returns html escaped current absolute uri without any filter</p>
+
+<p>ex.: /thruk/cgi-bin/status.cgi?params...</p>
 
 <h2 id="full_uri">full_uri</h2>
 
 <pre><code>  full_uri($c, $return_full_url)</code></pre>
 
-<p>returns uri to current page.</p>
+<p>returns html escaped uri to current page with default filters.</p>
 
-<pre><code>    $return_full_url   -&gt; return http://host/thruk/... instead of /thruk/...</code></pre>
+<p>ex.: /thruk/cgi-bin/status.cgi?params...</p>
 
-<h2 id="as_url_arg">as_url_arg</h2>
-
-<pre><code>  as_url_arg($str)</code></pre>
-
-<p>returns encoded string for use in url args</p>
+<pre><code>    with return_full_url:
+    http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 
 <h2 id="short_uri">short_uri</h2>
 
 <pre><code>  short_uri($c, $filter)</code></pre>
 
-<p>returns a correct uri but only the url part</p>
+<p>returns a html escaped correct uri but only the url part</p>
 
-<h2 id="clean_referer">clean_referer</h2>
-
-<pre><code>  clean_referer($url)</code></pre>
-
-<p>returns a url with referer removed</p>
+<p>ex.: status.cgi?params...</p>
 
 <h2 id="uri_with">uri_with</h2>
 
 <pre><code>  uri_with($c, $data, $keep_absolute)</code></pre>
 
 <p>returns a relative uri to current page</p>
+
+<p>ex.: status.cgi?params...</p>
+
+<pre><code>    with keep_absolute:
+    http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
+
+<h2 id="as_url_arg">as_url_arg</h2>
+
+<pre><code>  as_url_arg($str)</code></pre>
+
+<p>returns encoded string for use in url args</p>
 
 <h2 id="html_escape">html_escape</h2>
 

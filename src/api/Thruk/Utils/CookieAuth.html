@@ -18,6 +18,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_user_agent">get_user_agent</a></li>
       <li><a href="#clean_session_files">clean_session_files</a></li>
       <li><a href="#get_netloc">get_netloc</a></li>
+      <li><a href="#store_session">store_session</a></li>
+      <li><a href="#retrieve_session">retrieve_session</a></li>
     </ul>
   </li>
 </ul>
@@ -69,5 +71,28 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    get_netloc($url)</code></pre>
 
 <p>return netloc used by LWP::UserAgent credentials</p>
+
+<h2 id="store_session">store_session</h2>
+
+<pre><code>  store_session($config, $sessionid, $data)</code></pre>
+
+<p>store session data</p>
+
+<h2 id="retrieve_session">retrieve_session</h2>
+
+<pre><code>  retrieve_session($sessionfile)
+  retrieve_session($c, $sessionid)</code></pre>
+
+<p>returns session data as hash</p>
+
+<pre><code>    {
+        id       =&gt; session id,
+        file     =&gt; session data file name,
+        username =&gt; login name,
+        active   =&gt; timestamp of last activity
+        address  =&gt; remote address of user (optional)
+        hash     =&gt; login hash from basic auth (optional)
+        roles    =&gt; extra session roles (optional)
+    }</code></pre>
 
 

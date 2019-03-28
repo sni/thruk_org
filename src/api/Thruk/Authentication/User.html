@@ -86,6 +86,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
  check_permissions(&#39;service&#39;, $servicename, $hostname)
  check_permissions(&#39;hostgroup&#39;, $hostgroupname)
  check_permissions(&#39;servicegroup&#39;, $servicegroupname)
+ check_permissions(contact&#39;, $contactname)
+ check_permissions(contactgroup&#39;, $contactgroupname)
 
  for example:
  $c-&gt;check_permissions(&#39;service&#39;, $service, $host)</code></pre>
@@ -97,6 +99,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
  check_cmd_permissions(&#39;service&#39;, $servicename, $hostname)
  check_cmd_permissions(&#39;hostgroup&#39;, $hostgroupname)
  check_cmd_permissions(&#39;servicegroup&#39;, $servicegroupname)
+ check_cmd_permissions(&#39;contact&#39;, $contactname)
+ check_cmd_permissions(&#39;contactgroup&#39;, $contactgroupname)
 
  for example:
  $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
