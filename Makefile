@@ -2,7 +2,8 @@ GEM=gem2.1
 GEM_HOME=.gem
 JEKYLL=jekyll
 TESTPORT=4001
-GEMENV=GEM_HOME=$(GEM_HOME)/ruby/2.1.0 GEM_PATH=$(GEM_HOME)/ruby/2.1.0 PATH=$(GEM_HOME)/ruby/2.1.0/bin:$$PATH
+RUBY_HOME=$(shell ls -d1 $(GEM_HOME)/ruby/* 2>/dev/null)
+GEMENV=GEM_HOME=$(RUBY_HOME) GEM_PATH=$(RUBY_HOME) PATH=$(RUBY_HOME)/bin:$$PATH
 
 build: .gem
 	$(GEMENV) $(JEKYLL) build --trace

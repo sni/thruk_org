@@ -111,6 +111,10 @@ small.gallery-caption {
     top: -25px;
 }
 
+.gallery-item {
+    float: left;
+}
+
 
 /* Affix Navigation */
 .affix {

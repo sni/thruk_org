@@ -5,3 +5,5 @@ perl5
 src/.jekyll-metadata
 Gemfile.lock
 .bundle
+*.swp
+src/images/galleries/*-thumb.png
