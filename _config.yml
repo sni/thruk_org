@@ -27,7 +27,7 @@ forum_url: https://monitoring-portal.org/c/visualization/thruk
 gallerytag:
   source_dir: images/galleries
   destination_dir: images/galleries
-  thumb_width: 300
+  thumb_width: 360
   thumb_height: 200
   columns: 6
   custom_attribute_name: data-lightbox

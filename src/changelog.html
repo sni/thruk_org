@@ -8,5 +8,8 @@ layout: default
 {% include page_heading.html %}
 
 <div class="panel panel-default">
-    <pre>{% include Changes.html %}</pre>
+<pre>
+{% capture my_include %}{% include Changes.html %}{% endcapture %}
+{{ my_include | xml_escape }}
+</pre>
 </div>
