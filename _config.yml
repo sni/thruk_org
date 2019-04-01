@@ -15,11 +15,11 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "2.26-2"      # release folder, ex.: 2.00-2 or 2.02
-release_version_deb: "2.26-2"  # 2.00-2 or 2.02
-release_version_rpm: "2.26-2"  # 2.00-2 or 2.02-1
-release_date: "Dec 18, 2018"
-next_release_date: "Mar 2019"
+release_version: "2.28"      # release folder, ex.: 2.00-2 or 2.02
+release_version_deb: "2.28"  # 2.00-2 or 2.02
+release_version_rpm: "2.28-1"  # 2.00-2 or 2.02-1
+release_date: "Apr 01, 2018"
+next_release_date: "Jul 2019"
 
 mailinglist_url: https://groups.google.com/group/thruk
 forum_url: https://monitoring-portal.org/c/visualization/thruk
