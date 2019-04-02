@@ -17,21 +17,21 @@ class: main-index
             <div class="fill" style="background-image:url('images/1024px-Earthlights_dmsp.jpg');"></div>
             <div class="carousel-caption">
                 <h1>Thruk Monitoring</h1>
-                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+                <h2>Webinterface for Naemon, Icinga, Shinken and Nagios</h2>
             </div>
         </div>
         <div class="item">
             <div class="fill" style="background-image:url('images/1024px-Land_shallow_topo_2048.jpg');"></div>
             <div class="carousel-caption">
                 <h1>Thruk Monitoring</h1>
-                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+                <h2>Webinterface for Naemon, Icinga, Shinken and Nagios</h2>
             </div>
         </div>
         <div class="item">
             <div class="fill" style="background-image:url('images/1024px-Sydney_Harbour_Bridge_from_Circular_Quay.jpg');"></div>
             <div class="carousel-caption">
                 <h1>Thruk Monitoring</h1>
-                <h2>Webinterface for Nagios, Icinga, Shinken and Naemon</h2>
+                <h2>Webinterface for Naemon, Icinga, Shinken and Nagios</h2>
             </div>
         </div>
     </div>
@@ -52,8 +52,9 @@ class: main-index
                     <h4><i class="fa fa-fw fa-check"></i> Download v{{ site.release_version }}</h4>
                 </div>
                 <div class="panel-body" style="height: 215px;">
-                    <p>Download the latest and greatest release available on several platforms and package formats, from Debian and Ubuntu to Centos, Fedora and SLES.</p>
-                    <div class="btn-group btn-group-md" role="group" aria-label="Release plan" style="margin-top: 30px; width: 100%;">
+                    <p>Download the latest release available on several platforms and package formats, from Debian and Ubuntu to Centos, Fedora and SLES.</p>
+                    <p>Read <a href="{{ site.baseurl }}whatsnew.html">what's new</a> in this release.</p>
+                    <div class="btn-group btn-group-md" role="group" aria-label="Release plan" style="width: 100%;">
                       <a class="btn btn-success" href="download.html" role="button" style="width: 50%; padding: 6px 1px;">Stable: {{ site.release_date }}</a>
                       <a class="btn btn-info" href="download.html#nightly-development-builds" role="button" style="width: 18%; padding: 6px 1px;">Nightly</a>
                       <a class="btn btn-warning" href="https://github.com/sni/Thruk/blob/master/Changes" target="_blank" role="button" style="width: 32%; padding: 6px 1px;">Next: {{ site.next_release_date }}</a>

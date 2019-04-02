@@ -1,0 +1,105 @@
+---
+version: v2.28
+title: What's New In Release {% version %}
+layout: default
+---
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-header">Highlights of release {{ page.version }}</h2>
+    <p>Here are some of the highlights of the release {{ page.version }}.
+       See the <a href="{{ site.baseurl }}changelog.html#{{ page.version }}">detailed changelog</a> for a complete list of changes.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Aggregation functions in the rest API</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>You can aggregate any rest query with the following aggregation functions:</p>
+    <ul>
+      <li>count()
+      <li>avg()
+      <li>sum()
+      <li>min()
+      <li>max()
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <pre style="padding: 3px;">
+%> thruk r '/hosts?columns=count(*)'
+{
+   "count(*)" : 1
+}</pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+    <p>Grouping is possible by adding extra columns without aggregation functions.</p>
+    <p>Further details about the rest API can be found in the <a href="{{ site.baseurl }}documentation/rest.html#aggregation-functions">documentation</a>.</p>
+  </div>
+  <div class="col-md-7">
+    <pre style="padding: 3px;">
+%> thruk r '/services?columns=state,count(*),avg(latency)'
+[
+   {
+      ":KEY" : "0",
+      "avg(latency)" : 0.792919194698,
+      "count(*)" : 5
+   },
+   {
+      ":KEY" : "1",
+      "avg(latency)" : 0.8855984807,
+      "count(*)" : 2
+   }
+]</pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Service Dependencies and Service Parents</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <p>Starting with Naemon v1.0.10 you will see serviceparents and dependencies along with the usual service details.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ page.version }}/serviceparents.png" alt="">
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Dependencies and Escalations in the Config Tool</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <p>You can now manage dependencies and escalations right in the config tool.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ page.version }}/dependencies.png" alt="">
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">New Datepicker</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <p>The old datepicker has been replaced with a fresh one.</p>
+      <p>This one allows you to pick ranges easier and is able to select start and end date within a single popup.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ page.version }}/datepicker.png" alt="">
+    </div>
+</div>
