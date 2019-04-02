@@ -4,12 +4,12 @@ layout: default
 ---
 
 {% capture title %}{{ page.title }}{% endcapture %}
-{% capture subtitle %}v{{ site.release_version }}{% endcapture %}
 {% include page_heading.html %}
 
 <div class="panel panel-default">
-<pre>
 {% capture my_include %}{% include Changes.html %}{% endcapture %}
-{{ my_include | xml_escape }}
-</pre>
+{% assign versions = my_include | split: "\n" %}
+{% for version in versions %}
+<pre>{{ version | xml_escape }}</pre>
+{% endfor %}
 </div>
