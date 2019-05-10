@@ -20,6 +20,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#log">log</a></li>
       <li><a href="#audit_log">audit_log</a></li>
       <li><a href="#cluster">cluster</a></li>
+      <li><a href="#metrics">metrics</a></li>
       <li><a href="#detach">detach</a></li>
       <li><a href="#render">render</a></li>
       <li><a href="#render_excel">render_excel</a></li>
@@ -85,6 +86,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return cluster object</p>
 
+<h2 id="metrics">metrics</h2>
+
+<p>return metrics object</p>
+
 <h2 id="detach">detach</h2>
 
 <p>detach to other controller</p>
@@ -139,7 +144,15 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="cookie">cookie</h2>
 
-<p>$c-&gt;cookie()</p>
+<p>$c-&gt;cookie($name, [$value], [$options])</p>
+
+<p>retrieves a cookie_path</p>
+
+<p>sets a cookie if value is defined</p>
+
+<p>options are available as descrbed here: <a href="/../../../../../../home/thruk/thruk_libs/local-lib/dest/lib/perl5/Plack/Response.html#cookies">&quot;cookies&quot; in Plack::Response</a></p>
+
+<p>basically: domain, expires, path, httponly, secure, max-age</p>
 
 <h2 id="cookies">cookies</h2>
 

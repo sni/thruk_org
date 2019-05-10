@@ -62,6 +62,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#expand_duration">expand_duration</a></li>
       <li><a href="#choose_mobile">choose_mobile</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
+      <li><a href="#update_cron_file_maintainance">update_cron_file_maintainance</a></li>
       <li><a href="#get_cron_time_entry">get_cron_time_entry</a></li>
       <li><a href="#set_user">set_user</a></li>
       <li><a href="#switch_realuser">switch_realuser</a></li>
@@ -184,7 +185,14 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="set_message">set_message</h2>
 
-<pre><code>  set_message($c, $style, $text, [ $details ])</code></pre>
+<pre><code>  set_message($c, $style, $text, [ $details ], [$code], [$escape])
+  set_message($c, {
+      &#39;style&#39;   =&gt; &#39;class&#39;, # usually fail_message or success_message
+      &#39;msg&#39;     =&gt; &#39;text&#39;,
+      &#39;details&#39; =&gt; &#39;more details&#39;,
+      &#39;code&#39;    =&gt; &#39;http response code&#39;,
+      &#39;escape&#39;  =&gt; &#39;flag wether html should be escaped, default is true&#39;,
+    })</code></pre>
 
 <p>set a message in an cookie for later display</p>
 
@@ -396,9 +404,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="get_fake_session">get_fake_session</h2>
 
-<pre><code>  get_fake_session($c, [$sessionid], [$roles])</code></pre>
+<pre><code>  get_fake_session($c, [$sessionid], [$roles], [$address])</code></pre>
 
-<p>create and return fake session id for current user</p>
+<p>create and return fake session id along with session data for current user</p>
 
 <h2 id="get_action_url">get_action_url</h2>
 
@@ -443,6 +451,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  update_cron_file($c, $section, $entries)</code></pre>
 
 <p>write crontab section</p>
+
+<h2 id="update_cron_file_maintainance">update_cron_file_maintainance</h2>
+
+<pre><code>    update_cron_file_maintainance($c)</code></pre>
+
+<p>update maintainance cronjobs</p>
 
 <h2 id="get_cron_time_entry">get_cron_time_entry</h2>
 

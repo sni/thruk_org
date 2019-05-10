@@ -30,7 +30,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] rest [-m method] [-d postdata] &lt;url&gt;</code></pre>
+<pre><code>  Usage:
+
+    - simple query:
+      thruk [globaloptions] rest [-m method] [-d postdata] &lt;url&gt;
+
+    - multiple queries_:
+      thruk [globaloptions] rest [-m method] [-d postdata] &lt;url&gt; [-m method] [-d postdata] &lt;url&gt;</code></pre>
 
 <h1 id="METHODS">METHODS</h1>
 
@@ -51,6 +57,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <p>Reschedule next host check for host localhost:</p>
 
 <pre><code>  %&gt; thruk r -d &quot;start_time=now&quot; /hosts/localhost/cmd/schedule_host_check</code></pre>
+
+<p>Send multiple endpoints at once:</p>
+
+<pre><code>  %&gt; thruk r &quot;/hosts/totals&quot; &quot;/services/totals&quot;</code></pre>
 
 <p>See more examples and additional help at https://thruk.org/documentation/rest.html</p>
 

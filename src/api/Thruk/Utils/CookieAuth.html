@@ -80,13 +80,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="retrieve_session">retrieve_session</h2>
 
-<pre><code>  retrieve_session($sessionfile)
-  retrieve_session($c, $sessionid)</code></pre>
+<pre><code>  retrieve_session(file =&gt; $sessionfile, config =&gt; $config)
+  retrieve_session(id   =&gt; $sessionid,   config =&gt; $config)</code></pre>
 
 <p>returns session data as hash</p>
 
 <pre><code>    {
-        id       =&gt; session id,
+        id       =&gt; session id (if known),
         file     =&gt; session data file name,
         username =&gt; login name,
         active   =&gt; timestamp of last activity

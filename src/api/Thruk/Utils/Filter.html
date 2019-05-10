@@ -34,6 +34,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_action_menu">get_action_menu</a></li>
       <li><a href="#json_encode">json_encode</a></li>
       <li><a href="#encode_json_obj">encode_json_obj</a></li>
+      <li><a href="#escape_tags_js">_escape_tags_js</a></li>
       <li><a href="#escape_js">escape_js</a></li>
       <li><a href="#escape_bslash">escape_bslash</a></li>
       <li><a href="#escape_xml">escape_xml</a></li>
@@ -216,6 +217,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns json encoded object</p>
 
+<h2 id="escape_tags_js">_escape_tags_js</h2>
+
+<pre><code>  _escape_tags_js($text)</code></pre>
+
+<p>used to escape html tags so it can be used as javascript string</p>
+
 <h2 id="escape_js">escape_js</h2>
 
 <pre><code>  escape_js($text)</code></pre>
@@ -256,7 +263,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="get_message">get_message</h2>
 
-<pre><code>  get_message($c)</code></pre>
+<pre><code>  get_message($c, [$unescaped])</code></pre>
 
 <p>get a message from an cookie, display and delete it</p>
 

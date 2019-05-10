@@ -40,6 +40,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#expand_command">expand_command</a></li>
       <li><a href="#set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></li>
       <li><a href="#logcache_stats">logcache_stats</a></li>
+      <li><a href="#get_logs">get_logs</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
       <li><a href="#get_comments_by_pattern">get_comments_by_pattern</a></li>
       <li><a href="#renew_logcache1">_renew_logcache</a></li>
@@ -70,6 +71,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#limit">_limit</a></li>
       <li><a href="#set_user_macros">_set_user_macros</a></li>
       <li><a href="#set_result_defaults">_set_result_defaults</a></li>
+      <li><a href="#fill_get_can_submit_commands_cache">fill_get_can_submit_commands_cache</a></li>
+      <li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
+      <li><a href="#fill_get_contactgroups_by_contact_cache">fill_get_contactgroups_by_contact_cache</a></li>
       <li><a href="#rpc">rpc</a></li>
     </ul>
   </li>
@@ -242,6 +246,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  logcache_stats($c)</code></pre>
 
 <p>return logcache statistics</p>
+
+<h2 id="get_logs">get_logs</h2>
+
+<pre><code>  get_logs(@args)</code></pre>
+
+<p>retrieve logfiles</p>
 
 <h2 id="renew_logcache">renew_logcache</h2>
 
@@ -457,6 +467,24 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  _set_result_defaults()</code></pre>
 
 <p>set defaults for some results</p>
+
+<h2 id="fill_get_can_submit_commands_cache">fill_get_can_submit_commands_cache</h2>
+
+<pre><code>  fill_get_can_submit_commands_cache($c)</code></pre>
+
+<p>fills cached used by get_can_submit_commands</p>
+
+<h2 id="get_can_submit_commands">get_can_submit_commands</h2>
+
+<pre><code>  get_can_submit_commands</code></pre>
+
+<p>wrapper around get_can_submit_commands</p>
+
+<h2 id="fill_get_contactgroups_by_contact_cache">fill_get_contactgroups_by_contact_cache</h2>
+
+<pre><code>  fill_get_contactgroups_by_contact_cache($c)</code></pre>
+
+<p>fills cached used by get_contactgroups_by_contact</p>
 
 <h2 id="rpc">rpc</h2>
 
