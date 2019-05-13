@@ -70,9 +70,9 @@ sub create_api {
                 $content =~ s|\Q$p\E/|api/|gmx;
                 $content =~ s#href="/(Monitoring)/#href="/api/$1/#gmx;
                 # replace other links to cpan
-                $content =~ s%(href=")[^"]+/(i586-linux-gnu-thread-multi-64int|x86_64-linux-gnu-thread-multi)/([^"]+)\.html(")%&_replace_cpan_link($1, $3, $4)%gemxis;
-                $content =~ s|(href=")[^"]+/perl5/([^"]+)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
-                $content =~ s|(href=")[^"]+/lib/([^"]+)\.html(")|&_replace_cpan_link($1, $2, $3)|gemxis;
+                $content =~ s%(href=")[^"]+/(i586-linux-gnu-thread-multi-64int|x86_64-linux-gnu-thread-multi)/([^"]+)\.html(\#[^"]+|)(")%&_replace_cpan_link($1, $3, $4, $5)%gemxis;
+                $content =~ s%(href=")[^"]+/perl5/([^"]+)\.html(\#[^"]+|)(")%&_replace_cpan_link($1, $2, $3, $4)%gemxis;
+                $content =~ s%(href=")[^"]+/lib/([^"]+)\.html(\#[^"]+|)(")%&_replace_cpan_link($1, $2, $3, $4)%gemxis;
                 print $fh $content;
                 close($fh);
                 #print STDERR 'api/'.$mkdir,"/",$name,".html\n";
@@ -151,10 +151,10 @@ sub clean_api {
 ###############################################################################
 # replace cpan links
 sub _replace_cpan_link {
-    my($pre, $mod, $post) = @_;
-    if($mod =~ m|Thruk|mx) {
-        return($pre."/api/".$mod.".html".$post);
+    my($pre, $mod, $anchor, $post) = @_;
+    if($mod =~ m%^(Thruk|Monitoring)%mx) {
+        return($pre."/api/".$mod.".html".$anchor.$post);
     }
     $mod =~ s|/|%3A%3A|mx;
-    return($pre."http://search.cpan.org/perldoc?".$mod.$post);
+    return($pre."https://metacpan.org/pod/".$mod.$anchor.$post);
 }
