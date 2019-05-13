@@ -30,7 +30,7 @@ breadcrumb: [ "whatsnew.html", "What's New" ]
   -o '{STATUS} - There are {sessions} active sessions.' \
   --warning=sessions:20 \
   --critical=sessions:30 \
-  '/thruk/sessions?columns=count(*):sessions&active[gte]=-10m'
+  '/thruk/sessions?columns=count(*):sessions&amp;active[gte]=-10m'
 
   OK - There are 1 active sessions.|'sessions'=1;20;30;;
 </pre>
