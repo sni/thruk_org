@@ -1,0 +1,90 @@
+---
+version: v2.30
+title: What's New In Release v2.30
+layout: default
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-header">Highlights of release {{ page.version }}</h2>
+    <p>Here are some of the highlights of the release {{ page.version }}.
+       See the <a href="{{ site.baseurl }}changelog.html">detailed changelog</a> for a complete list of changes.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">New Command Line Tool: check_thruk_rest</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>This release includes a new naemon/nagios plugin check_thruk_rest which can be used to do checks based on the rest api. It is also a handy way to get some statistics in your monitoring and your normal performance graphing tools.</p>
+  </div>
+  <div class="col-md-7">
+    <p>Show active sessions of the last 10 minutes:</p>
+    <pre style="padding: 3px;">
+%> check_thruk_rest \
+  -o '{STATUS} - There are {sessions} active sessions.' \
+  --warning=sessions:20 \
+  --critical=sessions:30 \
+  '/thruk/sessions?columns=count(*):sessions&active[gte]=-10m'
+
+  OK - There are 1 active sessions.|'sessions'=1;20;30;;
+</pre>
+<br><br>
+<p>Pump host statistics into performance monitoring.</p>
+<pre style="padding: 3px;">
+%> check_thruk_rest \
+  -o "{STATUS} - got {total_hosts%d} hosts" \
+  --rename=total:total_hosts \
+  "/hosts/stats"
+
+  OK - got 129 hosts|...
+</pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Improved Drill Down for Business Process Dashboards</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <p>If you have Business Processes which itself link to other Business Processes you always could simply follow the link and drill down in the usual bp pages. This is now possible in Panorama dashboards as well. When drilling down, a home button will appear to go back to the original business process.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ page.version }}/bp.png" alt="">
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Security Improvements</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <p>Starting with this release Thruk uses <b>double sha256 hashing</b> for sessions and api keys. From now on, when you create a new API key from the users profile, you will see your private key only once. If you ever loose, you will have to create a new key.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ page.version }}/api_keys.png" alt="">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+      <h3 class="page-header">Bug Fixes</h3>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li>fixed thruk mobile issue with latest jquery update.</li>
+          <li>fixed config tool issue which resulted in broken object lists.</li>
+        </ul>
+      </div>
+  </div>
