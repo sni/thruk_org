@@ -49,7 +49,7 @@ window.doOnLoadList.push(function() {
       // add every h3 as sub menu entry
       var sectionbody = jQuery(el).nextUntil('H3', 'DIV');
       var sub_elements = jQuery(sectionbody).find('H3');
-      if(sub_elements.size() > 1) {
+      if(sub_elements.length > 1) {
           var sub_section = jQuery('<ul class="nav"></ul>');
           jQuery(nav_section).append(sub_section);
       }
@@ -57,7 +57,7 @@ window.doOnLoadList.push(function() {
           var sublabel = jQuery(sub_el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
           sublabel = sublabel.replace(/[ \.\/:]+/g, '-').replace(/\-$/, '');
           jQuery('<a name="_'+sublabel+'" class="nav_anchor">').insertBefore(sub_el);
-          if(sub_elements.size() > 1) {
+          if(sub_elements.length > 1) {
               jQuery(sub_section).append("<li><a href='#"+sublabel+"'>"+sub_el.innerHTML+"</a></li>");
           }
           sub_el.innerHTML = '<a href="#'+sublabel+'" class="nav_label"><i class="glyphicon glyphicon-paperclip" style="opacity:0.6"></i></a> '+sub_el.innerHTML;
