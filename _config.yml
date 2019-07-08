@@ -18,7 +18,7 @@ asciidoctor:
 release_version: "2.30-3"      # release folder, ex.: 2.00-2 or 2.02
 release_version_deb: "2.30-3"  # 2.00-2 or 2.02
 release_version_rpm: "2.30-3"  # 2.00-2 or 2.02-1
-release_date: "Jun 11, 2018"
+release_date: "Jun 11, 2019"
 next_release_date: "Sep 2019"
 
 mailinglist_url: https://groups.google.com/group/thruk
