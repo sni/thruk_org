@@ -22,6 +22,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#check_user_roles">check_user_roles</a></li>
       <li><a href="#check_permissions">check_permissions</a></li>
       <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
+      <li><a href="#check_role_permissions">check_role_permissions</a></li>
       <li><a href="#transform_username">transform_username</a></li>
       <li><a href="#grant">grant</a></li>
     </ul>
@@ -76,9 +77,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 <pre><code> check_user_roles(&lt;$role&gt;)
 
+ returns 1 if user has all given roles.
+
  for example:
- $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)
- $c-&gt;user-&gt;check_user_roles([&#39;authorized_for_system_commands&#39;, &#39;authorized_for_configuration_information&#39;])</code></pre>
+  $c-&gt;user-&gt;check_user_roles(&#39;admin&#39;)
+  $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)
+  $c-&gt;user-&gt;check_user_roles([&#39;authorized_for_system_commands&#39;, &#39;authorized_for_configuration_information&#39;])</code></pre>
 
 <h2 id="check_permissions">check_permissions</h2>
 
@@ -104,6 +108,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
  for example:
  $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
+<h2 id="check_role_permissions">check_role_permissions</h2>
+
+<pre><code> check_role_permissions($role)
+
+ returns 1 if user is allowed to use given role. Don&#39;t mix up with check_user_roles()</code></pre>
 
 <h2 id="transform_username">transform_username</h2>
 

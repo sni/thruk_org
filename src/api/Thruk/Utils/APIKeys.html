@@ -14,8 +14,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_keys">get_keys</a></li>
+      <li><a href="#get_system_keys">get_system_keys</a></li>
       <li><a href="#get_key_by_private_key">get_key_by_private_key</a></li>
       <li><a href="#create_key">create_key</a></li>
+      <li><a href="#create_key_from_req_params">create_key_from_req_params</a></li>
       <li><a href="#remove_key">remove_key</a></li>
       <li><a href="#read_key">read_key</a></li>
     </ul>
@@ -38,6 +40,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns list of api keys</p>
 
+<h2 id="get_system_keys">get_system_keys</h2>
+
+<pre><code>    get_system_keys($c, [$filepattern])</code></pre>
+
+<p>returns list of system api keys</p>
+
 <h2 id="get_key_by_private_key">get_key_by_private_key</h2>
 
 <pre><code>    get_key_by_private_key($config, $privatekey)</code></pre>
@@ -46,11 +54,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="create_key">create_key</h2>
 
-<pre><code>    create_key($c, $username, [$comment], [$readonly])</code></pre>
+<pre><code>    create_key($c, $username, [$comment], [$roles], [$system])</code></pre>
 
 <p>create new api key for user</p>
 
 <p>returns private, hashed key and filename</p>
+
+<h2 id="create_key_from_req_params">create_key_from_req_params</h2>
+
+<pre><code>    create_key_from_req_params($c)</code></pre>
+
+<p>create new api key for user from request parameters</p>
+
+<p>returns private, hashed key and filename on success or undef otherwise</p>
 
 <h2 id="remove_key">remove_key</h2>
 
