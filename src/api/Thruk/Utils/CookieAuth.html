@@ -20,6 +20,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_netloc">get_netloc</a></li>
       <li><a href="#store_session">store_session</a></li>
       <li><a href="#retrieve_session">retrieve_session</a></li>
+      <li><a href="#generate_sessionid">generate_sessionid</a></li>
     </ul>
   </li>
 </ul>
@@ -94,5 +95,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
         hash     =&gt; login hash from basic auth (optional)
         roles    =&gt; extra session roles (optional)
     }</code></pre>
+
+<h2 id="generate_sessionid">generate_sessionid</h2>
+
+<pre><code>  generate_sessionid([$sessionid])</code></pre>
+
+<p>returns random sessionid along with the hashed key and the hash type</p>
+
+<pre><code>    returns $sessionid, $hashed_key, $type</code></pre>
 
 
