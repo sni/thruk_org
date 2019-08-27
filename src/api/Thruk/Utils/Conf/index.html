@@ -59,13 +59,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="update_conf">update_conf</h2>
 
-<pre><code>    update_conf($file, $data [, $md5] [, $defaults] [, $update_c]);</code></pre>
+<pre><code>    update_conf($file, $data [, $hexdigest] [, $defaults] [, $update_c]);</code></pre>
 
 <p>update inline config</p>
 
 <pre><code>    $file       file to change
     $data       new data
-    $md5        md5 sum from the file when we read it. (use -1 to disable check)
+    $hexdigest  hexdigest sum from the file when we read it. (use -1 to disable check)
     $defaults   defaults for this file
     $update_c   update c so thruk does not need to be restarted</code></pre>
 

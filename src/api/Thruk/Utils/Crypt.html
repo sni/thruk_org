@@ -1,0 +1,65 @@
+---
+title: Crypt
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#encrypt">encrypt</a></li>
+      <li><a href="#decrypt">decrypt</a></li>
+      <li><a href="#random_uuid">random_uuid</a></li>
+      <li><a href="#digest_name">digest_name</a></li>
+      <li><a href="#hexdigest">hexdigest</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Crypt - Utilities Collection for Encryption, Decryption and Hashing.</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Crypt offers functions to encrypt and decrypt data as well as hashing.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="encrypt">encrypt</h2>
+
+<pre><code>  encrypt($key, $data)</code></pre>
+
+<p>return encrypted data</p>
+
+<h2 id="decrypt">decrypt</h2>
+
+<pre><code>  decrypt($key, $encrypted_data)</code></pre>
+
+<p>return decrypted data</p>
+
+<h2 id="random_uuid">random_uuid</h2>
+
+<pre><code>  random_uuid([$salt])</code></pre>
+
+<p>returns random unique id</p>
+
+<h2 id="digest_name">digest_name</h2>
+
+<pre><code>  digest_name($nr)</code></pre>
+
+<p>converts number to digest name</p>
+
+<h2 id="hexdigest">hexdigest</h2>
+
+<pre><code>  hexdigest($data, [$digest_nr|$digest_name])</code></pre>
+
+<p>returns hex digest hash for given data along with the number and the name of the digest</p>
+
+
