@@ -28,6 +28,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#read_config_file">read_config_file</a></li>
       <li><a href="#switch_user">switch_user</a></li>
       <li><a href="#load_any-options">load_any( $options )</a></li>
+      <li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
+      <li><a href="#merge_cgi_cfg">merge_cgi_cfg</a></li>
     </ul>
   </li>
 </ul>
@@ -123,5 +125,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <h2 id="load_any-options">load_any( $options )</h2>
 
 <p>replacement function for Config::Any-&gt;load_files</p>
+
+<h2 id="read_cgi_cfg">read_cgi_cfg</h2>
+
+<pre><code>  read_cgi_cfg($c, $config);</code></pre>
+
+<p>parse the cgi.cfg and put it into $c-&gt;config</p>
+
+<h2 id="merge_cgi_cfg">merge_cgi_cfg</h2>
+
+<pre><code>  merge_cgi_cfg($config)</code></pre>
+
+<p>merge entries from $config into $config-&gt;{&#39;cgi_cfg&#39;}</p>
 
 
