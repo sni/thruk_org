@@ -47,6 +47,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#set_comments_and_downtimes">set_comments_and_downtimes</a></li>
       <li><a href="#parse_lexical_filter">parse_lexical_filter</a></li>
       <li><a href="#get_custom_variable_names">get_custom_variable_names</a></li>
+      <li><a href="#filter_to_param">filter_to_param</a></li>
     </ul>
   </li>
 </ul>
@@ -264,5 +265,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_custom_variable_names($c, $type, $exposed_only, $filter)</code></pre>
 
 <p>returns list of available custom variables. $type can be &#39;host&#39;, &#39;service&#39; or &#39;all&#39;.</p>
+
+<h2 id="filter_to_param">filter_to_param</h2>
+
+<pre><code>  filter_to_param($prefix, $filter)</code></pre>
+
+<p>returns url parameters for this filter</p>
 
 
