@@ -1,28 +1,21 @@
-GEM=gem2.1
 GEM_HOME=.gem
-JEKYLL=jekyll
 TESTPORT=4001
-RUBY_HOME=$(shell ls -d1 $(GEM_HOME)/ruby/* 2>/dev/null)
-GEMENV=GEM_HOME=$(RUBY_HOME) GEM_PATH=$(RUBY_HOME) PATH=$(RUBY_HOME)/bin:$$PATH
 
 build: .gem
-	$(GEMENV) $(JEKYLL) build --trace
+	bundle exec jekyll build --trace
 
 quick: .gem
-	$(GEMENV) NOCLEAN=1 $(JEKYLL) build --trace --limit_posts=5
+	bundle exec jekyll build --trace --limit_posts=5
 
 server: .gem
-	$(GEMENV) $(JEKYLL) serve --host=\* --trace --watch
+	bundle exec jekyll serve --host=\* --trace --watch
 
 .gem:
 	# sudo apt-get install nodejs libmagickcore-dev libmagickwand-dev
 	bundler install --path $(GEM_HOME)
-	#$(GEMENV) $(GEM) install jekyll
-	#$(GEMENV) $(GEM) install rmagick
-	#$(GEMENV) $(GEM) install jekyll-asciidoc
 
 test: .gem
-	$(GEMENV) NOCLEAN=1 $(JEKYLL) serve --port=$(TESTPORT) & SPID=$$!; \
+	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!; \
 		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
 		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
 		RC=$$?; \

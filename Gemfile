@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'ffi'
-gem 'jekyll'
+gem 'jekyll', '<4.0.0'
 gem 'rmagick'
 gem 'redcarpet'
 gem 'pygments.rb'
