@@ -13,6 +13,7 @@ install:
   - sudo apt-get -y install libhtml-lint-perl
   - sudo apt-get -y install libmagickcore-dev libmagickwand-dev
   - sudo apt-get -y install ruby-bundler
+  - sudo apt-get -y install ruby-dev
   - bundle install
   - bundle exec jekyll build
 script:
