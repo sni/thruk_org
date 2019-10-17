@@ -1,0 +1,115 @@
+---
+version: v2.32
+title: What's New In Release v2.32
+layout: default
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-header">Highlights of release {{ page.version }}</h2>
+    <p>Here are some of the highlights of the release {{ page.version }}.
+       See the <a href="{{ site.baseurl }}changelog.html">detailed changelog</a> for a complete list of changes.
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Merging cgi.cfg</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>The cgi.cfg file has been supported for historical reasons.
+       But it did not make sense to separate specific settings for Thruk.
+       So now you can put cgi.cfg settings in the normal thruk_local.conf as well along with
+       all the features that brings with it. ex.: <a href="{{ site.baseurl }}documentation/configuration.html#_user-group-specific-overrides">having different settings per user or group.</a>
+       or <a href="{{ site.baseurl }}documentation/configuration.html#thruk_local-d">host specific settings.</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Process Info List Displaymode</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>When having more than 5 backends, the processinfo page now has a list mode.</p>
+  </div>
+  <div class="col-md-6">
+      <img class="img-responsive" src="{{ page.version }}/processinfo.png" alt="">
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">API Key Roles</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>API Keys got some optional limits. They can now be limited to certain roles. Also you can limit the number of API keys per user.</p>
+  </div>
+  <div class="col-md-6">
+    <img class="img-responsive" src="{{ page.version }}/apiroles.png" alt="">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Time Arithmetics in Reports and Commands</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>Instead of fixed dates, dynamic start and end dates can be quite handy when sending commands from the command line or when creating reports. Find some more information in <a href="{{ site.baseurl }}documentation/timedefinitions.html">the documentation.</a></p>
+  </div>
+  <div class="col-md-7">
+    <p>Set host downtime starting in 2 hours.</p>
+    <pre style="padding: 3px;">
+      thruk r \
+        -d "start_time=now+120m" \
+        -d "end_time=now+180m" \
+        -d "comment_data=test" \
+        /hosts/localhost/cmd/schedule_host_downtime
+    </pre>
+  <br><br>
+  <p>Use time arithmetics in custom report start/end dates.</p>
+  <pre style="padding: 3px;">
+    <img class="img-responsive" src="{{ page.version }}/reports.png" alt="">
+  </pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Panorama Search Bar</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>The Panorama dashboard got a new search bar. The search looks in the title and description of the dashboard as well as all the icons. It will also highlight the icons matching the search term aftern opening that dashboard.</p>
+  </div>
+  <div class="col-md-6">
+    <img class="img-responsive" src="{{ page.version }}/panorama.png" alt="">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Changes</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <ul>
+      <li>show_custom_vars behaviour changed, host variables must be prefixed with HOST now.</li>
+    </ul>
+  </div>
+</div>
