@@ -56,6 +56,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_fake_session">get_fake_session</a></li>
       <li><a href="#get_action_url">get_action_url</a></li>
       <li><a href="#list">list</a></li>
+      <li><a href="#extract_list">extract_list</a></li>
       <li><a href="#array_chunk">array_chunk</a></li>
       <li><a href="#translate_host_status">translate_host_status</a></li>
       <li><a href="#expand_duration">expand_duration</a></li>
@@ -414,6 +415,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  list($ref)</code></pre>
 
 <p>return list of ref unless it is already a list</p>
+
+<h2 id="extract_list">extract_list</h2>
+
+<pre><code>  extract_list($var, $separator)</code></pre>
+
+<p>return list by splitting $var by $sep ($var can be an array or string)</p>
 
 <h2 id="array_chunk">array_chunk</h2>
 
