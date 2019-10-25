@@ -28,6 +28,8 @@ breadcrumb: []
       <li><a href="#set_timezone">set_timezone</a></li>
       <li><a href="#init_logging">init_logging</a></li>
       <li><a href="#register_cron_entries">register_cron_entries</a></li>
+      <li><a href="#stop_all">stop_all</a></li>
+      <li><a href="#graceful_stop">graceful_stop</a></li>
     </ul>
   </li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -111,6 +113,18 @@ breadcrumb: []
 <pre><code>    register_cron_entries($function_name)</code></pre>
 
 <p>register callback to update cron jobs</p>
+
+<h2 id="stop_all">stop_all</h2>
+
+<pre><code>    stop_all()</code></pre>
+
+<p>stop all thruk pids except ourselves</p>
+
+<h2 id="graceful_stop">graceful_stop</h2>
+
+<pre><code>    graceful_stop($c)</code></pre>
+
+<p>stop our process gracefully</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
