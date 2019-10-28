@@ -54,6 +54,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#get_logs_start_end1">_get_logs_start_end</a></li>
       <li><a href="#propagate_session_file">propagate_session_file</a></li>
       <li><a href="#rpc">rpc</a></li>
+      <li><a href="#request">request</a></li>
       <li><a href="#req">_req</a></li>
       <li><a href="#ua_post_with_timeout">_ua_post_with_timeout</a></li>
       <li><a href="#wait_for_remote_job">_wait_for_remote_job</a></li>
@@ -299,6 +300,22 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <pre><code>  rpc($c, &quot;function name&quot;, $args);</code></pre>
 
 <p>run remote call</p>
+
+<h2 id="request">request</h2>
+
+<pre><code>    request($sub, $args, $options)</code></pre>
+
+<p>returns result for given request</p>
+
+<pre><code>    $sub is answered in Thruk::Utils::CLI::_cmd_raw
+    $args are arguments for _cmd_raw
+    $options are request / transport related options like:
+    {
+        auth      =&gt; username set on remoteside
+        keep_su   =&gt; change username on remotesite, but keep superuser permissions
+        want_data =&gt; return raw data result
+        wait      =&gt; wait for remote job to complete
+    }</code></pre>
 
 <h2 id="req">_req</h2>
 

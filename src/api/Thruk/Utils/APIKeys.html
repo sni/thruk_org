@@ -14,7 +14,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_keys">get_keys</a></li>
-      <li><a href="#get_system_keys">get_system_keys</a></li>
+      <li><a href="#get_superuser_keys">get_superuser_keys</a></li>
       <li><a href="#get_key_by_private_key">get_key_by_private_key</a></li>
       <li><a href="#create_key">create_key</a></li>
       <li><a href="#create_key_from_req_params">create_key_from_req_params</a></li>
@@ -36,15 +36,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="get_keys">get_keys</h2>
 
-<pre><code>    get_keys($c, { [hashed_key =&gt; $hashed_key], [user =&gt; $username], [file =&gt; $filename], [system =&gt; 0/1])</code></pre>
+<pre><code>    get_keys($c, { [hashed_key =&gt; $hashed_key], [user =&gt; $username], [file =&gt; $filename], [superuser =&gt; 0/1])</code></pre>
 
-<p>returns list of api keys, filtered by user, file or system</p>
+<p>returns list of api keys, filtered by user, file or superuser</p>
 
-<h2 id="get_system_keys">get_system_keys</h2>
+<h2 id="get_superuser_keys">get_superuser_keys</h2>
 
-<pre><code>    get_system_keys($c, [$filename])</code></pre>
+<pre><code>    get_superuser_keys($c, [$filename])</code></pre>
 
-<p>returns list of system api keys</p>
+<p>returns list of superuser api keys</p>
 
 <h2 id="get_key_by_private_key">get_key_by_private_key</h2>
 
@@ -54,7 +54,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="create_key">create_key</h2>
 
-<pre><code>    create_key($c, $username, [$comment], [$roles], [$system])</code></pre>
+<pre><code>    create_key($c, $username, [$comment], [$roles], [$superuser])</code></pre>
 
 <p>create new api key for user</p>
 

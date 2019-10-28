@@ -113,13 +113,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="authenticate">authenticate</h2>
 
+<pre><code>  $c-&gt;authenticate(%options)</code></pre>
+
 <p>authenticate current request user</p>
+
+<p>options are: { username =&gt; force this username skip_db_access =&gt; do not access the livestatus to fetch roles apikey =&gt; use api key to authenticate superuser =&gt; flag wether this user should be a superuser internal =&gt; flag wether this user is an internal technical user roles =&gt; limit roles to this set }</p>
 
 <h2 id="request_username">_request_username</h2>
 
 <p>get username from env</p>
 
-<p>returns $username, $src, $original_username, $roles, $system</p>
+<p>returns $username, $src, $original_username, $roles, $superuser, $internal</p>
 
 <h2 id="user_exists">user_exists</h2>
 

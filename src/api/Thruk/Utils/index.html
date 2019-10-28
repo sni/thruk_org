@@ -65,6 +65,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#update_cron_file_maintenance">update_cron_file_maintenance</a></li>
       <li><a href="#get_cron_time_entry">get_cron_time_entry</a></li>
       <li><a href="#set_user">set_user</a></li>
+      <li><a href="#change_user">change_user</a></li>
       <li><a href="#switch_realuser">switch_realuser</a></li>
       <li><a href="#check_pid_file">check_pid_file</a></li>
       <li><a href="#restart_later">restart_later</a></li>
@@ -469,9 +470,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="set_user">set_user</h2>
 
-<pre><code>  set_user($c, $username)</code></pre>
+<pre><code>  set_user($c, %options)</code></pre>
 
 <p>set and authenticate a user</p>
+
+<p>options are: { username =&gt; username of the resulting user auth_src =&gt; hint about where this user came from superuser =&gt; superuser can change to other user names, roles will not exceed initial role set internal =&gt; internal technical user can change into any user and has admin roles force =&gt; force setting new user, even if already authenticated }</p>
+
+<h2 id="change_user">change_user</h2>
+
+<pre><code>  change_user($c, $username)</code></pre>
+
+<p>changes username to given user, cannot exceed current roles and permissions</p>
 
 <h2 id="switch_realuser">switch_realuser</h2>
 
