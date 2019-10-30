@@ -21,6 +21,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#calculate_overall_processinfo">calculate_overall_processinfo</a></li>
       <li><a href="#get_start_end_for_timeperiod">get_start_end_for_timeperiod</a></li>
       <li><a href="#get_start_end_for_timeperiod_from_param">get_start_end_for_timeperiod_from_param</a></li>
+      <li><a href="#get_start_end_from_date_select_params">get_start_end_from_date_select_params</a></li>
       <li><a href="#set_message">set_message</a></li>
       <li><a href="#append_message">append_message</a></li>
       <li><a href="#ssi_include">ssi_include</a></li>
@@ -180,6 +181,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  my($start, $end) = get_start_end_for_timeperiod_from_param($c)</code></pre>
 
 <p>returns a start and end timestamp for a report date definition will use cgi params for input</p>
+
+<h2 id="get_start_end_from_date_select_params">get_start_end_from_date_select_params</h2>
+
+<pre><code>  my($start, $end) = get_start_end_from_date_select_params($c)</code></pre>
+
+<p>returns a start and end timestamp from date select, like ex.: on the showlog page</p>
 
 <h2 id="set_message">set_message</h2>
 
