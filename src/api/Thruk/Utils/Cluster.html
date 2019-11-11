@@ -24,6 +24,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#kill">kill</a></li>
       <li><a href="#pong">pong</a></li>
       <li><a href="#is_it_me">is_it_me</a></li>
+      <li><a href="#maint">maint</a></li>
+      <li><a href="#heartbeat">heartbeat</a></li>
       <li><a href="#expand_node_ids">expand_node_ids</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
       <li><a href="#check_stale_pids">check_stale_pids</a></li>
@@ -100,6 +102,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  is_it_me($self, $node|$node_id|$node_url)</code></pre>
 
 <p>returns true if this us</p>
+
+<h2 id="maint">maint</h2>
+
+<pre><code>  maint($self, $node, [$value])</code></pre>
+
+<p>returns true if this node is in maintenance mode.</p>
+
+<h2 id="heartbeat">heartbeat</h2>
+
+<pre><code>  heartbeat($self, [$node_id])</code></pre>
+
+<p>request pong from other nodes (or node if if given)</p>
 
 <h2 id="expand_node_ids">expand_node_ids</h2>
 
