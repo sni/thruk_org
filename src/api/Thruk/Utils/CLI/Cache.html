@@ -62,11 +62,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<p>Display cache</p>
+<p>Display complete cache</p>
 
 <pre><code>  %&gt; thruk cache dump</code></pre>
 
-<p>Drop cache</p>
+<p>Display specific key from cache:</p>
+
+<pre><code>  %&gt; thruk cache dump .users.thrukadmin</code></pre>
+
+<p>Drop cache (you might need to reload apache/thruk afterwards)</p>
 
 <pre><code>  %&gt; thruk cache clean</code></pre>
 
