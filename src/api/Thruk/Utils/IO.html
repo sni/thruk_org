@@ -31,6 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#cmd">cmd</a></li>
       <li><a href="#untaint">untaint</a></li>
       <li><a href="#realpath">realpath</a></li>
+      <li><a href="#touch">touch</a></li>
       <li><a href="#merge_deep">merge_deep</a></li>
     </ul>
   </li>
@@ -144,7 +145,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>  cmd($c, $command [, $stdin] [, $print_prefix] [, $detached])</code></pre>
+<pre><code>  cmd($command)
+  cmd($c, $command [, $stdin] [, $print_prefix] [, $detached])</code></pre>
 
 <p>run command and return exit code and output</p>
 
@@ -165,6 +167,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  realpath($file)</code></pre>
 
 <p>return realpath of this file</p>
+
+<h2 id="touch">touch</h2>
+
+<pre><code>  touch($file)</code></pre>
+
+<p>create file if not exists and update timestamp</p>
 
 <h2 id="merge_deep">merge_deep</h2>
 
