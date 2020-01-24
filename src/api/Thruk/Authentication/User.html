@@ -26,6 +26,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#check_role_permissions">check_role_permissions</a></li>
       <li><a href="#transform_username">transform_username</a></li>
       <li><a href="#grant">grant</a></li>
+      <li><a href="#has_group">has_group</a></li>
     </ul>
   </li>
 </ul>
@@ -133,5 +134,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 <pre><code>    grant(&#39;role&#39;)</code></pre>
 
 <p>grant role to user</p>
+
+<h2 id="has_group">has_group</h2>
+
+<pre><code> has_group(&lt;$group&gt;)
+
+ returns 1 if user has all given groups.
+
+ for example:
+  $c-&gt;user-&gt;has_group(&#39;Admin&#39;)
+  $c-&gt;user-&gt;has_group([&#39;Admin&#39;, &#39;Location XY&#39;])</code></pre>
 
 
