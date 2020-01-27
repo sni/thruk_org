@@ -32,6 +32,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_report_languages">get_report_languages</a></li>
       <li><a href="#add_report_defaults">add_report_defaults</a></li>
       <li><a href="#get_running_reports_number">get_running_reports_number</a></li>
+      <li><a href="#get_new_report">get_new_report</a></li>
+      <li><a href="#store_report_data">store_report_data</a></li>
+      <li><a href="#read_report_file">read_report_file</a></li>
       <li><a href="#check_for_waiting_reports">check_for_waiting_reports</a></li>
     </ul>
   </li>
@@ -164,6 +167,24 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_running_reports_number($c)</code></pre>
 
 <p>returns list ($running, $waiting)</p>
+
+<h2 id="get_new_report">get_new_report</h2>
+
+<pre><code>  get_new_report($c, [$data])</code></pre>
+
+<p>returns default report data</p>
+
+<h2 id="store_report_data">store_report_data</h2>
+
+<pre><code>  store_report_data($c, $nr, $data)</code></pre>
+
+<p>writes report to disk</p>
+
+<h2 id="read_report_file">read_report_file</h2>
+
+<pre><code>  read_report_file($c, $nr, [$rdata, $noauth, $simple])</code></pre>
+
+<p>returns report</p>
 
 <h2 id="check_for_waiting_reports">check_for_waiting_reports</h2>
 

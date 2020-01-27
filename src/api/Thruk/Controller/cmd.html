@@ -14,8 +14,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#index">index</a></li>
+      <li><a href="#redirect_or_success">redirect_or_success</a></li>
+      <li><a href="#do_send_command">do_send_command</a></li>
       <li><a href="#bulk_send">bulk_send</a></li>
       <li><a href="#generate_spread_startdates">generate_spread_startdates</a></li>
+      <li><a href="#get_affected_backends">get_affected_backends</a></li>
       <li><a href="#add_remove_comments_commands_from_disabled_commands">add_remove_comments_commands_from_disabled_commands</a></li>
     </ul>
   </li>
@@ -33,6 +36,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="index">index</h2>
 
+<h2 id="redirect_or_success">redirect_or_success</h2>
+
+<pre><code>    redirect_or_success($c, $how_far_back, $just_return)</code></pre>
+
+<p>view our success page or redirect to referer</p>
+
+<h2 id="do_send_command">do_send_command</h2>
+
+<pre><code>    do_send_command($c)</code></pre>
+
+<p>send commands based on request parameters</p>
+
 <h2 id="bulk_send">bulk_send</h2>
 
 <pre><code>    send all collected commands at once</code></pre>
@@ -40,6 +55,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 <h2 id="generate_spread_startdates">generate_spread_startdates</h2>
 
 <pre><code>    generate spreaded start dates</code></pre>
+
+<h2 id="get_affected_backends">get_affected_backends</h2>
+
+<pre><code>    return list of backends which have the requested objects</code></pre>
 
 <h2 id="add_remove_comments_commands_from_disabled_commands">add_remove_comments_commands_from_disabled_commands</h2>
 

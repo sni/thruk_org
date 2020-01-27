@@ -24,6 +24,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#job_page">job_page</a></li>
       <li><a href="#update_status">update_status</a></li>
       <li><a href="#save_profile">save_profile</a></li>
+      <li><a href="#do_child_stuff">do_child_stuff</a></li>
+      <li><a href="#do_parent_stuff">do_parent_stuff</a></li>
+      <li><a href="#init_external">init_external</a></li>
       <li><a href="#remove_job_dir">remove_job_dir</a></li>
       <li><a href="#is_running1">_is_running</a></li>
       <li><a href="#finished_job_page">_finished_job_page</a></li>
@@ -125,6 +128,24 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  save_profile($c, $dir)</code></pre>
 
 <p>save profile to profile.log of this job</p>
+
+<h2 id="do_child_stuff">do_child_stuff</h2>
+
+<pre><code>  do_child_stuff($c, $dir, $id)</code></pre>
+
+<p>do all child things after a fork</p>
+
+<h2 id="do_parent_stuff">do_parent_stuff</h2>
+
+<pre><code>  do_parent_stuff($c, $dir, $pid, $id, $conf)</code></pre>
+
+<p>do all parent things after a fork</p>
+
+<h2 id="init_external">init_external</h2>
+
+<pre><code>  init_external($c)</code></pre>
+
+<p>create job folder and return id</p>
 
 <h2 id="remove_job_dir">remove_job_dir</h2>
 

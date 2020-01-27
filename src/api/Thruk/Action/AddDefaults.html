@@ -19,9 +19,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
       <li><a href="#add_safe_defaults">add_safe_defaults</a></li>
       <li><a href="#add_cached_defaults">add_cached_defaults</a></li>
       <li><a href="#set_configs_stash">set_configs_stash</a></li>
-      <li><a href="#set_possible_backends">_set_possible_backends</a></li>
+      <li><a href="#set_possible_backends">set_possible_backends</a></li>
       <li><a href="#update_site_panel_hashes">update_site_panel_hashes</a></li>
       <li><a href="#set_processinfo">set_processinfo</a></li>
+      <li><a href="#set_enabled_backends">set_enabled_backends</a></li>
       <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
       <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
       <li><a href="#check_federation_peers">check_federation_peers</a></li>
@@ -71,9 +72,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 
   set some config variables directly into the stash for faster access</code></pre>
 
-<h2 id="set_possible_backends">_set_possible_backends</h2>
+<h2 id="set_possible_backends">set_possible_backends</h2>
 
-<pre><code>  _set_possible_backends($c, $disabled_backends)
+<pre><code>  set_possible_backends($c, $disabled_backends)
 
   possible values are:
     0 = reachable                           REACHABLE
@@ -99,6 +100,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 <pre><code>  set_processinfo($c, [$safe, $cached_data])</code></pre>
 
 <p>set process info into stash</p>
+
+<h2 id="set_enabled_backends">set_enabled_backends</h2>
+
+<pre><code>  set_enabled_backends($c, [$backends, $safe, $cached_data])</code></pre>
+
+<p>set enabled backends from environment or given list</p>
 
 <h2 id="die_when_no_backends">die_when_no_backends</h2>
 

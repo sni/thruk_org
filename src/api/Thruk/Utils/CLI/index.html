@@ -27,6 +27,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_object_db">get_object_db</a></li>
       <li><a href="#store_objects">store_objects</a></li>
       <li><a href="#request_url">request_url</a></li>
+      <li><a href="#from_local">from_local</a></li>
+      <li><a href="#from_fcgi">from_fcgi</a></li>
       <li><a href="#get_submodule_help">get_submodule_help</a></li>
     </ul>
   </li>
@@ -93,6 +95,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    request_url($c, $url, [$cookies], [$method], [$postdata])</code></pre>
 
 <p>returns requested url as string. In list context returns ($code, $result)</p>
+
+<h2 id="from_local">from_local</h2>
+
+<pre><code>    $self-&gt;from_local($c, $options)</code></pre>
+
+<p>main entry point for cli commands from the terminal</p>
+
+<h2 id="from_fcgi">from_fcgi</h2>
+
+<pre><code>    from_fcgi($c, $string)</code></pre>
+
+<p>main entry point for cli commands over http(s).</p>
 
 <h2 id="get_submodule_help">get_submodule_help</h2>
 
