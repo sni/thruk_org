@@ -1,15 +1,23 @@
 ---
 title: Changelog
-layout: default
+layout: affix
 ---
 
 {% capture title %}{{ page.title }}{% endcapture %}
 {% include page_heading.html %}
 
+{% capture my_newline %}
+{% endcapture %}
+
 <div class="panel panel-default">
 {% capture my_include %}{% include Changes.html %}{% endcapture %}
-{% assign versions = my_include | split: "\n" %}
+{% assign versions = my_include | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for version in versions %}
-<pre>{{ version | xml_escape }}</pre>
+{% if version contains "This file documents the revision history" %}
+{{ version }}<br /><br />
+{% else %}
+<h2>{{ version | truncatewords: 1, "" }}</h2>
+<pre>{{ version | replace: "<br />", my_newline | xml_escape }}</pre><br />
+{% endif %}
 {% endfor %}
 </div>
