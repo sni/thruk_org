@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-gem 'ffi'
-gem 'jekyll'
+gem 'github-pages'
 gem 'rmagick'
 gem 'asciidoctor'
 gem 'jekyll-asciidoc'
-gem 'jekyll-watch'

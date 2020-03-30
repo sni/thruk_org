@@ -1,6 +1,8 @@
 GEM_HOME=.gem
 TESTPORT=4001
 
+.PHONY: .gem
+
 build: .gem
 	bundle exec jekyll build --trace
 
@@ -14,6 +16,7 @@ server: .gem
 	# sudo apt-get install ruby ruby-dev nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev
 	bundle config set path '.gem'
 	bundler install --path $(GEM_HOME)
+	bundler update
 
 test: .gem
 	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!; \

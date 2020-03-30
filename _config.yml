@@ -2,8 +2,10 @@ name: Thruk
 baseurl: /
 source: src/
 destination: _site/
-highlighter: Rouge
+highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
 asciidoc_ext: asciidoc,adoc,ad
 asciidoctor:
   attributes:
@@ -28,4 +30,14 @@ gallerytag:
   columns: 6
   custom_attribute_name: data-lightbox
 
-exclude: ["Gemfile", "Gemfile.lock", "Makefile", ".travis.yml", "t", "TODO", "api_update.pl", "_submodules", "optimize_images.sh"]
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - Makefile
+    - .travis.yml
+    - t
+    - TODO
+    - api_update.pl
+    - _submodules
+    - optimize_images.sh
+    - .jekyll-cache
