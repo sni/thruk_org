@@ -2,6 +2,7 @@
 version: v2.34
 title: What's New In Release v2.34
 layout: default
+lightbox: true
 breadcrumb: [ "whatsnew.html", "What's New" ]
 ---
 
@@ -9,7 +10,7 @@ breadcrumb: [ "whatsnew.html", "What's New" ]
   <div class="col-lg-12">
     <h2 class="page-header">Highlights of release {{ page.version }}</h2>
     <p>Here are some of the highlights of the release {{ page.version }}.
-       See the <a href="{{ site.baseurl }}changelog.html">detailed changelog</a> for a complete list of changes.
+       See the <a href="{{ site.baseurl }}changelog.html#{{ page.version }}">detailed changelog</a> for a complete list of changes.
     </p>
   </div>
 </div>
@@ -26,9 +27,9 @@ breadcrumb: [ "whatsnew.html", "What's New" ]
        if this dashboard is shown on many wallscreens.</p>
   </div>
   <div class="col-md-6">
-      <img class="img-responsive" src="{{ page.version }}/maint1.png" alt="">
-      <img class="img-responsive" src="{{ page.version }}/maint2.png" alt="">
-      <img class="img-responsive" src="{{ page.version }}/maint3.png" alt="">
+      <a title="dashboard maintenance" rel="lightbox[maint]" href="{{ page.version }}/maint1.png"><img src="{{ page.version }}/maint1.png" alt="dashboard maintenance 1" width="30%" height="30%" /></a>
+      <a title="dashboard maintenance" rel="lightbox[maint]" href="{{ page.version }}/maint2.png"><img src="{{ page.version }}/maint2.png" alt="dashboard maintenance 2" width="30%" height="30%" /></a>
+      <a title="dashboard maintenance" rel="lightbox[maint]" href="{{ page.version }}/maint3.png"><img src="{{ page.version }}/maint3.png" alt="dashboard maintenance 3" width="30%" height="30%" /></a>
   </div>
 </div>
 
