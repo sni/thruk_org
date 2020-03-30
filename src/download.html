@@ -115,9 +115,9 @@ window.doOnLoadList.push(function() {
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/debian10/amd64/">thruk_{{ site.release_version_deb }}_debian10_amd64.deb</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">6</td><td>&nbsp;</td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/i686/">thruk-{{ site.release_version_rpm }}.rhel6.i686.rpm</a></td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/rhel6/x86_64/">thruk-{{ site.release_version_rpm }}.rhel6.x86_64.rpm</a></td>
+  <td class="text-center"><img src="images/debian.png" alt="debian" height=48 width=48></td><td class="text-center">Debian</td><td class="text-center">11</td><td class="text-center">bullseye</td>
+  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/debian11/i386/">thruk_{{ site.release_version_deb }}_debian11_i386.deb</a></td>
+  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/debian11/amd64/">thruk_{{ site.release_version_deb }}_debian11_amd64.deb</a></td>
 </tr>
 <tr>
   <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">7</td><td>&nbsp;</td>
@@ -165,14 +165,9 @@ window.doOnLoadList.push(function() {
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu18.04/amd64/">thruk_{{ site.release_version_deb }}_ubuntu18.04_amd64.deb</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">18.10</td><td class="text-center">cosmic</td>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">19.10</td><td class="text-center">eoan</td>
   <td></td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu18.10/amd64/">thruk_{{ site.release_version_deb }}_ubuntu18.10_amd64.deb</a></td>
-</tr>
-<tr>
-  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">19.04</td><td class="text-center">cosmic</td>
-  <td></td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu19.04/amd64/">thruk_{{ site.release_version_deb }}_ubuntu19.04_amd64.deb</a></td>
+  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu19.10/amd64/">thruk_{{ site.release_version_deb }}_ubuntu19.10_amd64.deb</a></td>
 </tr>
 
 <tr>
@@ -203,7 +198,7 @@ window.doOnLoadList.push(function() {
     <p>
       Thruk is included in the OMD (<a href="https://labs.consol.de/omd" target="_blank">Open Monitoring Distribution</a>). Installing<br>
       Thruk with OMD is an easy and fast way of getting Thruk in a complete setup running.<br>
-      OMD includes a preconfigured Nagios/Icinga/Shinken + Thruk + PNP4Nagios and other useful addons.
+      OMD includes a preconfigured Naemon/Icinga + Thruk + PNP4Nagios and other useful addons like Grafana.
     </p>
   </div>
 </div>
@@ -236,8 +231,8 @@ window.doOnLoadList.push(function() {
   <div class="panel-heading"><h2>Archive</h2></div>
   <div class="panel-body">
     <p>
-      Download previous versions from the <a href="https://download.thruk.org/pkg/">archive</a>.<br>
-      And even older versions from the <a href="https://download.thruk.org/archive/">old archive</a>.
+      Download previous versions (v1.18 till latest) from the <a href="https://download.thruk.org/pkg/">pkg archive</a>.<br>
+      And even older versions (till 1.1.7) from the <a href="https://download.thruk.org/archive/">old archive</a>.
     </p>
   </div>
 </div>
