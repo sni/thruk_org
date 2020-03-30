@@ -81,7 +81,6 @@ window.doOnLoadList.push(function() {
     /* fix anchor offset */
     $('#affix-nav li a').click(function(event) {
         /* this one fixes clicks from the navigation bar */
-        event.preventDefault();
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -60);
     });
