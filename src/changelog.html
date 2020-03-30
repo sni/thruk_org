@@ -11,7 +11,6 @@ layout: affix
 
 {% assign whatsnewpages = site.pages | sort: 'url' | where_exp: "item", "item.url contains 'whatsnew/v'" %}
 
-<div class="panel panel-default">
 {% capture my_include %}{% include Changes.html %}{% endcapture %}
 {% assign changelogs = my_include | newline_to_br | strip_newlines | split: "<br /><br />" %}
 {% for changelog in changelogs %}
@@ -29,4 +28,3 @@ layout: affix
   <pre>{{ changelog | replace: "<br />", my_newline | xml_escape }}</pre><br />
 {% endif %}
 {% endfor %}
-</div>
