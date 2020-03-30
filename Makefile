@@ -11,7 +11,8 @@ server: .gem
 	bundle exec jekyll serve --host=\* --trace --watch
 
 .gem:
-	# sudo apt-get install nodejs libmagickcore-dev libmagickwand-dev
+	# sudo apt-get install ruby ruby-dev nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev
+	bundle config set path '.gem'
 	bundler install --path $(GEM_HOME)
 
 test: .gem
