@@ -9,15 +9,24 @@ layout: affix
 {% capture my_newline %}
 {% endcapture %}
 
+{% assign whatsnewpages = site.pages | sort: 'url' | where_exp: "item", "item.url contains 'whatsnew/v'" %}
+
 <div class="panel panel-default">
 {% capture my_include %}{% include Changes.html %}{% endcapture %}
-{% assign versions = my_include | newline_to_br | strip_newlines | split: "<br /><br />" %}
-{% for version in versions %}
-{% if version contains "This file documents the revision history" %}
-{{ version }}<br /><br />
+{% assign changelogs = my_include | newline_to_br | strip_newlines | split: "<br /><br />" %}
+{% for changelog in changelogs %}
+{% if changelog contains "This file documents the revision history" %}
+  {{ changelog }}<br /><br />
 {% else %}
-<h2>{{ version | truncatewords: 1, "" }}</h2>
-<pre>{{ version | replace: "<br />", my_newline | xml_escape }}</pre><br />
+  {% assign version = changelog | truncatewords: 1, "" | prepend: "v" %}
+  <a name="{{ version }}"></a>
+  <h2>{{ version }}</h2>
+  {% for page in whatsnewpages %}
+    {% if page.version == version %}
+      <a href=".{{ page.url }}">Read what's new summary for release {{ page.version }}</a>
+    {% endif %}
+  {% endfor %}
+  <pre>{{ changelog | replace: "<br />", my_newline | xml_escape }}</pre><br />
 {% endif %}
 {% endfor %}
 </div>
