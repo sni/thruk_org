@@ -17,7 +17,12 @@ layout: affix
 {% if changelog contains "This file documents the revision history" %}
   {{ changelog }}<br /><br />
 {% else %}
-  {% assign version = changelog | truncatewords: 1, "" | prepend: "v" %}
+  {% assign version = changelog | truncatewords: 1, "" %}
+  {% if changelog contains "next:" %}
+    {% assign version = "nightly development version" %}
+  {% else %}
+    {% assign version = version | prepend: "v" %}
+  {% endif %}
   <a name="{{ version }}"></a>
   <h2>{{ version }}</h2>
   {% for page in whatsnewpages %}
