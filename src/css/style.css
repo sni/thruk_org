@@ -185,11 +185,6 @@ A.nav_label {
     position: absolute;
     left: -20px;
 }
-A.nav_anchor {
-    position: absolute;
-    top: -50px;
-    display: block;
-}
 
 DIV.carousel-inner H1, DIV.carousel-inner H2 {
   color: #FFF;
