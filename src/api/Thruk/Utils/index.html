@@ -85,6 +85,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#find_files">find_files</a></li>
       <li><a href="#beautify_diff">beautify_diff</a></li>
       <li><a href="#check_memory_usage">check_memory_usage</a></li>
+      <li><a href="#log_error_with_details">log_error_with_details</a></li>
       <li><a href="#stop_all">stop_all</a></li>
       <li><a href="#base_folder">base_folder</a></li>
       <li><a href="#is_post">is_post</a></li>
@@ -597,6 +598,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  check_memory_usage($c)</code></pre>
 
 <p>check if memory limit is above the threshold</p>
+
+<h2 id="log_error_with_details">log_error_with_details</h2>
+
+<pre><code>  log_error_with_details($c, $message, $errorDetails)</code></pre>
+
+<p>log error along with details about url and logged in user</p>
 
 <h2 id="stop_all">stop_all</h2>
 

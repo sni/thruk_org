@@ -15,6 +15,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
     <ul>
       <li><a href="#cmd">cmd</a></li>
       <li><a href="#perl">perl</a></li>
+      <li><a href="#render_page_in_background">render_page_in_background</a></li>
       <li><a href="#is_running">is_running</a></li>
       <li><a href="#cancel">cancel</a></li>
       <li><a href="#read_job">read_job</a></li>
@@ -70,10 +71,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
             backends     =&gt; &quot;list of selected backends (keys)&quot;
             nofork       =&gt; &quot;don&#39;t fork&quot;
             background   =&gt; &quot;return $jobid if set, or redirect otherwise&quot;
+            clean        =&gt; &quot;remove job after displaying it if true&quot;
         }
     )</code></pre>
 
 <p>run perl expression in an external process</p>
+
+<h2 id="render_page_in_background">render_page_in_background</h2>
+
+<pre><code>  render_page_in_background($c)</code></pre>
+
+<p>return true if page will be rendered in background. will return false if page should continue to render normally</p>
 
 <h2 id="is_running">is_running</h2>
 
@@ -151,7 +159,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <pre><code>  remove_job_dir($c, $dir)</code></pre>
 
-<p>return true if process is still running</p>
+<p>remove job folder and all files</p>
 
 <h2 id="is_running1">_is_running</h2>
 
