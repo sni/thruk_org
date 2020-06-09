@@ -48,16 +48,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>    Available commands are:
 
-        - import[=blocksize]    initially import all logfiles, optionally supply
-                                duration (--start) to only import given range.
-                                Importing blocksize at a time which defaults to 1d.
-        - update                delta update all logfiles since last import/update
-        - stats                 display logcache statistics
-        - authupdate            update authentication data
-        - optimize              run table optimize
-        - clean[=duration]      clean cache and keep everything within given duration
-        - removeunused          remove unused tables for no longer existing backends
-        - drop                  remove all tables and data</code></pre>
+        - import                    Initially import all logfiles
+                 [--blocksize=...]  sets the amount of logfiles fetched in one
+                                    import block. Default: 1d
+                 [--start=... ]     Set the relative start point to import from.
+                                    No default, will import all available logfiles
+                                    if not set. Ex.: --start=1y
+        - update                    Delta update all logfiles since last import/update.
+        - stats                     Display logcache statistics.
+        - authupdate                Update authentication data.
+        - optimize                  Run table optimize.
+        - clean [duration]          Clean cache and keep everything within given duration (in days). Default: 1y
+        - removeunused              Remove unused tables for no longer existing backends.
+        - drop                      Remove all tables and data.</code></pre>
 
 </dd>
 </dl>
@@ -74,15 +77,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>  %&gt; thruk logcache import --local</code></pre>
 
-<p>Initial import, but only import last 3 weeks</p>
+<p>Initial import, but only import last 3 weeks and fetch 12 hours per import block</p>
 
-<pre><code>  %&gt; thruk logcache import --local --start=3w</code></pre>
+<pre><code>  %&gt; thruk logcache import --local --start=3w --blocksize=12h</code></pre>
 
 <p>Run delta update with logfiles retrieved by livestatus</p>
 
 <pre><code>  %&gt; thruk logcache update</code></pre>
 
-<p>Run update from given files</p>
+<p>Run update from given files. (Also possible for initial import)</p>
 
 <pre><code>  %&gt; thruk logcache update /var/log/naemon/archive/2017-07-*.log</code></pre>
 
