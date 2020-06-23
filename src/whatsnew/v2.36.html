@@ -1,0 +1,55 @@
+---
+version: v2.36
+title: What's New In Release v2.36
+layout: default
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-header">Highlights of release {{ page.version }}</h2>
+    <p>Here are some of the highlights of the release {{ page.version }}.
+       See the <a href="{{ site.baseurl }}changelog.html#{{ page.version }}">detailed changelog</a> for a complete list of changes.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">OAuth Authentication</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>Thruk may now authenticate against any oauth provider. It is even possible
+      to completly hide the normal basic authentication form.
+      However, it is good practice to keep at least one local account in case of
+      network issues.
+
+      An example configuration for github could look like:
+    </p>
+      <pre>
+&lt;auth_oauth>
+ &lt;provider>
+  login         = "Login with GitHub"
+  client_id     = ...
+  client_secret = ...
+  scopes        = openid profile email groups
+  auth_url  = https://github.com/login/oauth/authorize
+  token_url = https://github.com/login/oauth/access_token
+  api_url      = https://api.github.com/user
+  login_field  = login
+ &lt;/provider>
+&lt;/auth_oauth>
+      </pre>
+    <p>
+      A new Github OAuth application can be created here: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a>.
+      But any other oauth provider will work as well.
+    </p>
+  </div>
+  <div class="col-md-6">
+      <a title="oauth" rel="lightbox[oauth]" href="{{ page.version }}/oauth1.png"><img src="{{ page.version }}/oauth1.png" alt="dashboard oauth 1" width="30%" height="30%" /></a>
+      <a title="oauth" rel="lightbox[oauth]" href="{{ page.version }}/oauth2.png"><img src="{{ page.version }}/oauth2.png" alt="dashboard oauth 1" width="30%" height="30%" /></a>
+  </div>
+</div>
