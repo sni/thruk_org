@@ -13,8 +13,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#METHODS">METHODS</a>
     <ul>
-      <li><a href="#get_config">get_config</a></li>
+      <li><a href="#get_default_stash">get_default_stash</a></li>
+      <li><a href="#set_config_env">set_config_env</a></li>
       <li><a href="#set_default_config">set_default_config</a></li>
+      <li><a href="#get_base_config">get_base_config</a></li>
+      <li><a href="#get_toolkit_config">get_toolkit_config</a></li>
       <li><a href="#get_thruk_version">get_thruk_version</a></li>
       <li><a href="#get_git_name">get_git_name</a></li>
       <li><a href="#get_debug_details">get_debug_details</a></li>
@@ -44,13 +47,25 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h1 id="METHODS">METHODS</h1>
 
-<h2 id="get_config">get_config</h2>
+<h2 id="get_default_stash">get_default_stash</h2>
 
-<p>make config available without loading complete dependencies</p>
+<pre><code>    return default stash</code></pre>
+
+<h2 id="set_config_env">set_config_env</h2>
+
+<p>return basic config hash and sets environment</p>
 
 <h2 id="set_default_config">set_default_config</h2>
 
-<p>return config with defaults added</p>
+<p>return basic config hash and sets environment, but does not read config again</p>
+
+<h2 id="get_base_config">get_base_config</h2>
+
+<p>return base config</p>
+
+<h2 id="get_toolkit_config">get_toolkit_config</h2>
+
+<p>return template toolkit config</p>
 
 <h2 id="get_thruk_version">get_thruk_version</h2>
 
@@ -128,14 +143,14 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="read_cgi_cfg">read_cgi_cfg</h2>
 
-<pre><code>  read_cgi_cfg($c, $config);</code></pre>
+<pre><code>  read_cgi_cfg($app, $config);</code></pre>
 
-<p>parse the cgi.cfg and put it into $c-&gt;config</p>
+<p>parse the cgi.cfg and returns config hash</p>
 
 <h2 id="merge_cgi_cfg">merge_cgi_cfg</h2>
 
 <pre><code>  merge_cgi_cfg($config)</code></pre>
 
-<p>merge entries from $config into $config-&gt;{&#39;cgi_cfg&#39;}</p>
+<p>merge entries from cgi.cfg into $c-&gt;config</p>
 
 
