@@ -30,6 +30,7 @@ breadcrumb: []
       <li><a href="#set_timezone">set_timezone</a></li>
       <li><a href="#init_logging">init_logging</a></li>
       <li><a href="#register_cron_entries">register_cron_entries</a></li>
+      <li><a href="#finalize_request">finalize_request</a></li>
       <li><a href="#stop_all">stop_all</a></li>
       <li><a href="#graceful_stop">graceful_stop</a></li>
     </ul>
@@ -123,6 +124,12 @@ breadcrumb: []
 <pre><code>    register_cron_entries($function_name)</code></pre>
 
 <p>register callback to update cron jobs</p>
+
+<h2 id="finalize_request">finalize_request</h2>
+
+<pre><code>    register_cron_entries($c, $res)</code></pre>
+
+<p>finalize request data by adding profile and headers</p>
 
 <h2 id="stop_all">stop_all</h2>
 
