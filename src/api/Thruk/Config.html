@@ -30,9 +30,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#array_uniq">array_uniq</a></li>
       <li><a href="#read_config_file">read_config_file</a></li>
       <li><a href="#switch_user">switch_user</a></li>
-      <li><a href="#load_any-options">load_any( $options )</a></li>
       <li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
       <li><a href="#merge_cgi_cfg">merge_cgi_cfg</a></li>
+      <li><a href="#merge_sub_config">merge_sub_config</a></li>
     </ul>
   </li>
 </ul>
@@ -137,10 +137,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>switch user and groups</p>
 
-<h2 id="load_any-options">load_any( $options )</h2>
-
-<p>replacement function for Config::Any-&gt;load_files</p>
-
 <h2 id="read_cgi_cfg">read_cgi_cfg</h2>
 
 <pre><code>  read_cgi_cfg($app, $config);</code></pre>
@@ -152,5 +148,13 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  merge_cgi_cfg($config)</code></pre>
 
 <p>merge entries from cgi.cfg into $c-&gt;config</p>
+
+<h2 id="merge_sub_config">merge_sub_config</h2>
+
+<pre><code>  merge_sub_config($base_config, $sub_config)</code></pre>
+
+<p>merge entries from $sub_config into $base_config.</p>
+
+<p>base config will not be cloned are therefore changed.</p>
 
 
