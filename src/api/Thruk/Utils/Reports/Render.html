@@ -16,6 +16,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
       <li><a href="#sort_by_key">sort_by_key</a></li>
       <li><a href="#current_page">current_page</a></li>
       <li><a href="#calculate_availability">calculate_availability</a></li>
+      <li><a href="#get_service_filter">get_service_filter</a></li>
+      <li><a href="#expand_service_slas">expand_service_slas</a></li>
       <li><a href="#outages">outages</a></li>
       <li><a href="#set_unavailable_states">set_unavailable_states</a></li>
       <li><a href="#get_report_timeperiod">get_report_timeperiod</a></li>
@@ -67,6 +69,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <pre><code>  calculate_availability()</code></pre>
 
 <p>calculate availability from stash data</p>
+
+<h2 id="get_service_filter">get_service_filter</h2>
+
+<pre><code>  get_service_filter($service_param)</code></pre>
+
+<p>convert services into a s_filter usable by Avail.pm</p>
+
+<h2 id="expand_service_slas">expand_service_slas</h2>
+
+<pre><code>  expand_service_slas($service_param)</code></pre>
+
+<p>expand services sla levels</p>
 
 <h2 id="outages">outages</h2>
 
