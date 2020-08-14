@@ -27,6 +27,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_object_db">get_object_db</a></li>
       <li><a href="#store_objects">store_objects</a></li>
       <li><a href="#request_url">request_url</a></li>
+      <li><a href="#load_module">load_module</a></li>
       <li><a href="#from_local">from_local</a></li>
       <li><a href="#from_fcgi">from_fcgi</a></li>
       <li><a href="#get_submodule_help">get_submodule_help</a></li>
@@ -95,6 +96,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    request_url($c, $url, [$cookies], [$method], [$postdata])</code></pre>
 
 <p>returns requested url as string. In list context returns ($code, $result)</p>
+
+<h2 id="load_module">load_module</h2>
+
+<pre><code>    load_module($module)</code></pre>
+
+<p>load given module and returns true on success</p>
 
 <h2 id="from_local">from_local</h2>
 
