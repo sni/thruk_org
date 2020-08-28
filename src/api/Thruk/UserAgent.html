@@ -28,6 +28,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#env_proxy">env_proxy</a></li>
       <li><a href="#cookie_jar">cookie_jar</a></li>
       <li><a href="#request">request</a></li>
+      <li><a href="#disable_verify_hostname">disable_verify_hostname</a></li>
+      <li><a href="#disable_verify_hostname_by_url">disable_verify_hostname_by_url</a></li>
     </ul>
   </li>
 </ul>
@@ -131,5 +133,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  request()</code></pre>
 
 <p>request from given HTTP::Request</p>
+
+<h2 id="disable_verify_hostname">disable_verify_hostname</h2>
+
+<pre><code>  disable_verify_hostname($ua)</code></pre>
+
+<p>disable ssl checks for this user agent</p>
+
+<h2 id="disable_verify_hostname_by_url">disable_verify_hostname_by_url</h2>
+
+<pre><code>  disable_verify_hostname_by_url($ua, $url)</code></pre>
+
+<p>disable ssl checks for this user agent if url matches localhost pattern</p>
 
 
