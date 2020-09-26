@@ -58,7 +58,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
         - stats                     Display logcache statistics.
         - authupdate                Update authentication data.
         - optimize                  Run table optimize.
-        - clean [duration]          Clean cache and keep everything within given duration (in days). Default: 1y
+        - clean [duration]          Clean cache and keep everything within given duration (in days). Defaults to `logcache_clean_duration`
+        - compact [duration]        Compact cache and remove unnecessary thins. Duration is given in in days). Defaults to `logcache_compact_duration`
         - removeunused              Remove unused tables for no longer existing backends.
         - drop                      Remove all tables and data.</code></pre>
 

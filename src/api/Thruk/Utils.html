@@ -110,6 +110,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#dirname">dirname</a></li>
       <li><a href="#looks_like_regex">looks_like_regex</a></li>
       <li><a href="#dclone">dclone</a></li>
+      <li><a href="#text_table">text_table</a></li>
     </ul>
   </li>
 </ul>
@@ -749,5 +750,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    dclone($obj)</code></pre>
 
 <p>deep clones any object</p>
+
+<h2 id="text_table">text_table</h2>
+
+<pre><code>    text_table( keys =&gt; [keys], data =&gt; &lt;list of hashes&gt; )
+
+    a key can be:
+
+        - &quot;string&quot;
+        - [&quot;column name&quot;, &quot;data key&quot;]
+        - { &quot;name&quot; =&gt; &quot;column header&quot;, &quot;key&quot; =&gt; &quot;data key&quot;, type =&gt; $type, format =&gt; $formatstring }</code></pre>
+
+<p>returns ascii text table or undef on errors or no data/columns</p>
 
 
