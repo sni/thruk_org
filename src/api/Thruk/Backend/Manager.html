@@ -40,6 +40,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#expand_command">expand_command</a></li>
       <li><a href="#set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></li>
       <li><a href="#logcache_stats">logcache_stats</a></li>
+      <li><a href="#get_expanded_start_date">get_expanded_start_date</a></li>
+      <li><a href="#extract_time_filter">extract_time_filter</a></li>
+      <li><a href="#can_use_logcache">can_use_logcache</a></li>
       <li><a href="#get_logs">get_logs</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
       <li><a href="#get_comments_by_pattern">get_comments_by_pattern</a></li>
@@ -246,6 +249,24 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  logcache_stats($c)</code></pre>
 
 <p>return logcache statistics</p>
+
+<h2 id="get_expanded_start_date">get_expanded_start_date</h2>
+
+<pre><code>  get_expanded_start_date($c, $blocksize)</code></pre>
+
+<p>returns start of day for expanded duration</p>
+
+<h2 id="extract_time_filter">extract_time_filter</h2>
+
+<pre><code>  extract_time_filter($filter)</code></pre>
+
+<p>returns start and end time filter from given query</p>
+
+<h2 id="can_use_logcache">can_use_logcache</h2>
+
+<pre><code>  can_use_logcache()</code></pre>
+
+<p>returns true if query can use the logcache</p>
 
 <h2 id="get_logs">get_logs</h2>
 
