@@ -3,17 +3,17 @@ TESTPORT=4001
 
 .PHONY: .gem
 
-build: .gem
+build: .gem _submodules/thruk/documentation
 	bundle exec jekyll build --trace
 
-quick: .gem
+quick: .gem _submodules/thruk/documentation
 	bundle exec jekyll build --trace --limit_posts=5
 
-server: .gem
+server: .gem _submodules/thruk/documentation
 	bundle exec jekyll serve --host=\* --trace --watch
 
 .gem:
-	# sudo apt-get install ruby ruby-dev nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev zlib1g-dev
+	# sudo apt-get install ruby ruby-dev ruby-bundler nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev zlib1g-dev
 	bundle config set path '.gem'
 	bundler install --path $(GEM_HOME)
 	bundler update
@@ -45,6 +45,9 @@ changelog_update:
 	git pull --rebase --recurse-submodules=yes
 	cp _submodules/thruk/Changes src/_includes/Changes.html
 	-git commit -am 'changelog update'
+
+_submodules/thruk/documentation:
+	git submodule update --init --recursive
 
 api_update:
 	./api_update.pl _submodules/thruk/ perl5/
