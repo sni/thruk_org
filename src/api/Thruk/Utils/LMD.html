@@ -16,13 +16,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#check_proc">check_proc</a></li>
       <li><a href="#status">status</a></li>
       <li><a href="#restart">restart</a></li>
+      <li><a href="#reload">reload</a></li>
       <li><a href="#shutdown_procs">shutdown_procs</a></li>
       <li><a href="#check_initial_start">check_initial_start</a></li>
       <li><a href="#check_pid">check_pid</a></li>
       <li><a href="#create_thread_dump">create_thread_dump</a></li>
       <li><a href="#kill_if_not_responding">kill_if_not_responding</a></li>
       <li><a href="#check_changed_lmd_config">_check_changed_lmd_config</a></li>
-      <li><a href="#write_lmd_config">_write_lmd_config</a></li>
+      <li><a href="#write_lmd_config">write_lmd_config</a></li>
       <li><a href="#get_lmd_version">get_lmd_version</a></li>
     </ul>
   </li>
@@ -55,6 +56,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  restart($c, $config)</code></pre>
 
 <p>restart lmd process</p>
+
+<h2 id="reload">reload</h2>
+
+<pre><code>  reload($c, $config)</code></pre>
+
+<p>send sighub tp lmd process</p>
 
 <h2 id="shutdown_procs">shutdown_procs</h2>
 
@@ -92,9 +99,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>check if the backends have changed and send a sighup to lmd if so</p>
 
-<h2 id="write_lmd_config">_write_lmd_config</h2>
+<h2 id="write_lmd_config">write_lmd_config</h2>
 
-<pre><code>  _write_lmd_config($config)</code></pre>
+<pre><code>  write_lmd_config($config)</code></pre>
 
 <p>write lmd.ini, returns true if file has changed or false otherwise</p>
 
