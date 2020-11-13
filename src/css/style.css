@@ -143,6 +143,18 @@ A.navbar-brand IMG {
   border-width: 0;
 }
 
+nav.page-nav {
+  padding: 0;
+}
+
+.page-nav {
+  position:      relative;
+  margin-left:   0;
+  border:        1px solid #ddd;
+  white-space:   nowrap;
+  border-radius: 5px;
+}
+
 /* All levels of nav */
 .sidebar .nav > li > a {
   display: block;
