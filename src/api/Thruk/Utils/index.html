@@ -106,6 +106,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#merge_service_dependencies">merge_service_dependencies</a></li>
       <li><a href="#merge_host_dependencies">merge_host_dependencies</a></li>
       <li><a href="#dump_params">dump_params</a></li>
+      <li><a href="#clean_credentials_from_string">clean_credentials_from_string</a></li>
       <li><a href="#basename">basename</a></li>
       <li><a href="#dirname">dirname</a></li>
       <li><a href="#looks_like_regex">looks_like_regex</a></li>
@@ -726,6 +727,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    dump_params($c-&gt;req-&gt;parameters)</code></pre>
 
 <p>returns stringified parameters</p>
+
+<h2 id="clean_credentials_from_string">clean_credentials_from_string</h2>
+
+<pre><code>    clean_credentials_from_string($string)</code></pre>
+
+<p>returns strings with potential credentials removed</p>
 
 <h2 id="basename">basename</h2>
 
