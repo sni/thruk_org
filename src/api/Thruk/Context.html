@@ -17,8 +17,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#new">new</a></li>
       <li><a href="#request">request</a></li>
       <li><a href="#response">response</a></li>
-      <li><a href="#log">log</a></li>
-      <li><a href="#audit_log">audit_log</a></li>
       <li><a href="#cluster">cluster</a></li>
       <li><a href="#metrics">metrics</a></li>
       <li><a href="#detach">detach</a></li>
@@ -78,14 +76,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return response object</p>
 
-<h2 id="log">log</h2>
-
-<p>return log object</p>
-
-<h2 id="audit_log">audit_log</h2>
-
-<p>return audit_log object</p>
-
 <h2 id="cluster">cluster</h2>
 
 <p>return cluster object</p>
@@ -130,7 +120,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>get username from env</p>
 
-<p>returns $username, $src, $original_username, $roles, $superuser, $internal</p>
+<p>returns $username, $auth_src, $roles, $superuser, $internal, $sessionid, $sessiondata</p>
 
 <h2 id="user_exists">user_exists</h2>
 

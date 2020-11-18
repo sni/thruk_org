@@ -10,7 +10,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <ul id="index">
   <li><a href="#NAME">NAME</a></li>
-  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#log">log</a></li>
+      <li><a href="#audit_log">_audit_log</a></li>
+      <li><a href="#wrap_stdout2log">wrap_stdout2log</a></li>
+      <li><a href="#wrap_stdout2log_stop">wrap_stdout2log_stop</a></li>
+      <li><a href="#reset_logging">reset_logging</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -20,5 +28,27 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
 <p>Utilities Collection for CLI logging</p>
+
+<h2 id="log">log</h2>
+
+<pre><code>    log returns the current logger object</code></pre>
+
+<h2 id="audit_log">_audit_log</h2>
+
+<pre><code>    _audit_log logs something with info log level and
+    in case screen logger is active, logs it also to the logfile.</code></pre>
+
+<h2 id="wrap_stdout2log">wrap_stdout2log</h2>
+
+<pre><code>    wrap stdout to info logger. everything printed to stdout will be logged
+    with info level to stderr.</code></pre>
+
+<h2 id="wrap_stdout2log_stop">wrap_stdout2log_stop</h2>
+
+<pre><code>    stop wrapping stdout</code></pre>
+
+<h2 id="reset_logging">reset_logging</h2>
+
+<pre><code>    reset logging system, for example after starting child processes</code></pre>
 
 

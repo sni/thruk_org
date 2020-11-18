@@ -15,20 +15,12 @@ breadcrumb: []
     <ul>
       <li><a href="#startup">startup</a></li>
       <li><a href="#find_route_match">find_route_match</a></li>
-      <li><a href="#config">config</a></li>
       <li><a href="#cluster">cluster</a></li>
       <li><a href="#metrics">metrics</a></li>
       <li><a href="#obj_db_model">obj_db_model</a></li>
-      <li><a href="#log">log</a></li>
-      <li><a href="#audit_log">audit_log</a></li>
-      <li><a href="#reset_logging">reset_logging</a></li>
-      <li><a href="#verbose">verbose</a></li>
-      <li><a href="#debug">debug</a></li>
-      <li><a href="#trace">trace</a></li>
       <li><a href="#set_signal_handler">set_signal_handler</a></li>
       <li><a href="#restore_signal_handler">restore_signal_handler</a></li>
       <li><a href="#set_timezone">set_timezone</a></li>
-      <li><a href="#init_logging">init_logging</a></li>
       <li><a href="#register_cron_entries">register_cron_entries</a></li>
       <li><a href="#finalize_request">finalize_request</a></li>
       <li><a href="#stop_all">stop_all</a></li>
@@ -60,10 +52,6 @@ breadcrumb: []
 
 <p>returns code ref and name of the route entry</p>
 
-<h2 id="config">config</h2>
-
-<pre><code>    make config accessible via Thruk-&gt;config</code></pre>
-
 <h2 id="cluster">cluster</h2>
 
 <pre><code>    make cluster accessible via Thruk-&gt;cluster</code></pre>
@@ -76,31 +64,6 @@ breadcrumb: []
 
 <p>return obj_db object model</p>
 
-<h2 id="log">log</h2>
-
-<pre><code>    make log accessible via Thruk-&gt;log</code></pre>
-
-<h2 id="audit_log">audit_log</h2>
-
-<pre><code>    audit_log logs something with info log level and
-    in case screen logger is active, logs it also to the logfile.</code></pre>
-
-<h2 id="reset_logging">reset_logging</h2>
-
-<pre><code>    reset logging system, for example after starting child processes</code></pre>
-
-<h2 id="verbose">verbose</h2>
-
-<pre><code>    make verbose accessible via Thruk-&gt;verbose</code></pre>
-
-<h2 id="debug">debug</h2>
-
-<pre><code>    make debug accessible via Thruk-&gt;debug</code></pre>
-
-<h2 id="trace">trace</h2>
-
-<pre><code>    make trace accessible via Thruk-&gt;trace</code></pre>
-
 <h2 id="set_signal_handler">set_signal_handler</h2>
 
 <pre><code>    watch a few signals and print extra information</code></pre>
@@ -112,12 +75,6 @@ breadcrumb: []
 <h2 id="set_timezone">set_timezone</h2>
 
 <pre><code>    set servers timezone</code></pre>
-
-<h2 id="init_logging">init_logging</h2>
-
-<pre><code>    initialize logging</code></pre>
-
-<p>returns logger object</p>
 
 <h2 id="register_cron_entries">register_cron_entries</h2>
 

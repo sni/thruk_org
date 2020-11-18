@@ -18,7 +18,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#set_default_config">set_default_config</a></li>
       <li><a href="#get_base_config">get_base_config</a></li>
       <li><a href="#get_toolkit_config">get_toolkit_config</a></li>
-      <li><a href="#get_thruk_version">get_thruk_version</a></li>
       <li><a href="#get_git_name">get_git_name</a></li>
       <li><a href="#get_debug_details">get_debug_details</a></li>
       <li><a href="#home">home</a></li>
@@ -33,6 +32,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
       <li><a href="#merge_cgi_cfg">merge_cgi_cfg</a></li>
       <li><a href="#merge_sub_config">merge_sub_config</a></li>
+      <li><a href="#hostname">hostname</a></li>
+      <li><a href="#get_thruk_version">get_thruk_version</a></li>
       <li><a href="#version">version</a></li>
     </ul>
   </li>
@@ -67,12 +68,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <h2 id="get_toolkit_config">get_toolkit_config</h2>
 
 <p>return template toolkit config</p>
-
-<h2 id="get_thruk_version">get_thruk_version</h2>
-
-<pre><code>  get_thruk_version($c, [$config])</code></pre>
-
-<p>return thruk version string</p>
 
 <h2 id="get_git_name">get_git_name</h2>
 
@@ -158,10 +153,22 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>base config will not be cloned are therefore changed.</p>
 
+<h2 id="hostname">hostname</h2>
+
+<pre><code>  hostname()</code></pre>
+
+<p>return system hostname</p>
+
+<h2 id="get_thruk_version">get_thruk_version</h2>
+
+<pre><code>  get_thruk_version()</code></pre>
+
+<p>return full thruk version string, ex.: 2.38-2~feature_branch.45a4ceb</p>
+
 <h2 id="version">version</h2>
 
 <pre><code>  version()</code></pre>
 
-<p>return version string</p>
+<p>return version string, ex.: 2.38-2</p>
 
 
