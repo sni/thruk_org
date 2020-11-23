@@ -145,6 +145,12 @@ A.navbar-brand IMG {
 
 nav.page-nav {
   padding: 0;
+  background-color: #f8f8f8;
+}
+
+nav.page-nav li a {
+  padding: 2px 15px;
+  color: #716b7a;
 }
 
 .page-nav {

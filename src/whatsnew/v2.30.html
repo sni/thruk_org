@@ -1,18 +1,9 @@
 ---
 version: v2.30
 title: What's New In Release v2.30
-layout: default
+layout: whatsnew
 breadcrumb: [ "whatsnew.html", "What's New" ]
 ---
-
-<div class="row">
-  <div class="col-lg-12">
-    <h2 class="page-header">Highlights of release {{ page.version }}</h2>
-    <p>Here are some of the highlights of the release {{ page.version }}.
-       See the <a href="{{ site.baseurl }}changelog.html#{{ page.version }}">detailed changelog</a> for a complete list of changes.
-    </p>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-md-12">
@@ -53,10 +44,10 @@ breadcrumb: [ "whatsnew.html", "What's New" ]
   </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <p>If you have Business Processes which itself link to other Business Processes you always could simply follow the link and drill down in the usual bp pages. This is now possible in Panorama dashboards as well. When drilling down, a home button will appear to go back to the original business process.</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
         <img class="img-responsive" src="{{ page.version }}/bp.png" alt="">
     </div>
 </div>
@@ -67,10 +58,10 @@ breadcrumb: [ "whatsnew.html", "What's New" ]
   </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <p>Starting with this release Thruk uses <b>double sha256 hashing</b> for sessions and api keys. From now on, when you create a new API key from the users profile, you will see your private key only once. If you ever loose, you will have to create a new key.</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
         <img class="img-responsive" src="{{ page.version }}/api_keys.png" alt="">
     </div>
 </div>

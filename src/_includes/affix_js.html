@@ -4,7 +4,10 @@ if(!window.doOnLoadList) { window.doOnLoadList = [] };
 window.doOnLoadList.push(function() {
     // create side bar navigation automatically from h2/h3 tags
     // put every h2 in the side bar
+    var total_h2 = 0;
+    var total_h3 = 0;
     jQuery("DIV.container H2").each(function(nr, el) {
+      total_h2++;
       var label = jQuery(el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
       label = label.replace(/[ \.\/:]+/g, '-').replace(/\-$/, '');
       label = '_'+label;
@@ -35,6 +38,7 @@ window.doOnLoadList.push(function() {
           jQuery(nav_section).append(sub_section);
       }
       sub_elements.each(function(sub_nr, sub_el) {
+          total_h3++;
           var sublabel = jQuery(sub_el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
           sublabel = sublabel.replace(/[ \.\/:]+/g, '-').replace(/\-$/, '');
           sublabel = '_'+sublabel;
@@ -59,6 +63,9 @@ window.doOnLoadList.push(function() {
           });
       });
     });
+    if(total_h2 <= 1 && total_h3 <= 1) {
+        jQuery("#affix-nav").hide();
+    }
 
     /* fix anchor offset */
     $('#affix-nav li a').click(function(event) {

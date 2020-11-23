@@ -5,13 +5,15 @@ layout: raw
 {% include navigation.html %}
 
 {% if page.breadcrumb %}
-<div class="row">
+<div class="container text-left">
+  <div class="row">
     <div class="col-lg-12">
-        <ol class="breadcrumb">
-            <li><a href="{{ site.baseurl }}{{ page.breadcrumb[0] }}">{{ page.breadcrumb[1] }}</a></li>
-            <li class="active">{{ page.title }}</li>
-        </ol>
+      <ol class="breadcrumb" style="margin: 0 -15px;">
+        <li><a href="{{ site.baseurl }}{{ page.breadcrumb[0] }}">{{ page.breadcrumb[1] }}</a></li>
+        <li class="active">{{ page.title }}</li>
+      </ol>
     </div>
+  </div>
 </div>
 {% endif %}
 
