@@ -76,19 +76,23 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <p>Initial import</p>
 
-<pre><code>  %&gt; thruk logcache import --local</code></pre>
+<pre><code>  %&gt; thruk logcache import</code></pre>
 
 <p>Initial import, but only import last 3 weeks and fetch 12 hours per import block</p>
 
-<pre><code>  %&gt; thruk logcache import --local --start=3w --blocksize=12h</code></pre>
+<pre><code>  %&gt; thruk logcache import --start=3w --blocksize=12h</code></pre>
 
 <p>Run delta update with logfiles retrieved by livestatus</p>
 
 <pre><code>  %&gt; thruk logcache update</code></pre>
 
-<p>Run update from given files. (Also possible for initial import)</p>
+<p>Run update from given files.</p>
 
-<pre><code>  %&gt; thruk logcache update /var/log/naemon/archive/2017-07-*.log</code></pre>
+<pre><code>  %&gt; thruk logcache import /var/log/naemon/archive/2017-07-*.log</code></pre>
+
+<p>Run import from archive.</p>
+
+<pre><code>  %&gt; thruk logcache import /var/log/naemon/archive/ /var/log/naemon/naemon.log</code></pre>
 
 <p>Prune logcache data older than 3 years</p>
 
