@@ -16,6 +16,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
       <li><a href="#index">index</a></li>
       <li><a href="#process_rest_request">process_rest_request</a></li>
       <li><a href="#get_request_columns">get_request_columns</a></li>
+      <li><a href="#get_aliased_columns">get_aliased_columns</a></li>
       <li><a href="#get_filter_columns">get_filter_columns</a></li>
       <li><a href="#column_required">column_required</a></li>
       <li><a href="#register_rest_path_v1">register_rest_path_v1</a></li>
@@ -45,9 +46,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="get_request_columns">get_request_columns</h2>
 
-<pre><code>    get_request_columns($c, $type)</code></pre>
+<pre><code>    get_request_columns($c, $type)
+
+    $type can be:
+        - RAW   - returns columsn as is, alias definitions untouched
+        - ALIAS - returns column alias or the name if none specified</code></pre>
 
 <p>returns list of requested columns or undef</p>
+
+<h2 id="get_aliased_columns">get_aliased_columns</h2>
+
+<pre><code>    get_aliased_columns($c)</code></pre>
+
+<p>returns hash of columns with their alias</p>
 
 <h2 id="get_filter_columns">get_filter_columns</h2>
 
