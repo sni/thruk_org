@@ -21,6 +21,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#store_session">store_session</a></li>
       <li><a href="#retrieve_session">retrieve_session</a></li>
       <li><a href="#generate_sessionid">generate_sessionid</a></li>
+      <li><a href="#private2hashed">private2hashed</a></li>
     </ul>
   </li>
 </ul>
@@ -102,6 +103,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns random sessionid along with the hashed key and the hash type</p>
 
-<pre><code>  returns $sessionid, $hashed_key</code></pre>
+<pre><code>  returns $sessionid, $hashed_key, $digest_name</code></pre>
+
+<h2 id="private2hashed">private2hashed</h2>
+
+<pre><code>  private2hashed($sessionid)</code></pre>
+
+<p>returns hashed_key for given private key</p>
+
+<pre><code>  returns $hashed_key, $digest_name</code></pre>
 
 
