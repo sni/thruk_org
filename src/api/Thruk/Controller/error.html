@@ -30,6 +30,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
         return $c-&gt;detach(&#39;/error/index/&lt;nr&gt;&#39;);
 
+    detailed errors:
+        return $c-&gt;detach_error({
+            msg   =&gt; &quot;main error&quot;,
+            descr =&gt; &quot;more descriptive details&quot;,
+            code  =&gt; http code,
+            log   =&gt; 0|1, #  force logging
+        });
+
 
     custom errors:
 
