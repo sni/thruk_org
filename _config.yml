@@ -14,8 +14,6 @@ asciidoctor:
 
 # site specific variables, run "make update build" after changing things here
 release_version: "2.42"      # release folder, ex.: 2.00-2 or 2.02
-release_version_deb: "2.42.1"  # 2.00-2 or 2.02
-release_version_rpm: "2.42.1"  # 2.00-2 or 2.02-1
 release_date: "Apr 16, 2021"
 next_release_date: "Aug 2021"
 
