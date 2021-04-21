@@ -1,0 +1,54 @@
+---
+version: v2.42
+title: What's New In Release v2.42
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Flexible Reporting</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>Until now, sla reporting had 4 ways to set the hosts/services of the
+       report: hostnames, hostgroups, servicegroups and services. This turned
+       out to be to unflexible.
+    </p>
+    <p>
+       So now you can use all the full filtering possibilities from the status
+       pages for reports as well.
+
+    </p>
+    <p>
+       In addition to that, it is now possible to select whether the report should
+       contain only hosts or services or both.
+    </p>
+  </div>
+  <div class="col-md-7">
+      <a title="reports" rel="lightbox[whatsnew]" href="{{ page.version }}/reports.png"><img src="{{ page.version }}/reports.png" alt="reports" /></a>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">State Hosts Obsolete</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>Before LMD existed, Thruk used so called state hosts to predict the
+       connectivity of its backends. This solution had some flaws and
+       LMD works quite well for improving performance and availability, especially
+       with bad or slow network conditions or when having lots of backends.
+       LMD is the prefered solution.
+    </p>
+    <p>
+       <a href="../documentation/lmd.html">Read more about LMD.</a>
+    </p>
+  </div>
+</div>
