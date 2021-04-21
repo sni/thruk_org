@@ -14,7 +14,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#new">new</a></li>
-      <li><a href="#init">init</a></li>
+      <li><a href="#pool">pool</a></li>
+      <li><a href="#peers">peers</a></li>
+      <li><a href="#peer_order">peer_order</a></li>
+      <li><a href="#lmd_peer">lmd_peer</a></li>
+      <li><a href="#update_sections">update_sections</a></li>
       <li><a href="#disable_hidden_backends">disable_hidden_backends</a></li>
       <li><a href="#get_peers">get_peers</a></li>
       <li><a href="#get_local_peers">get_local_peers</a></li>
@@ -39,7 +43,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_servicegroup_names_from_services">get_servicegroup_names_from_services</a></li>
       <li><a href="#reconnect">reconnect</a></li>
       <li><a href="#expand_command">expand_command</a></li>
-      <li><a href="#set_backend_state_from_local_connections">set_backend_state_from_local_connections</a></li>
       <li><a href="#logcache_stats">logcache_stats</a></li>
       <li><a href="#get_expanded_start_date">get_expanded_start_date</a></li>
       <li><a href="#extract_time_filter">extract_time_filter</a></li>
@@ -97,9 +100,25 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <p>create new manager</p>
 
-<h2 id="init">init</h2>
+<h2 id="pool">pool</h2>
 
-<p>initialize this model</p>
+<p>returns connection pool</p>
+
+<h2 id="peers">peers</h2>
+
+<p>returns hash of peers</p>
+
+<h2 id="peer_order">peer_order</h2>
+
+<p>returns list of peers</p>
+
+<h2 id="lmd_peer">lmd_peer</h2>
+
+<p>returns pools lmd_peer</p>
+
+<h2 id="update_sections">update_sections</h2>
+
+<p>calculate sections</p>
 
 <h2 id="disable_hidden_backends">disable_hidden_backends</h2>
 
@@ -244,12 +263,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  expand_command</code></pre>
 
 <p>expand a command line with host/service data</p>
-
-<h2 id="set_backend_state_from_local_connections">set_backend_state_from_local_connections</h2>
-
-<pre><code>  set_backend_state_from_local_connections</code></pre>
-
-<p>enables/disables remote backends based on a state from local instances</p>
 
 <h2 id="logcache_stats">logcache_stats</h2>
 

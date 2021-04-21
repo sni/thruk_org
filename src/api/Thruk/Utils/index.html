@@ -32,9 +32,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#combine_filter">combine_filter</a></li>
       <li><a href="#array2hash">array2hash</a></li>
       <li><a href="#set_paging_steps">set_paging_steps</a></li>
+      <li><a href="#get_exposed_custom_vars">get_exposed_custom_vars</a></li>
       <li><a href="#get_custom_vars">get_custom_vars</a></li>
       <li><a href="#set_custom_vars">set_custom_vars</a></li>
       <li><a href="#check_custom_var_list">check_custom_var_list</a></li>
+      <li><a href="#set_data_row_cust_vars">set_data_row_cust_vars</a></li>
       <li><a href="#get_user_data">get_user_data</a></li>
       <li><a href="#store_user_data">store_user_data</a></li>
       <li><a href="#get_global_user_data">get_global_user_data</a></li>
@@ -42,6 +44,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#array_uniq">array_uniq</a></li>
       <li><a href="#array_uniq_obj">array_uniq_obj</a></li>
       <li><a href="#array_uniq_list">array_uniq_list</a></li>
+      <li><a href="#array_remove">array_remove</a></li>
       <li><a href="#hash_invert">hash_invert</a></li>
       <li><a href="#logs2xls">logs2xls</a></li>
       <li><a href="#savexls">savexls</a></li>
@@ -99,6 +102,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#find_modules">find_modules</a></li>
       <li><a href="#get_cli_modules">get_cli_modules</a></li>
       <li><a href="#clean_regex">clean_regex</a></li>
+      <li><a href="#trim_whitespace">trim_whitespace</a></li>
       <li><a href="#get_timezone_data">get_timezone_data</a></li>
       <li><a href="#command_disabled">command_disabled</a></li>
       <li><a href="#code2name">code2name</a></li>
@@ -264,6 +268,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <pre><code>  *100, 500, 1000, all</code></pre>
 
+<h2 id="get_exposed_custom_vars">get_exposed_custom_vars</h2>
+
+<pre><code>  get_exposed_custom_vars($config, [$skip_wildcards])</code></pre>
+
+<p>return combined list of show_custom_vars and expose_custom_vars</p>
+
 <h2 id="get_custom_vars">get_custom_vars</h2>
 
 <pre><code>  get_custom_vars($c, $obj, [$prefix], [$add_host])</code></pre>
@@ -281,6 +291,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  check_custom_var_list($varname, $allowed)</code></pre>
 
 <p>returns true if custom variable name is in the list of allowed variable names</p>
+
+<h2 id="set_data_row_cust_vars">set_data_row_cust_vars</h2>
+
+<pre><code>  set_data_row_cust_vars($obj, $allowed, $allowed_list)</code></pre>
+
+<p>set custom variables for host/service obj</p>
 
 <h2 id="get_user_data">get_user_data</h2>
 
@@ -323,6 +339,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  array_uniq_list($array_of_lists)</code></pre>
 
 <p>return uniq elements of array, examining all list members</p>
+
+<h2 id="array_remove">array_remove</h2>
+
+<pre><code>  array_remove($array, $element)</code></pre>
+
+<p>removes element from array</p>
 
 <h2 id="hash_invert">hash_invert</h2>
 
@@ -685,6 +707,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    clean_regex()</code></pre>
 
 <p>returns cleaned regular expression, ex.: removes trailing .*</p>
+
+<h2 id="trim_whitespace">trim_whitespace</h2>
+
+<pre><code>    trim_whitespace()</code></pre>
+
+<p>returns cleaned string</p>
 
 <h2 id="get_timezone_data">get_timezone_data</h2>
 

@@ -13,11 +13,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#METHODS">METHODS</a>
     <ul>
-      <li><a href="#init_backend_thread_pool">init_backend_thread_pool</a></li>
-      <li><a href="#shutdown_backend_thread_pool">shutdown_backend_thread_pool</a></li>
+      <li><a href="#new">new</a></li>
+      <li><a href="#peer_add">peer_add</a></li>
+      <li><a href="#peer_remove">peer_remove</a></li>
+      <li><a href="#shutdown_threads">shutdown_threads</a></li>
       <li><a href="#do_thread">_do_thread</a></li>
       <li><a href="#do_on_peer">do_on_peer</a></li>
-      <li><a href="#get_memory_usage">get_memory_usage</a></li>
+      <li><a href="#set_logger">set_logger</a></li>
     </ul>
   </li>
 </ul>
@@ -32,15 +34,27 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <h1 id="METHODS">METHODS</h1>
 
-<h2 id="init_backend_thread_pool">init_backend_thread_pool</h2>
+<h2 id="new">new</h2>
 
-<pre><code>  init_backend_thread_pool()</code></pre>
+<pre><code>  Thruk::Backend::Pool-&gt;new($backend_configs)</code></pre>
 
-<p>init thread connection pool</p>
+<p>return new db connection pool</p>
 
-<h2 id="shutdown_backend_thread_pool">shutdown_backend_thread_pool</h2>
+<h2 id="peer_add">peer_add</h2>
 
-<pre><code>  shutdown_backend_thread_pool()</code></pre>
+<pre><code>  peer_add($peer)</code></pre>
+
+<p>add peer to pool</p>
+
+<h2 id="peer_remove">peer_remove</h2>
+
+<pre><code>  peer_remove($key|$peer)</code></pre>
+
+<p>remove peer from pool</p>
+
+<h2 id="shutdown_threads">shutdown_threads</h2>
+
+<pre><code>  shutdown_threads()</code></pre>
 
 <p>shutdown thread connection pool</p>
 
@@ -52,14 +66,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <h2 id="do_on_peer">do_on_peer</h2>
 
-<pre><code>  do_on_peer($key, $function, $args)</code></pre>
+<pre><code>  do_on_peer($self, $key, $function, $args)</code></pre>
 
 <p>run a function on a backend peer</p>
 
-<h2 id="get_memory_usage">get_memory_usage</h2>
+<h2 id="set_logger">set_logger</h2>
 
-<pre><code>  get_memory_usage([$pid])</code></pre>
+<pre><code>  set_logger($logger, $verbose)</code></pre>
 
-<p>return memory usage of pid or own process if no pid specified</p>
+<p>set logger object for all pool peers and sets verbose</p>
 
 

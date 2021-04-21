@@ -26,7 +26,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
       <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
       <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
       <li><a href="#check_federation_peers">check_federation_peers</a></li>
-      <li><a href="#restore_user_backends">restore_user_backends</a></li>
     </ul>
   </li>
 </ul>
@@ -104,7 +103,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 
 <h2 id="set_enabled_backends">set_enabled_backends</h2>
 
-<pre><code>  set_enabled_backends($c, [$backends, $safe, $cached_data])</code></pre>
+<pre><code>  set_enabled_backends($c, [$backends])</code></pre>
 
 <p>set enabled backends from environment or given list</p>
 
@@ -120,9 +119,5 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 
 <pre><code>    expand peers if a single backend returns more than one site,
     for example with lmd federation</code></pre>
-
-<h2 id="restore_user_backends">restore_user_backends</h2>
-
-<pre><code>    restore global pool adjustments</code></pre>
 
 

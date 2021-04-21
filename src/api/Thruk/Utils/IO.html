@@ -33,6 +33,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#realpath">realpath</a></li>
       <li><a href="#touch">touch</a></li>
       <li><a href="#merge_deep">merge_deep</a></li>
+      <li><a href="#get_memory_usage">get_memory_usage</a></li>
     </ul>
   </li>
 </ul>
@@ -186,5 +187,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
     - arrays will will be replaced completly, unless $merge_var is a hash of
       the form: { array_index =&gt; replacement }
     - everything else will be replaced</code></pre>
+
+<h2 id="get_memory_usage">get_memory_usage</h2>
+
+<pre><code>  get_memory_usage([$pid])</code></pre>
+
+<p>return memory usage of pid or own process if no pid specified</p>
 
 

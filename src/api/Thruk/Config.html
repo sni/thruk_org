@@ -20,13 +20,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#set_default_config">set_default_config</a></li>
       <li><a href="#get_base_config">get_base_config</a></li>
       <li><a href="#get_toolkit_config">get_toolkit_config</a></li>
-      <li><a href="#get_git_name">get_git_name</a></li>
+      <li><a href="#get_git_info">_get_git_info</a></li>
       <li><a href="#get_debug_details">get_debug_details</a></li>
       <li><a href="#home">home</a></li>
       <li><a href="#secret_key">secret_key</a></li>
       <li><a href="#expand_numeric_list">expand_numeric_list</a></li>
       <li><a href="#array2hash">array2hash</a></li>
-      <li><a href="#finalize">finalize</a></li>
       <li><a href="#get_user">get_user</a></li>
       <li><a href="#list">list</a></li>
       <li><a href="#array_uniq">array_uniq</a></li>
@@ -38,9 +37,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#merge_sub_config">merge_sub_config</a></li>
       <li><a href="#hostname">hostname</a></li>
       <li><a href="#get_thruk_version">get_thruk_version</a></li>
-      <li><a href="#version">version</a></li>
     </ul>
   </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -81,15 +82,15 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return template toolkit config</p>
 
-<h2 id="get_git_name">get_git_name</h2>
+<h2 id="get_git_info">_get_git_info</h2>
 
-<pre><code>  get_git_name()</code></pre>
+<pre><code>  _get_git_info()</code></pre>
 
-<p>return git branch name</p>
+<p>return git branch/tag/has information to be used in the version</p>
 
 <h2 id="get_debug_details">get_debug_details</h2>
 
-<pre><code>  get_debug_details()</code></pre>
+<pre><code>  get_debug_details($c)</code></pre>
 
 <p>return details useful for debuging</p>
 
@@ -97,7 +98,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <pre><code>  home()</code></pre>
 
-<p>return home folder</p>
+<p>return thruk base folder.</p>
 
 <h2 id="secret_key">secret_key</h2>
 
@@ -116,10 +117,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  array2hash($data, [ $key, [ $key2 ]])</code></pre>
 
 <p>create a hash by key</p>
-
-<h2 id="finalize">finalize</h2>
-
-<pre><code>    restore used specific settings from global hash</code></pre>
 
 <h2 id="get_user">get_user</h2>
 
@@ -187,12 +184,18 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <pre><code>  get_thruk_version()</code></pre>
 
-<p>return full thruk version string, ex.: 2.38-2~feature_branch.45a4ceb</p>
+<p>return full thruk version string, ex.: 2.40.2+10~feature_branch~45a4ceb</p>
 
-<h2 id="version">version</h2>
+<h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<pre><code>  version()</code></pre>
+<p><a href="/api/Thruk.html">Thruk</a></p>
 
-<p>return version string, ex.: 2.38-2</p>
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Thruk is Copyright (c) 2009-2019 by Sven Nierlein and others. This is free software; you can redistribute it and/or modify it under the same terms as the Perl5 programming language system itself.</p>
 
 
