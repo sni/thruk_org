@@ -29,7 +29,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Pool/', 'Pool']
 
   $pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue
 
-  my @results = $pool-&gt;remove_all();        # get all results</code></pre>
+  my @results = $pool-&gt;remove_all();        # get all results (blocks till all threads are finished)</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

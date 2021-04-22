@@ -116,6 +116,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#looks_like_regex">looks_like_regex</a></li>
       <li><a href="#dclone">dclone</a></li>
       <li><a href="#text_table">text_table</a></li>
+      <li><a href="#scale_out">scale_out</a></li>
     </ul>
   </li>
 </ul>
@@ -797,5 +798,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
         - { &quot;name&quot; =&gt; &quot;column header&quot;, &quot;key&quot; =&gt; &quot;data key&quot;, type =&gt; $type, format =&gt; $formatstring }</code></pre>
 
 <p>returns ascii text table or undef on errors or no data/columns</p>
+
+<h2 id="scale_out">scale_out</h2>
+
+<pre><code>    scale_out( scale =&gt; worker_num, jobs =&gt; list of jobs, worker =&gt; sub ref, collect =&gt; sub ref )</code></pre>
+
+<p>scale out worker, run jobs and returns result from collect sub.</p>
 
 
