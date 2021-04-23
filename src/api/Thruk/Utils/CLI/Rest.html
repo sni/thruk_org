@@ -58,6 +58,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>  %&gt; thruk r -d &quot;start_time=now&quot; /hosts/localhost/cmd/schedule_host_check</code></pre>
 
+<p>Read POST data from file</p>
+
+<pre><code>  %&gt; thruk r -d @/tmp/postdata.json /hosts/localhost/cmd/schedule_host_check</code></pre>
+
+<p>Read POST data from file but overwrite specific key with new value</p>
+
+<pre><code>  %&gt; thruk r -d @/tmp/postdata.json -D comment=... /hosts/localhost/cmd/schedule_host_check</code></pre>
+
 <p>Send multiple endpoints at once:</p>
 
 <pre><code>  %&gt; thruk r &quot;/hosts/totals&quot; &quot;/services/totals&quot;</code></pre>
