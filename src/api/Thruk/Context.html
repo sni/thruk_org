@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#request">request</a></li>
       <li><a href="#response">response</a></li>
       <li><a href="#cluster">cluster</a></li>
+      <li><a href="#db">db</a></li>
       <li><a href="#metrics">metrics</a></li>
       <li><a href="#detach">detach</a></li>
       <li><a href="#detach_error">detach_error</a></li>
@@ -45,6 +46,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#want_json_response">want_json_response</a></li>
       <li><a href="#clone_user_config">clone_user_config</a></li>
       <li><a href="#log">log</a></li>
+      <li><a href="#get_cookie_domain">get_cookie_domain</a></li>
+      <li><a href="#finalize_request">finalize_request</a></li>
     </ul>
   </li>
 </ul>
@@ -81,6 +84,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return cluster object</p>
 
+<h2 id="db">db</h2>
+
+<p>return db manager</p>
+
 <h2 id="metrics">metrics</h2>
 
 <p>return metrics object</p>
@@ -91,7 +98,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="detach_error">detach_error</h2>
 
-<p>detach_error to other controller</p>
+<pre><code>  detach_error($c, $data)</code></pre>
+
+<p>end current request with an error.</p>
+
+<p>$data contains: { msg short error message descr long description of the error code http return code, defaults to 500; log flag wether error should be logged. Error codes &gt; 500 are automatically logged if `log` is undefined debug_information more details which will be logged, (string / array) }</p>
 
 <h2 id="get_tt_template_paths">get_tt_template_paths</h2>
 
@@ -155,9 +166,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>$c-&gt;cookie($name, [$value], [$options])</p>
 
-<p>retrieves a cookie_path</p>
+<p>returns cookie from current request.</p>
 
-<p>sets a cookie if value is defined</p>
+<p>sets a cookie for current response if value is defined.</p>
 
 <p>options are available as descrbed here: <a href="https://metacpan.org/pod/Plack%3A%3AResponse#cookies">&quot;cookies&quot; in Plack::Response</a></p>
 
@@ -165,7 +176,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="cookies">cookies</h2>
 
-<p>$c-&gt;cookies()</p>
+<p>$c-&gt;cookies($name)</p>
+
+<p>returns cookie from current request.</p>
 
 <h2 id="redirect_to">redirect_to</h2>
 
@@ -210,5 +223,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <p>$c-&gt;log-&gt;...</p>
 
 <p>compat wrapper for accessing logger</p>
+
+<h2 id="get_cookie_domain">get_cookie_domain</h2>
+
+<p>$c-&gt;get_cookie_domain</p>
+
+<p>return domain used for cookies</p>
+
+<h2 id="finalize_request">finalize_request</h2>
+
+<pre><code>    register_cron_entries($c, $res)</code></pre>
+
+<p>finalize request data by adding profile and headers</p>
 
 

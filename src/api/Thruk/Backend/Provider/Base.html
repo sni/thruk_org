@@ -14,6 +14,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#new">new</a></li>
+      <li><a href="#can_use_logcache">can_use_logcache</a></li>
+      <li><a href="#get_logs_start_end_no_filter">get_logs_start_end_no_filter</a></li>
       <li><a href="#reconnect">reconnect</a></li>
       <li><a href="#peer_key">peer_key</a></li>
       <li><a href="#peer_addr">peer_addr</a></li>
@@ -45,8 +47,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
       <li><a href="#get_host_stats">get_host_stats</a></li>
       <li><a href="#get_host_totals_stats">get_host_totals_stats</a></li>
+      <li><a href="#get_host_less_stats">get_host_less_stats</a></li>
       <li><a href="#get_service_stats">get_service_stats</a></li>
       <li><a href="#get_service_totals_stats">get_service_totals_stats</a></li>
+      <li><a href="#get_service_less_stats">get_service_less_stats</a></li>
       <li><a href="#set_verbose">set_verbose</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
       <li><a href="#get_logs_start_end">get_logs_start_end</a></li>
@@ -67,6 +71,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <h2 id="new">new</h2>
 
 <p>create new manager</p>
+
+<h2 id="can_use_logcache">can_use_logcache</h2>
+
+<pre><code>  can_use_logcache()</code></pre>
+
+<p>returns true if query can use the logcache</p>
+
+<h2 id="get_logs_start_end_no_filter">get_logs_start_end_no_filter</h2>
+
+<pre><code>  get_logs_start_end_no_filter($peer)</code></pre>
+
+<p>returns date of first and last log entry</p>
 
 <h2 id="reconnect">reconnect</h2>
 
@@ -240,6 +256,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 
 <p>returns the host statistics used on the service/host details page</p>
 
+<h2 id="get_host_less_stats">get_host_less_stats</h2>
+
+<pre><code>  get_host_less_stats</code></pre>
+
+<p>same as get_host_stats but less numbers and therefore faster</p>
+
 <h2 id="get_service_stats">get_service_stats</h2>
 
 <pre><code>  get_service_stats</code></pre>
@@ -251,6 +273,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <pre><code>  get_service_totals_stats</code></pre>
 
 <p>returns the services statistics used on the service/host details page</p>
+
+<h2 id="get_service_less_stats">get_service_less_stats</h2>
+
+<pre><code>  get_service_less_stats</code></pre>
+
+<p>same as get_service_stats but less numbers and therefore faster</p>
 
 <h2 id="set_verbose">set_verbose</h2>
 

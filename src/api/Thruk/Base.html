@@ -20,6 +20,22 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#debug">debug</a></li>
       <li><a href="#trace">trace</a></li>
       <li><a href="#quiet">quiet</a></li>
+      <li><a href="#list">list</a></li>
+      <li><a href="#array_uniq">array_uniq</a></li>
+      <li><a href="#array_uniq_obj">array_uniq_obj</a></li>
+      <li><a href="#array_uniq_list">array_uniq_list</a></li>
+      <li><a href="#array_remove">array_remove</a></li>
+      <li><a href="#array2hash">array2hash</a></li>
+      <li><a href="#hash_invert">hash_invert</a></li>
+      <li><a href="#comma_separated_list">comma_separated_list</a></li>
+      <li><a href="#expand_numeric_list">expand_numeric_list</a></li>
+      <li><a href="#check_for_nasty_filename">check_for_nasty_filename</a></li>
+      <li><a href="#restore_signal_handler">restore_signal_handler</a></li>
+      <li><a href="#clean_credentials_from_string">clean_credentials_from_string</a></li>
+      <li><a href="#basename">basename</a></li>
+      <li><a href="#dirname">dirname</a></li>
+      <li><a href="#looks_like_regex">looks_like_regex</a></li>
+      <li><a href="#trim_whitespace">trim_whitespace</a></li>
     </ul>
   </li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -78,6 +94,100 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    quiet()</code></pre>
 
 <p>returns true if quiet mode is enabled</p>
+
+<h2 id="list">list</h2>
+
+<pre><code>  list($ref)</code></pre>
+
+<p>return list of ref unless it is already a list</p>
+
+<h2 id="array_uniq">array_uniq</h2>
+
+<pre><code>  array_uniq($array)</code></pre>
+
+<p>return uniq elements of array</p>
+
+<h2 id="array_uniq_obj">array_uniq_obj</h2>
+
+<pre><code>  array_uniq_obj($array_of_hashes)</code></pre>
+
+<p>return uniq elements of array, examining all hash keys except peer_key</p>
+
+<h2 id="array_uniq_list">array_uniq_list</h2>
+
+<pre><code>  array_uniq_list($array_of_lists)</code></pre>
+
+<p>return uniq elements of array, examining all list members</p>
+
+<h2 id="array_remove">array_remove</h2>
+
+<pre><code>  array_remove($array, $element)</code></pre>
+
+<p>removes element from array</p>
+
+<h2 id="array2hash">array2hash</h2>
+
+<pre><code>  array2hash($data, [ $key, [ $key2 ]])</code></pre>
+
+<p>create a hash by key</p>
+
+<h2 id="hash_invert">hash_invert</h2>
+
+<pre><code>  hash_invert($hash)</code></pre>
+
+<p>return hash with keys and values inverted</p>
+
+<h2 id="comma_separated_list">comma_separated_list</h2>
+
+<pre><code>  comma_separated_list($string)</code></pre>
+
+<p>splits lists of comma separated values into list</p>
+
+<h2 id="expand_numeric_list">expand_numeric_list</h2>
+
+<pre><code>  expand_numeric_list($txt, $c)</code></pre>
+
+<p>return expanded list. ex.: converts &#39;3,7-9,15&#39; -&gt; [3,7,8,9,15]</p>
+
+<h2 id="check_for_nasty_filename">check_for_nasty_filename</h2>
+
+<pre><code>    check_for_nasty_filename($filename)</code></pre>
+
+<p>returns true if nasty characters have been found and the filename is NOT safe for use</p>
+
+<h2 id="restore_signal_handler">restore_signal_handler</h2>
+
+<pre><code>    reset all changed signals</code></pre>
+
+<h2 id="clean_credentials_from_string">clean_credentials_from_string</h2>
+
+<pre><code>    clean_credentials_from_string($string)</code></pre>
+
+<p>returns strings with potential credentials removed</p>
+
+<h2 id="basename">basename</h2>
+
+<pre><code>    basename($path)</code></pre>
+
+<p>returns basename for given path</p>
+
+<h2 id="dirname">dirname</h2>
+
+<pre><code>    dirname($path)</code></pre>
+
+<p>returns dirname for given path</p>
+
+<h2 id="looks_like_regex">looks_like_regex</h2>
+
+<pre><code>    looks_like_regex($str)</code></pre>
+
+<p>returns true if $string looks like a regular expression</p>
+
+<h2 id="trim_whitespace">trim_whitespace</h2>
+
+<pre><code>    trim_whitespace()</code></pre>
+
+<p>returns cleaned string</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

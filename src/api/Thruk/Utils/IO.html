@@ -17,8 +17,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#mkdir">mkdir</a></li>
       <li><a href="#mkdir_r">mkdir_r</a></li>
       <li><a href="#read">read</a></li>
+      <li><a href="#read_as_list">read_as_list</a></li>
       <li><a href="#write">write</a></li>
       <li><a href="#ensure_permissions">ensure_permissions</a></li>
+      <li><a href="#file_rlock">file_rlock</a></li>
       <li><a href="#file_lock">file_lock</a></li>
       <li><a href="#file_unlock">file_unlock</a></li>
       <li><a href="#json_store">json_store</a></li>
@@ -34,13 +36,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#touch">touch</a></li>
       <li><a href="#merge_deep">merge_deep</a></li>
       <li><a href="#get_memory_usage">get_memory_usage</a></li>
+      <li><a href="#find_files">find_files</a></li>
+      <li><a href="#all_perl_files">all_perl_files</a></li>
     </ul>
   </li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
 
-<p>Thruk::Utils - IO Utilities Collection for Thruk</p>
+<p>Thruk::Utils::IO - IO Utilities Collection for Thruk</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -72,6 +76,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>read file and return content</p>
 
+<h2 id="read_as_list">read_as_list</h2>
+
+<pre><code>  read_as_list($path)</code></pre>
+
+<p>read file and return content as array</p>
+
 <h2 id="write">write</h2>
 
 <pre><code>  write($path, $content, [ $mtime ], [ $append ])</code></pre>
@@ -84,15 +94,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>ensure permissions and ownership</p>
 
+<h2 id="file_rlock">file_rlock</h2>
+
+<pre><code>  file_rlock($file)</code></pre>
+
+<p>locks given file in shared / readonly mode. Returns filehandle.</p>
+
 <h2 id="file_lock">file_lock</h2>
 
-<pre><code>  file_lock($file, $mode)
+<pre><code>  file_lock($file)</code></pre>
 
-  $mode can be
-    - &#39;ex&#39; exclusive
-    - &#39;sh&#39; shared</code></pre>
-
-<p>locks given file. Returns locked filehandle.</p>
+<p>locks given file in read/write mode. Returns locked filehandle and lock file handle.</p>
 
 <h2 id="file_unlock">file_unlock</h2>
 
@@ -106,7 +118,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>stores data json encoded</p>
 
-<p>$options can be { pretty =&gt; 0/1, # don&#39;t write json into a single line and use human readable intendation tmpfile =&gt; &lt;filename&gt; # use this tmpfile while writing new contents changed_only =&gt; 0/1, # only write the file if it has changed compare_data =&gt; &quot;...&quot;, # use this string to compare for changed content }</p>
+<p>$options can be { pretty =&gt; 0/1, # don&#39;t write json into a single line and use human readable intendation tmpfile =&gt; &lt;filename&gt; # use this tmpfile while writing new contents changed_only =&gt; 0/1, # only write the file if it has changed compare_data =&gt; &quot;...&quot;, # use this string to compare for changed content skip_ensure_permissions =&gt; 0/1 # skip running ensure_permissions after write skip_validate =&gt; 0/1 # skip file validation (author only) skip_config =&gt; 0/1 # skip all steps which reqire thruk config }</p>
 
 <h2 id="json_lock_store">json_lock_store</h2>
 
@@ -193,5 +205,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  get_memory_usage([$pid])</code></pre>
 
 <p>return memory usage of pid or own process if no pid specified</p>
+
+<h2 id="find_files">find_files</h2>
+
+<pre><code>  find_files($folder, $pattern)</code></pre>
+
+<p>return list of files for folder and pattern (symlinks will be skipped)</p>
+
+<h2 id="all_perl_files">all_perl_files</h2>
+
+<pre><code>  all_perl_files(@dirs)</code></pre>
+
+<p>return list of all perl files for given folders</p>
 
 

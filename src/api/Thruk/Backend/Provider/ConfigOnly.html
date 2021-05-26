@@ -45,8 +45,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
       <li><a href="#get_extra_perf_stats">get_extra_perf_stats</a></li>
       <li><a href="#get_host_stats">get_host_stats</a></li>
       <li><a href="#get_host_totals_stats">get_host_totals_stats</a></li>
+      <li><a href="#get_host_less_stats">get_host_less_stats</a></li>
       <li><a href="#get_service_stats">get_service_stats</a></li>
       <li><a href="#get_service_totals_stats">get_service_totals_stats</a></li>
+      <li><a href="#get_service_less_stats">get_service_less_stats</a></li>
       <li><a href="#set_verbose">set_verbose</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
       <li><a href="#get_logs_start_end">get_logs_start_end</a></li>
@@ -236,6 +238,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 
 <p>returns the host statistics used on the service/host details page</p>
 
+<h2 id="get_host_less_stats">get_host_less_stats</h2>
+
+<pre><code>  get_host_less_stats</code></pre>
+
+<p>same as get_host_stats but less numbers and therefore faster</p>
+
 <h2 id="get_service_stats">get_service_stats</h2>
 
 <pre><code>  get_service_stats</code></pre>
@@ -247,6 +255,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend', 'api/Thruk/
 <pre><code>  get_service_totals_stats</code></pre>
 
 <p>returns the services statistics used on the service/host details page</p>
+
+<h2 id="get_service_less_stats">get_service_less_stats</h2>
+
+<pre><code>  get_service_less_stats</code></pre>
+
+<p>same as get_service_stats but less numbers and therefore faster</p>
 
 <h2 id="set_verbose">set_verbose</h2>
 

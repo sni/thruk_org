@@ -30,7 +30,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#read_resource_file">read_resource_file</a></li>
       <li><a href="#version_compare">version_compare</a></li>
       <li><a href="#combine_filter">combine_filter</a></li>
-      <li><a href="#array2hash">array2hash</a></li>
       <li><a href="#set_paging_steps">set_paging_steps</a></li>
       <li><a href="#get_exposed_custom_vars">get_exposed_custom_vars</a></li>
       <li><a href="#get_custom_vars">get_custom_vars</a></li>
@@ -41,11 +40,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#store_user_data">store_user_data</a></li>
       <li><a href="#get_global_user_data">get_global_user_data</a></li>
       <li><a href="#store_global_user_data">store_global_user_data</a></li>
-      <li><a href="#array_uniq">array_uniq</a></li>
-      <li><a href="#array_uniq_obj">array_uniq_obj</a></li>
-      <li><a href="#array_uniq_list">array_uniq_list</a></li>
-      <li><a href="#array_remove">array_remove</a></li>
-      <li><a href="#hash_invert">hash_invert</a></li>
       <li><a href="#logs2xls">logs2xls</a></li>
       <li><a href="#savexls">savexls</a></li>
       <li><a href="#proxifiy_url">proxifiy_url</a></li>
@@ -60,7 +54,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#absolute_url">absolute_url</a></li>
       <li><a href="#get_fake_session">get_fake_session</a></li>
       <li><a href="#get_action_url">get_action_url</a></li>
-      <li><a href="#list">list</a></li>
       <li><a href="#extract_list">extract_list</a></li>
       <li><a href="#array_chunk">array_chunk</a></li>
       <li><a href="#array_chunk_fixed_size">array_chunk_fixed_size</a></li>
@@ -80,13 +73,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#read_data_file">read_data_file</a></li>
       <li><a href="#write_data_file">write_data_file</a></li>
       <li><a href="#backup_data_file">backup_data_file</a></li>
-      <li><a href="#decode_any">decode_any</a></li>
-      <li><a href="#ensure_utf8">ensure_utf8</a></li>
       <li><a href="#which">which</a></li>
       <li><a href="#reduce_number">reduce_number</a></li>
       <li><a href="#get_template_variable">get_template_variable</a></li>
       <li><a href="#precompile_templates">precompile_templates</a></li>
-      <li><a href="#find_files">find_files</a></li>
       <li><a href="#beautify_diff">beautify_diff</a></li>
       <li><a href="#check_memory_usage">check_memory_usage</a></li>
       <li><a href="#log_error_with_details">log_error_with_details</a></li>
@@ -102,21 +92,19 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#find_modules">find_modules</a></li>
       <li><a href="#get_cli_modules">get_cli_modules</a></li>
       <li><a href="#clean_regex">clean_regex</a></li>
-      <li><a href="#trim_whitespace">trim_whitespace</a></li>
       <li><a href="#get_timezone_data">get_timezone_data</a></li>
       <li><a href="#command_disabled">command_disabled</a></li>
       <li><a href="#code2name">code2name</a></li>
-      <li><a href="#check_for_nasty_filename">check_for_nasty_filename</a></li>
       <li><a href="#merge_service_dependencies">merge_service_dependencies</a></li>
       <li><a href="#merge_host_dependencies">merge_host_dependencies</a></li>
       <li><a href="#dump_params">dump_params</a></li>
-      <li><a href="#clean_credentials_from_string">clean_credentials_from_string</a></li>
-      <li><a href="#basename">basename</a></li>
-      <li><a href="#dirname">dirname</a></li>
-      <li><a href="#looks_like_regex">looks_like_regex</a></li>
       <li><a href="#dclone">dclone</a></li>
       <li><a href="#text_table">text_table</a></li>
+      <li><a href="#get_expanded_start_date">get_expanded_start_date</a></li>
+      <li><a href="#extract_time_filter">extract_time_filter</a></li>
+      <li><a href="#find_files">find_files</a></li>
       <li><a href="#scale_out">scale_out</a></li>
+      <li><a href="#page_data">page_data</a></li>
     </ul>
   </li>
 </ul>
@@ -255,12 +243,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>combine filter by operator</p>
 
-<h2 id="array2hash">array2hash</h2>
-
-<pre><code>  array2hash($data, [ $key, [ $key2 ]])</code></pre>
-
-<p>create a hash by key</p>
-
 <h2 id="set_paging_steps">set_paging_steps</h2>
 
 <pre><code>  set_paging_steps($c, $data)</code></pre>
@@ -322,36 +304,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  store_global_user_data($c, $data)</code></pre>
 
 <p>store global user data for section</p>
-
-<h2 id="array_uniq">array_uniq</h2>
-
-<pre><code>  array_uniq($array)</code></pre>
-
-<p>return uniq elements of array</p>
-
-<h2 id="array_uniq_obj">array_uniq_obj</h2>
-
-<pre><code>  array_uniq_obj($array_of_hashes)</code></pre>
-
-<p>return uniq elements of array, examining all hash keys except peer_key</p>
-
-<h2 id="array_uniq_list">array_uniq_list</h2>
-
-<pre><code>  array_uniq_list($array_of_lists)</code></pre>
-
-<p>return uniq elements of array, examining all list members</p>
-
-<h2 id="array_remove">array_remove</h2>
-
-<pre><code>  array_remove($array, $element)</code></pre>
-
-<p>removes element from array</p>
-
-<h2 id="hash_invert">hash_invert</h2>
-
-<pre><code>  hash_invert($hash)</code></pre>
-
-<p>return hash with keys and values inverted</p>
 
 <h2 id="logs2xls">logs2xls</h2>
 
@@ -454,12 +406,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  get_action_url($c, $escape_fun, $remove_render, $action_url, $host, $svc)</code></pre>
 
 <p>return action_url modified for object (host/service) if we use graphite escape_fun is use to escape special char (html or quotes) remove_render remove /render in action url</p>
-
-<h2 id="list">list</h2>
-
-<pre><code>  list($ref)</code></pre>
-
-<p>return list of ref unless it is already a list</p>
 
 <h2 id="extract_list">extract_list</h2>
 
@@ -579,16 +525,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>write data to datafile</p>
 
-<h2 id="decode_any">decode_any</h2>
-
-<p>read and decode string from either utf-8 or iso-8859-1</p>
-
-<h2 id="ensure_utf8">ensure_utf8</h2>
-
-<pre><code>    ensure_utf8($str)</code></pre>
-
-<p>makes sure the given string is utf8</p>
-
 <h2 id="which">which</h2>
 
 <pre><code>    which($prog)</code></pre>
@@ -612,12 +548,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  precompile_templates($c)</code></pre>
 
 <p>precompile and load templates into memory</p>
-
-<h2 id="find_files">find_files</h2>
-
-<pre><code>  find_files($folder, $pattern)</code></pre>
-
-<p>return list of files for folder and pattern</p>
 
 <h2 id="beautify_diff">beautify_diff</h2>
 
@@ -709,12 +639,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>returns cleaned regular expression, ex.: removes trailing .*</p>
 
-<h2 id="trim_whitespace">trim_whitespace</h2>
-
-<pre><code>    trim_whitespace()</code></pre>
-
-<p>returns cleaned string</p>
-
 <h2 id="get_timezone_data">get_timezone_data</h2>
 
 <pre><code>    get_timezone_data()</code></pre>
@@ -733,12 +657,6 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>returns name for given code reference</p>
 
-<h2 id="check_for_nasty_filename">check_for_nasty_filename</h2>
-
-<pre><code>    check_for_nasty_filename($filename)</code></pre>
-
-<p>returns true if nasty characters have been found and the filename is NOT safe for use</p>
-
 <h2 id="merge_service_dependencies">merge_service_dependencies</h2>
 
 <pre><code>    merge_service_dependencies($service, [$list, $list, ...])</code></pre>
@@ -753,33 +671,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="dump_params">dump_params</h2>
 
-<pre><code>    dump_params($c-&gt;req-&gt;parameters)</code></pre>
+<pre><code>    dump_params($c-&gt;req-&gt;parameters, [$max_length], [$flat])</code></pre>
 
 <p>returns stringified parameters</p>
-
-<h2 id="clean_credentials_from_string">clean_credentials_from_string</h2>
-
-<pre><code>    clean_credentials_from_string($string)</code></pre>
-
-<p>returns strings with potential credentials removed</p>
-
-<h2 id="basename">basename</h2>
-
-<pre><code>    basename($path)</code></pre>
-
-<p>returns basename for given path</p>
-
-<h2 id="dirname">dirname</h2>
-
-<pre><code>    dirname($path)</code></pre>
-
-<p>returns dirname for given path</p>
-
-<h2 id="looks_like_regex">looks_like_regex</h2>
-
-<pre><code>    looks_like_regex($str)</code></pre>
-
-<p>returns true if $string looks like a regular expression</p>
 
 <h2 id="dclone">dclone</h2>
 
@@ -799,10 +693,34 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>returns ascii text table or undef on errors or no data/columns</p>
 
+<h2 id="get_expanded_start_date">get_expanded_start_date</h2>
+
+<pre><code>  get_expanded_start_date($c, $blocksize)</code></pre>
+
+<p>returns start of day for expanded duration</p>
+
+<h2 id="extract_time_filter">extract_time_filter</h2>
+
+<pre><code>  extract_time_filter($filter)</code></pre>
+
+<p>returns start and end time filter from given query</p>
+
+<h2 id="find_files">find_files</h2>
+
+<pre><code>  find_files(...)</code></pre>
+
+<p>alias for Thruk::Utils::IO::find_files</p>
+
 <h2 id="scale_out">scale_out</h2>
 
 <pre><code>    scale_out( scale =&gt; worker_num, jobs =&gt; list of jobs, worker =&gt; sub ref, collect =&gt; sub ref )</code></pre>
 
 <p>scale out worker, run jobs and returns result from collect sub.</p>
+
+<h2 id="page_data">page_data</h2>
+
+<pre><code>  page_data($c, $data, [$result_size], [$total_size])</code></pre>
+
+<p>adds paged data set to the template stash. Data will be available as &#39;data&#39; The pager itself as &#39;pager&#39;</p>
 
 

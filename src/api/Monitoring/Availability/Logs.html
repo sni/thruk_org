@@ -19,6 +19,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Availability/', 'A
     <ul>
       <li><a href="#get_logs">get_logs</a></li>
       <li><a href="#parse_line">parse_line</a></li>
+      <li><a href="#parse_livestatus_entry">parse_livestatus_entry</a></li>
+      <li><a href="#decode_any">decode_any</a></li>
     </ul>
   </li>
   <li><a href="#AUTHOR">AUTHOR</a></li>
@@ -50,6 +52,18 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Availability/', 'A
 <pre><code> parse_line($line)</code></pre>
 
 <p>return parsed logfile line</p>
+
+<h2 id="parse_livestatus_entry">parse_livestatus_entry</h2>
+
+<pre><code>    parse_livestatus_entry($entry)</code></pre>
+
+<p>parses type and options for log entry</p>
+
+<h2 id="decode_any">decode_any</h2>
+
+<pre><code>    decode_any($str)</code></pre>
+
+<p>returns decoded string</p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

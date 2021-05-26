@@ -15,18 +15,18 @@ breadcrumb: []
     <ul>
       <li><a href="#startup">startup</a></li>
       <li><a href="#find_route_match">find_route_match</a></li>
+      <li><a href="#db">db</a></li>
       <li><a href="#pool">pool</a></li>
       <li><a href="#cluster">cluster</a></li>
       <li><a href="#metrics">metrics</a></li>
       <li><a href="#obj_db_model">obj_db_model</a></li>
       <li><a href="#set_signal_handler">set_signal_handler</a></li>
-      <li><a href="#restore_signal_handler">restore_signal_handler</a></li>
-      <li><a href="#set_timezone">set_timezone</a></li>
+      <li><a href="#setup_cluster">setup_cluster</a></li>
       <li><a href="#register_cron_entries">register_cron_entries</a></li>
-      <li><a href="#finalize_request">finalize_request</a></li>
       <li><a href="#stop_all">stop_all</a></li>
       <li><a href="#graceful_stop">graceful_stop</a></li>
       <li><a href="#log">log</a></li>
+      <li><a href="#render_tt">render_tt</a></li>
     </ul>
   </li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -54,6 +54,10 @@ breadcrumb: []
 
 <p>returns code ref and name of the route entry</p>
 
+<h2 id="db">db</h2>
+
+<pre><code>    return db manager</code></pre>
+
 <h2 id="pool">pool</h2>
 
 <pre><code>    return connection pool</code></pre>
@@ -74,25 +78,17 @@ breadcrumb: []
 
 <pre><code>    watch a few signals and print extra information</code></pre>
 
-<h2 id="restore_signal_handler">restore_signal_handler</h2>
+<h2 id="setup_cluster">setup_cluster</h2>
 
-<pre><code>    reset all changed signals</code></pre>
+<pre><code>    setup_cluster()</code></pre>
 
-<h2 id="set_timezone">set_timezone</h2>
-
-<pre><code>    set servers timezone</code></pre>
+<p>create cluster files</p>
 
 <h2 id="register_cron_entries">register_cron_entries</h2>
 
 <pre><code>    register_cron_entries($function_name)</code></pre>
 
 <p>register callback to update cron jobs</p>
-
-<h2 id="finalize_request">finalize_request</h2>
-
-<pre><code>    register_cron_entries($c, $res)</code></pre>
-
-<p>finalize request data by adding profile and headers</p>
 
 <h2 id="stop_all">stop_all</h2>
 
@@ -111,6 +107,12 @@ breadcrumb: []
 <p>Thruk-&gt;log-&gt;...</p>
 
 <p>compat wrapper for accessing logger</p>
+
+<h2 id="render_tt">render_tt</h2>
+
+<pre><code>    render_tt($c)</code></pre>
+
+<p>wrapper for ToolkitRenderer</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

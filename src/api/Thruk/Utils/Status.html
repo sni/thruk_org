@@ -33,7 +33,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_comments_filter">get_comments_filter</a></li>
       <li><a href="#get_groups_filter">get_groups_filter</a></li>
       <li><a href="#set_selected_columns">set_selected_columns</a></li>
-      <li><a href="#set_custom_title">set_custom_title</a></li>
       <li><a href="#add_view">add_view</a></li>
       <li><a href="#redirect_view">redirect_view</a></li>
       <li><a href="#get_downtimes_filter">get_downtimes_filter</a></li>
@@ -51,6 +50,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#parse_lexical_filter">parse_lexical_filter</a></li>
       <li><a href="#get_custom_variable_names">get_custom_variable_names</a></li>
       <li><a href="#filter_to_param">filter_to_param</a></li>
+      <li><a href="#set_custom_title">set_custom_title</a></li>
     </ul>
   </li>
 </ul>
@@ -97,7 +97,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="do_filter">do_filter</h2>
 
-<pre><code>  do_filter($c, $prefix)</code></pre>
+<pre><code>  do_filter($c, $prefix, [$params], [$skip_totals])</code></pre>
 
 <p>returns filter from request parameter</p>
 
@@ -115,15 +115,15 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="classic_filter">classic_filter</h2>
 
-<pre><code>  classic_filter($c)</code></pre>
+<pre><code>  classic_filter($c, [$params], [$skip_totals])</code></pre>
 
 <p>returns filter for old style parameter</p>
 
 <h2 id="do_search">do_search</h2>
 
-<pre><code>  do_search($c, $searches, $prefix)</code></pre>
+<pre><code>  do_search($c, $searches, $prefix, [$strict])</code></pre>
 
-<p>returns combined filter</p>
+<p>returns combined filter. When using strict, alias or display_name are not used.</p>
 
 <h2 id="fill_totals_box">fill_totals_box</h2>
 
@@ -139,7 +139,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="single_search">single_search</h2>
 
-<pre><code>  single_search($c, $search)</code></pre>
+<pre><code>  single_search($c, $search, [$strict])</code></pre>
 
 <p>processes a single search box filter</p>
 
@@ -184,12 +184,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  set_selected_columns($c, $prefixes, [$type])</code></pre>
 
 <p>set selected columns for the excel export (columns are also set from templates/status_detail.tt, ...)</p>
-
-<h2 id="set_custom_title">set_custom_title</h2>
-
-<pre><code>  set_custom_title($c)</code></pre>
-
-<p>sets page title based on http parameters</p>
 
 <h2 id="add_view">add_view</h2>
 
@@ -292,5 +286,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  filter_to_param($prefix, $filter)</code></pre>
 
 <p>returns url parameters for this filter</p>
+
+<h2 id="set_custom_title">set_custom_title</h2>
+
+<pre><code>  set_custom_title(...)</code></pre>
+
+<p>wrapper for Thruk::Action::AddDefaults::set_custom_title</p>
 
 

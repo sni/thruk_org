@@ -32,6 +32,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
       <li><a href="#clean_nasty">clean_nasty</a></li>
       <li><a href="#bp_base_folder">bp_base_folder</a></li>
       <li><a href="#get_nodes_grouped_by_state">get_nodes_grouped_by_state</a></li>
+      <li><a href="#check_update_index">check_update_index</a></li>
     </ul>
   </li>
 </ul>
@@ -48,11 +49,28 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
 
 <h2 id="load_bp_data">load_bp_data</h2>
 
-<pre><code>    load_bp_data($c, [$num], [$editmode], [$drafts], [$backend_id])</code></pre>
+<pre><code>    load_bp_data($c, [$options])</code></pre>
 
-<p>editmode: - 0/undef: no edit mode - 1: only edit mode</p>
+<p>options =&gt; { edit: - 0/undef: no edit mode - 1: only edit mode</p>
 
-<p>drafts: - 0/undef: skip drafts - 1: load drafts too</p>
+<pre><code>    drafts:
+        - 0/undef:    skip drafts
+        - 1:          load drafts too
+
+    id:
+        - &lt;id&gt;:       load obly BPs which match given id
+
+    backend:
+        - &lt;id&gt;:       load only BPs which match given backend
+
+    skip_nodes:
+        - 0/undef:    load node data
+        - 1:          skip loading nodes
+
+    skip_runtime:
+        - 0/undef:    load runtime data
+        - 1:          skip loading runtime data
+}</code></pre>
 
 <p>load all or specific business process</p>
 
@@ -163,5 +181,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
 <pre><code>    get_nodes_grouped_by_state($c, $nodes, $bp, $aggregation)</code></pre>
 
 <p>return nodes grouped by state, downtime and acknowledged</p>
+
+<h2 id="check_update_index">check_update_index</h2>
+
+<pre><code>    check_update_index($c, [$bps])</code></pre>
+
+<p>runs index update if neccessary.</p>
 
 

@@ -44,15 +44,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#reconnect">reconnect</a></li>
       <li><a href="#expand_command">expand_command</a></li>
       <li><a href="#logcache_stats">logcache_stats</a></li>
-      <li><a href="#get_expanded_start_date">get_expanded_start_date</a></li>
-      <li><a href="#extract_time_filter">extract_time_filter</a></li>
-      <li><a href="#can_use_logcache">can_use_logcache</a></li>
       <li><a href="#get_logs">get_logs</a></li>
       <li><a href="#renew_logcache">renew_logcache</a></li>
       <li><a href="#get_comments_by_pattern">get_comments_by_pattern</a></li>
       <li><a href="#renew_logcache1">_renew_logcache</a></li>
       <li><a href="#close_logcache_connections">close_logcache_connections</a></li>
-      <li><a href="#get_logs_start_end_no_filter">get_logs_start_end_no_filter</a></li>
       <li><a href="#lmd_stats">lmd_stats</a></li>
       <li><a href="#get_macros">_get_macros</a></li>
       <li><a href="#replace_macros">replace_macros</a></li>
@@ -68,8 +64,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_result_serial">_get_result_serial</a></li>
       <li><a href="#get_result_parallel">_get_result_parallel</a></li>
       <li><a href="#remove_duplicates">remove_duplicates</a></li>
-      <li><a href="#page_data">page_data</a></li>
-      <li><a href="#page_data1">_page_data</a></li>
       <li><a href="#reset_failed_backends">reset_failed_backends</a></li>
       <li><a href="#AUTOLOAD">AUTOLOAD</a></li>
       <li><a href="#DESTROY">DESTROY</a></li>
@@ -82,6 +76,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
       <li><a href="#fill_get_contactgroups_by_contact_cache">fill_get_contactgroups_by_contact_cache</a></li>
       <li><a href="#rpc">rpc</a></li>
+      <li><a href="#page_data">page_data</a></li>
     </ul>
   </li>
 </ul>
@@ -270,24 +265,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <p>return logcache statistics</p>
 
-<h2 id="get_expanded_start_date">get_expanded_start_date</h2>
-
-<pre><code>  get_expanded_start_date($c, $blocksize)</code></pre>
-
-<p>returns start of day for expanded duration</p>
-
-<h2 id="extract_time_filter">extract_time_filter</h2>
-
-<pre><code>  extract_time_filter($filter)</code></pre>
-
-<p>returns start and end time filter from given query</p>
-
-<h2 id="can_use_logcache">can_use_logcache</h2>
-
-<pre><code>  can_use_logcache()</code></pre>
-
-<p>returns true if query can use the logcache</p>
-
 <h2 id="get_logs">get_logs</h2>
 
 <pre><code>  get_logs(@args)</code></pre>
@@ -317,12 +294,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  close_logcache_connections($c)</code></pre>
 
 <p>close all logcache connections</p>
-
-<h2 id="get_logs_start_end_no_filter">get_logs_start_end_no_filter</h2>
-
-<pre><code>  get_logs_start_end_no_filter($peer)</code></pre>
-
-<p>returns date of first and last log entry</p>
 
 <h2 id="lmd_stats">lmd_stats</h2>
 
@@ -426,18 +397,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <p>removes duplicate entries from a array of hashes</p>
 
-<h2 id="page_data">page_data</h2>
-
-<pre><code>  page_data($c, $data)</code></pre>
-
-<p>adds paged data set to the template stash. Data will be available as &#39;data&#39; The pager itself as &#39;pager&#39;</p>
-
-<h2 id="page_data1">_page_data</h2>
-
-<pre><code>  _page_data($c, $data, [$result_size], [$total_size])</code></pre>
-
-<p>adds paged data set to the template stash. Data will be available as &#39;data&#39; The pager itself as &#39;pager&#39;</p>
-
 <h2 id="reset_failed_backends">reset_failed_backends</h2>
 
 <pre><code>  reset_failed_backends([ $c ])</code></pre>
@@ -448,7 +407,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <pre><code>  AUTOLOAD()</code></pre>
 
-<p>redirects sub calls to out backends</p>
+<p>redirects sub calls to our backends</p>
 
 <h2 id="DESTROY">DESTROY</h2>
 
@@ -532,5 +491,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  rpc($backend, $function, $args)</code></pre>
 
 <p>returns remote call result</p>
+
+<h2 id="page_data">page_data</h2>
+
+<pre><code>  page_data(...)</code></pre>
+
+<p>wrapper for Thruk::Utils::page_data</p>
 
 
