@@ -1,0 +1,40 @@
+---
+version: v2.44
+title: What's New In Release v2.44
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Security Improvements</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>This release includes security improvements and bugfixes.</p>
+    <p>
+       <ul>
+         <li>fix xss issue with quickcommands.</li>
+         <li>set secure cookie attribute when using https (use <i>cookie_secure_only</i> option to force it)</li>
+         <li>use csrf token in every form</li>
+       </ul>
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">New Login Page</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <p>Thruk got a more mobile friendly login page. </p>
+  </div>
+  <div class="col-md-7">
+      <a title="loginpage" rel="lightbox[whatsnew]" href="{{ page.version }}/loginpage.png"><img src="{{ page.version }}/loginpage.png" alt="loginpage" /></a>
+  </div>
+</div>
