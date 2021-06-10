@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] selfcheck &lt;checktype&gt;</code></pre>
+<pre><code>  Usage: thruk [globaloptions] selfcheck &lt;checktype[s]&gt;...</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -54,7 +54,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
     - lmd                       runs lmd related checks
     - recurring_downtimes       runs recurring downtimes checks
     - reports                   runs reporting checks
-    - logcache                  runs logcache checks</code></pre>
+    - logcache                  runs logcache checks
+    - backends                  runs backend connection checks</code></pre>
 
 </dd>
 </dl>
@@ -70,5 +71,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <p>Run all selfchecks</p>
 
 <pre><code>  %&gt; thruk selfcheck all</code></pre>
+
+<p>Run all selfchecks except filesystem</p>
+
+<pre><code>  %&gt; thruk selfcheck &#39;all,!filesystem&#39;</code></pre>
+
+<p>Run lmd and filesystem selfcheck</p>
+
+<pre><code>  %&gt; thruk selfcheck &#39;lmd,filesystem&#39;</code></pre>
 
 
