@@ -27,6 +27,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#maint">maint</a></li>
       <li><a href="#heartbeat">heartbeat</a></li>
       <li><a href="#expand_node_ids">expand_node_ids</a></li>
+      <li><a href="#node_name">node_name</a></li>
       <li><a href="#update_cron_file">update_cron_file</a></li>
       <li><a href="#check_stale_pids">check_stale_pids</a></li>
     </ul>
@@ -83,7 +84,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
     - sub: class / sub name
     - args: arguments</code></pre>
 
-<p>returns 0 if no cluster is in use and caller can continue locally returns 1 if a &#39;once&#39; job runs somewhere already returns list of results for each specified node</p>
+<p>returns 0 if no cluster is in use and/or caller can continue locally returns 1 if a &#39;once&#39; job runs somewhere already returns list of results for each specified node</p>
 
 <h2 id="kill">kill</h2>
 
@@ -120,6 +121,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  expand_node_ids($self, @nodes_ids_and_urls)</code></pre>
 
 <p>convert list of node_ids and node_urls to node_ids only.</p>
+
+<h2 id="node_name">node_name</h2>
+
+<pre><code>  node_name($self, $id)</code></pre>
+
+<p>return node name (node_url) for given id</p>
 
 <h2 id="update_cron_file">update_cron_file</h2>
 
