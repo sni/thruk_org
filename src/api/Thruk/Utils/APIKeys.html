@@ -15,6 +15,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
     <ul>
       <li><a href="#get_keys">get_keys</a></li>
       <li><a href="#get_superuser_keys">get_superuser_keys</a></li>
+      <li><a href="#get_keyinfo_by_private_key">get_keyinfo_by_private_key</a></li>
       <li><a href="#get_key_by_private_key">get_key_by_private_key</a></li>
       <li><a href="#create_key">create_key</a></li>
       <li><a href="#create_key_from_req_params">create_key_from_req_params</a></li>
@@ -45,6 +46,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    get_superuser_keys($c, [$filename])</code></pre>
 
 <p>returns list of superuser api keys</p>
+
+<h2 id="get_keyinfo_by_private_key">get_keyinfo_by_private_key</h2>
+
+<pre><code>    get_keyinfo_by_private_key($config, $privatekey)</code></pre>
+
+<p>returns key for given private key</p>
 
 <h2 id="get_key_by_private_key">get_key_by_private_key</h2>
 
