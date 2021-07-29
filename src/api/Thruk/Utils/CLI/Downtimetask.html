@@ -32,7 +32,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] downtimetask &lt;nr&gt;</code></pre>
+<pre><code>  Usage: thruk [globaloptions] downtimetask [options] &lt;nr&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -42,6 +42,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dd>
 
 <pre><code>    print help and exit</code></pre>
+
+</dd>
+<dt id="t---test"><b>-t / --test</b></dt>
+<dd>
+
+<pre><code>    do not send commands but display what would be send</code></pre>
 
 </dd>
 </dl>
@@ -77,6 +83,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <p>Runs the downtime task for file &#39;1&#39;</p>
 
-<pre><code>  %&gt; thruk command downtimetask 1</code></pre>
+<pre><code>  %&gt; thruk downtimetask 1</code></pre>
+
+<p>Same but in test mode:</p>
+
+<pre><code>  %&gt; thruk downtimetask 1 --test</code></pre>
 
 
