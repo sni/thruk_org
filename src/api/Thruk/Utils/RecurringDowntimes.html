@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_downtimes_list">get_downtimes_list</a></li>
       <li><a href="#check_downtime">check_downtime</a></li>
       <li><a href="#read_downtime">read_downtime</a></li>
+      <li><a href="#write_downtime">write_downtime</a></li>
       <li><a href="#check_downtime_permissions">check_downtime_permissions</a></li>
       <li><a href="#get_default_recurring_downtime">get_default_recurring_downtime</a></li>
       <li><a href="#get_downtime_backends">get_downtime_backends</a></li>
@@ -68,6 +69,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    read_downtime($c, $dfile, $default_rd, $authhosts, $authservices, $authhostgroups, $authservicegroups, $host, $service, $auth, $backendfilter, $hosts, $services, $hostgroups, $servicegroups)</code></pre>
 
 <p>return single downtime</p>
+
+<h2 id="write_downtime">write_downtime</h2>
+
+<pre><code>    write_downtime($file, $downtime)</code></pre>
 
 <h2 id="check_downtime_permissions">check_downtime_permissions</h2>
 
