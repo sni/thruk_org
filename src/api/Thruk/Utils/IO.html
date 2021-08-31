@@ -17,7 +17,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#mkdir">mkdir</a></li>
       <li><a href="#mkdir_r">mkdir_r</a></li>
       <li><a href="#read">read</a></li>
+      <li><a href="#saferead">saferead</a></li>
       <li><a href="#read_as_list">read_as_list</a></li>
+      <li><a href="#saferead_as_list">saferead_as_list</a></li>
       <li><a href="#write">write</a></li>
       <li><a href="#ensure_permissions">ensure_permissions</a></li>
       <li><a href="#file_rlock">file_rlock</a></li>
@@ -76,11 +78,23 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>read file and return content</p>
 
+<h2 id="saferead">saferead</h2>
+
+<pre><code>  saferead($path)</code></pre>
+
+<p>read file and return content or undef in case it cannot be read</p>
+
 <h2 id="read_as_list">read_as_list</h2>
 
 <pre><code>  read_as_list($path)</code></pre>
 
 <p>read file and return content as array</p>
+
+<h2 id="saferead_as_list">saferead_as_list</h2>
+
+<pre><code>  saferead_as_list($path)</code></pre>
+
+<p>read file and return content as array, return empty list if open fails</p>
 
 <h2 id="write">write</h2>
 
