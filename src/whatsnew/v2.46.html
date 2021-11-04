@@ -1,0 +1,50 @@
+---
+version: v2.46
+title: What's New In Release v2.46
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Full Wildcard Support in cgi.cfg</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>Besides the generic `*` all variants of wildcards are now supported in the cgi.cfg. Both for the contacts list and the contactgroup lists.</p>
+    <p>
+       <ul>
+         <li><i>authorized_for_admin=admin*</i> would match all contacts starting with 'admin'.</li>
+         <li><i>authorized_contactgroup_for_all_services=*_op</i> would match all contactgroups ending with '_op'.</li>
+       </ul>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">thruk apikey command</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>For better handling with apikeys, there is a new apikey thruk command which prints some information for a given key. The command can be used with keys or filenames.</p>
+    <p><pre>
+%> thruk apikey info 30e4cfefe57de680280931e09c892b2f7772c4ee0a0c51885b8879475bafe875_1
++------------------+-----------------------------------------------------------------------------------------+
+| hashed key       | fd9de5472f6b4d86603defeb8611252c042f6059d3ed7ba30233138f70f8dc93                        |
+| digest           | SHA-256                                                                                 |
+| file name        | ./var/api_keys/fd9de5472f6b4d86603defeb8611252c042f6059d3ed7ba30233138f70f8dc93.SHA-256 |
+| super user       | no                                                                                      |
+| user             | thrukadmin                                                                              |
+| role restriction | no restrictions                                                                         |
+| create date      | Thu Nov  4 16:19:10 2021                                                                |
+| last used date   | never                                                                                   |
+| last used from   |                                                                                         |
+| comment          | test                                                                                    |
++------------------+-----------------------------------------------------------------------------------------+
+</pre></p>
+  </div>
+</div>
