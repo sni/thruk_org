@@ -77,6 +77,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#fill_get_contactgroups_by_contact_cache">fill_get_contactgroups_by_contact_cache</a></li>
       <li><a href="#rpc">rpc</a></li>
       <li><a href="#page_data">page_data</a></li>
+      <li><a href="#fork_http_peer">fork_http_peer</a></li>
     </ul>
   </li>
 </ul>
@@ -497,5 +498,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  page_data(...)</code></pre>
 
 <p>wrapper for Thruk::Utils::page_data</p>
+
+<h2 id="fork_http_peer">fork_http_peer</h2>
+
+<pre><code>  fork_http_peer($peer, $httpsrc)</code></pre>
+
+<p>create http backend based on livestatus backend which has multiple sources including http ones</p>
 
 

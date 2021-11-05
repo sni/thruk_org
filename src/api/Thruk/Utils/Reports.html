@@ -38,6 +38,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#normalize_required_field">normalize_required_field</a></li>
       <li><a href="#check_for_waiting_reports">check_for_waiting_reports</a></li>
       <li><a href="#apply_report_parameters">apply_report_parameters</a></li>
+      <li><a href="#get_report_themes">get_report_themes</a></li>
     </ul>
   </li>
 </ul>
@@ -190,7 +191,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="normalize_required_field">normalize_required_field</h2>
 
-<pre><code>  normalize_required_field($field)</code></pre>
+<pre><code>  normalize_required_field($c, $field)</code></pre>
 
 <p>returns normalized field structure, convert old array list into hash structure</p>
 
@@ -209,5 +210,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>set report parameters into target hash</p>
 
 <p>returns target hash</p>
+
+<h2 id="get_report_themes">get_report_themes</h2>
+
+<pre><code>  get_report_themes($c)</code></pre>
+
+<p>returns list of themes which have a &#39;stylesheets/*reports.css&#39; file.</p>
 
 
