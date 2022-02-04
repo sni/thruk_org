@@ -13,7 +13,7 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "2.46-3"      # release folder, ex.: 2.00-2 or 2.02
+release_version: "2.46.3"      # release folder, ex.: 2.00.2 or 2.02
 release_date: "Jan 25, 2022"
 next_release_date: "May 2022"
 
