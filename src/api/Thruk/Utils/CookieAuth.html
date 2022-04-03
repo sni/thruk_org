@@ -38,9 +38,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="external_authentication">external_authentication</h2>
 
-<pre><code>    external_authentication($config, $login, $pass, $address)</code></pre>
+<pre><code>    external_authentication($config, $login, $pass, $address, [$stats], [$create_session_file])</code></pre>
 
-<p>verify authentication by external login into external url</p>
+<p>verify authentication by external login into external url.</p>
+
+<p>set $create_session_file to 0 to disabled creating a session file and only return session data itself.</p>
 
 <p>return:</p>
 
@@ -76,7 +78,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="store_session">store_session</h2>
 
-<pre><code>  store_session($config, $sessionid, $data)</code></pre>
+<pre><code>  store_session($config, $sessionid, $data, [$create_session_file])</code></pre>
 
 <p>store session data</p>
 
