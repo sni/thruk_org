@@ -27,6 +27,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#uri_with">uri_with</a></li>
       <li><a href="#as_url_arg">as_url_arg</a></li>
       <li><a href="#html_escape">html_escape</a></li>
+      <li><a href="#html_escape_recursive">html_escape_recursive</a></li>
       <li><a href="#escape_html">escape_html</a></li>
       <li><a href="#escape_quotes">escape_quotes</a></li>
       <li><a href="#escape_ampersand">escape_ampersand</a></li>
@@ -68,6 +69,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#random_id">random_id</a></li>
       <li><a href="#log_line_plugin_output">log_line_plugin_output</a></li>
       <li><a href="#get_exposed_custom_vars">get_exposed_custom_vars</a></li>
+      <li><a href="#replace_links">replace_links</a></li>
     </ul>
   </li>
 </ul>
@@ -190,6 +192,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  html_escape($text)</code></pre>
 
 <p>wrapper for escape_html for compatibility reasons</p>
+
+<h2 id="html_escape_recursive">html_escape_recursive</h2>
+
+<pre><code>  html_escape_recursive($any)</code></pre>
+
+<p>recursively escape data</p>
 
 <h2 id="escape_html">escape_html</h2>
 
@@ -440,5 +448,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    get_exposed_custom_vars([$skip_wildcards])</code></pre>
 
 <p>return list of exposed custom variable names</p>
+
+<h2 id="replace_links">replace_links</h2>
+
+<pre><code>    replace_links()</code></pre>
+
+<p>return text with http/https links replaced with real links</p>
 
 

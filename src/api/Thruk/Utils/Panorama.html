@@ -21,6 +21,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#extract_runtime_data">extract_runtime_data</a></li>
       <li><a href="#is_authorized_for_dashboard">is_authorized_for_dashboard</a></li>
       <li><a href="#delete_dashboard">delete_dashboard</a></li>
+      <li><a href="#move_dashboard">move_dashboard</a></li>
       <li><a href="#get_runtime_file">get_runtime_file</a></li>
       <li><a href="#get_maint_file">get_maint_file</a></li>
       <li><a href="#set_is_admin">set_is_admin</a></li>
@@ -90,6 +91,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    delete_dashboard($c, $nr, [$dashboard])</code></pre>
 
 <p>return dashboard data.</p>
+
+<h2 id="move_dashboard">move_dashboard</h2>
+
+<pre><code>    move_dashboard($c, $dashboard, $filename, $newfile)</code></pre>
+
+<p>rename dashboard file and return new dashboard data</p>
 
 <h2 id="get_runtime_file">get_runtime_file</h2>
 
