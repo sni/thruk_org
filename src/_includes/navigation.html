@@ -23,7 +23,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ site.baseurl }}support.html">Support</a></li>
                         <li><a href="{{ site.mailinglist_url }}" target="_blank">Mailing List</a></li>
+                        {% if site.forum_url != "" %}
                         <li><a href="{{ site.forum_url }}" target="_blank">Forum &amp; Discussion</a></li>
+                        {% endif %}
                         <li><a href="https://twitter.com/ThrukGUI" target="_blank"><i class="fa fa-twitter"></i> @ThrukGUI</a></li>
                     </ul>
                 </li>
