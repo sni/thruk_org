@@ -32,11 +32,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
     detailed errors:
         return $c-&gt;detach_error({
-            msg         =&gt; &quot;main error&quot;,
-            descr       =&gt; &quot;more descriptive details&quot;,
-            code        =&gt; http code,
-            log         =&gt; 0|1, #  force logging
-            skip_escape =&gt; 0|1, # skip html escape of data
+            msg                 &quot;main error&quot;,
+            descr               &quot;more descriptive details&quot;,
+            code                http code,
+            log                 0|1, #  force logging
+            debug_information   more details which will be logged, (string / array)
+            skip_escape         0|1, # skip html escape of data
         });
 
 

@@ -40,6 +40,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#get_services">get_services</a></li>
       <li><a href="#get_host_stats_by_servicequery">get_host_stats_by_servicequery</a></li>
       <li><a href="#get_all_child_hosts">get_all_child_hosts</a></li>
+      <li><a href="#get_host_stats_by_backend">get_host_stats_by_backend</a></li>
       <li><a href="#get_contactgroups_by_contact">get_contactgroups_by_contact</a></li>
       <li><a href="#get_hostgroup_names_from_hosts">get_hostgroup_names_from_hosts</a></li>
       <li><a href="#get_servicegroup_names_from_services">get_servicegroup_names_from_services</a></li>
@@ -74,6 +75,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#limit">_limit</a></li>
       <li><a href="#set_user_macros">_set_user_macros</a></li>
       <li><a href="#set_result_defaults">_set_result_defaults</a></li>
+      <li><a href="#set_result_group_stats">_set_result_group_stats</a></li>
       <li><a href="#fill_get_can_submit_commands_cache">fill_get_can_submit_commands_cache</a></li>
       <li><a href="#get_can_submit_commands">get_can_submit_commands</a></li>
       <li><a href="#fill_get_contactgroups_by_contact_cache">fill_get_contactgroups_by_contact_cache</a></li>
@@ -154,7 +156,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 
 <h2 id="get_http_peers">get_http_peers</h2>
 
-<pre><code>  get_http_peers()</code></pre>
+<pre><code>  get_http_peers([$with_fallbacks])</code></pre>
 
 <p>returns all configured peers which have a http connection type</p>
 
@@ -241,6 +243,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  get_all_child_hosts</code></pre>
 
 <p>returns list of all recursive child hosts</p>
+
+<h2 id="get_host_stats_by_backend">get_host_stats_by_backend</h2>
+
+<pre><code>  get_hosts</code></pre>
+
+<p>wrapper around get_hosts</p>
 
 <h2 id="get_contactgroups_by_contact">get_contactgroups_by_contact</h2>
 
@@ -478,6 +486,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <h2 id="set_result_defaults">_set_result_defaults</h2>
 
 <pre><code>  _set_result_defaults()</code></pre>
+
+<p>set defaults for some results</p>
+
+<h2 id="set_result_group_stats">_set_result_group_stats</h2>
+
+<pre><code>  _set_result_group_stats()</code></pre>
 
 <p>set defaults for some results</p>
 

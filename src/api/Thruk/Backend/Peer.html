@@ -19,6 +19,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#peer_list">peer_list</a></li>
       <li><a href="#create_backend">create_backend</a></li>
       <li><a href="#logcache">logcache</a></li>
+      <li><a href="#get_http_fallback_peer">get_http_fallback_peer</a></li>
+      <li><a href="#cmd">cmd</a></li>
+      <li><a href="#rpc">rpc</a></li>
+      <li><a href="#job_data">job_data</a></li>
     </ul>
   </li>
 </ul>
@@ -60,5 +64,29 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  logcache()</code></pre>
 
 <p>return logcache and create it on demand</p>
+
+<h2 id="get_http_fallback_peer">get_http_fallback_peer</h2>
+
+<pre><code>  get_http_fallback_peer()</code></pre>
+
+<p>return http peer from fallback addr</p>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>  cmd($c, $cmd, [$background_options])</code></pre>
+
+<p>return result of cmd</p>
+
+<h2 id="rpc">rpc</h2>
+
+<pre><code>  rpc($c, $sub, $args)</code></pre>
+
+<p>return result of sub call</p>
+
+<h2 id="job_data">job_data</h2>
+
+<pre><code>  job_data($c, $jobid)</code></pre>
+
+<p>return job data</p>
 
 

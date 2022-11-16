@@ -48,6 +48,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#log">log</a></li>
       <li><a href="#get_cookie_domain">get_cookie_domain</a></li>
       <li><a href="#finalize_request">finalize_request</a></li>
+      <li><a href="#set_stats_common_totals">set_stats_common_totals</a></li>
+      <li><a href="#add_profile">add_profile</a></li>
     </ul>
   </li>
 </ul>
@@ -102,7 +104,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>end current request with an error.</p>
 
-<p>$data contains: { msg short error message descr long description of the error code http return code, defaults to 500; log flag wether error should be logged. Error codes &gt; 500 are automatically logged if `log` is undefined debug_information more details which will be logged, (string / array) }</p>
+<p>$data contains: { msg short error message descr long description of the error code http return code, defaults to 500; log flag wether error should be logged. Error codes &gt; 500 are automatically logged if `log` is undefined debug_information more details which will be logged, (string / array) skip_escape skip escaping html }</p>
 
 <h2 id="get_tt_template_paths">get_tt_template_paths</h2>
 
@@ -235,5 +237,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>    register_cron_entries($c, $res)</code></pre>
 
 <p>finalize request data by adding profile and headers</p>
+
+<h2 id="set_stats_common_totals">set_stats_common_totals</h2>
+
+<p>$c-&gt;set_stats_common_totals</p>
+
+<p>adds common statistics</p>
+
+<h2 id="add_profile">add_profile</h2>
+
+<p>$c-&gt;add_profile({ name =&gt; ..., [ text =&gt; \@txtprofiles ], [ html =&gt; \@htmlprofiles ] })</p>
+
+<p>add profile to stash</p>
 
 

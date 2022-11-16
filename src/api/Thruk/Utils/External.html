@@ -51,7 +51,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  cmd($c, {
             cmd          =&gt; &quot;command line to execute&quot;,
             allow        =&gt; all|user,
-            wait_message =&gt; &quot;display message while running the job&quot;
+            message      =&gt; &quot;display message while running the job&quot;
             forward      =&gt; &quot;forward on success&quot;
             background   =&gt; &quot;return $jobid if set, or redirect otherwise&quot;
             nofork       =&gt; &quot;don&#39;t fork&quot;
@@ -68,7 +68,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  perl($c, {
             expr         =&gt; &quot;perl expression to execute&quot;,
             allow        =&gt; all|user,
-            wait_message =&gt; &quot;display message while running the job&quot;
+            message      =&gt; &quot;display message while running the job&quot;
             forward      =&gt; &quot;forward on success&quot;
             backends     =&gt; &quot;list of selected backends (keys)&quot;
             nofork       =&gt; &quot;don&#39;t fork&quot;
@@ -139,7 +139,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <pre><code>  save_profile($c, $dir)</code></pre>
 
-<p>save profile to profile.log.&lt;nr&gt; of this job</p>
+<p>save profile to profile.log.$pid.&lt;nr&gt; of this job</p>
 
 <h2 id="do_child_stuff">do_child_stuff</h2>
 

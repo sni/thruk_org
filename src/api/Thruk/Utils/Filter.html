@@ -35,6 +35,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#validate_json">validate_json</a></li>
       <li><a href="#get_action_menu">get_action_menu</a></li>
       <li><a href="#json_encode">json_encode</a></li>
+      <li><a href="#json_encode_pretty">json_encode_pretty</a></li>
       <li><a href="#encode_json_obj">encode_json_obj</a></li>
       <li><a href="#escape_tags_js">_escape_tags_js</a></li>
       <li><a href="#escape_js">escape_js</a></li>
@@ -46,7 +47,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_message">get_message</a></li>
       <li><a href="#strip_command_args">strip_command_args</a></li>
       <li><a href="#calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</a></li>
-      <li><a href="#action_icon">action_icon</a></li>
       <li><a href="#logline_icon">logline_icon</a></li>
       <li><a href="#has_business_process">has_business_process</a></li>
       <li><a href="#fullversion">fullversion</a></li>
@@ -69,6 +69,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#random_id">random_id</a></li>
       <li><a href="#log_line_plugin_output">log_line_plugin_output</a></li>
       <li><a href="#get_exposed_custom_vars">get_exposed_custom_vars</a></li>
+      <li><a href="#get_browser_user_agent">get_browser_user_agent</a></li>
       <li><a href="#replace_links">replace_links</a></li>
       <li><a href="#is_icinga2">is_icinga2</a></li>
     </ul>
@@ -242,6 +243,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns json encoded string</p>
 
+<h2 id="json_encode_pretty">json_encode_pretty</h2>
+
+<pre><code>  json_encode_pretty(array|hash)</code></pre>
+
+<p>returns pretty json encoded string</p>
+
 <h2 id="encode_json_obj">encode_json_obj</h2>
 
 <pre><code>  encode_json_obj(array, [decode])</code></pre>
@@ -311,12 +318,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  my $remaining = calculate_first_notification_delay_remaining($obj)</code></pre>
 
 <p>returns remaining minutes for first_notification_delay</p>
-
-<h2 id="action_icon">action_icon</h2>
-
-<pre><code>  my $icon = action_icon($obj, $fallback)</code></pre>
-
-<p>returns action icon path</p>
 
 <h2 id="logline_icon">logline_icon</h2>
 
@@ -449,6 +450,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    get_exposed_custom_vars([$skip_wildcards])</code></pre>
 
 <p>return list of exposed custom variable names</p>
+
+<h2 id="get_browser_user_agent">get_browser_user_agent</h2>
+
+<pre><code>    get_browser_user_agent()</code></pre>
+
+<p>return request user agent.</p>
 
 <h2 id="replace_links">replace_links</h2>
 
