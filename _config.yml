@@ -13,9 +13,9 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "2.50"      # release folder, ex.: 2.00.2 or 2.02
-release_date: "Oct 17, 2022"
-next_release_date: "Jan 2023"
+release_version: "3.00"      # release folder, ex.: 2.00.2 or 2.02
+release_date: "Nov 16, 2022"
+next_release_date: "Feb 2023"
 
 mailinglist_url: https://groups.google.com/group/thruk
 #forum_url: https://monitoring-portal.org/c/visualization/thruk
@@ -33,7 +33,6 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - Makefile
-    - .travis.yml
     - t
     - TODO
     - api_update.pl

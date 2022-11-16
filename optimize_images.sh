@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -f /usr/bin/optipng ] || { echo "optipng required!"; exit 1; }
+type optipng >/dev/null 2>&1 || { echo "optipng required!"; exit 1; }
 
 CMD="optipng -o7"
 

@@ -65,6 +65,7 @@ window.doOnLoadList.push(function() {
 <br>
 
 
+
 <div class="panel panel-default">
   <div class="panel-heading"><h2>Release Plan</h2></div>
   <div class="panel-body">
@@ -74,6 +75,8 @@ window.doOnLoadList.push(function() {
       <a class="btn btn-info" href="download.html#nightly-development-builds" role="button" style="width:20%;">Nightly</a>
       <a class="btn btn-warning" href="https://github.com/sni/Thruk/blob/master/Changes" role="button" target="_blank" style="width:20%;">Next: {{ site.next_release_date }}</a>
     </div>
+    <p></p>
+    <p>Read <a href="{{ site.baseurl }}whatsnew.html">what's new</a> in this release.</p>
   </div>
 </div>
 
@@ -138,6 +141,11 @@ window.doOnLoadList.push(function() {
   <td></td>
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu20.04/amd64/">thruk_{{ site.release_version }}_ubuntu20.04_amd64.deb</a></td>
 </tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">22.04</td><td class="text-center">jammy</td>
+  <td></td>
+  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu22.04/amd64/">thruk_{{ site.release_version }}_ubuntu22.04_amd64.deb</a></td>
+</tr>
 
 <tr>
   <td colspan=6>&nbsp;</td>
@@ -180,7 +188,7 @@ window.doOnLoadList.push(function() {
     <p>
       <a href="https://download.thruk.org/nightly_builds/">Download nightly snapshots</a><br>
       Have at least a look at the test results before using test releases. They should be used for tests only, not in production!<br>
-      Travis-CI: <a href="https://travis-ci.org/sni/Thruk/" target="_blank"><img src="https://travis-ci.org/sni/Thruk.png?branch=master" width=77 height=19 alt="travis ci build status"></a>
+      GitHub-CI: <a href="https://github.com/sni/Thruk/actions?query=workflow:citest" target="_blank"><img src="https://github.com/sni/Thruk/workflows/citest/badge.svg" width=107 height=20 style="vertical-align: sub;" alt="github ci build status"></a>
     </p>
   </div>
 </div>

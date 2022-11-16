@@ -10,7 +10,7 @@ quick: .gem _submodules/thruk/documentation
 	bundle exec jekyll build --trace --limit_posts=5
 
 server: .gem _submodules/thruk/documentation
-	bundle exec jekyll serve --host=\* --trace --watch
+	bundle exec jekyll serve --trace --watch
 
 .gem:
 	# sudo apt-get install ruby ruby-dev ruby-bundler nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev zlib1g-dev
