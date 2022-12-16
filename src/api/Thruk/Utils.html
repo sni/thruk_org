@@ -104,6 +104,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#find_files">find_files</a></li>
       <li><a href="#scale_out">scale_out</a></li>
       <li><a href="#page_data">page_data</a></li>
+      <li><a href="#render_db_profile">render_db_profile</a></li>
     </ul>
   </li>
 </ul>
@@ -715,5 +716,11 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>  page_data($c, $data, [$result_size], [$total_size], [$already_paged])</code></pre>
 
 <p>adds paged data set to the template stash. Data will be available as &#39;data&#39; The pager itself as &#39;pager&#39;</p>
+
+<h2 id="render_db_profile">render_db_profile</h2>
+
+<pre><code>  render_db_profile($c, $profiles)</code></pre>
+
+<p>return rendered db query profiles</p>
 
 

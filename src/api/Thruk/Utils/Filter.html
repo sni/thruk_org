@@ -14,6 +14,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#throw">throw</a></li>
+      <li><a href="#type">type</a></li>
       <li><a href="#contains">contains</a></li>
       <li><a href="#duration">duration</a></li>
       <li><a href="#nl2br">nl2br</a></li>
@@ -71,6 +72,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_exposed_custom_vars">get_exposed_custom_vars</a></li>
       <li><a href="#get_browser_user_agent">get_browser_user_agent</a></li>
       <li><a href="#replace_links">replace_links</a></li>
+      <li><a href="#set_target_link">set_target_link</a></li>
       <li><a href="#is_icinga2">is_icinga2</a></li>
     </ul>
   </li>
@@ -91,6 +93,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  throw($string)</code></pre>
 
 <p>can be used to die in templates</p>
+
+<h2 id="type">type</h2>
+
+<pre><code>  type($any)</code></pre>
+
+<p>returns ref</p>
 
 <h2 id="contains">contains</h2>
 
@@ -462,6 +470,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>    replace_links()</code></pre>
 
 <p>return text with http/https links replaced with real links also replace [link text](https://url...) like markup links</p>
+
+<h2 id="set_target_link">set_target_link</h2>
+
+<pre><code>  set_target_link($href, $target)</code></pre>
+
+<p>returns updated url/target.</p>
 
 <h2 id="is_icinga2">is_icinga2</h2>
 
