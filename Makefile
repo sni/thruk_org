@@ -42,7 +42,8 @@ update: clean_env changelog_update api_update build
 
 changelog_update:
 	git reset --hard --recurse-submodule
-	cd _submodules/thruk && git checkout master && git pull && git checkout $$(git describe --tags `git rev-list --tags --max-count=1`)
+	#cd _submodules/thruk && git checkout master && git pull && git checkout $$(git describe --tags `git rev-list --tags --max-count=1`)
+	cd _submodules/thruk && git checkout master && git pull
 	cp _submodules/thruk/Changes src/_includes/Changes.html
 	-git commit -am 'changelog update'
 

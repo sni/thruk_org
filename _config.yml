@@ -13,8 +13,8 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "3.00"      # release folder, ex.: 2.00.2 or 2.02
-release_date: "Nov 16, 2022"
+release_version: "3.02"      # release folder, ex.: 2.00.2 or 2.02
+release_date: "Dec 15, 2022"
 next_release_date: "Feb 2023"
 
 mailinglist_url: https://groups.google.com/group/thruk
