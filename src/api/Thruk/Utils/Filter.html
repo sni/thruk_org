@@ -117,8 +117,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
         1    =&gt; 0d 0h 0m 15s  (default)
         2    =&gt;   0min 14sec
         3    =&gt;       0m 04s
-        4    =&gt;          15m (trimmed)
-        5    =&gt;        15min (trimmed)
+        4    =&gt;          15m (trimmed all non-zero)
+        5    =&gt;        15min (trimmed all non-zero)
         6    =&gt;        2y 5d (highest 2)</code></pre>
 
 <h2 id="nl2br">nl2br</h2>
@@ -174,9 +174,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="short_uri">short_uri</h2>
 
-<pre><code>  short_uri($c, $filter)</code></pre>
+<pre><code>  short_uri($c, [ $filter, $keep_absolute, $baseurl, $skip_escape ])</code></pre>
 
-<p>returns a html escaped correct uri but only the url part</p>
+<p>returns a html escaped correct uri but only the url part (redirects to uri_with but applies default filter)</p>
 
 <p>ex.: status.cgi?params...</p>
 

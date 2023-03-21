@@ -40,6 +40,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_memory_usage">get_memory_usage</a></li>
       <li><a href="#find_files">find_files</a></li>
       <li><a href="#all_perl_files">all_perl_files</a></li>
+      <li><a href="#dclone">dclone</a></li>
     </ul>
   </li>
 </ul>
@@ -173,7 +174,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <h2 id="cmd">cmd</h2>
 
 <pre><code>  cmd($command)
-  cmd($c, $command [, $stdin] [, $print_prefix] [, $detached])</code></pre>
+  cmd($c, $command [, $stdin] [, $print_prefix] [, $detached] [, $no_decode] [, $timeout])</code></pre>
 
 <p>run command and return exit code and output</p>
 
@@ -182,6 +183,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <p>optional print_prefix will print the result on the fly with given prefix.</p>
 
 <p>optional detached will run the command detached in the background</p>
+
+<p>optional no_decode will skip decoding</p>
+
+<p>optional timeout will kill the command after the timeout (seconds)</p>
 
 <h2 id="untaint">untaint</h2>
 
@@ -231,5 +236,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  all_perl_files(@dirs)</code></pre>
 
 <p>return list of all perl files for given folders</p>
+
+<h2 id="dclone">dclone</h2>
+
+<pre><code>    dclone($obj)</code></pre>
+
+<p>deep clones any object</p>
 
 

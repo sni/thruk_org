@@ -57,6 +57,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
         - update                    Delta update all logfiles since last import/update.
                  [-w|--worker=&lt;nr&gt;] Use this number of worker processes to update all sites.
                                     Defaults to &#39;auto&#39; which trys to find a suitable number automatically.
+                 [--blocksize=...]  sets the amount of logfiles fetched in one
+                                    update block. Default: 1d
         - stats                     Display logcache statistics.
         - authupdate                Update authentication data.
         - optimize                  Run table optimize.
