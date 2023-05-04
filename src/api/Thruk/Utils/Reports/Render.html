@@ -22,6 +22,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
       <li><a href="#set_unavailable_states">set_unavailable_states</a></li>
       <li><a href="#get_report_timeperiod">get_report_timeperiod</a></li>
       <li><a href="#get_events">get_events</a></li>
+      <li><a href="#get_url_with_retries">get_url_with_retries</a></li>
       <li><a href="#get_url">get_url</a></li>
       <li><a href="#count_event_totals">count_event_totals</a></li>
       <li><a href="#get_availability_percents">get_availability_percents</a></li>
@@ -105,6 +106,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <pre><code>  get_events()</code></pre>
 
 <p>set events by pattern from eventlog</p>
+
+<h2 id="get_url_with_retries">get_url_with_retries</h2>
+
+<pre><code>  get_url_with_retries($retries, $delay)</code></pre>
+
+<p>calls get_url but retries on errors</p>
 
 <h2 id="get_url">get_url</h2>
 
