@@ -77,6 +77,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>generate and send the report</p>
 
+<p>return values are:</p>
+
+<pre><code>   -2 : nothing to do, report runs on another cluster node already
+    0 : report failed
+    1 : report sucessful and mail was sent
+    2 : report generated, no mail send because of thresholds not hit</code></pre>
+
 <h2 id="report_save">report_save</h2>
 
 <pre><code>  report_save($c, $nr, $data)</code></pre>
