@@ -82,6 +82,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#rpc">rpc</a></li>
       <li><a href="#page_data">page_data</a></li>
       <li><a href="#fork_http_peer">fork_http_peer</a></li>
+      <li><a href="#caching_query">caching_query</a></li>
     </ul>
   </li>
 </ul>
@@ -530,5 +531,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>  fork_http_peer($peer, $httpsrc)</code></pre>
 
 <p>create http backend based on livestatus backend which has multiple sources including http ones</p>
+
+<h2 id="caching_query">caching_query</h2>
+
+<pre><code>  caching_query($cache_file, $function, $columns)</code></pre>
+
+<p>returns db query results and caches them by peer key until backend got restarted</p>
 
 
