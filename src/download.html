@@ -83,7 +83,14 @@ window.doOnLoadList.push(function() {
 <div class="panel panel-default">
   <div class="panel-heading"><h2>Repository</h2></div>
   <div class="panel-body">
-    <p>Using the <a href="https://labs.consol.de/repo/">Consol Labs Repository</a> is probably the easiest way to install or update Thruk.</p>
+    Using a repository is probably the easiest way to install or update Thruk.<br>
+    There are two repositories available. Both build packages from the same source, but sometimes new linux distributions
+    are available in either of them only.<br>
+    The Opensuse repository also contains Naemon and Mod-Gearman packages which might be useful in combination with Thruk.
+    <ul>
+      <li><a href="https://build.opensuse.org/project/show/home:naemon">OpenSuse Build Service</a> (Debian, Ubuntu, RHEL, Fedora)</li>
+      <li><a href="https://labs.consol.de/repo/">Consol* Labs Repository</a> (Debian, Ubuntu, RHEL)</li>
+    </ul>
   </div>
 </div>
 
@@ -117,24 +124,39 @@ window.doOnLoadList.push(function() {
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/debian11/amd64/">thruk_{{ site.release_version }}_debian11_amd64.deb</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">7</td><td>&nbsp;</td>
+  <td class="text-center"><img src="images/debian.png" alt="debian" height=48 width=48></td><td class="text-center">Debian</td><td class="text-center">12</td><td class="text-center">bookworm</td>
+  <td><a href="https://download.opensuse.org/repositories/home:/naemon/Debian_12/i386/">thruk_{{ site.release_version }}_debian11_i386.deb</a></td>
+  <td><a href="https://download.opensuse.org/repositories/home:/naemon/Debian_12/amd64/">thruk_{{ site.release_version }}_debian11_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">RHEL</td><td class="text-center">7</td><td>&nbsp;</td>
   <td></td>
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/rhel7/x86_64/">thruk-{{ site.release_version }}.rhel7.x86_64.rpm</a></td>
 </tr>
 <tr>
-  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">Centos<br>RHEL</td><td class="text-center">8</td><td>&nbsp;</td>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">RHEL</td><td class="text-center">8</td><td>&nbsp;</td>
   <td></td>
   <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/rhel8/x86_64/">thruk-{{ site.release_version }}.rhel8.x86_64.rpm</a></td>
 </tr>
 <tr>
+  <td class="text-center"><img src="images/centos.png" alt="centos" height=48 width=48></td><td class="text-center">RHEL</td><td class="text-center">9</td><td>&nbsp;</td>
+  <td></td>
+  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/rhel9/x86_64/">thruk-{{ site.release_version }}.rhel9.x86_64.rpm</a></td>
+</tr>
+<tr>
   <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">20.04</td><td class="text-center">focal</td>
   <td></td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu20.04/amd64/">thruk_{{ site.release_version }}_ubuntu20.04_amd64.deb</a></td>
+  <td><a href="https://download.opensuse.org/repositories/home:/naemon/xUbuntu_20.04/amd64/">thruk_{{ site.release_version }}_ubuntu20.04_amd64.deb</a></td>
 </tr>
 <tr>
   <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">22.04</td><td class="text-center">jammy</td>
   <td></td>
-  <td><a href="https://download.thruk.org/pkg/v{{ site.release_version }}/ubuntu22.04/amd64/">thruk_{{ site.release_version }}_ubuntu22.04_amd64.deb</a></td>
+  <td><a href="https://download.opensuse.org/repositories/home:/naemon/xUbuntu_22.04/amd64/">thruk_{{ site.release_version }}_ubuntu22.04_amd64.deb</a></td>
+</tr>
+<tr>
+  <td class="text-center"><img src="images/ubuntu.png" alt="ubuntu" height=48 width=48></td><td class="text-center">Ubuntu</td><td class="text-center">23.04</td><td class="text-center">lunar</td>
+  <td></td>
+  <td><a href="https://download.opensuse.org/repositories/home:/naemon/xUbuntu_23.04/amd64/">thruk_{{ site.release_version }}_ubuntu23.04_amd64.deb</a></td>
 </tr>
 
 <tr>
@@ -176,10 +198,14 @@ window.doOnLoadList.push(function() {
   <div class="panel-heading"><h2>Nightly Development Builds</h2></div>
   <div class="panel-body">
     <p>
-      <a href="https://download.thruk.org/nightly_builds/">Download nightly snapshots</a><br>
       Have at least a look at the test results before using test releases. They should be used for tests only, not in production!<br>
       GitHub-CI: <a href="https://github.com/sni/Thruk/actions?query=workflow:citest" target="_blank"><img src="https://github.com/sni/Thruk/workflows/citest/badge.svg" width=107 height=20 style="vertical-align: sub;" alt="github ci build status"></a>
     </p>
+    <ul>
+      <li><a href="https://build.opensuse.org/project/show/home:naemon:daily">OpenSuse daily builds repository</a></li>
+      <li><a href="https://labs.consol.de/repo/testing/">ConSol* Labs daily repository</a></li>
+      <li><a href="https://download.thruk.org/nightly_builds/">Download nightly snapshots</a></li>
+    </ul>
   </div>
 </div>
 
