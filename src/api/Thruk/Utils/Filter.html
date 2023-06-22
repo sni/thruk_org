@@ -76,6 +76,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#is_icinga2">is_icinga2</a></li>
       <li><a href="#search2text">search2text</a></li>
       <li><a href="#format_perf_number">format_perf_number</a></li>
+      <li><a href="#prefer_date_if_timestamp">prefer_date_if_timestamp</a></li>
     </ul>
   </li>
 </ul>
@@ -496,5 +497,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>  format_perf_number($number, $unit, $always_show_unit)</code></pre>
 
 <p>returns number as used in human performance data table</p>
+
+<h2 id="prefer_date_if_timestamp">prefer_date_if_timestamp</h2>
+
+<pre><code>  prefer_date_if_timestamp($ts)</code></pre>
+
+<p>returns date if ts is a unix timestamp or original ts otherwise</p>
 
 
