@@ -23,6 +23,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
       <li><a href="#update_site_panel_hashes">update_site_panel_hashes</a></li>
       <li><a href="#set_processinfo">set_processinfo</a></li>
       <li><a href="#set_enabled_backends">set_enabled_backends</a></li>
+      <li><a href="#has_backends_set">has_backends_set</a></li>
       <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
       <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
       <li><a href="#check_federation_peers">check_federation_peers</a></li>
@@ -107,6 +108,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
 <pre><code>  set_enabled_backends($c, [$backends])</code></pre>
 
 <p>set enabled backends from environment or given list</p>
+
+<h2 id="has_backends_set">has_backends_set</h2>
+
+<pre><code>  has_backends_set($c)
+
+    returns 1 if user has set custom backends</code></pre>
 
 <h2 id="die_when_no_backends">die_when_no_backends</h2>
 
