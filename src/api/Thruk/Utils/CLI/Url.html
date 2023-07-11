@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] url &lt;url&gt; [options]</code></pre>
+<pre><code>Usage: thruk [globaloptions] url &lt;url&gt; [options]</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -40,13 +40,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dt id="help"><b>help</b></dt>
 <dd>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>print help and exit</code></pre>
 
 </dd>
 <dt id="i---all-inclusive"><b>-i / --all-inclusive</b></dt>
 <dd>
 
-<pre><code>    includes all css, javascript and images in the resulting html page</code></pre>
+<pre><code>includes all css, javascript and images in the resulting html page</code></pre>
 
 </dd>
 </dl>
@@ -55,24 +55,24 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>Export the event log as excel file:</p>
 
-<pre><code>  %&gt; thruk -A thrukadmin -a &#39;url=/thruk/cgi-bin/showlog.cgi?view_mode=xls&#39; &gt; eventlog.xls</code></pre>
+<pre><code>%&gt; thruk -A thrukadmin -a &#39;url=/thruk/cgi-bin/showlog.cgi?view_mode=xls&#39; &gt; eventlog.xls</code></pre>
 
 <p>Urls can be shortened. Export all services into an excel file:</p>
 
-<pre><code>  %&gt; thruk &#39;status.cgi?view_mode=xls&amp;host=all&#39; &gt; allservices.xls</code></pre>
+<pre><code>%&gt; thruk &#39;status.cgi?view_mode=xls&amp;host=all&#39; &gt; allservices.xls</code></pre>
 
 <p>Export service availability data into a csv file:</p>
 
-<pre><code>  %&gt; thruk -A thrukadmin -a &#39;url=avail.cgi?host=all&amp;timeperiod=last7days&amp;csvoutput=1&#39; &gt; all_host_availability.csv</code></pre>
+<pre><code>%&gt; thruk -A thrukadmin -a &#39;url=avail.cgi?host=all&amp;timeperiod=last7days&amp;csvoutput=1&#39; &gt; all_host_availability.csv</code></pre>
 
 <p>Reschedule next check for host localhost now:</p>
 
-<pre><code>  %&gt; thruk &#39;cmd.cgi?cmd_mod=2&amp;cmd_typ=96&amp;host=localhost&amp;start_time=now&#39;</code></pre>
+<pre><code>%&gt; thruk &#39;cmd.cgi?cmd_mod=2&amp;cmd_typ=96&amp;host=localhost&amp;start_time=now&#39;</code></pre>
 
 

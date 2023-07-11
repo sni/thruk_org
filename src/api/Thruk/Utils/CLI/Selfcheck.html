@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] selfcheck &lt;checktype[s]&gt;...</code></pre>
+<pre><code>Usage: thruk [globaloptions] selfcheck &lt;checktype[s]&gt;...</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -40,22 +40,22 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dt id="help"><b>help</b></dt>
 <dd>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>print help and exit</code></pre>
 
 </dd>
 <dt id="checktype"><b>checktype</b></dt>
 <dd>
 
-<pre><code>    available check types are:
+<pre><code>available check types are:
 
-    - all                       runs all checks below
-    - filesystem                runs filesystem checks
-    - logfiles                  runs logfile checks
-    - lmd                       runs lmd related checks
-    - recurring_downtimes       runs recurring downtimes checks
-    - reports                   runs reporting checks
-    - logcache                  runs logcache checks
-    - backends                  runs backend connection checks</code></pre>
+- all                       runs all checks below
+- filesystem                runs filesystem checks
+- logfiles                  runs logfile checks
+- lmd                       runs lmd related checks
+- recurring_downtimes       runs recurring downtimes checks
+- reports                   runs reporting checks
+- logcache                  runs logcache checks
+- backends                  runs backend connection checks</code></pre>
 
 </dd>
 </dl>
@@ -64,20 +64,20 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>Run all selfchecks</p>
 
-<pre><code>  %&gt; thruk selfcheck all</code></pre>
+<pre><code>%&gt; thruk selfcheck all</code></pre>
 
 <p>Run all selfchecks except filesystem</p>
 
-<pre><code>  %&gt; thruk selfcheck &#39;all,!filesystem&#39;</code></pre>
+<pre><code>%&gt; thruk selfcheck &#39;all,!filesystem&#39;</code></pre>
 
 <p>Run lmd and filesystem selfcheck</p>
 
-<pre><code>  %&gt; thruk selfcheck &#39;lmd,filesystem&#39;</code></pre>
+<pre><code>%&gt; thruk selfcheck &#39;lmd,filesystem&#39;</code></pre>
 
 

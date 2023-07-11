@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  $c-&gt;metrics-&gt;set($key, $value);</code></pre>
+<pre><code>$c-&gt;metrics-&gt;set($key, $value);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -41,43 +41,43 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="new">new</h2>
 
-<pre><code>    new()</code></pre>
+<pre><code>new()</code></pre>
 
 <p>return new metrics object</p>
 
 <h2 id="get_all">get_all</h2>
 
-<pre><code>    get_all()</code></pre>
+<pre><code>get_all()</code></pre>
 
 <p>return all metrics</p>
 
 <h2 id="register">register</h2>
 
-<pre><code>    register($metric, $help)</code></pre>
+<pre><code>register($metric, $help)</code></pre>
 
 <p>register this metric</p>
 
 <h2 id="set">set</h2>
 
-<pre><code>    set($key, $value, [$help])</code></pre>
+<pre><code>set($key, $value, [$help])</code></pre>
 
 <p>set metric to absolute value. Calls register if help is set.</p>
 
 <h2 id="add">add</h2>
 
-<pre><code>    add($key, $value, [$help])</code></pre>
+<pre><code>add($key, $value, [$help])</code></pre>
 
 <p>add value to metric. Calls register if help is set.</p>
 
 <h2 id="inc">inc</h2>
 
-<pre><code>    inc($key, [$help])</code></pre>
+<pre><code>inc($key, [$help])</code></pre>
 
 <p>increment metric by 1. Calls register if help is set.</p>
 
 <h2 id="store">store</h2>
 
-<pre><code>    store()</code></pre>
+<pre><code>store()</code></pre>
 
 <p>write metrics to disk. (automatically called on END)</p>
 

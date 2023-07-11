@@ -44,17 +44,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 <p>create a new <code>Thruk::Authentication::User</code> object.</p>
 
-<pre><code> Thruk::Authentication::User-&gt;new();</code></pre>
+<pre><code>Thruk::Authentication::User-&gt;new();</code></pre>
 
 <h2 id="set_dynamic_attributes">set_dynamic_attributes</h2>
 
-<pre><code>  set_dynamic_attributes($c, [$skip_db_access], [$roles], [$force_roles])</code></pre>
+<pre><code>set_dynamic_attributes($c, [$skip_db_access], [$roles], [$force_roles])</code></pre>
 
 <p>sets attributes based on livestatus data</p>
 
 <h2 id="clean_roles">clean_roles</h2>
 
-<pre><code>  clean_roles($roles)</code></pre>
+<pre><code>clean_roles($roles)</code></pre>
 
 <p>limit roles to given list (using the intersection of user roles and list)</p>
 
@@ -62,85 +62,85 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 <p>get user attribute</p>
 
-<pre><code> get($attribute)</code></pre>
+<pre><code>get($attribute)</code></pre>
 
 <h2 id="is_locked">is_locked</h2>
 
-<pre><code>  is_locked()</code></pre>
+<pre><code>is_locked()</code></pre>
 
 <p>returns true if user is locked</p>
 
 <h2 id="check_user_roles">check_user_roles</h2>
 
-<pre><code> check_user_roles(&lt;$role&gt;)
+<pre><code>check_user_roles(&lt;$role&gt;)
 
- returns 1 if user has all given roles.
+returns 1 if user has all given roles.
 
- for example:
-  $c-&gt;user-&gt;check_user_roles(&#39;admin&#39;)
-  $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)
-  $c-&gt;user-&gt;check_user_roles([&#39;authorized_for_system_commands&#39;, &#39;authorized_for_configuration_information&#39;])</code></pre>
+for example:
+ $c-&gt;user-&gt;check_user_roles(&#39;admin&#39;)
+ $c-&gt;user-&gt;check_user_roles(&#39;authorized_for_all_services&#39;)
+ $c-&gt;user-&gt;check_user_roles([&#39;authorized_for_system_commands&#39;, &#39;authorized_for_configuration_information&#39;])</code></pre>
 
 <h2 id="check_permissions">check_permissions</h2>
 
-<pre><code> check_permissions(&#39;host&#39;, $hostname)
- check_permissions(&#39;service&#39;, $servicename, $hostname)
- check_permissions(&#39;hostgroup&#39;, $hostgroupname)
- check_permissions(&#39;servicegroup&#39;, $servicegroupname)
- check_permissions(contact&#39;, $contactname)
- check_permissions(contactgroup&#39;, $contactgroupname)
+<pre><code>check_permissions(&#39;host&#39;, $hostname)
+check_permissions(&#39;service&#39;, $servicename, $hostname)
+check_permissions(&#39;hostgroup&#39;, $hostgroupname)
+check_permissions(&#39;servicegroup&#39;, $servicegroupname)
+check_permissions(contact&#39;, $contactname)
+check_permissions(contactgroup&#39;, $contactgroupname)
 
- for example:
- $c-&gt;check_permissions(&#39;service&#39;, $service, $host)</code></pre>
+for example:
+$c-&gt;check_permissions(&#39;service&#39;, $service, $host)</code></pre>
 
 <h2 id="check_cmd_permissions">check_cmd_permissions</h2>
 
-<pre><code> check_cmd_permissions(&#39;system&#39;)
- check_cmd_permissions(&#39;host&#39;, $hostname)
- check_cmd_permissions(&#39;all_hosts&#39;)
- check_cmd_permissions(&#39;service&#39;, $servicename, $hostname)
- check_cmd_permissions(&#39;host_services&#39;, $hostname)
- check_cmd_permissions(&#39;all_services&#39;)
- check_cmd_permissions(&#39;hostgroup&#39;, $hostgroupname)
- check_cmd_permissions(&#39;servicegroup&#39;, $servicegroupname)
- check_cmd_permissions(&#39;contact&#39;, $contactname)
- check_cmd_permissions(&#39;contactgroup&#39;, $contactgroupname)
+<pre><code>check_cmd_permissions(&#39;system&#39;)
+check_cmd_permissions(&#39;host&#39;, $hostname)
+check_cmd_permissions(&#39;all_hosts&#39;)
+check_cmd_permissions(&#39;service&#39;, $servicename, $hostname)
+check_cmd_permissions(&#39;host_services&#39;, $hostname)
+check_cmd_permissions(&#39;all_services&#39;)
+check_cmd_permissions(&#39;hostgroup&#39;, $hostgroupname)
+check_cmd_permissions(&#39;servicegroup&#39;, $servicegroupname)
+check_cmd_permissions(&#39;contact&#39;, $contactname)
+check_cmd_permissions(&#39;contactgroup&#39;, $contactgroupname)
 
- for example:
- $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
+for example:
+$c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
 
 <h2 id="check_role_permissions">check_role_permissions</h2>
 
-<pre><code> check_role_permissions($role)
+<pre><code>check_role_permissions($role)
 
- returns 1 if user is allowed to use given role. Don&#39;t mix up with check_user_roles()</code></pre>
+returns 1 if user is allowed to use given role. Don&#39;t mix up with check_user_roles()</code></pre>
 
 <h2 id="transform_username">transform_username</h2>
 
 <p>run transformation rules for username</p>
 
-<pre><code> transform_username($config, $username, [$c])</code></pre>
+<pre><code>transform_username($config, $username, [$c])</code></pre>
 
 <h2 id="grant">grant</h2>
 
-<pre><code>    grant(&#39;role&#39;)</code></pre>
+<pre><code>grant(&#39;role&#39;)</code></pre>
 
 <p>grant role to user</p>
 
 <h2 id="has_group">has_group</h2>
 
-<pre><code> has_group(&lt;$group&gt;)
+<pre><code>has_group(&lt;$group&gt;)
 
- returns 1 if user has all given groups.
+returns 1 if user has all given groups.
 
- for example:
-  $c-&gt;user-&gt;has_group(&#39;Admin&#39;)
-  $c-&gt;user-&gt;has_group([&#39;Admin&#39;, &#39;Location XY&#39;])</code></pre>
+for example:
+ $c-&gt;user-&gt;has_group(&#39;Admin&#39;)
+ $c-&gt;user-&gt;has_group([&#39;Admin&#39;, &#39;Location XY&#39;])</code></pre>
 
 <h2 id="js_data">js_data</h2>
 
-<pre><code> js_data()
+<pre><code>js_data()
 
- returns user data exposed to javascript</code></pre>
+returns user data exposed to javascript</code></pre>
 
 

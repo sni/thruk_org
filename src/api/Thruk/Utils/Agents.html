@@ -1,0 +1,137 @@
+---
+title: Agents
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_agent_checks_for_host">get_agent_checks_for_host</a></li>
+      <li><a href="#update_inventory">update_inventory</a></li>
+      <li><a href="#get_services_checks">get_services_checks</a></li>
+      <li><a href="#get_host_agent_services">get_host_agent_services</a></li>
+      <li><a href="#find_agent_module_names">find_agent_module_names</a></li>
+      <li><a href="#get_agent_class">get_agent_class</a></li>
+      <li><a href="#build_agent">build_agent</a></li>
+      <li><a href="#check_for_check_commands">check_for_check_commands</a></li>
+      <li><a href="#set_object_model">set_object_model</a></li>
+      <li><a href="#remove_host">remove_host</a></li>
+      <li><a href="#default_agent_type">default_agent_type</a></li>
+      <li><a href="#default_port">default_port</a></li>
+      <li><a href="#to_id">to_id</a></li>
+      <li><a href="#scan_agent">scan_agent</a></li>
+      <li><a href="#check_wildcard_match">check_wildcard_match</a></li>
+      <li><a href="#check_disable">check_disable</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Agents - Utils for agents</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_agent_checks_for_host">get_agent_checks_for_host</h2>
+
+<pre><code>get_agent_checks_for_host($c, $backend, $hostname, $hostobj, [$agenttype], [$fresh])</code></pre>
+
+<p>returns list of checks for this host grouped by type (new, exists, obsolete, disabled) along with the total number of checks.</p>
+
+<h2 id="update_inventory">update_inventory</h2>
+
+<pre><code>update_inventory($c, $hostname, [$hostobj], [$opt])</code></pre>
+
+<p>returns $data and $err</p>
+
+<h2 id="get_services_checks">get_services_checks</h2>
+
+<pre><code>get_services_checks($c, $backend, $hostname, $hostobj, $agenttype, $password, $fresh)</code></pre>
+
+<p>returns list of checks as flat list.</p>
+
+<h2 id="get_host_agent_services">get_host_agent_services</h2>
+
+<pre><code>get_host_agent_services($c, $hostobj)</code></pre>
+
+<p>returns list of services for given host object.</p>
+
+<h2 id="find_agent_module_names">find_agent_module_names</h2>
+
+<pre><code>find_agent_module_names()</code></pre>
+
+<p>returns available agent class names</p>
+
+<h2 id="get_agent_class">get_agent_class</h2>
+
+<pre><code>get_agent_class($type)</code></pre>
+
+<p>returns agent class for given type</p>
+
+<h2 id="build_agent">build_agent</h2>
+
+<pre><code>build_agent($hostdata | $hostobj)</code></pre>
+
+<p>returns agent based on host (livestatus) data</p>
+
+<h2 id="check_for_check_commands">check_for_check_commands</h2>
+
+<pre><code>check_for_check_commands($c, [$extra_cmd])</code></pre>
+
+<p>create agent check commands if missing</p>
+
+<h2 id="set_object_model">set_object_model</h2>
+
+<pre><code>set_object_model($c, $peer_key, [$retries])</code></pre>
+
+<p>returns 1 on success, 0 on redirects. Dies otherwise.</p>
+
+<h2 id="remove_host">remove_host</h2>
+
+<pre><code>remove_host($c, $hostname, $backend)</code></pre>
+
+<p>remove hosts, returns 1 if successful</p>
+
+<h2 id="default_agent_type">default_agent_type</h2>
+
+<pre><code>default_agent_type()</code></pre>
+
+<p>returns default agent type</p>
+
+<h2 id="default_port">default_port</h2>
+
+<pre><code>default_port()</code></pre>
+
+<p>returns default port for given agent type</p>
+
+<h2 id="to_id">to_id</h2>
+
+<pre><code>to_id($name)</code></pre>
+
+<p>returns name with special characters replaced</p>
+
+<h2 id="scan_agent">scan_agent</h2>
+
+<pre><code>scan_agent($c, $params)</code></pre>
+
+<p>returns error if updates fails or undef on success</p>
+
+<h2 id="check_wildcard_match">check_wildcard_match</h2>
+
+<pre><code>check_wildcard_match($string, $config)</code></pre>
+
+<p>returns true if attribute matches given config</p>
+
+<h2 id="check_disable">check_disable</h2>
+
+<pre><code>check_disable($data, $config)</code></pre>
+
+<p>returns if checks disabled for given config</p>
+
+

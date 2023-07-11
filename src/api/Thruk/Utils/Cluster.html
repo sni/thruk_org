@@ -76,67 +76,67 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>run something on our cluster</p>
 
-<pre><code>    - type: can be
-        - &#39;once&#39;      runs job on current node unless it is in progress already
-        - &#39;all&#39;       runs job on all nodes
-        - &#39;others&#39;    runs job on all other nodes
-        - &lt;node url&gt;  runs job on given node[s]
-    - sub: class / sub name
-    - args: arguments</code></pre>
+<pre><code>- type: can be
+    - &#39;once&#39;      runs job on current node unless it is in progress already
+    - &#39;all&#39;       runs job on all nodes
+    - &#39;others&#39;    runs job on all other nodes
+    - &lt;node url&gt;  runs job on given node[s]
+- sub: class / sub name
+- args: arguments</code></pre>
 
 <p>returns 0 if no cluster is in use and/or caller can continue locally returns 1 if a &#39;once&#39; job runs somewhere already returns list of results for each specified node</p>
 
 <h2 id="kill">kill</h2>
 
-<pre><code>  kill($c, $node, $signal, @pids)</code></pre>
+<pre><code>kill($c, $node, $signal, @pids)</code></pre>
 
 <p>cluster aware kill wrapper</p>
 
 <h2 id="pong">pong</h2>
 
-<pre><code>  pong($c, $node)</code></pre>
+<pre><code>pong($c, $node)</code></pre>
 
 <p>return a ping request</p>
 
 <h2 id="is_it_me">is_it_me</h2>
 
-<pre><code>  is_it_me($self, $node|$node_id|$node_url)</code></pre>
+<pre><code>is_it_me($self, $node|$node_id|$node_url)</code></pre>
 
 <p>returns true if this us</p>
 
 <h2 id="maint">maint</h2>
 
-<pre><code>  maint($self, $node, [$value])</code></pre>
+<pre><code>maint($self, $node, [$value])</code></pre>
 
 <p>returns true if this node is in maintenance mode.</p>
 
 <h2 id="heartbeat">heartbeat</h2>
 
-<pre><code>  heartbeat($self, [$node_id])</code></pre>
+<pre><code>heartbeat($self, [$node_id])</code></pre>
 
 <p>request pong from other nodes (or node if if given)</p>
 
 <h2 id="expand_node_ids">expand_node_ids</h2>
 
-<pre><code>  expand_node_ids($self, @nodes_ids_and_urls)</code></pre>
+<pre><code>expand_node_ids($self, @nodes_ids_and_urls)</code></pre>
 
 <p>convert list of node_ids and node_urls to node_ids only.</p>
 
 <h2 id="node_name">node_name</h2>
 
-<pre><code>  node_name($self, $id)</code></pre>
+<pre><code>node_name($self, $id)</code></pre>
 
 <p>return node name (node_url) for given id</p>
 
 <h2 id="update_cron_file">update_cron_file</h2>
 
-<pre><code>    update_cron_file($c)</code></pre>
+<pre><code>update_cron_file($c)</code></pre>
 
 <p>update downtimes cron</p>
 
 <h2 id="check_stale_pids">check_stale_pids</h2>
 
-<pre><code>    check_stale_pids($self)</code></pre>
+<pre><code>check_stale_pids($self)</code></pre>
 
 <p>check for stale pids</p>
 

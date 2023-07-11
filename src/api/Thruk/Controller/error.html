@@ -26,26 +26,26 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <p>Thruk Controller.</p>
 
-<pre><code>    predefined errors:
+<pre><code>predefined errors:
 
-        return $c-&gt;detach(&#39;/error/index/&lt;nr&gt;&#39;);
+    return $c-&gt;detach(&#39;/error/index/&lt;nr&gt;&#39;);
 
-    detailed errors:
-        return $c-&gt;detach_error({
-            msg                 &quot;main error&quot;,
-            descr               &quot;more descriptive details&quot;,
-            code                http code,
-            log                 0|1, #  force logging
-            debug_information   more details which will be logged, (string / array)
-            skip_escape         0|1, # skip html escape of data
-        });
+detailed errors:
+    return $c-&gt;detach_error({
+        msg                 &quot;main error&quot;,
+        descr               &quot;more descriptive details&quot;,
+        code                http code,
+        log                 0|1, #  force logging
+        debug_information   more details which will be logged, (string / array)
+        skip_escape         0|1, # skip html escape of data
+    });
 
 
-    custom errors:
+custom errors:
 
-        $c-&gt;stash-&gt;{errorMessage}       = &quot;short error&quot;;
-        $c-&gt;stash-&gt;{errorDescription}   = &quot;error description&quot;;
-        return $c-&gt;detach(&#39;/error/index/99&#39;);</code></pre>
+    $c-&gt;stash-&gt;{errorMessage}       = &quot;short error&quot;;
+    $c-&gt;stash-&gt;{errorDescription}   = &quot;error description&quot;;
+    return $c-&gt;detach(&#39;/error/index/99&#39;);</code></pre>
 
 <h1 id="METHODS">METHODS</h1>
 

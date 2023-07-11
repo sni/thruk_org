@@ -27,9 +27,9 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Liv
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>    use Monitoring::Livestatus;
-    my $nl = Monitoring::Livestatus::INET-&gt;new( &#39;localhost:9999&#39; );
-    my $hosts = $nl-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
+<pre><code>use Monitoring::Livestatus;
+my $nl = Monitoring::Livestatus::INET-&gt;new( &#39;localhost:9999&#39; );
+my $hosts = $nl-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
 
 <h1 id="CONSTRUCTOR">CONSTRUCTOR</h1>
 

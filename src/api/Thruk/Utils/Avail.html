@@ -36,43 +36,43 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="calculate_availability">calculate_availability</h2>
 
-<pre><code>  calculate_availability($c, [$params])</code></pre>
+<pre><code>calculate_availability($c, [$params])</code></pre>
 
 <p>calculates the availability</p>
 
 <h2 id="fix_and_sort_logs">fix_and_sort_logs</h2>
 
-<pre><code>  fix_and_sort_logs($c, $logs, $file, $rpttimeperiod, $sort)</code></pre>
+<pre><code>fix_and_sort_logs($c, $logs, $file, $rpttimeperiod, $sort)</code></pre>
 
 <p>fixes livestatus timeperiod change timestamps which can differ up to a minute from the real date</p>
 
 <h2 id="reset_req_parameters">reset_req_parameters</h2>
 
-<pre><code>  reset_req_parameters($c)</code></pre>
+<pre><code>reset_req_parameters($c)</code></pre>
 
 <p>removes all parameters used for availability calculation from c-&gt;request-&gt;parameters</p>
 
 <h2 id="get_availability_percents">get_availability_percents</h2>
 
-<pre><code>  get_availability_percents($avail_data, $unavailable_states, $host, $service)</code></pre>
+<pre><code>get_availability_percents($avail_data, $unavailable_states, $host, $service)</code></pre>
 
 <p>return list of availability percent as json list</p>
 
 <h2 id="outages">outages</h2>
 
-<pre><code>  outages($c, $logs, $unavailable_states, $start, $end, $host, $service, $only_host_services)</code></pre>
+<pre><code>outages($c, $logs, $unavailable_states, $start, $end, $host, $service, $only_host_services)</code></pre>
 
 <p>return combined outages from log entries</p>
 
 <h2 id="initialassumedhoststate_to_state">_initialassumedhoststate_to_state</h2>
 
-<pre><code>  _initialassumedhoststate_to_state($state)</code></pre>
+<pre><code>_initialassumedhoststate_to_state($state)</code></pre>
 
 <p>translate initial assumed host state to text</p>
 
 <h2 id="initialassumedservicestate_to_state">_initialassumedservicestate_to_state</h2>
 
-<pre><code>  _initialassumedservicestate_to_state($state)</code></pre>
+<pre><code>_initialassumedservicestate_to_state($state)</code></pre>
 
 <p>translate initial assumed service state to text</p>
 

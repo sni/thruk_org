@@ -38,8 +38,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>    use Monitoring::Availability;
-    my $ma = Monitoring::Availability-&gt;new();</code></pre>
+<pre><code>use Monitoring::Availability;
+my $ma = Monitoring::Availability-&gt;new();</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -47,7 +47,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h1 id="REPOSITORY">REPOSITORY</h1>
 
-<pre><code>    Git: http://github.com/sni/Monitoring-Availability</code></pre>
+<pre><code>Git: http://github.com/sni/Monitoring-Availability</code></pre>
 
 <h1 id="CONSTRUCTOR">CONSTRUCTOR</h1>
 
@@ -141,7 +141,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="calculate">calculate</h2>
 
-<pre><code> calculate()</code></pre>
+<pre><code>calculate()</code></pre>
 
 <p>Calculate the availability.</p>
 
@@ -184,14 +184,14 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>Array with logs from a livestatus query</p>
 
-<pre><code> a sample query could be:
- selectall_arrayref(GET logs...\nColumns: time type options, {Slice =&gt; 1})</code></pre>
+<pre><code>a sample query could be:
+selectall_arrayref(GET logs...\nColumns: time type options, {Slice =&gt; 1})</code></pre>
 
 </dd>
 <dt id="log_iterator">log_iterator</dt>
 <dd>
 
-<pre><code> Iterator object for logentry objects. For example a L&lt;MongoDB::Cursor&gt; object.</code></pre>
+<pre><code>Iterator object for logentry objects. For example a L&lt;MongoDB::Cursor&gt; object.</code></pre>
 
 </dd>
 <dt id="hosts">hosts</dt>
@@ -205,7 +205,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>array with hashes of services for which the report should be generated. The array should look like this:</p>
 
-<pre><code> [{host =&gt; &#39;hostname&#39;, service =&gt; &#39;description&#39;}, ...]</code></pre>
+<pre><code>[{host =&gt; &#39;hostname&#39;, service =&gt; &#39;description&#39;}, ...]</code></pre>
 
 </dd>
 <dt id="initial_states">initial_states</dt>
@@ -213,18 +213,18 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>if you use the &quot;current&quot; option for initialassumedservicestate or initialassumedhoststate you have to provide the current states with a hash like this:</p>
 
-<pre><code>  {
-    hosts =&gt; {
-     &#39;hostname&#39; =&gt; &#39;ok&#39;,
-     ...
-    },
-    services =&gt; {
-     &#39;hostname&#39; =&gt; {
-         &#39;description&#39; =&gt;  &#39;warning&#39;,
-         ...
-      }
+<pre><code>{
+  hosts =&gt; {
+   &#39;hostname&#39; =&gt; &#39;ok&#39;,
+   ...
+  },
+  services =&gt; {
+   &#39;hostname&#39; =&gt; {
+       &#39;description&#39; =&gt;  &#39;warning&#39;,
+       ...
     }
-  }</code></pre>
+  }
+}</code></pre>
 
 <p>valid values for hosts are: up, down and unreachable</p>
 
@@ -235,13 +235,13 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="get_condensed_logs">get_condensed_logs</h2>
 
-<pre><code> get_condensed_logs()</code></pre>
+<pre><code>get_condensed_logs()</code></pre>
 
 <p>returns an array of hashes with the condensed log used for this report</p>
 
 <h2 id="get_full_logs">get_full_logs</h2>
 
-<pre><code> get_full_logs()</code></pre>
+<pre><code>get_full_logs()</code></pre>
 
 <p>returns an array of hashes with the full log used for this report</p>
 

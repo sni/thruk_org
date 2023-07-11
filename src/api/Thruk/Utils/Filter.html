@@ -77,6 +77,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#search2text">search2text</a></li>
       <li><a href="#format_perf_number">format_perf_number</a></li>
       <li><a href="#prefer_date_if_timestamp">prefer_date_if_timestamp</a></li>
+      <li><a href="#list_intersect">list_intersect</a></li>
+      <li><a href="#list_not_intersect">list_not_intersect</a></li>
+      <li><a href="#is_empty_filter">is_empty_filter</a></li>
     </ul>
   </li>
 </ul>
@@ -93,64 +96,64 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="throw">throw</h2>
 
-<pre><code>  throw($string)</code></pre>
+<pre><code>throw($string)</code></pre>
 
 <p>can be used to die in templates</p>
 
 <h2 id="type">type</h2>
 
-<pre><code>  type($any)</code></pre>
+<pre><code>type($any)</code></pre>
 
 <p>returns ref</p>
 
 <h2 id="contains">contains</h2>
 
-<pre><code>  contains($haystack, $needle)</code></pre>
+<pre><code>contains($haystack, $needle)</code></pre>
 
 <p>returns true if needle is found in haystack or needle equals haystack</p>
 
 <h2 id="duration">duration</h2>
 
-<pre><code>  my $string = duration($seconds, [$options]);</code></pre>
+<pre><code>my $string = duration($seconds, [$options]);</code></pre>
 
 <p>formats a duration into the format: 0d 0h 29m 43s</p>
 
-<pre><code>  $options:
-        0    =&gt;    0h 0m 15s
-        1    =&gt; 0d 0h 0m 15s  (default)
-        2    =&gt;   0min 14sec
-        3    =&gt;       0m 04s
-        4    =&gt;          15m (trimmed all non-zero)
-        5    =&gt;        15min (trimmed all non-zero)
-        6    =&gt;        2y 5d (highest 2)</code></pre>
+<pre><code>$options:
+      0    =&gt;    0h 0m 15s
+      1    =&gt; 0d 0h 0m 15s  (default)
+      2    =&gt;   0min 14sec
+      3    =&gt;       0m 04s
+      4    =&gt;          15m (trimmed all non-zero)
+      5    =&gt;        15min (trimmed all non-zero)
+      6    =&gt;        2y 5d (highest 2)</code></pre>
 
 <h2 id="nl2br">nl2br</h2>
 
-<pre><code>  my $string = nl2br($string);</code></pre>
+<pre><code>my $string = nl2br($string);</code></pre>
 
 <p>replace newlines with linebreaks</p>
 
 <h2 id="sprintf">sprintf</h2>
 
-<pre><code>  my $string = sprintf($format, $list)</code></pre>
+<pre><code>my $string = sprintf($format, $list)</code></pre>
 
 <p>wrapper around the internal sprintf</p>
 
 <h2 id="date_format">date_format</h2>
 
-<pre><code>  my $string = date_format($c, $seconds);</code></pre>
+<pre><code>my $string = date_format($c, $seconds);</code></pre>
 
 <p>formats a time definition into date format</p>
 
 <h2 id="last_check">last_check</h2>
 
-<pre><code>  my $string = last_check($c, $last_check);</code></pre>
+<pre><code>my $string = last_check($c, $last_check);</code></pre>
 
 <p>returns formated last check date</p>
 
 <h2 id="uri">uri</h2>
 
-<pre><code>  uri($c)</code></pre>
+<pre><code>uri($c)</code></pre>
 
 <p>returns html escaped current absolute uri without any filter</p>
 
@@ -158,18 +161,18 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="full_uri">full_uri</h2>
 
-<pre><code>  full_uri($c, $return_full_url)</code></pre>
+<pre><code>full_uri($c, $return_full_url)</code></pre>
 
 <p>returns html escaped uri to current page with default filters.</p>
 
 <p>ex.: /thruk/cgi-bin/status.cgi?params...</p>
 
-<pre><code>    with return_full_url:
-    http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
+<pre><code>with return_full_url:
+http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 
 <h2 id="base_url">base_url</h2>
 
-<pre><code>  base_uri($c)</code></pre>
+<pre><code>base_uri($c)</code></pre>
 
 <p>returns a html escaped correct uri but only the url part and without parameters</p>
 
@@ -177,7 +180,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="short_uri">short_uri</h2>
 
-<pre><code>  short_uri($c, [ $filter, $keep_absolute, $baseurl, $skip_escape ])</code></pre>
+<pre><code>short_uri($c, [ $filter, $keep_absolute, $baseurl, $skip_escape ])</code></pre>
 
 <p>returns a html escaped correct uri but only the url part (redirects to uri_with but applies default filter)</p>
 
@@ -185,120 +188,120 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="uri_with">uri_with</h2>
 
-<pre><code>  uri_with($c, $data, [$keep_absolute], [$baseurl], [$skip_escape])</code></pre>
+<pre><code>uri_with($c, $data, [$keep_absolute], [$baseurl], [$skip_escape])</code></pre>
 
 <p>returns a relative uri to current page</p>
 
 <p>ex.: status.cgi?params...</p>
 
-<pre><code>    with keep_absolute:
-    http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
+<pre><code>with keep_absolute:
+http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 
 <h2 id="as_url_arg">as_url_arg</h2>
 
-<pre><code>  as_url_arg($str)</code></pre>
+<pre><code>as_url_arg($str)</code></pre>
 
 <p>returns encoded string for use in url args</p>
 
 <h2 id="html_escape">html_escape</h2>
 
-<pre><code>  html_escape($text)</code></pre>
+<pre><code>html_escape($text)</code></pre>
 
 <p>wrapper for escape_html for compatibility reasons</p>
 
 <h2 id="html_escape_recursive">html_escape_recursive</h2>
 
-<pre><code>  html_escape_recursive($any)</code></pre>
+<pre><code>html_escape_recursive($any)</code></pre>
 
 <p>recursively escape data</p>
 
 <h2 id="escape_html">escape_html</h2>
 
-<pre><code>  escape_html($text)</code></pre>
+<pre><code>escape_html($text)</code></pre>
 
 <p>returns an escaped string</p>
 
 <h2 id="escape_quotes">escape_quotes</h2>
 
-<pre><code>  escape_quotes($text)</code></pre>
+<pre><code>escape_quotes($text)</code></pre>
 
 <p>returns a string with only the single- or double-quotes escaped</p>
 
 <h2 id="escape_ampersand">escape_ampersand</h2>
 
-<pre><code>  escape_ampersand($text)</code></pre>
+<pre><code>escape_ampersand($text)</code></pre>
 
 <p>returns a string with &amp; escaped to &amp;amp;</p>
 
 <h2 id="remove_html_comments">remove_html_comments</h2>
 
-<pre><code>  remove_html_comments($text)</code></pre>
+<pre><code>remove_html_comments($text)</code></pre>
 
 <p>returns string with html comments removed</p>
 
 <h2 id="validate_json">validate_json</h2>
 
-<pre><code>  validate_json(...)</code></pre>
+<pre><code>validate_json(...)</code></pre>
 
 <p>returns error if json is invalid</p>
 
 <h2 id="get_action_menu">get_action_menu</h2>
 
-<pre><code>  get_action_menu(c, [name|menu])</code></pre>
+<pre><code>get_action_menu(c, [name|menu])</code></pre>
 
 <p>returns menu and error</p>
 
 <h2 id="json_encode">json_encode</h2>
 
-<pre><code>  json_encode(...)</code></pre>
+<pre><code>json_encode(...)</code></pre>
 
 <p>returns json encoded string</p>
 
 <h2 id="json_encode_pretty">json_encode_pretty</h2>
 
-<pre><code>  json_encode_pretty(array|hash)</code></pre>
+<pre><code>json_encode_pretty(array|hash)</code></pre>
 
 <p>returns pretty json encoded string</p>
 
 <h2 id="encode_json_obj">encode_json_obj</h2>
 
-<pre><code>  encode_json_obj(array, [decode])</code></pre>
+<pre><code>encode_json_obj(array, [decode])</code></pre>
 
 <p>returns json encoded object</p>
 
 <h2 id="escape_tags_js">_escape_tags_js</h2>
 
-<pre><code>  _escape_tags_js($text)</code></pre>
+<pre><code>_escape_tags_js($text)</code></pre>
 
 <p>used to escape html tags so it can be used as javascript string</p>
 
 <h2 id="escape_js">escape_js</h2>
 
-<pre><code>  escape_js($text)</code></pre>
+<pre><code>escape_js($text)</code></pre>
 
 <p>used to escape html tags so it can be used as javascript string</p>
 
 <h2 id="escape_bslash">escape_bslash</h2>
 
-<pre><code>  escape_bslash($text)</code></pre>
+<pre><code>escape_bslash($text)</code></pre>
 
 <p>used to escape backslashes</p>
 
 <h2 id="escape_xml">escape_xml</h2>
 
-<pre><code>  escape_xml($text)</code></pre>
+<pre><code>escape_xml($text)</code></pre>
 
 <p>returns an escaped string for xml output</p>
 
 <h2 id="escape_regex">escape_regex</h2>
 
-<pre><code>  escape_regex($text)</code></pre>
+<pre><code>escape_regex($text)</code></pre>
 
 <p>returns an escaped string for regular expression</p>
 
 <h2 id="name2id">name2id</h2>
 
-<pre><code>  my $striped_string = name2id($name)</code></pre>
+<pre><code>my $striped_string = name2id($name)</code></pre>
 
 <p>returns a string which can be used as id in html elements</p>
 
@@ -306,19 +309,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="uniqnumber">uniqnumber</h2>
 
-<pre><code>  uniqnumber()</code></pre>
+<pre><code>uniqnumber()</code></pre>
 
 <p>return uniq number which can be used in html ids</p>
 
 <h2 id="get_message">get_message</h2>
 
-<pre><code>  get_message($c, [$unescaped])</code></pre>
+<pre><code>get_message($c, [$unescaped])</code></pre>
 
 <p>get a message from an cookie, display and delete it</p>
 
 <h2 id="strip_command_args">strip_command_args</h2>
 
-<pre><code>  my $striped_string = strip_command_args($command_name)</code></pre>
+<pre><code>my $striped_string = strip_command_args($command_name)</code></pre>
 
 <p>returns a string without the arguments for a command</p>
 
@@ -326,182 +329,200 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</h2>
 
-<pre><code>  my $remaining = calculate_first_notification_delay_remaining($obj)</code></pre>
+<pre><code>my $remaining = calculate_first_notification_delay_remaining($obj)</code></pre>
 
 <p>returns remaining minutes for first_notification_delay</p>
 
 <h2 id="logline_icon">logline_icon</h2>
 
-<pre><code>  my $icon = logline_icon($logentry)</code></pre>
+<pre><code>my $icon = logline_icon($logentry)</code></pre>
 
 <p>returns icon path</p>
 
 <h2 id="has_business_process">has_business_process</h2>
 
-<pre><code>  has_business_process($host)</code></pre>
+<pre><code>has_business_process($host)</code></pre>
 
 <p>returns true if host is part of an business process</p>
 
 <h2 id="fullversion">fullversion</h2>
 
-<pre><code>  my $str = fullversion($c)</code></pre>
+<pre><code>my $str = fullversion($c)</code></pre>
 
 <p>returns full version string</p>
 
 <h2 id="split_perfdata">split_perfdata</h2>
 
-<pre><code>  split_perfdata($string)</code></pre>
+<pre><code>split_perfdata($string)</code></pre>
 
 <p>return splitted performance data which can be used for tabular display</p>
 
 <h2 id="get_user_token">get_user_token</h2>
 
-<pre><code>  get_user_token($c)</code></pre>
+<pre><code>get_user_token($c)</code></pre>
 
 <p>returns user token which can be used to validate requests</p>
 
 <h2 id="get_cmd_submit_hash">get_cmd_submit_hash</h2>
 
-<pre><code>  get_cmd_submit_hash($data)</code></pre>
+<pre><code>get_cmd_submit_hash($data)</code></pre>
 
 <p>create hash used in service/host details page</p>
 
 <h2 id="replace_macros">replace_macros</h2>
 
-<pre><code>  replace_macros($text, $macros)</code></pre>
+<pre><code>replace_macros($text, $macros)</code></pre>
 
 <p>return text with replaced macros</p>
 
 <h2 id="set_time_locale">set_time_locale</h2>
 
-<pre><code>  set LC_TIME locale</code></pre>
+<pre><code>set LC_TIME locale</code></pre>
 
 <p>remember to reset to default after template processing.</p>
 
 <h2 id="lc">lc</h2>
 
-<pre><code>  lower case text</code></pre>
+<pre><code>lower case text</code></pre>
 
 <p>returns lower case string</p>
 
 <h2 id="debug">debug</h2>
 
-<pre><code>  print anything to stderr</code></pre>
+<pre><code>print anything to stderr</code></pre>
 
 <p>returns empty string</p>
 
 <h2 id="dump2str">dump2str</h2>
 
-<pre><code>  dump2str($anything, [$max_length], [$flat])</code></pre>
+<pre><code>dump2str($anything, [$max_length], [$flat])</code></pre>
 
 <p>returns string from object</p>
 
 <h2 id="peer_name">peer_name</h2>
 
-<pre><code>  get peer_name from dataset</code></pre>
+<pre><code>get peer_name from dataset</code></pre>
 
 <p>returns peer_name</p>
 
 <h2 id="servicestatetext">servicestatetext</h2>
 
-<pre><code>    servicestatetext($svc)</code></pre>
+<pre><code>servicestatetext($svc)</code></pre>
 
 <p>return string for given service</p>
 
 <h2 id="hoststatetext">hoststatetext</h2>
 
-<pre><code>    hoststatetext($hst)</code></pre>
+<pre><code>hoststatetext($hst)</code></pre>
 
 <p>return string for given host</p>
 
 <h2 id="state2text">state2text</h2>
 
-<pre><code>    state2text($state)</code></pre>
+<pre><code>state2text($state)</code></pre>
 
 <p>return string for given numerical state</p>
 
 <h2 id="hoststate2text">hoststate2text</h2>
 
-<pre><code>    hoststate2text($state)</code></pre>
+<pre><code>hoststate2text($state)</code></pre>
 
 <p>return string for given numerical host state</p>
 
 <h2 id="text2state">text2state</h2>
 
-<pre><code>    text2state($state)</code></pre>
+<pre><code>text2state($state)</code></pre>
 
 <p>return numerical state for given text state</p>
 
 <h2 id="text2hoststate">text2hoststate</h2>
 
-<pre><code>    text2hoststate($state)</code></pre>
+<pre><code>text2hoststate($state)</code></pre>
 
 <p>return numerical state for given text host state</p>
 
 <h2 id="nice_stacktrace">nice_stacktrace</h2>
 
-<pre><code>    nice_stacktrace($text)</code></pre>
+<pre><code>nice_stacktrace($text)</code></pre>
 
 <p>return nice stacktrace with external deps collapsed</p>
 
 <h2 id="random_id">random_id</h2>
 
-<pre><code>    random_id([$max_length])</code></pre>
+<pre><code>random_id([$max_length])</code></pre>
 
 <p>return random id</p>
 
 <h2 id="log_line_plugin_output">log_line_plugin_output</h2>
 
-<pre><code>    log_line_plugin_output($log_entry)</code></pre>
+<pre><code>log_line_plugin_output($log_entry)</code></pre>
 
 <p>return plugin output of logline</p>
 
 <h2 id="get_exposed_custom_vars">get_exposed_custom_vars</h2>
 
-<pre><code>    get_exposed_custom_vars([$skip_wildcards])</code></pre>
+<pre><code>get_exposed_custom_vars([$skip_wildcards])</code></pre>
 
 <p>return list of exposed custom variable names</p>
 
 <h2 id="get_browser_user_agent">get_browser_user_agent</h2>
 
-<pre><code>    get_browser_user_agent()</code></pre>
+<pre><code>get_browser_user_agent()</code></pre>
 
 <p>return request user agent.</p>
 
 <h2 id="replace_links">replace_links</h2>
 
-<pre><code>    replace_links()</code></pre>
+<pre><code>replace_links()</code></pre>
 
 <p>return text with http/https links replaced with real links also replace [link text](https://url...) like markup links</p>
 
 <h2 id="set_target_link">set_target_link</h2>
 
-<pre><code>  set_target_link($href, $target)</code></pre>
+<pre><code>set_target_link($href, $target)</code></pre>
 
 <p>returns updated url/target.</p>
 
 <h2 id="is_icinga2">is_icinga2</h2>
 
-<pre><code>  is_icinga2($peer_key)</code></pre>
+<pre><code>is_icinga2($peer_key)</code></pre>
 
 <p>returns true if peer from given key is icinga 2</p>
 
 <h2 id="search2text">search2text</h2>
 
-<pre><code>  search2text($type, $filter)</code></pre>
+<pre><code>search2text($type, $filter)</code></pre>
 
 <p>returns text/lexical filter for structured filter</p>
 
 <h2 id="format_perf_number">format_perf_number</h2>
 
-<pre><code>  format_perf_number($number, $unit, $always_show_unit)</code></pre>
+<pre><code>format_perf_number($number, $unit, $always_show_unit)</code></pre>
 
 <p>returns number as used in human performance data table</p>
 
 <h2 id="prefer_date_if_timestamp">prefer_date_if_timestamp</h2>
 
-<pre><code>  prefer_date_if_timestamp($ts)</code></pre>
+<pre><code>prefer_date_if_timestamp($ts)</code></pre>
 
 <p>returns date if ts is a unix timestamp or original ts otherwise</p>
+
+<h2 id="list_intersect">list_intersect</h2>
+
+<pre><code>list_intersect($lista, $listb)</code></pre>
+
+<p>returns all elements from lista which are also in listb</p>
+
+<h2 id="list_not_intersect">list_not_intersect</h2>
+
+<pre><code>list_not_intersect($lista, $listb)</code></pre>
+
+<p>returns all elements from lista which are not in listb</p>
+
+<h2 id="is_empty_filter">is_empty_filter</h2>
+
+<pre><code>is_empty_filter($filter)</code></pre>
+
+<p>returns true if filter contains no actual filter</p>
 
 

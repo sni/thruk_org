@@ -60,7 +60,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  use Thruk::Context;</code></pre>
+<pre><code>use Thruk::Context;</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -70,7 +70,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="new">new</h2>
 
-<pre><code>    new()</code></pre>
+<pre><code>new()</code></pre>
 
 <p>return new context object</p>
 
@@ -100,7 +100,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="detach_error">detach_error</h2>
 
-<pre><code>  detach_error($c, $data)</code></pre>
+<pre><code>detach_error($c, $data)</code></pre>
 
 <p>end current request with an error.</p>
 
@@ -124,7 +124,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="authenticate">authenticate</h2>
 
-<pre><code>  $c-&gt;authenticate(%options)</code></pre>
+<pre><code>$c-&gt;authenticate(%options)</code></pre>
 
 <p>authenticate current request user</p>
 
@@ -196,7 +196,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="translate_request_path">translate_request_path</h2>
 
-<pre><code>    translate_request_path(&lt;path_info&gt;, $config, $env)</code></pre>
+<pre><code>translate_request_path(&lt;path_info&gt;, $config, $env)</code></pre>
 
 <p>translate paths, /naemon/cgi-bin to /thruk/cgi-bin/ or /&lt;omd-site/thruk/cgi-bin/... to /thruk/cgi-bin/... so later functions can use /thruk/... for everything, regardless of the deployment path.</p>
 
@@ -234,7 +234,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="finalize_request">finalize_request</h2>
 
-<pre><code>    register_cron_entries($c, $res)</code></pre>
+<pre><code>register_cron_entries($c, $res)</code></pre>
 
 <p>finalize request data by adding profile and headers</p>
 

@@ -65,11 +65,11 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>    use Monitoring::Livestatus;
-    my $ml = Monitoring::Livestatus-&gt;new(
-      socket =&gt; &#39;/var/lib/livestatus/livestatus.sock&#39;
-    );
-    my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
+<pre><code>use Monitoring::Livestatus;
+my $ml = Monitoring::Livestatus-&gt;new(
+  socket =&gt; &#39;/var/lib/livestatus/livestatus.sock&#39;
+);
+my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -181,142 +181,142 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="do">do</h2>
 
-<pre><code> do($statement)
- do($statement, %opts)</code></pre>
+<pre><code>do($statement)
+do($statement, %opts)</code></pre>
 
 <p>Send a single statement without fetching the result. Always returns true.</p>
 
 <h2 id="selectall_arrayref">selectall_arrayref</h2>
 
-<pre><code> selectall_arrayref($statement)
- selectall_arrayref($statement, %opts)
- selectall_arrayref($statement, %opts, $limit )</code></pre>
+<pre><code>selectall_arrayref($statement)
+selectall_arrayref($statement, %opts)
+selectall_arrayref($statement, %opts, $limit )</code></pre>
 
 <p>Sends a query and returns an array reference of arrays</p>
 
-<pre><code>    my $arr_refs = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
+<pre><code>my $arr_refs = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);</code></pre>
 
 <p>to get an array of hash references do something like</p>
 
-<pre><code>    my $hash_refs = $ml-&gt;selectall_arrayref(
-      &quot;GET hosts&quot;, { Slice =&gt; {} }
-    );</code></pre>
+<pre><code>my $hash_refs = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts&quot;, { Slice =&gt; {} }
+);</code></pre>
 
 <p>to get an array of hash references from the first 2 returned rows only</p>
 
-<pre><code>    my $hash_refs = $ml-&gt;selectall_arrayref(
-      &quot;GET hosts&quot;, { Slice =&gt; {} }, 2
-    );</code></pre>
+<pre><code>my $hash_refs = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts&quot;, { Slice =&gt; {} }, 2
+);</code></pre>
 
 <p>you may use limit to limit the result to this number of rows</p>
 
 <p>column aliases can be defined with a rename hash</p>
 
-<pre><code>    my $hash_refs = $ml-&gt;selectall_arrayref(
-      &quot;GET hosts&quot;, {
-        Slice =&gt; {},
-        rename =&gt; {
-          &#39;name&#39; =&gt; &#39;host_name&#39;
-        }
-      }
-    );</code></pre>
+<pre><code>my $hash_refs = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts&quot;, {
+    Slice =&gt; {},
+    rename =&gt; {
+      &#39;name&#39; =&gt; &#39;host_name&#39;
+    }
+  }
+);</code></pre>
 
 <h2 id="selectall_hashref">selectall_hashref</h2>
 
-<pre><code> selectall_hashref($statement, $key_field)
- selectall_hashref($statement, $key_field, %opts)</code></pre>
+<pre><code>selectall_hashref($statement, $key_field)
+selectall_hashref($statement, $key_field, %opts)</code></pre>
 
 <p>Sends a query and returns a hashref with the given key</p>
 
-<pre><code>    my $hashrefs = $ml-&gt;selectall_hashref(&quot;GET hosts&quot;, &quot;name&quot;);</code></pre>
+<pre><code>my $hashrefs = $ml-&gt;selectall_hashref(&quot;GET hosts&quot;, &quot;name&quot;);</code></pre>
 
 <h2 id="selectcol_arrayref">selectcol_arrayref</h2>
 
-<pre><code> selectcol_arrayref($statement)
- selectcol_arrayref($statement, %opt )</code></pre>
+<pre><code>selectcol_arrayref($statement)
+selectcol_arrayref($statement, %opt )</code></pre>
 
 <p>Sends a query an returns an arrayref for the first columns</p>
 
-<pre><code>    my $array_ref = $ml-&gt;selectcol_arrayref(&quot;GET hosts\nColumns: name&quot;);
+<pre><code>my $array_ref = $ml-&gt;selectcol_arrayref(&quot;GET hosts\nColumns: name&quot;);
 
-    $VAR1 = [
-              &#39;localhost&#39;,
-              &#39;gateway&#39;,
-            ];</code></pre>
+$VAR1 = [
+          &#39;localhost&#39;,
+          &#39;gateway&#39;,
+        ];</code></pre>
 
 <p>returns an empty array if nothing was found</p>
 
 <p>to get a different column use this</p>
 
-<pre><code>    my $array_ref = $ml-&gt;selectcol_arrayref(
+<pre><code>   my $array_ref = $ml-&gt;selectcol_arrayref(
+      &quot;GET hosts\nColumns: name contacts&quot;,
+      { Columns =&gt; [2] }
+   );
+
+you can link 2 columns in a hash result set
+
+   my %hash = @{
+     $ml-&gt;selectcol_arrayref(
        &quot;GET hosts\nColumns: name contacts&quot;,
-       { Columns =&gt; [2] }
-    );
-
- you can link 2 columns in a hash result set
-
-    my %hash = @{
-      $ml-&gt;selectcol_arrayref(
-        &quot;GET hosts\nColumns: name contacts&quot;,
-        { Columns =&gt; [1,2] }
-      )
-    };</code></pre>
+       { Columns =&gt; [1,2] }
+     )
+   };</code></pre>
 
 <p>produces a hash with host the contact assosiation</p>
 
-<pre><code>    $VAR1 = {
-              &#39;localhost&#39; =&gt; &#39;user1&#39;,
-              &#39;gateway&#39;   =&gt; &#39;user2&#39;
-            };</code></pre>
+<pre><code>$VAR1 = {
+          &#39;localhost&#39; =&gt; &#39;user1&#39;,
+          &#39;gateway&#39;   =&gt; &#39;user2&#39;
+        };</code></pre>
 
 <h2 id="selectrow_array">selectrow_array</h2>
 
-<pre><code> selectrow_array($statement)
- selectrow_array($statement, %opts)</code></pre>
+<pre><code>selectrow_array($statement)
+selectrow_array($statement, %opts)</code></pre>
 
 <p>Sends a query and returns an array for the first row</p>
 
-<pre><code>    my @array = $ml-&gt;selectrow_array(&quot;GET hosts&quot;);</code></pre>
+<pre><code>my @array = $ml-&gt;selectrow_array(&quot;GET hosts&quot;);</code></pre>
 
 <p>returns undef if nothing was found</p>
 
 <h2 id="selectrow_arrayref">selectrow_arrayref</h2>
 
-<pre><code> selectrow_arrayref($statement)
- selectrow_arrayref($statement, %opts)</code></pre>
+<pre><code>selectrow_arrayref($statement)
+selectrow_arrayref($statement, %opts)</code></pre>
 
 <p>Sends a query and returns an array reference for the first row</p>
 
-<pre><code>    my $arrayref = $ml-&gt;selectrow_arrayref(&quot;GET hosts&quot;);</code></pre>
+<pre><code>my $arrayref = $ml-&gt;selectrow_arrayref(&quot;GET hosts&quot;);</code></pre>
 
 <p>returns undef if nothing was found</p>
 
 <h2 id="selectrow_hashref">selectrow_hashref</h2>
 
-<pre><code> selectrow_hashref($statement)
- selectrow_hashref($statement, %opt)</code></pre>
+<pre><code>selectrow_hashref($statement)
+selectrow_hashref($statement, %opt)</code></pre>
 
 <p>Sends a query and returns a hash reference for the first row</p>
 
-<pre><code>    my $hashref = $ml-&gt;selectrow_hashref(&quot;GET hosts&quot;);</code></pre>
+<pre><code>my $hashref = $ml-&gt;selectrow_hashref(&quot;GET hosts&quot;);</code></pre>
 
 <p>returns undef if nothing was found</p>
 
 <h2 id="selectscalar_value">selectscalar_value</h2>
 
-<pre><code> selectscalar_value($statement)
- selectscalar_value($statement, %opt)</code></pre>
+<pre><code>selectscalar_value($statement)
+selectscalar_value($statement, %opt)</code></pre>
 
 <p>Sends a query and returns a single scalar</p>
 
-<pre><code>    my $count = $ml-&gt;selectscalar_value(&quot;GET hosts\nStats: state = 0&quot;);</code></pre>
+<pre><code>my $count = $ml-&gt;selectscalar_value(&quot;GET hosts\nStats: state = 0&quot;);</code></pre>
 
 <p>returns undef if nothing was found</p>
 
 <h2 id="errors_are_fatal1">errors_are_fatal</h2>
 
-<pre><code> errors_are_fatal()
- errors_are_fatal($value)</code></pre>
+<pre><code>errors_are_fatal()
+errors_are_fatal($value)</code></pre>
 
 <p>Enable or disable fatal errors. When enabled the module will confess on any error.</p>
 
@@ -324,8 +324,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="warnings1">warnings</h2>
 
-<pre><code> warnings()
- warnings($value)</code></pre>
+<pre><code>warnings()
+warnings($value)</code></pre>
 
 <p>Enable or disable warnings. When enabled the module will carp on warnings.</p>
 
@@ -333,8 +333,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="verbose1">verbose</h2>
 
-<pre><code> verbose()
- verbose($values)</code></pre>
+<pre><code>verbose()
+verbose($values)</code></pre>
 
 <p>Enable or disable verbose output. When enabled the module will dump out debug output</p>
 
@@ -342,7 +342,7 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="peer_addr">peer_addr</h2>
 
-<pre><code> $ml-&gt;peer_addr()</code></pre>
+<pre><code>$ml-&gt;peer_addr()</code></pre>
 
 <p>returns the current peer address</p>
 
@@ -350,8 +350,8 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="peer_name">peer_name</h2>
 
-<pre><code> $ml-&gt;peer_name()
- $ml-&gt;peer_name($string)</code></pre>
+<pre><code>$ml-&gt;peer_name()
+$ml-&gt;peer_name($string)</code></pre>
 
 <p>if new value is set, name is set to this value</p>
 
@@ -361,13 +361,13 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <h2 id="peer_key">peer_key</h2>
 
-<pre><code> $ml-&gt;peer_key()</code></pre>
+<pre><code>$ml-&gt;peer_key()</code></pre>
 
 <p>returns a uniq key for this peer</p>
 
 <h2 id="post_processing">post_processing</h2>
 
-<pre><code> $ml-&gt;post_processing($result, $options, $keys)</code></pre>
+<pre><code>$ml-&gt;post_processing($result, $options, $keys)</code></pre>
 
 <p>returns postprocessed result.</p>
 
@@ -381,86 +381,86 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>adds the peers name, addr and key to the result set:</p>
 
-<pre><code> my $hosts = $ml-&gt;selectall_hashref(
-   &quot;GET hosts\nColumns: name alias state&quot;,
-   &quot;name&quot;,
-   { AddPeer =&gt; 1 }
- );</code></pre>
+<pre><code>my $hosts = $ml-&gt;selectall_hashref(
+  &quot;GET hosts\nColumns: name alias state&quot;,
+  &quot;name&quot;,
+  { AddPeer =&gt; 1 }
+);</code></pre>
 
 <h2 id="Backend">Backend</h2>
 
 <p>send the query only to some specific backends. Only useful when using multiple backends.</p>
 
-<pre><code> my $hosts = $ml-&gt;selectall_arrayref(
-   &quot;GET hosts\nColumns: name alias state&quot;,
-   { Backends =&gt; [ &#39;key1&#39;, &#39;key4&#39; ] }
- );</code></pre>
+<pre><code>my $hosts = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts\nColumns: name alias state&quot;,
+  { Backends =&gt; [ &#39;key1&#39;, &#39;key4&#39; ] }
+);</code></pre>
 
 <h2 id="Columns">Columns</h2>
 
-<pre><code>    only return the given column indexes
+<pre><code>  only return the given column indexes
 
-    my $array_ref = $ml-&gt;selectcol_arrayref(
-       &quot;GET hosts\nColumns: name contacts&quot;,
-       { Columns =&gt; [2] }
-    );
+  my $array_ref = $ml-&gt;selectcol_arrayref(
+     &quot;GET hosts\nColumns: name contacts&quot;,
+     { Columns =&gt; [2] }
+  );
 
-  see L&lt;selectcol_arrayref&gt; for more examples</code></pre>
+see L&lt;selectcol_arrayref&gt; for more examples</code></pre>
 
 <h2 id="Deepcopy">Deepcopy</h2>
 
-<pre><code>    deep copy/clone the result set.
+<pre><code>deep copy/clone the result set.
 
-    Only effective when using multiple backends and threads.
-    This can be safely turned off if you don&#39;t change the
-    result set.
-    If you get an error like &quot;Invalid value for shared scalar&quot; error&quot; this
-    should be turned on.
+Only effective when using multiple backends and threads.
+This can be safely turned off if you don&#39;t change the
+result set.
+If you get an error like &quot;Invalid value for shared scalar&quot; error&quot; this
+should be turned on.
 
-    my $array_ref = $ml-&gt;selectcol_arrayref(
-       &quot;GET hosts\nColumns: name contacts&quot;,
-       { Deepcopy =&gt; 1 }
-    );</code></pre>
+my $array_ref = $ml-&gt;selectcol_arrayref(
+   &quot;GET hosts\nColumns: name contacts&quot;,
+   { Deepcopy =&gt; 1 }
+);</code></pre>
 
 <h2 id="Limit">Limit</h2>
 
-<pre><code>    Just like the Limit: &lt;nr&gt; option from livestatus itself.
-    In addition you can add a start,length limit.
+<pre><code>Just like the Limit: &lt;nr&gt; option from livestatus itself.
+In addition you can add a start,length limit.
 
-    my $array_ref = $ml-&gt;selectcol_arrayref(
-       &quot;GET hosts\nColumns: name contacts&quot;,
-       { Limit =&gt; &quot;10,20&quot; }
-    );
+my $array_ref = $ml-&gt;selectcol_arrayref(
+   &quot;GET hosts\nColumns: name contacts&quot;,
+   { Limit =&gt; &quot;10,20&quot; }
+);
 
-    This example will return 20 rows starting at row 10. You will
-    get row 10-30.
+This example will return 20 rows starting at row 10. You will
+get row 10-30.
 
-    Cannot be combined with a Limit inside the query
-    because a Limit will be added automatically.
+Cannot be combined with a Limit inside the query
+because a Limit will be added automatically.
 
-    Adding a limit this way will greatly increase performance and
-    reduce memory usage.
+Adding a limit this way will greatly increase performance and
+reduce memory usage.
 
-    This option is multibackend safe contrary to the &quot;Limit: &quot; part of a statement.
-    Sending a statement like &quot;GET...Limit: 10&quot; with 3 backends will result in 30 rows.
-    Using this options, you will receive only the first 10 rows.</code></pre>
+This option is multibackend safe contrary to the &quot;Limit: &quot; part of a statement.
+Sending a statement like &quot;GET...Limit: 10&quot; with 3 backends will result in 30 rows.
+Using this options, you will receive only the first 10 rows.</code></pre>
 
 <h2 id="Rename">Rename</h2>
 
-<pre><code>  see L&lt;COLUMN ALIAS&gt; for detailed explainaton</code></pre>
+<pre><code>see L&lt;COLUMN ALIAS&gt; for detailed explainaton</code></pre>
 
 <h2 id="Slice">Slice</h2>
 
-<pre><code>  see L&lt;selectall_arrayref&gt; for detailed explainaton</code></pre>
+<pre><code>see L&lt;selectall_arrayref&gt; for detailed explainaton</code></pre>
 
 <h2 id="Sum">Sum</h2>
 
 <p>The Sum option only applies when using multiple backends. The values from all backends with be summed up to a total.</p>
 
-<pre><code> my $stats = $ml-&gt;selectrow_hashref(
-   &quot;GET hosts\nStats: state = 0\nStats: state = 1&quot;,
-   { Sum =&gt; 1 }
- );</code></pre>
+<pre><code>my $stats = $ml-&gt;selectrow_hashref(
+  &quot;GET hosts\nStats: state = 0\nStats: state = 1&quot;,
+  { Sum =&gt; 1 }
+);</code></pre>
 
 <h1 id="COLUMN-ALIAS">COLUMN ALIAS</h1>
 
@@ -468,29 +468,29 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>A valid Columns: Header could look like this:</p>
 
-<pre><code> my $hosts = $ml-&gt;selectall_arrayref(
-   &quot;GET hosts\nColumns: state as status&quot;
- );</code></pre>
+<pre><code>my $hosts = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts\nColumns: state as status&quot;
+);</code></pre>
 
 <p>Stats queries could be aliased too:</p>
 
-<pre><code> my $stats = $ml-&gt;selectall_arrayref(
-   &quot;GET hosts\nStats: state = 0 as up&quot;
- );</code></pre>
+<pre><code>my $stats = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts\nStats: state = 0 as up&quot;
+);</code></pre>
 
 <p>This syntax is available for: Stats, StatsAnd, StatsOr and StatsGroupBy</p>
 
 <p>An alternative way to set column aliases is to define rename option key/value pairs:</p>
 
-<pre><code> my $hosts = $ml-&gt;selectall_arrayref(
-   &quot;GET hosts\nColumns: name&quot;, {
-     rename =&gt; { &#39;name&#39; =&gt; &#39;hostname&#39; }
-   }
- );</code></pre>
+<pre><code>my $hosts = $ml-&gt;selectall_arrayref(
+  &quot;GET hosts\nColumns: name&quot;, {
+    rename =&gt; { &#39;name&#39; =&gt; &#39;hostname&#39; }
+  }
+);</code></pre>
 
 <h2 id="extract_keys_from_stats_statement">extract_keys_from_stats_statement</h2>
 
-<pre><code> extract_keys_from_stats_statement($statement)</code></pre>
+<pre><code>extract_keys_from_stats_statement($statement)</code></pre>
 
 <p>Extract column keys from statement.</p>
 
@@ -498,15 +498,15 @@ breadcrumb: ['api/Monitoring/', 'Monitoring']
 
 <p>Errorhandling can be done like this:</p>
 
-<pre><code>    use Monitoring::Livestatus;
-    my $ml = Monitoring::Livestatus-&gt;new(
-      socket =&gt; &#39;/var/lib/livestatus/livestatus.sock&#39;
-    );
-    $ml-&gt;errors_are_fatal(0);
-    my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);
-    if($Monitoring::Livestatus::ErrorCode) {
-        confess($Monitoring::Livestatus::ErrorMessage);
-    }</code></pre>
+<pre><code>use Monitoring::Livestatus;
+my $ml = Monitoring::Livestatus-&gt;new(
+  socket =&gt; &#39;/var/lib/livestatus/livestatus.sock&#39;
+);
+$ml-&gt;errors_are_fatal(0);
+my $hosts = $ml-&gt;selectall_arrayref(&quot;GET hosts&quot;);
+if($Monitoring::Livestatus::ErrorCode) {
+    confess($Monitoring::Livestatus::ErrorMessage);
+}</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

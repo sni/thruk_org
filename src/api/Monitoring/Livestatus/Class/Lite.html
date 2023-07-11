@@ -62,23 +62,23 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Liv
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>    use Monitoring::Livestatus::Class::Lite;
+<pre><code>use Monitoring::Livestatus::Class::Lite;
 
-    my $class = Monitoring::Livestatus::Class::Lite-&gt;new({
-        peer =&gt; &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
-    });
-    # or shorter
-    my $class = Monitoring::Livestatus::Class::Lite-&gt;new(
-        &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
-    );
+my $class = Monitoring::Livestatus::Class::Lite-&gt;new({
+    peer =&gt; &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
+});
+# or shorter
+my $class = Monitoring::Livestatus::Class::Lite-&gt;new(
+    &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
+);
 
-    my $hosts = $class-&gt;table(&#39;hosts&#39;);
-    my @data = $hosts-&gt;columns(&#39;display_name&#39;)-&gt;filter(
-        { display_name =&gt; { &#39;-or&#39; =&gt; [qw/test_host_47 test_router_3/] } }
-    )-&gt;hashref_array();
+my $hosts = $class-&gt;table(&#39;hosts&#39;);
+my @data = $hosts-&gt;columns(&#39;display_name&#39;)-&gt;filter(
+    { display_name =&gt; { &#39;-or&#39; =&gt; [qw/test_host_47 test_router_3/] } }
+)-&gt;hashref_array();
 
-    use Data::Dumper;
-    print Dumper \@data;</code></pre>
+use Data::Dumper;
+print Dumper \@data;</code></pre>
 
 <h1 id="ATTRIBUTES">ATTRIBUTES</h1>
 
@@ -88,15 +88,15 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Liv
 
 <h3 id="Socket">Socket</h3>
 
-<pre><code>    my $class = Monitoring::Livestatus::Class-&gt;new(
-        peer =&gt; &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
-    );</code></pre>
+<pre><code>my $class = Monitoring::Livestatus::Class-&gt;new(
+    peer =&gt; &#39;/var/lib/nagios3/rw/livestatus.sock&#39;
+);</code></pre>
 
 <h3 id="TCP-Connection">TCP Connection</h3>
 
-<pre><code>    my $class = Monitoring::Livestatus::Class-&gt;new(
-        peer =&gt; &#39;192.168.1.1:2134&#39;
-    );</code></pre>
+<pre><code>my $class = Monitoring::Livestatus::Class-&gt;new(
+    peer =&gt; &#39;192.168.1.1:2134&#39;
+);</code></pre>
 
 <h1 id="ENVIRONMENT-VARIABLES">ENVIRONMENT VARIABLES</h1>
 
@@ -112,97 +112,97 @@ breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Livestatus/', 'Liv
 
 <h2 id="new">new</h2>
 
-<pre><code>    new($options)</code></pre>
+<pre><code>new($options)</code></pre>
 
 <p>create new Class module</p>
 
 <h2 id="table">table</h2>
 
-<pre><code>    table($tablename)</code></pre>
+<pre><code>table($tablename)</code></pre>
 
 <p>return instance for this table</p>
 
 <h2 id="columns">columns</h2>
 
-<pre><code>    columns($columns)</code></pre>
+<pre><code>columns($columns)</code></pre>
 
 <p>list of columns to fetch</p>
 
 <h2 id="backends">backends</h2>
 
-<pre><code>    backends($backend_ids)</code></pre>
+<pre><code>backends($backend_ids)</code></pre>
 
 <p>sets ids for the Backend: header</p>
 
 <h2 id="default_backends">default_backends</h2>
 
-<pre><code>    default_backends($backend_ids)</code></pre>
+<pre><code>default_backends($backend_ids)</code></pre>
 
 <p>sets default ids for the Backend: header</p>
 
 <h2 id="options">options</h2>
 
-<pre><code>    options($options)</code></pre>
+<pre><code>options($options)</code></pre>
 
 <p>set query options</p>
 
 <h2 id="filter">filter</h2>
 
-<pre><code>    filter($filter)</code></pre>
+<pre><code>filter($filter)</code></pre>
 
 <p>filter result set</p>
 
 <h2 id="stats">stats</h2>
 
-<pre><code>    stats($statsfilter)</code></pre>
+<pre><code>stats($statsfilter)</code></pre>
 
 <p>set stats filter</p>
 
 <h2 id="hashref_pk">hashref_pk</h2>
 
-<pre><code>    hashref_pk($key)</code></pre>
+<pre><code>hashref_pk($key)</code></pre>
 
 <p>return result as hash ref by key</p>
 
 <h2 id="hashref_array">hashref_array</h2>
 
-<pre><code>    hashref_array()</code></pre>
+<pre><code>hashref_array()</code></pre>
 
 <p>return result as array</p>
 
 <h2 id="reset_filter">reset_filter</h2>
 
-<pre><code>    reset_filter()</code></pre>
+<pre><code>reset_filter()</code></pre>
 
 <p>removes all current filter</p>
 
 <h2 id="save_filter">save_filter</h2>
 
-<pre><code>    save_filter($name)</code></pre>
+<pre><code>save_filter($name)</code></pre>
 
 <p>save this filter with given name which can be reused later.</p>
 
 <h2 id="apply_filter">apply_filter</h2>
 
-<pre><code>    apply_filter($name)</code></pre>
+<pre><code>apply_filter($name)</code></pre>
 
 <p>returns true if a filter with this name has been applied. returns false if filter does not exist.</p>
 
 <h2 id="statement">statement</h2>
 
-<pre><code>    statement($filter_only)</code></pre>
+<pre><code>statement($filter_only)</code></pre>
 
 <p>return query as text.</p>
 
 <h2 id="filter_statement">filter_statement</h2>
 
-<pre><code>    filter_statement($filter, [$mode])</code></pre>
+<pre><code>filter_statement($filter, [$mode])</code></pre>
 
 <p>return statements for given filter</p>
 
 <h1 id="REPOSITORY">REPOSITORY</h1>
 
-<pre><code>    Git: http://github.com/sni/Monitoring-Livestatus-Class-Lite</code></pre>
+<pre><code>Git: http://github.com/sni/Monitoring-Livestatus-Class-Lite</code></pre>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

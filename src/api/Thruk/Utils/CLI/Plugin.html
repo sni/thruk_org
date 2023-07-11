@@ -31,48 +31,39 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] plugin &lt;command&gt;</code></pre>
+<pre><code>Usage: thruk [globaloptions] plugin &lt;command&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
-<dl>
+<ul>
 
-<dt id="help"><b>help</b></dt>
-<dd>
+<p>Available commands are:</p>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>- help                       print help and exit
+- list [enabled|all|installed] list all available (or enabled) plugins
+- enable &lt;plugin&gt;           enable this plugin
+- disable &lt;plugin&gt;          disable this plugin
+- search [&lt;pattern&gt;]        search internet plugin registry for plugins
+- update [&lt;plugin&gt;]         update all or specified plugin
+- install &lt;plugin|tarball&gt;  install and enable this plugin
+- remove &lt;plugin&gt;           uninstall and disable this plugin</code></pre>
 
-</dd>
-<dt id="command"><b>command</b></dt>
-<dd>
-
-<pre><code>    Available commands are:
-
-        - list [enabled|all|installed] list all available (or enabled) plugins
-        - enable &lt;plugin&gt;           enable this plugin
-        - disable &lt;plugin&gt;          disable this plugin
-        - search [&lt;pattern&gt;]        search internet plugin registry for plugins
-        - update [&lt;plugin&gt;]         update all or specified plugin
-        - install &lt;plugin|tarball&gt;  install and enable this plugin
-        - remove &lt;plugin&gt;           uninstall and disable this plugin</code></pre>
-
-</dd>
-</dl>
+</ul>
 
 <h1 id="METHODS">METHODS</h1>
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>List all available plugins</p>
 
-<pre><code>  %&gt; thruk plugin list</code></pre>
+<pre><code>%&gt; thruk plugin list</code></pre>
 
 <p>Enable config tool plugin</p>
 
-<pre><code>  %&gt; thruk plugin enable conf</code></pre>
+<pre><code>%&gt; thruk plugin enable conf</code></pre>
 
 

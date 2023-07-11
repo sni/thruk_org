@@ -32,7 +32,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] downtimetask [options] &lt;nr&gt;</code></pre>
+<pre><code>Usage: thruk [globaloptions] downtimetask [options] &lt;nr&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -41,13 +41,19 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dt id="help"><b>help</b></dt>
 <dd>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>print help and exit</code></pre>
+
+</dd>
+<dt id="autoremove"><b>autoremove</b></dt>
+<dd>
+
+<pre><code>cleanup none-existing hosts/services/groups and backends from recurring downtimes.</code></pre>
 
 </dd>
 <dt id="t---test"><b>-t / --test</b></dt>
 <dd>
 
-<pre><code>    do not send commands but display what would be send</code></pre>
+<pre><code>do not send commands but display what would be send</code></pre>
 
 </dd>
 </dl>
@@ -56,37 +62,37 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h2 id="set_downtime">set_downtime</h2>
 
-<pre><code>    set_downtime($c, $downtime, $cmd_typ, $backends, $start, $end, $hours, $minutes)</code></pre>
+<pre><code>set_downtime($c, $downtime, $cmd_typ, $backends, $start, $end, $hours, $minutes)</code></pre>
 
 <p>set downtime.</p>
 
-<pre><code>    downtime is a hash like this:
-    {
-        author  =&gt; &#39;downtime author&#39;
-        host    =&gt; &#39;host name&#39;
-        service =&gt; &#39;optional service name&#39;
-        comment =&gt; &#39;downtime comment&#39;
-        fixed   =&gt; 1
-    }
+<pre><code>downtime is a hash like this:
+{
+    author  =&gt; &#39;downtime author&#39;
+    host    =&gt; &#39;host name&#39;
+    service =&gt; &#39;optional service name&#39;
+    comment =&gt; &#39;downtime comment&#39;
+    fixed   =&gt; 1
+}
 
-    cmd_typ is:
-         55 -&gt; hosts
-         56 -&gt; services
-         84 -&gt; hostgroups
-        122 -&gt; servicegroups</code></pre>
+cmd_typ is:
+     55 -&gt; hosts
+     56 -&gt; services
+     84 -&gt; hostgroups
+    122 -&gt; servicegroups</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>Runs the downtime task for file &#39;1&#39;</p>
 
-<pre><code>  %&gt; thruk downtimetask 1</code></pre>
+<pre><code>%&gt; thruk downtimetask 1</code></pre>
 
 <p>Same but in test mode:</p>
 
-<pre><code>  %&gt; thruk downtimetask 1 --test</code></pre>
+<pre><code>%&gt; thruk downtimetask 1 --test</code></pre>
 
 

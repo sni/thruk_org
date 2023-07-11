@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] graph &lt;options&gt;</code></pre>
+<pre><code>Usage: thruk [globaloptions] graph &lt;options&gt;</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -40,61 +40,61 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dt id="help"><b>help</b></dt>
 <dd>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>print help and exit</code></pre>
 
 </dd>
 <dt id="format"><b>format</b></dt>
 <dd>
 
-<pre><code>    Output format, can be either &#39;png&#39; or &#39;base64&#39;. Default is png.</code></pre>
+<pre><code>Output format, can be either &#39;png&#39; or &#39;base64&#39;. Default is png.</code></pre>
 
 </dd>
 <dt id="width"><b>width</b></dt>
 <dd>
 
-<pre><code>    Width of the exported image in px. Default to 800.</code></pre>
+<pre><code>Width of the exported image in px. Default to 800.</code></pre>
 
 </dd>
 <dt id="height"><b>height</b></dt>
 <dd>
 
-<pre><code>    Height of the exported image in px. Default to 300.</code></pre>
+<pre><code>Height of the exported image in px. Default to 300.</code></pre>
 
 </dd>
 <dt id="host"><b>host</b></dt>
 <dd>
 
-<pre><code>    Hostname to export graph for</code></pre>
+<pre><code>Hostname to export graph for</code></pre>
 
 </dd>
 <dt id="service"><b>service</b></dt>
 <dd>
 
-<pre><code>    Service description to export graph for. If empty host graph will be exported.</code></pre>
+<pre><code>Service description to export graph for. If empty host graph will be exported.</code></pre>
 
 </dd>
 <dt id="start"><b>start</b></dt>
 <dd>
 
-<pre><code>    Start timestamp used when collecting performance data. Defaults to yesterday.</code></pre>
+<pre><code>Start timestamp used when collecting performance data. Defaults to yesterday.</code></pre>
 
 </dd>
 <dt id="end"><b>end</b></dt>
 <dd>
 
-<pre><code>    End timestamp used when collecting performance data. Defaults to now.</code></pre>
+<pre><code>End timestamp used when collecting performance data. Defaults to now.</code></pre>
 
 </dd>
 <dt id="source"><b>source</b></dt>
 <dd>
 
-<pre><code>    Grafana panelId. Defaults to 1.</code></pre>
+<pre><code>Grafana panelId. Defaults to 1.</code></pre>
 
 </dd>
 <dt id="output"><b>output</b></dt>
 <dd>
 
-<pre><code>    Write output to file, default is printing to stdout.</code></pre>
+<pre><code>Write output to file, default is printing to stdout.</code></pre>
 
 </dd>
 </dl>
@@ -103,12 +103,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>Export pnp host graph for localhost in base64 format.</p>
 
-<pre><code>  %&gt; thruk graph --host=&#39;localhost&#39; --service=&#39;_HOST_&#39; --width=900 --height=200 --format=base64</code></pre>
+<pre><code>%&gt; thruk graph --host=&#39;localhost&#39; --service=&#39;_HOST_&#39; --width=900 --height=200 --format=base64</code></pre>
 
 

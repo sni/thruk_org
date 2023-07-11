@@ -20,16 +20,16 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Pool/', 'Pool']
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  use Thruk::Pool::Simple;
+<pre><code>use Thruk::Pool::Simple;
 
-  my $pool = Thruk::Pool::Simple-&gt;new(
-                 size    =&gt; 3,              # number of workers
-                 handler =&gt; \&amp;handle,       # call this sub to handle jobswork
-               );
+my $pool = Thruk::Pool::Simple-&gt;new(
+               size    =&gt; 3,              # number of workers
+               handler =&gt; \&amp;handle,       # call this sub to handle jobswork
+             );
 
-  $pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue
+$pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue
 
-  my @results = $pool-&gt;remove_all();        # get all results (blocks till all threads are finished)</code></pre>
+my @results = $pool-&gt;remove_all();        # get all results (blocks till all threads are finished)</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

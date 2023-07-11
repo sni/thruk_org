@@ -40,36 +40,36 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="process_rest_request">process_rest_request</h2>
 
-<pre><code>  process_rest_request($c, $path_info, [$method])</code></pre>
+<pre><code>process_rest_request($c, $path_info, [$method])</code></pre>
 
 <p>returns json response</p>
 
 <h2 id="get_request_columns">get_request_columns</h2>
 
-<pre><code>    get_request_columns($c, $type)
+<pre><code>get_request_columns($c, $type)
 
-    $type can be:
-        - RAW   - returns columsn as is, alias definitions untouched
-        - NAMES - returns column name
-        - ALIAS - returns column alias or the name if none specified</code></pre>
+$type can be:
+    - RAW   - returns columsn as is, alias definitions untouched
+    - NAMES - returns column name
+    - ALIAS - returns column alias or the name if none specified</code></pre>
 
 <p>returns list of requested columns or undef</p>
 
 <h2 id="get_aliased_columns">get_aliased_columns</h2>
 
-<pre><code>    get_aliased_columns($c)</code></pre>
+<pre><code>get_aliased_columns($c)</code></pre>
 
 <p>returns hash of columns with their alias</p>
 
 <h2 id="get_filter_columns">get_filter_columns</h2>
 
-<pre><code>    get_filter_columns($c)</code></pre>
+<pre><code>get_filter_columns($c)</code></pre>
 
 <p>returns list of columns required for filtering</p>
 
 <h2 id="column_required">column_required</h2>
 
-<pre><code>    column_required($c, $column_name)</code></pre>
+<pre><code>column_required($c, $column_name)</code></pre>
 
 <p>Can be used to exclude expensive columns from beeing generated.</p>
 
@@ -77,7 +77,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="register_rest_path_v1">register_rest_path_v1</h2>
 
-<pre><code>    register_rest_path_v1($protocol, $path|$regex, $function, [$roles], [$first])</code></pre>
+<pre><code>register_rest_path_v1($protocol, $path|$regex, $function, [$roles], [$first])</code></pre>
 
 <p>register rest path.</p>
 
@@ -85,7 +85,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="get_rest_paths">get_rest_paths</h2>
 
-<pre><code>    get_rest_paths([$c])</code></pre>
+<pre><code>get_rest_paths([$c])</code></pre>
 
 <p>gather list of available rest paths. If $c is supplied, only enabled plugins will be returned.</p>
 
@@ -93,12 +93,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
 
 <h2 id="load_json_files">load_json_files</h2>
 
-<pre><code>    load_json_files($c, {
-        files                   =&gt; $files,
-       [ pre_process_callback   =&gt; &amp;code_ref ],
-       [ authorization_callback =&gt; &amp;code_ref ],
-       [ post_process_callback  =&gt; &amp;code_ref ],
-    });</code></pre>
+<pre><code>load_json_files($c, {
+    files                   =&gt; $files,
+   [ pre_process_callback   =&gt; &amp;code_ref ],
+   [ authorization_callback =&gt; &amp;code_ref ],
+   [ post_process_callback  =&gt; &amp;code_ref ],
+});</code></pre>
 
 <p>generic function to expose json files</p>
 

@@ -38,68 +38,68 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="self_check">self_check</h2>
 
-<pre><code>    self_check($c)</code></pre>
+<pre><code>self_check($c)</code></pre>
 
 <p>perform all self checks</p>
 
 <p>return:</p>
 
-<pre><code>    (rc, msg, details)
+<pre><code>(rc, msg, details)
 
-    rc:  0 - OK
-         1 - WARNING
-         2 - CRITICAL
-         3 - UNKNOWN
+rc:  0 - OK
+     1 - WARNING
+     2 - CRITICAL
+     3 - UNKNOWN
 
-    msg: short message with textual result
+msg: short message with textual result
 
-    details: detailed message</code></pre>
+details: detailed message</code></pre>
 
 <h2 id="filesystem_checks">_filesystem_checks</h2>
 
-<pre><code>    _filesystem_checks($c)</code></pre>
+<pre><code>_filesystem_checks($c)</code></pre>
 
 <p>verify basic filesystem related things</p>
 
 <h2 id="logfile_checks">_logfile_checks</h2>
 
-<pre><code>    _logfile_checks($c)</code></pre>
+<pre><code>_logfile_checks($c)</code></pre>
 
 <p>verify logfile errors</p>
 
 <h2 id="report_checks">_report_checks</h2>
 
-<pre><code>    _report_checks($c)</code></pre>
+<pre><code>_report_checks($c)</code></pre>
 
 <p>verify errors in reports</p>
 
 <h2 id="reccuring_downtime_checks">_reccuring_downtime_checks</h2>
 
-<pre><code>    _reccuring_downtime_checks($c)</code></pre>
+<pre><code>_reccuring_downtime_checks($c)</code></pre>
 
 <p>verify errors in recurring downtimes</p>
 
 <h2 id="check_recurring_downtime">check_recurring_downtime</h2>
 
-<pre><code>    check_recurring_downtime($c, $d, $file)</code></pre>
+<pre><code>check_recurring_downtime($c, $d, $file)</code></pre>
 
 <p>verify errors in specific recurring downtime</p>
 
 <h2 id="lmd_checks">_lmd_checks</h2>
 
-<pre><code>    _lmd_checks($c)</code></pre>
+<pre><code>_lmd_checks($c)</code></pre>
 
 <p>verify errors in lmd</p>
 
 <h2 id="logcache_checks">_logcache_checks</h2>
 
-<pre><code>    _logcache_checks($c)</code></pre>
+<pre><code>_logcache_checks($c)</code></pre>
 
 <p>verify errors in logcache</p>
 
 <h2 id="backends_checks">_backends_checks</h2>
 
-<pre><code>    _backends_checks($c)</code></pre>
+<pre><code>_backends_checks($c)</code></pre>
 
 <p>verify errors in backend connections</p>
 

@@ -31,9 +31,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>  Usage: thruk [globaloptions] bp all [-w|--worker=&lt;nr&gt;]
-                                  &lt;nr&gt;
-                                  commit [--no-reload-core] [--no-reload-cron]</code></pre>
+<pre><code>Usage: thruk [globaloptions] bp all [-w|--worker=&lt;nr&gt;]
+                                &lt;nr&gt;
+                                commit [--no-reload-core] [--no-reload-cron]</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -42,46 +42,46 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <dt id="help"><b>help</b></dt>
 <dd>
 
-<pre><code>    print help and exit</code></pre>
+<pre><code>print help and exit</code></pre>
 
 </dd>
 <dt id="commit"><b>commit</b></dt>
 <dd>
 
-<pre><code>    write out all host/services objects for all business processes and update
-    related cronjobs.</code></pre>
+<pre><code>write out all host/services objects for all business processes and update
+related cronjobs.</code></pre>
 
 </dd>
 <dt id="no-reload-core"><b>--no-reload-core</b></dt>
 <dd>
 
-<pre><code>    skip reloading core after writing files</code></pre>
+<pre><code>skip reloading core after writing files</code></pre>
 
 </dd>
 <dt id="no-reload-cron"><b>--no-reload-cron</b></dt>
 <dd>
 
-<pre><code>    skip reloading cron after writing files</code></pre>
+<pre><code>skip reloading cron after writing files</code></pre>
 
 </dd>
 <dt id="all"><b>all</b></dt>
 <dd>
 
-<pre><code>    recalculate/update all business processes</code></pre>
+<pre><code>recalculate/update all business processes</code></pre>
 
 </dd>
 <dt id="w---worker"><b>-w|--worker</b></dt>
 <dd>
 
-<pre><code>    use this number of worker processes to calculate all processes.
+<pre><code>use this number of worker processes to calculate all processes.
 
-    Defaults to &#39;auto&#39; which trys to find a suitable number automatically.</code></pre>
+Defaults to &#39;auto&#39; which trys to find a suitable number automatically.</code></pre>
 
 </dd>
 <dt id="nr"><b>nr</b></dt>
 <dd>
 
-<pre><code>    recalculate/update specific business process</code></pre>
+<pre><code>recalculate/update specific business process</code></pre>
 
 </dd>
 </dl>
@@ -90,20 +90,20 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>    cmd([ $options ])</code></pre>
+<pre><code>cmd([ $options ])</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>Recalculate business process with number 1</p>
 
-<pre><code>  %&gt; thruk bp 1</code></pre>
+<pre><code>%&gt; thruk bp 1</code></pre>
 
 <p>Recalculate all business processes</p>
 
-<pre><code>  %&gt; thruk bp all</code></pre>
+<pre><code>%&gt; thruk bp all</code></pre>
 
 <p>Write out host and service objects</p>
 
-<pre><code>  %&gt; thruk bp commit</code></pre>
+<pre><code>%&gt; thruk bp commit</code></pre>
 
 

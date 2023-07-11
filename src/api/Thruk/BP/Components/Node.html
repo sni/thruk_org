@@ -72,13 +72,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 <h2 id="get_objects_conf">get_objects_conf</h2>
 
-<pre><code>    get_objects_conf($bp)</code></pre>
+<pre><code>get_objects_conf($bp)</code></pre>
 
 <p>return objects config</p>
 
 <h2 id="update_status">update_status</h2>
 
-<pre><code>    update_status($c, $bp, [$livedata], [$type])</code></pre>
+<pre><code>update_status($c, $bp, [$livedata], [$type])</code></pre>
 
 <p>type: 0 / undef: update always 1: only recalculate</p>
 
@@ -86,7 +86,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 <h2 id="set_status">set_status</h2>
 
-<pre><code>    set_status($state, $text, $bp, $extra)</code></pre>
+<pre><code>set_status($state, $text, $bp, $extra)</code></pre>
 
 <p>extra: contains extra attributes</p>
 
@@ -94,31 +94,31 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP', 'api/Thruk/BP/Compone
 
 <h2 id="result_to_cmd">result_to_cmd</h2>
 
-<pre><code>    result_to_cmd($bp, [$force_service])</code></pre>
+<pre><code>result_to_cmd($bp, [$force_service])</code></pre>
 
 <p>returns command represention of result. Useful for transmitting result by livestatus command.</p>
 
 <h2 id="result_to_string">result_to_string</h2>
 
-<pre><code>    result_to_string($bp, [$force_service])</code></pre>
+<pre><code>result_to_string($bp, [$force_service])</code></pre>
 
 <p>returns string represention of result. Useful for transmitting into a checkresults spool folder.</p>
 
 <h2 id="TO_JSON">TO_JSON</h2>
 
-<pre><code>    TO_JSON()</code></pre>
+<pre><code>TO_JSON()</code></pre>
 
 <p>returns data needed to represent this module in json</p>
 
 <h2 id="depends">depends</h2>
 
-<pre><code>    depends()</code></pre>
+<pre><code>depends()</code></pre>
 
 <p>returns list of depending nodes</p>
 
 <h2 id="parents">parents</h2>
 
-<pre><code>    parents()</code></pre>
+<pre><code>parents()</code></pre>
 
 <p>returns list of parent nodes</p>
 
