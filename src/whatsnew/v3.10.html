@@ -1,0 +1,97 @@
+---
+version: v3.10
+title: What's New In Release v3.10
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Explore Mode</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The new explore mode is extends the advanced search from previous release
+      into a permanent page.
+    </p>
+    <p>
+      It comes with a built-in auto completion for attributes and operators.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <a title="Explore" rel="lightbox[whatsnew]" href="{{ page.version }}/explore1.png">
+      <img src="{{ page.version }}/explore1.png" alt="Explore Mode" />
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a title="Explore" rel="lightbox[whatsnew]" href="{{ page.version }}/explore2.png">
+      <img src="{{ page.version }}/explore2.png" alt="Explore Mode" />
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a title="Explore" rel="lightbox[whatsnew]" href="{{ page.version }}/explore3.png">
+      <img src="{{ page.version }}/explore3.png" alt="Explore Mode" />
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>Tip: to add the explore mode to your side navigation<br>
+      simply add this to your <code>/etc/thruk/menu_local.conf</code>
+    </p>
+    <pre>
+# standalone installation
+#do '/usr/share/thruk/menu.conf';
+
+# omd site
+do $ENV{'OMD_ROOT'}.'/share/thruk/menu.conf';
+
+insert_item('Current Status', { 'href' => 'status.cgi?explore=1', 'name' => 'Explore', 'after' => 'Service Groups' });</pre>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Agents Plugin</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The new agents plugin is a config tool extension and can be used<br>
+      to manage <a href="https://omd.consol.de/docs/snclient/" target="_blank">SNClient</a> installations.<br>
+      Note: you need to enable this plugin first, it is not enabled by default.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <a title="Agents Plugin" rel="lightbox[whatsnew]" href="{{ page.version }}/agents1.png">
+      <img src="{{ page.version }}/agents1.png" alt="Agents Plugin" />
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a title="Agents Plugin" rel="lightbox[whatsnew]" href="{{ page.version }}/agents2.png">
+      <img src="{{ page.version }}/agents2.png" alt="Agents Plugin" />
+    </a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The SNClient is a multi-platform agent designed to replace NSClient++ and NRPE.<br>
+      Read more here:
+    </p>
+    <ul>
+      <li><a href="https://omd.consol.de/docs/snclient/" target="_blank">https://omd.consol.de/docs/snclient/</a>
+      <li><a href="https://github.com/ConSol-Monitoring/snclient" target="_blank">https://github.com/ConSol-Monitoring/snclient</a>
+    </ul>
+</div>
