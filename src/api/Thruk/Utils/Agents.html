@@ -28,6 +28,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#scan_agent">scan_agent</a></li>
       <li><a href="#check_wildcard_match">check_wildcard_match</a></li>
       <li><a href="#check_disable">check_disable</a></li>
+      <li><a href="#validate_params">validate_params</a></li>
     </ul>
   </li>
 </ul>
@@ -82,7 +83,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="check_for_check_commands">check_for_check_commands</h2>
 
-<pre><code>check_for_check_commands($c, [$extra_cmd])</code></pre>
+<pre><code>check_for_check_commands($c, [$extra_cmd], [$extra_objects])</code></pre>
 
 <p>create agent check commands if missing</p>
 
@@ -133,5 +134,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>check_disable($data, $config)</code></pre>
 
 <p>returns if checks disabled for given config</p>
+
+<h2 id="validate_params">validate_params</h2>
+
+<pre><code>validate_params($hostname, $section)</code></pre>
+
+<p>returns undef or error message</p>
 
 
