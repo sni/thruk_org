@@ -41,7 +41,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="get_agent_checks_for_host">get_agent_checks_for_host</h2>
 
-<pre><code>get_agent_checks_for_host($c, $backend, $hostname, $hostobj, [$agenttype], [$fresh])</code></pre>
+<pre><code>get_agent_checks_for_host($c, $backend, $hostname, $hostobj, [$agenttype], [$fresh], [$section])</code></pre>
 
 <p>returns list of checks for this host grouped by type (new, exists, obsolete, disabled) along with the total number of checks.</p>
 
@@ -53,7 +53,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="get_services_checks">get_services_checks</h2>
 
-<pre><code>get_services_checks($c, $backend, $hostname, $hostobj, $agenttype, $password, $fresh)</code></pre>
+<pre><code>get_services_checks($c, $backend, $hostname, $hostobj, $agenttype, $password, $fresh, $section)</code></pre>
 
 <p>returns list of checks as flat list.</p>
 
