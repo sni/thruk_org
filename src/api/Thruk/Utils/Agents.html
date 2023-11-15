@@ -29,6 +29,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#check_wildcard_match">check_wildcard_match</a></li>
       <li><a href="#check_disable">check_disable</a></li>
       <li><a href="#validate_params">validate_params</a></li>
+      <li><a href="#remove_orphaned_agent_templates">remove_orphaned_agent_templates</a></li>
     </ul>
   </li>
 </ul>
@@ -140,5 +141,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>validate_params($hostname, $section)</code></pre>
 
 <p>returns undef or error message</p>
+
+<h2 id="remove_orphaned_agent_templates">remove_orphaned_agent_templates</h2>
+
+<pre><code>remove_orphaned_agent_templates($c)</code></pre>
+
+<p>removes agent templates which are no longer used</p>
 
 
