@@ -39,14 +39,14 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <p>Available commands are:</p>
 
-<pre><code>- help                    print help and exit
-- check  | -C   &lt;host&gt;    run checks, ex. inventory
-- list   | -l             list agent hosts
-- show   | -S   &lt;host&gt;    show checks for host
-- add    | -I   &lt;host&gt;    add/inventory new/existing host
-- update | -II  &lt;host&gt;    add/inventory new/existing host and freshly apply excludes
-- rm     | -D   &lt;host&gt;    delete existing host
-- reload | -R             reload monitoring core
+<pre><code>- help                      print help and exit
+- check  | -C   &lt;host&gt;      run checks, ex. inventory
+- list   | -l               list agent hosts
+- show   | -S   &lt;host&gt;      show checks for host
+- add    | -I   &lt;host&gt; ...  add/inventory for new/existing host(s)
+- update | -II  &lt;host&gt; ...  add/inventory for new/existing host(s) and freshly apply excludes
+- rm     | -D   &lt;host&gt; ...  delete existing host(s)
+- reload | -R               reload monitoring core
 
 -i                interactive mode (available in edit/add mode)
 --all             show all items   (available in show mode)
