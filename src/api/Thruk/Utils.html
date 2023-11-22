@@ -34,7 +34,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_custom_vars">get_custom_vars</a></li>
       <li><a href="#set_custom_vars">set_custom_vars</a></li>
       <li><a href="#check_custom_var_list">check_custom_var_list</a></li>
-      <li><a href="#set_data_row_cust_vars">set_data_row_cust_vars</a></li>
+      <li><a href="#set_allowed_rows_data">set_allowed_rows_data</a></li>
       <li><a href="#get_user_data">get_user_data</a></li>
       <li><a href="#store_user_data">store_user_data</a></li>
       <li><a href="#get_global_user_data">get_global_user_data</a></li>
@@ -270,9 +270,9 @@ set_message($c, {
 
 <p>returns true if custom variable name is in the list of allowed variable names</p>
 
-<h2 id="set_data_row_cust_vars">set_data_row_cust_vars</h2>
+<h2 id="set_allowed_rows_data">set_allowed_rows_data</h2>
 
-<pre><code>set_data_row_cust_vars($obj, $allowed, $allowed_list)</code></pre>
+<pre><code>set_allowed_rows_data($obj, $allowed, $allowed_list, $show_full_commandline)</code></pre>
 
 <p>set custom variables for host/service obj</p>
 
