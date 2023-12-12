@@ -20,6 +20,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
       <li><a href="#make_info">make_info</a></li>
       <li><a href="#make_name">make_name</a></li>
       <li><a href="#check_host_match">check_host_match</a></li>
+      <li><a href="#get_disabled_config">get_disabled_config</a></li>
     </ul>
   </li>
 </ul>
@@ -77,5 +78,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
 <pre><code>check_host_match($config)</code></pre>
 
 <p>returns true if check is enabled on this host</p>
+
+<h2 id="get_disabled_config">get_disabled_config</h2>
+
+<pre><code>get_disabled_config($c, $key, $default)</code></pre>
+
+<p>returns disabled config for this key with a fallback</p>
 
 
