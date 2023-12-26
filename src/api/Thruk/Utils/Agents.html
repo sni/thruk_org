@@ -16,6 +16,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#update_inventory">update_inventory</a></li>
       <li><a href="#get_services_checks">get_services_checks</a></li>
       <li><a href="#get_host_agent_services">get_host_agent_services</a></li>
+      <li><a href="#get_host_agent_services_by_id">get_host_agent_services_by_id</a></li>
       <li><a href="#find_agent_module_names">find_agent_module_names</a></li>
       <li><a href="#get_agent_class">get_agent_class</a></li>
       <li><a href="#build_agent">build_agent</a></li>
@@ -64,6 +65,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>get_host_agent_services($c, $hostobj)</code></pre>
 
 <p>returns list of services for given host object.</p>
+
+<h2 id="get_host_agent_services_by_id">get_host_agent_services_by_id</h2>
+
+<pre><code>get_host_agent_services_by_id($services)</code></pre>
+
+<p>transforms list of services into hash by check id</p>
 
 <h2 id="find_agent_module_names">find_agent_module_names</h2>
 
