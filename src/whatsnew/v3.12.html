@@ -1,0 +1,102 @@
+---
+version: v3.12
+title: What's New In Release v3.12
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Getting Admin Role from system_commands and configuration_information</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      For historical reasons (there was no admin role back in the nagios days) Thruk
+      granted the admin role if you have both, the <i>system_commands</i> and the <i>configuration_information</i>
+      role from the cgi.cfg.
+    </p>
+    <p>
+      Since this is not ideal and there is an admin role for quite some time now, it is time to change. In a
+      future version only contacts will get the admin role from explicitly assigning them in the cgi.cfg and
+      not from the 2 roles mentioned above.
+    </p>
+    <p>
+      If you want to disable this behavior now already. You can set <i>admin_role_from_system_and_conf=0</i>. For
+      now this is still enabled by default.
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Agents Plugin</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The agents plugin introduced with in v3.10 is a config tool extension and can be used<br>
+      to manage <a href="https://omd.consol.de/docs/snclient/" target="_blank">SNClient</a> installations.<br>
+      Note: you need to enable this plugin first, it is not enabled by default.
+    </p>
+    <p>
+      There had been many changes in this plugin to add support for the latest new check plugins
+      in the snclient agent. It is now also possible to set additional naemon attributes for the
+      resulting services.
+    </p>
+  </div>
+</div>
+<!--
+<div class="row">
+  <div class="col-md-4">
+    <a title="Agents Plugin" rel="lightbox[whatsnew]" href="{{ page.version }}/agents1.png">
+      <img src="{{ page.version }}/agents1.png" alt="Agents Plugin" />
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a title="Agents Plugin" rel="lightbox[whatsnew]" href="{{ page.version }}/agents2.png">
+      <img src="{{ page.version }}/agents2.png" alt="Agents Plugin" />
+    </a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+-->
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The SNClient is a multi-platform agent designed to replace NSClient++ and NRPE.<br>
+      Read more here:
+    </p>
+    <ul>
+      <li><a href="https://omd.consol.de/docs/snclient/" target="_blank">https://omd.consol.de/docs/snclient/</a>
+      <li><a href="https://github.com/ConSol-Monitoring/snclient" target="_blank">https://github.com/ConSol-Monitoring/snclient</a>
+    </ul>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Backends Unavailable Error Page</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>When using multiple backends and none of them is available Thruk would show an error page. Now this has changed
+      and the normal page would be shown, except it is empty. On top the backends will be listed in red.
+    </p>
+    <p>In this case the backends bar will always be displayed, even if Thruk only uses a single backend.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <a title="Backends Error" rel="lightbox[whatsnew]" href="{{ page.version }}/backends.png">
+      <img src="{{ page.version }}/backends.png" alt="Backends Error" />
+    </a>
+  </div>
+</div>
