@@ -85,6 +85,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_plugin_name">get_plugin_name</a></li>
       <li><a href="#backends_list_to_hash">backends_list_to_hash</a></li>
       <li><a href="#backends_hash_to_list">backends_hash_to_list</a></li>
+      <li><a href="#parse_date_string">parse_date_string</a></li>
       <li><a href="#expand_relative_timefilter">expand_relative_timefilter</a></li>
       <li><a href="#convert_wildcards_to_regex">convert_wildcards_to_regex</a></li>
       <li><a href="#find_modules">find_modules</a></li>
@@ -597,6 +598,12 @@ $VAR2 = target link</code></pre>
 <pre><code>backends_hash_to_list($c, $hashlist)</code></pre>
 
 <p>returns array of backends (inverts backends_list_to_hash function)</p>
+
+<h2 id="parse_date_string">parse_date_string</h2>
+
+<pre><code>my $timestamp = parse_date_string($string)</code></pre>
+
+<p>Format: 2010-03-02 00:00:00 parse given date and return timestamp</p>
 
 <h2 id="expand_relative_timefilter">expand_relative_timefilter</h2>
 
