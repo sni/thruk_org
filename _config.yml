@@ -13,9 +13,9 @@ asciidoctor:
     - icons=font
 
 # site specific variables, run "make update build" after changing things here
-release_version: "3.12"      # release folder, ex.: 2.00.2 or 2.02
-release_date: "Fri 26, 2024"
-next_release_date: "Apr 2024"
+release_version: "3.14"      # release folder, ex.: 2.00.2 or 2.02
+release_date: "Mar 19, 2024"
+next_release_date: "Aug 2024"
 
 mailinglist_url: https://groups.google.com/group/thruk
 #forum_url: https://monitoring-portal.org/c/visualization/thruk
