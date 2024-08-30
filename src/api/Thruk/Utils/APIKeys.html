@@ -18,7 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_keyinfo_by_private_key">get_keyinfo_by_private_key</a></li>
       <li><a href="#get_key_by_private_key">get_key_by_private_key</a></li>
       <li><a href="#create_key">create_key</a></li>
-      <li><a href="#create_key_from_req_params">create_key_from_req_params</a></li>
+      <li><a href="#create_key_by_params">create_key_by_params</a></li>
       <li><a href="#remove_key">remove_key</a></li>
       <li><a href="#read_key">read_key</a></li>
     </ul>
@@ -67,11 +67,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>returns private, hashed key and filename</p>
 
-<h2 id="create_key_from_req_params">create_key_from_req_params</h2>
+<h2 id="create_key_by_params">create_key_by_params</h2>
 
-<pre><code>create_key_from_req_params($c)</code></pre>
+<pre><code>create_key_by_params($c, $params)</code></pre>
 
-<p>create new api key for user from request parameters</p>
+<p>create new api key for user from parameters</p>
+
+<p>parameters are: username # technical username for this key roles # restrict roles to given list comment # description superuser # superuser keys can change into any username force_user # sets username in combination with super user flag restrict # not used restrict_only # not used</p>
 
 <p>returns private, hashed key and filename on success or undef otherwise</p>
 

@@ -48,7 +48,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>available commands are:
 
-- info &lt;key|file&gt;            show information about api key</code></pre>
+- info &lt;key|file&gt;            show information about existing api key
+- create [options]           create new api key
+- new                        alias for &#39;create&#39;
+
+  options:
+
+   u|user=&lt;name&gt;                use username for key
+   r|roles=&lt;restrict to roles&gt;  restrict api key to given roles
+   comment=&lt;decription&gt;         add description
+   superuser                    make it a superuser key
+   force_user                   sets username in combination with super user flag</code></pre>
 
 </dd>
 </dl>
