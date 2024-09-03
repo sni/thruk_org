@@ -180,20 +180,21 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="cmd">cmd</h2>
 
-<pre><code>cmd($command)
-cmd($c, $command [, $stdin] [, $print_prefix] [, $detached] [, $no_decode] [, $timeout])</code></pre>
+<pre><code>cmd($command, [ $options ])</code></pre>
 
 <p>run command and return exit code and output</p>
 
 <p>$command can be either a string like &#39;/bin/prog arg1 arg2&#39; or an array like [&#39;/bin/prog&#39;, &#39;arg1&#39;, &#39;arg2&#39;]</p>
 
-<p>optional print_prefix will print the result on the fly with given prefix.</p>
+<p>options are:</p>
 
-<p>optional detached will run the command detached in the background</p>
-
-<p>optional no_decode will skip decoding</p>
-
-<p>optional timeout will kill the command after the timeout (seconds)</p>
+<pre><code>- stdin                 text used as stdin for the command
+- print_prefix          print the result on the fly with given prefix.
+- output_prefix         add prefix to output (can be a callback)
+- detached              run the command detached in the background
+- no_decode             skip decoding
+- timeout               kill the command after the timeout (seconds)
+- no_touch_signals      do not change signal handler</code></pre>
 
 <h2 id="untaint">untaint</h2>
 
