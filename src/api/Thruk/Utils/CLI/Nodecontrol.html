@@ -1,0 +1,69 @@
+---
+title: Nodecontrol
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd1">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Nodecontrol - NodeControl CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The nodecontrol command can start node control commands.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>Usage: thruk [globaloptions] nc &lt;cmd&gt; [-w|--worker=&lt;nr&gt;]</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>print help and exit</code></pre>
+
+</dd>
+<dt id="cmd"><b>cmd</b></dt>
+<dd>
+
+<pre><code>available commands are:
+
+- facts   &lt;backendid|all&gt;             update facts for given backend.
+- runtime &lt;backendid|all&gt;             update runtime data for given backend.</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd1">cmd</h2>
+
+<pre><code>cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Update facts for specific backend.</p>
+
+<pre><code>%&gt; thruk nc facts backendid</code></pre>
+
+

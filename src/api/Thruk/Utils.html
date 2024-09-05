@@ -107,6 +107,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#render_db_profile">render_db_profile</a></li>
       <li><a href="#has_node_module">has_node_module</a></li>
       <li><a href="#extract_connection_error">extract_connection_error</a></li>
+      <li><a href="#http_response_error">http_response_error</a></li>
     </ul>
   </li>
 </ul>
@@ -736,5 +737,11 @@ a key can be:
 <pre><code>extract_connection_error($err)</code></pre>
 
 <p>returns a short connection error along with the original error. Short error might be undef for unknown errors.</p>
+
+<h2 id="http_response_error">http_response_error</h2>
+
+<pre><code>http_response_error($response)</code></pre>
+
+<p>returns a short connection error.</p>
 
 
