@@ -44,6 +44,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#proxifiy_url">proxifiy_url</a></li>
       <li><a href="#proxifiy_me">proxifiy_me</a></li>
       <li><a href="#get_remote_thruk_url">get_remote_thruk_url</a></li>
+      <li><a href="#get_remote_thruk_url_full">get_remote_thruk_url_full</a></li>
       <li><a href="#get_pnp_url">get_pnp_url</a></li>
       <li><a href="#get_histou_url">get_histou_url</a></li>
       <li><a href="#get_graph_url">get_graph_url</a></li>
@@ -328,9 +329,15 @@ set_message($c, {
 
 <h2 id="get_remote_thruk_url">get_remote_thruk_url</h2>
 
-<pre><code>get_remote_thruk_url($peer_key)</code></pre>
+<pre><code>get_remote_thruk_url($c, $peer_key, [$full])</code></pre>
 
 <p>return url for remote thruk installation</p>
+
+<h2 id="get_remote_thruk_url_full">get_remote_thruk_url_full</h2>
+
+<pre><code>get_remote_thruk_url_full($c, $peer_key)</code></pre>
+
+<p>returns ($proto, $hostname, $site)</p>
 
 <h2 id="get_pnp_url">get_pnp_url</h2>
 
