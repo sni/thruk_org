@@ -248,3 +248,7 @@ SMALL.new {
 .listingblock pre {
   overflow: auto;
 }
+
+LI > H5 {
+  margin: 1px;
+}
