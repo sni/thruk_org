@@ -43,8 +43,9 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#savexls">savexls</a></li>
       <li><a href="#proxifiy_url">proxifiy_url</a></li>
       <li><a href="#proxifiy_me">proxifiy_me</a></li>
-      <li><a href="#get_remote_thruk_url">get_remote_thruk_url</a></li>
-      <li><a href="#get_remote_thruk_url_full">get_remote_thruk_url_full</a></li>
+      <li><a href="#get_remote_thruk_url_path">get_remote_thruk_url_path</a></li>
+      <li><a href="#get_remote_thruk_hostname">get_remote_thruk_hostname</a></li>
+      <li><a href="#get_remote_thruk_site_name">get_remote_thruk_site_name</a></li>
       <li><a href="#get_pnp_url">get_pnp_url</a></li>
       <li><a href="#get_histou_url">get_histou_url</a></li>
       <li><a href="#get_graph_url">get_graph_url</a></li>
@@ -327,17 +328,23 @@ set_message($c, {
 
 <p>returns url with optional proxy prepended</p>
 
-<h2 id="get_remote_thruk_url">get_remote_thruk_url</h2>
+<h2 id="get_remote_thruk_url_path">get_remote_thruk_url_path</h2>
 
-<pre><code>get_remote_thruk_url($c, $peer_key, [$full])</code></pre>
+<pre><code>get_remote_thruk_url_path($c, $peer_key)</code></pre>
 
-<p>return url for remote thruk installation</p>
+<p>returns path of last http address/thruk instance in chain</p>
 
-<h2 id="get_remote_thruk_url_full">get_remote_thruk_url_full</h2>
+<h2 id="get_remote_thruk_hostname">get_remote_thruk_hostname</h2>
 
-<pre><code>get_remote_thruk_url_full($c, $peer_key)</code></pre>
+<pre><code>get_remote_thruk_hostname($c, $peer_key)</code></pre>
 
-<p>returns ($proto, $hostname, $site)</p>
+<p>returns hostname and url of last none-local address</p>
+
+<h2 id="get_remote_thruk_site_name">get_remote_thruk_site_name</h2>
+
+<pre><code>get_remote_thruk_site_name($c, $peer_key)</code></pre>
+
+<p>returns site name of peer</p>
 
 <h2 id="get_pnp_url">get_pnp_url</h2>
 
