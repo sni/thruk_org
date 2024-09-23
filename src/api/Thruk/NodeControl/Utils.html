@@ -55,7 +55,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/NodeControl/', 'NodeControl']
 
 <h2 id="get_server">get_server</h2>
 
-<pre><code>get_server($c)</code></pre>
+<pre><code>get_server($c, $peer, [$config])</code></pre>
 
 <p>return server details</p>
 
@@ -81,7 +81,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/NodeControl/', 'NodeControl']
 
 <pre><code>omd_update($c, $peer, $version)</code></pre>
 
-<p>update site to given version on peer</p>
+<p>update site to given version on peer in background, returns job id</p>
 
 <h2 id="omd_install_update_cleanup">omd_install_update_cleanup</h2>
 
