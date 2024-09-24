@@ -24,15 +24,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_result">get_result</a></li>
       <li><a href="#job_page">job_page</a></li>
       <li><a href="#wait_for_job">wait_for_job</a></li>
+      <li><a href="#wait_for_peer_job">wait_for_peer_job</a></li>
       <li><a href="#update_status">update_status</a></li>
       <li><a href="#save_profile">save_profile</a></li>
-      <li><a href="#do_child_stuff">do_child_stuff</a></li>
       <li><a href="#do_parent_stuff">do_parent_stuff</a></li>
       <li><a href="#init_external">init_external</a></li>
       <li><a href="#cleanup_job_folders">cleanup_job_folders</a></li>
       <li><a href="#remove_job_dir">remove_job_dir</a></li>
       <li><a href="#is_running1">_is_running</a></li>
       <li><a href="#finished_job_page">_finished_job_page</a></li>
+      <li><a href="#wrap_prefix_output">wrap_prefix_output</a></li>
+      <li><a href="#wrap_prefix_output_stop">wrap_prefix_output_stop</a></li>
     </ul>
   </li>
 </ul>
@@ -137,6 +139,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <p>wait for this job to finish</p>
 
+<h2 id="wait_for_peer_job">wait_for_peer_job</h2>
+
+<pre><code>wait_for_peer_job($c, $peer, $jobid, [$poll_interval = 3], [$max_wait = 60], [$print = 0])</code></pre>
+
+<p>waits $max_wait seconds for job on peer to complete and returns the job data.</p>
+
 <h2 id="update_status">update_status</h2>
 
 <pre><code>update_status($dir, $percent, $status, $remaining_seconds)</code></pre>
@@ -148,12 +156,6 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>save_profile($c, $dir)</code></pre>
 
 <p>save profile to profile.log.$pid.&lt;nr&gt; of this job</p>
-
-<h2 id="do_child_stuff">do_child_stuff</h2>
-
-<pre><code>do_child_stuff($c, $dir, $id)</code></pre>
-
-<p>do all child things after a fork</p>
 
 <h2 id="do_parent_stuff">do_parent_stuff</h2>
 
@@ -190,5 +192,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>_finished_job_page($c, $stash, $forward, $out)</code></pre>
 
 <p>show page for finished jobs</p>
+
+<h2 id="wrap_prefix_output">wrap_prefix_output</h2>
+
+<pre><code>wrap stdout/stderr and add timestamp prefix.</code></pre>
+
+<h2 id="wrap_prefix_output_stop">wrap_prefix_output_stop</h2>
+
+<pre><code>stop wrapping stdout/stderr</code></pre>
 
 
