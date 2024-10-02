@@ -22,6 +22,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
       <li><a href="#update_sections">update_sections</a></li>
       <li><a href="#disable_hidden_backends">disable_hidden_backends</a></li>
       <li><a href="#get_peers">get_peers</a></li>
+      <li><a href="#get_peers_by_tags">get_peers_by_tags</a></li>
       <li><a href="#get_local_peers">get_local_peers</a></li>
       <li><a href="#get_peer_by_key">get_peer_by_key</a></li>
       <li><a href="#get_peer_by_name">get_peer_by_name</a></li>
@@ -137,6 +138,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
 <pre><code>get_peers([$all])</code></pre>
 
 <p>returns all configured peers (except config-only)</p>
+
+<h2 id="get_peers_by_tags">get_peers_by_tags</h2>
+
+<pre><code>get_peers_by_tags($tags)</code></pre>
+
+<p>returns all configured peers with given tags, ex: [ &#39;tag1&#39;, &#39;!tag2&#39; ]</p>
 
 <h2 id="get_local_peers">get_local_peers</h2>
 
