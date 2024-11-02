@@ -31,7 +31,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>Usage: thruk [globaloptions] nc &lt;cmd&gt; [-w|--worker=&lt;nr&gt;]</code></pre>
+<pre><code>Usage: thruk [globaloptions] nc &lt;cmd&gt; [options]</code></pre>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -48,10 +48,13 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 
 <pre><code>available commands are:
 
-- -l|list                             list available backends.
-- facts   &lt;backendid|all&gt;             update facts for given backend.
-- runtime &lt;backendid|all&gt;             update runtime data for given backend.
-- setversion &lt;version&gt;                set new default omd version</code></pre>
+- -l|list                                        list available backends.
+- facts   &lt;backendid|all&gt;  [-w|--worker=&lt;nr&gt;]    update facts for given backend.
+- runtime &lt;backendid|all&gt;  [-w|--worker=&lt;nr&gt;]    update runtime data for given backend.
+- setversion &lt;version&gt;                           set new default omd version
+- install &lt;backendid|all&gt;  [--version=&lt;version]  install default omd version for given backend.
+- update  &lt;backendid|all&gt;  [--version=&lt;version]  update default omd version for given backend.
+- cleanup &lt;backendid|all&gt;                        cleanup unused omd versions for given backend.</code></pre>
 
 </dd>
 </dl>
