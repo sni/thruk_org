@@ -1,0 +1,109 @@
+---
+title: Functions
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/BP/', 'BP']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#status">status</a></li>
+      <li><a href="#groupstatus">groupstatus</a></li>
+      <li><a href="#fixed">fixed</a></li>
+      <li><a href="#worst">worst</a></li>
+      <li><a href="#best">best</a></li>
+      <li><a href="#at_least">at_least</a></li>
+      <li><a href="#not_more">not_more</a></li>
+      <li><a href="#equals">equals</a></li>
+      <li><a href="#random">random</a></li>
+      <li><a href="#statusfilter">statusfilter</a></li>
+      <li><a href="#custom">custom</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::BP::Functions - functions used to calculate business processes</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>functions used to calculate business processes</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="status">status</h2>
+
+<pre><code>status($c, $bp, $n, \@($hostname, $description), \%livedata)</code></pre>
+
+<p>returns status based on real service or host</p>
+
+<h2 id="groupstatus">groupstatus</h2>
+
+<pre><code>groupstatus($c, $bp, $n, [$args: $hostgroup, $servicegroup], [$hostgroupdata], [$servicegroupdata])</code></pre>
+
+<p>returns status based on real service or host</p>
+
+<h2 id="fixed">fixed</h2>
+
+<pre><code>fixed($c, $bp, $n, [$args: $status, [$text]])</code></pre>
+
+<p>returns fixed status based input</p>
+
+<h2 id="worst">worst</h2>
+
+<pre><code>worst($c, $bp, $n)</code></pre>
+
+<p>returns worst state of all dependent nodes</p>
+
+<h2 id="best">best</h2>
+
+<pre><code>best($c, $bp, $n)</code></pre>
+
+<p>returns best state of all dependent nodes</p>
+
+<h2 id="at_least">at_least</h2>
+
+<pre><code>at_least($c, $bp, $n, [$args: $critical])
+at_least($c, $bp, $n, [$args: $warning, $critical])</code></pre>
+
+<p>returns state if thresholds are reached</p>
+
+<h2 id="not_more">not_more</h2>
+
+<pre><code>not_more($c, $bp, $n, [$args: $critical])
+not_more($c, $bp, $n, [$args: $warning, $critical])</code></pre>
+
+<p>returns state if thresholds are reached</p>
+
+<h2 id="equals">equals</h2>
+
+<pre><code>equals($c, $bp, $n, [$args: $number])</code></pre>
+
+<p>returns number of good nodes matches the number</p>
+
+<h2 id="random">random</h2>
+
+<pre><code>random($c, $bp, $n)</code></pre>
+
+<p>returns random state</p>
+
+<h2 id="statusfilter">statusfilter</h2>
+
+<pre><code>statusfilter($c, $bp, $n)</code></pre>
+
+<p>returns state based on livestatus filter</p>
+
+<h2 id="custom">custom</h2>
+
+<pre><code>custom($c, $bp, $n, $args, \%livedata)</code></pre>
+
+<p>returns data from custom functions</p>
+
+

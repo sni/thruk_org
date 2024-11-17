@@ -1,0 +1,142 @@
+---
+title: AddDefaults
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Action/', 'Action']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#begin">begin</a></li>
+      <li><a href="#end">end</a></li>
+      <li><a href="#add_defaults">add_defaults</a></li>
+      <li><a href="#add_safe_defaults">add_safe_defaults</a></li>
+      <li><a href="#add_cached_defaults">add_cached_defaults</a></li>
+      <li><a href="#delayed_proc_info_update">delayed_proc_info_update</a></li>
+      <li><a href="#set_configs_stash">set_configs_stash</a></li>
+      <li><a href="#set_possible_backends">set_possible_backends</a></li>
+      <li><a href="#update_site_panel_hashes">update_site_panel_hashes</a></li>
+      <li><a href="#set_processinfo">set_processinfo</a></li>
+      <li><a href="#set_enabled_backends">set_enabled_backends</a></li>
+      <li><a href="#has_backends_set">has_backends_set</a></li>
+      <li><a href="#die_when_no_backends">die_when_no_backends</a></li>
+      <li><a href="#save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</a></li>
+      <li><a href="#check_federation_peers">check_federation_peers</a></li>
+      <li><a href="#set_custom_title">set_custom_title</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Action::AddDefaults - Add Defaults to the context</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>loads cgi.cfg</p>
+
+<p>creates backend manager</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="begin">begin</h2>
+
+<pre><code>begin, running at the begin of every req (except static ones)
+
+runs before add_defaults().</code></pre>
+
+<h2 id="end">end</h2>
+
+<p>check and display errors (if any)</p>
+
+<h2 id="add_defaults">add_defaults</h2>
+
+<pre><code>add default values and create backend connections
+
+runs after before()</code></pre>
+
+<h2 id="add_safe_defaults">add_safe_defaults</h2>
+
+<pre><code>same like add_defaults() but does not redirect to error page on backend errors</code></pre>
+
+<h2 id="add_cached_defaults">add_cached_defaults</h2>
+
+<pre><code>same like AddDefaults but trys to use cached things</code></pre>
+
+<h2 id="delayed_proc_info_update">delayed_proc_info_update</h2>
+
+<pre><code>run process info update after the main page has been served</code></pre>
+
+<h2 id="set_configs_stash">set_configs_stash</h2>
+
+<pre><code>set_configs_stash($c)
+
+set some config variables directly into the stash for faster access</code></pre>
+
+<h2 id="set_possible_backends">set_possible_backends</h2>
+
+<pre><code>set_possible_backends($c, $disabled_backends)
+
+possible values are:
+  0 = reachable                           REACHABLE
+  1 = unreachable                         UNREACHABLE
+  2 = hidden by user                      HIDDEN_USER
+  3 = hidden by backend param             HIDDEN_PARAM
+  4 = disabled by missing group auth      DISABLED_AUTH
+
+ override by the config tool
+  5 = disabled (overide by config tool)   DISABLED_CONF
+  6 = hidden   (overide by config tool)   HIDDEN_CONF
+  7 = up       (overide by config tool)   UP_CONF
+
+ override by LMD clients
+  8 = disabled (overide by lmd)           HIDDEN_LMD_PARENT</code></pre>
+
+<h2 id="update_site_panel_hashes">update_site_panel_hashes</h2>
+
+<pre><code>update_site_panel_hashes($c)</code></pre>
+
+<h2 id="set_processinfo">set_processinfo</h2>
+
+<pre><code>set_processinfo($c, [$safe, $cached_data])</code></pre>
+
+<p>set process info into stash</p>
+
+<h2 id="set_enabled_backends">set_enabled_backends</h2>
+
+<pre><code>set_enabled_backends($c, [$backends])</code></pre>
+
+<p>set enabled backends from environment or given list</p>
+
+<h2 id="has_backends_set">has_backends_set</h2>
+
+<pre><code>has_backends_set($c)
+
+  returns 1 if user has set custom backends</code></pre>
+
+<h2 id="die_when_no_backends">die_when_no_backends</h2>
+
+<pre><code>die unless there are any backeds defined and enabled</code></pre>
+
+<h2 id="save_debug_information_to_tmp_file">save_debug_information_to_tmp_file</h2>
+
+<pre><code>save debug information to a temp file</code></pre>
+
+<h2 id="check_federation_peers">check_federation_peers</h2>
+
+<pre><code>expand peers if a single backend returns more than one site,
+for example with lmd federation</code></pre>
+
+<h2 id="set_custom_title">set_custom_title</h2>
+
+<pre><code>set_custom_title($c)</code></pre>
+
+<p>sets page title based on http parameters</p>
+
+

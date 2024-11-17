@@ -1,0 +1,92 @@
+---
+title: File
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Config/', 'Config']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#update_objects">update_objects</a></li>
+      <li><a href="#update_objects_from_text">update_objects_from_text</a></li>
+      <li><a href="#add_object">add_object</a></li>
+      <li><a href="#readonly">readonly</a></li>
+      <li><a href="#update_readonly_status">update_readonly_status</a></li>
+      <li><a href="#get_meta_data">get_meta_data</a></li>
+      <li><a href="#save">save</a></li>
+      <li><a href="#diff">diff</a></li>
+      <li><a href="#get_new_file_content">get_new_file_content</a></li>
+      <li><a href="#set_backup">set_backup</a></li>
+      <li><a href="#try_merge">try_merge</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Monitoring::Conf::File - Object Configuration File</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Defaults for host objects</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<p>return new file object</p>
+
+<h2 id="update_objects">update_objects</h2>
+
+<p>update all objects from this file</p>
+
+<h2 id="update_objects_from_text">update_objects_from_text</h2>
+
+<p>update all objects from this file by text</p>
+
+<h2 id="add_object">add_object</h2>
+
+<p>add object to file</p>
+
+<h2 id="readonly">readonly</h2>
+
+<p>return true if file is readonly</p>
+
+<h2 id="update_readonly_status">update_readonly_status</h2>
+
+<p>updates the readonly status for this file</p>
+
+<h2 id="get_meta_data">get_meta_data</h2>
+
+<p>return meta data for this file</p>
+
+<h2 id="save">save</h2>
+
+<p>save changes to disk</p>
+
+<h2 id="diff">diff</h2>
+
+<p>get diff of changes</p>
+
+<h2 id="get_new_file_content">get_new_file_content</h2>
+
+<p>returns the current raw file content</p>
+
+<h2 id="set_backup">set_backup</h2>
+
+<p>set backup file content in order to generate change diff later</p>
+
+<h2 id="try_merge">try_merge</h2>
+
+<p>merge our changes into a changed file from disk.</p>
+
+<p>returns true if file has been updated and false if merge fails.</p>
+
+

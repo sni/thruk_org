@@ -1,0 +1,116 @@
+---
+title: Peer
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Backend/', 'Backend']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#peer_key">peer_key</a></li>
+      <li><a href="#peer_name">peer_name</a></li>
+      <li><a href="#remotekey">remotekey</a></li>
+      <li><a href="#peer_list">peer_list</a></li>
+      <li><a href="#is_local">is_local</a></li>
+      <li><a href="#create_backend">create_backend</a></li>
+      <li><a href="#logcache">logcache</a></li>
+      <li><a href="#get_http_fallback_peer">get_http_fallback_peer</a></li>
+      <li><a href="#cmd">cmd</a></li>
+      <li><a href="#rpc">rpc</a></li>
+      <li><a href="#job_data">job_data</a></li>
+      <li><a href="#is_peer_machine_reachable_by_http">is_peer_machine_reachable_by_http</a></li>
+      <li><a href="#get_remote_thruk_version">get_remote_thruk_version</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Backend::Manager - Manager of backend connections</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Manager of backend connections</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<p>create new peer</p>
+
+<h2 id="peer_key">peer_key</h2>
+
+<p>return peer key</p>
+
+<h2 id="peer_name">peer_name</h2>
+
+<p>return peer name</p>
+
+<h2 id="remotekey">remotekey</h2>
+
+<p>return peer key the backend uses on the remote side</p>
+
+<h2 id="peer_list">peer_list</h2>
+
+<p>return peer address list</p>
+
+<h2 id="is_local">is_local</h2>
+
+<p>returns true if backend is local</p>
+
+<h2 id="create_backend">create_backend</h2>
+
+<pre><code>create_backend()</code></pre>
+
+<p>return a new backend class</p>
+
+<h2 id="logcache">logcache</h2>
+
+<pre><code>logcache()</code></pre>
+
+<p>return logcache and create it on demand</p>
+
+<h2 id="get_http_fallback_peer">get_http_fallback_peer</h2>
+
+<pre><code>get_http_fallback_peer()</code></pre>
+
+<p>return http peer from fallback addr</p>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd($c, $cmd, [$background_options])</code></pre>
+
+<p>return result of cmd</p>
+
+<h2 id="rpc">rpc</h2>
+
+<pre><code>rpc($c, $sub, $args)</code></pre>
+
+<p>return result of sub call</p>
+
+<h2 id="job_data">job_data</h2>
+
+<pre><code>job_data($c, $jobid)</code></pre>
+
+<p>return job data</p>
+
+<h2 id="is_peer_machine_reachable_by_http">is_peer_machine_reachable_by_http</h2>
+
+<pre><code>is_peer_machine_reachable_by_http()</code></pre>
+
+<p>returns true if there is a thruk instance reachable by http for this peer</p>
+
+<h2 id="get_remote_thruk_version">get_remote_thruk_version</h2>
+
+<pre><code>get_remote_thruk_version()</code></pre>
+
+<p>returns version of remote thruk instance</p>
+
+

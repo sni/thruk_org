@@ -1,0 +1,92 @@
+---
+title: APIKeys
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_keys">get_keys</a></li>
+      <li><a href="#get_superuser_keys">get_superuser_keys</a></li>
+      <li><a href="#get_keyinfo_by_private_key">get_keyinfo_by_private_key</a></li>
+      <li><a href="#get_key_by_private_key">get_key_by_private_key</a></li>
+      <li><a href="#create_key">create_key</a></li>
+      <li><a href="#create_key_by_params">create_key_by_params</a></li>
+      <li><a href="#remove_key">remove_key</a></li>
+      <li><a href="#read_key">read_key</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::APIKeys - Handles api keys related things</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>API keys for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_keys">get_keys</h2>
+
+<pre><code>get_keys($c, { [hashed_key =&gt; $hashed_key], [user =&gt; $username], [file =&gt; $filename], [superuser =&gt; 0/1])</code></pre>
+
+<p>returns list of api keys, filtered by user, file or superuser</p>
+
+<h2 id="get_superuser_keys">get_superuser_keys</h2>
+
+<pre><code>get_superuser_keys($c, [$filename])</code></pre>
+
+<p>returns list of superuser api keys</p>
+
+<h2 id="get_keyinfo_by_private_key">get_keyinfo_by_private_key</h2>
+
+<pre><code>get_keyinfo_by_private_key($config, $privatekey)</code></pre>
+
+<p>returns key for given private key</p>
+
+<h2 id="get_key_by_private_key">get_key_by_private_key</h2>
+
+<pre><code>get_key_by_private_key($config, $privatekey)</code></pre>
+
+<p>returns key for given private key</p>
+
+<h2 id="create_key">create_key</h2>
+
+<pre><code>create_key($c, $username, [$comment], [$roles], [$superuser])</code></pre>
+
+<p>create new api key for user</p>
+
+<p>returns private, hashed key and filename</p>
+
+<h2 id="create_key_by_params">create_key_by_params</h2>
+
+<pre><code>create_key_by_params($c, $params)</code></pre>
+
+<p>create new api key for user from parameters</p>
+
+<p>parameters are: username # technical username for this key roles # restrict roles to given list comment # description superuser # superuser keys can change into any username force_user # sets username in combination with super user flag restrict # not used restrict_only # not used</p>
+
+<p>returns private, hashed key and filename on success or undef otherwise</p>
+
+<h2 id="remove_key">remove_key</h2>
+
+<pre><code>remove_key($c, $username, $file)</code></pre>
+
+<p>removes given key</p>
+
+<h2 id="read_key">read_key</h2>
+
+<pre><code>read_key($c, $file)</code></pre>
+
+<p>return key for given file</p>
+
+

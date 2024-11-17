@@ -1,0 +1,75 @@
+---
+title: Request
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#WMETHODS">WMETHODS</a>
+    <ul>
+      <li><a href="#encoding">encoding</a></li>
+      <li><a href="#query_parameters">query_parameters</a></li>
+      <li><a href="#body_parameters">body_parameters</a></li>
+      <li><a href="#parameters">parameters</a></li>
+      <li><a href="#param">param</a></li>
+      <li><a href="#url">url</a></li>
+      <li><a href="#uri">uri</a></li>
+      <li><a href="#unescape">unescape</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Request - Subclass of <a href="https://metacpan.org/pod/Plack%3A%3ARequest">Plack::Request</a> which supports encoding.</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>based on Plack::Request::WithEncoding.</p>
+
+<h1 id="WMETHODS">WMETHODS</h1>
+
+<h2 id="encoding">encoding</h2>
+
+<p>Returns a encoding method to use to decode parameters.</p>
+
+<h2 id="query_parameters">query_parameters</h2>
+
+<p>Returns a reference to a hash containing <b>decoded</b> query string (GET) parameters.</p>
+
+<h2 id="body_parameters">body_parameters</h2>
+
+<p>Returns a reference to a hash containing <b>decoded</b> posted parameters in the request body (POST). As with <code>query_parameters</code>.</p>
+
+<h2 id="parameters">parameters</h2>
+
+<p>Returns a hash reference containing <b>decoded</b> (and merged) GET and POST parameters.</p>
+
+<h2 id="param">param</h2>
+
+<p>Returns <b>decoded</b> GET and POST parameters.</p>
+
+<h2 id="url">url</h2>
+
+<p>Returns urldecoded utf8 uri as string.</p>
+
+<h2 id="uri">uri</h2>
+
+<p>Returns <a>Uri</a> object, but applies HTTP_X_FORWARDED_* environment if set.</p>
+
+<h2 id="unescape">unescape</h2>
+
+<p>Returns <b>uri_unescape</b> for given value.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/Plack%3A%3ARequest">Plack::Request</a>, <a>Plack::Request::WithEncoding</a></p>
+
+

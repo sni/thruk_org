@@ -1,0 +1,80 @@
+---
+title: Log
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#log">log</a></li>
+      <li><a href="#audit_log">_audit_log</a></li>
+      <li><a href="#time_prefix">time_prefix</a></li>
+      <li><a href="#wrap_stdout2log">wrap_stdout2log</a></li>
+      <li><a href="#wrap_stdout2log_stop">wrap_stdout2log_stop</a></li>
+      <li><a href="#wrap_stderr2log">wrap_stderr2log</a></li>
+      <li><a href="#wrap_stderr2log_stop">wrap_stderr2log_stop</a></li>
+      <li><a href="#set_screen_logger">set_screen_logger</a></li>
+      <li><a href="#get_screen_logger">get_screen_logger</a></li>
+      <li><a href="#reset_logging">reset_logging</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Log - command line logging utils</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Utilities Collection for CLI logging</p>
+
+<h2 id="log">log</h2>
+
+<pre><code>log returns the current logger object</code></pre>
+
+<h2 id="audit_log">_audit_log</h2>
+
+<pre><code>_audit_log logs something with info log level and
+in case screen logger is active, logs it also to the logfile.</code></pre>
+
+<h2 id="time_prefix">time_prefix</h2>
+
+<pre><code>returns time prefix including milliseconds</code></pre>
+
+<h2 id="wrap_stdout2log">wrap_stdout2log</h2>
+
+<pre><code>wrap stdout to info logger. everything printed to stdout will be logged
+with info level to stdout.</code></pre>
+
+<h2 id="wrap_stdout2log_stop">wrap_stdout2log_stop</h2>
+
+<pre><code>stop wrapping stdout</code></pre>
+
+<h2 id="wrap_stderr2log">wrap_stderr2log</h2>
+
+<pre><code>wrap stderr to warn logger. everything printed to stderr will be logged
+with info level to stdout.</code></pre>
+
+<h2 id="wrap_stderr2log_stop">wrap_stderr2log_stop</h2>
+
+<pre><code>stop wrapping stderr</code></pre>
+
+<h2 id="set_screen_logger">set_screen_logger</h2>
+
+<pre><code>set stderr logger as default logger</code></pre>
+
+<h2 id="get_screen_logger">get_screen_logger</h2>
+
+<pre><code>return stderr logger</code></pre>
+
+<h2 id="reset_logging">reset_logging</h2>
+
+<pre><code>reset logging system, for example after starting child processes</code></pre>
+
+

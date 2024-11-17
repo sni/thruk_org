@@ -1,0 +1,214 @@
+---
+title: Render
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/Reports/', 'Reports']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#sort_by_key">sort_by_key</a></li>
+      <li><a href="#current_page">current_page</a></li>
+      <li><a href="#calculate_availability">calculate_availability</a></li>
+      <li><a href="#get_service_filter">get_service_filter</a></li>
+      <li><a href="#expand_service_slas">expand_service_slas</a></li>
+      <li><a href="#outages">outages</a></li>
+      <li><a href="#set_unavailable_states">set_unavailable_states</a></li>
+      <li><a href="#get_report_timeperiod">get_report_timeperiod</a></li>
+      <li><a href="#get_events">get_events</a></li>
+      <li><a href="#get_url_with_retries">get_url_with_retries</a></li>
+      <li><a href="#get_url">get_url</a></li>
+      <li><a href="#count_event_totals">count_event_totals</a></li>
+      <li><a href="#get_availability_percents">get_availability_percents</a></li>
+      <li><a href="#get_month_name">get_month_name</a></li>
+      <li><a href="#get_week_name">get_week_name</a></li>
+      <li><a href="#get_day_name">get_day_name</a></li>
+      <li><a href="#get_graph_source">get_graph_source</a></li>
+      <li><a href="#get_pnp_image">get_pnp_image</a></li>
+      <li><a href="#dump">dump</a></li>
+      <li><a href="#html_all_inclusive">html_all_inclusive</a></li>
+      <li><a href="#page_splice">page_splice</a></li>
+      <li><a href="#round_decimals">round_decimals</a></li>
+      <li><a href="#replace_css_and_images">replace_css_and_images</a></li>
+      <li><a href="#set_action_image_data_urls">set_action_image_data_urls</a></li>
+      <li><a href="#absolutize_url">_absolutize_url</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Render - Report Rendering Utilities Collection</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Report Rendering Utilities Collection. All subs will be available in report templates. Templates are Template::Toolkit templates and are responsible for the report layout, the mail content and the required parameters for a report.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="sort_by_key">sort_by_key</h2>
+
+<pre><code>sort_by_key()</code></pre>
+
+<p>return sorted list of hashes</p>
+
+<h2 id="current_page">current_page</h2>
+
+<pre><code>current_page()</code></pre>
+
+<p>return and increase page number</p>
+
+<h2 id="calculate_availability">calculate_availability</h2>
+
+<pre><code>calculate_availability()</code></pre>
+
+<p>calculate availability from stash data</p>
+
+<h2 id="get_service_filter">get_service_filter</h2>
+
+<pre><code>get_service_filter($service_param)</code></pre>
+
+<p>convert services into a s_filter usable by Avail.pm</p>
+
+<h2 id="expand_service_slas">expand_service_slas</h2>
+
+<pre><code>expand_service_slas($service_param)</code></pre>
+
+<p>expand services sla levels</p>
+
+<h2 id="outages">outages</h2>
+
+<pre><code>outages($logs, $start, $end, $hst, $svc)</code></pre>
+
+<p>print outages from log entries</p>
+
+<h2 id="set_unavailable_states">set_unavailable_states</h2>
+
+<pre><code>set_unavailable_states($states)</code></pre>
+
+<p>set list of states which count as unavailable</p>
+
+<h2 id="get_report_timeperiod">get_report_timeperiod</h2>
+
+<pre><code>get_report_timeperiod()</code></pre>
+
+<p>return report timeperiod in human readable form</p>
+
+<h2 id="get_events">get_events</h2>
+
+<pre><code>get_events()</code></pre>
+
+<p>set events by pattern from eventlog</p>
+
+<h2 id="get_url_with_retries">get_url_with_retries</h2>
+
+<pre><code>get_url_with_retries($retries, $delay)</code></pre>
+
+<p>calls get_url but retries on errors</p>
+
+<h2 id="get_url">get_url</h2>
+
+<pre><code>get_url()</code></pre>
+
+<p>save content from url</p>
+
+<h2 id="count_event_totals">count_event_totals</h2>
+
+<pre><code>count_event_totals()</code></pre>
+
+<p>count host / service totals from events</p>
+
+<h2 id="get_availability_percents">get_availability_percents</h2>
+
+<pre><code>get_availability_percents($hst, $svc)</code></pre>
+
+<p>return list of availability percent as json list</p>
+
+<h2 id="get_month_name">get_month_name</h2>
+
+<pre><code>get_month_name(date, monthNamesList)</code></pre>
+
+<p>return human readable month name</p>
+
+<h2 id="get_week_name">get_week_name</h2>
+
+<pre><code>get_week_name(date)</code></pre>
+
+<p>return human readable week name</p>
+
+<h2 id="get_day_name">get_day_name</h2>
+
+<pre><code>get_day_name(date)</code></pre>
+
+<p>return human readable day name</p>
+
+<h2 id="get_graph_source">get_graph_source</h2>
+
+<pre><code>get_graph_source(c, host, service)</code></pre>
+
+<p>return index of first graph for given host (or service) provided by the _GRAPH_SOURCE custom variable or 1 as default fallback.</p>
+
+<h2 id="get_pnp_image">get_pnp_image</h2>
+
+<pre><code>get_pnp_image(hst, svc, start, end, width, height, source)</code></pre>
+
+<p>return base64 encoded pnp image if possible. An empty string will be returned if no PNP graph can be exported.</p>
+
+<h2 id="dump">dump</h2>
+
+<pre><code>dump(...)</code></pre>
+
+<p>dump variables to stderr</p>
+
+<h2 id="html_all_inclusive">html_all_inclusive</h2>
+
+<pre><code>html_all_inclusive($c, $url, $page, [$include_js])</code></pre>
+
+<p>make html page include all remove css, js and images</p>
+
+<h2 id="page_splice">page_splice</h2>
+
+<pre><code>page_splice($data, $size_per_page, $max_pages)</code></pre>
+
+<p>cut data in chunks of $size_per_page size. $max_pages is the maximum number of pages or -1 for all.</p>
+
+<h2 id="round_decimals">round_decimals</h2>
+
+<pre><code>round_decimals($float, $decimals, [$round_method])</code></pre>
+
+<p>Round number to given decimals. method can be &#39;floor&#39; or &#39;round&#39;.</p>
+
+<pre><code>- round will do a standard mathematical round</code></pre>
+
+<h2 id="replace_css_and_images">replace_css_and_images</h2>
+
+<pre><code>replace_css_and_images($text, $url, $report_base_url)</code></pre>
+
+<p>Replace css and images in given text</p>
+
+<h2 id="set_action_image_data_urls">set_action_image_data_urls</h2>
+
+<pre><code>set_action_image_data_urls($c, $urls)</code></pre>
+
+<p>replaces hash of urls with data urls</p>
+
+<h2 id="absolutize_url">_absolutize_url</h2>
+
+<pre><code>returns a absolute url
+
+expects
+$VAR1 = origin url
+$VAR2 = target link</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>See the shipped reports for some examples. Shipped reports are in the &#39;plugins/plugins-available/reports2/templates/reports&#39; folder.</p>
+
+

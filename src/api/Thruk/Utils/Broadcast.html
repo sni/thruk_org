@@ -1,0 +1,72 @@
+---
+title: Broadcast
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_broadcasts">get_broadcasts</a></li>
+      <li><a href="#process_broadcast-c-broadcast">process_broadcast($c, $broadcast)</a></li>
+      <li><a href="#is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</a></li>
+      <li><a href="#update_dismiss-c">update_dismiss($c)</a></li>
+      <li><a href="#get_default_broadcast-c">get_default_broadcast($c)</a></li>
+      <li><a href="#update_broadcast_from_param-c-broadcast">update_broadcast_from_param($c, $broadcast)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Broadcast - Broadcast Utilities Collection for Thruk</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Broadcast Utilities Collection for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_broadcasts">get_broadcasts</h2>
+
+<pre><code>get_broadcasts($c, [$unfiltered], [$file], [$panorama_only], [$templates_only])</code></pre>
+
+<p>return list of broadcasts for this contact</p>
+
+<h2 id="process_broadcast-c-broadcast">process_broadcast($c, $broadcast)</h2>
+
+<pre><code>process_broadcast($c, $broadcast)</code></pre>
+
+<p>replace macros, frontmatter, etc...</p>
+
+<h2 id="is_authorized_for_broadcast-c-broadcast">is_authorized_for_broadcast($c, $broadcast)</h2>
+
+<pre><code>is_authorized_for_broadcast($c, $broadcast)</code></pre>
+
+<p>returns true if user is allowed to view this broadcast</p>
+
+<h2 id="update_dismiss-c">update_dismiss($c)</h2>
+
+<pre><code>update_dismiss($c)</code></pre>
+
+<p>mark all broadcasts as read for the current user</p>
+
+<h2 id="get_default_broadcast-c">get_default_broadcast($c)</h2>
+
+<pre><code>get_default_broadcast($c)</code></pre>
+
+<p>return empty default broadcast</p>
+
+<h2 id="update_broadcast_from_param-c-broadcast">update_broadcast_from_param($c, $broadcast)</h2>
+
+<pre><code>update_broadcast_from_param($c, $broadcast)</code></pre>
+
+<p>return broadcast with updated fields from parameters</p>
+
+

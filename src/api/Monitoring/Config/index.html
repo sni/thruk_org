@@ -1,0 +1,399 @@
+---
+title: Config
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#init">init</a></li>
+      <li><a href="#discard_changes">discard_changes</a></li>
+      <li><a href="#commit">commit</a></li>
+      <li><a href="#get_errors">get_errors</a></li>
+      <li><a href="#print_errors">print_errors</a></li>
+      <li><a href="#get_files">get_files</a></li>
+      <li><a href="#get_file_by_path">get_file_by_path</a></li>
+      <li><a href="#get_changed_files">get_changed_files</a></li>
+      <li><a href="#get_objects">get_objects</a></li>
+      <li><a href="#get_objects_by_type">get_objects_by_type</a></li>
+      <li><a href="#get_objects_by_name">get_objects_by_name</a></li>
+      <li><a href="#get_objects_by_path">get_objects_by_path</a></li>
+      <li><a href="#get_templates_by_type">get_templates_by_type</a></li>
+      <li><a href="#get_template_by_name">get_template_by_name</a></li>
+      <li><a href="#get_object_by_location">get_object_by_location</a></li>
+      <li><a href="#get_object_by_id">get_object_by_id</a></li>
+      <li><a href="#get_services_for_host">get_services_for_host</a></li>
+      <li><a href="#get_services_by_name">get_services_by_name</a></li>
+      <li><a href="#get_hosts_for_service">get_hosts_for_service</a></li>
+      <li><a href="#update">update</a></li>
+      <li><a href="#check_files_changed">check_files_changed</a></li>
+      <li><a href="#update_object">update_object</a></li>
+      <li><a href="#delete_object">delete_object</a></li>
+      <li><a href="#move_object">move_object</a></li>
+      <li><a href="#file_add">file_add</a></li>
+      <li><a href="#file_delete">file_delete</a></li>
+      <li><a href="#file_undelete">file_undelete</a></li>
+      <li><a href="#rebuild_index">rebuild_index</a></li>
+      <li><a href="#rename_dependencies">rename_dependencies</a></li>
+      <li><a href="#clone_refs">clone_refs</a></li>
+      <li><a href="#gather_references">gather_references</a></li>
+      <li><a href="#get_references">get_references</a></li>
+      <li><a href="#get_default_keys">get_default_keys</a></li>
+      <li><a href="#get_files_for_folder">get_files_for_folder</a></li>
+      <li><a href="#get_files_root">get_files_root</a></li>
+      <li><a href="#is_host_in_hostgroup">is_host_in_hostgroup</a></li>
+      <li><a href="#is_remote">is_remote</a></li>
+      <li><a href="#remote_file_sync">remote_file_sync</a></li>
+      <li><a href="#remote_config_check">remote_config_check</a></li>
+      <li><a href="#remote_config_reload">remote_config_reload</a></li>
+      <li><a href="#remote_file_save">remote_file_save</a></li>
+      <li><a href="#remote_get_plugins">remote_get_plugins</a></li>
+      <li><a href="#remote_get_pluginhelp">remote_get_pluginhelp</a></li>
+      <li><a href="#remote_get_pluginpreview">remote_get_pluginpreview</a></li>
+      <li><a href="#read_rc_file">read_rc_file</a></li>
+      <li><a href="#set_save_config">set_save_config</a></li>
+      <li><a href="#get_plugins">get_plugins</a></li>
+      <li><a href="#get_plugin_help">get_plugin_help</a></li>
+      <li><a href="#get_plugin_preview">get_plugin_preview</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Monitoring::Config - Thruks Object Database</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Provides access to core objects like hosts, services etc...</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>new({
+    core_conf           =&gt; path to core config
+    obj_file            =&gt; path to core config file
+    obj_dir             =&gt; path to core config path
+    obj_resource_file   =&gt; paths to resource.cfg file
+    obj_readonly        =&gt; readonly pattern
+    obj_exclude         =&gt; exclude pattern
+    git_base_dir        =&gt; git history base folder
+    localdir            =&gt; local path used for remote configs
+    relative            =&gt; allow relative paths
+})</code></pre>
+
+<p>return new objects database</p>
+
+<h2 id="init">init</h2>
+
+<pre><code>init($config, [ $stats ])</code></pre>
+
+<p>initialize configs</p>
+
+<h2 id="discard_changes">discard_changes</h2>
+
+<pre><code>discard_changes()</code></pre>
+
+<p>Forget all changes made so far and not yet saved to disk</p>
+
+<h2 id="commit">commit</h2>
+
+<pre><code>commit([$c])</code></pre>
+
+<p>Commit changes to disk. Returns 1 on success.</p>
+
+<p>$c is only needed when syncing with remote sites.</p>
+
+<h2 id="get_errors">get_errors</h2>
+
+<pre><code>get_errors()</code></pre>
+
+<p>return all errors</p>
+
+<h2 id="print_errors">print_errors</h2>
+
+<pre><code>print_errors([$fh])</code></pre>
+
+<p>Print all errors to stdout or supplied filehandle</p>
+
+<h2 id="get_files">get_files</h2>
+
+<pre><code>get_files()</code></pre>
+
+<p>Get all files. Returns list of <a href="/api/Monitoring/Config/File.html">Monitoring::Config::File</a> objects.</p>
+
+<h2 id="get_file_by_path">get_file_by_path</h2>
+
+<pre><code>get_file_by_path($path)</code></pre>
+
+<p>Get file by path. Returns <a href="/api/Monitoring/Config/File.html">Monitoring::Config::File</a> object or undef.</p>
+
+<h2 id="get_changed_files">get_changed_files</h2>
+
+<pre><code>get_changed_files()</code></pre>
+
+<p>Get all changed files. Returns list of <a href="/api/Monitoring/Config/File.html">Monitoring::Config::File</a> objects.</p>
+
+<h2 id="get_objects">get_objects</h2>
+
+<pre><code>$list = get_objects()</code></pre>
+
+<p>Get all objects. Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects.</p>
+
+<h2 id="get_objects_by_type">get_objects_by_type</h2>
+
+<pre><code>$list = get_objects_by_type($type, [ $filter ], [ $origin])</code></pre>
+
+<p>Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects for a type.</p>
+
+<p>filter is verified against the name if its a scalar value. Otherwise it has to be like</p>
+
+<pre><code>$filter = {
+   attribute =&gt; value
+};
+
+origin is used for commands and can be &#39;check&#39;, &#39;eventhandler&#39; or &#39;notification&#39;</code></pre>
+
+<h2 id="get_objects_by_name">get_objects_by_name</h2>
+
+<pre><code>get_objects_by_name($type, $name, [ $templates_only , [ $name2 ]])</code></pre>
+
+<p>Get objects by name. Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects.</p>
+
+<h2 id="get_objects_by_path">get_objects_by_path</h2>
+
+<pre><code>get_objects_by_path($path)</code></pre>
+
+<p>Get all objects by path. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects or undef.</p>
+
+<h2 id="get_templates_by_type">get_templates_by_type</h2>
+
+<pre><code>get_templates_by_type($type)</code></pre>
+
+<p>Get templates by type. Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects.</p>
+
+<h2 id="get_template_by_name">get_template_by_name</h2>
+
+<pre><code>get_template_by_name($type, $name)</code></pre>
+
+<p>Get template object by name. Returns list of <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects.</p>
+
+<h2 id="get_object_by_location">get_object_by_location</h2>
+
+<pre><code>get_object_by_location($path, $linenr)</code></pre>
+
+<p>Get single object by path and line number. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> objects or undef.</p>
+
+<h2 id="get_object_by_id">get_object_by_id</h2>
+
+<pre><code>get_object_by_id($id)</code></pre>
+
+<p>Get object by id. Returns <a href="/api/Monitoring/Config/Object.html">Monitoring::Config::Object</a> object or undef.</p>
+
+<h2 id="get_services_for_host">get_services_for_host</h2>
+
+<pre><code>get_services_for_host($hostobj)</code></pre>
+
+<p>Get services by host. Returns a hashref with ids of references:</p>
+
+<pre><code>{ host =&gt; {}, group =&gt; {} }</code></pre>
+
+<h2 id="get_services_by_name">get_services_by_name</h2>
+
+<pre><code>get_services_by_name($host_name, $service_description)</code></pre>
+
+<p>Returns list of services for given host and service names</p>
+
+<h2 id="get_hosts_for_service">get_hosts_for_service</h2>
+
+<pre><code>get_hosts_for_service($svcobj)</code></pre>
+
+<p>Get hosts for service. Returns a list of hosts using this service.</p>
+
+<h2 id="update">update</h2>
+
+<pre><code>update()</code></pre>
+
+<p>update objects config</p>
+
+<h2 id="check_files_changed">check_files_changed</h2>
+
+<pre><code>check_files_changed([ $reload ])</code></pre>
+
+<p>update objects config</p>
+
+<h2 id="update_object">update_object</h2>
+
+<pre><code>update_object($obj, $newdata, [ $comments, [ $rebuild ]])</code></pre>
+
+<p>update objects config</p>
+
+<h2 id="delete_object">delete_object</h2>
+
+<pre><code>delete_object($obj, [ $rebuild ])</code></pre>
+
+<p>update objects config</p>
+
+<h2 id="move_object">move_object</h2>
+
+<pre><code>move_object($obj, $newfile, [ $rebuild ])</code></pre>
+
+<p>move object to different file</p>
+
+<h2 id="file_add">file_add</h2>
+
+<pre><code>file_add($file, [ $rebuild ])</code></pre>
+
+<p>add new file to config</p>
+
+<h2 id="file_delete">file_delete</h2>
+
+<pre><code>file_delete($file, [ $rebuild ])</code></pre>
+
+<p>remove a file from the config</p>
+
+<h2 id="file_undelete">file_undelete</h2>
+
+<pre><code>file_undelete($file, [ $rebuild ])</code></pre>
+
+<p>undelete a file marked for removal</p>
+
+<h2 id="rebuild_index">rebuild_index</h2>
+
+<pre><code>rebuild_index()</code></pre>
+
+<p>rebuild object index</p>
+
+<h2 id="rename_dependencies">rename_dependencies</h2>
+
+<pre><code>rename_dependencies($obj, $oldname, $newname)</code></pre>
+
+<p>rename dependencies</p>
+
+<h2 id="clone_refs">clone_refs</h2>
+
+<pre><code>clone_refs($orig, $obj, $cloned_name, $newname, [$clone_refs],  [$test_mode])</code></pre>
+
+<p>clone all incoming references of object. In test mode nothing will be changed and just the list of clonables will be returned. If clone_refs is set, only those ids will be cloned.</p>
+
+<h2 id="gather_references">gather_references</h2>
+
+<pre><code>gather_references($obj)</code></pre>
+
+<p>return incoming and outgoing references</p>
+
+<h2 id="get_references">get_references</h2>
+
+<pre><code>get_references($obj, [ $name ])</code></pre>
+
+<p>return all references for this object</p>
+
+<h2 id="get_default_keys">get_default_keys</h2>
+
+<pre><code>   get_default_keys($type, [ $options ])
+
+$options = {
+    no_alias =&gt; 0,   # skip alias definitions and only return real config attributes
+    sort     =&gt; 0,   # sort by default attribute order
+}</code></pre>
+
+<p>return the default config keys for a type of object</p>
+
+<h2 id="get_files_for_folder">get_files_for_folder</h2>
+
+<pre><code>get_files_for_folder($dir, [ $regex ])</code></pre>
+
+<p>return all files below this folder (matching the regex)</p>
+
+<h2 id="get_files_root">get_files_root</h2>
+
+<pre><code>get_files_root()</code></pre>
+
+<p>return root folder for config files</p>
+
+<h2 id="is_host_in_hostgroup">is_host_in_hostgroup</h2>
+
+<pre><code>is_host_in_hostgroup()</code></pre>
+
+<p>return list of hostgroups if this host is member of the group</p>
+
+<h2 id="is_remote">is_remote</h2>
+
+<pre><code>is_remote()</code></pre>
+
+<p>return true if this backend has a remote connection</p>
+
+<h2 id="remote_file_sync">remote_file_sync</h2>
+
+<pre><code>remote_file_sync()</code></pre>
+
+<p>syncronize files from remote</p>
+
+<h2 id="remote_config_check">remote_config_check</h2>
+
+<pre><code>remote_config_check()</code></pre>
+
+<p>do config check on remote site</p>
+
+<h2 id="remote_config_reload">remote_config_reload</h2>
+
+<pre><code>remote_config_reload()</code></pre>
+
+<p>do a config reload on remote site</p>
+
+<h2 id="remote_file_save">remote_file_save</h2>
+
+<pre><code>remote_file_save()</code></pre>
+
+<p>save files to remote site</p>
+
+<h2 id="remote_get_plugins">remote_get_plugins</h2>
+
+<pre><code>remote_get_plugins()</code></pre>
+
+<p>return plugins from remote site</p>
+
+<h2 id="remote_get_pluginhelp">remote_get_pluginhelp</h2>
+
+<pre><code>remote_get_pluginhelp()</code></pre>
+
+<p>return plugin help from remote site</p>
+
+<h2 id="remote_get_pluginpreview">remote_get_pluginpreview</h2>
+
+<pre><code>remote_get_pluginpreview()</code></pre>
+
+<p>return plugin preview from remote site</p>
+
+<h2 id="read_rc_file">read_rc_file</h2>
+
+<pre><code>read_rc_file()</code></pre>
+
+<p>read naglint rc file and create sort function</p>
+
+<h2 id="set_save_config">set_save_config</h2>
+
+<p>updates file save config</p>
+
+<h2 id="get_plugins">get_plugins</h2>
+
+<p>return list of plugins</p>
+
+<h2 id="get_plugin_help">get_plugin_help</h2>
+
+<p>return plugin help</p>
+
+<h2 id="get_plugin_preview">get_plugin_preview</h2>
+
+<p>return plugin preview</p>
+
+

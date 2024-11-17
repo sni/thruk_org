@@ -1,0 +1,106 @@
+---
+title: Cache
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#get">get</a></li>
+      <li><a href="#set">set</a></li>
+      <li><a href="#dump">dump</a></li>
+      <li><a href="#clear">clear</a></li>
+      <li><a href="#age">age</a></li>
+      <li><a href="#touch">touch</a></li>
+      <li><a href="#update">_update</a></li>
+      <li><a href="#store">_store</a></li>
+      <li><a href="#retrieve">_retrieve</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Cache - Cache Utilities Collection for Thruk</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Cache Utilities Collection for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<p>create new cache instance</p>
+
+<h2 id="get">get</h2>
+
+<pre><code>get()
+get($key)
+get($key, $key2)
+get($key, $key2, $key3)
+...</code></pre>
+
+<p>return cache entry</p>
+
+<h2 id="set">set</h2>
+
+<pre><code>set($data)
+set($key, $value)
+set($key, $key2, $value)
+set($key, $key2, $key3, $value)
+...</code></pre>
+
+<p>set value</p>
+
+<h2 id="dump">dump</h2>
+
+<pre><code>dump()</code></pre>
+
+<p>dump complete cache</p>
+
+<h2 id="clear">clear</h2>
+
+<pre><code>clear()</code></pre>
+
+<p>clear complete cache</p>
+
+<h2 id="age">age</h2>
+
+<pre><code>age()</code></pre>
+
+<p>returns the cache age in seconds</p>
+
+<h2 id="touch">touch</h2>
+
+<pre><code>touch()</code></pre>
+
+<p>update file stat to current date</p>
+
+<h2 id="update">_update</h2>
+
+<pre><code>_update()</code></pre>
+
+<p>update cache from file</p>
+
+<h2 id="store">_store</h2>
+
+<pre><code>_store()</code></pre>
+
+<p>store cache to disk</p>
+
+<h2 id="retrieve">_retrieve</h2>
+
+<pre><code>_retrieve()</code></pre>
+
+<p>retrieve data from disk</p>
+
+

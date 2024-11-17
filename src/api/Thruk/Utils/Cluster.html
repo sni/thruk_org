@@ -1,0 +1,144 @@
+---
+title: Cluster
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#load_statefile">load_statefile</a></li>
+      <li><a href="#register">register</a></li>
+      <li><a href="#unregister">unregister</a></li>
+      <li><a href="#refresh">refresh</a></li>
+      <li><a href="#is_clustered">is_clustered</a></li>
+      <li><a href="#node_ids">node_ids</a></li>
+      <li><a href="#run_cluster">run_cluster</a></li>
+      <li><a href="#kill">kill</a></li>
+      <li><a href="#pong">pong</a></li>
+      <li><a href="#is_it_me">is_it_me</a></li>
+      <li><a href="#maint">maint</a></li>
+      <li><a href="#heartbeat">heartbeat</a></li>
+      <li><a href="#expand_node_ids">expand_node_ids</a></li>
+      <li><a href="#node_name">node_name</a></li>
+      <li><a href="#update_cron_file">update_cron_file</a></li>
+      <li><a href="#check_stale_pids">check_stale_pids</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Cluster - Cluster Utilities Collection for Thruk</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Cluster Utilities Collection for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<p>create new cluster instance</p>
+
+<h2 id="load_statefile">load_statefile</h2>
+
+<p>load statefile and fill node structures</p>
+
+<h2 id="register">register</h2>
+
+<p>registers this cluster node in the cluster statefile</p>
+
+<h2 id="unregister">unregister</h2>
+
+<p>removes ourself from the cluster statefile</p>
+
+<h2 id="refresh">refresh</h2>
+
+<p>refresh this cluster node in the cluster statefile</p>
+
+<h2 id="is_clustered">is_clustered</h2>
+
+<p>return 1 if a cluster is configured</p>
+
+<h2 id="node_ids">node_ids</h2>
+
+<p>return list of node ids</p>
+
+<h2 id="run_cluster">run_cluster</h2>
+
+<p>run something on our cluster</p>
+
+<pre><code>- type: can be
+    - &#39;once&#39;      runs job on current node unless it is in progress already
+    - &#39;all&#39;       runs job on all nodes
+    - &#39;others&#39;    runs job on all other nodes
+    - &lt;node url&gt;  runs job on given node[s]
+- sub: class / sub name
+- args: arguments
+- debug_log_only: log errors as debug</code></pre>
+
+<p>returns 0 if no cluster is in use and/or caller can continue locally returns 1 if a &#39;once&#39; job runs somewhere already returns list of results for each specified node</p>
+
+<h2 id="kill">kill</h2>
+
+<pre><code>kill($c, $node, $signal, @pids)</code></pre>
+
+<p>cluster aware kill wrapper</p>
+
+<h2 id="pong">pong</h2>
+
+<pre><code>pong($c, $node)</code></pre>
+
+<p>return a ping request</p>
+
+<h2 id="is_it_me">is_it_me</h2>
+
+<pre><code>is_it_me($self, $node|$node_id|$node_url)</code></pre>
+
+<p>returns true if this us</p>
+
+<h2 id="maint">maint</h2>
+
+<pre><code>maint($self, $node, [$value])</code></pre>
+
+<p>returns true if this node is in maintenance mode.</p>
+
+<h2 id="heartbeat">heartbeat</h2>
+
+<pre><code>heartbeat($self, [$node_id])</code></pre>
+
+<p>request pong from other nodes (or node if if given)</p>
+
+<h2 id="expand_node_ids">expand_node_ids</h2>
+
+<pre><code>expand_node_ids($self, @nodes_ids_and_urls)</code></pre>
+
+<p>convert list of node_ids and node_urls to node_ids only.</p>
+
+<h2 id="node_name">node_name</h2>
+
+<pre><code>node_name($self, $id)</code></pre>
+
+<p>return node name (node_url) for given id</p>
+
+<h2 id="update_cron_file">update_cron_file</h2>
+
+<pre><code>update_cron_file($c)</code></pre>
+
+<p>update downtimes cron</p>
+
+<h2 id="check_stale_pids">check_stale_pids</h2>
+
+<pre><code>check_stale_pids($self)</code></pre>
+
+<p>check for stale pids</p>
+
+

@@ -1,0 +1,62 @@
+---
+title: Maintenance
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+      <li><a href="#clean_old_user_files">clean_old_user_files</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Maintenance - Maintenance CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The maintenance command performs regular maintenance jobs like</p>
+
+<pre><code>- cleaning old session files</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>Usage: thruk [globaloptions] maintenance</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>print help and exit</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd([ $options ])</code></pre>
+
+<h2 id="clean_old_user_files">clean_old_user_files</h2>
+
+<pre><code>clean_old_user_files($c)</code></pre>
+
+<p>removes user files from failed logins after 24hours</p>
+
+

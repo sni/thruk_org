@@ -1,0 +1,115 @@
+---
+title: rest_v1
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Controller/', 'Controller']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#index">index</a></li>
+      <li><a href="#process_rest_request">process_rest_request</a></li>
+      <li><a href="#get_request_columns">get_request_columns</a></li>
+      <li><a href="#get_aliased_columns">get_aliased_columns</a></li>
+      <li><a href="#get_filter_columns">get_filter_columns</a></li>
+      <li><a href="#column_required">column_required</a></li>
+      <li><a href="#register_rest_path_v1">register_rest_path_v1</a></li>
+      <li><a href="#get_rest_paths">get_rest_paths</a></li>
+      <li><a href="#load_json_files">load_json_files</a></li>
+      <li><a href="#guess_field_type">guess_field_type</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Controller::rest_v1 - Rest interface version 1</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Thruk Controller</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="index">index</h2>
+
+<h2 id="process_rest_request">process_rest_request</h2>
+
+<pre><code>process_rest_request($c, $path_info, [$method])</code></pre>
+
+<p>returns json response</p>
+
+<h2 id="get_request_columns">get_request_columns</h2>
+
+<pre><code>get_request_columns($c, $type)
+
+$type can be:
+    - RAW    - returns columsn as is, alias definitions untouched
+    - NAMES  - returns column name
+    - ALIAS  - returns column alias or the name if none specified
+    - STRUCT - returns column as parsed structure</code></pre>
+
+<p>returns list of requested columns or undef</p>
+
+<h2 id="get_aliased_columns">get_aliased_columns</h2>
+
+<pre><code>get_aliased_columns($c)</code></pre>
+
+<p>returns hash of columns with their alias</p>
+
+<h2 id="get_filter_columns">get_filter_columns</h2>
+
+<pre><code>get_filter_columns($c)</code></pre>
+
+<p>returns list of columns required for filtering</p>
+
+<h2 id="column_required">column_required</h2>
+
+<pre><code>column_required($c, $column_name)</code></pre>
+
+<p>Can be used to exclude expensive columns from beeing generated.</p>
+
+<p>returns true if column is required, ex. for sorting, filtering, etc...</p>
+
+<h2 id="register_rest_path_v1">register_rest_path_v1</h2>
+
+<pre><code>register_rest_path_v1($protocol, $path|$regex, $function, [$roles], [$first])</code></pre>
+
+<p>register rest path.</p>
+
+<p>returns nothing</p>
+
+<h2 id="get_rest_paths">get_rest_paths</h2>
+
+<pre><code>get_rest_paths([$c])</code></pre>
+
+<p>gather list of available rest paths. If $c is supplied, only enabled plugins will be returned.</p>
+
+<p>returns (path_hash, keys_hash, docs_hash)</p>
+
+<h2 id="load_json_files">load_json_files</h2>
+
+<pre><code>load_json_files($c, {
+    files                   =&gt; $files,
+   [ pre_process_callback   =&gt; &amp;code_ref ],
+   [ authorization_callback =&gt; &amp;code_ref ],
+   [ post_process_callback  =&gt; &amp;code_ref ],
+});</code></pre>
+
+<p>generic function to expose json files</p>
+
+<p>returns list of authorized loaded files</p>
+
+<h2 id="guess_field_type">guess_field_type</h2>
+
+<pre><code>guess_field_type($url, $fieldname)</code></pre>
+
+<p>returns guess about field type</p>
+
+

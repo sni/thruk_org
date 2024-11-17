@@ -1,0 +1,204 @@
+---
+title: External
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+      <li><a href="#perl">perl</a></li>
+      <li><a href="#render_page_in_background">render_page_in_background</a></li>
+      <li><a href="#is_running">is_running</a></li>
+      <li><a href="#cancel">cancel</a></li>
+      <li><a href="#read_job">read_job</a></li>
+      <li><a href="#get_status">get_status</a></li>
+      <li><a href="#get_json_status">get_json_status</a></li>
+      <li><a href="#get_result">get_result</a></li>
+      <li><a href="#job_page">job_page</a></li>
+      <li><a href="#wait_for_job">wait_for_job</a></li>
+      <li><a href="#wait_for_peer_job">wait_for_peer_job</a></li>
+      <li><a href="#update_status">update_status</a></li>
+      <li><a href="#save_profile">save_profile</a></li>
+      <li><a href="#do_parent_stuff">do_parent_stuff</a></li>
+      <li><a href="#init_external">init_external</a></li>
+      <li><a href="#cleanup_job_folders">cleanup_job_folders</a></li>
+      <li><a href="#remove_job_dir">remove_job_dir</a></li>
+      <li><a href="#is_running1">_is_running</a></li>
+      <li><a href="#finished_job_page">_finished_job_page</a></li>
+      <li><a href="#wrap_prefix_output">wrap_prefix_output</a></li>
+      <li><a href="#wrap_prefix_output_stop">wrap_prefix_output_stop</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::External - Utilities to run background processes</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Utilities to run background processes</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd($c, {
+          cmd          =&gt; &quot;command line to execute&quot;,
+          allow        =&gt; all|user,
+          message      =&gt; &quot;display message while running the job&quot;
+          forward      =&gt; &quot;forward on success&quot;
+          background   =&gt; &quot;return $jobid if set, or redirect otherwise&quot;
+          nofork       =&gt; &quot;don&#39;t fork&quot;
+          no_shell     =&gt; &quot;wrap command in a shell unless no_shell is set&quot;
+          env          =&gt; hash with extra environment variables
+          show_output  =&gt; show console with output
+      }
+  );</code></pre>
+
+<p>run command in an external process</p>
+
+<h2 id="perl">perl</h2>
+
+<pre><code>perl($c, {
+          expr         =&gt; &quot;perl expression to execute&quot;,
+          allow        =&gt; all|user,
+          message      =&gt; &quot;display message while running the job&quot;
+          forward      =&gt; &quot;forward on success&quot;
+          backends     =&gt; &quot;list of selected backends (keys)&quot;
+          nofork       =&gt; &quot;don&#39;t fork&quot;
+          background   =&gt; &quot;return $jobid if set, or redirect otherwise&quot;
+          clean        =&gt; &quot;remove job after displaying it if true&quot;
+          render       =&gt; &quot;set to a true value to render page immediatly&quot;
+          show_output  =&gt; show console with output
+          log_archive  =&gt; store stdout/stderr with this filename
+      }
+  )</code></pre>
+
+<p>run perl expression in an external process</p>
+
+<h2 id="render_page_in_background">render_page_in_background</h2>
+
+<pre><code>render_page_in_background($c)</code></pre>
+
+<p>return true if page will be rendered in background. will return false if page should continue to render normally</p>
+
+<h2 id="is_running">is_running</h2>
+
+<pre><code>is_running($c, $id, [$nouser])</code></pre>
+
+<p>return true if process is still running</p>
+
+<h2 id="cancel">cancel</h2>
+
+<pre><code>cancel($c, $id, [$nouser])</code></pre>
+
+<p>returns true if successfully canceled</p>
+
+<h2 id="read_job">read_job</h2>
+
+<pre><code>read_job($c, $id)</code></pre>
+
+<p>return status of a job</p>
+
+<h2 id="get_status">get_status</h2>
+
+<pre><code>get_status($c, $id)</code></pre>
+
+<p>return status of a job</p>
+
+<h2 id="get_json_status">get_json_status</h2>
+
+<pre><code>get_json_status($c, $id)</code></pre>
+
+<p>return json status of a job</p>
+
+<h2 id="get_result">get_result</h2>
+
+<pre><code>get_result($c, $id, [$nouser])</code></pre>
+
+<p>return result of a job</p>
+
+<h2 id="job_page">job_page</h2>
+
+<pre><code>job_page($c)</code></pre>
+
+<p>process job result page</p>
+
+<h2 id="wait_for_job">wait_for_job</h2>
+
+<pre><code>wait_for_job($jobid, $timeout)</code></pre>
+
+<p>wait for this job to finish</p>
+
+<h2 id="wait_for_peer_job">wait_for_peer_job</h2>
+
+<pre><code>wait_for_peer_job($c, $peer, $jobid, [$poll_interval = 3], [$max_wait = 60], [$print = 0])</code></pre>
+
+<p>waits $max_wait seconds for job on peer to complete and returns the job data.</p>
+
+<h2 id="update_status">update_status</h2>
+
+<pre><code>update_status($dir, $percent, $status, $remaining_seconds)</code></pre>
+
+<p>update status for this job</p>
+
+<h2 id="save_profile">save_profile</h2>
+
+<pre><code>save_profile($c, $dir)</code></pre>
+
+<p>save profile to profile.log.$pid.&lt;nr&gt; of this job</p>
+
+<h2 id="do_parent_stuff">do_parent_stuff</h2>
+
+<pre><code>do_parent_stuff($c, $dir, $id, $conf)</code></pre>
+
+<p>do all parent things after a fork</p>
+
+<h2 id="init_external">init_external</h2>
+
+<pre><code>init_external($c)</code></pre>
+
+<p>create job folder and return id</p>
+
+<h2 id="cleanup_job_folders">cleanup_job_folders</h2>
+
+<pre><code>cleanup_job_folders($c)</code></pre>
+
+<p>remove old job folders</p>
+
+<h2 id="remove_job_dir">remove_job_dir</h2>
+
+<pre><code>remove_job_dir($c, $dir)</code></pre>
+
+<p>remove job folder and all files</p>
+
+<h2 id="is_running1">_is_running</h2>
+
+<pre><code>_is_running($c, $dir)</code></pre>
+
+<p>return true if process is still running</p>
+
+<h2 id="finished_job_page">_finished_job_page</h2>
+
+<pre><code>_finished_job_page($c, $stash, $forward, $out)</code></pre>
+
+<p>show page for finished jobs</p>
+
+<h2 id="wrap_prefix_output">wrap_prefix_output</h2>
+
+<pre><code>wrap stdout/stderr and add timestamp prefix.</code></pre>
+
+<h2 id="wrap_prefix_output_stop">wrap_prefix_output_stop</h2>
+
+<pre><code>stop wrapping stdout/stderr</code></pre>
+
+

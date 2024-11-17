@@ -1,0 +1,81 @@
+---
+title: Simple
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Pool/', 'Pool']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#add_bulk">add_bulk</a></li>
+      <li><a href="#remove_all">remove_all</a></li>
+      <li><a href="#shutdown">shutdown</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Pool::Simple - A simple thread-pool implementation</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>use Thruk::Pool::Simple;
+
+my $pool = Thruk::Pool::Simple-&gt;new(
+               size    =&gt; 3,              # number of workers
+               handler =&gt; \&amp;handle,       # call this sub to handle jobs
+             );
+
+$pool-&gt;add_bulk([\@arg1, \@arg2, ...])    # put some work onto the queue
+
+my @results = $pool-&gt;remove_all();        # get all results (blocks till all threads are finished)</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><code>Thruk::Pool::Simple</code> provides a simple thread-pool implementaion without external dependencies outside core modules.</p>
+
+<p>Jobs can be submitted to and handled by multi-threaded workers managed by the pool.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>new( %options )
+
+options:
+
+- size    =&gt; 3,              # number of workers
+- handler =&gt; \&amp;handle,       # call this sub to handle jobs</code></pre>
+
+<p>returns new thread pool.</p>
+
+<h2 id="add_bulk">add_bulk</h2>
+
+<pre><code>add_bulk( \@jobs )</code></pre>
+
+<p>adds jobs to queue, returns nothing.</p>
+
+<h2 id="remove_all">remove_all</h2>
+
+<pre><code>remove_all([$callback])</code></pre>
+
+<p>get all results (blocks till all threads are finished).</p>
+
+<p>optional callback will be called with result as first argument.</p>
+
+<h2 id="shutdown">shutdown</h2>
+
+<pre><code>shutdown()</code></pre>
+
+<p>shutdown all threads, wil be called automatically at END.</p>
+
+

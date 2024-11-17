@@ -1,0 +1,167 @@
+---
+title: Menu
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#read_navigation">read_navigation</a></li>
+      <li><a href="#add_section">add_section</a></li>
+      <li><a href="#insert_section">insert_section</a></li>
+      <li><a href="#add_link">add_link</a></li>
+      <li><a href="#add_sub_link">add_sub_link</a></li>
+      <li><a href="#add_sub_sub_link">add_sub_sub_link</a></li>
+      <li><a href="#add_search">add_search</a></li>
+      <li><a href="#insert_item">insert_item</a></li>
+      <li><a href="#insert_sub_item">insert_sub_item</a></li>
+      <li><a href="#remove_item">remove_item</a></li>
+      <li><a href="#remove_section">remove_section</a></li>
+      <li><a href="#has_group">has_group</a></li>
+      <li><a href="#has_role">has_role</a></li>
+      <li><a href="#is_user">is_user</a></li>
+      <li><a href="#renew_navigation">_renew_navigation</a></li>
+      <li><a href="#get_section_by_name">_get_section_by_name</a></li>
+      <li><a href="#get_sublink_by_name">_get_sublink_by_name</a></li>
+      <li><a href="#uri_with">_uri_with</a></li>
+      <li><a href="#remove_item_from_links">_remove_item_from_links</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::Menu - Menu Utilities Collection for Thruk</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Menu Utilities Collection for Thruk</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="read_navigation">read_navigation</h2>
+
+<pre><code>read_navigation()</code></pre>
+
+<p>reads the navigation</p>
+
+<h2 id="add_section">add_section</h2>
+
+<pre><code>add_section()</code></pre>
+
+<p>add a new section</p>
+
+<h2 id="insert_section">insert_section</h2>
+
+<pre><code>insert_section()</code></pre>
+
+<p>insert a new section at the given index</p>
+
+<h2 id="add_link">add_link</h2>
+
+<pre><code>add_link()</code></pre>
+
+<p>add a new link to last section</p>
+
+<h2 id="add_sub_link">add_sub_link</h2>
+
+<pre><code>add_sub_link()</code></pre>
+
+<p>add a new sub link to last link</p>
+
+<h2 id="add_sub_sub_link">add_sub_sub_link</h2>
+
+<pre><code>add_sub_sub_link()</code></pre>
+
+<p>add a new additional link to last sub link. DEPRECATED: will be displayed as sub_link anyway</p>
+
+<h2 id="add_search">add_search</h2>
+
+<pre><code>add_search()</code></pre>
+
+<p>add a new search to the last section</p>
+
+<h2 id="insert_item">insert_item</h2>
+
+<pre><code>insert_item()</code></pre>
+
+<p>add a new item in existing category</p>
+
+<h2 id="insert_sub_item">insert_sub_item</h2>
+
+<pre><code>insert_sub_item()</code></pre>
+
+<p>add a new sub item in existing category</p>
+
+<h2 id="remove_item">remove_item</h2>
+
+<pre><code>remove_item($category)
+remove_item($category, $item_name)
+remove_item($category, $subcategory, $item_name)
+# remove_item($category, $subcategory, $item_name, $hintname) (DEPRECATED)</code></pre>
+
+<p>removes an existing item from an existing category</p>
+
+<h2 id="remove_section">remove_section</h2>
+
+<pre><code>remove_section($category)</code></pre>
+
+<p>removes an existing section completely</p>
+
+<h2 id="has_group">has_group</h2>
+
+<pre><code>has_group($group)</code></pre>
+
+<p>returns 1 if the current user has this group</p>
+
+<h2 id="has_role">has_role</h2>
+
+<pre><code>has_role($role)
+has_role([$role, ...])</code></pre>
+
+<p>returns 1 if the current user has this role</p>
+
+<h2 id="is_user">is_user</h2>
+
+<pre><code>is_user($username)</code></pre>
+
+<p>returns 1 if the current user has the given name</p>
+
+<h2 id="renew_navigation">_renew_navigation</h2>
+
+<pre><code>_renew_navigation()</code></pre>
+
+<p>updates menu, returns nothing</p>
+
+<h2 id="get_section_by_name">_get_section_by_name</h2>
+
+<pre><code>_get_section_by_name()</code></pre>
+
+<p>returns a section by name</p>
+
+<h2 id="get_sublink_by_name">_get_sublink_by_name</h2>
+
+<pre><code>_get_sublink_by_name()</code></pre>
+
+<p>returns a link by name</p>
+
+<h2 id="uri_with">_uri_with</h2>
+
+<pre><code>_uri_with($baseurl, $additions)</code></pre>
+
+<p>returns link expanded with additional parameters</p>
+
+<h2 id="remove_item_from_links">_remove_item_from_links</h2>
+
+<pre><code>_remove_item_from_links($links, $name)</code></pre>
+
+<p>returns links list with items by name removed</p>
+
+

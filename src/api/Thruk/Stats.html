@@ -1,0 +1,93 @@
+---
+title: Stats
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+---
+title: Stats
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#profile">profile</a></li>
+      <li><a href="#totals">totals</a></li>
+      <li><a href="#enable">enable</a></li>
+      <li><a href="#clear">clear</a></li>
+      <li><a href="#report">report</a></li>
+      <li><a href="#report_html">report_html</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Stats - Application profiling</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>$c-&gt;stats-&gt;profile(begin =&gt; &lt;name&gt;);
+...
+$c-&gt;stats-&gt;profile(end =&gt; &lt;name&gt;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><code>Thruk::Stats</code> provides simple profiling</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>new()</code></pre>
+
+<p>return new stats object</p>
+
+<h2 id="profile">profile</h2>
+
+<pre><code>profile(begin|end =&gt; $name)
+profile(comment =&gt; $text)</code></pre>
+
+<p>sets breakpoint with message</p>
+
+<h2 id="totals">totals</h2>
+
+<pre><code>totals({ name =&gt; time })</code></pre>
+
+<p>add total time</p>
+
+<h2 id="enable">enable</h2>
+
+<pre><code>enable()</code></pre>
+
+<p>enable profiling</p>
+
+<h2 id="clear">clear</h2>
+
+<pre><code>clear()</code></pre>
+
+<p>reset current profile</p>
+
+<h2 id="report">report</h2>
+
+<pre><code>report()</code></pre>
+
+<p>return report from profiled data</p>
+
+<h2 id="report_html">report_html</h2>
+
+<pre><code>report_html()</code></pre>
+
+<p>return report from profiled data in html format</p>
+
+

@@ -1,0 +1,178 @@
+---
+title: Config
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#import">import</a></li>
+      <li><a href="#get_default_stash">get_default_stash</a></li>
+      <li><a href="#get_config">get_config</a></li>
+      <li><a href="#set_config_env">set_config_env</a></li>
+      <li><a href="#get_config_env">get_config_env</a></li>
+      <li><a href="#set_default_config">set_default_config</a></li>
+      <li><a href="#get_base_config">get_base_config</a></li>
+      <li><a href="#get_toolkit_config">get_toolkit_config</a></li>
+      <li><a href="#get_git_info">_get_git_info</a></li>
+      <li><a href="#get_debug_details">get_debug_details</a></li>
+      <li><a href="#home">home</a></li>
+      <li><a href="#secret_key">secret_key</a></li>
+      <li><a href="#get_user">get_user</a></li>
+      <li><a href="#read_config_file">read_config_file</a></li>
+      <li><a href="#switch_user">switch_user</a></li>
+      <li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
+      <li><a href="#merge_cgi_cfg">merge_cgi_cfg</a></li>
+      <li><a href="#parse_omd_site_config">parse_omd_site_config</a></li>
+      <li><a href="#merge_sub_config">merge_sub_config</a></li>
+      <li><a href="#hostname">hostname</a></li>
+      <li><a href="#get_thruk_version">get_thruk_version</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Config - Generic Access to Thruks Config</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Generic Access to Thruks Config</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="import">import</h2>
+
+<pre><code>initialize config</code></pre>
+
+<h2 id="get_default_stash">get_default_stash</h2>
+
+<pre><code>return default stash</code></pre>
+
+<h2 id="get_config">get_config</h2>
+
+<p>return config set by set_config_env</p>
+
+<h2 id="set_config_env">set_config_env</h2>
+
+<p>return basic config hash and sets environment</p>
+
+<h2 id="get_config_env">get_config_env</h2>
+
+<p>like set_config_env, but return config only</p>
+
+<h2 id="set_default_config">set_default_config</h2>
+
+<p>return basic config hash and sets environment, but does not read config again</p>
+
+<h2 id="get_base_config">get_base_config</h2>
+
+<p>return base config</p>
+
+<h2 id="get_toolkit_config">get_toolkit_config</h2>
+
+<p>return template toolkit config</p>
+
+<h2 id="get_git_info">_get_git_info</h2>
+
+<pre><code>_get_git_info()</code></pre>
+
+<p>return git branch/tag/has information to be used in the version</p>
+
+<h2 id="get_debug_details">get_debug_details</h2>
+
+<pre><code>get_debug_details($c)</code></pre>
+
+<p>return details useful for debuging</p>
+
+<h2 id="home">home</h2>
+
+<pre><code>home()</code></pre>
+
+<p>return thruk base folder.</p>
+
+<h2 id="secret_key">secret_key</h2>
+
+<pre><code>secret_key()</code></pre>
+
+<p>return secret_key</p>
+
+<h2 id="get_user">get_user</h2>
+
+<pre><code>get_user($from_folder)</code></pre>
+
+<p>return user and groups thruk runs with</p>
+
+<h2 id="read_config_file">read_config_file</h2>
+
+<pre><code>read_config_file($file)</code></pre>
+
+<p>return parsed config file</p>
+
+<h2 id="switch_user">switch_user</h2>
+
+<pre><code>switch_user($uid, $groups, [$home])</code></pre>
+
+<p>switch user and groups</p>
+
+<h2 id="read_cgi_cfg">read_cgi_cfg</h2>
+
+<pre><code>read_cgi_cfg($app, $config);</code></pre>
+
+<p>parse the cgi.cfg and returns config hash</p>
+
+<h2 id="merge_cgi_cfg">merge_cgi_cfg</h2>
+
+<pre><code>merge_cgi_cfg($config)</code></pre>
+
+<p>merge entries from cgi.cfg into $c-&gt;config</p>
+
+<h2 id="parse_omd_site_config">parse_omd_site_config</h2>
+
+<pre><code>parse_omd_site_config([$file])</code></pre>
+
+<p>parses omd sites key/value config file</p>
+
+<h2 id="merge_sub_config">merge_sub_config</h2>
+
+<pre><code>merge_sub_config($base_config, $sub_config)</code></pre>
+
+<p>merge entries from $sub_config into $base_config.</p>
+
+<p>base config will not be cloned are therefore changed.</p>
+
+<h2 id="hostname">hostname</h2>
+
+<pre><code>hostname()</code></pre>
+
+<p>return system hostname</p>
+
+<h2 id="get_thruk_version">get_thruk_version</h2>
+
+<pre><code>get_thruk_version()</code></pre>
+
+<p>return full thruk version string, ex.: 2.40.2+10~feature_branch~45a4ceb</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="/api/Thruk.html">Thruk</a></p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Thruk is Copyright (c) 2009-present by Sven Nierlein and others. This is free software; you can redistribute it and/or modify it under the same terms as the Perl5 programming language system itself.</p>
+
+

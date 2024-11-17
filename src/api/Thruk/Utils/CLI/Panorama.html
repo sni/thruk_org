@@ -1,0 +1,71 @@
+---
+title: Panorama
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Panorama - Panorama CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The panorama command manages panorama dashboards from the command line.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>Usage: thruk [globaloptions] panorama [command]</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>print help and exit</code></pre>
+
+</dd>
+<dt id="command"><b>command</b></dt>
+<dd>
+
+<pre><code>available commands are:
+
+  - clean           remove empty dashboards
+  - json &lt;nr&gt;       load and return given dashboard in json format
+  - trim &lt;nr|file&gt;  trim specified dashboard with given options
+        --remove-panel-backends     remove backends for all icons so they inherit them from the dashboard</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Clean empty dashboards</p>
+
+<pre><code>%&gt; thruk dashboard clean</code></pre>
+
+

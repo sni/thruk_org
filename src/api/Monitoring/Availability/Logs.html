@@ -1,0 +1,78 @@
+---
+title: Logs
+layout: api
+breadcrumb: ['api/Monitoring/', 'Monitoring', 'api/Monitoring/Availability/', 'Availability']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#new-ARGS">new ( [ARGS] )</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#get_logs">get_logs</a></li>
+      <li><a href="#parse_line">parse_line</a></li>
+      <li><a href="#parse_livestatus_entry">parse_livestatus_entry</a></li>
+      <li><a href="#decode_any">decode_any</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Monitoring::Availability::Logs - Load/Store/Access Logfiles</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Store for logfiles</p>
+
+<h2 id="new-ARGS">new ( [ARGS] )</h2>
+
+<p>Creates an <code>Monitoring::Availability::Log</code> object.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="get_logs">get_logs</h2>
+
+<pre><code>get_logs()</code></pre>
+
+<p>returns all read logs as array of hashrefs</p>
+
+<h2 id="parse_line">parse_line</h2>
+
+<pre><code>parse_line($line)</code></pre>
+
+<p>return parsed logfile line</p>
+
+<h2 id="parse_livestatus_entry">parse_livestatus_entry</h2>
+
+<pre><code>parse_livestatus_entry($entry)</code></pre>
+
+<p>parses type and options for log entry</p>
+
+<h2 id="decode_any">decode_any</h2>
+
+<pre><code>decode_any($str)</code></pre>
+
+<p>returns decoded string</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Sven Nierlein, 2009-present, &lt;sven@nierlein.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>Copyright (C) 2010 by Sven Nierlein</p>
+
+<p>This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+

@@ -1,0 +1,132 @@
+---
+title: CLI
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#get_c">get_c</a></li>
+    </ul>
+  </li>
+  <li><a href="#BACKEND-CONNECTION-POOL">BACKEND CONNECTION POOL</a>
+    <ul>
+      <li><a href="#get_db">get_db</a></li>
+    </ul>
+  </li>
+  <li><a href="#CONFIG-TOOL---OBJECT-CONFIGURATION">CONFIG TOOL - OBJECT CONFIGURATION</a>
+    <ul>
+      <li><a href="#get_object_db">get_object_db</a></li>
+      <li><a href="#store_objects">store_objects</a></li>
+      <li><a href="#request_url">request_url</a></li>
+      <li><a href="#load_module">load_module</a></li>
+      <li><a href="#from_local">from_local</a></li>
+      <li><a href="#from_fcgi">from_fcgi</a></li>
+      <li><a href="#get_submodule_help">get_submodule_help</a></li>
+      <li><a href="#read_stdin_password">read_stdin_password</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI - Utilities Collection for CLI Tool</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Utilities Collection for CLI scripting with Thruk. Allows you to access internal structures and change config information.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>   new([ $options ])
+
+$options = {
+   verbose =&gt; 0-4, # be more verbose
+}</code></pre>
+
+<p>create CLI tool object</p>
+
+<h2 id="get_c">get_c</h2>
+
+<pre><code>get_c()</code></pre>
+
+<p>return <a href="/api/Thruk/Context.html">Thruk::Context</a> context object</p>
+
+<h1 id="BACKEND-CONNECTION-POOL">BACKEND CONNECTION POOL</h1>
+
+<p>The Backend Connection Pool can be uses for own querys against all connected backends in Thruk.</p>
+
+<h2 id="get_db">get_db</h2>
+
+<pre><code>get_db()</code></pre>
+
+<p>Return connection pool as a <a href="/api/Thruk/Backend/Manager.html">Thruk::Backend::Manager</a> object.</p>
+
+<h1 id="CONFIG-TOOL---OBJECT-CONFIGURATION">CONFIG TOOL - OBJECT CONFIGURATION</h1>
+
+<p>These methods will only be available if you have the config tool plugin enabled and if you set core config items to access the core objects config.</p>
+
+<h2 id="get_object_db">get_object_db</h2>
+
+<pre><code>get_object_db()</code></pre>
+
+<p>Return config database as a <a href="/api/Monitoring/Config.html">Monitoring::Config</a> object.</p>
+
+<h2 id="store_objects">store_objects</h2>
+
+<pre><code>store_objects()</code></pre>
+
+<p>Store changed objects. Changes will be stashed into Thruks internal object cache and can then be saved, reviewed or discarded.</p>
+
+<h2 id="request_url">request_url</h2>
+
+<pre><code>request_url($c, $url, [$cookies], [$method], [$postdata], [$headers], [$insecure])</code></pre>
+
+<p>returns requested url as string. In list context returns ($code, $result)</p>
+
+<h2 id="load_module">load_module</h2>
+
+<pre><code>load_module($module)</code></pre>
+
+<p>load given module and returns true on success</p>
+
+<h2 id="from_local">from_local</h2>
+
+<pre><code>$self-&gt;from_local($c, $options)</code></pre>
+
+<p>main entry point for cli commands from the terminal</p>
+
+<h2 id="from_fcgi">from_fcgi</h2>
+
+<pre><code>from_fcgi($c, $string)</code></pre>
+
+<p>main entry point for cli commands over http(s).</p>
+
+<h2 id="get_submodule_help">get_submodule_help</h2>
+
+<pre><code>get_submodule_help($module, [$data])</code></pre>
+
+<p>returns help extracted from pod for given module</p>
+
+<h2 id="read_stdin_password">read_stdin_password</h2>
+
+<pre><code>read_stdin_password()</code></pre>
+
+<p>read password from stdin</p>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>there are some cli scripting examples in the examples subfolder of the source package.</p>
+
+

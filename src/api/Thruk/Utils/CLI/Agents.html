@@ -1,0 +1,86 @@
+---
+title: Agents
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Agents - Agents CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The agents command handles agent configs.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>Usage: thruk [globaloptions] agents [command]</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<ul>
+
+<p>Available commands are:</p>
+
+<pre><code>- help                      print help and exit
+- check  | -C   &lt;host&gt;      run checks, ex. inventory
+- list   | -l               list agent hosts
+- show   | -S   &lt;host&gt;      show checks for host
+- add    | -I   &lt;host&gt; ...  add/inventory for new/existing host(s)
+- update | -II  &lt;host&gt; ...  add/inventory for new/existing host(s) and freshly apply excludes
+           -III &lt;host&gt; ...  add/inventory for new/existing host(s) and remove manual overrides
+- rm     | -D   &lt;host&gt; ...  delete existing host(s)
+- reload | -R               reload monitoring core
+
+-i                interactive mode      (available in edit/add mode)
+--all             show all items        (available in show mode)
+-P | --password   set password          (available in add mode)
+-p | --port       set tcp port          (available in add mode)
+     --ip         set ip address        (available in add mode)
+     --section    set section           (available in add mode)
+-k | --insecure   skip tls verification (available in add mode)
+     --cached[=file]  use cached host inventory, optionally specify location of cache file to use.
+-n | --dryrun     only print changes    (available in add mode)</code></pre>
+
+</ul>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Run inventory check for host localhost</p>
+
+<pre><code>%&gt; thruk agents check inventory localhost</code></pre>
+
+<p>Show all checks for host localhost</p>
+
+<pre><code>%&gt; thruk agents show --all localhost</code></pre>
+
+<p>Add new host localhost, edit checks interactivly and reload afterwards</p>
+
+<pre><code>%&gt; thruk agents -IiR localhost</code></pre>
+
+<p>See &#39;thruk agents help&#39; for more help.</p>
+
+

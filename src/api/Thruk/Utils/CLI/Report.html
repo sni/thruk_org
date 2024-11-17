@@ -1,0 +1,77 @@
+---
+title: Report
+layout: api
+breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Utils/CLI/', 'CLI']
+---
+
+
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#cmd">cmd</a></li>
+    </ul>
+  </li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Thruk::Utils::CLI::Report - Report CLI module</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The report command creates reports from the command line.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>Usage: thruk [globaloptions] report [mail] [&lt;nr&gt;]
+       thruk [globaloptions] report list</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="help"><b>help</b></dt>
+<dd>
+
+<pre><code>print help and exit</code></pre>
+
+</dd>
+<dt id="list"><b>list</b></dt>
+<dd>
+
+<pre><code>list available reports</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>cmd([ $options ])</code></pre>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>Generate report with number 1</p>
+
+<pre><code>%&gt; thruk report 1</code></pre>
+
+<p>Generate report with number 1 and send it by mail</p>
+
+<pre><code>%&gt; thruk report mail 1</code></pre>
+
+<p>Other reports are available via the url export of normal thruk pages</p>
+
+<pre><code>%&gt; thruk -A thrukadmin -a &#39;url=/thruk/cgi-bin/showlog.cgi?view_mode=xls&#39; &gt; eventlog.xls
+
+See &#39;thruk url help&#39; for more examples.</code></pre>
+
+
