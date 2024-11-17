@@ -1,0 +1,101 @@
+---
+version: v3.20
+title: What's New In Release v3.20
+layout: whatsnew
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Agents Plugin</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The agents plugin introduced with in v3.10 is a config tool extension and can be used<br>
+      to manage <a href="https://omd.consol.de/docs/snclient/" target="_blank">SNClient</a> installations.<br>
+      Note: you need to enable this plugin first, it is not enabled by default.
+    </p>
+    <p>
+      There had been many changes in this plugin to add support for the latest new check plugins<br>
+      in the snclient agent. It is now also has a dry run mode for the command line tool.
+    </p>
+    <p>
+      Besides that, you can add rules to add additional custom snclient based checks.<br>
+
+    </p>
+    <pre>
+&lt;Component Thruk::Agents>
+  &lt;snclient>
+    &lt;extra_service_checks>
+      # on which host / sections should this serice be created
+      host    = ANY
+      section = ANY
+
+      name    = dns           # the actual service description
+      check   = check_dns     # snclient check
+      args    = -H thruk.org  # check arguments
+      # add arbitray naemon config attributes here as well
+      first_notification_delay = 30
+    &lt;/extra_service_checks>
+  &lt;/snclient>
+&lt;/Component>
+    </pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The SNClient is a multi-platform agent designed to replace NSClient++ and NRPE.<br>
+      Read more here:
+    </p>
+    <ul>
+      <li><a href="https://omd.consol.de/docs/snclient/" target="_blank">https://omd.consol.de/docs/snclient/</a>
+      <li><a href="https://github.com/ConSol-Monitoring/snclient" target="_blank">https://github.com/ConSol-Monitoring/snclient</a>
+    </ul>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Business Process Plugin</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The BP plugin can now revert changes in case the core has issues reloading. This usually indicates<br>
+      issues with the config.<br>
+      In this case you can continue to edit the business process and try again.<br>
+      While on it, Icinga2 support has been improved.<br>
+      Also, the aggregation functions at_least() and not_more() do support percentage thresholds now.
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">REST API</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      The rest api got some improvements as well.<br>
+      It is possible to do calculations in the query itself, ex.:<br>
+    </p>
+    <pre>
+%> thruk r '/hosts?columns=name,num_services_crit+num_services_unknown+num_services_warn as num_services_problems'
+    </pre>
+    <p>
+      This sums those num_services* columns into a combined value.<br>
+      <a href="/documentation/rest.html#_calculations">Read more about calculations in the rest api docs.</a>
+    </p>
+  </div>
+</div>
