@@ -197,11 +197,12 @@ DIV.carousel-inner H1, DIV.carousel-inner H2 {
 
 /* make jumbatron a bit smaller */
 .jumbotron {
-    padding: 15px 0;
+    padding: 5px 0;
     margin-bottom: 0px;
 }
 .jumbotron H1 {
-    margin-top: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .shadow {
@@ -212,7 +213,7 @@ DIV.carousel-inner H1, DIV.carousel-inner H2 {
 
 BODY.docs-index h2 {
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 BODY.main-index P {
