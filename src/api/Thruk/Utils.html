@@ -110,6 +110,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#has_node_module">has_node_module</a></li>
       <li><a href="#extract_connection_error">extract_connection_error</a></li>
       <li><a href="#http_response_error">http_response_error</a></li>
+      <li><a href="#clean_old_folder_files">clean_old_folder_files</a></li>
     </ul>
   </li>
 </ul>
@@ -757,5 +758,11 @@ a key can be:
 <pre><code>http_response_error($response)</code></pre>
 
 <p>returns a short connection error.</p>
+
+<h2 id="clean_old_folder_files">clean_old_folder_files</h2>
+
+<pre><code>clean_old_folder_files($folder, $filter, $max_age)</code></pre>
+
+<p>removes all files from folder which are older than $max_age and match given $filter</p>
 
 
