@@ -224,7 +224,7 @@ module Jekyll
                     # Keep the thumb files from being cleaned by Jekyll
                     site.static_files << Jekyll::GalleryFile.new(site, site.source, @gallery_dest + "/" + file_directory, File.basename(name))
 
-                    if !File.exists?(thumbname)
+                    if !File.exist?(thumbname)
                         to_resize.push({ "file" => file, "thumbname" => thumbname })
                     end
                 end
@@ -244,7 +244,7 @@ module Jekyll
                     thumb = img.resize_to_fill!(@config['thumb_width'], @config['thumb_height'])
 
                     # create directory for thumbnail if it not exists
-                    if !Dir.exists?(File.dirname(item['thumbname']))
+                    if !Dir.exist?(File.dirname(item['thumbname']))
                         FileUtils.mkdir_p File.dirname(item['thumbname'])
                     end
 
@@ -274,7 +274,7 @@ module Jekyll
                     end
 
                     # create directory for thumbnail if it not exists
-                    if !Dir.exists?(File.dirname(item['thumbname']))
+                    if !Dir.exist?(File.dirname(item['thumbname']))
                         FileUtils.mkdir_p File.dirname(item['thumbname'])
                     end
 
