@@ -23,7 +23,7 @@ jobs:
             libhtml-lint-perl \
             libmagickcore-dev \
             libmagickwand-dev \
-            libreadline-gplv2-dev \
+            libreadline-dev \
             liburi-perl \
             libwww-perl \
             nodejs \
