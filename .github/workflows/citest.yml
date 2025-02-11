@@ -31,6 +31,10 @@ jobs:
             ruby-dev \
             zlib1g-dev
 
+      - name: install gems
+        run: |
+          make .gem
+
       - name: run build
         run: |
           make build

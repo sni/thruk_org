@@ -17,7 +17,7 @@ module Jekyll
   class BundleTag < Liquid::Block
     def initialize(tag_name, text, tokens)
       super
-      @text = text 
+      @text = text
       @files = {}
     end
 
@@ -423,7 +423,7 @@ END
 
     def write(dest)
       dest_path = destination(dest)
-      return false if File.exists?(dest_path)
+      return false if File.exist?(dest_path)
 
       FileUtils.mkdir_p(File.dirname(dest_path))
       File.open(dest_path, "w") {|o|
@@ -441,4 +441,3 @@ end
 Liquid::Template.register_tag('bundle'     , Jekyll::BundleTag    )
 Liquid::Template.register_tag('bundle_glob', Jekyll::BundleGlobTag)
 Liquid::Template.register_tag('dev_assets' , Jekyll::DevAssetsTag )
-
