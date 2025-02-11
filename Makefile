@@ -1,24 +1,24 @@
 GEM_HOME=.gem
 TESTPORT=4001
 
-.PHONY: .gem
+.PHONY: $(GEM_HOME)
 
-build: .gem _submodules/thruk/documentation
+build: $(GEM_HOME) _submodules/thruk/documentation
 	bundle exec jekyll build --trace
 
-quick: .gem _submodules/thruk/documentation
+quick: $(GEM_HOME) _submodules/thruk/documentation
 	bundle exec jekyll build --trace --limit_posts=5
 
-server: .gem _submodules/thruk/documentation
+server: $(GEM_HOME) _submodules/thruk/documentation
 	bundle exec jekyll serve --trace --watch --host=0.0.0.0
 
-.gem:
+$(GEM_HOME):
 	# sudo apt-get install ruby ruby-dev ruby-bundler nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev zlib1g-dev
-	bundle config set path '.gem'
-	bundler install --path $(GEM_HOME)
+	bundle config set --local path '$(GEM_HOME)'
+	bundler install
 	bundler update
 
-test: .gem
+test: $(GEM_HOME)
 	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!; \
 		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
 		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
@@ -26,7 +26,7 @@ test: .gem
 		kill -9 $$SPID; \
 		exit $$RC
 
-citest: .gem
+citest: $(GEM_HOME)
 	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!;  \
 		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
 		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
@@ -63,3 +63,10 @@ clean_env:
 	    echo "cannot run update" >&2; \
 	    exit 1; \
 	fi
+
+clean:
+	rm -rf \
+		$(GEM_HOME) \
+		_site \
+		.bundle \
+		Gemfile.lock \
