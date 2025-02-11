@@ -14,15 +14,22 @@ jobs:
       #  uses: mxschmitt/action-tmate@v3
       - name: prepare machine
         run: |
-          sudo apt-get update
-          sudo apt-get install autoconf
-          sudo apt-get install build-essential
-          sudo apt-get install devscripts
-          sudo apt-get install liburi-perl
-          sudo apt-get install libencode-perl
-          sudo apt-get install libwww-perl
-          sudo apt-get install libhtml-lint-perl
-          sudo apt-get install ruby-bundler
+          sudo apt-get -y update
+          sudo apt-get -y install \
+            autoconf \
+            build-essential \
+            devscripts \
+            libencode-perl \
+            libhtml-lint-perl \
+            libmagickcore-dev \
+            libmagickwand-dev \
+            libreadline-gplv2-dev \
+            liburi-perl \
+            libwww-perl \
+            nodejs \
+            ruby-bundler \
+            ruby-dev \
+            zlib1g-dev
 
       - name: run build
         run: |
