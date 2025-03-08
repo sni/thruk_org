@@ -9,6 +9,7 @@ use Cwd qw/abs_path/;
 my $dir = abs_path($0);
 $dir =~ s/api_update\.pl$/src\/api/gmx;
 
+die("usage: $0 <thruk dir> <lib dir>") unless(scalar @ARGV >= 2);
 my $input_dir = abs_path($ARGV[0]);
 my $lib_dir   = abs_path($ARGV[1]);
 chdir($dir) or die("chdir $dir failed: $!");
