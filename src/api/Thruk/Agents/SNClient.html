@@ -19,6 +19,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
       <li><a href="#get_services_checks">get_services_checks</a></li>
       <li><a href="#get_inventory">get_inventory</a></li>
       <li><a href="#make_name">make_name</a></li>
+      <li><a href="#make_filter">make_filter</a></li>
       <li><a href="#get_disabled_config">get_disabled_config</a></li>
       <li><a href="#default_opt">default_opt</a></li>
     </ul>
@@ -72,6 +73,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
 <pre><code>make_name($template, $macros)</code></pre>
 
 <p>returns check name based on template</p>
+
+<h2 id="make_filter">make_filter</h2>
+
+<pre><code>make_filter($name, $attr, $expr)</code></pre>
+
+<p>returns filter based on matching expression</p>
 
 <h2 id="get_disabled_config">get_disabled_config</h2>
 
