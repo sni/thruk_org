@@ -24,6 +24,7 @@ breadcrumb: []
       <li><a href="#set_signal_handler">set_signal_handler</a></li>
       <li><a href="#setup_cluster">setup_cluster</a></li>
       <li><a href="#register_cron_entries">register_cron_entries</a></li>
+      <li><a href="#check_plugins_cron_file">check_plugins_cron_file</a></li>
       <li><a href="#stop_all">stop_all</a></li>
       <li><a href="#graceful_stop">graceful_stop</a></li>
       <li><a href="#log">log</a></li>
@@ -93,7 +94,13 @@ breadcrumb: []
 
 <pre><code>register_cron_entries($function_name)</code></pre>
 
-<p>register callback to update cron jobs</p>
+<p>register callback to update cron jobs (usually called from plugins routes files)</p>
+
+<h2 id="check_plugins_cron_file">check_plugins_cron_file</h2>
+
+<pre><code>check_plugins_cron_file()</code></pre>
+
+<p>check for cron files from enabled plugins</p>
 
 <h2 id="stop_all">stop_all</h2>
 
@@ -121,7 +128,7 @@ breadcrumb: []
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="/api/Thruk/Controller/Root.html">Thruk::Controller::Root</a>, <a>Plack</a></p>
+<p><a href="/api/Thruk/Controller/Root.html">Thruk::Controller::Root</a>, <a href="https://metacpan.org/pod/Plack">Plack</a></p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 

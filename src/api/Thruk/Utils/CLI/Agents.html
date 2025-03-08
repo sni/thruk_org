@@ -44,20 +44,22 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 - list   | -l               list agent hosts
 - show   | -S   &lt;host&gt;      show checks for host
 - add    | -I   &lt;host&gt; ...  add/inventory for new/existing host(s)
-- update | -II  &lt;host&gt; ...  add/inventory for new/existing host(s) and freshly apply excludes
-           -III &lt;host&gt; ...  add/inventory for new/existing host(s) and remove manual overrides
+- update | -II  &lt;host&gt; ...  update inventory for existing host(s) and freshly apply excludes
+           -III &lt;host&gt; ...  update inventory for existing host(s) and remove all manual overrides
 - rm     | -D   &lt;host&gt; ...  delete existing host(s)
 - reload | -R               reload monitoring core
 
--i                interactive mode      (available in edit/add mode)
---all             show all items        (available in show mode)
--P | --password   set password          (available in add mode)
--p | --port       set tcp port          (available in add mode)
-     --ip         set ip address        (available in add mode)
-     --section    set section           (available in add mode)
--k | --insecure   skip tls verification (available in add mode)
+-i                interactive mode       (available in edit/add/update mode)
+--all             show all items         (available in show mode)
+-P | --password   set password           (available in add/update mode)
+-p | --port       set tcp port           (available in add/update mode)
+     --ip         set ip address         (available in add/update mode)
+     --section    set section            (available in add/update mode)
+-k | --insecure   skip tls verification  (available in add/update mode)
      --cached[=file]  use cached host inventory, optionally specify location of cache file to use.
--n | --dryrun     only print changes    (available in add mode)</code></pre>
+-n | --dryrun     only print changes     (available in add/update mode)
+-d | --diff       print diff of changes  (available in add/update mode)
+-t | --tags &lt;tag&gt; list only specific tag (available in list mode)</code></pre>
 
 </ul>
 
@@ -80,6 +82,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <p>Add new host localhost, edit checks interactivly and reload afterwards</p>
 
 <pre><code>%&gt; thruk agents -IiR localhost</code></pre>
+
+<p>Apply new config to all hosts (use LOCAL for hosts monitored by local site):</p>
+
+<pre><code>%&gt; thruk agents -II ALL</code></pre>
 
 <p>See &#39;thruk agents help&#39; for more help.</p>
 

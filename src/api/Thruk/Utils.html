@@ -35,6 +35,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#set_custom_vars">set_custom_vars</a></li>
       <li><a href="#check_custom_var_list">check_custom_var_list</a></li>
       <li><a href="#set_allowed_rows_data">set_allowed_rows_data</a></li>
+      <li><a href="#fill_commands_cache">fill_commands_cache</a></li>
       <li><a href="#get_user_data">get_user_data</a></li>
       <li><a href="#store_user_data">store_user_data</a></li>
       <li><a href="#get_global_user_data">get_global_user_data</a></li>
@@ -110,6 +111,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#has_node_module">has_node_module</a></li>
       <li><a href="#extract_connection_error">extract_connection_error</a></li>
       <li><a href="#http_response_error">http_response_error</a></li>
+      <li><a href="#clean_old_folder_files">clean_old_folder_files</a></li>
+      <li><a href="#get_affected_backends">get_affected_backends</a></li>
     </ul>
   </li>
 </ul>
@@ -279,6 +282,12 @@ set_message($c, {
 <pre><code>set_allowed_rows_data($obj, $allowed, $allowed_list, $show_full_commandline)</code></pre>
 
 <p>set custom variables for host/service obj</p>
+
+<h2 id="fill_commands_cache">fill_commands_cache</h2>
+
+<pre><code>fill_commands_cache($c)</code></pre>
+
+<p>fill cache used by expand_command()</p>
 
 <h2 id="get_user_data">get_user_data</h2>
 
@@ -452,7 +461,7 @@ $VAR2 = target link</code></pre>
 
 <h2 id="update_cron_file">update_cron_file</h2>
 
-<pre><code>update_cron_file($c, $section, $entries)</code></pre>
+<pre><code>update_cron_file($c, $section, $entries, $remove)</code></pre>
 
 <p>write crontab section</p>
 
@@ -757,5 +766,17 @@ a key can be:
 <pre><code>http_response_error($response)</code></pre>
 
 <p>returns a short connection error.</p>
+
+<h2 id="clean_old_folder_files">clean_old_folder_files</h2>
+
+<pre><code>clean_old_folder_files($folder, $filter, $max_age)</code></pre>
+
+<p>removes all files from folder which are older than $max_age and match given $filter</p>
+
+<h2 id="get_affected_backends">get_affected_backends</h2>
+
+<pre><code>get_affected_backends($data)</code></pre>
+
+<p>return list of affected backend from query result</p>
 
 

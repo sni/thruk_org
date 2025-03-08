@@ -28,12 +28,14 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#array_contains">array_contains</a></li>
       <li><a href="#array_group_by">array_group_by</a></li>
       <li><a href="#array2hash">array2hash</a></li>
+      <li><a href="#array_insert_after">array_insert_after</a></li>
       <li><a href="#hash_invert">hash_invert</a></li>
       <li><a href="#comma_separated_list">comma_separated_list</a></li>
       <li><a href="#expand_numeric_list">expand_numeric_list</a></li>
       <li><a href="#check_for_nasty_filename">check_for_nasty_filename</a></li>
       <li><a href="#restore_signal_handler">restore_signal_handler</a></li>
       <li><a href="#clean_credentials_from_string">clean_credentials_from_string</a></li>
+      <li><a href="#shorten">shorten</a></li>
       <li><a href="#basename">basename</a></li>
       <li><a href="#dirname">dirname</a></li>
       <li><a href="#looks_like_regex">looks_like_regex</a></li>
@@ -148,6 +150,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>create a hash by key</p>
 
+<h2 id="array_insert_after">array_insert_after</h2>
+
+<pre><code>array_insert_after($list, $search, $insert)</code></pre>
+
+<p>return list and insert $insert after element $search</p>
+
 <h2 id="hash_invert">hash_invert</h2>
 
 <pre><code>hash_invert($hash)</code></pre>
@@ -181,6 +189,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>clean_credentials_from_string($string)</code></pre>
 
 <p>returns strings with potential credentials removed</p>
+
+<h2 id="shorten">shorten</h2>
+
+<pre><code>shorten($string, $max_length)</code></pre>
+
+<p>returns string shortened to max length.</p>
 
 <h2 id="basename">basename</h2>
 

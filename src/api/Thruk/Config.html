@@ -18,22 +18,26 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#get_config">get_config</a></li>
       <li><a href="#set_config_env">set_config_env</a></li>
       <li><a href="#get_config_env">get_config_env</a></li>
+      <li><a href="#apply_defaults_and_normalize">apply_defaults_and_normalize</a></li>
       <li><a href="#set_default_config">set_default_config</a></li>
       <li><a href="#get_base_config">get_base_config</a></li>
       <li><a href="#get_toolkit_config">get_toolkit_config</a></li>
-      <li><a href="#get_git_info">_get_git_info</a></li>
+      <li><a href="#get_thruk_version">get_thruk_version</a></li>
+      <li><a href="#get_git_info">get_git_info</a></li>
       <li><a href="#get_debug_details">get_debug_details</a></li>
       <li><a href="#home">home</a></li>
       <li><a href="#secret_key">secret_key</a></li>
       <li><a href="#get_user">get_user</a></li>
       <li><a href="#read_config_file">read_config_file</a></li>
+      <li><a href="#parse_config_from_text">parse_config_from_text</a></li>
       <li><a href="#switch_user">switch_user</a></li>
       <li><a href="#read_cgi_cfg">read_cgi_cfg</a></li>
       <li><a href="#merge_cgi_cfg">merge_cgi_cfg</a></li>
       <li><a href="#parse_omd_site_config">parse_omd_site_config</a></li>
       <li><a href="#merge_sub_config">merge_sub_config</a></li>
       <li><a href="#hostname">hostname</a></li>
-      <li><a href="#get_thruk_version">get_thruk_version</a></li>
+      <li><a href="#get_static_panorama_files">get_static_panorama_files</a></li>
+      <li><a href="#get_functions_for_class">get_functions_for_class</a></li>
     </ul>
   </li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -71,6 +75,10 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>like set_config_env, but return config only</p>
 
+<h2 id="apply_defaults_and_normalize">apply_defaults_and_normalize</h2>
+
+<p>return normalized config with defaults replaced. Also checks type of config entry based on default config.</p>
+
 <h2 id="set_default_config">set_default_config</h2>
 
 <p>return basic config hash and sets environment, but does not read config again</p>
@@ -83,9 +91,15 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return template toolkit config</p>
 
-<h2 id="get_git_info">_get_git_info</h2>
+<h2 id="get_thruk_version">get_thruk_version</h2>
 
-<pre><code>_get_git_info()</code></pre>
+<pre><code>get_thruk_version()</code></pre>
+
+<p>return full thruk version string, ex.: 2.40.2+10~feature_branch~45a4ceb</p>
+
+<h2 id="get_git_info">get_git_info</h2>
+
+<pre><code>get_git_info()</code></pre>
 
 <p>return git branch/tag/has information to be used in the version</p>
 
@@ -118,6 +132,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>read_config_file($file)</code></pre>
 
 <p>return parsed config file</p>
+
+<h2 id="parse_config_from_text">parse_config_from_text</h2>
+
+<pre><code>parse_config_from_text($txt)</code></pre>
+
+<p>return parsed config options</p>
 
 <h2 id="switch_user">switch_user</h2>
 
@@ -157,11 +177,17 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <p>return system hostname</p>
 
-<h2 id="get_thruk_version">get_thruk_version</h2>
+<h2 id="get_static_panorama_files">get_static_panorama_files</h2>
 
-<pre><code>get_thruk_version()</code></pre>
+<pre><code>get_static_panorama_files($config)</code></pre>
 
-<p>return full thruk version string, ex.: 2.40.2+10~feature_branch~45a4ceb</p>
+<p>return all static js files required for panorama</p>
+
+<h2 id="get_functions_for_class">get_functions_for_class</h2>
+
+<pre><code>get_functions_for_class($classname)</code></pre>
+
+<p>returns all function names for a class</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

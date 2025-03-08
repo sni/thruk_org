@@ -32,6 +32,9 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#from_fcgi">from_fcgi</a></li>
       <li><a href="#get_submodule_help">get_submodule_help</a></li>
       <li><a href="#read_stdin_password">read_stdin_password</a></li>
+      <li><a href="#pid_exists">pid_exists</a></li>
+      <li><a href="#check_lock">check_lock</a></li>
+      <li><a href="#check_lock_unlock">check_lock_unlock</a></li>
     </ul>
   </li>
   <li><a href="#EXAMPLES">EXAMPLES</a></li>
@@ -124,6 +127,27 @@ $options = {
 <pre><code>read_stdin_password()</code></pre>
 
 <p>read password from stdin</p>
+
+<h2 id="pid_exists">pid_exists</h2>
+
+<pre><code>pid_exists($pid, [$cmd pattern])</code></pre>
+
+<p>check if pid exists and cmd matches the pattern, returns true if pid is valid</p>
+
+<h2 id="check_lock">check_lock</h2>
+
+<pre><code>check_lock($file, [$key], [$pid])</code></pre>
+
+<p>check lock file, returns:</p>
+
+<pre><code>- (undef, undef) if lock was set successfully
+- ($pid, $starttime) if a valid lock exists already</code></pre>
+
+<h2 id="check_lock_unlock">check_lock_unlock</h2>
+
+<pre><code>check_lock_unlock($file, [$key])</code></pre>
+
+<p>removes lock from file.</p>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
