@@ -33,6 +33,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#remove_orphaned_agent_templates">remove_orphaned_agent_templates</a></li>
       <li><a href="#sort_config_objects">sort_config_objects</a></li>
       <li><a href="#migrate_hostname">migrate_hostname</a></li>
+      <li><a href="#strip_site_path">strip_site_path</a></li>
     </ul>
   </li>
 </ul>
@@ -135,7 +136,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="check_wildcard_match">check_wildcard_match</h2>
 
-<pre><code>check_wildcard_match($string, $config)</code></pre>
+<pre><code>check_wildcard_match($string, $config, [$substringmatch])</code></pre>
 
 <p>returns true if attribute matches given config</p>
 
@@ -168,5 +169,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>migrate_hostname($c, $old, $new, $section)</code></pre>
 
 <p>rename agent host</p>
+
+<h2 id="strip_site_path">strip_site_path</h2>
+
+<pre><code>strip_site_path($path)</code></pre>
+
+<p>return path with OMD_ROOT trimmed</p>
 
 
