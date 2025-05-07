@@ -85,13 +85,15 @@ for example:
 
 <pre><code>check_permissions(&#39;host&#39;, $hostname)
 check_permissions(&#39;service&#39;, $servicename, $hostname)
-check_permissions(&#39;hostgroup&#39;, $hostgroupname)
-check_permissions(&#39;servicegroup&#39;, $servicegroupname)
-check_permissions(contact&#39;, $contactname)
-check_permissions(contactgroup&#39;, $contactgroupname)
+check_permissions(&#39;hostgroup&#39;, $hostgroup_name)
+check_permissions(&#39;servicegroup&#39;, $servicegroup_name)
+check_permissions(contact&#39;, $contact_name)
+check_permissions(contactgroup&#39;, $contactgroup_name)
 
 for example:
 $c-&gt;check_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
+<p>returns true if users has view permissions for the given type and value.</p>
 
 <h2 id="check_cmd_permissions">check_cmd_permissions</h2>
 
@@ -101,13 +103,15 @@ check_cmd_permissions(&#39;all_hosts&#39;)
 check_cmd_permissions(&#39;service&#39;, $servicename, $hostname)
 check_cmd_permissions(&#39;host_services&#39;, $hostname)
 check_cmd_permissions(&#39;all_services&#39;)
-check_cmd_permissions(&#39;hostgroup&#39;, $hostgroupname)
-check_cmd_permissions(&#39;servicegroup&#39;, $servicegroupname)
-check_cmd_permissions(&#39;contact&#39;, $contactname)
-check_cmd_permissions(&#39;contactgroup&#39;, $contactgroupname)
+check_cmd_permissions(&#39;hostgroup&#39;, $hostgroup_name)
+check_cmd_permissions(&#39;servicegroup&#39;, $servicegroup_name)
+check_cmd_permissions(&#39;contact&#39;, $contact_name)
+check_cmd_permissions(&#39;contactgroup&#39;, $contactgroup_name)
 
 for example:
 $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
+<p>returns true if users has command permissions for the given type and value.</p>
 
 <h2 id="check_role_permissions">check_role_permissions</h2>
 

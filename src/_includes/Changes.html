@@ -1,9 +1,29 @@
 This file documents the revision history for the Monitoring Webinterface Thruk.
 
-next:
+3.24     Thu Oct  2 09:20:56 CEST 2025
+          - teams: add role based permissions based on oauth group memberships
+          - config: add support for resetting list values
+          - fix sending remove downtime commands to all backends
+          - Agents:
+            - add config change preview
+          - Rest:
+            - add concat() aggregation function
+            - add uniq() aggregation function
+            - add /contacts/totals endpoint
+            - add support for long running background requests
+            - apply user specific settings on the rest api as well
+          - check_thruk_rest:
+            - add template option to set output from template toolkit file
+            - support variables urls when using multiple queries
+
+3.22.2   Wed May 28 17:14:48 CEST 2025
+          - add "for all services" option for status quick commands
           - fix logs timezone (#1438)
           - Agents:
             - fix hostname/ip wizard
+          - Reports:
+            - add date macros for name and description
+            - fix outage calculation with soft recovery
 
 3.22     Sat Apr 12 18:07:06 CEST 2025
           - migrate sound files to webm
@@ -108,7 +128,7 @@ next:
           - fix ambiguous service button (#1391)
           - improve referer containing spaces (#1368)
           - Config Tool:
-            - enable list wizard for host/service depenencies (#1358)
+            - enable list wizard for host/service dependencies (#1358)
             - fix validating service parents (#1376)
             - fix selecting custom variable from drop down list
           - Panorama:
@@ -289,7 +309,7 @@ next:
             - statusmap
           - add light/dark theme
           - add new main landing page dashboard
-          - add collapsable side navigation
+          - add collapsible side navigation
           - add delete icon to comments/downtimes popup
           - add copy button for expanded command line
           - enable expire acknowledgements by default
@@ -307,7 +327,7 @@ next:
             - fix unlock mask not disappearing
 
 2.48.3   Fri Aug 12 19:01:13 CEST 2022
-          - add authoritive backend switch
+          - add authoritative backend switch
           - add short links option for custom links
           - replace markup link links in comments and downtimes
           - Reporting:
@@ -328,7 +348,7 @@ next:
           - performance improvements using basic auth
           - Panorama:
             - add options to configure popup fonts and width
-            - fix unlock mask not disapearing
+            - fix unlock mask not disappearing
           - Business Process:
             - support float values in thresholds
 
@@ -594,7 +614,7 @@ next:
             - add custom variables to grid panel (#849)
             - add alias names to label (#941)
             - hide scrollbars after 3 seconds
-            - add background colour option for hosts and service lists
+            - add background color option for hosts and service lists
             - toggle geomap navigation with space key
             - improve dashboard menu filter performance
             - allow changing icon center position on geo maps
@@ -621,7 +641,7 @@ next:
           - fix quicksearch when using many backends
           - Panorama:
             - improve selecting hosts and services from drop downs
-            - fix shapecolor for acknowleged items
+            - fix shapecolor for acknowledged items
             - fix sending commands from dashboards
 
 2.30     Thu May  9 11:51:28 CEST 2019
@@ -698,7 +718,7 @@ next:
           - display external commands errors if possible
             - right now only naemon >= 1.0.9 does support this
           - Panorama:
-            - fix panels not beeing updated in single window mode
+            - fix panels not being updated in single window mode
 
 2.26     Fri Dec  7 21:34:29 CET 2018
           - add admin role in cgi.cfg

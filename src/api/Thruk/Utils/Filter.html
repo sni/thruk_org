@@ -59,6 +59,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#lc">lc</a></li>
       <li><a href="#debug">debug</a></li>
       <li><a href="#dump2str">dump2str</a></li>
+      <li><a href="#dump">dump</a></li>
       <li><a href="#peer_name">peer_name</a></li>
       <li><a href="#peer_section">peer_section</a></li>
       <li><a href="#servicestatetext">servicestatetext</a></li>
@@ -84,6 +85,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#is_empty_filter">is_empty_filter</a></li>
       <li><a href="#add_request_backend">add_request_backend</a></li>
       <li><a href="#peer_address_list">peer_address_list</a></li>
+      <li><a href="#defined">defined</a></li>
     </ul>
   </li>
 </ul>
@@ -403,6 +405,12 @@ http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 
 <p>returns string from object</p>
 
+<h2 id="dump">dump</h2>
+
+<pre><code>dump($anything, [$max_length])</code></pre>
+
+<p>returns string from object</p>
+
 <h2 id="peer_name">peer_name</h2>
 
 <pre><code>get peer_name from dataset</code></pre>
@@ -552,5 +560,11 @@ http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 <pre><code>peer_address_list($peer_key)</code></pre>
 
 <p>return list of peer addresses</p>
+
+<h2 id="defined">defined</h2>
+
+<pre><code>defined($varname)</code></pre>
+
+<p>return true if variable is defined in stash</p>
 
 

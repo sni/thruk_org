@@ -136,12 +136,14 @@ $options = {
 
 <h2 id="check_lock">check_lock</h2>
 
-<pre><code>check_lock($file, [$key], [$pid])</code></pre>
+<pre><code>check_lock($file, [$key], [$pid], [$max_time = -1], [$signal = -9])</code></pre>
 
 <p>check lock file, returns:</p>
 
 <pre><code>- (undef, undef) if lock was set successfully
 - ($pid, $starttime) if a valid lock exists already</code></pre>
+
+<p>if $max_time is given, the old process will be killed by $signal when threshold is reached.</p>
 
 <h2 id="check_lock_unlock">check_lock_unlock</h2>
 

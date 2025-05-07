@@ -96,6 +96,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#clean_regex">clean_regex</a></li>
       <li><a href="#get_timezone_data">get_timezone_data</a></li>
       <li><a href="#command_disabled">command_disabled</a></li>
+      <li><a href="#command_disabled_all">command_disabled_all</a></li>
       <li><a href="#code2name">code2name</a></li>
       <li><a href="#merge_service_dependencies">merge_service_dependencies</a></li>
       <li><a href="#merge_host_dependencies">merge_host_dependencies</a></li>
@@ -113,6 +114,8 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#http_response_error">http_response_error</a></li>
       <li><a href="#clean_old_folder_files">clean_old_folder_files</a></li>
       <li><a href="#get_affected_backends">get_affected_backends</a></li>
+      <li><a href="#deep_compare">deep_compare</a></li>
+      <li><a href="#join_lists">join_lists</a></li>
     </ul>
   </li>
 </ul>
@@ -135,7 +138,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <h2 id="format_date">format_date</h2>
 
-<pre><code>my $date_string = format_date($string, $format)</code></pre>
+<pre><code>my $date_string = format_date($timestamp, $format)</code></pre>
 
 <p>return date from timestamp in given format</p>
 
@@ -391,6 +394,7 @@ set_message($c, {
   theme          =&gt; light/dark,
   font_color     =&gt; #12345,
   bg_color       =&gt; #12345,
+  timeout        =&gt; 30,
 })</code></pre>
 
 <p>return raw pnp/grafana image if possible. An empty string will be returned if no graph can be exported.</p>
@@ -671,6 +675,12 @@ $VAR2 = target link</code></pre>
 
 <p>returns true if command is disabled for current user</p>
 
+<h2 id="command_disabled_all">command_disabled_all</h2>
+
+<pre><code>command_disabled_all($c, $numbers)</code></pre>
+
+<p>returns true if all commands are disabled for current user</p>
+
 <h2 id="code2name">code2name</h2>
 
 <pre><code>code2name($coderef)</code></pre>
@@ -778,5 +788,17 @@ a key can be:
 <pre><code>get_affected_backends($data)</code></pre>
 
 <p>return list of affected backend from query result</p>
+
+<h2 id="deep_compare">deep_compare</h2>
+
+<pre><code>deep_compare($data1, $data2)</code></pre>
+
+<p>return true if both data structures are equal, false otherwise</p>
+
+<h2 id="join_lists">join_lists</h2>
+
+<pre><code>join_lists($data)</code></pre>
+
+<p>iterate over a hash and joins all array values into a comma separated string.</p>
 
 

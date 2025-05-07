@@ -34,6 +34,8 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#sort_config_objects">sort_config_objects</a></li>
       <li><a href="#migrate_hostname">migrate_hostname</a></li>
       <li><a href="#strip_site_path">strip_site_path</a></li>
+      <li><a href="#build_checks_config">build_checks_config</a></li>
+      <li><a href="#buildObjDiff">buildObjDiff</a></li>
     </ul>
   </li>
 </ul>
@@ -175,5 +177,17 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>strip_site_path($path)</code></pre>
 
 <p>return path with OMD_ROOT trimmed</p>
+
+<h2 id="build_checks_config">build_checks_config</h2>
+
+<pre><code>build_checks_config($checks)</code></pre>
+
+<p>returns checks config used to build service objects</p>
+
+<h2 id="buildObjDiff">buildObjDiff</h2>
+
+<pre><code>buildObjDiff($obj)</code></pre>
+
+<p>returns diff for given object, comparing current configuration with previous one</p>
 
 
