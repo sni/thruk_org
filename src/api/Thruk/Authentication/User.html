@@ -26,6 +26,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#grant">grant</a></li>
       <li><a href="#has_group">has_group</a></li>
       <li><a href="#js_data">js_data</a></li>
+      <li><a href="#read_team_data">read_team_data</a></li>
     </ul>
   </li>
 </ul>
@@ -146,5 +147,11 @@ for example:
 <pre><code>js_data()
 
 returns user data exposed to javascript</code></pre>
+
+<h2 id="read_team_data">read_team_data</h2>
+
+<pre><code>read_team_data($c, $team, [$with_fallback])
+
+returns team data including optional fallback</code></pre>
 
 
