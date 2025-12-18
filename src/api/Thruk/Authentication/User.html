@@ -18,6 +18,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#clean_roles">clean_roles</a></li>
       <li><a href="#get">get</a></li>
       <li><a href="#is_locked">is_locked</a></li>
+      <li><a href="#can_choose_role">can_choose_role</a></li>
       <li><a href="#check_user_roles">check_user_roles</a></li>
       <li><a href="#check_permissions">check_permissions</a></li>
       <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
@@ -71,11 +72,20 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
 
 <p>returns true if user is locked</p>
 
+<h2 id="can_choose_role">can_choose_role</h2>
+
+<pre><code>can_choose_role(&lt;$role&gt;)
+
+returns 1 if user has given role.
+
+for example:
+ $c-&gt;user-&gt;check_user_role(&#39;authorized_for_all_services&#39;)</code></pre>
+
 <h2 id="check_user_roles">check_user_roles</h2>
 
 <pre><code>check_user_roles(&lt;$role&gt;)
 
-returns 1 if user has all given roles.
+returns 1 if user has permissions as in all given roles.
 
 for example:
  $c-&gt;user-&gt;check_user_roles(&#39;admin&#39;)
