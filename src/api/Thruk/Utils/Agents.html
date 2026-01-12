@@ -34,6 +34,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#sort_config_objects">sort_config_objects</a></li>
       <li><a href="#migrate_hostname">migrate_hostname</a></li>
       <li><a href="#strip_site_path">strip_site_path</a></li>
+      <li><a href="#check_pattern">check_pattern</a></li>
       <li><a href="#build_checks_config">build_checks_config</a></li>
       <li><a href="#buildObjDiff">buildObjDiff</a></li>
     </ul>
@@ -177,6 +178,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>strip_site_path($path)</code></pre>
 
 <p>return path with OMD_ROOT trimmed</p>
+
+<h2 id="check_pattern">check_pattern</h2>
+
+<pre><code>check_pattern($val, $pattern, [$substringmatch], [$force_op])</code></pre>
+
+<p>returns true if $val matches $pattern. (pattern may have operator as prefix)</p>
 
 <h2 id="build_checks_config">build_checks_config</h2>
 

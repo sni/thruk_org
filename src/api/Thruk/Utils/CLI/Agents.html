@@ -49,17 +49,20 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 - rm     | -D   &lt;host&gt; ...  delete existing host(s)
 - reload | -R               reload monitoring core
 
--i                interactive mode       (available in edit/add/update mode)
---all             show all items         (available in show mode)
--P | --password   set password           (available in add/update mode)
--p | --port       set tcp port           (available in add/update mode)
-     --ip         set ip address         (available in add/update mode)
-     --section    set section            (available in add/update mode)
--k | --insecure   skip tls verification  (available in add/update mode)
-     --cached[=file]  use cached host inventory, optionally specify location of cache file to use.
--n | --dryrun     only print changes     (available in add/update mode)
--d | --diff       print diff of changes  (available in add/update mode)
--t | --tags &lt;tag&gt; list/add only tag      (available in add/list mode)</code></pre>
+-i                       interactive mode       (available in edit/add/update mode)
+--all                    show all items         (available in show mode)
+-P | --password          set password           (available in add/update mode)
+-p | --port              set tcp port           (available in add/update mode)
+     --ip                set ip address         (available in add/update mode)
+     --section           set section            (available in add/update mode)
+-k | --insecure          skip tls verification  (available in add/update mode)
+     --cached[=file]     use cached host inventory, optionally specify location of cache file to use.
+-n | --dryrun            only print changes     (available in add/update mode)
+-d | --diff              print diff of changes  (available in add/update mode)
+-t | --tags &lt;tag&gt;        list/add only tag      (available in add/list mode)
+-f | --filter &lt;filter&gt;   generic filter         (available in add/list mode)
+                                                e.g. tags=linux &amp;&amp; tags != test
+                                                available attributes: host_name, address, section, tags, site</code></pre>
 
 </ul>
 
@@ -86,6 +89,10 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils', 'api/Thruk/Util
 <p>Apply new config to all hosts (use LOCAL for hosts monitored by local site):</p>
 
 <pre><code>%&gt; thruk agents -II ALL</code></pre>
+
+<p>Apply new config to all hosts with given tags</p>
+
+<pre><code>%&gt; thruk agents -II ALL --filter=&quot;tags=linux &amp;&amp; tags != test&quot;</code></pre>
 
 <p>See &#39;thruk agents help&#39; for more help.</p>
 
