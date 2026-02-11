@@ -1,0 +1,50 @@
+---
+version: v3.26
+title: What's New In Release v3.26
+layout: whatsnew_no_details
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Change Log {{ page.version }}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <pre>
+3.26     Fri Feb  6 14:36:22 CET 2026
+          - add option to set default comment in commands
+          - improve listing performance data
+          - add support for icinga2 custom variables (fixes #1482)
+          - Rest:
+            - add more output functions: age, utc, date, duration, fmt, hoststate and servicestate
+            - add plain text and command line input to check_thruk_rest
+            - allow requesting all host attributes as services attribute
+            - improve parsing filter conditions
+            - support filter on disintegrated rows
+            - fix requesting all backends on initial request (#1484)
+            - improve check_thruk_rest performance
+            - add plain text and local data for check_thruk_rest
+          - Business Process:
+            - add option to configure offline backends grade period (offline_grace_time)
+            - add option to configure handling offline backends (offline_handling)
+          - Self Check:
+            - add logcache data consistency checks (logcache_data)
+          - Agents:
+            - make columns sortable
+            - add --filter to cli tool
+            - fix excludes by tag
+            - fix adding service checks by wildcards
+          - Config Tool:
+            - fix removing objects including references (#1473)
+          - Log Cache:
+            - fix filtering for empty service description
+          - Reports:
+            - fix generating multiple reports by cron
+          - OAuth:
+            - add autologin option
+    </pre>
+  </div>
+</div>

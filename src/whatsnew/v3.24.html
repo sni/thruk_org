@@ -1,0 +1,34 @@
+---
+version: v3.24
+title: What's New In Release v3.24
+layout: whatsnew_no_details
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Change Log {{ page.version }}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <pre>
+3.24     Thu Oct  2 09:20:56 CEST 2025
+          - teams: add role based permissions based on oauth group memberships
+          - config: add support for resetting list values
+          - fix sending remove downtime commands to all backends
+          - Agents:
+            - add config change preview
+          - Rest:
+            - add concat() aggregation function
+            - add uniq() aggregation function
+            - add /contacts/totals endpoint
+            - add support for long running background requests
+            - apply user specific settings on the rest api as well
+          - check_thruk_rest:
+            - add template option to set output from template toolkit file
+            - support variables urls when using multiple queries
+    </pre>
+  </div>
+</div>
