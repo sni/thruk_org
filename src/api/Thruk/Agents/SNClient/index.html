@@ -17,6 +17,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
       <li><a href="#get_config_objects">get_config_objects</a></li>
       <li><a href="#get_services_checks">get_services_checks</a></li>
       <li><a href="#get_inventory">get_inventory</a></li>
+      <li><a href="#has_agent_min_version">has_agent_min_version</a></li>
       <li><a href="#make_name">make_name</a></li>
       <li><a href="#make_filter">make_filter</a></li>
       <li><a href="#get_disabled_config">get_disabled_config</a></li>
@@ -60,6 +61,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Agents/', 'Agents']
 <pre><code>get_inventory($c, $c, $address, $hostname, $password, $port, $mode)</code></pre>
 
 <p>returns json structure from inventory api call.</p>
+
+<h2 id="has_agent_min_version">has_agent_min_version</h2>
+
+<pre><code>has_agent_min_version($inventory, $version)</code></pre>
+
+<p>returns true if inventory contains snclient with version greater or equal to the supplied version</p>
 
 <h2 id="make_name">make_name</h2>
 
