@@ -22,6 +22,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Authentication/', 'Authentication
       <li><a href="#check_user_roles">check_user_roles</a></li>
       <li><a href="#check_permissions">check_permissions</a></li>
       <li><a href="#check_cmd_permissions">check_cmd_permissions</a></li>
+      <li><a href="#check_show_command_line_permissions">check_show_command_line_permissions</a></li>
       <li><a href="#check_role_permissions">check_role_permissions</a></li>
       <li><a href="#transform_username">transform_username</a></li>
       <li><a href="#grant">grant</a></li>
@@ -123,6 +124,16 @@ for example:
 $c-&gt;check_cmd_permissions(&#39;service&#39;, $service, $host)</code></pre>
 
 <p>returns true if users has command permissions for the given type and value.</p>
+
+<h2 id="check_show_command_line_permissions">check_show_command_line_permissions</h2>
+
+<pre><code>check_show_command_line_permissions(&#39;host&#39;, $hostname)
+check_show_command_line_permissions(&#39;service&#39;, $servicename, $hostname)
+
+for example:
+$c-&gt;check_show_command_line_permissions(&#39;service&#39;, $service, $host)</code></pre>
+
+<p>returns true if users has permissions to see the expanded command.</p>
 
 <h2 id="check_role_permissions">check_role_permissions</h2>
 
