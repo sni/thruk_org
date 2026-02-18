@@ -14,6 +14,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
   <li><a href="#METHODS">METHODS</a>
     <ul>
       <li><a href="#get_auth_filter">get_auth_filter</a></li>
+      <li><a href="#permissions_filter">permissions_filter</a></li>
     </ul>
   </li>
 </ul>
@@ -33,5 +34,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>my $filter_string = get_auth_filter(&#39;hosts&#39;);</code></pre>
 
 <p>returns a filter which can be used for authorization</p>
+
+<h2 id="permissions_filter">permissions_filter</h2>
+
+<pre><code>my $filter = permissions_filter($c, $type, $cmd_permissions, $show_cmdline_permissions);</code></pre>
+
+<p>returns filter for permissions from teams permissions</p>
 
 
