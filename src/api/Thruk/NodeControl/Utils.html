@@ -15,6 +15,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/NodeControl/', 'NodeControl']
     <ul>
       <li><a href="#update_cron_file">update_cron_file</a></li>
       <li><a href="#get_peers">get_peers</a></li>
+      <li><a href="#finish_servers_list">finish_servers_list</a></li>
       <li><a href="#get_server">get_server</a></li>
       <li><a href="#ansible_get_facts">ansible_get_facts</a></li>
       <li><a href="#update_runtime_data">update_runtime_data</a></li>
@@ -55,6 +56,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/NodeControl/', 'NodeControl']
 <pre><code>get_peers($c)</code></pre>
 
 <p>return list of available peers</p>
+
+<h2 id="finish_servers_list">finish_servers_list</h2>
+
+<pre><code>finish_servers_list($c, $servers, $columns)</code></pre>
+
+<p>return final peers list and columns</p>
 
 <h2 id="get_server">get_server</h2>
 
