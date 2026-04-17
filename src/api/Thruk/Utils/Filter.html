@@ -48,6 +48,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#uniqnumber">uniqnumber</a></li>
       <li><a href="#get_message">get_message</a></li>
       <li><a href="#strip_command_args">strip_command_args</a></li>
+      <li><a href="#strip_error_str">strip_error_str</a></li>
       <li><a href="#calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</a></li>
       <li><a href="#logline_icon">logline_icon</a></li>
       <li><a href="#has_business_process">has_business_process</a></li>
@@ -343,6 +344,12 @@ http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 <p>returns a string without the arguments for a command</p>
 
 <p>check_nrpe!$HOSTNAME$!check_disk -&gt; check_nrpe</p>
+
+<h2 id="strip_error_str">strip_error_str</h2>
+
+<pre><code>my $striped_string = strip_error_str($error)</code></pre>
+
+<p>returns a string without the &quot;at line ...&quot; part</p>
 
 <h2 id="calculate_first_notification_delay_remaining">calculate_first_notification_delay_remaining</h2>
 
