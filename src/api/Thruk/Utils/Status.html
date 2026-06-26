@@ -54,6 +54,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#search2text">search2text</a></li>
       <li><a href="#filter2text">filter2text</a></li>
       <li><a href="#improve_filter">improve_filter</a></li>
+      <li><a href="#try_host_only_filter">try_host_only_filter</a></li>
     </ul>
   </li>
 </ul>
@@ -313,5 +314,11 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>filter2text($filter)</code></pre>
 
 <p>try to optimize and remove useless cruft and intendion</p>
+
+<h2 id="try_host_only_filter">try_host_only_filter</h2>
+
+<pre><code>try_host_only_filter($c, $params)</code></pre>
+
+<p>try to redirect to url with using only the hostname filter. When using parts or the full hostname in the navbar search and press enter, thruk would do a slow full text search. So if the search text matches a hostname or a part of it, we can redirect to the url with the hostname filter instead, which is way faster.</p>
 
 
