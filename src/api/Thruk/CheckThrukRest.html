@@ -251,6 +251,12 @@ For example, only output performance data for labels starting with an &#39;m&#39
     --warning=total:20:100
     &quot;/services/totals&quot;
 
+- multiple queries can use values of previous query:
+  check_thruk_rest \
+    --template=&quot;{EXITCODE:[% RAW2.0.state %]}[% state2text(RAW2.0.state) %] - [% RAW2.0.name %][% dump(macros) %]&quot; \
+    &#39;{&quot;ip&quot;: &quot;127.0.0.1&quot;}&#39; \
+    &#39;/hosts?columns=name,state&amp;address={1:ip}&#39;
+
 - show active session using renamed aggregation functions
   check_thruk_rest \
     -o &#39;{STATUS} - There are {sessions} active sessions.&#39; \
