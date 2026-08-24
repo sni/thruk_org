@@ -230,7 +230,7 @@ For example, only output performance data for labels starting with an &#39;m&#39
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<pre><code>- notifiy if more than 80 hosts are down
+<pre><code>- notify if more than 80 hosts are down
   check_thruk_rest -w down:80 -c down:100 /hosts/totals
 
 - advanced monitoring plugin:
@@ -256,6 +256,12 @@ For example, only output performance data for labels starting with an &#39;m&#39
     --template=&quot;{EXITCODE:[% RAW2.0.state %]}[% state2text(RAW2.0.state) %] - [% RAW2.0.name %][% dump(macros) %]&quot; \
     &#39;{&quot;ip&quot;: &quot;127.0.0.1&quot;}&#39; \
     &#39;/hosts?columns=name,state&amp;address={1:ip}&#39;
+
+- multiple queries can use values of previous query also by template toolkit syntax:
+  check_thruk_rest \
+    --template=&quot;[% RAW2.rc %] - [% RAW2.output %]&quot; \
+    --command &#39;echo 127.0.0.1&#39; \
+    --string &#39;[% IF RAW1.rc == 0 %]command worked: [% RAW1.output %][% ELSE %]command failed: [% IF RAW1.rc %][% END %]&#39;
 
 - show active session using renamed aggregation functions
   check_thruk_rest \
