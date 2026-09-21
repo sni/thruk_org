@@ -15,6 +15,7 @@ RUN apt-get update && \
 		gcc \
 		make && \
 	apt-get clean
+RUN git config --global --add safe.directory /srv/jekyll
 
 WORKDIR /srv/jekyll
 CMD ["make -C /srv/jekyll server"]
