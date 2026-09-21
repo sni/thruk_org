@@ -253,3 +253,11 @@ SMALL.new {
 LI > H5 {
   margin: 1px;
 }
+
+DIV.admonitionblock.warning {
+  background-color: #fcf5db;
+}
+
+DIV.admonitionblock.tip {
+  background-color: #f0ffea;
+}
