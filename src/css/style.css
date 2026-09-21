@@ -254,6 +254,10 @@ LI > H5 {
   margin: 1px;
 }
 
+DIV.admonitionblock {
+  border-radius: 5px;
+}
+
 DIV.admonitionblock.warning {
   background-color: #fcf5db;
 }
