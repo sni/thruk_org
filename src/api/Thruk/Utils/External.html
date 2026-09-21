@@ -61,6 +61,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
           no_shell     =&gt; &quot;wrap command in a shell unless no_shell is set&quot;
           env          =&gt; hash with extra environment variables
           show_output  =&gt; show console with output
+          delayed      =&gt; if true, does not start the job right away, wait for a trigger (from the job wait page)
       }
   );</code></pre>
 
@@ -117,7 +118,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 
 <h2 id="get_json_status">get_json_status</h2>
 
-<pre><code>get_json_status($c, $id)</code></pre>
+<pre><code>get_json_status($c, $id, [$job_data])</code></pre>
 
 <p>return json status of a job</p>
 
