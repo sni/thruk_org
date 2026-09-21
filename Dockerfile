@@ -1,7 +1,20 @@
-FROM jekyll/jekyll:3.8
+FROM debian:13
 
-RUN apk add --update \
-	imagemagick-dev \
-	imagemagick \
-	libpng \
-	libpng-dev
+RUN apt-get update && \
+	apt-get install -y \
+		ruby \
+		ruby-dev \
+		ruby-bundler \
+		nodejs \
+		libmagickcore-dev \
+		libmagickwand-dev \
+		libreadline-dev \
+		zlib1g-dev \
+		git \
+		g++ \
+		gcc \
+		make && \
+	apt-get clean
+
+WORKDIR /srv/jekyll
+CMD ["make -C /srv/jekyll server"]
