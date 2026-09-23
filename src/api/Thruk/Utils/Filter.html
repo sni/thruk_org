@@ -19,6 +19,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#contains">contains</a></li>
       <li><a href="#duration">duration</a></li>
       <li><a href="#nl2br">nl2br</a></li>
+      <li><a href="#plugin_output_as_html">plugin_output_as_html</a></li>
       <li><a href="#sprintf">sprintf</a></li>
       <li><a href="#date_format">date_format</a></li>
       <li><a href="#last_check">last_check</a></li>
@@ -79,6 +80,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#replace_copy_paste">replace_copy_paste</a></li>
       <li><a href="#set_target_link">set_target_link</a></li>
       <li><a href="#is_icinga2">is_icinga2</a></li>
+      <li><a href="#thruk_escape_html_tags">thruk_escape_html_tags</a></li>
       <li><a href="#search2text">search2text</a></li>
       <li><a href="#filter2text">filter2text</a></li>
       <li><a href="#format_perf_number">format_perf_number</a></li>
@@ -150,6 +152,12 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
 <pre><code>my $string = nl2br($string);</code></pre>
 
 <p>replace newlines with linebreaks</p>
+
+<h2 id="plugin_output_as_html">plugin_output_as_html</h2>
+
+<pre><code>my $string = plugin_output_as_html($string);</code></pre>
+
+<p>formats plugin output for unescaped html rendering. Naemon stores multiline output with escaped newlines (\\n), which are restored to real newlines when the output already contains html tags, so html is not corrupted by injected &lt;br&gt;. Plain text output gets its newlines converted to &lt;br&gt; instead.</p>
 
 <h2 id="sprintf">sprintf</h2>
 
@@ -530,6 +538,14 @@ http://hostname/thruk/cgi-bin/status.cgi?params</code></pre>
 <pre><code>is_icinga2($peer_key)</code></pre>
 
 <p>returns true if peer from given key is icinga 2</p>
+
+<h2 id="thruk_escape_html_tags">thruk_escape_html_tags</h2>
+
+<pre><code>thruk_escape_html_tags($obj, [$default])</code></pre>
+
+<p>returns 1 if the plugin output of this host/service has to be escaped and 0 if it may be rendered as raw html.</p>
+
+<p>The THRUK_ESCAPE_HTML_TAGS custom variable of the object itself overrides $default, which usually is the global escape_html_tags setting. Only the values &quot;0&quot; and &quot;1&quot; are recognized, any other value keeps $default.</p>
 
 <h2 id="search2text">search2text</h2>
 
