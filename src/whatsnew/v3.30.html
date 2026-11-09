@@ -1,0 +1,46 @@
+---
+version: v3.30
+title: What's New In Release v3.30
+layout: whatsnew_no_details
+lightbox: true
+breadcrumb: [ "whatsnew.html", "What's New" ]
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="page-header">Change Log {{ page.version }}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <pre>
+3.30     Thu Oct 22 19:28:17 CEST 2026
+          - fix remote code vulnerability in grafana image export (GHSA-83cf-v4hm-pw6j)
+          - fix mouse glitch on quick command menu (#1502)
+          - fix parsing config values containing equal signs (#1512)
+          - fix host state on main page (#1515)
+          - fix lock issue when user tries to login with invalid username (GHSA-3p2g-8g6m-r272)
+          - add role specific config overrides
+          - improve search performance
+          - fix recurring downtimes added multiple times if some backends were down
+          - add service time hint when editing crontab based schedules
+          - fix search inputs loosing value when hitting enter
+          - update unicons to v4.2.0
+          - Config Tool:
+            - report invalid boolean object attributes instead of a perl warning
+          - Teams:
+            - fix authentication by unexposed custom variables
+          - Agents:
+            - switch to password by env
+          - Log Cache:
+            - add postgres support (#1513)
+          - Rest:
+            - fix merging host/servicegroups response
+            - add support for logcache=0 parameter on log based queries
+            - check_thruk_rest: add support for template toolkit syntax in the url itself
+            - add option rest_commands_ignore_partial_errors to ignore errors when at least one command succeeded
+          - Reports:
+            - adding an Icelandic translation (#1498)
+    </pre>
+  </div>
+</div>
