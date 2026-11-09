@@ -8,11 +8,12 @@ window.doOnLoadList.push(function() {
     var total_h3 = 0;
     jQuery("DIV.container H2").each(function(nr, el) {
       total_h2++;
-      var label = jQuery(el).text().replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase();
+      var text  = jQuery(el).html().replace(/(<([^>]+)>.*?<\/([^>]+)>)/ig,"").trim();
+      var label = text.replace(/[^a-zA-Z0-9\ _\.\/:]*/g, '').toLowerCase().trim();
       label = label.replace(/[ \.\/:]+/g, '-').replace(/\-$/, '');
       label = '_'+label;
       jQuery('<a id="'+label+'" class="nav">').insertBefore(el);
-      var nav_section = jQuery("<li class='"+(nr==0 ? 'active' : '')+"'><a href='#"+label+"'>"+el.innerHTML+"</a></li>");
+      var nav_section = jQuery("<li class='"+(nr==0 ? 'active' : '')+"'><a href='#"+label+"'>"+text+"</a></li>");
       jQuery('#affix-nav > UL').append(nav_section);
       el.innerHTML = '<a href="#'+label+'" class="nav_label"><i class="glyphicon glyphicon-paperclip" style="opacity:0.6"></i></a> '+el.innerHTML;
 

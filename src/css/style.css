@@ -265,3 +265,16 @@ DIV.admonitionblock.warning {
 DIV.admonitionblock.tip {
   background-color: #f0ffea;
 }
+
+/* changelog page */
+span.changelog.date {
+  font-size: 18px;
+  line-height: 60px;
+  float: right;
+  color: #716b7a;
+}
+
+pre.changelog {
+  overflow-x: auto;
+  white-space: pre;
+}
