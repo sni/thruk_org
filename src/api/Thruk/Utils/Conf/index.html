@@ -24,6 +24,7 @@ breadcrumb: ['api/Thruk/', 'Thruk', 'api/Thruk/Utils/', 'Utils']
       <li><a href="#get_cgi_user_list">get_cgi_user_list</a></li>
       <li><a href="#get_cgi_group_list">get_cgi_group_list</a></li>
       <li><a href="#read_htpasswd">read_htpasswd</a></li>
+      <li><a href="#model_write_lock">model_write_lock</a></li>
       <li><a href="#store_model_retention">store_model_retention</a></li>
       <li><a href="#get_model_retention">get_model_retention</a></li>
       <li><a href="#get_root_folder">get_root_folder</a></li>
@@ -104,6 +105,16 @@ $update_c   update c so thruk does not need to be restarted</code></pre>
 <h2 id="read_htpasswd">read_htpasswd</h2>
 
 <p>read htpasswd file</p>
+
+<h2 id="model_write_lock">model_write_lock</h2>
+
+<p>acquire exclusive write locks for the object models of given backends.</p>
+
+<p>model changes (ex.: REST /config/objects or the config tool cgi pages) are read-modify-write on the shared storable retention files, so concurrent requests from other FCGI workers or forked jobs would race and drop each others objects (see #1497). This lock serializes the whole read-modify-write for the duration of the current request, the short file locks in get_model_retention()/store_model_retention() only protect the storable files themselves.</p>
+
+<p>Retry a few times before failing, so short concurrent writes get serialized instead of an error. The returned error is a hash which can be passed to $c-&gt;detach_error (rest: 409), or used as is for html error pages (503).</p>
+
+<p>Returns 1 on success, the error hash on failure. The locks are released when the filehandles get destroyed at the end of the request (including when detach_error() dies).</p>
 
 <h2 id="store_model_retention">store_model_retention</h2>
 
