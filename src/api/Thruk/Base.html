@@ -44,6 +44,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
       <li><a href="#has_binary">has_binary</a></li>
       <li><a href="#validate_options">validate_options</a></li>
       <li><a href="#url_clean_credentials">url_clean_credentials</a></li>
+      <li><a href="#sanitize_inc">sanitize_inc</a></li>
     </ul>
   </li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -179,7 +180,7 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 
 <pre><code>check_for_nasty_filename($filename)</code></pre>
 
-<p>returns true if nasty characters have been found and the filename is NOT safe for use</p>
+<p>returns true unless the filename is a non-empty scalar without a leading dot, slashes, asterisks, question marks, newlines or NUL bytes</p>
 
 <h2 id="restore_signal_handler">restore_signal_handler</h2>
 
@@ -244,6 +245,12 @@ breadcrumb: ['api/Thruk/', 'Thruk']
 <pre><code>url_clean_credentials($url)</code></pre>
 
 <p>returns url with credentials removed for safe printing</p>
+
+<h2 id="sanitize_inc">sanitize_inc</h2>
+
+<pre><code>sanitize_inc()</code></pre>
+
+<p>remove duplicate and non-existing folders from @INC without changing order of the includes</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
