@@ -3,6 +3,17 @@ import { fileURLToPath } from 'node:url'
 import { inlineDocSvgs } from '../scripts/inline-doc-svgs.mjs'
 import { docsSidebar, guideSidebar, developmentSidebar, developmentNav, downloadsNav, docNav } from '../scripts/nav.mts'
 
+// VitePress ships the site CSS as an async module, so the document paints
+// white before the theme loads (a flash in dark mode). Inject an inline style
+// into the served HTML so the right background ships with the page itself.
+const flashFixStyle = `html{background:#fff}@media (prefers-color-scheme: dark){html{background:#1b1b1f}}html.dark{background:#1b1b1f}`
+const flashFix = {
+  name: 'thruk-flash-fix',
+  apply: 'serve', // dev server only; the production build has no flash
+  enforce: 'pre',
+  transformIndexHtml: (html) => html.replace('</head>', `<style>${flashFixStyle}</style></head>`),
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
@@ -20,7 +31,7 @@ export default defineConfig({
   // Keep existing .html URLs working without server rewrite rules.
   cleanUrls: false,
   // Large pages (changelog, REST API reference) produce chunks over 500 kB.
-  vite: { clearScreen: false, build: { chunkSizeWarningLimit: 1024 } },
+  vite: { clearScreen: false, plugins: [flashFix], build: { chunkSizeWarningLimit: 1024 } },
 
   themeConfig: {
     logo: { light: '/images/logo-light.svg', dark: '/images/logo-dark.svg', alt: 'Thruk' },
