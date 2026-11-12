@@ -1,4 +1,5 @@
-import { assert, test } from 'vitest'
+import { test } from 'node:test'
+import assert from 'node:assert/strict'
 import { releaseStatus } from '../.vitepress/theme/release-status.mjs'
 
 test('the existing download.html?version= workflow compares numeric versions', () => {
@@ -11,7 +12,7 @@ test('the existing download.html?version= workflow compares numeric versions', (
 })
 
 test('missing and development versions do not claim a known release', () => {
-  assert.isNull(releaseStatus(null, '3.30'))
+  assert.equal(releaseStatus(null, '3.30'), null)
   assert.equal(releaseStatus('3.30-dev', '3.30'), 'unknown')
   assert.equal(releaseStatus('<script>', '3.30'), 'unknown')
 })

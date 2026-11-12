@@ -1,4 +1,4 @@
-import { test } from 'vitest'
+import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import os from 'node:os'
@@ -7,7 +7,7 @@ import { checkDocs } from '../scripts/docs-check.mjs'
 
 async function fixture(t, files, renderer) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'thruk-docs-'))
-  t.onTestFinished(() => fs.rmSync(root, { recursive: true, force: true }))
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }))
   for (const [name, content] of Object.entries(files)) {
     fs.mkdirSync(path.dirname(path.join(root, name)), { recursive: true })
     fs.writeFileSync(path.join(root, name), content)

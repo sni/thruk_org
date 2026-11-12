@@ -1,4 +1,5 @@
-import { assert, test } from 'vitest'
+import { test } from 'node:test'
+import assert from 'node:assert/strict'
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
@@ -30,5 +31,5 @@ test('reports missing files and fragments without requesting external resources'
   const result = await fixture({
     'index.html': '<a href="#gone">Missing</a><img src="gone.png"><a href="https://example.invalid/">External</a><img src="data:image/png;base64,AAAA">',
   })
-  assert.lengthOf(result.errors, 2)
+  assert.equal(result.errors.length, 2)
 })

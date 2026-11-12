@@ -1,8 +1,10 @@
-import { assert, test } from 'vitest'
+import { test } from 'node:test'
+import assert from 'node:assert/strict'
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const DIST_DIR = path.join(__dirname, '../.vitepress/dist')
+const DIST_DIR = fileURLToPath(new URL('../.vitepress/dist', import.meta.url))
 
 // Check loaded legacy assets, not words or code examples that discuss them.
 const FORBIDDEN_PATTERN = [
@@ -89,9 +91,9 @@ for (const page of REQUIRED_PAGES) {
 test('changelog has a v3.30 anchor', () => {
   const content = readFileSync(path.join(DIST_DIR, 'changelog.html'), 'utf8')
   assert.ok(content.includes('id="v3-30"'), 'changelog v3.30 anchor missing')
-  assert.notInclude(content, 'This file documents the revision')
+  assert.ok(!content.includes('This file documents the revision'))
   assert.match(content, /<h2 id="v3-30"[^>]*>v3\.30 <time class="release-date ignore-header" datetime="2026-10-22">2026-10-22<\/time>/)
-  assert.include(content, 'href="/whatsnew/v3.30.html"')
+  assert.ok(content.includes('href="/whatsnew/v3.30.html"'))
 })
 
 test('release highlights index groups all release links into cards, newest first', () => {
@@ -99,8 +101,8 @@ test('release highlights index groups all release links into cards, newest first
   const cards = content.match(/<div class="release-highlights">([\s\S]*?)<\/div>/)?.[1]
   assert.ok(cards, 'release cards missing')
   const links = [...cards.matchAll(/href="(\/whatsnew\/v[\d.]+\.html)"/g)].map((match) => match[1])
-  const versions = readdirSync(path.join(__dirname, '../src/whatsnew')).filter((name) => /^v[\d.]+\.md$/.test(name))
-  assert.lengthOf(links, versions.length)
+  const versions = readdirSync(new URL('../src/whatsnew', import.meta.url)).filter((name) => /^v[\d.]+\.md$/.test(name))
+  assert.equal(links.length, versions.length)
   assert.equal(links[0], '/whatsnew/v3.30.html')
   assert.equal(links.at(-1), '/whatsnew/v2.28.html')
 })
@@ -116,15 +118,15 @@ test('top dropdown labels link to their first menu item', () => {
   ]) {
     assert.ok(labels.some((label) => label[1] === link && label[2] === text), text)
   }
-  assert.lengthOf([...navigation.matchAll(/<details/g)], 5)
+  assert.equal([...navigation.matchAll(/<details/g)].length, 5)
 })
 
 test('screenshots keep fallback links and include a closable image dialog', () => {
   const content = readFileSync(path.join(DIST_DIR, 'screenshots.html'), 'utf8')
   assert.match(content, /<a href="\/images\/galleries\/01_main.png"><img/)
   assert.match(content, /<dialog[^>]*aria-label="Image preview"/)
-  assert.include(content, 'method="dialog"')
-  assert.include(content, 'aria-label="Close image preview"')
+  assert.ok(content.includes('method="dialog"'))
+  assert.ok(content.includes('aria-label="Close image preview"'))
 })
 
 test('release plan has Stable, Nightly and Next columns in a colourable Markdown table', () => {
@@ -143,29 +145,29 @@ test('version hints render as coloured badges', () => {
   for (const page of ['teams', 'custom-quick-actions', 'configuration']) {
     const content = readFileSync(path.join(DIST_DIR, `documentation/${page}.html`), 'utf8')
     const badges = [...content.replace(/<!--[\s\S]*?-->/g, '').matchAll(/<span class="VPBadge tip">(New in Thruk [^<]+)<\/span>/g)]
-    assert.isAbove(badges.length, 0)
-    for (const badge of badges) assert.notMatch(badge[1], /\.$/)
-    assert.notMatch(content, /\(New in Thruk [^)]+\)/)
+    assert.ok(badges.length > 0)
+    for (const badge of badges) assert.doesNotMatch(badge[1], /\.$/)
+    assert.doesNotMatch(content, /\(New in Thruk [^)]+\)/)
   }
 })
 
 test('deprecation hints render as warning badges and keep links and code formatting', () => {
   const content = readFileSync(path.join(DIST_DIR, 'documentation/configuration.html'), 'utf8').replace(/<!--[\s\S]*?-->/g, '')
-  assert.include(content, '<span class="VPBadge warning">DEPRECATED: setting this has no effect with Thruk 2.34 or later</span>')
-  assert.include(content, '<span class="VPBadge warning">DEPRECATED: use <code>server_timezone</code> now</span>')
+  assert.ok(content.includes('<span class="VPBadge warning">DEPRECATED: setting this has no effect with Thruk 2.34 or later</span>'))
+  assert.ok(content.includes('<span class="VPBadge warning">DEPRECATED: use <code>server_timezone</code> now</span>'))
   assert.match(content, /<span class="VPBadge warning">DEPRECATED: please use <a href="[^\"]*lmd.html">LMD<\/a> when using multiple backends<\/span>/)
 })
 
 test('release pages show breadcrumbs, themed logos and readable changelogs without feed links', () => {
   const content = readFileSync(path.join(DIST_DIR, 'whatsnew/v3.30.html'), 'utf8')
-  assert.include(content, 'aria-label="Breadcrumb"')
+  assert.ok(content.includes('aria-label="Breadcrumb"'))
   assert.match(content, /href="\/whatsnew\/index.html"[^>]*>Release highlights/)
-  assert.include(content, 'aria-current="page"')
-  assert.include(content, '/images/logo-light.svg')
-  assert.include(content, '/images/logo-dark.svg')
-  assert.include(content, '/favicon-light.png')
-  assert.include(content, '<li>fix remote code vulnerability')
-  assert.notInclude(content, '/news/feed.xml')
+  assert.ok(content.includes('aria-current="page"'))
+  assert.ok(content.includes('/images/logo-light.svg'))
+  assert.ok(content.includes('/images/logo-dark.svg'))
+  assert.ok(content.includes('/favicon-light.png'))
+  assert.ok(content.includes('<li>fix remote code vulnerability'))
+  assert.ok(!content.includes('/news/feed.xml'))
 })
 
 test('legacy favicon embeds the new theme icon', () => {

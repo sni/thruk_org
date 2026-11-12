@@ -1,4 +1,5 @@
-import { assert, test } from 'vitest'
+import { test } from 'node:test'
+import assert from 'node:assert/strict'
 import { imagePreview } from '../.vitepress/theme/image-preview.mjs'
 
 function click(href = 'https://www.thruk.org/images/screenshot.png') {
@@ -29,21 +30,21 @@ test('logo previews preserve the showcase panel background', () => {
 
 test('ordinary links, external links, downloads and modified clicks keep their browser behaviour', () => {
   for (const changes of [{ ctrlKey: true }, { metaKey: true }, { shiftKey: true }, { altKey: true }, { button: 1 }, { defaultPrevented: true }]) {
-    assert.isUndefined(imagePreview({ ...click(), ...changes }, 'https://www.thruk.org'))
+    assert.equal(imagePreview({ ...click(), ...changes }, 'https://www.thruk.org'), undefined)
   }
   for (const href of ['https://example.org/image.png', 'https://www.thruk.org/download.html']) {
-    assert.isUndefined(imagePreview(click(href), 'https://www.thruk.org'))
+    assert.equal(imagePreview(click(href), 'https://www.thruk.org'), undefined)
   }
   const event = click()
   const link = event.target.closest()
   link.target = '_blank'
-  assert.isUndefined(imagePreview(event, 'https://www.thruk.org'))
+  assert.equal(imagePreview(event, 'https://www.thruk.org'), undefined)
   link.target = ''
   link.hasAttribute = () => true
-  assert.isUndefined(imagePreview(event, 'https://www.thruk.org'))
+  assert.equal(imagePreview(event, 'https://www.thruk.org'), undefined)
   link.hasAttribute = () => false
   link.querySelector = () => null
-  assert.isUndefined(imagePreview(event, 'https://www.thruk.org'))
+  assert.equal(imagePreview(event, 'https://www.thruk.org'), undefined)
   event.target.closest = () => null
-  assert.isUndefined(imagePreview(event, 'https://www.thruk.org'))
+  assert.equal(imagePreview(event, 'https://www.thruk.org'), undefined)
 })
