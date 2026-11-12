@@ -11,12 +11,12 @@ DOCKERRUN=docker run \
 	-v "$(THRUK_SOURCE):/opt/thruk:ro" \
 	-v $(PWD):/opt/node_app/app \
 	-v /opt/node_app/node_modules/ \
+	-v /opt/node_app/app/node_modules/ \
 	-v /opt/node_app/app/.vitepress/cache \
-	-v /opt/node_app/app/.vitepress/dist \
 	-v $(PWD)/package.json:/opt/node_app/package.json \
 	thruk/docs:latest
 
-.PHONY: build server preview check docker-build docker-server clean test localtest check-source optimize-images
+.PHONY: build server preview check docker-build docker-server clean test localtest check-source optimize-images thumbnails
 
 build: check-source node_modules
 	npm run docs:build
@@ -51,6 +51,10 @@ test: build check
 # Manual step: optimize the source PNGs in this repository and in the Thruk checkout.
 optimize-images: check-source
 	npm run optimize:images
+
+# Manual step: regenerate gallery thumbnails (needs ImageMagick) when screenshots change.
+thumbnails:
+	npm run thumbnails
 
 localtest:
 	npx vitest run

@@ -13,6 +13,7 @@
     "docs:dev": "npm run build:stage && vitepress dev --host",
     "docs:build": "npm run build:stage && vitepress build && npm run check:links",
     "optimize:images": "node scripts/optimize_images.mjs",
+    "thumbnails": "node scripts/thumbnails.mjs",
     "docs:preview": "vitepress preview",
     "build:stage": "node scripts/build_site.mjs",
     "check:links": "node scripts/check_links.mjs",
