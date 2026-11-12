@@ -74,6 +74,18 @@ for (const section of ['documentation', 'guides', 'development']) {
 }
 cpSync(path.join(docs, 'README.md'), path.join(stage, 'README.md'))
 
+// Inline theme-aware diagrams so the SVG follows the site's light and dark colours.
+// A Markdown image becomes an <img> element, which cannot inherit page CSS variables.
+const inlinedSvgs = new Map([
+  ['documentation/business-process.md', 'source/bp_arch.svg']
+])
+for (const [page, svg] of inlinedSvgs) {
+  const markdown = path.join(stage, page)
+  // Keep a blank line before the tag so Markdown does not fold it into the previous paragraph.
+  write(markdown, read(markdown).replaceAll(/!\[[^\]]*\]\(source\/[^)]+\.svg\)/g,
+    '\n' + read(path.join(stage, path.dirname(page), svg)).trim()))
+}
+
 // Copy Markdown verbatim. In particular, do not rewrite links inside code examples.
 for (const name of readdirSync(path.join(root, 'src', 'pages')).filter((file) => file.endsWith('.md'))) {
   const target = { 'news-index.md': 'news/index.md', 'logo.md': 'development/logo.md' }[name] || name
