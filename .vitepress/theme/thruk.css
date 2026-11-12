@@ -244,7 +244,13 @@ pre {
 .release-plan td {
     width: 33.33%;
     padding: 14px 10px;
+    color: #111;
     text-align: center;
+}
+
+.dark .release-plan th,
+.dark .release-plan td {
+    color: #fff;
 }
 
 .release-plan th + th,
