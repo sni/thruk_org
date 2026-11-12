@@ -17,7 +17,7 @@ hero:
 features:
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>'
     title: Download v{{VITE_RELEASE_VERSION}}
-    details: Packages are available for Debian, Ubuntu, RHEL, Rocky, Alma and SUSE. Released {{VITE_RELEASE_DATE}}.
+    details: Packages are available for Debian, Ubuntu, RHEL, Rocky, Alma and SUSE.<br>Released {{VITE_RELEASE_DATE}}.
     link: /download.html
     linkText: Download
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg>'

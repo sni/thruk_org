@@ -218,6 +218,15 @@ pre {
 
 .release-plan {
     overflow-x: auto;
+    --vp-c-green-soft: rgba(16, 185, 129, 0.4);
+    --vp-c-yellow-soft: rgba(245, 158, 11, 0.36);
+    --vp-c-indigo-soft: rgba(244, 63, 94, 0.36);
+}
+
+.dark .release-plan {
+    --vp-c-green-soft: rgba(16, 185, 129, 0.5);
+    --vp-c-yellow-soft: rgba(245, 158, 11, 0.45);
+    --vp-c-indigo-soft: rgba(251, 113, 133, 0.42);
 }
 
 .release-plan table {
@@ -275,6 +284,14 @@ pre {
 .release-plan a:hover {
     color: var(--vp-c-brand-1);
     text-decoration: underline;
+}
+
+.release-plan th:nth-child(3) a:hover {
+    color: #e11d48;
+}
+
+.dark .release-plan th:nth-child(3) a:hover {
+    color: #fb7185;
 }
 
 .release-plan td {
