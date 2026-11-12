@@ -9,8 +9,12 @@
 - Public website pages live in `src/pages/`, release highlights in `src/whatsnew/`, and the screenshot gallery in `src/screenshots/`.
 - `scripts/build_site.mjs` validates and stages sources into `.build/`. VitePress writes `.vitepress/dist/`.
 - Website and Markdown-rendering checks belong in this repository's `scripts/` and `test/`. Thruk owns only its Perl tests under `t/`; do not put JavaScript checks in its docs tree.
+
+## Rules
+
 - Do not edit generated output, caches or `node_modules/`.
-- Add add useless or trivial tests.
+- Do not add useless or trivial tests.
+- Ask before adding new dependencies.
 
 ## Content and compatibility
 
