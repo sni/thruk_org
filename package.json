@@ -11,7 +11,8 @@
     "esbuild@0.25.12": true
   },
   "scripts": {
-    "docs:dev": "npm run build:stage && vitepress dev --host",
+    "docs:dev": "node scripts/dev.mjs",
+    "docs:dev:vp": "npm run build:stage && vitepress dev --host",
     "docs:build": "npm run build:stage && vitepress build && npm run check:links",
     "optimize:images": "node scripts/optimize_images.mjs",
     "thumbnails": "node scripts/thumbnails.mjs",
