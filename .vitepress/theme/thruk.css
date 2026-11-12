@@ -218,31 +218,63 @@ pre {
 
 .release-plan {
     overflow-x: auto;
-    padding: 16px;
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 12px;
-    background: var(--vp-c-bg-soft);
 }
 
 .release-plan table {
     display: table;
     width: 100%;
     margin: 0;
+    table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 8px;
+    border-spacing: 0;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
 }
 
 .release-plan th,
 .release-plan td {
     width: 33.33%;
     padding: 14px 10px;
-    border: 0;
-    border-radius: 6px;
     text-align: center;
+}
+
+.release-plan th + th,
+.release-plan td + td {
+    border-left: 1px solid var(--vp-c-divider);
+}
+
+.release-plan thead th {
+    border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.release-plan thead th:first-child {
+    border-top-left-radius: 11px;
+}
+
+.release-plan thead th:last-child {
+    border-top-right-radius: 11px;
+}
+
+.release-plan tbody td:first-child {
+    border-bottom-left-radius: 11px;
+}
+
+.release-plan tbody td:last-child {
+    border-bottom-right-radius: 11px;
 }
 
 .release-plan th {
     font-size: 20px;
+}
+
+.release-plan a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.release-plan a:hover {
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
 }
 
 .release-plan td {
