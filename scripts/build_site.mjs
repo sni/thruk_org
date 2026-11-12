@@ -82,7 +82,11 @@ const inlinedSvgs = [
   ['guides/architecture.md', 'architecture.svg'],
   ['documentation/install.md', 'source/livestatus.svg'],
   ['documentation/install.md', 'source/livestatus_http.svg'],
-  ['documentation/introduction.md', 'source/arch.svg']
+  ['documentation/introduction.md', 'source/arch.svg'],
+  ['documentation/cluster.md', 'source/cluster.svg'],
+  ['documentation/lmd.md', 'source/lmd.svg'],
+  ['documentation/logfile-cache.md', 'source/logfile-cache.svg'],
+  ['documentation/oauth2.md', 'source/oauth2.svg']
 ]
 for (const [page, svg] of inlinedSvgs) {
   const markdown = path.join(stage, page)
