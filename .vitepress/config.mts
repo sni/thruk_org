@@ -14,7 +14,8 @@ export default defineConfig({
   srcDir: '.build',
   // Keep existing .html URLs working without server rewrite rules.
   cleanUrls: false,
-  vite: { clearScreen: false },
+  // Large pages (changelog, REST API reference) produce chunks over 500 kB.
+  vite: { clearScreen: false, build: { chunkSizeWarningLimit: 1024 } },
 
   themeConfig: {
     logo: { light: '/images/logo-light.svg', dark: '/images/logo-dark.svg', alt: 'Thruk' },
