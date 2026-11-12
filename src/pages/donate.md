@@ -13,19 +13,17 @@ Donations help to:
 
 Even a small donation helps.
 
-<div style="display: flex; gap: 24px; align-items: center; justify-content: center;">
-<div style="text-align: center;">
-<a href="https://github.com/sponsors/sni"><img src="/images/GitHub_Logo.png" alt="GitHub Sponsors"></a>
-<br>become a sponsor
-</div>
-<div style="text-align: center;">
+<div class="donate-cards">
+<a class="donate-card donate-card-link" href="https://github.com/sponsors/sni">
+<span class="donate-logo"><img src="/images/GitHub_Logo.png" alt="GitHub" width="140" height="57"></span>
+<span>Become a <strong>GitHub Sponsor</strong> and support the project.</span>
+</a>
+<div class="donate-card">
+<span>Or donate <strong>via PayPal</strong>.</span>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="WBELB56NMWVUN">
-<input type="image" src="/images/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<button class="donate-button" type="submit">Donate via PayPal</button>
 </form>
-<br>via PayPal
 </div>
 </div>
-
-![Donations](/images/217477664_94c0caa9b9_z.jpg)
