@@ -1,21 +1,14 @@
-FROM debian:13
+FROM node:22-bookworm
 
-RUN apt-get update && \
-	apt-get install -y \
-		ruby \
-		ruby-dev \
-		ruby-bundler \
-		nodejs \
-		libmagickcore-dev \
-		libmagickwand-dev \
-		libreadline-dev \
-		zlib1g-dev \
-		git \
-		g++ \
-		gcc \
-		make && \
-	apt-get clean
-RUN git config --global --add safe.directory /srv/jekyll
+EXPOSE 5173
 
-WORKDIR /srv/jekyll
-CMD ["make -C /srv/jekyll server"]
+WORKDIR /opt/node_app
+
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev
+ENV PATH=/opt/node_app/node_modules/.bin:$PATH
+
+WORKDIR /opt/node_app/app
+COPY . .
+
+CMD ["npm", "run", "docs:dev"]

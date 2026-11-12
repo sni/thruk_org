@@ -1,72 +1,58 @@
-GEM_HOME=.gem
-TESTPORT=4001
+SHELL=bash
+PWD=$(shell pwd)
+# Canonical docs and logos come from an external Thruk checkout.
+export THRUK_SOURCE
 
-.PHONY: $(GEM_HOME)
+DOCKERRUN=docker run \
+	--rm -it \
+	-p 5173:5173 \
+	--name=thruk-docs \
+	-e THRUK_SOURCE=/opt/thruk \
+	-v "$(THRUK_SOURCE):/opt/thruk:ro" \
+	-v $(PWD):/opt/node_app/app \
+	-v /opt/node_app/node_modules/ \
+	-v /opt/node_app/app/.vitepress/cache \
+	-v /opt/node_app/app/.vitepress/dist \
+	-v $(PWD)/package.json:/opt/node_app/package.json \
+	thruk/docs:latest
 
-build: $(GEM_HOME) _submodules/thruk/documentation
-	bundle exec jekyll build --trace
+.PHONY: build server preview check docker-build docker-server clean test localtest check-source
 
-quick: $(GEM_HOME) _submodules/thruk/documentation
-	bundle exec jekyll build --trace --limit_posts=5
+build: check-source node_modules
+	npm run docs:build
 
-server: $(GEM_HOME) _submodules/thruk/documentation
-	bundle exec jekyll serve --trace --watch --host=0.0.0.0
+server: check-source node_modules
+	npm run docs:dev
 
-$(GEM_HOME):
-	# sudo apt-get install ruby ruby-dev ruby-bundler nodejs libmagickcore-dev libmagickwand-dev libreadline-gplv2-dev zlib1g-dev
-	bundle config set --local path '$(GEM_HOME)'
-	bundler install
-	bundler update
+preview: check-source node_modules
+	npm run docs:preview
 
-test: $(GEM_HOME)
-	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!; \
-		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
-		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
-		RC=$$?; \
-		kill -9 $$SPID; \
-		exit $$RC
+check: check-source node_modules
+	npm run check:docs
 
-citest: $(GEM_HOME)
-	NOCLEAN=1 bundle exec jekyll serve --port=$(TESTPORT) & SPID=$$!;  \
-		for i in $$(seq 100); do if lsof -i:$(TESTPORT) >/dev/null 2>&1; then break; else sleep 0.3; fi done; \
-		TESTEXPECT=Thruk TESTTARGET=http://localhost:$(TESTPORT) PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t; \
-		RC=$$?; \
-		kill -9 $$SPID; \
-		exit $$RC
+node_modules: package-lock.json
+	npm ci --include=dev
 
-localtest: _site
-	TESTEXPECT=Thruk TESTTARGET=file://$(shell pwd)/_site/ PERL_DL_NONLAZY=1 perl -MExtUtils::Command::MM -e "test_harness(0)" t/*.t
+check-source:
+	@test -n "$(THRUK_SOURCE)" || { echo 'THRUK_SOURCE is required. Set it to the Thruk repository root.' >&2; exit 1; }
+	@test -d "$(THRUK_SOURCE)/docs" || { echo 'THRUK_SOURCE must contain the Thruk docs directory.' >&2; exit 1; }
 
-update: clean_env changelog_update api_update build
-	git push
+docker-build: check-source
+	docker build -t thruk/docs .
+	$(DOCKERRUN) npm run docs:build
 
-changelog_update:
-	git reset --hard --recurse-submodule
-	#cd _submodules/thruk && git checkout master && git pull && git checkout $$(git describe --tags `git rev-list --tags --max-count=1`)
-	cd _submodules/thruk && git checkout master && git pull
-	cp _submodules/thruk/Changes src/_includes/Changes.html
-	-git commit -am 'changelog update'
+docker-server: check-source
+	docker build -t thruk/docs .
+	$(DOCKERRUN)
 
-_submodules/thruk/documentation:
-	git submodule update --init --recursive
+test: build check
+	npm run test
 
-api_update:
-	./api_update.pl _submodules/thruk/ perl5/
-	-git add src/api
-	-git commit -am 'automatic api update'
-
-clean_env:
-	git submodule init
-	git submodule update
-	@if [ $$(git status 2>&1 | grep -c "working \(tree\|directory\) clean") -ne 1 ]; then \
-	    git status >&2; \
-	    echo "cannot run update" >&2; \
-	    exit 1; \
-	fi
+localtest:
+	npx vitest run
 
 clean:
-	rm -rf \
-		$(GEM_HOME) \
-		_site \
-		.bundle \
-		Gemfile.lock \
+	rm -rf node_modules
+	rm -rf .vitepress/dist/
+	rm -rf .vitepress/cache/
+	rm -rf .build/

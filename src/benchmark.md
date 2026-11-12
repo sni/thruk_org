@@ -1,25 +1,20 @@
 ---
 title: Benchmarks
-layout: default
-lightbox: true
 ---
 
-
-Benchmarking Thruk
-==================
+# Benchmarking Thruk
 
 I often get asked if there are any benchmarks for Thruk so i finally
 decided to do some tests.
 
-Test Setup
-----------
+## Test Setup
 
-Since <a href="http://omdistro.org" target="_blank">OMD</a> made it so easy and fast to setup a test environment i would
+Since [OMD](http://omdistro.org) made it so easy and fast to setup a test environment i would
 be a fool to not use it for tests too.
 
 In order to create test hosts and services i used the
-<a href="http://search.cpan.org/dist/Monitoring-Generator-TestConfig/" target="_blank">Monitoring::Generator::TestConfig</a>
-Perl module and wrapped a simple perl script around (<a href="https://github.com/sni/omd_utils/blob/master/benchmark/gui/gui_benchmark.pl" target="_blank">gui_benchmark.pl on GitHub</a>).
+[Monitoring::Generator::TestConfig](http://search.cpan.org/dist/Monitoring-Generator-TestConfig/)
+Perl module and wrapped a simple perl script around ([gui_benchmark.pl on GitHub](https://github.com/sni/omd_utils/blob/master/benchmark/gui/gui_benchmark.pl)).
 
 Used Versions:
 
@@ -31,36 +26,29 @@ The tested hardware is a quad core i5 with 8gb memory installed.
 
 Test:
 
-. create test services
-. submit some passive check results
-. wait till the checks are processed by the core
-. stop the core so it does not waste cpu cycles
-. run Apache Bench (ab) 5 times for each gui and take the fastest result
+1. create test services
+2. submit some passive check results
+3. wait till the checks are processed by the core
+4. stop the core so it does not waste cpu cycles
+5. run Apache Bench (ab) 5 times for each gui and take the fastest result
 
 The rests itself consists of 100 requests with 5 concurrent requests.
 
-Result
-------
+## Result
 
 The following charts draw the response time for some common pages.
 Lower response times means faster pages.
 
-
-{% gallery Screenshots%}
-benchmark_tac.png:: Tactical Overview
-benchmark_problems.png:: Service Problems
-benchmark_processinfo.png:: Processinfo
-benchmark_eventlog.png:: Eventlog
-{% endgallery %}
-<br style="clear: both;">
+[![Tactical Overview](/images/galleries/benchmark_tac.png)](/images/galleries/benchmark_tac.png)
+[![Service Problems](/images/galleries/benchmark_problems.png)](/images/galleries/benchmark_problems.png)
+[![Processinfo](/images/galleries/benchmark_processinfo.png)](/images/galleries/benchmark_processinfo.png)
+[![Eventlog](/images/galleries/benchmark_eventlog.png)](/images/galleries/benchmark_eventlog.png)
 
 The response time contains only the response of the main page content.
 Your browser will propably take longer because it has to fetch images
 and css stylesheets and render the hole page.
 
-
-Conclusion
-----------
+## Conclusion
 
 The images speak for themselves, parsing the status.dat for every
 request takes time and increases linear with the amount of services.

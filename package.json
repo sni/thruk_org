@@ -1,0 +1,28 @@
+{
+  "name": "thruk-org-website",
+  "private": true,
+  "version": "0.0.0",
+  "description": "www.thruk.org, built with VitePress",
+  "engines": {
+    "node": ">=20"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  },
+  "scripts": {
+    "docs:dev": "npm run build:stage && vitepress dev --host",
+    "docs:build": "npm run build:stage && vitepress build && npm run check:links",
+    "docs:preview": "vitepress preview",
+    "build:stage": "node scripts/build_site.mjs",
+    "check:links": "node scripts/check_links.mjs",
+    "check:docs": "node scripts/docs-check.mjs",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "vite": "^6.4.6"
+  }
+}

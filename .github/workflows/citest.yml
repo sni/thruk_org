@@ -5,40 +5,29 @@ on:
   pull_request:
   release:
 
+permissions:
+  contents: read
+
 jobs:
   citest:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
+    env:
+      THRUK_SOURCE: ${{ github.workspace }}/.thruk-source
     steps:
-      - uses: actions/checkout@v2
-      #- name: Setup tmate session, see https://github.com/marketplace/actions/debugging-with-tmate
-      #  uses: mxschmitt/action-tmate@v3
-      - name: prepare machine
-        run: |
-          sudo apt-get -y update
-          sudo apt-get -y install \
-            autoconf \
-            build-essential \
-            devscripts \
-            libencode-perl \
-            libhtml-lint-perl \
-            libmagickcore-dev \
-            libmagickwand-dev \
-            libreadline-dev \
-            liburi-perl \
-            libwww-perl \
-            nodejs \
-            ruby-bundler \
-            ruby-dev \
-            zlib1g-dev
+      - uses: actions/checkout@v4
 
-      - name: install gems
-        run: |
-          make .gem
+      - name: Check out Thruk documentation and logos
+        uses: actions/checkout@v4
+        with:
+          repository: sni/thruk
+          path: .thruk-source
 
-      - name: run build
-        run: |
-          make build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
 
-      - name: run tests
+      - name: build and test the site
         run: |
-          make citest
+          make test

@@ -1,0 +1,339 @@
+/* Blue branding based on the Thruk logo. */
+:root {
+    --vp-c-brand-1: #0875a9;
+    --vp-c-brand-2: #09638e;
+    --vp-c-brand-3: #0875a9;
+    --vp-c-brand-soft: rgba(54, 169, 225, 0.14);
+
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(-45deg, #71c0e9 50%, var(--vp-c-brand-1));
+
+    --vp-home-hero-image-background-image: linear-gradient(45deg, rgba(113, 192, 233, 0.5) 50%, rgba(54, 169, 225, 0.35) 50%);
+    --vp-home-hero-image-filter: blur(68px);
+}
+
+.dark {
+    --vp-c-brand-1: #71c0e9;
+    --vp-c-brand-2: #36a9e1;
+    --vp-home-hero-image-background-image: linear-gradient(45deg, var(--vp-c-brand-2) 50%, var(--vp-c-brand-1) 50%);
+}
+
+.VPFeatures .VPFeature .box {
+    position: relative;
+}
+
+.VPFeatures .VPFeature .icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    background: none;
+    color: #111;
+}
+
+.dark .VPFeatures .VPFeature .icon {
+    color: #fff;
+}
+
+.VPFeatures .VPFeature .title {
+    padding-right: 40px;
+}
+
+code,
+kbd,
+pre {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.VPNavBarTitle .logo {
+    height: 40px;
+}
+
+.VPNavBar .search {
+    order: 1;
+    flex-grow: 0;
+    padding-left: 16px;
+}
+
+.VPNavBar .hamburger {
+    order: 2;
+}
+
+.breadcrumbs {
+    margin-bottom: 24px;
+    color: var(--vp-c-text-2);
+    font-size: 14px;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumbs li + li::before {
+    content: '/';
+    margin-right: 8px;
+}
+
+.breadcrumbs a:hover {
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
+}
+
+.release-plan th:nth-child(1) {
+    background: var(--vp-c-green-soft);
+}
+
+.release-plan th:nth-child(2) {
+    background: var(--vp-c-yellow-soft);
+}
+
+.release-plan th:nth-child(3) {
+    background: var(--vp-c-indigo-soft);
+}
+
+.release-date {
+    display: inline-block;
+    margin-left: 8px;
+    color: var(--vp-c-text-2);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.screenshot-gallery > p {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 16px;
+}
+
+.screenshot-gallery a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    padding: 8px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    background: var(--vp-c-bg-soft);
+}
+
+.screenshot-gallery a:hover,
+.screenshot-gallery a:focus-visible {
+    border-color: var(--vp-c-brand-1);
+}
+
+.screenshot-gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.release-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.release-highlights li + li {
+    margin: 0;
+}
+
+.release-highlights a {
+    display: block;
+    padding: 24px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    background: var(--vp-c-bg-soft);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.release-highlights a:hover,
+.release-highlights a:focus-visible {
+    border-color: var(--vp-c-brand-1);
+    background: var(--vp-c-brand-soft);
+}
+
+.logo-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 16px;
+}
+
+.logo-preview {
+    padding: 24px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+}
+
+.logo-preview.light {
+    background: #fff;
+    color: #111;
+}
+
+.logo-preview.dark {
+    background: #1b1b1f;
+    color: #fff;
+}
+
+.logo-preview.light a {
+    color: #0875a9;
+}
+
+.logo-preview.dark a {
+    color: #71c0e9;
+}
+
+.logo-preview h2 {
+    margin-top: 0;
+    padding-top: 0;
+    border: 0;
+}
+
+.logo-preview img {
+    margin: 24px auto;
+    padding: 8px;
+    border: 1px solid #8888;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.logo-preview .wordmark {
+    width: 100%;
+    height: 100px;
+}
+
+.logo-preview .symbol {
+    width: 100px;
+    height: 100px;
+}
+
+.release-plan {
+    overflow-x: auto;
+    padding: 16px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+}
+
+.release-plan table {
+    display: table;
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+.release-plan th,
+.release-plan td {
+    width: 33.33%;
+    padding: 14px 10px;
+    border: 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.release-plan th {
+    font-size: 20px;
+}
+
+.release-plan td {
+    background: var(--vp-c-bg);
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 600;
+}
+
+.screenshot-cards,
+.repository-links ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.screenshot-cards figure,
+.repository-links li {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+}
+
+.screenshot-cards figure:focus-within,
+.screenshot-cards figure:hover {
+    border-color: var(--vp-c-brand-1);
+}
+
+.screenshot-cards a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    padding: 12px;
+}
+
+.screenshot-cards img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.screenshot-cards figcaption {
+    padding: 12px 16px;
+    border-top: 1px solid var(--vp-c-divider);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.download-summary {
+    padding: 24px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: linear-gradient(120deg, var(--vp-c-brand-soft), var(--vp-c-bg-soft));
+}
+
+.download-summary > p:first-child {
+    margin-top: 0;
+    color: var(--vp-c-brand-1);
+    font-size: 28px;
+}
+
+.download-actions a {
+    display: inline-block;
+    margin: 4px 0;
+    padding: 8px 12px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    background: var(--vp-c-bg);
+    text-decoration: none;
+}
+
+.repository-links li {
+    padding: 20px;
+}
+
+.download-packages {
+    overflow-x: auto;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+}
+
+.download-packages table {
+    display: table;
+    width: 100%;
+    margin: 0;
+}
+
+.download-packages th {
+    background: var(--vp-c-brand-soft);
+}
