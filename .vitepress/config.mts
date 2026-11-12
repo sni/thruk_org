@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import { fileURLToPath } from 'node:url'
+import { inlineDocSvgs } from '../scripts/inline-doc-svgs.mjs'
 import { docsSidebar, guideSidebar, developmentSidebar, developmentNav, downloadsNav, docNav } from '../scripts/nav.mts'
 
 // https://vitepress.dev/reference/site-config
@@ -12,6 +14,9 @@ export default defineConfig({
   ],
 
   srcDir: '.build',
+  markdown: {
+    config: (md) => md.use(inlineDocSvgs, fileURLToPath(new URL('../.build', import.meta.url)))
+  },
   // Keep existing .html URLs working without server rewrite rules.
   cleanUrls: false,
   // Large pages (changelog, REST API reference) produce chunks over 500 kB.
