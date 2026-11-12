@@ -106,6 +106,13 @@ test('migration checks leave code and ordinary inline-code prose alone', async (
   assert.deepEqual(result.errors, [])
 })
 
+test('duplicate heading checks do not cross a fenced example', async (t) => {
+  const result = await fixture(t, {
+    'index.md': '# Home\n\nRepeated\n```text\nexample\n```\n## Repeated\n',
+  })
+  assert.deepEqual(result.errors, [])
+})
+
 test('rejects unsupported admonitions that render as literal container markers', async (t) => {
   const result = await fixture(t, {
     'index.md': '# Home\n\n::: important\nUse the thruk user.\n:::\n\n::: info Important\nA supported note.\n:::\n',

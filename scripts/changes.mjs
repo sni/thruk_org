@@ -1,5 +1,5 @@
 export function parseChanges(text) {
-  const headers = [...text.matchAll(/^(next:|(\d+(?:\.\d+)+)[ \t]+([^\r\n]+))[^\r\n]*$/gm)]
+  const headers = [...text.matchAll(/^(next:|(\d+(?:\.\d+)+(?:-\d+)?)[ \t]+([^\r\n]+))[^\r\n]*$/gm)]
   return {
     preamble: headers.length ? text.slice(0, headers[0].index) : text,
     releases: headers.map((header, index) => ({

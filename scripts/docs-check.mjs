@@ -67,7 +67,7 @@ export async function checkDocs(directory, renderer) {
     const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)
     if (frontmatter && /^(?:layout|breadcrumb|lightbox):/m.test(frontmatter[1])) errors.push(`${relative}: Jekyll front matter`)
 
-    for (const [line, number] of lines) {
+    for (const [index, [line, number]] of lines.entries()) {
       const plain = line.replace(/(`+).*?\1/g, '')
       const where = `${relative}:${number}`
       const container = /^\s*:{3,}\s+(\S+)/.exec(line)
@@ -78,7 +78,7 @@ export async function checkDocs(directory, renderer) {
       if (/^\s*\+\s*$|^\.(?:[A-Z]|[a-z_][\w/]*[/.]| )/.test(line)) errors.push(`${where}: AsciiDoc caption or list marker`)
       if (/(?<!\]\()https?:\/\/[^\s[\]]+\[[^\]]+\]/.test(plain)) errors.push(`${where}: AsciiDoc URL label`)
       if (/^ {1,3}(?:[\w.]+\s*=|%>|#>|mysql>)/.test(plain)) errors.push(`${where}: unfenced example`)
-      const next = lines.find((entry) => entry[1] === number + 1)?.[0]
+      const next = lines[index + 1]?.[1] === number + 1 ? lines[index + 1][0] : undefined
       if (next?.match(/^#{1,6}\s+/) && line.trim() === next.replace(/^#{1,6}\s+/, '').replace(/\s+\{#[^}]+\}$/, '').trim()) errors.push(`${where}: duplicated heading text`)
     }
 

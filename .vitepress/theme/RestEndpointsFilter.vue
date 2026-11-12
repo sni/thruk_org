@@ -52,6 +52,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   sections.forEach((section) => section.nodes.forEach((node) => { node.style.display = '' }))
+  document.querySelectorAll('.VPDocAsideOutline li').forEach((node) => { node.style.display = '' })
 })
 </script>
 

@@ -30,6 +30,20 @@ test('changelog dates stay out of the outline and change text loses its header a
   assert.notInclude(rendered, parsed.preamble.trim())
 })
 
+test('hyphenated releases keep separate changes, dates and legacy anchors', () => {
+  const text = '3.08  Sat Jul 1 2023\n          - newer change\n\n3.06-2  Tue Jun 6 2023\n          - security fix\n\n3.06  Wed May 24 2023\n          - original change\n'
+  const { releases } = parseChanges(text)
+  assert.deepEqual(releases.map((release) => release.version), ['3.08', '3.06-2', '3.06'])
+  assert.equal(releases[1].date, 'Tue Jun 6 2023')
+  assert.notInclude(releases[0].body, 'security fix')
+  assert.include(releases[1].body, 'security fix')
+  assert.notInclude(releases[1].body, 'original change')
+  const rendered = renderChanges(text)
+  assert.include(rendered, '<a id="v3.06-2"></a>')
+  assert.include(rendered, '## v3.06-2 <time class="release-date ignore-header" datetime="2023-06-06">2023-06-06</time> {#v3-06-2}')
+  assert.notInclude(rendered, '3.06-2  Tue')
+})
+
 test('calendar dates ignore time and timezone without moving to the previous day', () => {
   assert.equal(releaseDay('Thu Oct 22 00:30:00 CEST 2026'), '2026-10-22')
   assert.equal(releaseDay('Sun Mai 01 00:30:00 CEST 2011'), '2011-05-01')

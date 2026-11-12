@@ -1,6 +1,7 @@
 import { test } from 'vitest'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
+import { runInNewContext } from 'node:vm'
 import { collectSections, applyFilter, matchQuery, outlineVisible } from '../.vitepress/theme/rest-filter.mjs'
 
 // Minimal fake DOM: h3 headings are siblings, each followed by body nodes up
@@ -110,6 +111,23 @@ test('the Vue component drives the filter and filters the page navigation outlin
   assert.match(vue, /class="rest-endpoints-clear"/, 'clear button styling hook')
   assert.match(vue, /vpi-delete/, 'uses the same icon as the site search clear button')
   assert.match(vue, /::-webkit-search-cancel-button/, 'hides the browser native clear to avoid a second one')
+})
+
+test('leaving the endpoints page restores content and reused outline entries', () => {
+  const vue = readFileSync(new URL('../.vitepress/theme/RestEndpointsFilter.vue', import.meta.url), 'utf8')
+  const cleanup = /onBeforeUnmount\(\(\) => \{([\s\S]*?)\n\}\)/.exec(vue)
+  assert.ok(cleanup)
+  const content = { style: { display: 'none' } }
+  const outline = { style: { display: 'none' } }
+  runInNewContext(cleanup[1], {
+    sections: [{ nodes: [content] }],
+    document: { querySelectorAll(selector) {
+      assert.equal(selector, '.VPDocAsideOutline li')
+      return [outline]
+    } },
+  })
+  assert.equal(content.style.display, '')
+  assert.equal(outline.style.display, '')
 })
 
 test('the theme registers the component the markdown tag resolves to', () => {
