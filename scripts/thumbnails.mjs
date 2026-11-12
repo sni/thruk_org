@@ -6,16 +6,19 @@ import { fileURLToPath } from 'node:url'
 
 // Manual step: regenerate the gallery thumbnails (<name>-thumb.png, max 512px)
 // with the system ImageMagick so pages load small images and the image
-// preview dialog opens the full-size original. Run after changing screenshots:
+// preview dialog opens the full-size original, then compress each generated
+// thumbnail with optipng in the same run. Run after changing screenshots:
 // npm run thumbnails
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const gallery = path.join(root, 'src', 'images', 'galleries')
 const MAX_WIDTH = 512
 
-const files = readdirSync(gallery).filter((name) => /\.png$/i.test(name))
+// Skip the generated thumbnails themselves.
+const files = readdirSync(gallery).filter((name) => /\.png$/i.test(name) && !/-thumb\.png$/i.test(name))
 if (!files.length) throw new Error(`No gallery PNGs found in ${gallery}`)
 
 let convert = true
+let optimize = true
 let count = 0
 for (const name of files) {
   const source = path.join(gallery, name)
@@ -36,8 +39,18 @@ for (const name of files) {
     console.error(result.stderr.trimEnd())
     throw new Error(`convert failed for ${name}`)
   }
+  if (optimize) {
+    const optimizeResult = spawnSync('optipng', ['-o7', thumb], { encoding: 'utf8' })
+    if (optimizeResult.error) {
+      optimize = false
+      console.warn('optipng not found, skipping thumbnail optimization (install optipng to use this step)')
+    } else if (optimizeResult.status !== 0) {
+      console.error(optimizeResult.stderr.trimEnd())
+      throw new Error(`optipng failed for ${name}`)
+    }
+  }
   count++
-  console.log(`${name} -> ${path.basename(thumb)}`)
+  console.log(`${name} -> ${path.basename(thumb)} (${statSync(thumb).size} bytes)`)
 }
 if (!convert) process.exit(0)
 console.log(`Generated ${count} gallery thumbnail(s)`)
