@@ -76,14 +76,18 @@ cpSync(path.join(docs, 'README.md'), path.join(stage, 'README.md'))
 
 // Inline theme-aware diagrams so the SVG follows the site's light and dark colours.
 // A Markdown image becomes an <img> element, which cannot inherit page CSS variables.
-const inlinedSvgs = new Map([
+// One entry per inlined diagram, so a page with several of them keeps them all.
+const inlinedSvgs = [
   ['documentation/business-process.md', 'source/bp_arch.svg'],
-  ['guides/architecture.md', 'architecture.svg']
-])
+  ['guides/architecture.md', 'architecture.svg'],
+  ['documentation/install.md', 'source/livestatus.svg'],
+  ['documentation/install.md', 'source/livestatus_http.svg']
+]
 for (const [page, svg] of inlinedSvgs) {
   const markdown = path.join(stage, page)
+  const pattern = new RegExp('!\\[[^\\]]*\\]\\(' + svg.replaceAll('.', '\\.') + '\\)', 'g')
   // Keep a blank line before the tag so Markdown does not fold it into the previous paragraph.
-  write(markdown, read(markdown).replaceAll(new RegExp(`!\\[[^\\]]*\\]\\(${svg.replace(/\./g, '\\.')}\\)`, 'g'),
+  write(markdown, read(markdown).replaceAll(pattern,
     '\n' + read(path.join(stage, path.dirname(page), svg)).trim()))
 }
 
