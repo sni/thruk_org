@@ -16,7 +16,7 @@ DOCKERRUN=docker run \
 	-v $(PWD)/package.json:/opt/node_app/package.json \
 	thruk/docs:latest
 
-.PHONY: build server preview check docker-build docker-server clean test localtest check-source
+.PHONY: build server preview check docker-build docker-server clean test localtest check-source optimize-images
 
 build: check-source node_modules
 	npm run docs:build
@@ -47,6 +47,10 @@ docker-server: check-source
 
 test: build check
 	npm run test
+
+# Manual step: optimize the source PNGs in this repository and in the Thruk checkout.
+optimize-images: check-source
+	npm run optimize:images
 
 localtest:
 	npx vitest run
