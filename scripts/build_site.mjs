@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { renderChanges, renderReleaseNotes } from './changes.mjs'
 import { checkDocs } from './docs-check.mjs'
+import { buildOpenAPI } from './openapi.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 if (!process.env.THRUK_SOURCE?.trim()) throw new Error('THRUK_SOURCE is required. Set it to the Thruk repository root.')
@@ -23,6 +24,8 @@ rmSync(stage, { recursive: true, force: true })
 mkdirSync(publicDir, { recursive: true })
 
 const read = (file) => readFileSync(file, 'utf8')
+writeFileSync(path.join(publicDir, 'openapi-v1.json'),
+  JSON.stringify(buildOpenAPI(read(path.join(docs, 'documentation/rest_endpoints.md'))), null, 2) + '\n')
 // Serve small thumbnails in the gallery tiles; the link stays on the full-size
 // original, which the image preview dialog opens. Without a thumbnail the
 // tile falls back to the full-size file.

@@ -49,6 +49,7 @@ For Docker, run `make docker-build` or `make docker-server` with `THRUK_SOURCE` 
 These targets mount the checkout read-only and set the source path inside the container.
 
 Static output is in `.vitepress/dist/`. Existing `.html` routes do not need server rewrite rules.
+The build generates `openapi-v1.json` from the selected Thruk checkout's REST endpoint reference. Import this file into an OpenAPI 3.1 tool and set `baseUrl` to your installation.
 Configure the hosting server to serve `404.html` for unknown paths.
 Do not publish `.build/`, source files or `node_modules/` as the site output.
 
