@@ -39,7 +39,7 @@ const REQUIRED_PAGES = [
   'development/logo.html',
   'README.html',
   'whatsnew/index.html',
-  'whatsnew/v3.30.html',
+  'whatsnew/v3.32.html',
   'changelog.html',
   'download.html',
   'screenshots.html',
@@ -88,12 +88,12 @@ for (const page of REQUIRED_PAGES) {
   })
 }
 
-test('changelog has a v3.30 anchor', () => {
+test('changelog has a v3.32 anchor', () => {
   const content = readFileSync(path.join(DIST_DIR, 'changelog.html'), 'utf8')
-  assert.ok(content.includes('id="v3-30"'), 'changelog v3.30 anchor missing')
+  assert.ok(content.includes('id="v3-32"'), 'changelog v3.32 anchor missing')
   assert.ok(!content.includes('This file documents the revision'))
-  assert.match(content, /<h2 id="v3-30"[^>]*>v3\.30 <time class="release-date ignore-header" datetime="2026-10-22">2026-10-22<\/time>/)
-  assert.ok(content.includes('href="/whatsnew/v3.30.html"'))
+  assert.match(content, /<h2 id="v3-32"[^>]*>v3\.32 <time class="release-date ignore-header" datetime="2026-11-18">2026-11-18<\/time>/)
+  assert.ok(content.includes('href="/whatsnew/v3.32.html"'))
 })
 
 test('release highlights index groups all release links into cards, newest first', () => {
@@ -103,7 +103,7 @@ test('release highlights index groups all release links into cards, newest first
   const links = [...cards.matchAll(/href="(\/whatsnew\/v[\d.]+\.html)"/g)].map((match) => match[1])
   const versions = readdirSync(new URL('../src/whatsnew', import.meta.url)).filter((name) => /^v[\d.]+\.md$/.test(name))
   assert.equal(links.length, versions.length)
-  assert.equal(links[0], '/whatsnew/v3.30.html')
+  assert.equal(links[0], '/whatsnew/v3.32.html')
   assert.equal(links.at(-1), '/whatsnew/v2.28.html')
 })
 
@@ -159,14 +159,14 @@ test('deprecation hints render as warning badges and keep links and code formatt
 })
 
 test('release pages show breadcrumbs, themed logos and readable changelogs without feed links', () => {
-  const content = readFileSync(path.join(DIST_DIR, 'whatsnew/v3.30.html'), 'utf8')
+  const content = readFileSync(path.join(DIST_DIR, 'whatsnew/v3.32.html'), 'utf8')
   assert.ok(content.includes('aria-label="Breadcrumb"'))
   assert.match(content, /href="\/whatsnew\/index.html"[^>]*>Release highlights/)
   assert.ok(content.includes('aria-current="page"'))
   assert.ok(content.includes('/images/logo-light.svg'))
   assert.ok(content.includes('/images/logo-dark.svg'))
   assert.ok(content.includes('/favicon-light.png'))
-  assert.ok(content.includes('<li>fix remote code vulnerability'))
+  assert.ok(content.includes('<li>add Status Replay with a playable log-based host and service status timeline'))
   assert.ok(!content.includes('/news/feed.xml'))
 })
 
