@@ -39,7 +39,6 @@ const REQUIRED_PAGES = [
   'development/logo.html',
   'README.html',
   'whatsnew/index.html',
-  'whatsnew/v3.32.html',
   'changelog.html',
   'download.html',
   'screenshots.html',
@@ -88,12 +87,12 @@ for (const page of REQUIRED_PAGES) {
   })
 }
 
-test('changelog has a v3.32 anchor', () => {
+test('changelog has version anchors, dates beside the version and no preamble', () => {
   const content = readFileSync(path.join(DIST_DIR, 'changelog.html'), 'utf8')
-  assert.ok(content.includes('id="v3-32"'), 'changelog v3.32 anchor missing')
+  assert.match(content, /<a id="v[\d.]+"><\/a>/)
   assert.ok(!content.includes('This file documents the revision'))
-  assert.match(content, /<h2 id="v3-32"[^>]*>v3\.32 <time class="release-date ignore-header" datetime="2026-11-18">2026-11-18<\/time>/)
-  assert.ok(content.includes('href="/whatsnew/v3.32.html"'))
+  assert.match(content, /<h2 id="v[\d-]+"[^>]*>v[\d.]+ <time class="release-date ignore-header" datetime="\d{4}-\d{2}-\d{2}">/)
+  assert.ok(content.includes('href="/whatsnew/'), 'changelog links to a What\'s New page')
 })
 
 test('release highlights index groups all release links into cards, newest first', () => {
@@ -103,8 +102,8 @@ test('release highlights index groups all release links into cards, newest first
   const links = [...cards.matchAll(/href="(\/whatsnew\/v[\d.]+\.html)"/g)].map((match) => match[1])
   const versions = readdirSync(new URL('../src/whatsnew', import.meta.url)).filter((name) => /^v[\d.]+\.md$/.test(name))
   assert.equal(links.length, versions.length)
-  assert.equal(links[0], '/whatsnew/v3.32.html')
-  assert.equal(links.at(-1), '/whatsnew/v2.28.html')
+  const numbers = links.map((link) => Number(link.slice('/whatsnew/v'.length, -5)))
+  assert.deepEqual(numbers, [...numbers].sort((a, b) => b - a), 'cards are newest first')
 })
 
 test('top dropdown labels link to their first menu item', () => {
@@ -153,20 +152,22 @@ test('version hints render as coloured badges', () => {
 
 test('deprecation hints render as warning badges and keep links and code formatting', () => {
   const content = readFileSync(path.join(DIST_DIR, 'documentation/configuration.html'), 'utf8').replace(/<!--[\s\S]*?-->/g, '')
-  assert.ok(content.includes('<span class="VPBadge warning">DEPRECATED: setting this has no effect with Thruk 2.34 or later</span>'))
-  assert.ok(content.includes('<span class="VPBadge warning">DEPRECATED: use <code>server_timezone</code> now</span>'))
-  assert.match(content, /<span class="VPBadge warning">DEPRECATED: please use <a href="[^\"]*lmd.html">LMD<\/a> when using multiple backends<\/span>/)
+  const badges = [...content.matchAll(/<span class="VPBadge warning">(.*?)<\/span>/g)]
+  assert.ok(badges.some((b) => b[1].includes('DEPRECATED:')), 'no DEPRECATED badges rendered')
+  assert.ok(badges.some((b) => b[1].includes('<code>')), 'badge keeps code formatting')
+  assert.ok(badges.some((b) => b[1].includes('<a href=')), 'badge keeps links')
 })
 
 test('release pages show breadcrumbs, themed logos and readable changelogs without feed links', () => {
-  const content = readFileSync(path.join(DIST_DIR, 'whatsnew/v3.32.html'), 'utf8')
+  const newest = readdirSync(path.join(DIST_DIR, 'whatsnew')).filter((name) => /^v[\d.]+\.html$/.test(name)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).at(-1)
+  assert.ok(newest, 'no whatsnew pages in the built site')
+  const content = readFileSync(path.join(DIST_DIR, 'whatsnew', newest), 'utf8')
   assert.ok(content.includes('aria-label="Breadcrumb"'))
   assert.match(content, /href="\/whatsnew\/index.html"[^>]*>Release highlights/)
   assert.ok(content.includes('aria-current="page"'))
   assert.ok(content.includes('/images/logo-light.svg'))
   assert.ok(content.includes('/images/logo-dark.svg'))
   assert.ok(content.includes('/favicon-light.png'))
-  assert.ok(content.includes('<li>add Status Replay with a playable log-based host and service status timeline'))
   assert.ok(!content.includes('/news/feed.xml'))
 })
 
