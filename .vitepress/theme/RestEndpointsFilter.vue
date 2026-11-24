@@ -60,6 +60,7 @@ onBeforeUnmount(() => {
   <div class="rest-endpoints-filter">
     <label>
       <span class="rest-endpoints-box">
+        <span aria-hidden="true" class="vpi-search rest-endpoints-icon"></span>
         <input ref="searchInput" v-model="query" type="search" placeholder="Filter endpoints (supports regexp) ex. GET /hosts" />
         <button v-if="query" aria-label="Clear filter" class="rest-endpoints-clear" type="button" @click="clear">
           <span aria-hidden="true" class="vpi-delete"></span>
@@ -86,14 +87,24 @@ onBeforeUnmount(() => {
 .rest-endpoints-box:focus-within {
   border-color: var(--vp-c-brand-1);
 }
+/* Same magnifier icon the VitePress search bar uses. */
+.rest-endpoints-icon {
+  padding-left: 1.75rem;
+  color: var(--vp-c-text-2);
+  font-size: 18px;
+}
 .rest-endpoints-filter input {
   flex: 1;
   min-width: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.25rem;
   font-size: 0.875rem;
   border: 0;
   background: transparent;
   color: var(--vp-c-text-1);
+}
+/* Same watermark colour the VitePress search bar uses for its placeholder. */
+.rest-endpoints-filter input::placeholder {
+  color: var(--vp-c-text-2);
 }
 .rest-endpoints-filter input:focus {
   outline: none;
