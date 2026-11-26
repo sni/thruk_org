@@ -32,7 +32,7 @@ test('a parent entry stays visible when a nested entry matches', () => {
   // The list must not be empty while the count reports matches: a nested
   // match keeps its parent chain visible.
   const vue = readFileSync(new URL('OutlineFilter.vue', themeDir), 'utf8')
-  assert.match(vue, /matching\.has\(item\.li\) \|\[ ...item\.li\.querySelectorAll\('li'\) \]\.some\(\(li\) => matching\.has\(li\)\)/, 'a parent entry is shown when a nested entry matches')
+  assert.match(vue, /const visible = matching\.has\(item\.li\) \|\| \[\.\.\.item\.li\.querySelectorAll\('li'\)\]\.some\(\(li\) => matching\.has\(li\)\)/, 'a parent entry is shown when a nested entry matches')
   assert.equal(matchQuery('configuration', 'configuration'), true, 'entry text matches its own query')
   assert.equal(matchQuery('menu editing', 'menu'), true, 'a nested entry matches independently of its parent')
 })
