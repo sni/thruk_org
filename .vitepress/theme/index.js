@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import ReleaseStatus from './ReleaseStatus.vue'
 import RestEndpointsFilter from './RestEndpointsFilter.vue'
+import OutlineFilter from './OutlineFilter.vue'
 import { h } from 'vue'
 import Breadcrumbs from './Breadcrumbs.vue'
 import ImagePreview from './ImagePreview.vue'
@@ -11,6 +12,7 @@ export default {
   extends: DefaultTheme,
   Layout: () => h(DefaultTheme.Layout, null, {
     'doc-before': () => h(Breadcrumbs),
+    'aside-outline-before': () => h(OutlineFilter),
     'layout-bottom': () => h(ImagePreview)
   }),
   enhanceApp({ app }) {
