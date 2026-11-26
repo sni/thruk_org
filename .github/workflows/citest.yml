@@ -15,15 +15,15 @@ jobs:
     env:
       THRUK_SOURCE: ${{ github.workspace }}/.thruk-source
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
 
       - name: Check out Thruk documentation and logos
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           repository: sni/thruk
           path: .thruk-source
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@main
         with:
           node-version: '22'
           cache: npm
